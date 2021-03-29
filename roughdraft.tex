@@ -1,0 +1,585 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{cleveref}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{appendix}
+\usepackage{xcolor}
+
+\usepackage{showkeys} %Comment out in final version
+\newcommand{\rood}[1]{\textcolor{red}{[#1]}}
+%\newcommand{\rood}[1]{} Use this for final version
+
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\crefname{thm}{Theorem}{Theorems}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\crefname{prop}{Proposition}{Propositions}
+\newtheorem{lem}[thm]{Lemma}
+\crefname{lem}{Lemma}{Lemmas}
+\newtheorem{clm}[thm]{Claim}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{quest}[thm]{Question}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{defns}[thm]{Definitions}
+\crefname{defn}{Definition}{Definitions}
+\newtheorem{prin}[thm]{Principle}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{exmps}[thm]{Examples}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{notns}[thm]{Notations}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
+\newtheorem*{ack*}{Acknowledgements}
+
+\newcommand{\on}{\operatorname}
+\newcommand{\mb}{\mathbb}
+\newcommand{\ol}{\overline}
+\newcommand{\mc}{\mathcal}
+\newcommand{\ms}{\mathscr}
+\newcommand{\Spec}{\on{Spec}}
+\newcommand{\rank}{\on{rank}}
+\newcommand{\wt}{\widetilde}
+
+\title{Counting quartic plane curves, $A_6$ singularities and $E_6$ singularities in families}
+\author{Mitchell Lee, Anand Patel, Dennis Tseng}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    We compute $GL_3$-equivariant classes of orbits of quartic plane curves by degenerating into strata we can compute using Kazarian's work on counting isolated hypersurface singularities. As an example application, we show the number of planar sections of a general quartic threefold with a fixed moduli is 510720.
+\end{abstract}
+
+\section{Introduction}
+In this note, we will compute the $GL_3$-equivariant class of the $GL_3$-orbit closure of any smooth quartic plane curve by degenerating the orbits into strata and applying Kazarian's work \cite{Kazarian} on counting $A_6$ and $E_6$ singularities. As a byproduct, we will also compute the $GL_3$-equivariant class of orbits of quartic plane curves with a single singularity when that singularity is of type $A_n$ for $3\leq n\leq 6$ or a triple point, and the $GL_3$-equivariant class of orbits of quartic plane curves given by the union of two general curves of degrees $i$ and $d-i$. 
+
+The calculation of this equivariant class yields some immediate enumerative consequences. Consider the following enumerative situation: Starting with a smooth quartic threefold $X\subset \mathbb{P}^4$, one obtains a rational map 
+\begin{align*}
+   \Phi_{X}:  \mb{G}(2,4)\dashrightarrow \overline{M_3}
+\end{align*}
+sending a general 2-plane $\Lambda\subset\mathbb{P}^4$ to the moduli of the plane curve $X\cap \Lambda$.  Since the domain and codomain of this map have the same dimension, it is natural to wonder what the degree of $\Phi_{X}$ is.  Our equivariant expression yields the following enumerative consequence:
+\begin{thm}
+\label{numberplanesection}
+If $X$ is general, the map $\Phi_{X}$ has degree 510720.
+\end{thm}
+In other words, a general genus $3$ curve arises $510720$ times as a planar section of a general quartic threefold.
+%For example, this would allow us to compute $\deg(\Phi)$ if we replace $X$ with a general quartic hypersurface in $\mb{P}^N$ and $\mb{G}(2,4)$ with a dimension 6 subvariety of $\mb{G}(2,N)$. 
+
+\subsection{Method}
+
+\subsection{Relevant Work}
+Computing classes of orbit closures of plane curves was done by Aluffi and Faber for any plane curve of any degree \cite{AF00}. Counting linear sections of a hypersurface with fixed moduli has been considered in the case of line sections of a quintic curve \cite{CL08} and generalized to line sections of hypersurfaces of degree $2r+1$ hypersurfaces in $\mb{P}^r$ \cite{FML} by extending the computation of orbits of points on a line \cite{AFpoint} to the equivariant setting. In addition to Kazarian's work, there have been independent efforts to count plane curve singularities at one point, including \cite{BM16,K06,H03}.\footnote{For the reader's convenience, we note that numerical errors in \cite{K06} have been fixed in an updated arXiv version. Also, there are errors in the formulas for counting $A_6$ and $A_7$ singularities in \cite{H03}.} For us, Kazarian's work has the advantage that it can be directly applied to counting curve singularities in a family of surfaces. In fact, Kazarian's work applies to hypersurface singularities as well. 
+
+\subsection{Acknowledgements}
+We would like to thank Paolo Aluffi for helpful conversations.
+
+\section{Definitions}
+Our convention for the action of $PGL_3$ on a plane curve $C$ is by pulling back the equation of the curve under the induced linear map $\mb{P}^2\dashrightarrow\mb{P}^2$. If $F(X,Y,Z)$ is the equation and $A$ is a 3 by 3 matrix, then the action is given by $F(X,Y,Z)\mapsto F(A\cdot(X,Y,Z))$. 
+\begin{defn}
+Let $C\subset \mb{P}^2$ be a plane curve of degree $d$. Given a variety $B$ and a rank 3 vector bundle $V$ on $B$, define the subvariety $Z_C$ of the rank $15$ vector bundle $\on{Sym}^dV^{\vee}\to B$, where $Z_C$ restricts in every fiber to the $GL_3$-orbit closure of the equation cutting out $C$ in the $\mb{A}^{\binom{d+2}{2}}$ of all homogenous quartic forms.
+\end{defn}
+Even though $Z_C$ depends on $B$ and $V$, our choices will be clear by context. By choosing $B=\mb{G}(2,N)$ for $N>>0$ and $V$ to be the tautological subbundle, the construction of equivariant intersection theory \cite{EG98} shows there is a single formula that works for all such choices of $B$ and $V$.
+
+\begin{defn}
+\label{orbitthomdef}
+Let $\on{Aut}(C)$ denote the projective automorphisms of $C$. The class of $\#\on{Aut}(C)[Z_C]$ is polynomial $p_C(c_1,c_2,c_3)$ in the chern classes $c_i:=c_i(V)$ of $V$ under the isomorphism $A^{\bullet}(\on{Sym}^4V^{\vee})\to A^{\bullet}(B)$, where $p_C$ does not depend on $V$ and $B$. 
+\end{defn}
+
+We include the factor of $\on{Aut}(C)$ as they will naturally show up when degenerating orbits. The polynomial $p_C$ is equivalently $\#\on{Aut}(C)$ times the \emph{$GL_3$-equivariant class} of the orbit closure in $\mb{A}^{\binom{d+2}{2}}$. There is also a projective version of $p_C$, corresponding to the $GL_3$ equivariant class of the orbit closure in $\mb{P}^{\binom{d+2}{2}-1}$. 
+
+\begin{defn}
+\label{orbitthomdef}
+The class of $\on{Aut}(C)[\mb{P}(Z_C)]\in  A^{\bullet}(\mb{P}(\on{Sym}^4V^{\vee}))$ is polynomial 
+$$P_C(c_1,c_2,c_3,H)$$ in the chern classes $c_i:=c_i(V)$ of $V$ and the hyperplane class $H:=\ms{O}_{\mb{P}(\on{Sym}^dV^{\vee}(1))}$, where $P_C$ does not depend on $B$ and $V$.
+\end{defn}
+
+There is an easy relation between $p_C$ and $P_C$.
+
+\begin{prop}
+\label{projectivethom}
+We can write $p_C=p_C(u,v,w)$ and $P_C=P_C(u,v,w,H)$ in terms of the chern roots of $V$ and $H=\ms{O}_{\mb{P}(\on{Sym}^dV^{\vee}(1))}$. Then,
+\begin{align*}
+    p_C(u,v,w)&=P_C(u,v,w,0)\\
+    P_C(u,v,w,H)&= p_C(u-\frac{H}{d},v-\frac{H}{d},w-\frac{H}{d}).
+\end{align*}
+\end{prop}
+\begin{proof}
+This follows from \cite[Theorem 6.1]{FNR05}.
+\end{proof}
+
+Recall the following definition from \cite{AF00}.
+\begin{defn}
+\label{predegree}
+The predegree of a plane curve $C$ with 8-dimensional orbit is $\#\on{Aut}(C)$ times the degree of its orbit in the projective space of all plane curves. 
+
+If the orbit of $C$ is less than 8-dimensional then we define its predegree to be zero. 
+\end{defn}
+\begin{exmp}
+The predegree of $C$ is the coefficient of $H^{\binom{d+2}{2}-9}$ of $P_C$. 
+\end{exmp}
+
+\section{Summary of results}
+\subsection{Orbits of quartic plane curves from degeneration}
+Our strategy for computing equivariant classes of $PGL_3$-orbit closures of quartic planes will be to degenerate them into 8-dimensional strata that can be computed by other means. 
+
+\begin{thm}
+\label{alldegenerations}
+Let $C$ be a smooth quartic curve with $m$ hyperflexes. Let $C_{A_n}, C_{E_6}, C_{D_4}$ be a general smooth quartic with an $A_n$ singularity, an $E_6$ singularity, and a triple point respectively. For $0\leq i\leq 3$, let $C_i$ be the quartic curve given by the union of $i$ general lines with a general degree $4-i$ curve. Then,
+\begin{alignat*}{2}
+    P_{C} &= 8P_{A_6}-mP_{E_6}\\
+    P_{C_{A_n}}&= (7-n)P_{A_6}&\text{for $3\leq n\leq 6$}\\
+    P_{C_{D_4}}&=\frac{1}{4}(8P_{A_6}-P_{C_3})\\
+    P_{C_{i}}-P_{C_{i+1}} &= P_{D_4} &\text{for $0\leq i\leq 3$}.
+\end{alignat*}
+\end{thm}
+Since $P_{A_6}$, $P_{E_6}$ and $P_{C_3}$ can be determined from \Cref{A6E6orbit,fourlines} below, this determines formulas for all the curves in \Cref{alldegenerations}.
+
+\subsection{An enumerative consequence}
+
+\Cref{numberplanesection} will follow from the calculation of the equivariant class of a general quartic plane curve, which follows from \Cref{alldegenerations} and \Cref{A6E6orbit}. 
+\begin{thm}
+\label{quarticthom}
+Fix a general homogenous quartic form $F(X,Y,Z)$ in three variables. Let $B$ be a variety and $V$ be a rank 3 vector bundle on $B$. There is a subvariety $Z$ of the rank $15$ vector bundle $\on{Sym}^4V^{\vee}\to B$ that restricts in every fiber to the $GL_3$-orbit closure of $F(X,Y,Z)$ in the $\mb{A}^{15}$ of all homogenous quartic forms. The class of $Z$ is given by
+\begin{align*}
+     &2688 (9 c_1(V)^3 + 12 c_1(V) c_2(V) - 11 c_3(V)) (2 c_1(V)^3 + c_1(V) c_2(V) + c_3(V))
+ %2688 (9 c1^3 + 12 c1 c2 - 11 c3) (2 c1^3 + c1 c2 + c3)
+\end{align*}
+under the isomorphism $A^{\bullet}(\on{Sym}^4V^{\vee})\to A^{\bullet}(B)$.
+\end{thm}
+
+\begin{comment}
+\begin{rmk}
+One can replace the condition that $F$ is general with the more specific condition that $F$ cuts out a smooth quartic in $\mb{P}^2$ with general flex behavior and has no nontrivial automorphisms in \Cref{quarticthom} \cite{AF93}. 
+\end{rmk}
+\begin{exmp}
+If $u,v,w$ are the chern roots of $V$ and if $P(u,v,w)$ is the above formula for the class of $Z$ in terms of chern roots, then $P(u-\frac{H}{4},v-\frac{H}{4},w-\frac{H}{4})$ is the class of the projectivization of $Z$ in $\mb{P}(\on{Sym}^4V^{\vee})$ \cite[Theorem 6.1]{FNR05}, where $H$ is $\ms{O}_{\mb{P}(\on{Sym}^4V^{\vee})}(1)$. Under this substitution, the leading term is $14280H^6$, agreeing with the degree of an orbit closure of a general quartic curve computed by Aluffi and Faber\cite{AF93}. 
+\end{exmp}
+\end{comment}
+
+\begin{proof}[Proof of \Cref{numberplanesection}]
+To find the degree of $\Phi$, it suffices to pick a general quartic plane curve $C\subset \mb{P}^2$ and count the number of two planes $\Lambda$ such that $X\cap \Lambda$ is isomorphic to $C$. 
+
+Let $G$ be a quartic homogenous form cutting out a general quartic threefold $X\subset \mb{P}^3$. Let $\pi: S\to \mb{G}(2,4)$ be the tautological subbundle. Then, $G$ defines a section of $\ms{O}_{\mb{P}(S)}(4)$ on $\mb{P}(S)$. Pushing forward under $\pi$, we have a section of $s: \mb{G}(2,4)\to \on{Sym}^4(S^{\vee})$. Let $Z$ be the subvariety of $\on{Sym}^4(S^{\vee})$ that restricts to the $GL_3$-orbit closure of the homogenous quartic form cutting out $C$ in each fiber of $\on{Sym}^4(S^{\vee})\to \mb{G}(2,4)$. 
+
+Since $C$ and $G$ are general, the section $s$ will intersect $Z$ transversely and only at points corresponding to smooth curves. Therefore, $s$ and $Z$ are smooth at the points of the (reduced intersection) $s\cap Z$, and $\deg(\Phi)=\int_{\mb{G}(2,4)}s^{*}[Z]$.
+Expanding the formula for $[Z]$ in \Cref{quarticthom}, we get
+\begin{align*}
+    &48384 c_{1}(V)^6 + 88704 c_{1}(V)^4 c_{2}(V) + 32256 c_{1}(V)^2 c_{2}(V)^2 - 34944 c_{1}(V)^3 c_{3}(V)\\ + 
+ &2688 c_{1}(V) c_{2}(V) c_{3}(V) - 29568 c_{3}(V)^2.
+\end{align*}
+
+Plugging in the chern classes of $S$ into the formula, we get
+\begin{align*}
+    48384 \cdot 5 + 88704 \cdot 3 + 32256 \cdot 2 - 34944 + 2688 - 29568 = 510720. 
+\end{align*}
+\end{proof}
+
+\begin{rmk}
+The formula in \Cref{quarticthom} and the answer 510720 has also been verified independently by the authors using the SAGE Chow ring package \cite{ChowRing} to implement the resolution used by Aluffi and Faber \cite{AF93} for smooth plane curves relatively. However, the computations were too cumbersome to verify by hand. \end{rmk}
+\section{Counting $A_6$ and $E_6$ singularities in families}
+\label{stratasection}
+We will use a calculation of Kazarian \cite[Theorem 1]{Kazarian}. 
+\begin{prop}
+\label{Kaztheman}
+Let $\mc{S}\to B$ be a smooth morphism of varieties with fibers that smooth surfaces. Let $L$ be a line bundle on $\mc{S}$ and $\sigma$ be a section of $L$ cutting out $\mc{C}\subset \mc{S}$. The virtual classes $[Z_{A_6}]$ (respectively $[Z_{E_6}]$) supported on points $p\in \mc{S}$ where the fiber of $\mc{C}\to B$ has an $A_6$ (respectively $E_6$) singularity at $p$ is given by
+\begin{align*}
+[Z_{A_6}]&=u (-c_1 + u) (c_2 - c_1 u + u^2) (720 c_1^4 - 1248 c_1^2 c_2 + 156 c_2^2 - 
+   1500 c_1^3 u\\& + 1514 c_1 c_2 u+ 1236 c_1^2 u^2 - 485 c_2 u^2 - 
+   487 c_1 u^3 + 79 u^4)\\
+[Z_{E_6}] &= 3 u (-c_1 + u) (2 c_1^2 + c2 - 3 c_1 u + u^2)(4 c_2 - 2 c_1 u + u^2) (c_2 -
+    c_1 u + u^2)
+   \end{align*}
+ where $c_i:=c_i(T_{\mc{S}/B})$ and $u=c_1(L)$. 
+\end{prop}
+
+%Need versality of linear series of quartics around A6 and E6 singularities
+
+\begin{prop}
+\label{oneorbit}
+All irreducible quartic plane curves with an $A_6$ (respectively $E_6$) singularity are an 8-dimensional orbit closure.
+\end{prop}
+\begin{proof}
+The fact that irreducible plane quartics with an $A_6$ or $E_6$ singularity form an irreducible subvariety of codimension 6 in the space of all quartics follow from their classification, for example \cite[Section 3.4]{Nejad2}. %\rood{Please replace this with a better reference if you find one...an unpublished phd thesis from some university I have never heard of is not the best}
+
+This follows from the fact that $A_6$ and $E_6$ singularities occur in codimension 6, and that an orbit of a general curve with such a singularity is 8-dimensional, which can be checked by the formulas for their degrees \cite[Examples 5.2 and 5.4]{AF00}.
+\end{proof}
+
+\begin{defn}
+Let $C_{A_6}$ and $C_{E_6}$ denote rational curves with an $A_6$ and $E_6$ singularity respectively whose $PGL_3$-orbits are 8-dimensional. By \Cref{oneorbit}, this definition is well-defined up to projective equivalence.
+\end{defn}
+
+ We can write down equations for $C_{A_6}$ and $C_{E_6}$ (for example \cite[Section 3.4]{Nejad2}):
+\begin{align*}
+    C_{A_6}:\ &\{(x^2+yz)^2+2yz^3=0\}\\
+    C_{E_6}:\ &\{y^3z+x^4+x^2y^2=0\}.
+\end{align*}
+
+\begin{cor}
+\label{A6E6orbit}
+We have
+\begin{align*}
+    p_{C_{A_6}}&= 3\cdot112 (9 c_1^3 + 12 c_1 c_2 - 11 c_3) (2 c_1^3 + c_1 c_2 + c_3)\\
+    p_{C_{E_6}}&= 2\cdot 48 (2 c_1^3 + c_1 c_2 + c_3) (9 c_1^3 - 6 c_1 c_2 + 7 c_3),
+\end{align*}
+where $\#\on{Aut}(C_{A_6})=3$ and $\#\on{Aut}(C_{E_6})=2$. 
+\end{cor}
+
+\begin{proof}
+We apply \Cref{Kaztheman} to the case where $B=\mb{G}(2,N)$ for $N>>0$ and $\mc{S}=\mb{P}(V)$ where $V$ is the tautological subbundle. Let $T$ be the relative tangent bundle of $\mb{P}(V)\to B$. By the splitting principle and the relative Euler exact sequence
+\begin{align*}
+    c_1(T)&= c_1(V) + 3c_1(\ms{O}_{\mb{P}(V)(1)}) \\
+    c_2(T) &= c_2(V) + 2 c_1(V) c_1(\ms{O}_{\mb{P}(V)(1)}) + 3 c_1(\ms{O}_{\mb{P}(V)(1)})^2.
+\end{align*}
+Now, we let $u=4c_1(\ms{O}_{\mb{P}(V)(1)})$ in the formulas for $[Z_{A_6}]$ and $[Z_{E_6}]$ \Cref{Kaztheman} and integrate along $\mb{P}(V)\to B$. This yields
+\begin{align*}
+    [Z_{A_6}]&= 112 (9 c_1(V)^3 + 12 c_1(V) c_2(V) - 11 c_3(V)) (2 c_1(V)^3 + c_1(V) c_2(V) + c_3(V))\\
+    [Z_{E_6}]&= 48 (2 c_1(V)^3 + c_1(V) c_2(V) + c_3(V)) (9 c_1(V)^3 - 6 c_1(V) c_2(V) + 7 c_3(V)).
+\end{align*}
+The statement on the automorphisms of $C_{A_6}$ and $C_{E_6}$ come from the equations. Alternatively, one could compare the predegrees of $C_{A_6}$ and $C_{E_6}$ with the projective versions of $[Z_{A_6}]$ and $[Z_{E_6}]$ using \cite[Examples 5.2 and 5.4]{AF00} and \Cref{projectivethom}.
+\end{proof}
+
+\rood{Do we need to rigorously justify that the formulas are enumerative in enough cases, or is this enough?}
+
+\begin{rmk}
+We note that $Z_{A_6}$ in our case actually consisted of two codimension 8 components, one consisting generically of irreducible rational quartics with an $A_6$ singularity and the other consisting generically of conics union a double line. However, since the second component has positive dimensional fibers under the map $\mb{P}(V)\to B$ it did not affect the final answer. 
+\end{rmk}
+
+For the application to orbits of a general quartic with a triple point, we need to know $p_C$ in the case where $C$ is the union of four lines, no three concurrent.
+
+\begin{prop}
+\label{fourlines}
+Let $C$ be the union of four lines, no three concurrent. Then, 
+\begin{align*}
+    p_C = 24\cdot 16 (18 c_1^6 + 33 c_1^4 c_2 + 12 c_1^2 c_2^2 + 131 c_1^3 c_3 + 
+   153 c_1 c_2 c_3 - 147 c_3^2),
+\end{align*}
+where $\#\on{Aut}(C)=24$.
+\end{prop}
+
+\begin{proof}
+We will use \cite[Theorem 3.1]{FNR06}, but we will repeat the idea here. Fix a variety $B$ and a 3-dimensional vector bundle $V$. Consider the map $\phi: \mb{P}(V^{\vee})^4\to \mb{P}(\on{Sym}^4V^{\vee})$, which restricts to the multiplication map $(\mb{P}^2)^4\to \mb{P}^14$ on each fiber. Then, $\phi$ maps $4!$ to 1 onto $Z_C$ so $[Z_C]=\frac{1}{24}\phi_{*}(1)$.  
+
+Let $H=\ms{O}_{\mb{P}(\on{Sym}^4V^{\vee})}(1)$ and 
+\begin{align*}
+    \alpha = H^{14}+c_1(\on{Sym}^4V^{\vee})H^{13}+\cdots+c_{14}(\on{Sym}^4V^{\vee}). 
+\end{align*}
+Using the fact that $\alpha H + c_{15}(\on{Sym}^4V^{\vee})=0$, we find that
+\begin{align*}
+    \int_{\mb{P}(\on{Sym}^4V^{\vee})\to S}\alpha\beta
+\end{align*}
+is the constant term of $\beta$. By this, we mean that any class $\beta\in A^{\bullet}(\mb{P}(\on{Sym}^4V^{\vee})$ can be written as a polynomial in $H$ and pullbacks of classes of $A^{\bullet}$ and integrating against $\alpha$ extracts the constant term. 
+
+To finish, we let $\alpha=\frac{1}{24}\phi_{*}(1)$, apply the projection formula to reduce our problem to evaluating
+\begin{align*}
+    \frac{1}{24}\int_{\mb{P}(V^{\vee})^4\to S}\phi^{*}(\alpha),
+\end{align*}
+which evaluates to the answer claimed in \Cref{fourlines}, after multiplying by 24. 
+\end{proof}
+
+\section{Degeneration of orbits}
+\label{degenerationsection}
+
+\subsection{Families of orbits}
+Given a degree $d$ plane curve with an 8-dimensional orbit, we can consider the orbit map
+\begin{center}
+    \begin{tikzcd}
+    PGL_3 \ar[d,hook] \ar[r] & \mb{P}^{\binom{d+2}{2}-1}\\
+    \mb{P}^8 \ar[ur,dashed,"\phi"]
+    \end{tikzcd}
+\end{center}
+inducing a rational map $\mb{P}^8\dashrightarrow \mb{P}^{\binom{d+2}{2}-1}$. Resolving this map and pushing forward the fundamental class yields $\#\on{Aut}(C)$ times the class of the orbit closure of $C$, which the definition of the predegree (see \Cref{predegree}). 
+
+Suppose we have a family $\gamma: \Delta\to \mb{P}^{\binom{d+2}{2}-1}$ of plane curves parameterized by a smooth (affine) curve $\Delta$. Pulling back the universal curve yields $\mc{C}\to \Delta$. Let $C_t$ be a general fiber of $\mc{C}_t$ and $C_0$ be the special fiber over $0\in \Delta$. In all our applications, $\Delta$ is an open subset of $\mb{A}^1$. Then, by taking the orbit map fiberwise, we get
+\begin{center}
+    \begin{tikzcd}
+    PGL_3\times\Delta \ar[d,hook] \ar[r] & \mb{P}^{\binom{d+2}{2}-1}\\
+    \mb{P}^8\times\Delta \ar[ur,dashed,"\Phi"]
+    \end{tikzcd}
+\end{center}
+Resolving $\Phi: \mb{P}^8\times\Delta\to \mb{P}^{\binom{d+2}{2}-1}$ yields a degeneration of the orbit closure of $C_t$ (with multiplicity $\#\on{Aut}(C)$) to a union of 8-dimensional cycles. Our goal is to identify those cycles in the limit. To do so, we will apply \Cref{principle} which will help organize our argument. 
+
+Let $\Delta^{\times}=\Delta\backslash\{0\}$.
+
+\rood{Check if \Cref{principle} makes sense to you and rewrite if necessary. I thought this was really obvious, but it was annoying to write down.}
+\begin{prin}
+\label{principle}
+Let $\mu: PGL_3\times \mb{P}^{\binom{d+2}{2}-1}\to \mb{P}^{\binom{d+2}{2}-1}$ be the action of $PGL_3$ on $\mb{P}^{\binom{d+2}{2}-1}$ by pullback. Suppose for $1\leq i\leq n$ we have found maps $\gamma_i: \Delta^{\times}\to PGL_3$ such that
+\begin{enumerate}
+    \item The unique extension $\mu(\gamma_i,\gamma): \Delta\to \mb{P}^{\binom{d+2}{2}-1}$ sends 0 to the plane curve $C_i$. 
+ %   \item
+ %   The predegrees of $C_1,\ldots,C_n$ adds up to the predegree of $C_t$. 
+    \item
+The images of $\gamma_i(0)$ are pairwise distinct. 
+\end{enumerate}
+Then, the equivariant class
+$$p_{C_t}-\sum_{i=1}^{n}p_{C_i}$$
+can be represented by a nonnegative sum of effective cycles. 
+
+Suppose in addition the predegrees of $C_1,\ldots,C_n$ adds up to the predegree of $C_t$. Then, 
+$$p_{C_t}=\sum_{i=1}^{n}p_{C_i}.$$
+\end{prin}
+
+\begin{proof}
+Given a variety $B$ together with a rank 3 vector bundle $V$, the degeneration given by resolving $\Phi$ also relativizes to a degeneration of $\#\on{Aut}(C_t)[Z_t]$ into a union of relative cycles in $\on{Sym}^dV^{\vee}$ given an equality in $A^{\bullet}(\on{Sym}^dV^{\vee})\cong A^{\bullet}(B)$. Therefore, to prove \Cref{principle}, we can and will assume $B$ is a point. 
+
+For each curve $\gamma_i$, we can multiply by $PGL_3$ to get a map 
+\begin{center}
+    \begin{tikzcd}
+    \Delta\times PGL_3 \ar[r] \ar[rr,bend left=20,"f_i"] & \Delta\times \mb{P}^8  \ar[r,dashed,"\Phi"] & \mb{P}^{\binom{d+2}{2}-1}
+    \end{tikzcd}
+\end{center}
+where $(f_i)_{*}(1)$ is $\#\on{Aut}(C_i)[Z_{C_i}]$. Let $\mc{X}\subset \Delta\times \mb{P}^8\times \mb{P}^{\binom{d+2}{2}-1}$ be the closure of the graph of $\Phi$. We see $\mc{X}\to \mb{P}^{\binom{d+2}{2}-1}$ resolves $\Phi$. Each $\gamma_i$ corresponds to an 8-dimensional component $Y_i$ of the special fiber $X_0$ of $\mc{X}\to \Delta$ over $0\in \Delta$. Each $Y_i$ pushes forward to a positive multiple of $\#\on{Aut}(C_i)[Z_{C_i}]$ in $\mb{P}^{\binom{d+2}{2}-1}$. 
+
+Each $Y_i$ lies over precisely the orbit closure of $PGL_3\cdot \gamma_i(0)$ in $\mb{P}^8$ under the map $X_0\to \mb{P}^8$ given by restricting the resolution $\mc{X}\to \Delta\times\mb{P}^8$ over $0\in \Delta$. Since the assumption on the images of $\gamma_i(0)$ are equivalent to the orbits $PGL_3\cdot \gamma_i(0)$ being distinct as we vary over $1\leq i\leq n$, the $Y_i$'s correspond to distinct components of $X_0$. 
+
+Therefore, we find the difference
+$$\#\on{Aut}(C_t)[Z_{C_t}]-\sum_{i=1}^{n}\#\on{Aut}(C_i)[Z_{C_i}]$$
+is a nonnegative combination of 8-dimensional cycles. If we assume the equality of predegrees, the degrees of those 8-dimensional cycles sum to zero. This means the difference is identically zero. 
+\end{proof}
+
+\subsection{Degeneration to the double conic}
+\subsubsection{Preliminary lemmas}
+
+\begin{lem}
+\label{interpolate}
+Let $Q$ be a smooth conic and $p\in Q$ a point. Let $p_1$ and $p_2$ (respectively $p_1$) be points of $\mb{P}^2$ so that $p_1$, $p_2$ and $p$ are not collinear  (respectively not lying on the tangent line to $Q$ at $p$).  Then, there exists a unique smooth conic $Q'$ meeting $Q$ at $p$ to order 3 (respectively 4) and containing $p_1$ and $p_2$ (respectively $p_1$). 
+\end{lem}
+
+\begin{proof}
+Let $Z$ be the curvilinear scheme of length 3 (respectively 4) in a neighborhood of $p\in Q$.
+By counting conditions, we see that there is a conic $Q'$ containing $Z$, $p_1,\ldots,p_{5-n}$. If $n=3$, then $Q'$ cannot be a double line since $Z$, $p_1$, $p_2$ are not set-theoretically contained in a line, and the conic cannot be the union of two distinct lines since $Z$ is not contained in a line. Therefore the conic is smooth. 
+
+If $n=4$, then $Q'$ cannot be a double line since the underlying line must be tangent to $Q$ at $p$, but that line does not pass through $p_1$ by assumption. We also cannot have $Q'$ be the union of two distinct lines or else $Q'$ can only meet $Q$ at $p$ to order 3. Therefore $Q'$ is smooth.
+
+In both cases, $Q'$ is unique because the space of all such conics is a linear system and any nontrivial linear system of conics contains singular conics. 
+\end{proof}
+
+\begin{lem}
+\label{coniclemma}
+For $3\leq n\leq 7$, let $C$ be a general quartic curve with an $A_n$ singularity. Then, there is a smooth conic meeting $C$ at its singular point to order $n+1$ and meeting $C$ transversely at $7-n$ other points. 
+\end{lem}
+
+\begin{proof}
+We will do this case by case. Let $p\in C$ be the singular point, For the case $n=3$, the conic needs to pass through $p$ with a specified tangent direction and otherwise intersect $C$ transversely. There is 3-dimensional linear system of conics passing through $p$ with a specified tangent direction. In that 3-dimensional linear system, the conics that intersect $C$ at 4 other distinct points form a nonempty open set, as it contains the union of the unique line passing through $p$ in the specified tangent direction with a line intersecting $C$ transversely. Since the space of smooth conics in that 3-dimensional linear system is also nonempty, there exists a smooth conics passing through $p$ in the specified tangent direction and $C$ at four other points. 
+
+For the case $n=4$, we need to resort to equations. The space of conics meeting $C$ at $p$ to order 5 is the same as the space of conics containing a specified length 3 curvilinear scheme $Z$, and we can assume $p=[0:0:1]$ and $Z$ is given by the length 3 neighborhood of $X^2+YZ$ around $p$. We can specialize $C$ while preserving $p$ and $Z$, and it suffices to prove the result for the specialized curve. Consider the rational quartic curve $C_0$ given by 
+$$(X^2+YZ)^2+X^3Y=0,$$ which has a rhamphoid cusp at $[0:0:1]$ and an ordinary cusp at $[0:1:0]$.
+
+Consider the conic given by $X^2+YZ+aXY+bY^2=0$. If we restrict $C_0$ to the conic, then we get $(aXY+bY^2)^2+X^3Y=(X^3+a^2X^2Y+2abXY^2+b^2Y^3)Y$. Therefore, the restriction of $C_0$ to the conic is also given by the union of 4 lines through $p=[0:0:1]$. The line given by $Y=0$ is tangent to the conic at the point, to it suffices to check the remaining three lines are distinct. This can be shown be noting that the discriminant of the cubic polynomial $X^3+a^2X^2Y+2abXY^2+b^2Y^3$ does not vanish identically (indeed it is not even homogenous).
+
+For the cases $n=5,6$, we use \Cref{interpolate}. In both cases, we have a curvilinear scheme $Z$ of length $n-2$ contained in a conic, and we want to find a smooth conic containing $Z$ and passing through $7-n$ distinct other points of $C$. If $n=5$, then it suffices to pick the remaining 2 points $p_1,p_2$ of $C$ so that $p$, $p_1$, and $p_2$ do not all lie on a line. If $n=6$, it suffices to pick the remaining point $p$ to not be contained in the tangent line to $Z$. \end{proof}
+
+\subsubsection{Sibling orbit with $A_6$ singularity}
+\begin{lem}
+\label{doubleconic}
+Let $Q(X,Y,Z)$ be the equation of a nonsingular conic, and $F(X,Y,Z)$ be the equation of a quartic plane curve. Suppose $p$ is a point at which $\{Q=0\}$ and $\{F=0\}$ intersect transversely. Consider the family of plane quartic curves parameterized by $\Delta=\mb{A}^1$ given by the equation
+\begin{align*}
+    t^3 F(X,Y,Z)+Q(X,Y,Z)^2=0.
+\end{align*}
+Then, there is a 1-parameter family of matrices $\gamma: \Delta^{\times}=\mb{A}^{1}\backslash\{0\}\to PGL_3$ such that the limiting matrix $\lim_{t\to 0}{\gamma(t)}$ in the $\mb{P}^8$ of $3\times 3$ matrices modulo scalars has image precisely the point $p$ and such that the limit
+\begin{align*}
+    \lim_{t\to 0}{t^3F(\gamma(t)\cdot (X,Y,Z))+Q(\gamma(t)\cdot (X,Y,Z))^2}
+\end{align*}
+in the $\mb{P}^{14}$ of quartic plane curves is projectively equivalent to the rational curve with an $A_6$ singularity and an 8-dimensional orbit. 
+\end{lem}
+
+\begin{proof}
+Without loss of generality assume $p=[0:0:1]$ and $Q=X^2+YZ$. Let $\gamma(t)$ act diagonally by sending $X\to tX$, $Y\to t^2Y$, $Z\to Z$. The limit $\lim_{t\to 0}{\gamma(t)}$ has image $[0:0:1]$ as claimed. Now, to evaluate 
+\begin{align*}
+    \lim_{t\to 0}{t^3F(t^2X,tY,Z)+Q(t^2X,tY,Z)^2},
+\end{align*}
+we note $Q(t^2X,tY,Z)^2=t^4Q(X,Y,Z)$. Also, the only coefficients of $t^3F(t^2X,tY,Z)$ whose vanishing order with respect to $t$ is at most 4 are the coefficients of $Z^4$ and $Z^3 X$. Since $F$ vanishes at $p=[0:0:1]$ by assumption, the coefficient of $Z^4$ is zero. 
+
+The tangent line to $\{Q=0\}$ at $p$ is given by $Y=0$. Since $\{F=0\}$ is transverse to $\{Q=0\}$ at $p$, the coefficient of $Z^3X$ is nonzero. Therefore, 
+\begin{align*}
+    \lim_{t\to 0}{t^3F(t^2X,tY,Z)+Q(t^2X,tY,Z)^2}=(X^2+YZ)^2+aZ^3X
+\end{align*}
+for $a\neq 0$, which is the unique, up to projective equivalence, rational curve with an $A_6$ singularity with a full dimensional orbit given in \cite[Example 5.4]{AF00}.
+\end{proof}
+
+\begin{cor}
+\label{cor24}
+For a general quartic plane curve $C$, 
+\begin{align*}
+    p_C = 24 p_{C_{A_6}},
+\end{align*}
+where $C_{A_6}$ is a general quartic curve with an $A_6$ singularity. 
+\end{cor}
+
+\begin{proof}
+Let $F(X,Y,Z)$ cut out $C$. Pick a conic intersecting $C$ transversely in 8 points and let $Q(X,Y,Z)$ cut out the conic. Then, consider the family of curves over $\mb{A}^1$ given by
+\begin{align*}
+    t^3F(X,Y,Z)+Q(X,Y,Z)^2.
+\end{align*}
+Applying \Cref{doubleconic} gives 8 choices $\gamma_i: \mb{A}^1\to PGL_3$, where $1\leq i\leq 8$, to use in \Cref{principle}. To conclude, we use either \cite[Example 5.4]{AF00} or \Cref{A6E6orbit} to see the predegree of a general rational quartic $C_{A_6}$ with an $A_6$ singularity is $1785$, and $1785\cdot 8=14280$, which is the predegree the orbit of a general quartic curve \cite{AF93}. To finish, we note $\#\on{Aut}(C_{A_6})=3$ by the equation in \cite[Example 5.4]{AF00}.
+\end{proof}
+
+\begin{thm}
+\label{smooth}
+For a smooth quartic plane curve $C$ with no hyperflexes, 
+\begin{align*}
+    p_C = 8 p_{C_{A_6}},
+\end{align*}
+where $C_{A_6}$ is a general quartic curve with an $A_6$ singularity.
+\end{thm}
+
+\begin{proof}
+Let $F$ cut out a general plane quartic $D$ and $G$ cut out $C$. Consider the family of curves given by $tF+G$ and apply \Cref{principle} in the special case where $n=1$ and $\gamma_i: \mb{A}^{1}\backslash\{0\}\to PGL_3$ is the identity. Then, the fact that the predegree of $C$ is the same as the the predegree of a general plane quartic $D$ \cite{AF93} means $p_C=p_D$. We conclude by \Cref{cor24}. 
+\end{proof}
+
+\begin{thm}
+\label{Anorbit}
+Let $C_{A_n}$ be a general curve with an $A_n$ singularity, where $3\leq n\leq 6$. Then, $p_{C_{A_n}}=(7-n)p_{C_{A_6}}$.
+\end{thm}
+
+%\rood{Can you show $\#\on{Aut}(C_{A_n})=1$ for $n<6$? It's probably true and would remove the annoying factor in the statement}
+
+\begin{proof}
+By \Cref{coniclemma} we can find a smooth conic that meets $C_{A_n}$ at its singular point to order $n+1$ and meets $C$ transversely at $7-n$ other points $p_1,\ldots,p_{7-n}$. Let $F(X,Y,Z)$ cut out $C_{A_n}$ and $Q(X,Y,Z)$ cut out the conic. 
+
+Consider the family of quartic curves given by
+\begin{align*}
+    t^3 F(X,Y,Z)+Q(X,Y,Z)^2.
+\end{align*}
+Note in particular that for general fixed $t$, we get a curve with an $A_n$ singularity. From \Cref{doubleconic} gives $7-n$ choices for $\gamma_i: \mb{A}^{1}\backslash\{0\}\to PGL_3$ to use in \Cref{principle}. Applying \cite[Example 5.4]{AF00}, we find the predegree of $C_{A_n}$ is $(7-n)$ times the predegree of $C_{A_6}$. 
+\end{proof}
+
+\rood{
+The argument in \Cref{Anorbit} still works for $n=1,2$, except the predegrees don't add up. This suggests there are more orbits to identify.}
+\subsection{Acquiring hyperflexes}
+Aluffi and Faber already considered the case of a smooth plane curve with no hyperflexes degenerating to a smooth curve with a hyperflex \cite[Theorem IV(2)]{AF93P}. However, in order to run their argument, we need to take a pencil of curves, where each member is tangent to the hyperflex of the special curves. Since a smooth quartic can have up to twelve hyperflexes \cite[Section 4]{KK77}, some adjustment has to be made. Instead of using equations as in \cite{AF93P} and the rest of our degenerations, we use ideas of limit linear series. 
+
+\begin{lem}
+\label{E6}
+Let $C\subset\mb{P}^2$ be a rational quartic with an $E_6$ singularity and two simples flexes. Then, $C$ has an 8-dimensional orbit, so in particular is projectively equivalent to $C_{E_6}$. 
+\end{lem}
+
+\begin{proof}
+We will show $\on{Aut}(C)$ is finite by showing that only a finite subgroup of $PGL_3$ preserves the flexes and the tangent vector to the singularity. Let $G$ be the component of $\on{Aut}(C)$ containing the identity. 
+
+Without loss of generality, we can assume the $E_6$ singularity is at $[0:0:1]$ and the two flexes are at $[0:1:0]$ and $[1:0:0]$. The group $G$ fixes these three points, so $G$ is a subgroup of $\begin{pmatrix} a & & \\ & b & \\ & & c\end{pmatrix}$.
+
+In addition, $G$ fixes the tangent vector to the singularity. The line $L$ tangent to the singularity meets the curve to order 4 at $[0:0:1]$, so it cannot intersect $[0:1:0]$ or $[1:0:0]$. Since $G$ must preserve $L$, $a=b$. 
+
+Let $L_1$ be the tangent to $C$ at $[0:1:0]$ and $L_2$ be the tangent to $C$ at $[1:0:0]$. By Bezout we know neither line passes through $[0:0:1]$. We also cannot have $L_1=L_2$ by Bezout's theorem. Therefore, $L_1$ does not pass through $[0:1:0]$ or $L_2$ does not pass through $[1:0:0]$. In the first case, we find $a=c$ and in the second case we find $b=c$.
+\end{proof}
+
+\begin{lem}
+\label{hyperflex}
+Let $\Delta$ be a smooth (affine) curve, $0\in \Delta$ be a closed point, and $t$ be a uniformizer at $0$. Let $\mc{C}\subset \mb{P}^2\times \Delta$ be a family of smooth quartic curves where the general member $C_t$ has general flex behavior and $C_0$ has a hyperflex at $p\in C_0$. 
+
+Base changing and restricting $\Delta$ to an open neighborhood of zero if necessary, there is a family of matrices $\gamma: \Delta\backslash\{0\}\to PGL_3$ such that, in the $\mb{P}^8$ of matrices modulo scalars, $\lim_{t\to 0}\gamma(t)$ has image exactly the point $p$, and, in the $\mb{P}^{14}$ of quartics,
+\begin{align*}
+    \lim_{t\to 0}C_t(\gamma(t)\cdot (X,Y,Z))
+\end{align*}
+is projectively equivalent to $C_{E_6}$.
+\end{lem}
+
+\rood{This argument should be cleaned up. I struggled trying to explain this one. At the very end, one confusing point to me was the different between pulling back a family of curves under a family of linear automorphisms $\gamma:\Delta\to PGL_3$ and pushing forward. In this proof you want to push forward, but with equations in the other proofs, you want to pull back.}
+
+\begin{proof}
+We will use ideas from limit linear series (see \cite{EH86} for a reference), but it is not necessary to know the theory to understand the argument.
+
+After base change, we can assume we have two sections $\sigma_1,\sigma_2: \Delta\to \mc{C}$, where $\sigma_1$ and $\sigma_2$ trace out two flexes in the family limiting to the hyperflex $p_1:=p\in C_0$. 
+
+We blow up $C_0$ at $p_1$ in order to try to separate $\sigma_1$ and $\sigma_2$. Since $\mc{C}$ is smooth, the exceptional divisor is a rational curve $D_1$ attached to $C_0$ at $p_1$. 
+
+The family of curves $\mc{C}$ carries a line bundle $\mc{L}$ giving the map $\mc{C}\to \mb{P}^2$. Shrinking $\Delta$ to an open neighborhood around $0$ if necessary, pick sections $s_0,s_1,s_2$ of $\mc{L}$ such that, when restricted to $C_0$, we have $s_0$, $s_1$, $s_2$ vanish to orders 4, 1, and 0 respectively.
+
+Let $\pi_1: \on{Bl}_{p_1}\mc{C}\to \mc{C}$ be the blowup map. Considered as meromorphic sections of the line bundle $\mc{L}(-4D_1)$, $\pi_1^{*}s_0$, $\pi_1^{*}s_1$, $\pi_1^{*}s_2$ have poles of orders 0, 3, 4 respectively. Therefore, to make them regular sections, we have to multiply them by $t^0$, $t^3$, and $t_4$, respectively. Then, $\pi_1^{*}s_0, t^3\pi_1^{*}s_1, t^4\pi_1^{*}s_2$ vanish to orders $0$, $3$ and $4$ respectively on $C_0$, so they also vanish to orders 0, 3, and 4 respectively at $C_0\cap D_1$ when restricted to $D_1$. 
+
+To summarize, $\pi_1^{*}s_0, t^3\pi_1^{*}s_1, t^4\pi_1^{*}s_2$ are regular sections of $\pi_1^{*}\mc{L}(-4D_1)$. When restricted to $C_0$ the sections correspond to a constant map $C_0\to \mb{P}^2$. When restricted to $D_1$, the sections map $D_1\cong \mb{P}^1$ into $\mb{P}^2$ such that the image is an irreducible quartic plane curve. It cannot map multiple to 1 onto its image because $t^3\pi_1^{*}s_1$ vanishes to order 3 at $p_1$, which is relatively prime to $4$. Furthermore, $p_1\in D_1$ maps to a unibranch triple point singularity. No other point in $D_1$ cannot map to the image of $p_1$ since $t^4\pi_1^{*}s_2$ already vanishes to order 4 and $p$. Therefore the image of $D_1$ in $\mb{P}^2$ is a rational quartic with an $E_6$ singularity.
+
+Consider the proper transforms $\wt{\sigma_1}$ and $\wt{\sigma_2}$ of $\sigma_1$ and $\sigma_2$. They cannot pass through $C_0\cap D_1$ because $\sigma_1$ and $\sigma_2$ intersect $C_0$ with multiplicity 1 at $p$. If $\wt{\sigma_1}$ and $\wt{\sigma_2}$ intersect $D_1$ at two distinct points, then the image of $D_1$ in $\mb{P}^2$ also has two simple flexes. Applying \Cref{E6} shows that this is projectively equivalent to $C_{E_6}$, and so has an 8-dimensional orbit under $PGL_3$. To find the family of matrices $\gamma: \Delta\backslash\{0\}\to PGL_3$, we note that the construction above yields a family of matrices parameterized by $\Delta$ that sends $\pi_1^{*}s_0, t^3\pi_1^{*}s_1, t^4\pi_1^{*}s_2$ to $\pi_1^{*}s_0, t^{-3}\pi_1^{*}s_1, t^{-4}\pi_1^{*}s_2$ respectively, which is equivalent to $t^4\pi_1^{*}s_0, t\pi_1^{*}s_1, \pi_1^{*}s_2$in $PGL_3$. This is our $\gamma: \Delta\backslash\{0\}\to PGL_3$. We see $\gamma(0)$ is precisely the point $p$. 
+
+If $\wt{\sigma_1}$ and $\wt{\sigma_2}$ intersect $D_1$ at the same point $p_2$, then the image of $D_1$ in $\mb{P}^2$ has a hyperflex and its orbit under $PGL_3$ is smaller than 8-dimensional. Let them intersect $D_1$ at $p_2$. Let $\pi_2$ be the blowup map at $p_2$ and $D_2$ be the exceptional divisor. Then, we pullback $\pi_1^{*}\mc{L}(-4D_1)$ and $\pi_1^{*}s_0, t^3\pi_1^{*}s_1, t^4\pi_1^{*}s_2$ under $\pi_2$. 
+
+As before, pick a basis $s_0^1$, $s_1^1$, $s_2^1$ for the vector space spanned by $\pi_1^{*}s_0, t^3\pi_1^{*}s_1, t^4\pi_1^{*}s_2$ such that $s_0^1$, $s_1^1$, $s_2^1$ vanish to orders $4$, $1$, and $0$ at $p_2$ when restricted to $D_1$. Then, as above, we twist $\pi_2^{*}\pi_1^{*}\mc{L}(-4D_1)$ down by $-D_2$ and replace $s_0^1$, $s_1^1$, $s_2^1$ with $s_0^1$, $t^3s_1^1$, $t^4s_2^1$. If the proper transforms of $\wt{\sigma_1}$ and $\wt{\sigma_2}$ intersect $D_2$ at distinct points, we are done by the same argument as above. The image of the family of matrices $\gamma(t)$ will now be the point $p_2$, but $p_2$ maps to the same point as $p_1$ in $\mb{P}^2$. 
+
+If the proper transforms of $\wt{\sigma_1}$ and $\wt{\sigma_2}$ intersect $D_2$ at the same point, we let $p_3\in D_2$ be the common point of intersection, blow up at $p_3$ and repeat. 
+
+In summary, we found a family of matrices $\gamma: \Delta\backslash\{0\}\to PGL_3$ that takes the original map $\mc{C}\to \mb{P}^2$ and creates a rational map $\mc{C}\dashrightarrow \mb{P}^2$ under $\emph{pullback}$ under family of linear maps $\mb{P}^2\times \Delta \dashrightarrow \mb{P}^2$ given by $\gamma$. Furthermore $\lim_{t\to 0}{\gamma(t)}$ in the $\mb{P}^8$ of $3\times 3$ matrices up to scalar has image precisely the point $p$. To resolve $\mc{C}\dashrightarrow \mb{P}^2$ , we blow up the special fiber of $\mc{C}\to \Delta$ repeatedly to get a chain of rational curve $D_m\cup D_{m-1}\cup\cdots\cup D_1\cup C_0$ in the special fiber. Here, $D_{i}$ is attached to $D_{i-1}$ and $D_1$ is attached to $C_0$ at $p$. The resolved map collapses $D_{m-1}\cup\cdots\cup D_1\cup C_0$ to the same point as $p$ and maps $D_{m}$ onto a curve that is projectively equivalent to $C_{E_6}$. 
+\end{proof}
+
+\begin{thm}
+\label{allsmooth}
+Let $C$ be a smooth quartic plane curve with $n$ hyperflexes. Then,
+\begin{align*}
+    p_C = 8p_{C_{A_6}}-np_{C_{E_6}}. 
+\end{align*}
+\end{thm}
+
+\begin{proof}
+We consider a family of smooth quartic curves, where the general member $C'$ has no hyperflexes, where $C$ is the special fiber. 
+
+From applying \Cref{hyperflex} and \Cref{principle}, we see that 
+\begin{align*}
+    p_C'-p_C-np_{C_{E_6}}
+\end{align*}
+is represented by effective cycles, so it suffices to check the predegree of $C'$ is the predegree of $C$ plus $n$ times the predegree of $C_{E_6}$. The predegree of $C$ is $294n$ less than the predegree of $C'$ \cite[Section 3.6]{AF93}. Also, the predegree of $C_{E_6}$ is 294 from \cite[bottom of page 36]{AF00} or \Cref{A6E6orbit} (noting $\#\on{Aut}(C_{E_6})=2$). 
+
+Finally, we use $p_C'=8p_{C_{A_6}}$ from \Cref{smooth}.
+\end{proof}
+
+\subsection{Splitting off a line as a component}
+\begin{lem}
+\label{line}
+Let $L(X,Y,Z)$, $G(X,Y,Z)$ and $F(X,Y,Z)$ cut out plane curves of degrees $1$, $d-1$, $d$ respectively. Suppose $\{L=0\}$ intersects both $\{G=0\}$ and $\{F=0\}$ at general points. Consider the family of degree $d+m$ curves parameterized by $\mb{A}^1$ given by the equation
+\begin{align*}
+    tF(X,Y,Z)+L(X,Y,Z)G(X,Y,Z).
+\end{align*}
+Then, there is a 1-parameter family of matrices $\gamma: \mb{A}^1\backslash\{0\}\to PGL_3$ such that the limiting matrix $\lim_{t\to 0}{\gamma(t)}$ in the $\mb{P}^8$ of $3\times 3$ matrices modulo scalars has image precisely the line cut out by $L$. Furthermore, the limit
+\begin{align*}
+    \lim_{t\to 0}tF(\gamma(t)\cdot (X,Y,Z))+L(\gamma(t)\cdot (X,Y,Z))G(\gamma(t)\cdot (X,Y,Z))
+\end{align*}
+in the $\mb{P}^{\binom{d+2}{2}-1}$ of degree $d$ plane curves a general degree $d$ plane curve with a $d-1$-fold multiplicity point. 
+\end{lem}
+
+\begin{proof}
+Without loss of generality, we can assume $L(X,Y,Z)=X$. Let $\gamma(t)$ be the diagonal matrix sending $X\to tX$, $Y\to Y$, $Z\to Z$. Then, \begin{align*}
+    \lim_{t\to 0}tF(\gamma(t)\cdot (X,Y,Z))+L(\gamma(t)\cdot (X,Y,Z))G(\gamma(t)\cdot (X,Y,Z))
+\end{align*}
+is $F(0,Y,Z)+XG(0,Y,Z)$. Since $\{F=0\}$ and $\{G=0\}$ intersect $\{L=0\}$ at general points, $F(0,Y,Z)+XG(0,Y,Z)$ cuts out a general curve with a point of multiplicity of $d-1$ at $[1:0:0]$. 
+\end{proof}
+
+\begin{prop}
+Let $d\geq 4$ and let $C, C_{d-1},D$ be a general curve of degree $d$, a general degree $d$ curve with a point of multiplicity $d-1$, and a general degree $e$ curve union $d-e$ lines. Then,
+\begin{align*}
+    p_C = (d-e)p_{C_{d-1}}+p_D.
+\end{align*}
+\end{prop}
+
+\begin{proof}
+This follows from \Cref{line} and \Cref{principle} provided we can show the equality of predegrees. 
+
+To show the equality on predegrees, it suffices to consider the case $e=0$, where we want to see that the predegree of a general degree $d$ curve is $d$ times the predegree of a general degree $d$ curve with a point of multiplicity $d-1$ plus the predegree of the union of $d$ general lines. The result follows from plugging into the formulas in \cite[Examples 3.1, 4.2]{AF00} and \cite{AF93}. 
+\end{proof}
+
+\begin{comment}
+\begin{prop}
+For each $C$ a smooth quartic plane curve with no hyperflexes (respectively a general quartic plane curve with an $A_n$ singularity for $3\leq n\leq 7$), the degree of its orbit closure is $14280=1785\cdot 8$ (respectively $14280-1785(n+1)$). 
+\end{prop}
+
+\begin{proof}
+For a smooth quartic plane curve with no hyperflexes, see \cite{AF93}. See \cite[Example 5.4]{AF00} for the case of a quartic curve with an $A_n$ singularity.
+\end{proof}
+\end{comment}
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
+\end{document}

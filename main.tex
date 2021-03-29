@@ -1,0 +1,208 @@
+\documentclass{article}
+
+%============================
+%         Obligatory
+%============================
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{array}
+
+%============================
+%         Aesthetic
+%============================
+\usepackage[hidelinks]{hyperref} % For citations without hideous colored boxes
+\usepackage{geometry} % For adjusting the page domensions if desired
+\usepackage{sectsty} % For centering Section/Subsection titles
+\usepackage{marginnote} % Currently unused, but for notes in the margin
+\usepackage{graphics} % For custom pretty fractions 
+\usepackage{newtxmath} % Changes the math font to be bolder and prettier
+
+\geometry{margin=1.25 in}
+\sectionfont{\centering}
+\subsectionfont{\centering}
+
+\title{Counting Cubic Surfaces}
+\author{Anand Patel \& Dennis Tseng}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{definition}{Definition}[section]
+
+\newenvironment{example}{\textbf{Example:}}{}
+\newenvironment{remark}{\textbf{Remark:}}{}
+
+% chk is a stylized "dual" symbol created by altering the vee command 
+\newcommand{\chk}[1]{#1^{\text{\scalebox{.8}[.6]{$\boldsymbol{\vee}$}}}}
+
+% altfrac and altfraci are twin commands for alternate fractions. The difference between them is that altfrac is bogger and prettier, while altfraci fits in inline mode. In the future I plan to merge them into one command which checks the displaystyle and uses the appropriate form of the command. Note that this command is specialized to the newtxmath package, and without it the fraction shape could be distorted. This can be solved by adjusting the different numbers in the command.
+\newcommand{\altfrac}[2]{\ifmmode\def\tmp{$}\else\def\tmp{}\fi
+		\mbox{{\raisebox{.5\ht\strutbox}{\tmp#1\tmp}}
+		\kern-5pt\scalebox{1.75}[1.5]{/}\kern-1.5pt
+		\mbox{\raisebox{-.2\ht\strutbox}{\tmp#2\tmp}}}
+}
+
+\newcommand{\altfraci}[2]{\ifmmode\def\tmp{$}\else\def\tmp{}\fi
+		\scalebox{.925}[.925]{{\mbox{{\raisebox{.25\ht\strutbox}{\tmp#1\tmp}}
+		\kern-5pt\scalebox{1.5}[1.3]{\raisebox{-.1\ht\strutbox}{/}}\kern-0.5pt
+		\mbox{\raisebox{-.15\ht\strutbox}{\tmp#2\tmp}}}}}
+}
+
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
+
+\newcommand{\um}[1]{\color{blue}{#1}\color{black}}
+\newcommand{\remove}[1]{\color{red}{#1}\color{black}}
+\newcommand{\add}[1]{\color{green}{#1}\color{black}}
+
+\newcommand{\bz}{B\'{e}zout}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\keps}{\altfrac{k[\e]}{\left(\e^2\right)}}
+\newcommand{\kepsi}{\altfraci{k[\e]}{\left(\e^2\right)}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\biggreenstar}{\huge \add{\raisebox{-.15\ht\strutbox}{$[\boldsymbol{*}]$}}\normalsize}
+
+\DeclareMathOperator{\Sec}{Sec}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Ima}{Im}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+\label{sec:intro}
+Our objective is to determine an enumerate formula which counts the
+number of times a general cubic surface occurs in a general
+$4$-parameter family $ \pi: X \to B$ of cubic surfaces.  We work
+throughout with finite-type schemes over an algebraically closed,
+characteristic ground field $k$.
+
+\begin{definition}
+  Let $\pi :X \to B$ be a flat, projective morphism of relative
+  dimension $2$, with $B$ a $4$-dimensional proper scheme. We say
+  $\pi$ is  {\bf a good family of cubic surfaces} if for all
+  $b \in B$, the fiber $X_{b}$ is isomorphic to an irreducible cubic
+  surface whose automorphism group is finite.
+\end{definition}
+
+The base of a good family naturally carries the natural rank $4$
+vector bundle
+\begin{align}
+  \label{eq:V}
+  V := \omega_{X/B}^{-1}.
+\end{align}
+The base $B$ of a good family of cubic surface admits a rational map
+\begin{align}
+  \label{eq:mu}
+  \mu: B \dashrightarrow M
+\end{align}
+to the coarse moduli variety $M$ of cubic surfaces.  By general
+equivariant-geometric arguments, there exists a universal
+weighted-degree $4$ polynomial
+\begin{align}
+  \label{eq:P}
+  P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4}
+\end{align}
+in the Chern classes $v_{i} = c_{i}V$, such that
+\begin{align}
+  \label{eq:equality}
+  \deg P(v_{1},v_{2},v_{3},v_{4}) = \deg \nu
+  \end{align}
+Our goal is to determine $P$, which amounts to determining
+the five coefficients $a_{\bullet}$.
+
+This is essentially an exercise in the method of indetermined
+coefficients. We devote each section to the construction of a
+particular good family.  After each section, we reset notation.
+
+\section{Family $B_1$}
+\label{sec:first-test-family}
+
+In this section, we let $S_7 \subset \P^7$ denote a degree $7$ del
+Pezzo surface. We let $E_{1}, E_{2}$ denote the two disjoint lines on
+$S_{7}$ and we let $L \subset S_{7}$ denote the third line on $S_{7}$,
+which meets both $E_{1}$ and $E_{2}$. Finally, we choose a general
+rational normal quintic curve $C \subset S_{7}$ meeting $E_{2}$ at a
+single point other than $L \cap E_{2}$.
+
+The base of our first family is
+\begin{align}
+  \label{eq:B1}
+  B_1 = C^{[4]} \simeq \P^{4}.
+\end{align}
+ $B_1$ carries a general family of cubic surfaces over it.
+To see this, one must only note that any length four subscheme
+$Z \subset C$ satisfies the property that the three dimensional span
+$\langle Z \rangle$ intersects $S_7$ at precisely the scheme
+$Z$. Therefore, for each such $Z$, the projection
+$p_{\langle Z \rangle}: S_7 \dashrightarrow \P^{3}$ has as image an
+irreducible cubic surface.  Furthermore, one can check that each of
+these has a finite automorphism group.
+
+The Chern classes of the resulting vector bundle $V$ on
+$B_{1} = \P^{4}$ are easily determined. In fact we have:
+$v_{1} = -2h$, $v_{2}=h^2$, and $v_{3}= v_{4}=0$, where $h$ denotes
+the hyperplane class on the projective space $B_1$.
+
+\subsection{Enumerating cubics in $B_1$}
+\label{sec:enum-cubics-b_1}
+
+
+For $B_1$ to be of any use, we must {\sl a priori} know
+$\deg P(v_{1},v_{2},v_{3},v_{4})$ for $B_1$. This is easily
+achievable, given basic facts about the configuration of lines on a
+general cubic surface. We let
+\begin{align}
+  \label{eq:nu}
+  \nu: M^{\dagger} \to M
+  \end{align}
+  denote the variety of smooth {\sl marked} cubic surfaces:
+  $M^{\dagger}$ parametrizes tuples $(X, E_{1}, \dots, E_{6})$ where
+  the $E_{i}$ are six disjoint lines on $X$. It is a classical fact
+  that $\deg \nu = 6! \times 72$. The symmetric group $\Sigma_6$ acts
+  on $M^{\dagger}$ by permuting the marked lines.
+
+  We claim that the natural rational map to moduli
+  $\mu : B_1 \dashrightarrow M$ factors through a birational map
+  $\mu^{\dagger}: B_1 \dashrightarrow M^{\dagger}/\Sigma_{4}$, where
+  $\Sigma_{4}$ acts by permuting the last four lines
+  $E_{3}, \dots, E_{6}$.
+
+Assuming this fact, we arrive at our first relation:
+
+\begin{align}
+  \label{eq:relation1}
+  16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 6! \times 3 = 2160.
+\end{align}
+
+
+
+
+
+
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{references.bib}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+

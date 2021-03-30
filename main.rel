@@ -1,6 +1,6 @@
 ;; RefTeX parse info file
-;; File: c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex
-;; User: anand ()
+;; File: c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex
+;; User: Anand ()
 
 (set reftex-docstruct-symbol '(
 
@@ -13,66 +13,52 @@
 
 (bibview-cache)
 
-(master-dir . "c:/Users/anand/Documents/CubicSurfaceOrbits/")
+(master-dir . "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/")
 
 (label-numbers)
 
-(bof "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex")
+(bof "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex")
 
-("eq:V" "e" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+(toc "toc" "    1 Introduction" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "1" "\\section{Introduction}" 3076)
 
-("eq:mu" "e" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("sec:intro" "s" "Our objective is to determine an enumerate formula which counts the number of times a general cubic " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:P" "e" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("eq:V" "e" "V := \\omega_{X/B}^{-1}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    1 First Test Family" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "1" "\\section{First Test Family}" 4778)
+("eq:mu" "e" "\\mu: B \\dashrightarrow M " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("sec:first-test-family" "s" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("eq:P" "e" "P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:B1" "e" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("eq:equality" "e" "\\deg P(v_{1},v_{2},v_{3},v_{4}) = \\deg \\nu " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      1.1 Enumerating cubics in $B_1$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "1.1" "\\subsection{Enumerating cubics in $B_1$}" 6034)
+(toc "toc" "    2 Family $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "2" "\\section{Family $B_1$}" 4769)
 
-("sec:enum-cubics-b_1" "s" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("sec:first-test-family" "s" "In this section, we let $S_7 \\subset \\P^7$ denote a degree $7$ del Pezzo surface. We let $E_{1}, E_{" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:relation1" "e" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
+("eq:B1" "e" "B_1 = C^{[4]} \\simeq \\P^{4}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    1 Examples of Degenerations (Quartic plane curves)" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "1" "\\section{Examples of Degenerations (Quartic plane curves)}" 1694)
+(toc "toc" "      2.1 Enumerating cubics in $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "2.1" "\\subsection{Enumerating cubics in $B_1$}" 6022)
 
-(toc "toc" "      1.1 Isotrivial Degeneration into conic with tangent double line" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "1.1" "\\subsection{Isotrivial Degeneration into conic with tangent double line}" 1753)
+("sec:enum-cubics-b_1" "s" "For $B_1$ to be of any use, we must {\\sl a priori} know $\\deg P(v_{1},v_{2},v_{3},v_{4})$ for $B_1$." "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("conicline" "s" "\\subsubsection{With Equations}  Around a non-flex point, the local equation looks like $y=x^2$. Take" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:nu" "e" "\\nu: M^{\\dagger} \\to M " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "        1.1.1 With Equations" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 4 "1.1.1" "\\subsubsection{With Equations}" 1844)
+("eq:relation1" "e" "16 \\cdot a_{1^4} + 4 \\cdot a_{1^2 2} + a_{2^2} = 6! \\times 3 = 2160. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("coniclineequations" "s" "Around a non-flex point, the local equation looks like $y=x^2$. Take the family of linear transforma" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+(toc "toc" "    3 Family $B_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "3" "\\section{Family $B_2$}" 7133)
 
-(toc "toc" "        1.1.2 Via blowing up and twisting" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 4 "1.1.2" "\\subsubsection{Via blowing up and twisting}" 2181)
+("sec:family-b_2" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
 
-("coniclinetwisting" "s" "Take a trivial family $C\\times \\Delta\\to \\mb{P}^2$ mapping via $L$. Blow up once in the central fibe" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+(toc "toc" "      3.1 Enumerating cubics in $B_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "3.1" "\\subsection{Enumerating cubics in $B_2$}" 7998)
 
-(toc "toc" "      1.2 Isotrivial Degeneration into cuspidal cubic and line tangent to singularity" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "1.2" "\\subsection{Isotrivial Degeneration into cuspidal cubic and line tangent to singularity}" 3869)
+("sec:enum-cubics-b_2" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
 
-("flex" "s" "Do the same thing as \\Cref{conicline} but pick a flex point instead. I'll be sketchy about the modif" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+(toc "toc" "    4 Dennis's Isotrivial Families" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "4" "\\section{Dennis's Isotrivial Families}" 8405)
 
-(toc "toc" "      1.3 Degeneration into rational curve with an $E_6$ singularity" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "1.3" "\\subsection{Degeneration into rational curve with an $E_6$ singularity}" 4960)
+("sec:denn-isotr-famil" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
 
-(toc "toc" "    2 Examples of Degenerations (Cubic surfaces)" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "2" "\\section{Examples of Degenerations (Cubic surfaces)}" 6112)
+(toc "toc" "    3 Family $B_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "3" "\\section{Family $B_2$}" 7133)
 
-(toc "toc" "      2.1 Isotrivial Degeneration into Quadric union tangent line" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "2.1" "\\subsection{Isotrivial Degeneration into Quadric union tangent line}" 6165)
-
-(toc "toc" "        2.1.1 Using equations" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 4 "2.1.1" "\\subsubsection{Using equations}" 6234)
-
-(toc "toc" "        2.1.2 Using twisting and blowing up" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 4 "2.1.2" "\\subsubsection{Using twisting and blowing up}" 6314)
-
-(toc "toc" "      2.2 (Not isotrivial) Degeneration of Cubic into a general plane and quadric" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "2.2" "\\subsection{(Not isotrivial) Degeneration of Cubic into a general plane and quadric}" 9264)
-
-(toc "toc" "    3 What do we mean by ``sibling orbit''?" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "3" "\\section{What do we mean by ``sibling orbit''?}" 11504)
-
-("sec:sibling-orbit" "s" nil "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil "")
-
-(toc "toc" "    3 What do we mean by ``sibling orbit''?" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "3" "\\section{What do we mean by ``sibling orbit''?}" 11504)
-
-(eof "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex")
+(eof "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex")
 ))
 

@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12 pt]{amsart}
 
 %============================
 %         Obligatory
@@ -16,14 +16,16 @@
 %============================
 \usepackage[hidelinks]{hyperref} % For citations without hideous colored boxes
 \usepackage{geometry} % For adjusting the page domensions if desired
-\usepackage{sectsty} % For centering Section/Subsection titles
+%\usepackage{sectsty} % For centering Section/Subsection titles
 \usepackage{marginnote} % Currently unused, but for notes in the margin
 \usepackage{graphics} % For custom pretty fractions 
 \usepackage{newtxmath} % Changes the math font to be bolder and prettier
 
-\geometry{margin=1.25 in}
-\sectionfont{\centering}
-\subsectionfont{\centering}
+\geometry{margin=1.66 in}
+%\sectionfont{\centering}
+%\subsectionfont{\centering}
+\linespread{1.1}
+
 
 \title{Counting Cubic Surfaces}
 \author{Anand Patel \& Dennis Tseng}
@@ -65,13 +67,11 @@
 \newcommand{\remove}[1]{\color{red}{#1}\color{black}}
 \newcommand{\add}[1]{\color{green}{#1}\color{black}}
 
-\newcommand{\bz}{B\'{e}zout}
-\newcommand{\A}{\mathbb{A}}
 \newcommand{\keps}{\altfrac{k[\e]}{\left(\e^2\right)}}
 \newcommand{\kepsi}{\altfraci{k[\e]}{\left(\e^2\right)}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
-\newcommand{\biggreenstar}{\huge \add{\raisebox{-.15\ht\strutbox}{$[\boldsymbol{*}]$}}\normalsize}
 
+\DeclareMathOperator{\Bl}{Bl}
 \DeclareMathOperator{\Sec}{Sec}
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\res}{res}
@@ -228,25 +228,112 @@ However,  there is a distinction:
 \label{sec:family-b_3}
 
 We construct our third family $B_3$ be starting with a quintic del
-Pezzo surface $S$ (which is the blow up of the plane at four general
-points).  The surface $S$ has $10$ exceptional lines
-$L_{1}, \dots, L_{10}$.  We let $S^{[2]}$ denote the Hilbert scheme of
-pairs of points on $S$.  $S^{[2]}$ contains $10$ $\P^{2}$'s,
+Pezzo surface $S$, which is the blow up of the plane at four general
+points, and then ``blowing up all pairs of points on $S$.''
+
+The surface $S$ has $10$ exceptional lines $L_{1}, \dots, L_{10}$.  We
+let $S^{[2]}$ denote the Hilbert scheme of pairs of points on $S$.
+$S^{[2]}$ contains $10$ disjoint $\P^{2}$'s,
 $\Lambda_1, \dots, \Lambda_{10}$, namely the Hilbert schemes of pairs
-of points contained in the lines $L_{i}$.
+of points contained in the lines $L_{i}$. Let
+$\Lambda = \cup_{i}\Lambda_{i}$.
 
-First, observe that $S^{[2]} \setminus \cup_{i}\Lambda_{i}$ supports a
-good family of cubic surfaces.  However, when naturally extended over
-$S^{[2]}$ the family acquires bad fibers, namely unions of quadrics
-and planes.
+\subsection{Construction of $B_3$}
+\label{sec:construction-b_3}
 
-Let $\widetilde{S^{[2]}}$ denote the blow up of $S^{[2]}$ along
-$\sqcup \Lambda_{i}$.
+Let $Z \subset S^{[2]} \times S$ denote the universal degree two
+subscheme; $Z$ is smooth and the first projection
+$\pi_1 : Z \to S^{[2]}$ is finite, flat, and has degree two.
 
+
+
+First, observe that the open set
+\begin{align}
+  \label{eq:UB3}
+  U := S^{[2]} \setminus \Lambda
+\end{align}
+supports a good family of cubic surfaces, namely
+\begin{align}
+  \label{eq:XUB3}
+  X^{\circ} := \Bl_{Z}(S^{[2]} \times S).
+\end{align}
+
+(We encourage the reader to check that $X^{\circ}/U$ is indeed good.)
+
+However, when we extend $X^{\circ}$ in the natural way over $S^{[2]}$
+the family acquires bad fibers, namely unions of quadrics and planes,
+and therefore we must modify $S^{[2]}$ along $\Lambda$.
+
+Let
+\begin{align}
+  \label{eq:S2tilde}
+  \widetilde{S^{[2]}} := \Bl_{\Lambda}S^{[2]}
+\end{align}
+denote the blow-up with blow-down map
+$\beta: \widetilde{S^{[2]}} \to S^{[2]}$.  Let
+$E_{i} = \beta^{-1}(\Lambda_{i})$, $i=1, \dots, 10$ denote the
+components of the of the exceptional divisor of the blow-up; $\beta$
+expresses $E_{i}$ as a $\P^{1}$-bundle over $\Lambda_{i}$.
+
+Next, let $\widetilde{Z} := \widetilde{S^{[2]}} \times_{S^{[2]}} Z$
+denote the fiber-product; $\widetilde{Z}$ is a closed subscheme of the
+product $\widetilde{S^{[2]}} \times S$, and is a finite, flat, degree
+two cover of $\widetilde{S^{[2]}}$ under the first projection
+$\tilde{\pi}_{1} : \widetilde{Z} \to \widetilde{S^{[2]}}.$
+
+Inside the product $\widetilde{S^{[2]}} \times S$ we define the
+smooth, closed subschemes
+\begin{align}
+  \label{eq:Fi}
+  F_{i} := E_{i} \times L_{i};
+\end{align}
+we let $F := \cup_{i}F_{i}$.  We perform one more blow-up to get 
+\begin{align}
+  \label{eq:Xtilde}
+  \widetilde{Y} := \Bl_{F}\widetilde{S^{[2]}} \times S.
+\end{align}
+The natural projection $ Y \to \widetilde{S^{[2]}}$ is a family of
+surfaces with simple normal crossing singular fibers over $E_{i}$.
+The next lemma is critical.
+
+\begin{lemma}
+  The closed immersion
+  $\widetilde{Z} \subset \widetilde{S^{[2]}} \times S$ lifts to a
+  closed immersion $\widetilde{Z} \subset Y$.
+\end{lemma}
+
+\begin{proof}
+  The main observation is that we have an equality of schemes
+  \begin{align}
+    \label{eq:Cartier}
+    F_i \cap \widetilde{Z} = \widetilde{\pi}_{1}^{-1}(E_i) \cap \widetilde{Z}
+  \end{align}
+  for all $i=1, \dots, 10$, {\sl and therefore $F \cap \widetilde{Z}$
+    is a Cartier divisor on $\widetilde{Z}$}. The claim now follows
+  from a basic property of blow-ups.
+\end{proof}
+
+
+
+We can finally define our proposed family of cubics.  We let
+\begin{align}
+  \label{eq:XB3}
+  X := \Bl_{\widetilde{Z}}Y
+\end{align}
+denote the blow-up,
+\begin{align}
+  \label{eq:phiB3}
+  \varphi: X \to Y
+\end{align}
+the blow-down map, and
+\begin{align}
+  \label{eq:piB3}
+  \pi: X \to \widetilde{S^{[2]}}
+\end{align}
+the natural projection. 
 \begin{proposition}
   \label{proposition:resolv-b3}
-  There is a good family of cubic surfaces over $\widetilde{S^{[2]}}$
-  extending the family over $S^{[2]} \setminus \cup \Lambda_{i}$.
+ The family 
 \end{proposition}
 
 (This one I still am confident in -- one simple blow-up resolves the situation.)

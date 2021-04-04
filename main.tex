@@ -88,29 +88,31 @@ Our objective is to determine an enumerate formula which counts the
 number of times a general cubic surface occurs in a general
 $4$-parameter family $ \pi: X \to B$ of cubic surfaces.  We work
 throughout with finite-type schemes over an algebraically closed,
-characteristic ground field $k$.
+characteristic zero ground field $k$.
+
 
 \begin{definition}
   Let $\pi :X \to B$ be a flat, projective morphism of relative
-  dimension $2$, with $B$ a $4$-dimensional proper scheme. We say
-  $\pi$ is {\bf a good family of cubic surfaces} if for all $b \in B$,
-  the fiber $X_{b}$ is isomorphic to a cubic surface which is not
-  contained in a general cubic surface's $PGL_4$-orbit closure.
+  dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is
+  {\bf a good family of cubic surfaces} if for all $b \in B$, the
+  fiber $X_{b}$ is isomorphic to a cubic surface which is not
+  contained in the $PGL_4$-orbit closure of a general cubic surface.
 \end{definition}
 
-The base of a good family carries the natural rank $4$
+The base $B$ of a good family carries its {\sl natural} rank $4$
 vector bundle
 \begin{align}
   \label{eq:V}
   V := \pi_{*}\omega_{X/B}^{-1}.
 \end{align}
-The base $B$ of a good family of cubic surface admits a rational map
+Furthermore, $B$ admits a rational map
 \begin{align}
   \label{eq:mu}
   \mu: B \dashrightarrow M
 \end{align}
-to the coarse moduli variety $M$ of cubic surfaces.  By general
-equivariant-geometric arguments, there exists a universal
+to the coarse moduli variety $M$ of cubic surfaces. If we further
+assume, as we will from here on out, that $B$ is proper, then by
+general equivariant-geometric arguments there exists a universal
 weighted-degree $4$ polynomial
 \begin{align}
   \label{eq:P}
@@ -131,31 +133,52 @@ particular good family.  After each section, we reset notation.
 \section{Family $B_1$}
 \label{sec:first-test-family}
 
-In this section, we let $S_7 \subset \P^7$ denote a degree $7$ del
-Pezzo surface. We let $E_{1}, E_{2}$ denote the two disjoint lines on
-$S_{7}$ and we let $L \subset S_{7}$ denote the third line on $S_{7}$,
-which meets both $E_{1}$ and $E_{2}$. Finally, we choose a general
-rational normal quintic curve $C \subset S_{7}$ meeting $E_{2}$ at a
-single point other than $L \cap E_{2}$.
+In this section, we let $S \subset \P^7$ denote a degree $7$ del Pezzo
+surface. We let $E_{1}, E_{2}$ denote the two disjoint lines on $S$
+and we let $L \subset S$ denote the third line on $S$, which meets
+both $E_{1}$ and $E_{2}$. Finally, we choose a general rational normal
+quintic curve $C \subset S$ meeting $E_{2}$ at a single point other
+than $L \cap E_{2}$.
+
+\subsection{Construction of $B_1$}
+\label{sec:construction-b_1}
+
 
 The base of our first family is
 \begin{align}
   \label{eq:B1}
-  B_1 = C^{[4]} \simeq \P^{4}.
+  B_1 := C^{[4]} \simeq \P^{4}.
 \end{align}
- $B_1$ carries a good family of cubic surfaces over it.
-To see this, one must only note that any length four subscheme
-$Z \subset C$ satisfies the property that the three dimensional span
-$\langle Z \rangle$ intersects $S_7$ at precisely the scheme
-$Z$. Therefore, for each such $Z$, the projection
-$p_{\langle Z \rangle}: S_7 \dashrightarrow \P^{3}$ has as image an
+$B_1$ carries a good family of cubic surfaces over it.  To see this,
+we note that any length four subscheme $Z \subset C$ satisfies the
+property that the three dimensional span $\langle Z \rangle$
+intersects $S$ at precisely the scheme $Z$. Therefore, for each such
+$Z$, the linear projection from $\langle Z \rangle$
+$p_{\langle Z \rangle}: S \dashrightarrow \P^{3}$ has as image an
 irreducible cubic surface.  Furthermore, one can check that each of
-these has a finite automorphism group.
+these cubics has a finite automorphism group, and hence we have a good
+family.
 
-The Chern classes of the resulting vector bundle $V$ on
-$B_{1} = \P^{4}$ are easily determined. In fact we have:
-$v_{1} = -2h$, $v_{2}=h^2$, and $v_{3}= v_{4}=0$, where $h$ denotes
-the hyperplane class on the projective space $B_1$.
+\subsection{Chern classes on $B_1$}
+\label{sec:chern-classes-b_1}
+
+\begin{lemma}
+  \label{lemma:chernB1}
+  For the natural bundle $V$ over $B_1$, we have:
+  \begin{align}\nonumber
+    v_{1}^{4} = 16,\\\nonumber
+    v_{1}^{2}v_{2} = 4,\\\nonumber
+    v_{1}v_{3} =0,\\\nonumber
+    v_2^{2} = 1,\\\nonumber
+    v_{4} = 0.
+  \end{align}
+\end{lemma}
+
+\begin{proof}
+The Chern classes $v_{1} = -2h$, $v_{2}=h^2$, and $v_{3}= v_{4}=0$,
+where $h$ denotes the hyperplane class on the projective space $B_1$.)
+  
+\end{proof}
 
 \subsection{Enumerating cubics in $B_1$}
 \label{sec:enum-cubics-b_1}
@@ -175,11 +198,16 @@ general cubic surface. We let
   that $\deg \nu = 6! \times 72$. The symmetric group $\Sigma_6$ acts
   on $M^{\dagger}$ by permuting the marked lines.
 
-  We claim that the natural rational map to moduli
-  $\mu : B_1 \dashrightarrow M$ factors through a birational map
+  The natural rational map to moduli $\mu : B_1 \dashrightarrow M$
+  clearly factors through a map
   $\mu^{\dagger}: B_1 \dashrightarrow M^{\dagger}/\Sigma_{4}$, where
   $\Sigma_{4}$ acts by permuting the last four lines
   $E_{3}, \dots, E_{6}$.
+
+  \begin{lemma}
+    \label{lemma:degreemudaggerB1}
+    $\mu^{\dagger}: B_1 \dashrightarrow M^{\dagger}$ is birational.
+  \end{lemma}
 
 Assuming this fact, we arrive at the first relation:
 
@@ -290,7 +318,7 @@ smooth, closed subschemes
 we let $F := \cup_{i}F_{i}$.  We perform one more blow-up to get 
 \begin{align}
   \label{eq:Xtilde}
-  \widetilde{Y} := \Bl_{F}\widetilde{S^{[2]}} \times S.
+  Y := \Bl_{F}\widetilde{S^{[2]}} \times S.
 \end{align}
 The natural projection $ Y \to \widetilde{S^{[2]}}$ is a family of
 surfaces with simple normal crossing singular fibers over $E_{i}$.
@@ -315,26 +343,37 @@ The next lemma is critical.
 
 
 
-We can finally define our proposed family of cubics.  We let
+We are close to describing a family of cubic surfaces over
+$\widetilde{S^{[2]}}$.  We first let
 \begin{align}
   \label{eq:XB3}
-  X := \Bl_{\widetilde{Z}}Y
+  Y' := \Bl_{\widetilde{Z}}Y
 \end{align}
 denote the blow-up,
 \begin{align}
   \label{eq:phiB3}
-  \varphi: X \to Y
+  \varphi: Y' \to Y
 \end{align}
 the blow-down map, and
 \begin{align}
   \label{eq:piB3}
-  \pi: X \to \widetilde{S^{[2]}}
+  \pi: Y' \to \widetilde{S^{[2]}}
 \end{align}
-the natural projection. 
+the natural projection. Finally, let $F' \subset Y'$ denote the
+exceptional divisor $\varphi^{-1}(F)$.
 \begin{proposition}
   \label{proposition:resolv-b3}
- The family 
+  There exists a line bundle $\mathcal{L}$ on $Y'$ which induces a
+  rational map
+  \begin{align*}
+    \rho: Y' \dashrightarrow \P(\pi_{*}\mathcal{L})
+  \end{align*}
+  whose image $X \subset \P(\pi_{*}\mathcal{L})$ is a good family of
+  cubic surfaces over $\widetilde{S^{[2]}}$ with natural bundle
+  $V = \pi_{*} \mathcal{L}$.
 \end{proposition}
+
+(By image, we mean ``closure of image''.)
 
 (This one I still am confident in -- one simple blow-up resolves the situation.)
 

@@ -20,6 +20,7 @@
 \usepackage{marginnote} % Currently unused, but for notes in the margin
 \usepackage{graphics} % For custom pretty fractions 
 \usepackage{newtxmath} % Changes the math font to be bolder and prettier
+\usepackage{cleveref} % stackexchange says to load this after hyperref
 
 \geometry{margin=1.66 in}
 %\sectionfont{\centering}
@@ -403,14 +404,59 @@ $p_{\langle Z \rangle}: S \dashrightarrow \P^{3}$ has as image an
 irreducible cubic, with finite automorphism group (check this!).
 
 
-Therefore, the HIlbert scheme $B_{5} = D^{[4]}$ carries a good family
+Therefore, the Hilbert scheme $B_{5} = D^{[4]}$ carries a good family
 of cubic surfaces.  (The reason I like this family is that, unlike
 $B_1$'s case, the natural bundle $V$ has more non-trivial chern
 classes. Therefore, the relation we get this time is probably not the
 same as for $B_1$.
 
-%\bibliographystyle{plain}
-%\bibliography{references.bib}
+\section{Isotrivial family of surface with 3 $A_2$ singularities}
+
+We outline the idea and give references, in order to fill in the computation relating to \eqref{eq:equality} later. 
+
+Our starting point is the following fact:
+\begin{proposition}
+\label{prop:3A2}
+The cubic surface defined by $X^3 + YZW = 0$ has singularity type $3A_2$ and is semistable.
+\end{proposition}
+
+\begin{remark}
+\cite[Proposition 2.2]{N05} shows that the most special singularity types that correspond to semistable surfaces are $3A_2$ and $4A_1$. 
+\end{remark}
+
+\begin{proof}
+The fact that $X^3 + YZW=0$ has singularity type $3A_2$ follows from \cite[Proof of 3.1.12]{N00}. Semistability follows from \cite[Proposition 2.3]{N05}.
+\end{proof}
+
+Given \Cref{prop:3A2}, we summarize the two facts about the $3A_2$ cubic surface that makes this family work:
+\begin{proposition}
+\label{prop:twofacts}
+The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer and is not in the orbit closure of any stable cubic surface.
+\end{proposition}
+
+\begin{remark}
+I think that this cubic surface is the only surface that has a nontrivial torus stabilizer but is still semistable, which is means this method of finding a twisted isotrivial family of surfaces missing the general orbit closure only works for exactly this $3A_2$ surface. 
+\end{remark}
+
+\begin{proof}
+The fact that the $3A_2$ cubic surface does not lie in the general cubic surface orbit closure follows for GIT. Indeed, we have the map $\pi: \mathbb{P}^{19}\dashrightarrow \mathbb{P}^{19}//PGL_4$ and by definition of semistability, the point defined by $X^3 + YZW = 0$ is not contained in its indeterminacy locus. After removing the indeterminancy locus, orbits of stable points are fibers of $\pi$, so they cannot contain the point defined by $X^3 + YZW = 0$. {\color{red} add GIT references to make sure}
+\end{proof}
+
+Finally, we obtain our test family:
+\begin{proposition}
+\label{prop:isotrivialfamily}
+Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, we can form the projective bundle $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$. Inside of $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$ we have the cubic surface $\mathcal{X}$ defined by $\{X^3 + YZW = 0\}$ over each trivialization of $L_X, L_Y, L_Z, L_W$ over $B$. Because $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, the cubic surface glues compatibly under transition maps.
+
+The family $\mathcal{X}\to B$ is a nontrivial family of cubic surfaces where no member is a contained in the orbit closure of a stable cubic surface.
+\end{proposition}
+
+Thus, \Cref{prop:isotrivialfamily} affords an enumerative problem whose answer is zero. We worked with a general base $B$, but it suffices for our purposes to let $B=\mathbb{P}^4$. 
+
+{\color{red} I suspect we can relate this to a collection of 6 points on $P^2$ with a stabilizer, so this family looks more like Anand's many families. From \cite[Proposition 3.3]{N05}, it looks like the length 6 scheme corresponding to the $3A_2$ surface is the intersection of the union of two lines with a triple line. Don't see it yet, but writing this down to not forget.}
+
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
 \end{document}
 
 %%% Local Variables:

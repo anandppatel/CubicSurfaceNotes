@@ -1,6 +1,6 @@
 ;; RefTeX parse info file
-;; File: c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex
-;; User: anand ()
+;; File: c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex
+;; User: Anand ()
 
 (set reftex-docstruct-symbol '(
 
@@ -13,98 +13,126 @@
 
 (bibview-cache)
 
-(master-dir . "c:/Users/anand/Documents/CubicSurfaceOrbits/")
+(master-dir . "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/")
 
 (label-numbers)
 
-(bof "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex")
+(bof "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex")
 
-(toc "toc" "    1 Introduction" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "1" "\\section{Introduction}" 2977)
+(toc "toc" "    1 Introduction" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "1" "\\section{Introduction}" 3048)
 
-("sec:intro" "s" "Our objective is to determine an enumerate formula which counts the number of times a general cubic " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:intro" "s" "Our objective is to determine an enumerate formula which counts the number of times a general cubic " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:V" "e" "V := \\pi_{*}\\omega_{X/B}^{-1}. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:V" "e" "V := \\pi_{*}\\omega_{X/B}^{-1}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:mu" "e" "\\mu: B \\dashrightarrow M " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:mu" "e" "\\mu: B \\dashrightarrow M " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:P" "e" "P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:P" "e" "P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:equality" "e" "\\deg P(v_{1},v_{2},v_{3},v_{4}) = \\deg \\nu " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:equality" "e" "\\deg P(v_{1},v_{2},v_{3},v_{4}) = \\deg \\nu " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    2 Family $B_1$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "2" "\\section{Family $B_1$}" 4760)
+(toc "toc" "    2 Family $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "2" "\\section{Family $B_1$}" 4831)
 
-("sec:first-test-family" "s" "In this section, we let $S \\subset \\P^7$ denote a degree $7$ del Pezzo surface. We let $E_{1}, E_{2}" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:first-test-family" "s" "In this section, we let $S \\subset \\P^7$ denote a degree $7$ del Pezzo surface. We let $E_{1}, E_{2}" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      2.1 Construction of $B_1$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "2.1" "\\subsection{Construction of $B_1$}" 5181)
+(toc "toc" "      2.1 Construction of $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "2.1" "\\subsection{Construction of $B_1$}" 5252)
 
-("sec:construction-b_1" "s" "The base of our first family is \\begin{align}  B_1 := C^{[4]} \\simeq \\P^{4}. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:construction-b_1" "s" "The base of our first family is \\begin{align}  B_1 := C^{[4]} \\simeq \\P^{4}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:B1" "e" "B_1 := C^{[4]} \\simeq \\P^{4}. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:B1" "e" "B_1 := C^{[4]} \\simeq \\P^{4}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      2.2 Chern classes on $B_1$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "2.2" "\\subsection{Chern classes on $B_1$}" 5885)
+(toc "toc" "      2.2 Chern classes on $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "2.2" "\\subsection{Chern classes on $B_1$}" 5956)
 
-("sec:chern-classes-b_1" "s" "\\begin{lemma}  For the natural bundle $V$ over $B_1$, we have: \\begin{align} \\label{eq:chernB1} " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:chern-classes-b_1" "s" "\\begin{lemma}  For the natural bundle $V$ over $B_1$, we have: \\begin{align}\\nonumber v_{1}^{4} = 16" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("lemma:chernB1" "s" "For the natural bundle $V$ over $B_1$, we have: \\begin{align}  " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("lemma:chernB1" "s" "For the natural bundle $V$ over $B_1$, we have: \\begin{align}\\nonumber v_{1}^{4} = 16," "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:chernB1" "e" " " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+(toc "toc" "      2.3 Enumerating cubics in $B_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "2.3" "\\subsection{Enumerating cubics in $B_1$}" 6471)
 
-(toc "toc" "      2.3 Enumerating cubics in $B_1$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "2.3" "\\subsection{Enumerating cubics in $B_1$}" 6400)
+("sec:enum-cubics-b_1" "s" "For $B_1$ to be of any use, we must {\\sl a priori} know $\\deg P(v_{1},v_{2},v_{3},v_{4})$ for $B_1$." "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("sec:enum-cubics-b_1" "s" "For $B_1$ to be of any use, we must {\\sl a priori} know $\\deg P(v_{1},v_{2},v_{3},v_{4})$ for $B_1$." "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:nu" "e" "\\nu: M^{\\dagger} \\to M " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:nu" "e" "\\nu: M^{\\dagger} \\to M " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("lemma:degreemudaggerB1" "s" "$\\mu^{\\dagger}: B_1 \\dashrightarrow M^{\\dagger}$ is birational. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:relation1" "e" "16 \\cdot a_{1^4} + 4 \\cdot a_{1^2 2} + a_{2^2} = 6! \\times 3 = 2160. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:relation1" "e" "16 \\cdot a_{1^4} + 4 \\cdot a_{1^2 2} + a_{2^2} = 6! \\times 3 = 2160. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    3 Family $B_2$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "3" "\\section{Family $B_2$}" 7628)
+(toc "toc" "    3 Family $B_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "3" "\\section{Family $B_2$}" 7699)
 
-("sec:family-b_2" "s" "Our next family is a slight variant of $B_1$. Let $S$ be a degree $7$ del Pezzo surface, viewed as t" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:family-b_2" "s" "Our next family is a slight variant of $B_1$. Let $S$ be a degree $7$ del Pezzo surface, viewed as t" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("proposition:resolveB2" "s" "The blow up of $\\P^{4}$ along $\\Lambda$ carries a good family extending $X/(\\P^{4} \\setminus \\Lambda" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("proposition:resolveB2" "s" "The blow up of $\\P^{4}$ along $\\Lambda$ carries a good family extending $X/(\\P^{4} \\setminus \\Lambda" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      3.1 Enumerating cubics in $B_2$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "3.1" "\\subsection{Enumerating cubics in $B_2$}" 8600)
+(toc "toc" "      3.1 Enumerating cubics in $B_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "3.1" "\\subsection{Enumerating cubics in $B_2$}" 8671)
 
-("sec:enum-cubics-b_2" "s" "Next we must compute the degree of the map to moduli $\\mu: B_2 \\dashrightarrow M$. As in the case of" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:enum-cubics-b_2" "s" "Next we must compute the degree of the map to moduli $\\mu: B_2 \\dashrightarrow M$. As in the case of" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("proposition:deg-mudagger2" "s" "We have: $\\deg \\mu^{\\dagger} = 2$. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("proposition:deg-mudagger2" "s" "We have: $\\deg \\mu^{\\dagger} = 2$. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    4 Family $B_3$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "4" "\\section{Family $B_3$}" 9006)
+(toc "toc" "    4 Family $B_3$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "4" "\\section{Family $B_3$}" 9077)
 
-("sec:family-b_3" "s" "We construct our third family $B_3$ be starting with a quintic del Pezzo surface $S$, which is the b" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:family-b_3" "s" "We construct our third family $B_3$ be starting with a quintic del Pezzo surface $S$, which is the b" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      4.1 Construction of $B_3$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 3 "4.1" "\\subsection{Construction of $B_3$}" 9583)
+(toc "toc" "      4.1 Construction of $B_3$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "4.1" "\\subsection{Construction of $B_3$}" 9654)
 
-("sec:construction-b_3" "s" "Let $Z \\subset S^{[2]} \\times S$ denote the universal degree two subscheme; $Z$ is smooth and the fi" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:construction-b_3" "s" "Let $Z \\subset S^{[2]} \\times S$ denote the universal degree two subscheme; $Z$ is smooth and the fi" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:UB3" "e" "U := S^{[2]} \\setminus \\Lambda " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:UB3" "e" "U := S^{[2]} \\setminus \\Lambda " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:XUB3" "e" "X^{\\circ} := \\Bl_{Z}(S^{[2]} \\times S). " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:XUB3" "e" "X^{\\circ} := \\Bl_{Z}(S^{[2]} \\times S). " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:S2tilde" "e" "\\widetilde{S^{[2]}} := \\Bl_{\\Lambda}S^{[2]} " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:S2tilde" "e" "\\widetilde{S^{[2]}} := \\Bl_{\\Lambda}S^{[2]} " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:Fi" "e" "F_{i} := E_{i} \\times L_{i}; " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:Fi" "e" "F_{i} := E_{i} \\times L_{i}; " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:Xtilde" "e" "\\widetilde{Y} := \\Bl_{F}\\widetilde{S^{[2]}} \\times S. " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:Xtilde" "e" "Y := \\Bl_{F}\\widetilde{S^{[2]}} \\times S. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:Cartier" "e" "F_i \\cap \\widetilde{Z} = \\widetilde{\\pi}_{1}^{-1}(E_i) \\cap \\widetilde{Z} " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:Cartier" "e" "F_i \\cap \\widetilde{Z} = \\widetilde{\\pi}_{1}^{-1}(E_i) \\cap \\widetilde{Z} " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:XB3" "e" "X := \\Bl_{\\widetilde{Z}}Y " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:XB3" "e" "Y' := \\Bl_{\\widetilde{Z}}Y " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:phiB3" "e" "\\varphi: X \\to Y " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:phiB3" "e" "\\varphi: Y' \\to Y " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:piB3" "e" "\\pi: X \\to \\widetilde{S^{[2]}} " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("eq:piB3" "e" "\\pi: Y' \\to \\widetilde{S^{[2]}} " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("proposition:resolv-b3" "s" "The family " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("proposition:resolv-b3" "s" "There exists a line bundle $\\mathcal{L}$ on $Y'$ which induces a rational map \\begin{align*} \\rho: Y" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    5 Family $B_4$" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "5" "\\section{Family $B_4$}" 13067)
+(toc "toc" "      4.2 Relation $B_3$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "4.2" "\\subsection{Relation $B_3$}" 13139)
 
-("sec:family-b_4" "s" "For this family, we fix a degree $6$ del Pezzo surface $S$, the blow up of the plane at three non-co" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+("sec:relation-b_3" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
 
-(toc "toc" "    6 Dennis's Isotrivial Families" "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil 2 "6" "\\section{Dennis's Isotrivial Families}" 13624)
+("eq:relationB3" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
 
-("sec:denn-isotr-famil" "s" "%\\bibliographystyle{plain} %\\bibliography{references.bib} " "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex" nil)
+(toc "toc" "      4.2 Relation $B_3$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "4.2" "\\subsection{Relation $B_3$}" 13139)
 
-(eof "c:/Users/anand/Documents/CubicSurfaceOrbits/main.tex")
+(toc "toc" "    5 Family $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "5" "\\section{Family $B_4$}" 13476)
+
+("sec:family-b_4" "s" "For this family, we fix a degree $6$ del Pezzo surface $S$, the blow up of the plane at three non-co" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+(toc "toc" "    6 Family $B_5$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "6" "\\section{Family $B_5$}" 14034)
+
+("sec:family-b_5-1" "s" "This family is similar to $B_1$. Fix a degree $7$ del Pezzo surface $S$, and let $D \\subset S$ denot" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+(toc "toc" "      6.1 Difficulty with $B_5$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "6.1" "\\subsection{Difficulty with $B_5$}" 14887)
+
+("sec:difficulty-with-b_5" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+(toc "toc" "    7 Isotrivial family of surface with 3 $A_2$ singularities" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "7" "\\section{Isotrivial family of surface with 3 $A_2$ singularities}" 15056)
+
+("prop:3A2" "s" "The cubic surface defined by $X^3 + YZW = 0$ has singularity type $3A_2$ and is semistable. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+("prop:twofacts" "s" "The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer and is not in the orb" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+("prop:isotrivialfamily" "s" "Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\\otimes 3}\\cong L_Y\\otimes L_" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+(toc "toc" "      7.1 Isotrivial Relation" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "7.1" "\\subsection{Isotrivial Relation}" 18246)
+
+("sec:isotrivial-relation" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+("eq:relationDennis" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+(bib "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/references.bib")
+
+(eof "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex")
 ))
 

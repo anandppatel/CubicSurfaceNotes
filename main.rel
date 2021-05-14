@@ -67,6 +67,8 @@
 
 ("sec:enum-cubics-b_2" "s" "Next we must compute the degree of the map to moduli $\\mu: B_2 \\dashrightarrow M$. As in the case of" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
+("eq:PM07" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
 ("proposition:deg-mudagger2" "s" "We have: $\\deg \\mu^{\\dagger} = 2$. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 (toc "toc" "    4 Family $B_3$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "4" "\\section{Family $B_3$}" 9077)

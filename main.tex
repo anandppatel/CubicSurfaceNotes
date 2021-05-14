@@ -75,8 +75,11 @@
 \DeclareMathOperator{\Bl}{Bl}
 \DeclareMathOperator{\Sec}{Sec}
 \DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\res}{res}
-\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\sym}{Sym}
+
+\newcommand{\M}{\overline{M}_{0,7}}
 
 \begin{document}
 
@@ -220,6 +223,68 @@ Assuming this fact, we arrive at the first relation:
 \section{Family $B_2$}
 \label{sec:family-b_2}
 
+
+Following Anand D's idea, we construct a good family over the base
+$B_2 = \overline{M}_{0,7}$. Before continuing, let us summarize the
+construction. Let $C \subset \P^{2}$ be the $2$-Veronese image of
+$\P^{1}$ with $7$ distinct marked points
+$x_{0}, x_{1}, \dots, x_{5}, x_{\infty}$ on $C$. Let
+$q \in \P^{2} \setminus C$ denote the intersection point of the
+tangent lines of $C$ at $x_{0}$ and $x_{\infty}$.  Then the blow up of
+$\P^{2}$ at the six points $\{x_{1}, \dots, x_{5}, q\}$ produces a
+good cubic surface.  In this way, we have described a good family of
+cubic surfaces over $M_{0,7}$.  Anand D's point is: this construction
+can be naturally extended to a good family over $\M$.
+
+
+
+
+Let us denote a general stable
+$7$-pointed genus zero curve by
+$$(C, p_{0}, p_{1}, \dots, p_{5}, p_{\infty}).$$  Denote
+by $\mathbf{L}_{\infty}$ the cotangent line bundle on $\M$
+corresponding to the marked point $p_{\infty}$. If
+\begin{align}
+  \label{eq:PM07}
+  \pi: C \to \overline{M}_{0,7}
+\end{align}
+denotes the universal stable curve, we let
+$\sigma_{0}, \dots, \sigma_{\infty}$ denote the universal sections in
+$C$.
+
+Next, let $C' = \proj \pi_{*}\mathcal{O}_{C}(\sigma_{\infty})$ denote
+the $\P^{1}$-bundle over $\overline{M}_{0,7}$. Let $O_{C'}(1)$ denote
+the natural hyperplane line bundle.  Then the sections $\sigma_{i}$
+also produce sections (with the same name) of the bundle projection
+$$\gamma : C' \to \M,$$ with
+$\sigma_{0}^{*}O_{C'}(1) = \dots = \sigma_{5}^{*}O_{C'}(1) = O_{\M}$
+and $\sigma_{\infty}^{*}O_{C'}(1) = \mathbf{L}^{-1}$.
+
+Because $\sigma_{\infty}$ is disjoint from all other sections, it
+follows that
+$$\pi_{*}(O_{C}(\sigma_{\infty})) = \mathbf{L}^{-1} \oplus O_{\M}.$$
+
+
+The next step is to invoke the relative $2$-veronese
+embedding
+$$\iota: C' \hookrightarrow P := \proj
+\pi_{*}O_{C}(2\sigma_{\infty})$$ so $C' \subset P$ is a relative
+family of smooth conics with $7$ marked points
+$\sigma_{0}, \dots, \sigma_{\infty}$.  Importantly, $\sigma_{\infty}$
+never intersects any of the other six sections.  Also, observe that
+$$\pi_{*}O_{C}(2 \sigma_{\infty}) = \sym^{2}(\mathbf{L}^{-1} \oplus
+O) = \mathbf{L}^{-2} \oplus \mathbf{L}^{-1} \oplus O.$$
+
+
+
+To be continued...
+
+
+
+
+\subsection{OLD $B_2$}
+
+
 Our next family is a slight variant of $B_1$. Let $S$ be a degree $7$
 del Pezzo surface, viewed as the blow up of the plane at two points,
 with its two exceptional lines $E_1, E_2$ and its third exceptional
@@ -240,8 +305,8 @@ $\Lambda \subset \P^{4}$.
 \end{proposition}
 (Actually, hold off: One needs to blow up at least one more time,
 corresponding to the configuration $4p$.)
-\subsection{Enumerating cubics in $B_2$}
-\label{sec:enum-cubics-b_2}
+
+
 
 Next we must compute the degree of the map to moduli
 $\mu: B_2 \dashrightarrow M$. As in the case of $B_1$, $\mu$ factors
@@ -252,6 +317,7 @@ However,  there is a distinction:
   \label{proposition:deg-mudagger2}
   We have: $\deg \mu^{\dagger} = 2$.
 \end{proposition}
+
 
 \section{Family $B_3$}
 \label{sec:family-b_3}

@@ -96,6 +96,7 @@ characteristic zero ground field $k$.
 
 
 \begin{definition}
+\label{def:goodfamily}
   Let $\pi :X \to B$ be a flat, projective morphism of relative
   dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is
   {\bf a good family of cubic surfaces} if for all $b \in B$, the
@@ -549,7 +550,51 @@ The relation we obtain from Dennis's trick appears to be:
   a_{2^{2}} = 0.
 \end{align}
 
+\appendix
 
+\section{Existance of a universal formula}
+
+In this section, we recall statements from equivariant intersection theory that guarantee the existence of the formula \eqref{eq:P}. On this first pass, we will let $\mathbb{P}(V)$ denote the projective bundle of 1-dimensional subspaces in the fibers of $V$ and correct for the sign later if people want to work with duals. 
+
+\begin{lemma}
+\label{lem:Q_Zclass}
+Let $W$ be an $r+1$-dimensional vector space and $Z\subset \operatorname{Sym}^d W^{\vee}$ be a subvariety. Then, the equivariant class $[\mathbb{P}Z]$ inside the equivariant Chow ring 
+\begin{align}
+    A^{\bullet}(\mathbb{P}_{GL_{r+1}}(\operatorname{Sym}^d W^{\vee}))\cong \frac{\mathbb{Z}[H, t_0,\ldots,t_{r}]^{S^{r+1}}}{\left(\displaystyle\prod_{\substack{i_0+\cdots+i_{r}=d\\ i_0,\ldots,i_r\geq 0}}(H-i_0 t_0 - \cdots - i_r t_r)\right)}\label{eq:equivariantSym}
+\end{align}
+can be expressed as
+\begin{align*}
+    Q_Z(t_0-\frac{H}{d},\ldots,t_{r}-\frac{H}{d}),
+\end{align*}
+for polynomial homogeneous $Q_Z$ with degree equal to the codimension of $Z$. 
+\end{lemma}
+
+The variables $t_i$'s in \Cref{lem:Q_Zclass} can either be viewed as chern roots or via the inclusion into the torus-equivariant Chow ring 
+\begin{align*}
+    A^{\bullet}(\mathbb{P}_{T}(\operatorname{Sym}^d W^{\vee}))\cong \frac{\mathbb{Z}[H, t_0,\ldots,t_{r}]}{\left(\displaystyle\prod_{\substack{i_0+\cdots+i_{r}=d\\ i_0,\ldots,i_r\geq 0}}(H-i_0 t_0 - \cdots - i_r t_r)\right)}
+\end{align*}
+where $T\subset GL_{r+1}$ is the standard torus.
+
+\begin{proof}[Proof of \Cref{lem:Q_Zclass}]
+The formula for the Chow ring of $A^{\bullet}(\mathbb{P}_{GL_{r+1}}(\operatorname{Sym}^d W^{\vee}))$ in \eqref{eq:equivariantSym} follows from the Chow ring of a projective bundle. %applied to the construction of an equivariant Chow ring, didn't find a quick reference for this than other people saying its obvious
+
+The formula for $[\mathbb{P}Z]$ in terms of a polynomial $Q_Z$ follows from \cite[Theorem 6.1]{FNR05}, where $Q_Z$ is the formula for the class of $[Z]$ in $A^{\bullet}_{GL_r+1}(\operatorname{Sym}^d W^{\vee})\cong \mathbb{Z}[H, t_0,\ldots,t_{r}]$. 
+\end{proof}
+
+\begin{proposition}
+In the context of \Cref{def:goodfamily} a universal polynomial $P$ as in \eqref{eq:P} exists.
+\end{proposition}
+
+\begin{proof}
+Following the setup in \eqref{eq:P}, we start with a good family $\pi: X\to B$ and let $V=\pi_{*}\omega_{X/B}^{-1}$. Since each fiber of $X\to B$ is embedded into $\mathbb{P}(V)$ as a cubic surface via the anticanonical map, we get a section $\sigma$ of the bundle $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})\to B$. The section $\sigma$ maps each point $b$ to the equation of the cubic surface $X_b$ lying above it.
+
+Inside of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, the section $\sigma$ is induced by the inclusion of a line bundle $L=\det(V^{\vee})\hookrightarrow \operatorname{Sym}^3 V^{\vee}$. {\color{red} Check this, the main thing we need is that the line bundle can be expressed in terms of $c_1(V)$ only. I don't have a clean proof yet.}
+
+Now, we apply \Cref{lem:Q_Zclass}, where $Z\subset \operatorname{Sym}^3(\mathbb{C}^{4\ast})$ is the $GL_4$ orbit closure of a general degree 3 homogenous equation in 4 variables. The vector bundle $V\to B$ induces a map $B\to [\operatorname{pt}/GL_4]$ under which $[\operatorname{Sym}^3(\mathbb{C}^{4\ast})/GL_4]$ pulls back to $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$. Under the pullback the equivariant class of the projectivized orbit closure $[\mathbb{P}Z]$ pulls back to the class of the relative orbit closure $\mathcal{Z}\subset \mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, where each fiber of $\mathcal{Z}\to B$ is given by $Z$. By \Cref{lem:Q_Zclass}, the class of $\mathcal{Z}$ depends only on the chern classes of $V$. 
+
+The polynomial $P$ in \eqref{eq:P} is the intersection number of $\sigma$ with the class of $\mathcal{Z}$. The class of $\sigma$, the Chow ring of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, and the class of $\mathcal{Z}$ are depend only on the chern classes of $V$. Thus, the final intersection number depends only on the chern classes of $V$ as desired. 
+{\color{red} I don't think it'll be any harder to actually determine the formula of $P$ in \eqref{eq:P} in terms of the equivariant class of an orbit closure of a cubic surface, but we don't seem to need the formula. The point is that $P$ and the equivariant class of the orbit closure are equivalent by some substitution.}
+\end{proof}
 \bibliographystyle{plain}
 \bibliography{references.bib}
 \end{document}

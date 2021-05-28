@@ -272,7 +272,8 @@ $$\iota: C' \hookrightarrow P := \proj
 \pi_{*}O_{C}(2\sigma_{\infty})$$ so $C' \subset P$ is a relative
 family of smooth conics with $7$ marked points
 $\sigma_{0}, \dots, \sigma_{\infty}$.  Importantly, $\sigma_{\infty}$
-never intersects any of the other six sections.  Also, observe that
+never intersects any of the other six sections, and the sections are
+supported on at least three distinct points.  Also, observe that
 $$\pi_{*}O_{C}(2 \sigma_{\infty}) = \sym^{2}(\mathbf{L}^{-1} \oplus
 O) = \mathbf{L}^{-2} \oplus \mathbf{L}^{-1} \oplus O.$$
 

@@ -667,7 +667,7 @@ Thus, we have
 The element $x_3(x_0x_2-x_1^2) - x_0x_1^2$ defines a global section of $\sym^3 \mathcal V \otimes \chi(1)$.
 In other words, we have
 \[ M = \chi(1).\]
-((-4 -16 64 0) (256 -256 -256 256 0))
+%((-4 -16 64 0) (256 -256 -256 256 0))
 We get
 \[ v_1 = -4q, \quad v_2 = -16q^2, \quad v_3 = 64q^3, \quad v_4 = 0,\]
 and hence
@@ -835,20 +835,18 @@ If $Q$ is the polynomial associated to the equivariant class of \emph{any} equiv
 This follows from \autoref{lem:mu_d} and \autoref{prop:isotrivial2}.
 \end{proof}
 
-{\color{red} Regarding checking the revised conjectural class in Anand's e-mail, I am having a more basic issue: I'm not getting integer coefficients when naively translating from $P$ to $Q$. The class $Q$ in \autoref{lem:Q_Zclass} (corresponding to the constant term of the equivariant Chow class of an orbit) is related to the class $P$ in \eqref{eq:P} by some linear transformation (given roughly by sustituting $t_i=t_i\pm \frac{t_0+\cdots+t_3}{3}$), and it's not clear to me that being divisible is preserved under this linear map. However, when naively trying to compute $Q$ from $P$, I didn't even get integral $P$... Roughly, I do something like
-
-\begin{verbatim}
-    SymmetricReduction[(-2840 v1^4 + 12440 (v1^2) v2 - 26800 (v1) (v3) + 
-     57720 v4) /. {v1 -> t0 + t1 + t2 + t3, 
-    v2 -> t0*t1 + t0*t2 + t0*t3 + t1*t2 + t1*t3 + t2*t3, 
-    v3 -> t0*t1*t2 + t0*t1*t3 + t0*t2*t3 + t1*t2*t3, 
-    v4 -> t0*t1*t2*t3} /. {t0 -> t0 + (t0 + t1 + t2 + t3)/3, 
-   t1 -> t1 + (t0 + t1 + t2 + t3)/3, t2 -> t2 + (t0 + t1 + t2 + t3)/3,
-    t3 -> t3 + (t0 + t1 + t2 + t3)/3}, {t0, t1, t2, t3}, {c1, c2, c3, 
-  c4}]
-\end{verbatim}
-where I tried both possible signs. Not sure what I'm doing wrong yet.
-}
+\begin{example}
+For a general cubic surface, our current guess is that:
+$$Q = 25920 c_1^4+12960 c_1^2 c_2-6480 c_1 c_3+9720 c_4$$
+and
+$$P = 1080 c_1^2 c_2-1080 c_1 c_3+9720 c_4,$$
+where the $P$ and $Q$ are related by
+\begin{align*}
+P(t_0,t_1,t_2,t_3) &= Q(t_0 - \frac{t_0+\cdots+t_3}{3},\ldots, t_3 - \frac{t_0+\cdots+t_3}{3})\\
+P(t_0 - (t_0+\cdots+t_3), \ldots, t_3 - (t_0+\cdots+t_3)) &= Q(t_0,\ldots,t_3)
+\end{align*}
+The coefficients of $Q$  are all divisible by 3 as predicted.
+\end{example}
 \bibliographystyle{plain}
 \bibliography{references.bib}
 \end{document}

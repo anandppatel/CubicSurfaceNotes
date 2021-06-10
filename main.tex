@@ -88,20 +88,37 @@
 
 \section{Introduction}
 \label{sec:intro}
-Our objective is to determine an enumerate formula which counts the
-number of times a general cubic surface occurs in a general
-$4$-parameter family $ \pi: X \to B$ of cubic surfaces.  We work
-throughout with finite-type schemes over an algebraically closed,
-characteristic zero ground field $k$.
+Our objective in this paper is to determine a general enumerative
+formula which counts the number of times a general cubic surface
+occurs in any $4$-parameter family $ \pi: X \to B$ of cubic surfaces
+satisfying a mild assumption.  We work over an algebraically closed,
+characteristic zero ground field $k$.  Applying the formula to some
+natural families yields:
 
+\begin{theorem}
+  \begin{itemize}
+  \item[(A)] A general abstract cubic surface can be
+    interpolated through $15$ general points in $\P^3$ in exactly
+    $96120$ distinct ways.
+  \item[(B)] Let $X \subset \P^{4}$ be a general cubic
+    threefold. A general abstract cubic surface arises $42720$ times
+    as a hyperplane section of $X$.
+    \item[(C)]... 
+    \end{itemize}
+\end{theorem}
+
+The first computation is a verification of \cite{}.  
+
+In order to state the general formula, we clarify which families of
+cubic surfaces it applies to:
 
 \begin{definition}
 \label{def:goodfamily}
-  Let $\pi :X \to B$ be a flat, projective morphism of relative
-  dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is
-  {\bf a good family of cubic surfaces} if for all $b \in B$, the
-  fiber $X_{b}$ is isomorphic to a cubic surface which is not
-  contained in the $PGL_4$-orbit closure of a general cubic surface.
+Let $\pi :X \to B$ be a flat, projective morphism of relative
+dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is {\bf
+  a good family of cubic surfaces} if for all $b \in B$, the fiber
+$X_{b}$ is isomorphic to a cubic surface which is not an isotrivial
+specialization of a general cubic surface.
 \end{definition}
 
 The base $B$ of a good family carries its {\sl natural} rank $4$
@@ -110,30 +127,42 @@ vector bundle
   \label{eq:V}
   V := \pi_{*}\omega_{X/B}^{-1}.
 \end{align}
-Furthermore, $B$ admits a rational map
+Furthermore, assuming the general fiber of $\pi$ is smooth, $B$ admits
+a rational map
 \begin{align}
   \label{eq:mu}
   \mu: B \dashrightarrow M
 \end{align}
-to the coarse moduli variety $M$ of cubic surfaces. If we further
-assume, as we will from here on out, that $B$ is proper, then by
-general equivariant-geometric arguments there exists a universal
-weighted-degree $4$ polynomial
+to the coarse moduli variety $M$ of cubic surfaces.
+
+
+\begin{theorem}\label{theorem:main}
+  Let $\pi: X \to B$ be a good family of cubic surfaces with $B$
+  proper and smooth generic fiber. If $v_{i}, i=1, \dots 4$ denote the
+  Chern classes of $V = \pi_{*}(\omega_{\pi}^{-1})$, then
+  \begin{align}
+    \label{eq:MAIN}
+   \deg( 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4}) = \deg \mu,
+  \end{align}
+  where $\mu: B \dashrightarrow M$ is the induced map to the moduli
+  space of cubic surfaces.
+\end{theorem}
+
+
+Our method of proof is to first argue that there exists a formula of the form
+
 \begin{align}
   \label{eq:P}
-  P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4}
+  \deg (a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4}) = \deg \mu,
 \end{align}
-in the Chern classes $v_{i} = c_{i}V$, such that
-\begin{align}
-  \label{eq:equality}
-  \deg P(v_{1},v_{2},v_{3},v_{4}) = \deg \nu
-  \end{align}
-Our goal is to determine $P$, which amounts to determining
-the five coefficients $a_{\bullet}$.
+as stated in \autoref{theorem:main}.  Then, we determine the five coefficients by exhibiting particular good
+families for which we know all $v_{i}$ and $\deg \mu$.  We will
+actually exhibit nine(?) such families, thereby increasing the
+confidence in the correctness of our formula.
 
-This is essentially an exercise in the method of indetermined
-coefficients. We devote each section to the construction of a
-particular good family.  After each section, we reset notation.
+We devote each section to the construction of a particular good
+family.  After each section, we reset
+notation.
 
 \section{Family $B_1$}
 \label{sec:first-test-family}

@@ -20,7 +20,6 @@
 \usepackage{marginnote} % Currently unused, but for notes in the margin
 \usepackage{graphics} % For custom pretty fractions 
 \usepackage{newtxmath} % Changes the math font to be bolder and prettier
-\usepackage{cleveref} % stackexchange says to load this after hyperref
 
 \geometry{margin=1.66 in}
 %\sectionfont{\centering}
@@ -29,14 +28,19 @@
 
 
 \title{Counting Cubic Surfaces}
-\author{Anand Deopurkar, Anand Patel \& Dennis Tseng}
+\author{Anand Deopurkar \and Anand Patel \and Dennis Tseng}
 
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
+\newcommand{\propositionautorefname}{Proposition}
+\newtheorem{corollary}{Corollary}[section]
+\newcommand{\corollaryautorefname}{Corollary}
 \newtheorem{conjecture}{Conjecture}[section]
+\newcommand{\conjectureautorefname}{Conjecture}
 \newtheorem{definition}{Definition}[section]
+\newcommand{\definitionautorefname}{Definition}
 
 \newenvironment{example}{\textbf{Example:}}{}
 \newenvironment{remark}{\textbf{Remark:}}{}
@@ -59,6 +63,7 @@
 
 
 \renewcommand{\P}{\mathbb{P}}
+\newcommand{\SL}{\operatorname{SL}}
 \newcommand{\T}{\mathbb{T}}
 \newcommand{\e}{\varepsilon}
 \newcommand{\<}{\left\langle}
@@ -526,6 +531,7 @@ The main obstacle in using this simple family is: I do not a priori
 know the cubic surface count!!!
 
 \section{Isotrivial family of surface with 3 $A_2$ singularities}
+\label{sec:isotrivial3A2}
 
 We outline the idea and give references, in order to fill in the computation relating to \eqref{eq:equality} later. 
 
@@ -543,7 +549,7 @@ The cubic surface defined by $X^3 + YZW = 0$ has singularity type $3A_2$ and is 
 The fact that $X^3 + YZW=0$ has singularity type $3A_2$ follows from \cite[Proof of 3.1.12]{N00}. Semistability follows from \cite[Proposition 2.3]{N05}.
 \end{proof}
 
-Given \Cref{prop:3A2}, we summarize the two facts about the $3A_2$ cubic surface that makes this family work:
+Given \autoref{prop:3A2}, we summarize the two facts about the $3A_2$ cubic surface that makes this family work:
 \begin{proposition}
 \label{prop:twofacts}
 The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer and is not in the orbit closure of any stable cubic surface.
@@ -565,7 +571,7 @@ Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\otimes 3
 The family $\mathcal{X}\to B$ is a nontrivial family of cubic surfaces where no member is a contained in the orbit closure of a stable cubic surface.
 \end{proposition}
 
-Thus, \Cref{prop:isotrivialfamily} affords an enumerative problem whose answer is zero. We worked with a general base $B$, but it suffices for our purposes to let $B=\mathbb{P}^4$. 
+Thus, \autoref{prop:isotrivialfamily} affords an enumerative problem whose answer is zero. We worked with a general base $B$, but it suffices for our purposes to let $B=\mathbb{P}^4$. 
 
 {\color{red} I suspect we can relate this to a collection of 6 points on $P^2$ with a stabilizer, so this family looks more like Anand's many families. From \cite[Proposition 3.3]{N05}, it looks like the length 6 scheme corresponding to the $3A_2$ surface is the intersection of the union of two lines with a triple line. Don't see it yet, but writing this down to not forget.}
 
@@ -578,6 +584,177 @@ The relation we obtain from Dennis's trick appears to be:
   \label{eq:relationDennis}
   a_{2^{2}} = 0.
 \end{align}
+
+\section{More isotrivial families}
+In this section, we exhibit a number of good isotrivial families.
+All of these families will arise from a cubic surface $X$ with automorphism group $\mathbb G_m$.
+To make sure that these families are good, we must prove that $X$ does not lie in the closure of the orbit of a generic cubic surface.
+If $X$ is a semi-stable point of the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows from GIT.
+We now explain an extension of this idea that allows for even more examples.
+
+Let $V$ be a 4-dimensional vector space.
+Consider the natural action of $\SL(V)$ on $\P(\sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
+That is, consider the action of $\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a cubic surface and $H \subset \P^3$ is a hyperplane.
+For a pair of positive integers $a, b$, the action lifts uniquely to an action on the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT of the resulting linearized action depends only on the ratio $t = a/b$.
+
+\begin{proposition}\label{prop:nolimit}
+  Let $t$ be a positive rational number.
+  Suppose $S \subset \P^3$ is a cubic surface such that for every hyperplane $H$, the pair $(S,H)$ is $t$-stable.
+  Let $X \subset \P^3$ be a cubic surface with stabilizer group $\mathbb G_m \subset \SL_4$ such that for some $\mathbb G_m$-fixed hyperplane $H \subset \mathbb P^3$, the pair $(X, H)$ is $t$-semistable.
+  Then $X$ does not lie in the closure of the $\SL_4$-orbit of $S$.
+\end{proposition}
+\begin{proof}
+  Suppose $X$ lies in the orbit closure of $S$.
+  Then there exists a one-parameter subgroup $\alpha \colon \mathbb G_m \to \SL_4$ and a cubic surface $Y \subset \P^3$ such that $Y$ is in the $\SL_4$-orbit of $S$ and
+  \[ \lim_{t \to 0} \alpha_t(Y) = X.\]
+  Since the stabilizer of $X$ is assumed to be a particular $\mathbb G_m \subset \SL_4$, the map $\alpha$ must factor through this $\mathbb G_m \subset \SL_4$.
+  Consider the $\alpha$-fixed hyperplane $H \subset \P^3$ such that $(X, H)$ is $t$-semistable.
+  We have
+  \[ \lim_{t \to 0} \alpha_t(Y, H) = (X, H).\]
+  This contradicts that $(Y, H)$ is $t$-stable.
+\end{proof}
+\begin{corollary}\label{cor:nolimit}
+  Let $X$ be as in \autoref{prop:nolimit} and assume $0 < t \leq 3/7$.
+  Let $S$ be a smooth cubic surface without an Eckardt point.
+  Then $X$ is not in the closure of the $\SL_4$ orbit of $S$.
+\end{corollary}
+\begin{proof}
+  We use the classification of $t$-stable pairs $(S,H)$ due to Gallardo and Martinez-Garcia \cite{gal.mar:19}.
+  For a smooth cubic surface $S$ without an Eckardt point and any hyperplane $H$, the curve $D = S \cap H$ is reduced and has $A_n$ singularities for $n \leq 3$ (at worst tacnodes).
+  From \cite[Theorem~2]{gal.mar:19}, it follows that $(S, H)$ is $t$-stable.
+  We now use \autoref{prop:nolimit}.
+\end{proof}
+
+\begin{corollary}
+  The following surfaces with stabilizer $\mathbb G_m \subset \SL_4$ are not in the closure of the $\SL_4$-orbit of a generic cubic surface (the parenthesis describes the singularities):
+  \begin{enumerate}
+  \item $x_0x_1x_3 = x_2^3$ \quad $(3A_2)$
+  \item $x_3(x_0x_2-x_1^2) = x_0x_1^2$ \quad $(A_3 + 2A_1)$
+  \item $x_3(x_0x_2-x_1^2) = x_0^2x_1$ \quad $(A_4 + A_1)$
+  \item $x_3x_0^2 = x_1^3 + x_2^3$ \quad $(D_4)$
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+  Together with a suitable $\mathbb G_m$-invariant hyperplane section $H$, these surfaces are $t$-semistable for $0 < t < 1$, $t = 1/5$, $t = 1/3$, and $t = 3/7$, respectively (\cite[Table~2]{gal.mar:19}).
+  We now apply \autoref{cor:nolimit}.
+\end{proof}
+
+Let $X$ be a good cubic surface (not in the closure of a general orbit) with stabilizer group $\mathbb G_m$.
+We have a good family
+\[ \mathcal X = [X / \mathbb G_m] \xrightarrow{\pi} [. / \mathbb G_m] = B\mathbb G_m,\]
+yielding a moduli map
+\[\mu \colon B \mathbb G_m \to [\mathbb P^{19}/\SL_4].\]
+By construction, the pull-back under $\mu$ of the closure of a generic orbit is empty.
+Therefore, we must have
+\[ a_{1^4} v_1^4 + a_{1^22}v_1^2v_2 + a_{13}v_1v_3 + a_{2^2}v_2^2 + a_4v_4 = 0.\]
+By computing $v_1^4, \dots, v_4$, we get a linear relationship among the coefficients.
+
+To compute $v_1^4, \dotso, v_4$, we must identify the vector bundle $\pi_* \left( \omega_{\mathcal X/B\mathbb G_m}^{-1}\right)$.
+To do so, let $\mathcal V$ be the rank 4 vector bundle on $B \mathbb G_m$ corresponding to the representation $\mathbb G_m \to \SL_4$.
+Then $\mathcal X \subset \P \mathcal V$ is a divisor, given by a global section of a line bundle
+\[ \mathcal L = \mathcal O_{\P \mathcal V}(3) \otimes \pi^* M\]
+for some line bundle $M$ on $B\mathbb G_m$.
+By adjunction, we have
+\begin{align*}
+  \omega_{\mathcal X/B\mathbb G_m} &= \omega_{\P \mathcal V / \mathbb G_m} \otimes \mathcal L \big|_{\mathcal X}\\
+                                   &= \mathcal O_{\P \mathcal V}(-4) \otimes \mathcal O_{\P \mathcal V}(3) \otimes \pi^* M \big|_{\mathcal X} \\
+                                   &= \mathcal O_{\P \mathcal V}(-1) \otimes \pi^* M \big |_{\mathcal X},
+\end{align*}
+and hence
+\begin{align*}
+  \pi_* \left( \omega_{\mathcal X/B\mathbb G_m}  \right) &= \pi_* \left( \mathcal O_{\P \mathcal V}(1) \big|_{\mathcal X} \right) \otimes M^\vee \\
+  &= \mathcal V \otimes M^\vee.
+\end{align*}
+Hence, by identifying $\mathcal V$ and $M$, we can easily compute the chern classes $v_i$.
+
+Given $a \in \mathbb Z$, we denote by $\chi(a)$ the line bundle on $B\mathbb G_m$ corresponding to the character $t \mapsto t^a$.
+Denote by $q \in A^1(B\mathbb G_m)$ the generator of the cohomology ring given by $q = c_1(\chi(1))$.
+\subsection{The family $3A_2$}
+For
+\[ X: x_0x_1x_3 = x_2^3\]
+a stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(a,b,0,c)$ where $a+b+c = 0$.
+Thus, we have
+\[\mathcal V = \chi(a) \oplus \chi(b) \oplus \chi(0) \oplus \chi(c).\]
+The element $x_0x_1x_3 - x_2^3$ is a global section of $\sym^3 \mathcal V$.
+In other words, $\mathcal X$ is a section of $\mathcal O_{\P \mathcal V}(3)$ and hence we have
+\[ M = \chi(0).\]
+We get
+\[ v_1 = 0, \quad v_2 = (ab+bc+ca) \cdot q^2, \quad v_3 = abc \cdot q^3, \quad v_4 = 0,\]
+and hence
+\[ v_1^4 = 0, \quad v_1^2v_2 = 0, \quad v_1v_3 = 0,\quad v_2^2 \neq 0, \quad v_4 = 0.\]
+Therefore, this family gives the relation
+\begin{equation}\label{eqn:iso1}
+  a_{2^2} = 0.
+\end{equation}
+
+\subsection{The family $A_3 + 2A_1$}
+For
+\[ X: x_3(x_0x_2-x_1^2) = x_0x_1^2,\]
+the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(-3,1,5,-3)$.
+Thus, we have
+\[ \mathcal V = \chi(-3) \oplus \chi(1) \oplus \chi(5) \oplus \chi(-3).\]
+The element $x_3(x_0x_2-x_1^2) - x_0x_1^2$ defines a global section of $\sym^3 \mathcal V \otimes \chi(1)$.
+In other words, we have
+\[ M = \chi(1).\]
+%((-4 -16 64 0) (256 -256 -256 256 0))
+We get
+\[ v_1 = -4q, \quad v_2 = -16q^2, \quad v_3 = 64q^3, \quad v_4 = 0,\]
+and hence
+\[ v_1^4 = 256 \quad v_1^2v_2 = -256, \quad v_1v_3 = -256, \quad v_2^2 = 256, \quad v_4 = 0.\]
+Therefore, this family gives the relation
+\begin{equation}\label{eqn:iso2}
+  a_{1^4} - a_{1^2 2}- a_{13} +  a_{2^2}  = 0.
+\end{equation}
+
+\subsection{The family $A_4 + A_1$}
+For
+\[ X: x_3(x_0x_2-x_1^2) = x_0^2x_1,\]
+the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(1,-1,-3,3)$.
+Thus, we have
+\[ \mathcal V = \chi(1) \oplus \chi(-1) \oplus \chi(-3) \oplus \chi(3).\]
+The element $x_3(x_0x_2-x_1^2) - x^2_0x_1$ defines a global section of $\sym^3 \mathcal V \otimes \chi(-1)$.
+In other words, we have
+\[ M = \chi(-1).\]
+We get
+\[ v_1 = 4q, \quad v_2 = -4q^2, \quad v_3 = -16q^3, \quad v_4 = 0,\]
+and hence
+\[ v_1^4 = 256 \quad v_1^2v_2 = -64, \quad v_1v_3 = -64, \quad v_2^2 = 16, \quad v_4 = 0.\]
+Therefore, this family gives the relation
+\begin{equation}\label{eqn:iso3}
+  16a_{1^4} -4a_{1^2 2}- 4a_{13} + 1 a_{2^2}  = 0.
+\end{equation}
+
+\subsection{The family $D_4$}
+For
+\[ X: x_3x_0^2 = x_1^3+x_2^3,\]
+the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(5,1,1,-7)$.
+Thus, we have
+\[ \mathcal V = \chi(5) \oplus \chi(1) \oplus \chi(1) \oplus \chi(-7).\]
+The element $x_3x_0^2-x_1^3-x_2^3$ defines a global section of $\sym^3 \mathcal V \otimes \chi(-3)$.
+In other words, we have
+\[ M = \chi(-3).\]
+We get
+\[ v_1 = -12q, \quad v_2 = -16q^2, \quad v_3 = 192q^3, \quad v_4 = -512q^4,\]
+and hence
+\[ v_1^4 = 20736 \quad v_1^2v_2 = 2304, \quad v_1v_3 = -2304, \quad v_2^2 = 256, \quad v_4 = -512.\]
+Therefore, this family gives the relation
+\begin{equation}\label{eqn:iso4}
+  81a_{1^4} +9a_{1^2 2}- 9a_{13} +  a_{2^2}-2a_4  = 0.
+\end{equation}
+
+\subsection{Families over a base variety}
+By choosing a suitable base $B$ and a map $B \to B \mathbb G_m$, we can construct an isotrivial family over $B$ by pulling back one of the families above.
+We describe this explicitly in an example.
+
+Let $B = \mathbb P^4$.
+Set
+\[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus \mathcal O(-7).\]
+Let $x_0, x_1, x_2, x_3$ be generators of the four summands on the standard $\mathbb A^4 \subset \mathbb P^4$.
+We have the section $(x_3x_0^2-x_1^3-x_2^3)$ of $\sym^3 V = \mathcal O(3)^{\oplus 20}$.
+Note that this section has a pole of order $3$ along the hyperplane at infinity.
+As a result, it defines a section $\xi$ of $\sym^3 V \otimes \mathcal O(-3)$, which is nowhere vanishing.
+Equivalently, $\xi$ is a section of $\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.
+Our family $\mathcal X \to B$ is defined by the zero-locus of $\xi$ in $\P V  \to B$.
 
 \appendix
 
@@ -598,20 +775,20 @@ can be expressed as
 for polynomial homogeneous $Q_Z$ with degree equal to the codimension of $Z$. 
 \end{lemma}
 
-The variables $t_i$'s in \Cref{lem:Q_Zclass} can either be viewed as chern roots or via the inclusion into the torus-equivariant Chow ring 
+The variables $t_i$'s in \autoref{lem:Q_Zclass} can either be viewed as chern roots or via the inclusion into the torus-equivariant Chow ring 
 \begin{align*}
     A^{\bullet}(\mathbb{P}_{T}(\operatorname{Sym}^d W^{\vee}))\cong \frac{\mathbb{Z}[H, t_0,\ldots,t_{r}]}{\left(\displaystyle\prod_{\substack{i_0+\cdots+i_{r}=d\\ i_0,\ldots,i_r\geq 0}}(H-i_0 t_0 - \cdots - i_r t_r)\right)}
 \end{align*}
 where $T\subset GL_{r+1}$ is the standard torus.
 
-\begin{proof}[Proof of \Cref{lem:Q_Zclass}]
+\begin{proof}[Proof of \autoref{lem:Q_Zclass}]
 The formula for the Chow ring of $A^{\bullet}(\mathbb{P}_{GL_{r+1}}(\operatorname{Sym}^d W^{\vee}))$ in \eqref{eq:equivariantSym} follows from the Chow ring of a projective bundle. %applied to the construction of an equivariant Chow ring, didn't find a quick reference for this than other people saying its obvious
 
 The formula for $[\mathbb{P}Z]$ in terms of a polynomial $Q_Z$ follows from \cite[Theorem 6.1]{FNR05}, where $Q_Z$ is the formula for the class of $[Z]$ in $A^{\bullet}_{GL_r+1}(\operatorname{Sym}^d W^{\vee})\cong \mathbb{Z}[H, t_0,\ldots,t_{r}]$. 
 \end{proof}
 
 \begin{proposition}
-In the context of \Cref{def:goodfamily} a universal polynomial $P$ as in \eqref{eq:P} exists.
+In the context of \autoref{def:goodfamily} a universal polynomial $P$ as in \eqref{eq:P} exists.
 \end{proposition}
 
 \begin{proof}
@@ -619,11 +796,86 @@ Following the setup in \eqref{eq:P}, we start with a good family $\pi: X\to B$ a
 
 Inside of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, the section $\sigma$ is induced by the inclusion of a line bundle $L=\det(V^{\vee})\hookrightarrow \operatorname{Sym}^3 V^{\vee}$. {\color{red} Check this, the main thing we need is that the line bundle can be expressed in terms of $c_1(V)$ only. I don't have a clean proof yet.}
 
-Now, we apply \Cref{lem:Q_Zclass}, where $Z\subset \operatorname{Sym}^3(\mathbb{C}^{4\ast})$ is the $GL_4$ orbit closure of a general degree 3 homogenous equation in 4 variables. The vector bundle $V\to B$ induces a map $B\to [\operatorname{pt}/GL_4]$ under which $[\operatorname{Sym}^3(\mathbb{C}^{4\ast})/GL_4]$ pulls back to $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$. Under the pullback the equivariant class of the projectivized orbit closure $[\mathbb{P}Z]$ pulls back to the class of the relative orbit closure $\mathcal{Z}\subset \mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, where each fiber of $\mathcal{Z}\to B$ is given by $Z$. By \Cref{lem:Q_Zclass}, the class of $\mathcal{Z}$ depends only on the chern classes of $V$. 
+Now, we apply \autoref{lem:Q_Zclass}, where $Z\subset \operatorname{Sym}^3(\mathbb{C}^{4\ast})$ is the $GL_4$ orbit closure of a general degree 3 homogenous equation in 4 variables. The vector bundle $V\to B$ induces a map $B\to [\operatorname{pt}/GL_4]$ under which $[\operatorname{Sym}^3(\mathbb{C}^{4\ast})/GL_4]$ pulls back to $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$. Under the pullback the equivariant class of the projectivized orbit closure $[\mathbb{P}Z]$ pulls back to the class of the relative orbit closure $\mathcal{Z}\subset \mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, where each fiber of $\mathcal{Z}\to B$ is given by $Z$. By \autoref{lem:Q_Zclass}, the class of $\mathcal{Z}$ depends only on the chern classes of $V$. 
 
 The polynomial $P$ in \eqref{eq:P} is the intersection number of $\sigma$ with the class of $\mathcal{Z}$. The class of $\sigma$, the Chow ring of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, and the class of $\mathcal{Z}$ are depend only on the chern classes of $V$. Thus, the final intersection number depends only on the chern classes of $V$ as desired. 
 {\color{red} I don't think it'll be any harder to actually determine the formula of $P$ in \eqref{eq:P} in terms of the equivariant class of an orbit closure of a cubic surface, but we don't seem to need the formula. The point is that $P$ and the equivariant class of the orbit closure are equivalent by some substitution.}
 \end{proof}
+
+\section{Congruence relations from hypersurfaces with finite automorphisms}
+As another another check for the class, I think we can get congruence relations from isotrivial families of hypersurfaces with finite linear automorphisms. This is the same idea as the $3A_2$ family, except the condition holds in $H_{G}(\operatorname{pt})$ with $G$ a finite group instead of $\mathbb{G}_m$. 
+
+\begin{proposition}
+\label{prop:isotrivial2}
+Let $X\subset \mathbb{P}^r$ be a hypersurface with a linear automorphism group $G\subset \operatorname{Aut}(X)\subset GL_{r+1}$. Let $Q$ be the polynomial $Q_Z$ in \autoref{lem:Q_Zclass} where $Z$ \emph{any} equivariant cycle in the space of hypersurfaces not containing $X$. Then, under the linear representation $G\hookrightarrow GL_{r+1}$, $Q$ is sent to zero under the characteristic class map:
+\begin{align*}
+    A^{\bullet}_{GL_{r+1}}\cong \mathbb{Z}[t_0,\ldots,t_{r}]\to A^{\bullet}_{G}(\operatorname{pt}). 
+\end{align*}
+\end{proposition}
+
+% \begin{proof}
+% Continue: the key point is that the twisted family of hypersurfaces comes from descending a trivial section of Sym^d of the universal vector bundle pulled back from BG\to BGL_{r+1}, so intersecting this section with the orbit closure picks out constant term of the projective equivariant class. This constant term is exactly $Q$ in the proposition.
+
+% This is just the general construction of the twisted family:
+% Given a hypersurface $X\subset \mathbb{P}^r$ with a finite linear automorphism group $G=\operatorname{Aut}(X)\subset GL_{r+1}$, we want to construct a twisted version of $X$ over $BG$. To this end, take $X\times ((\mathbb{C}^{r+1})^N\backslash Z)\subset \mathbb{P}^r \times ((\mathbb{C}^{r+1})^N\backslash Z)$, where $N>>0$ and $Z$ is some closed set of high codimension. Here $G$ acts on $X$ and $\mathbb{P}^{r+1}$ by linear automorphisms and on each factor of $\mathbb{C}^{r+1}$ via $GL_{r+1}$. The closed set $Z$ is chosen to $G$ acts freely on $(\mathbb{C}^{r+1})^N\backslash Z$. 
+
+% Taking the quotient by $G$ yields a nontrivial family of hypersurfaces $\mathcal{X}\to ((\mathbb{C}^{r+1})^N\backslash Z)/G$ inside the projectivization of some vector bundle $W$ over $((\mathbb{C}^{r+1})^N\backslash Z)/G$.
+% \end{proof}
+\begin{example}
+\autoref{prop:isotrivial2} specializes to \autoref{sec:isotrivial3A2} when applied to the cubic surface $X^3=YZW$.
+\end{example}
+
+\begin{example}
+Every coefficient of every class of a quartic plane curve we computed in \cite{LPT19} is divisible by 4 (even after dividing by the automorphism groups). I think this is a consequence of the Fermat quartic having automorphism group containing $(\mu_4)^3\hookrightarrow GL_3$. Similarly, every equivariant class of a cubic curve orbit is divisible by 3 in \cite[Appendix C]{LPT19}, and this should follow from the Fermat cubic. We will try to prove this in \autoref{prop:divd} below.
+\end{example}
+
+Given the example, we will try to flesh out the application of \autoref{prop:3A2} to the Fermat hypersurface applied to the case $G=(\mu_d)^{r+1}\subset GL_{r+1}$. In general, I don't know how to compute the map $A^{\bullet}_{GL_{r+1}}\to A^{\bullet}_{G}(\operatorname{pt})$ (google ``characteristic class of a linear representation''). 
+
+\subsection{Fermat hypersurfaces}
+A Fermat hypersurface $X\subset \mathbb{P}^r$ of degree $d$ has a linear automorphism group containing $(\mu_d)^{r+1}$. {\color{red} You can also permute the coordinates, curious what condition in $A^{\bullet}_{S_{r+1}}$ that gives...}
+
+\begin{lemma}
+\label{lem:mu_d}
+Under the inclusion $\mu_d\hookrightarrow \mathbb{G}_m$, the map in group cohomology is given by 
+\begin{align*}
+    \mathbb{Z}[t]=A^{\bullet}_{\mathbb{G}_m}(\operatorname{pt})\to A^{\bullet}_{\mu_d}(\operatorname{pt})=\mathbb{Z}[t]/(dt)
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+The ring structure of $A^{\bullet}_{\mu_d}(\operatorname{pt})$ is given by the cohomology ring of the Lens space 
+\href{https://mathoverflow.net/questions/133974/reference-for-ring-structure-on-group-cohomology}{(mathoverflow link)}. To compute the map, we take an approximation of $B\mathbb{G}_m$ and $B\mu_d$ to compute the map in $A^{1}_{\mathbb{G}_m}(\operatorname{pt})\to A^{1}_{\mu_d}(\operatorname{pt})$. This reduces to a familiar geometric example of a cone over a rational normal curve.
+
+We approximate using the map $B\mu_d\to B\mathbb{G}_m$ using
+\begin{align*}
+    \pi: S=\operatorname{Spec}(\mathbb{C}[x^d, x^{d-1}y,\ldots,y^d])=(\mathbb{A}^2\backslash\{0\})/\mu_d\to (\mathbb{A}^2\backslash\{0\})/\mathbb{G}_m=\mathbb{P}^1. 
+\end{align*}
+The map $\pi$ is the projection of the cone over a degree $d$ rational normal curve (minus the origin) onto the rational normal curve. The content of \autoref{lem:mu_d} is that a ruling of the cone $S$ over a rational normal curve generates the class group of the cone. 
+
+This is true because $S\backslash L\cong \mathbb{A}^2$ where $L$ is a ruling. (The more nontrivial fact is that $A^{1}(S)\cong \mathbb{Z}/d\mathbb{Z}$, so $[L]$ is exactly $d$-torsion. This is implied by the cohomology of the lens space above, but one can probably prove it directly. For example, $[L]$ is nontrivial in the class group because it cannot be cut out by a single equation (since the tangent space at the cone is at least 3-dimensional for $d>1$).) 
+\end{proof}
+
+\begin{proposition}
+\label{prop:divd}
+If $Q$ is the polynomial associated to the equivariant class of \emph{any} equivariant class in the space of degree $d$ hypersurfaces not containing the Fermat hypersurface, then every coefficient of $Q$ is divisible by $d$.
+\end{proposition}
+
+\begin{proof}
+This follows from \autoref{lem:mu_d} and \autoref{prop:isotrivial2}.
+\end{proof}
+
+\begin{example}
+For a general cubic surface, our current guess is that:
+$$Q = 25920 c_1^4+12960 c_1^2 c_2-6480 c_1 c_3+9720 c_4$$
+and
+$$P = 1080 c_1^2 c_2-1080 c_1 c_3+9720 c_4,$$
+where the $P$ and $Q$ are related by
+\begin{align*}
+P(t_0,t_1,t_2,t_3) &= Q(t_0 - \frac{t_0+\cdots+t_3}{3},\ldots, t_3 - \frac{t_0+\cdots+t_3}{3})\\
+P(t_0 - (t_0+\cdots+t_3), \ldots, t_3 - (t_0+\cdots+t_3)) &= Q(t_0,\ldots,t_3)
+\end{align*}
+The coefficients of $Q$  are all divisible by 3 as predicted.
+\end{example}
 \bibliographystyle{plain}
 \bibliography{references.bib}
 \end{document}

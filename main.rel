@@ -27,6 +27,8 @@
 
 ("eq:mu" "e" "\\mu: B \\dashrightarrow M " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
+("eq:MAIN" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
 ("eq:P" "e" "P(v_1,v_2,v_3,v_4) = a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("eq:equality" "e" "\\deg P(v_{1},v_{2},v_{3},v_{4}) = \\deg \\nu " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)

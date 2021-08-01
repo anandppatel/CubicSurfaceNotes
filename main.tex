@@ -93,18 +93,18 @@
 
 \section{Introduction}
 \label{sec:intro}
-Our objective in this paper is to determine a general enumerative
+Our primary objective in this paper is to determine an enumerative
 formula which counts the number of times a general cubic surface
-occurs in any $4$-parameter family $ \pi: X \to B$ of cubic surfaces
-satisfying a mild assumption.  We work over an algebraically closed,
-characteristic zero ground field $k$.  Applying the formula to some
-natural families yields:
+occurs in a (suitable) $4$-parameter family $ \pi: X \to B$ of cubic
+surfaces.  We work over an algebraically closed, characteristic zero
+ground field $k$.  Applying the formula to some natural families
+yields:
 
 \begin{theorem}
   \begin{itemize}
-  \item[(A)] A general abstract cubic surface can be
-    interpolated through $15$ general points in $\P^3$ in exactly
-    $96120$ distinct ways.
+  \item[(A)] A general abstract cubic surface can be interpolated
+    through $15$ general points in $\P^3$ in exactly $96120$ distinct
+    ways.
   \item[(B)] Let $X \subset \P^{4}$ be a general cubic
     threefold. A general abstract cubic surface arises $42720$ times
     as a hyperplane section of $X$.
@@ -112,9 +112,10 @@ natural families yields:
     \end{itemize}
 \end{theorem}
 
-The first computation is a verification of \cite{}.  
+The first computation above provides a verification of \cite{}, which
+used the numerical technique of homotopy continuation.
 
-In order to state the general formula, we clarify which families of
+Before providing the formula, we clarify which families of
 cubic surfaces it applies to:
 
 \begin{definition}
@@ -165,7 +166,7 @@ families for which we know all $v_{i}$ and $\deg \mu$.  We will
 actually exhibit nine(?) such families, thereby increasing the
 confidence in the correctness of our formula.
 
-We devote each section to the construction of a particular good
+Each section focuses on one particular construction of a good
 family.  After each section, we reset
 notation.
 
@@ -867,7 +868,7 @@ This follows from \autoref{lem:mu_d} and \autoref{prop:isotrivial2}.
 \begin{example}
 For a general cubic surface, our current guess is that:
 $$Q = 25920 c_1^4+12960 c_1^2 c_2-6480 c_1 c_3+9720 c_4$$
-and
+ and
 $$P = 1080 c_1^2 c_2-1080 c_1 c_3+9720 c_4,$$
 where the $P$ and $Q$ are related by
 \begin{align*}

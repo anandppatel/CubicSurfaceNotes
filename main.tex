@@ -106,7 +106,7 @@ yields:
     through $15$ general points in $\P^3$ in exactly $96120$ distinct
     ways.
   \item[(B)] Let $X \subset \P^{4}$ be a general cubic
-    threefold. A general abstract cubic surface arises $42720$ times
+    threefold. A general abstract cubic surface arises $42120$ times
     as a hyperplane section of $X$.
     \item[(C)]... 
     \end{itemize}
@@ -155,20 +155,109 @@ to the coarse moduli variety $M$ of cubic surfaces.
 \end{theorem}
 
 
-Our method of proof is to first argue that there exists a formula of the form
+Our method of proof is to first argue that there exists a formula of
+the form
 
 \begin{align}
   \label{eq:P}
   \deg (a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4}) = \deg \mu,
 \end{align}
-as stated in \autoref{theorem:main}.  Then, we determine the five coefficients by exhibiting particular good
-families for which we know all $v_{i}$ and $\deg \mu$.  We will
-actually exhibit nine(?) such families, thereby increasing the
-confidence in the correctness of our formula.
+as stated in \autoref{theorem:main}.  Then, we determine the five
+coefficients by exhibiting particular good families for which we know
+all $v_{i}$ and $\deg \mu$.  We will actually exhibit nine(?) such
+families, thereby increasing the confidence in the correctness of our
+formula.
 
 Each section focuses on one particular construction of a good
 family.  After each section, we reset
 notation.
+
+
+
+
+\section{A good proposition}
+\label{sec:good}
+
+This section provides the main tool, \autoref{prop:good}, for
+verifying the goodness of several of our test families.
+
+\begin{definition}
+  \label{def:admissible} A length $6$ subscheme $Z \subset \P^{2}$ is
+  {\sl admissible} if:
+  \begin{enumerate}
+  \item $Z$ is curvilinear, i.e $Z$ is contained in a smooth curve,
+  \item $h^{0}(I_Z(3)) = 4$, and
+  \item $Z$ is the scheme cut out by the vector space of cubics
+    $H^0(\P^2, I_Z(3))$.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  \label{def:cubicZ} Let $Z \subset \P^2$ be an admissible length $6$
+  subscheme.  The {\sl cubic surface associated to $Z$}, denoted
+  $X_Z \subset \P^3$ is the image of the anti-canonical map
+  $\kappa: \Bl_{Z}\P^2 \to \P^3$ induced by the linear system
+  $H^0(\P^2,I_Z(3))$.
+\end{definition}
+
+\begin{proposition}
+  \label{prop:good} Let $Z \subset \P^2$ be an admissible, length $6$
+  subscheme with $X_Z \subset \P^3$ its associated cubic surface. Then
+  $\dim Aut(\P^2,Z) > 0$ if and only if $\dim Aut(\P^3,X_Z) > 0$.
+\end{proposition}
+
+\begin{proof} The implication
+  $\dim Aut(\P^2,Z) > 0 \implies \dim Aut(\P^3,X_Z) > 0$ is simpler:
+  Any automorphism $g \in Aut(\P^2,Z)$ naturally lifts to an
+  automorphism $g' \in \Aut \Bl_{Z}\P^2$. This latter automorphism
+  must preserve the anti-canonical line bundle
+  $\omega_{\Bl_{Z}(\P^2)}^{-1}$, and therefore induces an element in
+  $Aut(\P^3, X_Z)$. This element is nontrivial if $g$ is, because
+  $\kappa: \Bl_{Z}(\P^2) \to X_Z$ is birational. The implication
+  follows.
+
+
+  The opposite implication
+  $\dim Aut(\P^3,X_Z) > 0 \implies \dim Aut(\P^2,Z) > 0$ is more
+  intricate. First, note that $\Bl_{Z}\P^2$ is a surface with finitely
+  many $A_n$ singularities, thanks to the curvilinearity of $Z$; let
+  $\tau: Y \to \Bl_{Z}\P^2$ denote its minimal desingularization.
+  Since $A_n$ singularities are canonical, we conclude that
+  $\tau^{*}(\omega_{\Bl_{Z}\P^2}) = \omega_{Y}$.  The composite
+  $\kappa':= \kappa \circ \tau: Y \to X_{Z}$ can only contract a curve
+  $C \subset Y$ to a singular point of $X_Z$.  This follows because   
+  $\kappa'^{*}\omega_{X_{Z}} = \omega_{Y}$. Thus,
+  $\kappa': \kappa'^{-1}(X_{Z}^{sm}) \to X_{Z}^{sm}$ is an
+  isomorphism. Our claim is that $\kappa':Y \to X_{Z}$ is also the
+  minimal desingularization of $X_Z$.
+
+  Since $Y$ is {\sl some} desingularization of $X_Z$,
+  $\kappa':Y \to X_{Z}$ factors through the minimal desingularization
+  $\widetilde{X_{Z}} \to X_{Z}$ of $X_{Z}$; let
+  $\alpha: Y \to \widetilde{X_{Z}}$ denote the induced map. $\alpha$
+  is a birational morphism between smooth surfaces. Therefore, if it
+  is not biregular, there must be a smooth $(-1)$ rational curve
+  $E \subset Y$ contracted by $\alpha$.  Since $\omega_{Y}$ is pulled
+  back from $\widetilde{X_{Z}}$, it follows that $\omega_{Y}|_{E}$ is
+  trivial. This, along with $E \cdot E = -1$, contradicts the
+  adjunction formula.  Hence $\alpha$ is an isomorphism.
+
+  Every automorphism of a surface lifts uniquely to its minimal
+  desingularization. Therefore, if $\dim Aut(\P^3,X_Z) >0 $, it
+  follows that $\dim Aut(Y) >0$. Under this assumption, let
+  $G \subset \Aut(Y)$ denote the connected component containing
+  identity.
+
+  Since the Picard group $Pic(Y)$ is discrete, the group $G$ acts
+  trivially on $Pic(Y)$.  In particular, the line bundle $L$ inducing
+  the morphism $Y \to \Bl_{Z}\P^2 \to \P^2$ is preserved by
+  $G$. Therefore, $G$ induces an action on $\P H^0(Y,L)= \P^2$.  This action preserves the 
+
+  
+\end{proof}
+
+
+
 
 \section{Family $B_1$}
 \label{sec:first-test-family}

@@ -1,194 +1,317 @@
-\documentclass[12 pt]{amsart}
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin = 1.35 in]{geometry}
+\usepackage[frenchmath,defaultmathsizes]{mathastext}
+\usepackage{
+  hyperref,
+  amsmath,
+  amssymb,
+  tikz,
+  amsthm,
+  thmtools,
+  microtype,
+  enumitem,
+  stmaryrd,
+  tikz-cd,
+  mathrsfs,
+}
+\usepackage{graphicx}
 
-%============================
-%         Obligatory
-%============================
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mathrsfs}
-\usepackage{tikz}
-\usepackage{array}
 
-%============================
-%         Aesthetic
-%============================
-\usepackage[hidelinks]{hyperref} % For citations without hideous colored boxes
-\usepackage{geometry} % For adjusting the page domensions if desired
-%\usepackage{sectsty} % For centering Section/Subsection titles
-\usepackage{marginnote} % Currently unused, but for notes in the margin
-\usepackage{graphics} % For custom pretty fractions 
-\usepackage{newtxmath} % Changes the math font to be bolder and prettier
-
-\geometry{margin=1.66 in}
-%\sectionfont{\centering}
-%\subsectionfont{\centering}
 \linespread{1.1}
-
+\usepackage[all]{xy}
+\usepackage{eucal}
 
 \title{Counting Cubic Surfaces}
-\author{Anand Deopurkar \and Anand Patel \and Dennis Tseng}
+\author{Anand Deopurkar, Anand Patel
+  \& Dennis Tseng}
 
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newcommand{\propositionautorefname}{Proposition}
-\newtheorem{corollary}{Corollary}[section]
-\newcommand{\corollaryautorefname}{Corollary}
-\newtheorem{conjecture}{Conjecture}[section]
-\newcommand{\conjectureautorefname}{Conjecture}
-\newtheorem{definition}{Definition}[section]
-\newcommand{\definitionautorefname}{Definition}
-
-\newenvironment{example}{\textbf{Example:}}{}
-\newenvironment{remark}{\textbf{Remark:}}{}
-
-% chk is a stylized "dual" symbol created by altering the vee command 
-\newcommand{\chk}[1]{#1^{\text{\scalebox{.8}[.6]{$\boldsymbol{\vee}$}}}}
-
-% altfrac and altfraci are twin commands for alternate fractions. The difference between them is that altfrac is bogger and prettier, while altfraci fits in inline mode. In the future I plan to merge them into one command which checks the displaystyle and uses the appropriate form of the command. Note that this command is specialized to the newtxmath package, and without it the fraction shape could be distorted. This can be solved by adjusting the different numbers in the command.
-\newcommand{\altfrac}[2]{\ifmmode\def\tmp{$}\else\def\tmp{}\fi
-		\mbox{{\raisebox{.5\ht\strutbox}{\tmp#1\tmp}}
-		\kern-5pt\scalebox{1.75}[1.5]{/}\kern-1.5pt
-		\mbox{\raisebox{-.2\ht\strutbox}{\tmp#2\tmp}}}
-}
-
-\newcommand{\altfraci}[2]{\ifmmode\def\tmp{$}\else\def\tmp{}\fi
-		\scalebox{.925}[.925]{{\mbox{{\raisebox{.25\ht\strutbox}{\tmp#1\tmp}}
-		\kern-5pt\scalebox{1.5}[1.3]{\raisebox{-.1\ht\strutbox}{/}}\kern-0.5pt
-		\mbox{\raisebox{-.15\ht\strutbox}{\tmp#2\tmp}}}}}
-}
 
 
-\renewcommand{\P}{\mathbb{P}}
-\newcommand{\SL}{\operatorname{SL}}
-\newcommand{\T}{\mathbb{T}}
-\newcommand{\e}{\varepsilon}
-\newcommand{\<}{\left\langle}
-\renewcommand{\>}{\right\rangle}
-
-\newcommand{\um}[1]{\color{blue}{#1}\color{black}}
-\newcommand{\remove}[1]{\color{red}{#1}\color{black}}
-\newcommand{\add}[1]{\color{green}{#1}\color{black}}
-
-\newcommand{\keps}{\altfrac{k[\e]}{\left(\e^2\right)}}
-\newcommand{\kepsi}{\altfraci{k[\e]}{\left(\e^2\right)}}
-\newcommand{\mf}[1]{\mathfrak{#1}}
-
+%-----------------------------------------------
+\def\labelitemi{--}
+\newcommand{\todo}[1]{\fbox{ToDo: #1}}
+\renewcommand{\k}{k}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Bl}{Bl}
-\DeclareMathOperator{\Sec}{Sec}
-\DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\proj}{Proj}
-\DeclareMathOperator{\res}{res}
-\DeclareMathOperator{\sym}{Sym}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\ProjBun}{ProjBun}
+\renewcommand{\Vec}{\operatorname{Vec}}
+\DeclareMathOperator{\Polar}{Polar}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\Pole}{Pole}
+\DeclareMathOperator{\Hilb}{Hilb}
+\DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\M}{\mathcal{M}}
+\newcommand{\cO}{{\mathcal O}}
+\renewcommand{\to}{{\longrightarrow}}
 
-\newcommand{\M}{\overline{M}_{0,7}}
+\renewcommand{\sectionautorefname}{\S}
+\renewcommand{\subsectionautorefname}{\S}
+\input{macros}
+\declaretheorem[sibling=theorem,style=remark]{remark}
+\numberwithin{equation}{section}
+\declaretheorem[title=Theorem]{maintheorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+
+
+\renewcommand{\O}{\mathcal O}
+\newcommand{\G}{\mathbf G}
+\newcommand{\td}{\widetilde}
+\newcommand{\Frac}{{\mathrm{Frac}}\,}
+\newcommand{\Jac}{{\textrm{Jac}}}
+\DeclareMathOperator{\Ram}{Ram}
+\newcommand{\Hdg}{\overline{\H}_{d,g}}
+\newcommand{\Hdgn}{\overline{\H}_{d,g}}
+\newcommand{\Hdgnt}{\overline{\H}_{d,g}^{(2)}}
+\newcommand{\Hdgnth}{\overline{\H}_{d,g}^{(3)}}
+\newcommand{\sfT}{\mathcal T}
+\newcommand{\sfD}{\mathcal D}
+\newcommand{\sfB}{\mathcal B}
+\newcommand{\V}{\mathcal V}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\fm}{\mathfrak m}
+\newcommand{\smvee}{\raise0.5ex\hbox{$\scriptscriptstyle\vee$}}
+
+\newcommand{\compl}[1]{\widehat{#1}}
+\newcommand{\Spec}{{\text{\rm Spec}\,}}
+\newcommand{\Spf}{{\text{\rm Spf}\,}}
+\renewcommand {\o}[1]{\overline{#1}}
+\newcommand{\Proj}{{\text{\rm Proj}\,}}
+\newcommand{\git}{\sslash}
+% -----------------------------------------------
+
+%%% BEGIN DOCUMENT
 
 \begin{document}
 
-\maketitle
 
+
+
+\maketitle
 
 \section{Introduction}
 \label{sec:intro}
-Our primary objective in this paper is to determine an enumerative
-formula which counts the number of times a general cubic surface
-occurs in a (suitable) $4$-parameter family $ \pi: X \to B$ of cubic
+The primary goal of this paper is to determine an enumerative formula
+which counts the number of times a general cubic surface occurs in
+suitably general $4$-parameter families $ \pi: X \to B$ of cubic
 surfaces.  We work over an algebraically closed, characteristic zero
-ground field $k$.  Applying the formula to some natural families
+ground field $k$.  Applying the formula to a few particular families
 yields:
+\begin{enumerate}
+\item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic surface
+    arises $96120$ times in a general $4$ dimensional linear system of
+    cubic surfaces,} and
+\item[(B)] {\sl a general cubic surface arises $42120$ times as a
+    hyperplane section of a general cubic threefold.}
+\end{enumerate}
 
-\begin{theorem}
-  \begin{itemize}
-  \item[(A)] A general abstract cubic surface can be interpolated
-    through $15$ general points in $\P^3$ in exactly $96120$ distinct
-    ways.
-  \item[(B)] Let $X \subset \P^{4}$ be a general cubic
-    threefold. A general abstract cubic surface arises $42120$ times
-    as a hyperplane section of $X$.
-    \item[(C)]... 
-    \end{itemize}
+\begin{theorem}\label{theorem:main}
+  Let $\pi: X \to B$ be a good family of cubic surfaces over a
+  proper base $B$ and whose generic fiber is smooth. If
+  $v_{i}, i=1, 2,3, 4$ denote the Chern classes of the rank $4$ vector
+  bundle $\V = \pi_{*}(\omega_{\pi}^{-1})$, then
+  \begin{align}
+    \label{eq:MAIN}
+   \int_{B} 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4} = \deg \mu,
+  \end{align}
+  where $\mu: B \dashrightarrow \M$ is the induced map to the moduli
+  space of cubic surfaces.
 \end{theorem}
 
-The first computation above provides a verification of \cite{}, which
-used the numerical technique of homotopy continuation.
 
-Before providing the formula, we clarify which families of
-cubic surfaces it applies to:
+In simple terms, our method of proof is to first argue that there
+exists a formula of the form
+
+\begin{align}
+  \label{eq:P}
+  \int_{B} a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4} = \deg \mu,
+\end{align}
+as in \autoref{theorem:main}.  Then, we determine the five
+coefficients $a_{\bullet}$ by exhibiting particular good families for
+which we {\sl a priori} know all $v_{i}$ and $\deg \mu$.  In this way,
+we obtain a system of linear equations in five unknowns, and it turns
+out to give a unique solution. We will actually exhibit nine(?)  such
+families/equations, providing even further confidence in the
+correctness of the formula.
+  
+
+\subsection{History and context}
+\label{sec:context}
+
+The enumerative problem (A) was first mentioned in print in
+K. Ranestad and B. Sturmfeld's \cite[], and the number $96120$ was
+first arrived at by \cite[] using numerical methods, though the method
+was one verification short of constituting a proof.  R. Laza brought
+(B) to the first two authors' attention during a meeting at
+Oberwolfach in 2017.
+
+
+\autoref{theorem:main} represents a frontier case of a much more
+substantial and ongoing enumerative story, which we briefly advertise
+here.
+
+If $E$ is an $n+1$ dimensional vector space and if
+$F \in \Sym^dE^{\smvee}$ is a non-zero degree $d$ homogeneous form on
+$E$, then we let $$\Orb(F) \subset \P \Sym^d E^{\smvee}$$ denote the
+closure of the $\GL(E)$-orbit of the point
+$[F] \in \P \Sym^{d}E^{\smvee}$.  Simple questions about the geometry
+of the variety $\Orb(F)$, and its relationship to the geometry of the
+hypersurface defined by $F$, remain unanswered.  Here, perhaps the
+most well-studied problem is {\sl the calculation of the degree of the
+  orbit-closure $\Orb(F)$}.  Aluffi and Faber, in a series of
+remarkable papers \cite[], initially brought attention to this
+enumerative problem and completely solved it when $n=1, 2$ and $d$ is
+arbitrary.
+
+We propose a slight shift in perspective on the problem: We should
+instead aim to compute the {\sl equivariant fundamental class} of the
+orbit closure, denoted
+$$[\Orb(F)] \in A_{\GL(E)}^{\bullet}(\P \Sym^{d}E^{\smvee}).$$
+This class not only determines the degree of the orbit closure, but
+also tracks many more enumerative problems like (B).  As is
+demonstrated in the appendix \cite[], \autoref{theorem:main} contains
+the same content as the calculation of this equivariant class when $F$
+is assumed to be a {\sl general} degree $3$ form in four variables.
+
+This change in perspective opens the avenue of attack in this paper.
+As will be seen in \autoref{section:???} we can exploit certain {\sl
+  isotrivial} families of cubic surfaces to obtain quick relations on
+the coefficients $a_{\bullet}$.  In order to implement these
+isotrivial families, it is necessary to know whether a cubic surface
+is represented by a point in the closure of $\Orb(F)$, $F$ general.
+This is an instance of the much more general ``Orbit Closure Problem''
+\cite[].
+
+
+
+
+
+
+\section{Preliminaries}
+\label{sec:good}
+
+After establishing notation, conventions, and classical facts about
+cubic surfaces, this section introduces the notion of a {\sl good}
+family of cubic surfaces and then provides the main tool
+(\autoref{prop:good}) for verifying the goodness of several families
+in the paper.
+
+
+\subsection{Notation and conventions}
+\label{sec:notation-conventions}
+All schemes are assumed of finite-type over an algebraically closed,
+characteristic zero field, $\k$. If $\pi: X \to Y$ is a map of schemes
+and if $y \in Y$ is a point, then we let $X_y$ denote the fiber scheme
+$\pi^{-1}(y)$.  
+
+
+\subsection{Classical facts about cubic surfaces}
+\label{sec:classical-facts}
+
+\begin{theorem}[Cayley, Salmon]
+  \label{theorem:cayleysalmon} Every smooth cubic surface contains
+  exactly $27$ lines.
+\end{theorem}
+
+An ordered tuple of six lines $(\ell_1, \dots, \ell_6)$ on a cubic
+surface is called a {\sl six} if they are pairwise disjoint.  An
+unordered pair of sixes
+$\{(\ell_1, \dots, \ell_6), (\ell_1', \dots, \ell_6')\}$ is called a
+{\sl double-six} if
+\begin{itemize}
+\item $\ell_{i}$ and $\ell'_{i}$ are disjoint for all $i$, and
+\item $\ell_{i}$ and $\ell'_{j}$ meet at a point whenever $i \neq j$.
+  \end{itemize}
+
+\begin{theorem}[Schl\"{a}fli]
+  \label{theorem:schlafli} Each six on a smooth cubic surface has a
+  unique extension to a double-six, and every smooth cubic surface
+  contains $36$ double-sixes.
+\end{theorem}
+
+\subsubsection{Moduli spaces of cubic surfaces}
+\label{sec:modulispacescubic}
+We let $\M$ denote the {\sl coarse moduli space of cubic surfaces},
+obtained by taking the GIT quotient of the linear system of cubic
+surfaces in $\P^3$ by the action of $\Aut(\P^3) = \PGL_{4}(\k)$. By
+the classical calculation of invariants \cite[], we know that $\M$ is
+a $4$ dimensional variety isomorphic to the weighted projective space
+$\P(1,2,3,4,5)$.
+
+We let $\M^{\dagger}$ denote the {\sl moduli space
+  of marked cubic surfaces} which parametrizes pairs
+$(S, \underline{\ell})$ where $\underline{\ell}$ is a six on a smooth
+cubic surface $S \subset \P^3$, taken up to the action of
+$\Aut(\P^3)$.  There is a natural quasi-finite, dominant forgetful
+morphism
+\begin{align}
+  \label{eq:modulispaces}
+  \sigma: \M^{\dagger} \to \M\\
+  (S, \underline{\ell}) \mapsto S. \nonumber
+\end{align}
+
+\autoref{theorem:schlafli} implies that
+\begin{align}
+  \label{eq:degreesigma}
+  \deg (\sigma) = 72 \times 6! = 51840.
+\end{align}
+
+
+\subsection{Good families}
+\label{sec:good-families}
+
+Let $E$ denote a four dimensional $\k$-vector space, and hereafter fix
+a {\sl general} degree $3$ form $F \in \Sym^{3}E^{\smvee}$.  Let
+$$\Orb(F) \subset \P \Sym^{3}E^{\smvee} \simeq \P^{19}$$
+denote the $\GL(E)$-orbit closure of the point $[F]$.  We let
+$$\partial \Orb(F) = \Orb(F) \setminus \GL(E) \cdot [F]$$
+denote the {\sl boundary}, i.e. the complement of the orbit of $[F]$
+in its closure. $\Orb(F)$ is a $15$ dimensional variety whose singular
+locus lies in the proper subvariety $\partial \Orb(F)$.  
 
 \begin{definition}
 \label{def:goodfamily}
 Let $\pi :X \to B$ be a flat, projective morphism of relative
-dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is {\bf
-  a good family of cubic surfaces} if for all $b \in B$, the fiber
-$X_{b}$ is isomorphic to a cubic surface which is not an isotrivial
-specialization of a general cubic surface.
+dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is {\sl
+  a good family of cubic surfaces} if:
+\begin{itemize}
+\item There exists a $\P^3$-bundle $\rho: P \to B$ and a closed
+  embedding $\iota: X \hookrightarrow P$ embedding each fiber $X_b$ as
+  a cubic surface in $P_b$ and $\pi = \rho \circ \iota$,
+\item $X_{b}$ is reduced and irreducible for all $b \in B$, and
+\item There is {\sl no} $b \in B$ such that the cubic surface $X_b$ is
+  represented by a point in $\partial \Orb(F) \subset \P^{19}$.
+\end{itemize}
 \end{definition}
 
-The base $B$ of a good family carries its {\sl natural} rank $4$
+The base $B$ of a good family carries the {\sl natural} rank $4$
 vector bundle
 \begin{align}
   \label{eq:V}
-  V := \pi_{*}\omega_{X/B}^{-1}.
+  \V := \pi_{*}\omega_{X/B}^{-1}.
 \end{align}
 Furthermore, assuming the general fiber of $\pi$ is smooth, $B$ admits
 a rational map
 \begin{align}
   \label{eq:mu}
-  \mu: B \dashrightarrow M
+  \mu: B \dashrightarrow \M
 \end{align}
-to the coarse moduli variety $M$ of cubic surfaces.
-
-
-\begin{theorem}\label{theorem:main}
-  Let $\pi: X \to B$ be a good family of cubic surfaces with $B$
-  proper and smooth generic fiber. If $v_{i}, i=1, \dots 4$ denote the
-  Chern classes of $V = \pi_{*}(\omega_{\pi}^{-1})$, then
-  \begin{align}
-    \label{eq:MAIN}
-   \deg( 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4}) = \deg \mu,
-  \end{align}
-  where $\mu: B \dashrightarrow M$ is the induced map to the moduli
-  space of cubic surfaces.
-\end{theorem}
-
-
-Our method of proof is to first argue that there exists a formula of
-the form
-
-\begin{align}
-  \label{eq:P}
-  \deg (a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4}) = \deg \mu,
-\end{align}
-as stated in \autoref{theorem:main}.  Then, we determine the five
-coefficients by exhibiting particular good families for which we know
-all $v_{i}$ and $\deg \mu$.  We will actually exhibit nine(?) such
-families, thereby increasing the confidence in the correctness of our
-formula.
-
-Each section focuses on one particular construction of a good
-family.  After each section, we reset
-notation.
+to the coarse moduli variety of cubic surfaces
+$\mathcal{M} := \Sym^{3}E^{\smvee} \sslash GL(E)$.
 
 
 
-
-\section{A good proposition}
-\label{sec:good}
-
-This section provides the main tool, \autoref{prop:good}, for
-verifying the goodness of several of our test families.
 
 \begin{definition}
-  \label{def:admissible} A length $6$ subscheme $Z \subset \P^{2}$ is
-  {\sl admissible} if:
+  \label{def:admissible} A length $6$ subscheme $Z \subset \P^{2}$
+  with ideal sheaf $\mathcal{I}_{Z}$ is {\sl admissible} if:
   \begin{enumerate}
   \item $Z$ is curvilinear, i.e $Z$ is contained in a smooth curve,
-  \item $h^{0}(I_Z(3)) = 4$, and
+  \item $h^{0}(\mathcal{I}_Z(3)) = 4$, and
   \item $Z$ is the scheme cut out by the vector space of cubics
-    $H^0(\P^2, I_Z(3))$.
+    $H^0(\P^2, \mathcal{I}_Z(3))$.
   \end{enumerate}
 \end{definition}
 
@@ -197,7 +320,7 @@ verifying the goodness of several of our test families.
   subscheme.  The {\sl cubic surface associated to $Z$}, denoted
   $X_Z \subset \P^3$ is the image of the anti-canonical map
   $\kappa: \Bl_{Z}\P^2 \to \P^3$ induced by the linear system
-  $H^0(\P^2,I_Z(3))$.
+  $H^0(\P^2,\mathcal{I}_Z(3))$.
 \end{definition}
 
 \begin{proposition}
@@ -248,10 +371,14 @@ verifying the goodness of several of our test families.
   $G \subset \Aut(Y)$ denote the connected component containing
   identity.
 
-  Since the Picard group $Pic(Y)$ is discrete, the group $G$ acts
-  trivially on $Pic(Y)$.  In particular, the line bundle $L$ inducing
-  the morphism $Y \to \Bl_{Z}\P^2 \to \P^2$ is preserved by
-  $G$. Therefore, $G$ induces an action on $\P H^0(Y,L)= \P^2$.  This action preserves the 
+  The Picard group $Pic(Y)$ is discrete, so the connected group $G$
+  acts trivially on $Pic(Y)$.  In particular, the line bundle $L$ on
+  $\Bl_{Z}\P^2$ inducing the morphism $Y \to \Bl_{Z}\P^2 \to \P^2$ is
+  preserved by $G$. Therefore, $G$ induces an action on
+  $\P H^0(Y,L)= \P^2$.  This action renders the blow-down map
+  $\Bl_{Z}\P^2 \to \P^2$ $G$-equivariant, from which it follows that
+  the action of $G$ on $\P^2$ preserves the subscheme $Z$, which is
+  what we sought to show.
 
   
 \end{proof}
@@ -262,12 +389,14 @@ verifying the goodness of several of our test families.
 \section{Family $B_1$}
 \label{sec:first-test-family}
 
-In this section, we let $S \subset \P^7$ denote a degree $7$ del Pezzo
-surface. We let $E_{1}, E_{2}$ denote the two disjoint lines on $S$
-and we let $L \subset S$ denote the third line on $S$, which meets
-both $E_{1}$ and $E_{2}$. Finally, we choose a general rational normal
-quintic curve $C \subset S$ meeting $E_{2}$ at a single point other
-than $L \cap E_{2}$.
+In this section, we construct a good family over $B_{1} = \P^{4}$.
+Let $S$ denote the blow up of $\P^{2}$ at two points $y_1,y_2$. We let
+$E_{1}, E_{2}$ denote the corresponding exceptional lines on $S$ and
+we let $L \subset S$ denote the proper transform of a line in $\P^2$
+passing through the two points $y_1,y_2$. Finally, we pick a general
+conic through $y_{2}$ and let $C \subset S$ denote its proper
+transform. Let $\omega_{S}^{-1}$ denote the anti-canonical line bundle
+on $S$.  
 
 \subsection{Construction of $B_1$}
 \label{sec:construction-b_1}
@@ -276,24 +405,121 @@ than $L \cap E_{2}$.
 The base of our first family is
 \begin{align}
   \label{eq:B1}
-  B_1 := C^{[4]} \simeq \P^{4}.
+  B_1 := \Hilb^{4}C \simeq \P^{4}.
 \end{align}
-$B_1$ carries a good family of cubic surfaces over it.  To see this,
-we note that any length four subscheme $Z \subset C$ satisfies the
-property that the three dimensional span $\langle Z \rangle$
-intersects $S$ at precisely the scheme $Z$. Therefore, for each such
-$Z$, the linear projection from $\langle Z \rangle$
-$p_{\langle Z \rangle}: S \dashrightarrow \P^{3}$ has as image an
-irreducible cubic surface.  Furthermore, one can check that each of
-these cubics has a finite automorphism group, and hence we have a good
-family.
+$B_1$ carries a good family of cubic surfaces over it.  In short, to
+each degree $4$ divisor $Z \subset C$, we assign the cubic surface
+$X_{Z}$ which is the image of $\Bl_{Z}S$ under its anti-canonical
+map. The following proposition justifies this construction:
 
-\subsection{Chern classes on $B_1$}
+\begin{proposition}
+  \label{prop:B1} Let $Z \subset S$ be any length $4$ subscheme of $C$
+  with ideal sheaf $\mathcal{I}_{Z} \subset \mathcal{O}_{S}$. Then
+  \begin{enumerate}
+  \item $h^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1}) = 4$, and
+  \item $Z \subset S$ is the subscheme defined by the vector space of
+    sections $H^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1})$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  We translate (1) and (2) into geometric statements about the
+  anti-canonical embedding $S \subset \P^{7}$.  The line bundle
+  $\omega_{S}^{-1}(-C)$ on $S$ is basepoint free, as its divisor class
+  is represented by proper transforms of lines through
+  $y_{1} \in \P^2$, which become separated in the blow up.  The
+  geometric consequence of this is: {\sl If
+    $\langle C \rangle \simeq \P^5 \subset \P^7$ is the linear span of
+    $C$, then $\langle C \rangle \cap S = C$, scheme theoretically.}
+
+  Now $C$ is a rational normal quintic curve in its span
+  $\langle C \rangle$. The following is a basic fact about rational
+  normal curves: {\sl Every length $m \leq n$ subscheme of rational
+    normal curve of degree $n$ spans a linear space of dimension $m-1$
+    which, in turn, intersects the rational normal curve precisely at
+    the length $m$ scheme.}  Both (1) and (2) follow directly from
+  this.
+\end{proof}
+
+Let $\mathcal{Z} \subset B_1 \times C$ denote the universal
+length $4$ subscheme, and consider $\mathcal{Z}$ as a closed subscheme
+of the product $B_1 \times S$. Let $\pi_{1}, \pi_{2}$ denote the
+projections of $B_1 \times S$ to its respective factors.
+Then we set
+\begin{align}
+  \label{eq:X1}
+  X' := \Bl_{\mathcal{Z}} \left( B_1 \times S \right).
+\end{align}
+Abusing notation, we continue to let $\pi_{1}$ and $\pi_{2}$ denote
+the natural maps from $X'$ to $B_1$ and $S$, respectively.  We
+let $E \subset X'$ denote the exceptional divisor over $\mathcal{Z}$.
+
+
+Consider the line bundle
+$\mathcal{L} := \pi_{2}^{*}\omega_{S}^{-1} (-E) =
+\omega_{X'/B_{1}}^{-1}$ on $X'$.  By \autoref{prop:B1},
+\begin{align}
+  \label{eq:V1}
+  \V := \pi_{1 *}\mathcal{L}
+\end{align}
+is a rank $4$ vector bundle on $B_1$, and the canonical evaluation map
+\begin{align}
+  \label{eq:eval1}
+  \pi_{1}^{*}\V \to \mathcal{L}
+\end{align}
+is surjective.  Therefore, we obtain a map
+\begin{align}
+  \label{eq:X11}
+  \kappa: X' \to \P \V^{\smvee}
+\end{align}
+whose image $X := \kappa(X')$ is a family of cubic surfaces
+parametrized by $B_1$.  Let $\pi: X \to B_1$ denote the natural map.
+By tracing through the construction, one can see that the vector
+bundle $\V$ is equal to $\pi_{*} \omega_{X/B_1}'$, i.e. $\V$ is the
+natural bundle for $\pi: X \to B_1$.
+
+\subsection{Chern classes of $\V$}
 \label{sec:chern-classes-b_1}
+
+In order to calculate the Chern classes of $\V$, we express it as an
+extension of a trivial rank $2$ vector bundle by the Lazarsfeld-Mukai
+bundle on $B_1$ associated to the line bundle
+$\omega_{S}^{-1}|_{C}$. By identifying the conic $C$ with $\P^{1}$,
+this latter line bundle is $\O_{\P^{1}}(5)$ -- we will switch back and
+forth between $C$ and $\P^{1}$ in what follows.  We also identify
+$B_{1}$ with $\P^{4}$.
+
+
+The trivial sub-bundle of $\V$ arises as follows: The fiber $\V_{[Z]}$
+over a point $[Z] \in B_1$, corresponding to a subscheme
+$Z \subset C$, is the vector space
+$H^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1})$.  The latter
+vector space contains the fixed $2$ dimensional vector space
+$H^{0}(S, \omega_{S}^{-1}(-C))$.  This yields a $2$-dimensional
+trivial subbundle of $\V$, whose quotient we denote by $\mathcal{K}$.
+
+
+The bundle $\mathcal{K}$ is naturally identified with the kernel in
+the exact sequence
+\begin{align}
+  \label{eq:LM}
+  0 \to \mathcal{K} \to H^{0}(\P^1, \O_{\P^{1}}(5)) \otimes \O_{\P^4} \to \O_{\P^{1}}(5)^{[4]} \to 0 
+\end{align}
+
+Here, the rank four bundle $\O_{\P^{1}}(5)^{[4]}$ is the tautological
+bundle whose fiber over a point $[Z] \in B_{1}$, corresponding to a
+length $4$ subscheme $Z \subset \P^{1}$, is the vector space
+$H^{0}(Z, \O_{\P^{1}}(5)|_{Z})$.  The map on the right side of
+\eqref{eq:LM} is simply restriction of sections.
+
+It is an easy exercise to show that
+$\mathcal{K} \simeq \O_{\P^{4}}(-1) \oplus \O_{\P^{4}}(-1)$.  The
+following lemma summarizes the relevant Chern class computations of
+$\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 
 \begin{lemma}
   \label{lemma:chernB1}
-  For the natural bundle $V$ over $B_1$, we have:
+  For the natural bundle $\V$ over $B_1= \P^{4}$, we have:
   \begin{align}\nonumber
     v_{1}^{4} = 16,\\\nonumber
     v_{1}^{2}v_{2} = 4,\\\nonumber
@@ -304,70 +530,150 @@ family.
 \end{lemma}
 
 \begin{proof}
-The Chern classes $v_{1} = -2h$, $v_{2}=h^2$, and $v_{3}= v_{4}=0$,
-where $h$ denotes the hyperplane class on the projective space $B_1$.)
-  
+  By the Whitney sum formula, the Chern classes of $\V$ are
+  $v_{1} = -2h$, $v_{2}=h^2$, and $v_{3}= v_{4}=0$, where $h$ denotes
+  the hyperplane class on the projective space $B_1 = \P^{4}$.
 \end{proof}
+
+
+
+
+
+
+
+
 
 \subsection{Enumerating cubics in $B_1$}
 \label{sec:enum-cubics-b_1}
 
 
-For $B_1$ to be of any use, we must {\sl a priori} know
-$\deg P(v_{1},v_{2},v_{3},v_{4})$ for $B_1$. This is easily
-achievable, given basic facts about the configuration of lines on a
-general cubic surface. We let
-\begin{align}
-  \label{eq:nu}
-  \nu: M^{\dagger} \to M
-  \end{align}
-  denote the variety of smooth {\sl marked} cubic surfaces:
-  $M^{\dagger}$ parametrizes tuples $(X, E_{1}, \dots, E_{6})$ where
-  the $E_{i}$ are six disjoint lines on $X$. It is a classical fact
-  that $\deg \nu = 6! \times 72$. The symmetric group $\Sigma_6$ acts
-  on $M^{\dagger}$ by permuting the marked lines.
+For $B_1$ to be of any use, we must {\sl a priori} know the degree of
+the map to moduli $\mu: B_1 \dashrightarrow \M$.  First note that
+$\mu$ factors through the quasi-finite, degree
+$72 \times \frac{6!}{4!}$ cover $\M^{\dagger}/S_{4} \to \M$.  Here,
+the symmetric group $S_4$ acts by permuting the last four lines in a
+six $(\ell_{1}, \dots, \ell_{6})$ on a cubic surface.
 
-  The natural rational map to moduli $\mu : B_1 \dashrightarrow M$
-  clearly factors through a map
-  $\mu^{\dagger}: B_1 \dashrightarrow M^{\dagger}/\Sigma_{4}$, where
-  $\Sigma_{4}$ acts by permuting the last four lines
-  $E_{3}, \dots, E_{6}$.
+
+The moduli map $\mu: B_{1} \dashrightarrow \M$ naturally factors
+through a map $\mu': B_1 \dashrightarrow \M^{\dagger}/S_{4}$ by
+sending a general subscheme $Z \subset C$ to the marked cubic surface
+$(\Bl_{Z}S, E_1, E_2, E_{Z})$. Here, $E_Z$ denotes the union of four
+exceptional lines above the points of $Z$.
+
+
+Thus, in order to compute $\deg \mu$, we merely need to compute
+$\deg \mu'$.
 
   \begin{lemma}
     \label{lemma:degreemudaggerB1}
-    $\mu^{\dagger}: B_1 \dashrightarrow M^{\dagger}$ has degree $2$.
+    $\mu': B_1 \dashrightarrow \M^{\dagger}/S_{4}$ has degree $2$.
   \end{lemma}
 
-Assuming this fact, we arrive at the first relation:
+  \begin{proof}
+    Beginning with a general marked cubic surface
+    $(X, \ell_{1}, \ell_2, \dots, \ell_{6})$ we can blow down the six
+    to produce a map $\varphi: X \to \P^2$. The map $\varphi$ is only
+    well-defined up to the action of $\Aut(\P^{2})$.  By composing
+    with an automorphism, we may assume that
+    $\varphi(\ell_{1}) = y_{1}$ and $\varphi(\ell_{2}) = y_{2}$.
+
+    The $4$ dimensional subgroup $H \subset \Aut(\P^{2})$ fixing the
+    points $y_{1}, y_{2}$ acts on the $\P^{4}$ of conics passing
+    through $y_{2}$. Let $G \subset H$ denote the stabilizer of $C$,
+    viewed as a conic through $y_{2}$.  We will now show that $|G|=2$,
+    from which the lemma follows.
+
+    Any automorphism $h \in H$ preserving $C$ must fix the three
+    points $y_{1},y_{2}$ and the point
+    $y_{3}:= (\overline{y_{1},y_{2}} \cap C) \setminus \{y_{2}\}.$
+    Therefore, $h$ must also fix $p := \Pole(y_{2},y_{3}) \in \P^{2}$.
+    At the same time, $h$ must preserve the un-ordered pair of points
+    $\Polar(y_{1}) \subset C$. It is now a simple exercise to see that
+    there is a unique involution on $\P^{2}$ fixing $p$, preserving
+    $C$ and interchanging the points of $\Polar(y_{1})$. Hence
+    $|G|=2$, as desired.
+  \end{proof}
+
+
+
+
+\subsection{Goodness}
+\label{sec:goodness1}
+
+\begin{proposition}
+  \label{prop:B1good}
+  The family $\pi: X \to B_1$ is good.
+\end{proposition}
+
+\begin{proof}
+  We use \autoref{prop:good}. If $[Z] \in B_{1}$ is any point,
+  corresponding to a length $4$ subscheme $Z \subset C$, we
+  immediately get a length $6$ admissible subscheme (see \cite[] )
+  $Z' \subset \P^2$ by the rule
+  \begin{align*}
+    Z' = (Z+y_2) \cup \{y_{1}\}.
+  \end{align*}
+  Here, we view $C$ as a conic in $\P^{2}$ containing $y_{2}$, and the
+  sum in $Z + y_{2}$ is as divisors on $C$.  The cubic surface
+  $X_{[Z]} = \pi^{-1}([Z])$ is the same as the cubic surface $X_{Z'}$
+  associated to $Z'$.
+
+  In order to use \autoref{prop:good}, we next verify that the group
+  $\Aut(\P^{2},Z')$ is finite.  First observe that $C \subset \P^{2}$
+  must be the unique conic containing the length $5$ subscheme
+  $ Z + y_{2} \subset Z'$.  Therefore, any element
+  $h \in \Aut(\P^{2},Z')$ must preserve $C$.  As $y_{1}$ does not lie
+  on $C$, we conclude that $h(y_{1}) = y_{1}$, and therefore $h$ must
+  preserve the pair of points $\Polar(y_{1}) \subset C$. Furthermore,
+  if we assume $h$ also fixes $y_{2}$, which we can do by passing to
+  the connected component of the identity element in
+  $\Aut(\P^{2},Z')$, then $h$ would have to preserve three distinct
+  points on $C$, from which finiteness follows.
+\end{proof}
+
+
+\subsection{Relation}
+\label{sec:relation}
+
+The results in this section, taken together, yield the following
+relation on the indetermined coefficients in \eqref{eq:P}:
+  
 
 \begin{align}
   \label{eq:relation1}
-  16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 6! \times 3 = 4320.
+  16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 72 \times \frac{6!}{4!} \times 2 = 4320.
 \end{align}
 
 \section{Family $B_2$}
 \label{sec:family-b_2}
 
 
-Following Anand D's idea, we construct a good family over the base
-$B_2 = \overline{M}_{0,7}$. Before continuing, let us summarize the
-construction. Let $C \subset \P^{2}$ be the $2$-Veronese image of
-$\P^{1}$ with $7$ distinct marked points
-$x_{0}, x_{1}, \dots, x_{5}, x_{\infty}$ on $C$. Let
-$q \in \P^{2} \setminus C$ denote the intersection point of the
-tangent lines of $C$ at $x_{0}$ and $x_{\infty}$.  Then the blow up of
-$\P^{2}$ at the six points $\{x_{1}, \dots, x_{5}, q\}$ produces a
-good cubic surface.  In this way, we have described a good family of
-cubic surfaces over $M_{0,7}$.  Anand D's point is: this construction
-can be naturally extended to a good family over $\M$.
+This section constructs and analyzes a good family over the base
+$$B_2 := \overline{\M}_{0,7}.$$
+To avoid unnecessary accumulation of symbols, we reset notation such
+as $C,S,X, \dots$ from previous sections, and start anew.
 
+
+
+Before diving into details, we summarize the construction. Let
+$C \subset \P^{2}$ be a smooth conic with $7$ distinct marked points
+$p_{0}, p_{1}, \dots, p_{5}, p_{\infty}$ on $C$, and let
+$q \in \P^{2} \setminus C$ denote the intersection point of the
+tangent lines of $C$ at $p_{0}$ and $p_{\infty}$, i.e.
+$q = \Pole(p_{0},p_{\infty})$.  Then the scheme
+$Z := \{p_{1}, \dots , p_{5}, q \}$ is an admissible length $6$
+subscheme of $\P^{2}$, and its associated cubic surface $X_{Z}$ has a
+finite automorphism group.  The key technical point is that this
+construction {\sl extends over the boundary of $\overline{\M}_{0,7}$,
+  yielding a good family of cubic surfaces.}
 
 
 
 Let us denote a general stable
 $7$-pointed genus zero curve by
 $$(C, p_{0}, p_{1}, \dots, p_{5}, p_{\infty}).$$  Denote
-by $\mathbf{L}_{\infty}$ the cotangent line bundle on $\M$
+by $\mathbf{L}_{\infty}$ the cotangent line bundle on $M$
 corresponding to the marked point $p_{\infty}$. If
 \begin{align}
   \label{eq:PM07}
@@ -397,7 +703,7 @@ $$\iota: C' \hookrightarrow P := \proj
 family of smooth conics with $7$ marked points
 $\sigma_{0}, \dots, \sigma_{\infty}$.  Importantly, $\sigma_{\infty}$
 never intersects any of the other six sections.  Also, observe that
-$$\pi_{*}O_{C}(2 \sigma_{\infty}) = \sym^{2}(\mathbf{L}^{-1} \oplus
+$$\pi_{*}O_{C}(2 \sigma_{\infty}) = \Sym^{2}(\mathbf{L}^{-1} \oplus
 O) = \mathbf{L}^{-2} \oplus \mathbf{L}^{-1} \oplus O.$$
 
 
@@ -683,7 +989,7 @@ If $X$ is a semi-stable point of the $\SL_4$ action on the space of cubics $\P^{
 We now explain an extension of this idea that allows for even more examples.
 
 Let $V$ be a 4-dimensional vector space.
-Consider the natural action of $\SL(V)$ on $\P(\sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
+Consider the natural action of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
 That is, consider the action of $\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a cubic surface and $H \subset \P^3$ is a hyperplane.
 For a pair of positive integers $a, b$, the action lifts uniquely to an action on the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT of the resulting linearized action depends only on the ratio $t = a/b$.
 
@@ -765,7 +1071,7 @@ For
 a stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(a,b,0,c)$ where $a+b+c = 0$.
 Thus, we have
 \[\mathcal V = \chi(a) \oplus \chi(b) \oplus \chi(0) \oplus \chi(c).\]
-The element $x_0x_1x_3 - x_2^3$ is a global section of $\sym^3 \mathcal V$.
+The element $x_0x_1x_3 - x_2^3$ is a global section of $\Sym^3 \mathcal V$.
 In other words, $\mathcal X$ is a section of $\mathcal O_{\P \mathcal V}(3)$ and hence we have
 \[ M = \chi(0).\]
 We get
@@ -783,7 +1089,7 @@ For
 the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(-3,1,5,-3)$.
 Thus, we have
 \[ \mathcal V = \chi(-3) \oplus \chi(1) \oplus \chi(5) \oplus \chi(-3).\]
-The element $x_3(x_0x_2-x_1^2) - x_0x_1^2$ defines a global section of $\sym^3 \mathcal V \otimes \chi(1)$.
+The element $x_3(x_0x_2-x_1^2) - x_0x_1^2$ defines a global section of $\Sym^3 \mathcal V \otimes \chi(1)$.
 In other words, we have
 \[ M = \chi(1).\]
 %((-4 -16 64 0) (256 -256 -256 256 0))
@@ -802,7 +1108,7 @@ For
 the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(1,-1,-3,3)$.
 Thus, we have
 \[ \mathcal V = \chi(1) \oplus \chi(-1) \oplus \chi(-3) \oplus \chi(3).\]
-The element $x_3(x_0x_2-x_1^2) - x^2_0x_1$ defines a global section of $\sym^3 \mathcal V \otimes \chi(-1)$.
+The element $x_3(x_0x_2-x_1^2) - x^2_0x_1$ defines a global section of $\Sym^3 \mathcal V \otimes \chi(-1)$.
 In other words, we have
 \[ M = \chi(-1).\]
 We get
@@ -820,7 +1126,7 @@ For
 the stabilizing $\mathbb G_m \subset \SL_4$ is given by the diagonal matrix with exponents $(5,1,1,-7)$.
 Thus, we have
 \[ \mathcal V = \chi(5) \oplus \chi(1) \oplus \chi(1) \oplus \chi(-7).\]
-The element $x_3x_0^2-x_1^3-x_2^3$ defines a global section of $\sym^3 \mathcal V \otimes \chi(-3)$.
+The element $x_3x_0^2-x_1^3-x_2^3$ defines a global section of $\Sym^3 \mathcal V \otimes \chi(-3)$.
 In other words, we have
 \[ M = \chi(-3).\]
 We get
@@ -840,9 +1146,9 @@ Let $B = \mathbb P^4$.
 Set
 \[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus \mathcal O(-7).\]
 Let $x_0, x_1, x_2, x_3$ be generators of the four summands on the standard $\mathbb A^4 \subset \mathbb P^4$.
-We have the section $(x_3x_0^2-x_1^3-x_2^3)$ of $\sym^3 V = \mathcal O(3)^{\oplus 20}$.
+We have the section $(x_3x_0^2-x_1^3-x_2^3)$ of $\Sym^3 V = \mathcal O(3)^{\oplus 20}$.
 Note that this section has a pole of order $3$ along the hyperplane at infinity.
-As a result, it defines a section $\xi$ of $\sym^3 V \otimes \mathcal O(-3)$, which is nowhere vanishing.
+As a result, it defines a section $\xi$ of $\Sym^3 V \otimes \mathcal O(-3)$, which is nowhere vanishing.
 Equivalently, $\xi$ is a section of $\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.
 Our family $\mathcal X \to B$ is defined by the zero-locus of $\xi$ in $\P V  \to B$.
 

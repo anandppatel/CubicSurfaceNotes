@@ -93,17 +93,19 @@
 
 \section{Introduction}
 \label{sec:intro}
-The primary goal of this paper is to determine an enumerative formula
-which counts the number of times a general cubic surface occurs in
-suitably general $4$-parameter families $ \pi: X \to B$ of cubic
-surfaces.  We work over an algebraically closed, characteristic zero
-ground field $k$.  Applying the formula to a few particular families
-yields:
+
+Cubic surfaces have held the attention of mathematicians ever since
+1849, when Cayley and Salmon demonstrated the existence of the $27$
+lines.  Our aim in this paper is to add to this long history by
+establishing an enumerative formula which counts the number of times a
+general cubic surface's moduli occurs in any suitably general
+$4$-parameter family of cubic surfaces. Applying this formula to a few
+examples yields:
 \begin{enumerate}
 \item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic surface
     arises $96120$ times in a general $4$ dimensional linear system of
     cubic surfaces,} and
-\item[(B)] {\sl a general cubic surface arises $42120$ times as a
+\item[(B)] {\sl A general cubic surface arises $42120$ times as a
     hyperplane section of a general cubic threefold.}
 \end{enumerate}
 
@@ -121,8 +123,8 @@ yields:
 \end{theorem}
 
 
-In simple terms, our method of proof is to first argue that there
-exists a formula of the form
+Our method of proof is simple: We first argue that there exists a
+formula of the form
 
 \begin{align}
   \label{eq:P}
@@ -131,10 +133,10 @@ exists a formula of the form
 as in \autoref{theorem:main}.  Then, we determine the five
 coefficients $a_{\bullet}$ by exhibiting particular good families for
 which we {\sl a priori} know all $v_{i}$ and $\deg \mu$.  In this way,
-we obtain a system of linear equations in five unknowns, and it turns
-out to give a unique solution. We will actually exhibit nine(?)  such
-families/equations, providing even further confidence in the
-correctness of the formula.
+we obtain a system of linear equations in five unknowns, which turns
+out to have a unique solution.  In fact, we exhibit nine(?)  such
+families/equations, leaving no doubt in the correctness of the
+formula.
   
 
 \subsection{History and context}
@@ -150,9 +152,7 @@ Oberwolfach in 2017.
 
 \autoref{theorem:main} represents a frontier case of a much more
 substantial and ongoing enumerative story, which we briefly advertise
-here.
-
-If $E$ is an $n+1$ dimensional vector space and if
+here. If $E$ is an $n+1$ dimensional vector space and if
 $F \in \Sym^dE^{\smvee}$ is a non-zero degree $d$ homogeneous form on
 $E$, then we let $$\Orb(F) \subset \P \Sym^d E^{\smvee}$$ denote the
 closure of the $\GL(E)$-orbit of the point
@@ -162,7 +162,7 @@ hypersurface defined by $F$, remain unanswered.  Here, perhaps the
 most well-studied problem is {\sl the calculation of the degree of the
   orbit-closure $\Orb(F)$}.  Aluffi and Faber, in a series of
 remarkable papers \cite[], initially brought attention to this
-enumerative problem and completely solved it when $n=1, 2$ and $d$ is
+enumerative problem and completely solved it when $n=1, 2$ and $d$ 
 arbitrary.
 
 We propose a slight shift in perspective on the problem: We should
@@ -175,14 +175,14 @@ demonstrated in the appendix \cite[], \autoref{theorem:main} contains
 the same content as the calculation of this equivariant class when $F$
 is assumed to be a {\sl general} degree $3$ form in four variables.
 
-This change in perspective opens the avenue of attack in this paper.
-As will be seen in \autoref{section:???} we can exploit certain {\sl
-  isotrivial} families of cubic surfaces to obtain quick relations on
-the coefficients $a_{\bullet}$.  In order to implement these
+This change in perspective opens up our avenue of attack.  As will be
+seen in \autoref{section:???} we exploit certain {\sl isotrivial}
+families of cubic surfaces to obtain quick relations on the
+coefficients $a_{\bullet}$.  In order to justify the use of these
 isotrivial families, it is necessary to know whether a cubic surface
-is represented by a point in the closure of $\Orb(F)$, $F$ general.
-This is an instance of the much more general ``Orbit Closure Problem''
-\cite[].
+is represented by a point in the closure of $\Orb(F)$, with $F$
+general.  This is an instance of the much more general ``Orbit Closure
+Problem'' \cite[].
 
 
 
@@ -196,7 +196,7 @@ After establishing notation, conventions, and classical facts about
 cubic surfaces, this section introduces the notion of a {\sl good}
 family of cubic surfaces and then provides the main tool
 (\autoref{prop:good}) for verifying the goodness of several families
-in the paper.
+occurring in the paper.
 
 
 \subsection{Notation and conventions}
@@ -204,7 +204,13 @@ in the paper.
 All schemes are assumed of finite-type over an algebraically closed,
 characteristic zero field, $\k$. If $\pi: X \to Y$ is a map of schemes
 and if $y \in Y$ is a point, then we let $X_y$ denote the fiber scheme
-$\pi^{-1}(y)$.  
+$\pi^{-1}(y)$, and if both $X$ and $Y$ have dualizing line bundles
+$\omega_{X}, \omega_{Y}$ respectively, then we write $\omega_{X/Y}$,
+or $\omega_{\pi}$, for the line bundle
+$\omega_{X} \otimes \pi^{*}\omega_{Y}^{-1}$.  If $\mathcal{A}$ is a
+vector bundle, then we let $\P \mathcal{A}$ denote its
+projectivization, which parametrizes $1$-dimensional {\sl subspaces}
+in the fibers of $\mathcal{A}$.
 
 
 \subsection{Classical facts about cubic surfaces}
@@ -668,41 +674,82 @@ finite automorphism group.  The key technical point is that this
 construction {\sl extends over the boundary of $\overline{\M}_{0,7}$,
   yielding a good family of cubic surfaces.}
 
+\subsection{Basics of $\overline{\M}_{0,7}$}
+\label{sec:basics-overlinem_0-7}
 
-
-Let us denote a general stable
-$7$-pointed genus zero curve by
-$$(C, p_{0}, p_{1}, \dots, p_{5}, p_{\infty}).$$  Denote
-by $\mathbf{L}_{\infty}$ the cotangent line bundle on $M$
-corresponding to the marked point $p_{\infty}$. If
+We denote a general stable $7$-pointed genus zero curve by
+$$(C, p_{0}, p_{1}, \dots, p_{5}, p_{\infty}),$$
+and we let 
 \begin{align}
   \label{eq:PM07}
-  \pi: C \to \overline{M}_{0,7}
+  \varphi: \mathcal{C} \to \overline{\M}_{0,7}
 \end{align}
-denotes the universal stable curve, we let
-$\sigma_{0}, \dots, \sigma_{\infty}$ denote the universal sections in
-$C$.
+denote the universal stable curve, with universal marking sections
+denoted $$\sigma_{0}, \dots, \sigma_{\infty} \subset \mathcal{C}.$$
 
-Next, let $C' = \proj \pi_{*}\mathcal{O}_{C}(\sigma_{\infty})$ denote
-the $\P^{1}$-bundle over $\overline{M}_{0,7}$. Let $O_{C'}(1)$ denote
-the natural hyperplane line bundle.  Then the sections $\sigma_{i}$
-also produce sections (with the same name) of the bundle projection
-$$\gamma : C' \to \M,$$ with
-$\sigma_{0}^{*}O_{C'}(1) = \dots = \sigma_{5}^{*}O_{C'}(1) = O_{\M}$
-and $\sigma_{\infty}^{*}O_{C'}(1) = \mathbf{L}^{-1}$.
+We let $\mathbf{L}$ denote the line bundle
+$\O_{\mathcal{C}}(-\sigma_{\infty})|_{\sigma_{\infty}} \simeq
+\omega_{\varphi}|_{\sigma_{\infty}}$ -- we view it as a line bundle on
+$\overline{\M}_{0,7}$, as is customary.  Following standard notation,
+we set $\psi_{\infty} := c_{1}\mathbf{L}$.  The sole enumerative
+result we will need in this section is:
 
-Because $\sigma_{\infty}$ is disjoint from all other sections, it
-follows that
-$$\pi_{*}(O_{C}(\sigma_{\infty})) = \mathbf{L}^{-1} \oplus O_{\M}.$$
+\begin{theorem}
+  \label{theorem:psi}
+  $\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1$.
+\end{theorem}
+
+\subsection{Construction of the family}
+\label{sec:construction-familyB2}
+
+
+Consider the rank $2$ vector bundle
+$$\mathcal{A} := \varphi_{*}\O_{\mathcal{C}}(\sigma_{\infty})$$ on
+$\overline{\M}_{0,7}$.  From the fact that the line bundle
+$\O_{\mathcal{C}}(\sigma_{\infty})$ restricts to $\mathbf{L}^{-1}$ on
+$\sigma_{\infty}$ and $\O_{\sigma_{0}}$ on $\sigma_{0}$, it follows
+that
+\begin{align*}
+  \mathcal{A} \simeq \O_{\overline{\M}_{0,7}} \oplus \mathbf{L}^{-1}.
+\end{align*}
+
+Next, put $\overline{\mathcal{C}} := \P \mathcal{A}^{\smvee}$;
+$\overline{\mathcal{C}}$ is a $\P^{1}$-bundle over
+$\overline{\M}_{0,7}$, and the surjection
+$\varphi^{*}\mathcal{A} \to \O_{\mathcal{C}}(\sigma_{\infty})$ induces
+a {\sl contraction map}
+
+\begin{align}
+  \label{eq:contract}
+  \gamma: \mathcal{C} \to \overline{\mathcal{C}}.
+\end{align}
+
+The effect of $\gamma$ on a stable curve $(C, p_0, \dots, p_{\infty})$
+is to contract all irreducible components not containing the marked
+point $p_{\infty}$, leaving the unique $\P^{1}$ containing the marked
+point $p_{\infty}$.  This remaining $\P^{1}$ is the corresponding
+fiber of the $\P^{1}$-bundle $\overline{\mathcal{C}}$.
+
+Under $\gamma$, the sections $\sigma_{i}$ map to sections
+$\overline{\sigma_{i}}$ of $\overline{\mathcal{C}}$ over
+$\overline{\M}_{0,7}$.  These sections have the following properties:
+\begin{itemize}
+\item $\overline{\sigma}_{\infty}$ is disjoint from all other sections, and
+\item the union of all seven sections is supported on at least three
+  points in every fiber of $\overline{\mathcal{C}}$ over
+  $\overline{\M}_{0,7}$.
+\end{itemize}
+
+
 
 
 The next step is to invoke the relative $2$-veronese
 embedding
-$$\iota: C' \hookrightarrow P := \proj
-\pi_{*}O_{C}(2\sigma_{\infty})$$ so $C' \subset P$ is a relative
+$$\iota: \overline{\mathcal{C}} \hookrightarrow \P \Sym^{2}\mathcal{A}^{\smvee}.$$ In this way, $\overline{\mathcal{C}} \subset \P \Sym^{2}\mathcal{A}^{\smvee}$ is a
 family of smooth conics with $7$ marked points
-$\sigma_{0}, \dots, \sigma_{\infty}$.  Importantly, $\sigma_{\infty}$
-never intersects any of the other six sections.  Also, observe that
+$\overline{\sigma}_{0}, \dots, \overline{\sigma}_{\infty}$.
+Importantly, $\sigma_{\infty}$ never intersects any of the other six
+sections.  Also, observe that
 $$\pi_{*}O_{C}(2 \sigma_{\infty}) = \Sym^{2}(\mathbf{L}^{-1} \oplus
 O) = \mathbf{L}^{-2} \oplus \mathbf{L}^{-1} \oplus O.$$
 

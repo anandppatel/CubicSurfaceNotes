@@ -34,17 +34,13 @@
 \renewcommand{\k}{k}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Bl}{Bl}
-\DeclareMathOperator{\Br}{Br}
-\DeclareMathOperator{\ProjBun}{ProjBun}
-\renewcommand{\Vec}{\operatorname{Vec}}
+\DeclareMathOperator{\Orb}{\overline{Orb}}
 \DeclareMathOperator{\Polar}{Polar}
 \DeclareMathOperator{\res}{Res}
 \DeclareMathOperator{\Pole}{Pole}
 \DeclareMathOperator{\Hilb}{Hilb}
 \DeclareMathOperator{\Sing}{Sing}
-\DeclareMathOperator{\Orb}{Orb}
 \DeclareMathOperator{\M}{\mathcal{M}}
-\newcommand{\cO}{{\mathcal O}}
 \renewcommand{\to}{{\longrightarrow}}
 
 \renewcommand{\sectionautorefname}{\S}
@@ -59,18 +55,9 @@
 \renewcommand{\O}{\mathcal O}
 \newcommand{\G}{\mathbf G}
 \newcommand{\td}{\widetilde}
-\newcommand{\Frac}{{\mathrm{Frac}}\,}
-\newcommand{\Jac}{{\textrm{Jac}}}
-\DeclareMathOperator{\Ram}{Ram}
-\newcommand{\Hdg}{\overline{\H}_{d,g}}
-\newcommand{\Hdgn}{\overline{\H}_{d,g}}
-\newcommand{\Hdgnt}{\overline{\H}_{d,g}^{(2)}}
-\newcommand{\Hdgnth}{\overline{\H}_{d,g}^{(3)}}
-\newcommand{\sfT}{\mathcal T}
-\newcommand{\sfD}{\mathcal D}
-\newcommand{\sfB}{\mathcal B}
 \newcommand{\V}{\mathcal V}
 \newcommand{\cP}{\mathcal P}
+\newcommand{\cC}{\mathcal{C}}
 \newcommand{\fm}{\mathfrak m}
 \newcommand{\smvee}{\raise0.5ex\hbox{$\scriptscriptstyle\vee$}}
 
@@ -94,26 +81,30 @@
 \section{Introduction}
 \label{sec:intro}
 
-Cubic surfaces have held the attention of mathematicians ever since
-1849, when Cayley and Salmon demonstrated the existence of the $27$
-lines.  Our aim in this paper is to add to this long history by
-establishing an enumerative formula which counts the number of times a
-general cubic surface's moduli occurs in any suitably general
-$4$-parameter family of cubic surfaces. Applying this formula to a few
-examples yields:
+The beautiful enumerative geometry inherent to cubic surfaces has
+captured the imagination ever since, in 1849, Cayley and Salmon
+illuminated the structure of the $27$ lines.  We add to this long
+history by establishing an enumerative formula which counts the number
+of times the {\sl moduli} of a general cubic surface arises in
+suitably generic, complete, $4$ parameter families. Applying the
+formula to a few simple examples yields:
 \begin{enumerate}
-\item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic surface
-    arises $96120$ times in a general $4$ dimensional linear system of
-    cubic surfaces,} and
-\item[(B)] {\sl A general cubic surface arises $42120$ times as a
-    hyperplane section of a general cubic threefold.}
+\item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic
+    surface's moduli arises $96120$ times in a general $4$ dimensional
+    linear system of cubic surfaces,} and
+\item[(B)] {\sl A general cubic surface's moduli arises $42120$ times
+    as a hyperplane section of a general cubic threefold.}
 \end{enumerate}
 
+Our formula, along with its precise hypotheses, is stated in the
+following theorem.
+
 \begin{theorem}\label{theorem:main}
-  Let $\pi: X \to B$ be a good family of cubic surfaces over a
-  proper base $B$ and whose generic fiber is smooth. If
-  $v_{i}, i=1, 2,3, 4$ denote the Chern classes of the rank $4$ vector
-  bundle $\V = \pi_{*}(\omega_{\pi}^{-1})$, then
+  Let $\pi: X \to B$ be a good family of cubic surfaces over a proper
+  base $B$, with semi-stable generic fiber. If
+  $v_{i} \in A^{i}(B), i=1, 2,3, 4$, are the Chern classes of its
+  natural rank $4$ vector bundle $\V := \pi_{*}(\omega_{\pi}^{-1})$,
+  then
   \begin{align}
     \label{eq:MAIN}
    \int_{B} 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4} = \deg \mu,
@@ -128,7 +119,7 @@ the case where all fibers are semi-stable cubic surfaces (in the sense
 of GIT), and the relative dualizing sheaf $\omega_{\pi}$ exists and is
 a line bundle.
 
-The formula has a curious corollary:
+The formula has a curious consequence:
 
 \begin{corollary}
   \label{cor:ineq} If $\pi: X \to B$ is a good family of cubic
@@ -143,22 +134,28 @@ The formula has a curious corollary:
 \subsection{Strategy}
 \label{sec:strategy}
 
-The overall strategy of the proof is quite simple: We argue that a
-priori there exists a formula of the form
+The overall strategy of the proof is straightforward. We argue that a
+priori there must exist a formula of the form
 
 \begin{align}
   \label{eq:P}
   \int_{B} a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4} = \deg \mu,
 \end{align}
-as in the statement of \autoref{theorem:main} -- this is merely an
-instance of a foundational theorem in equivariant enumerative geometry
-\cite[].  Then, we determine the five coefficients $a_{\bullet}$ by
-exhibiting several good families for which we know all $v_{i}$ {\sl
-  and} $\deg \mu$.  In this way, we obtain a system of linear
-equations in the five unknowns $a_{\bullet}$, which turns out to have
-a unique solution.  In fact, we exhibit nine(?)  such
-families/equations; the redundancy provides extra checks on the end
-result.
+as found in \autoref{theorem:main} -- this is merely an instance of a
+foundational theorem in equivariant enumerative geometry \cite[].
+Then, we determine the five coefficients $a_{\bullet}$ by exhibiting
+several good families for which we know all $v_{i}$ {\sl and}
+$\deg \mu$.  The construction of these good families requires some
+effort and occupies most of the paper.  The bases $B$ of our families
+are : $\P^4$, $\overline{\M}_{0,7}$ and a Hassett-weighted variant of
+it, a blow up of the Hilbert scheme of two points on a quintic del
+Pezzo surface, and amusingly, the classifying stack $B\G_m$.
+
+
+In this way, we obtain a system of linear equations in the five
+unknowns $a_{\bullet}$, which turns out to have a unique solution.  In
+fact, we exhibit {\sl nine} total families/equations; the redundancy
+provides extra checks on the end result.
   
 
 \subsection{History and context}
@@ -172,8 +169,8 @@ was one verification short of constituting a proof.  R. Laza brought
 Oberwolfach in 2017.
 
 
-\autoref{theorem:main} represents a frontier case of a much more
-substantial and ongoing enumerative story, which we briefly advertise
+\autoref{theorem:main} actually represents a frontier case of a much
+more substantial ongoing enumerative story, which we briefly advertise
 here. If $E$ is an $n+1$ dimensional vector space and if
 $F \in \Sym^dE^{\smvee}$ is a non-zero degree $d$ homogeneous form on
 $E$, then we let $$\Orb(F) \subset \P \Sym^d E^{\smvee}$$ denote the
@@ -184,7 +181,7 @@ hypersurface defined by $F$, remain unanswered.  Here, perhaps the
 most well-studied problem is {\sl the calculation of the degree of the
   orbit-closure $\Orb(F)$}.  Aluffi and Faber, in a series of
 remarkable papers \cite[], initially brought attention to this
-enumerative problem and completely solved it when $n=1, 2$ and $d$ 
+enumerative problem and completely solved it when $n=1, 2$ and $d$
 arbitrary.
 
 We propose a slight shift in perspective on the problem: We should
@@ -194,8 +191,8 @@ $$[\Orb(F)] \in A_{\GL(E)}^{\bullet}(\P \Sym^{d}E^{\smvee}).$$
 This class not only determines the degree of the orbit closure, but
 also tracks many more enumerative problems like (B).  As is
 demonstrated in the appendix \cite[], \autoref{theorem:main} contains
-the same content as the calculation of this equivariant class when $F$
-is assumed to be a {\sl general} degree $3$ form in four variables.
+the same content as the calculation of $[\Orb(F)]$ when $F$ is assumed
+to be a {\sl general} degree $3$ form in four variables.
 
 This change in perspective opens up our avenue of attack.  As will be
 seen in \autoref{section:???} we exploit certain {\sl isotrivial}
@@ -294,6 +291,13 @@ morphism
 \end{align}
 
 
+\begin{theorem}[Schubert]
+  \label{theorem:Schubert} There are $20$ cuspidal cubic curves
+  containing all of five general points in $\P^{2}$, and flexed at a
+  sixth general point.
+\end{theorem}
+
+
 \subsection{Good families}
 \label{sec:good-families}
 
@@ -313,11 +317,11 @@ dimension $2$, with $B$ a $4$-dimensional scheme. We say $\pi$ is {\sl
   a good family of cubic surfaces} if:
 \begin{itemize}
 \item There exists a $\P^3$-bundle $\rho: P \to B$ and a closed
-  embedding $\iota: X \hookrightarrow P$ embedding each fiber $X_b$ as
-  a cubic surface in $P_b$ and $\pi = \rho \circ \iota$,
-\item $X_{b}$ is reduced and irreducible for all $b \in B$, and
-\item There is {\sl no} $b \in B$ such that the cubic surface $X_b$ is
-  represented by a point in $\partial \Orb(F) \subset \P^{19}$.
+  embedding $\iota: X \hookrightarrow P$ embedding each fiber $X_b$,
+  $b \in B$, as a cubic surface in $P_b$ and $\pi = \rho \circ \iota$,
+\item There does {\sl not} exist a $b \in B$ such that the cubic
+  surface $X_b$ is represented by a point in
+  $\partial \Orb(F) \subset \P^{19}$.
 \end{itemize}
 \end{definition}
 
@@ -361,22 +365,22 @@ $\mathcal{M} := \Sym^{3}E^{\smvee} \sslash GL(E)$.
 \begin{proposition}
   \label{prop:good} Let $Z \subset \P^2$ be an admissible, length $6$
   subscheme with $X_Z \subset \P^3$ its associated cubic surface. Then
-  $\dim Aut(\P^2,Z) > 0$ if and only if $\dim Aut(\P^3,X_Z) > 0$.
+  $\dim \Aut(\P^2,Z) > 0$ if and only if $\dim \Aut(\P^3,X_Z) > 0$.
 \end{proposition}
 
 \begin{proof} The implication
-  $\dim Aut(\P^2,Z) > 0 \implies \dim Aut(\P^3,X_Z) > 0$ is simpler:
-  Any automorphism $g \in Aut(\P^2,Z)$ naturally lifts to an
+  $\dim \Aut(\P^2,Z) > 0 \implies \dim \Aut(\P^3,X_Z) > 0$ is simpler:
+  Any automorphism $g \in \Aut(\P^2,Z)$ naturally lifts to an
   automorphism $g' \in \Aut \Bl_{Z}\P^2$. This latter automorphism
   must preserve the anti-canonical line bundle
   $\omega_{\Bl_{Z}(\P^2)}^{-1}$, and therefore induces an element in
-  $Aut(\P^3, X_Z)$. This element is nontrivial if $g$ is, because
+  $\Aut(\P^3, X_Z)$. This element is nontrivial if $g$ is, because
   $\kappa: \Bl_{Z}(\P^2) \to X_Z$ is birational. The implication
   follows.
 
 
   The opposite implication
-  $\dim Aut(\P^3,X_Z) > 0 \implies \dim Aut(\P^2,Z) > 0$ is more
+  $\dim \Aut(\P^3,X_Z) > 0 \implies \dim \Aut(\P^2,Z) > 0$ is more
   intricate. First, note that $\Bl_{Z}\P^2$ is a surface with finitely
   many $A_n$ singularities, thanks to the curvilinearity of $Z$; let
   $\tau: Y \to \Bl_{Z}\P^2$ denote its minimal desingularization.
@@ -401,13 +405,13 @@ $\mathcal{M} := \Sym^{3}E^{\smvee} \sslash GL(E)$.
   adjunction formula.  Hence $\alpha$ is an isomorphism.
 
   Every automorphism of a surface lifts uniquely to its minimal
-  desingularization. Therefore, if $\dim Aut(\P^3,X_Z) >0 $, it
-  follows that $\dim Aut(Y) >0$. Under this assumption, let
+  desingularization. Therefore, if $\dim \Aut(\P^3,X_Z) >0 $, it
+  follows that $\dim \Aut(Y) >0$. Under this assumption, let
   $G \subset \Aut(Y)$ denote the connected component containing
   identity.
 
-  The Picard group $Pic(Y)$ is discrete, so the connected group $G$
-  acts trivially on $Pic(Y)$.  In particular, the line bundle $L$ on
+  The Picard group $\Pic(Y)$ is discrete, so the connected group $G$
+  acts trivially on $\Pic(Y)$.  In particular, the line bundle $L$ on
   $\Bl_{Z}\P^2$ inducing the morphism $Y \to \Bl_{Z}\P^2 \to \P^2$ is
   preserved by $G$. Therefore, $G$ induces an action on
   $\P H^0(Y,L)= \P^2$.  This action renders the blow-down map
@@ -685,19 +689,21 @@ relation on the indetermined coefficients in \eqref{eq:P}:
 
 
 This section constructs and analyzes a good family over the base
-$$B_2 := \overline{\M}_{0,7}.$$
-To avoid unnecessary accumulation of symbols, we reset notation such
-as $C,S,X, \dots$ from previous sections, and start anew.
+$$B_2 := \overline{\M}_{0,7},$$
+the moduli space of Deligne-Mumford stable $7$-pointed genus $0$
+curves.  To avoid unnecessary accumulation of symbols, we reset
+notation such as $C,S,X, \dots$ from previous sections, and start
+anew.
 
 
 
 Before diving into details, we summarize the construction. Let
 $C \subset \P^{2}$ be a smooth conic with $7$ distinct marked points
-$p_{0}, p_{1}, \dots, p_{5}, p_{\infty}$ on $C$, and let
-$q \in \P^{2} \setminus C$ denote the intersection point of the
-tangent lines of $C$ at $p_{0}$ and $p_{\infty}$, i.e.
-$q = \Pole(p_{0},p_{\infty})$.  Then the scheme
-$Z := \{p_{1}, \dots , p_{5}, q \}$ is an admissible length $6$
+$s_{0}, s_{1}, \dots, p_{5}, s_{\infty}$ on $C$, and let
+$t \in \P^{2} \setminus C$ denote the intersection point of the
+tangent lines of $C$ at $s_{0}$ and $s_{\infty}$, i.e.
+$t = \Pole(s_{0},s_{\infty})$.  Then the scheme
+$Z := \{s_{1}, \dots , s_{5}, t \}$ is an admissible length $6$
 subscheme of $\P^{2}$, and its associated cubic surface $X_{Z}$ has a
 finite automorphism group.  The main objective of this section is to
 demonstrate how this construction {\sl can be extended over the
@@ -708,45 +714,46 @@ demonstrate how this construction {\sl can be extended over the
 \label{sec:basics-overlinem_0-7}
 
 We denote a general stable $7$-pointed genus zero curve by
-$$(C, p_{0}, p_{1}, \dots, p_{5}, p_{\infty}),$$
+$$(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty}),$$
 and we let 
 \begin{align}
   \label{eq:PM07}
   \varphi: \mathcal{C} \to \overline{\M}_{0,7}
 \end{align}
 denote the universal stable curve, with universal marking sections
-denoted $$\sigma_{0}, \dots, \sigma_{\infty} \subset \mathcal{C}.$$
+denoted $$\sigma_{0}, \sigma_{1}, \dots, \sigma_{5}, \sigma_{\infty} \subset \mathcal{C}.$$
 
-We let $\mathbf{L}$ denote the line bundle
+We let $\mathcal{L}$ denote the line bundle
 $\O_{\mathcal{C}}(-\sigma_{\infty})|_{\sigma_{\infty}} \simeq
 \omega_{\varphi}|_{\sigma_{\infty}}$ -- we view it as a line bundle on
 $\overline{\M}_{0,7}$, as is customary.  Following standard notation,
-we set $\psi_{\infty} := c_{1}\mathbf{L}$.  The sole enumerative
+we set $\psi_{\infty} := c_{1}\mathcal{L}$.  The sole enumerative
 result about $\overline{\M}_{0,7}$ we will use in this section is:
 
-\begin{theorem}[ \cite[]]
+\begin{theorem}[ ???2 ]
   \label{theorem:psi}
-  $\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1$.
+  $$\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1.$$
 \end{theorem}
 
 \subsection{Construction of the family}
 \label{sec:construction-familyB2}
 
 
-We move on to the construction of our good family over $B_2$. Consider
-the rank $2$ vector bundle
+We move on to the construction of our good family over $B_2$. Start
+with the rank $2$ vector bundle
 $$\mathcal{A} := \varphi_{*}\O_{\mathcal{C}}(\sigma_{\infty})$$ on
 $\overline{\M}_{0,7}$.  From the fact that the line bundle
-$\O_{\mathcal{C}}(\sigma_{\infty})$ restricts to $\mathbf{L}^{-1}$ on
+$\O_{\mathcal{C}}(\sigma_{\infty})$ restricts to $\mathcal{L}^{-1}$ on
 $\sigma_{\infty}$ and $\O_{\sigma_{0}}$ on $\sigma_{0}$, it follows
 that
 \begin{align*}
-  \mathcal{A} \simeq \O_{\overline{\M}_{0,7}} \oplus \mathbf{L}^{-1}.
+  \mathcal{A} \simeq \O_{\overline{\M}_{0,7}} \oplus \mathcal{L}^{-1}.
 \end{align*}
 
-Next, put $\overline{\mathcal{C}} := \P \mathcal{A}^{\smvee}$;
+Next, put $\o{\mathcal{C}} := \P \mathcal{A}^{\smvee}$;
 $\overline{\mathcal{C}}$ is a $\P^{1}$-bundle over
-$\overline{\M}_{0,7}$, and the surjection
+$\overline{\M}_{0,7}$ with structural map
+$$\o{\varphi}: \o{\cC} \to \o{\M}_{0,7}$$ and the surjection
 $\varphi^{*}\mathcal{A} \to \O_{\mathcal{C}}(\sigma_{\infty})$ induces
 a {\sl contraction map}
 
@@ -761,38 +768,101 @@ point $p_{\infty}$, leaving the unique $\P^{1}$ containing the marked
 point $p_{\infty}$.  This remaining $\P^{1}$ is the corresponding
 fiber of the $\P^{1}$-bundle $\overline{\mathcal{C}}$.
 
-Under $\gamma$, the sections $\sigma_{i}$ map to sections
-$\overline{\sigma_{i}}$ of $\overline{\mathcal{C}}$ over
-$\overline{\M}_{0,7}$.  These sections have the following properties:
+Under $\gamma$, the sections $\sigma_{i}$ map to sections, which we
+denote by $\overline{\sigma_{i}}$, of $\o{\varphi}$.  These sections
+have the following properties:
 \begin{itemize}
 \item $\overline{\sigma}_{\infty}$ is disjoint from all other sections, and
-\item the union of all seven sections is supported on at least three
-  points in every fiber of $\overline{\mathcal{C}}$ over
-  $\overline{\M}_{0,7}$.
+\item in each fiber of $\o{\varphi}$, the union of all seven sections
+  is supported on at least three points.
 \end{itemize}
 
 
 
 
 The next step is to invoke the relative $2$-veronese embedding
-$$\iota: \overline{\mathcal{C}} \hookrightarrow \P \Sym^{2}\mathcal{A}^{\smvee}.$$ In this way, $\overline{\mathcal{C}} \subset \P \Sym^{2}\mathcal{A}^{\smvee}$ is a
-family of smooth conics with $7$ marked points
+$$\iota: \overline{\mathcal{C}} \hookrightarrow \cP:= \P \Sym^{2}\mathcal{A}^{\smvee}.$$
+We let $\rho: \cP \to \o{\M}_{0,7}$ denote the structural map of this
+$\P^{2}$-bundle.  In this way, $\overline{\mathcal{C}} \subset \cP$ is
+a family of smooth conics with $7$ marked points
 $\overline{\sigma}_{0}, \dots, \overline{\sigma}_{\infty}$ satisfying
-the two properties just mentioned.
+the two properties just mentioned above.
 
 \begin{definition}
-  \label{def:tau} Let $\tau \subset \P \Sym^{2} \mathcal{A}^{\smvee}$
-  denote the section obtained by taking the point polar, with respect
-  to the conic $\overline{\mathcal{C}}$, to the line spanned by
-  $\overline{\sigma}_{0}$ and $\overline{\sigma_{\infty}}$ in each
+  \label{def:tau} Let $\tau \subset \cP$ denote the section obtained
+  by taking, fiber-by-fiber, the point polar (with respect to the
+  conic $\iota(\overline{\mathcal{C}})$) to the line spanned by
+  $\overline{\sigma}_{0}$ and $\overline{\sigma}_{\infty}$ in each
   fiber.
 \end{definition}
 
+Observe that, since $\o{\sigma}_{0}$ and $\o{\sigma}_{\infty}$ are {\sl
+    disjoint}, it follows that the three sections
+  $\tau, \o{\sigma}_{0},$ and $\o{\sigma}_{\infty}$ are non-collinear
+  in every fiber of $\rho: \cP \to \o{\M}_{0,7}$.
+
 \begin{lemma}
   \label{lemma:tau}
-  The section $\tau$ is induced by an inclusion of the form
-  ${\bf L}^{-1} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}$.
+  The section $\tau \subset \cP$ is induced by an inclusion of the
+  form
+  $${\mathcal{L}} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}.$$
 \end{lemma}
+
+\begin{proof}
+  Let $\mathcal{T} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}$
+  denote the line sub-bundle corresponding to the section $\tau$ -- we
+  must show $\mathcal{T} \simeq \mathcal{L}$.
+
+  The sections
+  $\o{\sigma_{0}}$ and $\o{\sigma}_{\infty}$ correspond, respectively,
+  to inclusions of the form
+  \begin{align*}
+    \O \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}, \\
+    \mathcal{L}^{2} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}. \\
+  \end{align*}
+
+  Since $\tau$, $\o{\sigma}_{0}$, and $\o{\sigma}_{\infty}$ are
+  non-collinear in every fiber of $\rho$, we deduce that the induced
+  map
+  $$\mathcal{T} \oplus \mathcal{L}^{2} \oplus \O \to \Sym^{2}
+  \mathcal{A}^{\smvee}$$ is an isomorphism.  Since
+  $\Sym^{2} \mathcal{A}^{\smvee} \simeq \O \oplus \mathcal{L} \oplus
+  \mathcal{L}^{2}$, the claim now follows by considering determinants.
+\end{proof}
+
+
+\begin{definition}
+  \label{def:ZB2} We let $\Sigma \subset \iota(\o{\mathcal{C}})$
+  denote the union of the sections
+  $\o{\sigma}_{1}, \dots, \o{\sigma}_{5}$.  We let
+  $\mathcal{Z} \subset \cP$ denote the (disjoint) union
+  $\Sigma \bigsqcup \tau$.
+\end{definition}
+
+The reader can immediately check that $\mathcal{Z} \subset \cP$
+registers an admissible length $6$ subscheme in each fiber of
+$\rho$. In light of this, we let
+\begin{align}
+  \label{eq:VB2}
+  \mathcal{V} := \rho_{*}(\mathcal{I}_{\mathcal{Z}} \otimes \omega_{\rho}^{-1});
+\end{align}
+$\V$ is the natural rank $4$ vector bundle for the family of cubic
+surfaces $$\pi: X \to \o{\M}_{0,7}$$ obtained by taking, for each
+fiber of $\rho$, the cubic associated to the admissible subscheme
+$\mathcal{Z} \subset \cP$.
+
+\begin{proposition}
+  \label{prop:goodnessB2} The family $\pi: X \to \o{\M}_{0,7}$ is
+  good.
+\end{proposition}
+
+\begin{proof}
+  This is seen by applying \autoref{prop:good}, after noting that in
+  each fiber of $\rho$ the subscheme
+  $\Sigma \subset \iota(\o{\mathcal{C}})$ is supported on at least
+  three points.
+\end{proof}
+
 
 
 

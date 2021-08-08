@@ -33,6 +33,10 @@
 
 ("eq:MAIN" "e" "\\int_{B} 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4} = \\deg \\mu, " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
+(toc "toc" "      1.1 Strategy" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "1.1" "\\subsection{Strategy}" 4187)
+
+("sec:strategy" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
 ("eq:P" "e" "\\int_{B} a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 (toc "toc" "      1.1 History and context" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "1.1" "\\subsection{History and context}" 4210)

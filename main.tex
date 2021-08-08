@@ -122,21 +122,43 @@ examples yields:
   space of cubic surfaces.
 \end{theorem}
 
+The exact notion of a good family can be found in
+\autoref{sec:good-families}.  We simply mention here that it includes
+the case where all fibers are semi-stable cubic surfaces (in the sense
+of GIT), and the relative dualizing sheaf $\omega_{\pi}$ exists and is
+a line bundle.
 
-Our method of proof is simple: We first argue that there exists a
-formula of the form
+The formula has a curious corollary:
+
+\begin{corollary}
+  \label{cor:ineq} If $\pi: X \to B$ is a good family of cubic
+  surfaces parametrized by a $4$ dimensional proper variety $B$,
+  then $$\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0$$ with
+  equality holding if and only if a general cubic surface does not
+  arise as a fiber.
+\end{corollary}
+
+
+
+\subsection{Strategy}
+\label{sec:strategy}
+
+The overall strategy of the proof is quite simple: We argue that a
+priori there exists a formula of the form
 
 \begin{align}
   \label{eq:P}
   \int_{B} a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4} = \deg \mu,
 \end{align}
-as in \autoref{theorem:main}.  Then, we determine the five
-coefficients $a_{\bullet}$ by exhibiting particular good families for
-which we {\sl a priori} know all $v_{i}$ and $\deg \mu$.  In this way,
-we obtain a system of linear equations in five unknowns, which turns
-out to have a unique solution.  In fact, we exhibit nine(?)  such
-families/equations, leaving no doubt in the correctness of the
-formula.
+as in the statement of \autoref{theorem:main} -- this is merely an
+instance of a foundational theorem in equivariant enumerative geometry
+\cite[].  Then, we determine the five coefficients $a_{\bullet}$ by
+exhibiting several good families for which we know all $v_{i}$ {\sl
+  and} $\deg \mu$.  In this way, we obtain a system of linear
+equations in the five unknowns $a_{\bullet}$, which turns out to have
+a unique solution.  In fact, we exhibit nine(?)  such
+families/equations; the redundancy provides extra checks on the end
+result.
   
 
 \subsection{History and context}
@@ -211,6 +233,13 @@ $\omega_{X} \otimes \pi^{*}\omega_{Y}^{-1}$.  If $\mathcal{A}$ is a
 vector bundle, then we let $\P \mathcal{A}$ denote its
 projectivization, which parametrizes $1$-dimensional {\sl subspaces}
 in the fibers of $\mathcal{A}$.
+
+If a smooth conic $C \subset \P^{2}$ is given, and if $p \in \P^{2}$
+is any point, we let $\Polar(p)$ denote the line polar to $p$ with
+respect to $C$.  Similarly, if $L \subset \P^{2}$ is any line, we let
+$\Pole(L)$ denote the point polar to $L$.
+
+
 
 
 \subsection{Classical facts about cubic surfaces}
@@ -670,9 +699,10 @@ tangent lines of $C$ at $p_{0}$ and $p_{\infty}$, i.e.
 $q = \Pole(p_{0},p_{\infty})$.  Then the scheme
 $Z := \{p_{1}, \dots , p_{5}, q \}$ is an admissible length $6$
 subscheme of $\P^{2}$, and its associated cubic surface $X_{Z}$ has a
-finite automorphism group.  The key technical point is that this
-construction {\sl extends over the boundary of $\overline{\M}_{0,7}$,
-  yielding a good family of cubic surfaces.}
+finite automorphism group.  The main objective of this section is to
+demonstrate how this construction {\sl can be extended over the
+  boundary of $\overline{\M}_{0,7}$, yielding a good family of cubic
+  surfaces.}
 
 \subsection{Basics of $\overline{\M}_{0,7}$}
 \label{sec:basics-overlinem_0-7}
@@ -692,9 +722,9 @@ $\O_{\mathcal{C}}(-\sigma_{\infty})|_{\sigma_{\infty}} \simeq
 \omega_{\varphi}|_{\sigma_{\infty}}$ -- we view it as a line bundle on
 $\overline{\M}_{0,7}$, as is customary.  Following standard notation,
 we set $\psi_{\infty} := c_{1}\mathbf{L}$.  The sole enumerative
-result we will need in this section is:
+result about $\overline{\M}_{0,7}$ we will use in this section is:
 
-\begin{theorem}
+\begin{theorem}[ \cite[]]
   \label{theorem:psi}
   $\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1$.
 \end{theorem}
@@ -703,7 +733,8 @@ result we will need in this section is:
 \label{sec:construction-familyB2}
 
 
-Consider the rank $2$ vector bundle
+We move on to the construction of our good family over $B_2$. Consider
+the rank $2$ vector bundle
 $$\mathcal{A} := \varphi_{*}\O_{\mathcal{C}}(\sigma_{\infty})$$ on
 $\overline{\M}_{0,7}$.  From the fact that the line bundle
 $\O_{\mathcal{C}}(\sigma_{\infty})$ restricts to $\mathbf{L}^{-1}$ on
@@ -743,58 +774,26 @@ $\overline{\M}_{0,7}$.  These sections have the following properties:
 
 
 
-The next step is to invoke the relative $2$-veronese
-embedding
+The next step is to invoke the relative $2$-veronese embedding
 $$\iota: \overline{\mathcal{C}} \hookrightarrow \P \Sym^{2}\mathcal{A}^{\smvee}.$$ In this way, $\overline{\mathcal{C}} \subset \P \Sym^{2}\mathcal{A}^{\smvee}$ is a
 family of smooth conics with $7$ marked points
-$\overline{\sigma}_{0}, \dots, \overline{\sigma}_{\infty}$.
-Importantly, $\sigma_{\infty}$ never intersects any of the other six
-sections.  Also, observe that
-$$\pi_{*}O_{C}(2 \sigma_{\infty}) = \Sym^{2}(\mathbf{L}^{-1} \oplus
-O) = \mathbf{L}^{-2} \oplus \mathbf{L}^{-1} \oplus O.$$
+$\overline{\sigma}_{0}, \dots, \overline{\sigma}_{\infty}$ satisfying
+the two properties just mentioned.
 
+\begin{definition}
+  \label{def:tau} Let $\tau \subset \P \Sym^{2} \mathcal{A}^{\smvee}$
+  denote the section obtained by taking the point polar, with respect
+  to the conic $\overline{\mathcal{C}}$, to the line spanned by
+  $\overline{\sigma}_{0}$ and $\overline{\sigma_{\infty}}$ in each
+  fiber.
+\end{definition}
 
+\begin{lemma}
+  \label{lemma:tau}
+  The section $\tau$ is induced by an inclusion of the form
+  ${\bf L}^{-1} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}$.
+\end{lemma}
 
-To be continued...
-
-
-
-
-\subsection{OLD $B_2$}
-
-
-Our next family is a slight variant of $B_1$. Let $S$ be a degree $7$
-del Pezzo surface, viewed as the blow up of the plane at two points,
-with its two exceptional lines $E_1, E_2$ and its third exceptional
-line $L$.  Next, fix a general conic $C \subset S$ which is {\sl
-  tangent} to $L$ at a point $p$ distinct from the pair
-$L \cap (E_1 \cup E_2)$.
-
-The configuration space $C^{[4]} \simeq \P^{4}$ carries a family of
-cubic surfaces $X/\P^{4}$.  Unfortunately, the configurations of the
-form $x+y+2p$, $x,y \in C$, register reducible cubic surfaces, and so
-$X/\P^{4}$ is not good.  This locus is a $2$-plane
-$\Lambda \subset \P^{4}$.
-
-\begin{proposition}
-  \label{proposition:resolveB2} The blow up of $\P^{4}$ along
-  $\Lambda$ carries a good family extending
-  $X/(\P^{4} \setminus \Lambda)$.
-\end{proposition}
-(Actually, hold off: One needs to blow up at least one more time,
-corresponding to the configuration $4p$.)
-
-
-
-Next we must compute the degree of the map to moduli
-$\mu: B_2 \dashrightarrow M$. As in the case of $B_1$, $\mu$ factors
-through $\mu^{\dagger}: B_2 \dashrightarrow M^\dagger/\Sigma_{4}$.
-However,  there is a distinction:
-
-\begin{proposition}
-  \label{proposition:deg-mudagger2}
-  We have: $\deg \mu^{\dagger} = 2$.
-\end{proposition}
 
 
 \section{Family $B_3$}
@@ -972,7 +971,6 @@ same as for $B_1$.
 
 The main obstacle in using this simple family is: I do not a priori
 know the cubic surface count!!!
-
 \section{Isotrivial family of surface with 3 $A_2$ singularities}
 \label{sec:isotrivial3A2}
 

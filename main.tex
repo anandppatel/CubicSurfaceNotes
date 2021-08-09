@@ -21,7 +21,7 @@
 \usepackage[all]{xy}
 \usepackage{eucal}
 
-\title{Counting Cubic Surfaces}
+\title{A universal formula for counting cubic surfaces}
 \author{Anand Deopurkar, Anand Patel
   \& Dennis Tseng}
 
@@ -81,43 +81,54 @@
 \section{Introduction}
 \label{sec:intro}
 
-The beautiful enumerative geometry inherent to cubic surfaces has
-captured the imagination ever since, in 1849, Cayley and Salmon
-illuminated the structure of the $27$ lines.  We add to this long
-history by finding an enumerative formula which counts the number of
-times the {\sl moduli} of a general cubic surface arises in suitably
-generic, complete, $4$ parameter families. Applying the formula to a
-few simple examples yields:
+\subsection{Counting cubic surfaces}
+The beautiful enumerative geometry of cubic surfaces has captured the
+imagination of algebraic geometers for centuries. Yet, it is easy
+to ask natural enumerative questions about cubic surfaces whose
+solutions elude us.
+
+One family of such questions concerns counting the moduli of cubic
+surfaces in families. It is well-known that the isomorphism classes of
+cubic surfaces form a 4-dimensional moduli space. Therefore, in any
+4-dimensional family of cubic surfaces, a general isomorphism class is
+expected to appear finitely many times. How do we determine this
+number? For example, how many times does a general cubic surface
+appear, up to isomorphism, as
 \begin{enumerate}
-\item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic
-    surface's moduli arises $96120$ times in a general $4$ dimensional
-    linear system of cubic surfaces,} and
-\item[(B)] {\sl A general cubic surface's moduli arises $42120$ times
-    as a hyperplane section of a general cubic threefold.}
+\item a member of a 4-dimensional general linear system of cubic surfaces in $\mathbb
+  P^3$?
+\item a hyperplane section of a general cubic threefold in $\mathbb
+  P^4$?
+\item a blow up of 6 points in $\mathbb P^2$ varying in a general
+  4-dimensional linear system on a cubic curve?
 \end{enumerate}
+We prove an enumerative formula that answers all questions of this kind.
+(The answers to these specific questions are $96120$, $42120$, and
+$25920$, respectively).
 
-Our formula, along with its precise hypotheses, is stated in the
-following theorem.
-
+To state our theorem, denote by $\mathcal M$ the coarse moduli space
+of $\PGL(4)$-semistable cubic surfaces in $\mathbb P^3$.
+By a family of cubic surfaces, we mean a flat, proper morphism whose
+geometric fibers are isomorphic to cubic surfaces in $\mathbb P^3$.
 \begin{theorem}\label{theorem:main}
-  Let $\pi: X \to B$ be a good family of cubic surfaces over a proper
-  base $B$, with semi-stable generic fiber. If
-  $v_{i} \in A^{i}(B), i=1, 2,3, 4$, are the Chern classes of its
-  natural rank $4$ vector bundle $\V := \pi_{*}(\omega_{\pi}^{-1})$,
-  then
+  Let $\pi \colon X \to B$ be family of cubic surfaces.  Let $\V$ be
+  the rank 4 bundle $\V = \pi_* \left(\omega_\pi^{-1}\right)$, and let
+  \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that
+  every fiber of $\pi$ is good and a general fiber is GIT semi-stable.
+  Let $\mu \colon B \dashrightarrow \mathcal M$ be the rational map
+  induced by $\pi$.  Then we have the equality
   \begin{align}
+    \deg \mu =
     \label{eq:MAIN}
-   \int_{B} 1080v_{1}^{2}v_{2} - 1080v_{1}v_{3}+9720v_{4} = \deg \mu,
+    1080 \int_{B} \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right).
   \end{align}
-  where $\mu: B \dashrightarrow \M$ is the induced map to the moduli
-  space of cubic surfaces.
 \end{theorem}
+\autoref{def:goodfamily} gives the precise meaning of ``good''. All
+semi-stable surfaces and all surfaces (possibly singular) with a
+finite automorphism group are good.
 
-The exact notion of a good family can be found in
-\autoref{sec:good-families}.  We simply mention here that it includes
-the case where all fibers are semi-stable cubic surfaces (in the sense
-of GIT), and the relative dualizing sheaf $\omega_{\pi}$ exists and is
-a line bundle.
+\subsection{Equivariant orbit classes}
+
 
 The formula has a curious consequence:
 

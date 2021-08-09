@@ -84,10 +84,10 @@
 The beautiful enumerative geometry inherent to cubic surfaces has
 captured the imagination ever since, in 1849, Cayley and Salmon
 illuminated the structure of the $27$ lines.  We add to this long
-history by establishing an enumerative formula which counts the number
-of times the {\sl moduli} of a general cubic surface arises in
-suitably generic, complete, $4$ parameter families. Applying the
-formula to a few simple examples yields:
+history by finding an enumerative formula which counts the number of
+times the {\sl moduli} of a general cubic surface arises in suitably
+generic, complete, $4$ parameter families. Applying the formula to a
+few simple examples yields:
 \begin{enumerate}
 \item[(A)] \label{fact:RanestadSturmfelds} {\sl A general cubic
     surface's moduli arises $96120$ times in a general $4$ dimensional
@@ -221,22 +221,29 @@ occurring in the paper.
 \subsection{Notation and conventions}
 \label{sec:notation-conventions}
 All schemes are assumed of finite-type over an algebraically closed,
-characteristic zero field, $\k$. If $\pi: X \to Y$ is a map of schemes
-and if $y \in Y$ is a point, then we let $X_y$ denote the fiber scheme
-$\pi^{-1}(y)$, and if both $X$ and $Y$ have dualizing line bundles
-$\omega_{X}, \omega_{Y}$ respectively, then we write $\omega_{X/Y}$,
-or $\omega_{\pi}$, for the line bundle
-$\omega_{X} \otimes \pi^{*}\omega_{Y}^{-1}$.  If $\mathcal{A}$ is a
-vector bundle, then we let $\P \mathcal{A}$ denote its
-projectivization, which parametrizes $1$-dimensional {\sl subspaces}
-in the fibers of $\mathcal{A}$.
+characteristic zero field, $\k$.
 
-If a smooth conic $C \subset \P^{2}$ is given, and if $p \in \P^{2}$
-is any point, we let $\Polar(p)$ denote the line polar to $p$ with
-respect to $C$.  Similarly, if $L \subset \P^{2}$ is any line, we let
-$\Pole(L)$ denote the point polar to $L$.
+\begin{itemize}
 
+\item If $\pi: X \to Y$ is a map of schemes and if $y \in Y$ is a
+  point, then we let $X_y$ denote the fiber scheme $\pi^{-1}(y)$, and
+  if both $X$ and $Y$ have dualizing line bundles
+  $\omega_{X}, \omega_{Y}$ respectively, then we write $\omega_{X/Y}$,
+  or $\omega_{\pi}$, for the line bundle
+  $\omega_{X} \otimes \pi^{*}\omega_{Y}^{-1}$.
+\item If $\mathcal{W}$ is a
+  vector bundle, then we let $\P \mathcal{W}$ denote its
+  projectivization, which parametrizes $1$-dimensional {\sl subspaces}
+  in the fibers of $\mathcal{W}$. $\P \mathcal{W}$ comes naturally
+  equipped with the line bundle $\O_{\P \mathcal{W}}(1)$, whose
+  push-forward to the base scheme is $\mathcal{W}^{\smvee}$.
 
+\item If a smooth conic $C \subset \P^{2}$ is given, and if
+  $p \in \P^{2}$ is any point, we let $\Polar(p)$ denote the line
+  polar to $p$ with respect to $C$.  Similarly, if $L \subset \P^{2}$
+  is any line, we let $\Pole(L)$ denote the point polar to $L$.
+
+\end{itemize}
 
 
 \subsection{Classical facts about cubic surfaces}
@@ -699,7 +706,7 @@ anew.
 
 Before diving into details, we summarize the construction. Let
 $C \subset \P^{2}$ be a smooth conic with $7$ distinct marked points
-$s_{0}, s_{1}, \dots, p_{5}, s_{\infty}$ on $C$, and let
+$s_{0}, s_{1}, \dots, s_{5}, s_{\infty}$ on $C$, and let
 $t \in \P^{2} \setminus C$ denote the intersection point of the
 tangent lines of $C$ at $s_{0}$ and $s_{\infty}$, i.e.
 $t = \Pole(s_{0},s_{\infty})$.  Then the scheme
@@ -762,10 +769,10 @@ a {\sl contraction map}
   \gamma: \mathcal{C} \to \overline{\mathcal{C}}.
 \end{align}
 
-The effect of $\gamma$ on a stable curve $(C, p_0, \dots, p_{\infty})$
+The effect of $\gamma$ on a stable curve $(C, s_0, \dots, s_{\infty})$
 is to contract all irreducible components not containing the marked
-point $p_{\infty}$, leaving the unique $\P^{1}$ containing the marked
-point $p_{\infty}$.  This remaining $\P^{1}$ is the corresponding
+point $s_{\infty}$, leaving the unique $\P^{1}$ containing the marked
+point $s_{\infty}$.  This remaining $\P^{1}$ is the corresponding
 fiber of the $\P^{1}$-bundle $\overline{\mathcal{C}}$.
 
 Under $\gamma$, the sections $\sigma_{i}$ map to sections, which we
@@ -857,13 +864,50 @@ $\mathcal{Z} \subset \cP$.
 \end{proposition}
 
 \begin{proof}
-  This is seen by applying \autoref{prop:good}, after noting that in
+  Apply \autoref{prop:good}, after noting that in
   each fiber of $\rho$ the subscheme
   $\Sigma \subset \iota(\o{\mathcal{C}})$ is supported on at least
   three points.
 \end{proof}
 
+\subsection{Chern classes of $\V$}
+\label{sec:chern-classes-v2}
 
+We must now determing the Chern polynomial of the vector bundle
+$\V = \rho_{*}(\mathcal{I}_{\mathcal{Z}} \otimes
+\omega_{\rho}^{-1})$. In light of the exact sequence
+\begin{align}
+  \label{eq:exact2}
+  0 \to \V \to \rho_{*}\omega_{\rho}^{-1} \to \rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}}) \to 0
+\end{align}
+it clearly suffices to determine the Chern polynomials of the rank
+$10$ bundle $\rho_{*}(\omega_{\rho}^{-1})$ and the rank $6$ bundle
+$\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
+
+\begin{lemma}
+  \label{lemma:rank10}
+  The bundle $\omega_{\rho}^{-1}$ is isomorphic to
+  $\O_{\mathcal{P}}(3) \otimes \rho^{*}\mathcal{L}^{3}$, and
+  \begin{align}
+    \label{eq:rnk10}
+    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A}^{\smvee})\otimes \mathcal{L}^{3}.
+  \end{align}
+\end{lemma}
+
+\begin{proof}
+  It suffices to prove
+  $\omega_{\rho}^{-1} \simeq \O_{\mathcal{P}}(3) \otimes
+  \rho^{*}\mathcal{L}^{3}$.  This follows directly from the relative
+  Euler exact sequence for $\rho$:
+  \begin{align}
+    \label{eq:eulerexact}
+    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A})(-1) \to \O_{\cP} \to 0.
+  \end{align}
+\end{proof}
+
+\begin{proposition}
+  \label{prop:omegarestrictZ} 
+\end{proposition}
 
 
 \section{Family $B_3$}

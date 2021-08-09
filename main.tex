@@ -890,24 +890,57 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
   $\O_{\mathcal{P}}(3) \otimes \rho^{*}\mathcal{L}^{3}$, and
   \begin{align}
     \label{eq:rnk10}
-    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A}^{\smvee})\otimes \mathcal{L}^{3}.
+    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A})\otimes \mathcal{L}^{3}.
   \end{align}
 \end{lemma}
 
 \begin{proof}
-  It suffices to prove
+  It suffices to prove the first assertion, that
   $\omega_{\rho}^{-1} \simeq \O_{\mathcal{P}}(3) \otimes
   \rho^{*}\mathcal{L}^{3}$.  This follows directly from the relative
   Euler exact sequence for $\rho$:
   \begin{align}
     \label{eq:eulerexact}
-    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A})(-1) \to \O_{\cP} \to 0.
+    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A}^{\smvee})(-1) \to \O_{\cP} \to 0.
   \end{align}
 \end{proof}
 
+\begin{corollary}
+  \label{cor:chern10} The Chern polynomial of
+  $\rho_{*}(\omega_{\rho}^{-1})$ is
+  \begin{align}
+    \label{eq:chern10}
+    (1-9\psi_{\infty}^{2}t^{2})(1-4\psi_{\infty}^{2}t^{2})(1-\psi_{\infty}^{2}t^{2})^{2}.
+  \end{align}
+\end{corollary}
+
 \begin{proposition}
-  \label{prop:omegarestrictZ} 
+  \label{prop:omegarestrictZ} The Chern polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$ is INSERT???
 \end{proposition}
+
+\begin{proof}
+  First, because $\mathcal{Z}$ is the disjoint union of
+  $\Sigma \subset \o{\mathcal{C}}$ and $\tau$, we get a direct sum
+  decomposition
+  \begin{align}
+    \label{eq:dirsum}
+    \rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}}) = \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) \oplus \rho_{*}(\omega_{\rho}^{-1}|_{\tau}).
+  \end{align}
+  The line bundle $\rho_{*}(\omega_{\rho}^{-1}|_{\tau})$ is easy to
+  identify -- in fact it is trivial.  Indeed, \autoref{lemma:tau}
+  implies that $\O_{\cP}(1)|_{\tau} \simeq \mathcal{L}^{-1}$, and the
+  first claim in \autoref{lemma:rank10} then implies
+  $\rho_{*}(\omega_{\rho}^{-1}|_{\tau}) \simeq \mathcal{L}^{-3}
+  \otimes \mathcal{L}^{3} = \O_{\o{\M}_{0,7}}$.
+
+  Thus, the Chern polynomial we seek is the same as the Chern
+  polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\Sigma})$.  Since
+  \begin{align*}
+    \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) = \o{\varphi}_{*}(\iota^{*}\omega_{\rho}^{-1}|_{\Sigma})
+  \end{align*}
+  we may instead work within the $\P^{1}$-bundle $\o{\cC}$, where
+  $\Sigma$ is a divisor...
+\end{proof}
 
 
 \section{Family $B_3$}
@@ -1111,11 +1144,22 @@ The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer a
 \end{proposition}
 
 \begin{remark}
-I think that this cubic surface is the most special surface that has a nontrivial torus stabilizer but is still semistable, which is means this method of finding a twisted isotrivial family of surfaces missing the general orbit closure only works for exactly this $3A_2$ surface. 
+  I think that this cubic surface is the most special surface that has
+  a nontrivial torus stabilizer but is still semistable, which is
+  means this method of finding a twisted isotrivial family of surfaces
+  missing the general orbit closure only works for exactly this $3A_2$
+  surface.
 \end{remark}
 
 \begin{proof}
-The fact that the $3A_2$ cubic surface does not lie in the general cubic surface orbit closure follows for GIT. Indeed, we have the map $\pi: \mathbb{P}^{19}\dashrightarrow \mathbb{P}^{19}//PGL_4$ and by definition of semistability, the point defined by $X^3 + YZW = 0$ is not contained in its indeterminacy locus. After removing the indeterminancy locus, orbits of stable points are fibers of $\pi$, so they cannot contain the point defined by $X^3 + YZW = 0$. {\color{red} add GIT references to make sure}
+  The fact that the $3A_2$ cubic surface does not lie in the general
+  cubic surface orbit closure follows for GIT. Indeed, we have the map
+  $\pi: \mathbb{P}^{19}\dashrightarrow \mathbb{P}^{19}//PGL_4$ and by
+  definition of semistability, the point defined by $X^3 + YZW = 0$ is
+  not contained in its indeterminacy locus. After removing the
+  indeterminancy locus, orbits of stable points are fibers of $\pi$,
+  so they cannot contain the point defined by $X^3 + YZW =
+  0$. {\color{red} add GIT references to make sure}
 \end{proof}
 
 Finally, we obtain our test family:
@@ -1141,11 +1185,14 @@ The relation we obtain from Dennis's trick appears to be:
 \end{align}
 
 \section{More isotrivial families}
-In this section, we exhibit a number of good isotrivial families.
-All of these families will arise from a cubic surface $X$ with automorphism group $\mathbb G_m$.
-To make sure that these families are good, we must prove that $X$ does not lie in the closure of the orbit of a generic cubic surface.
-If $X$ is a semi-stable point of the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows from GIT.
-We now explain an extension of this idea that allows for even more examples.
+In this section, we exhibit a number of good isotrivial families.  All
+of these families will arise from a cubic surface $X$ with
+automorphism group $\mathbb G_m$.  To make sure that these families
+are good, we must prove that $X$ does not lie in the closure of the
+orbit of a generic cubic surface.  If $X$ is a semi-stable point of
+the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows
+from GIT.  We now explain an extension of this idea that allows for
+even more examples.
 
 Let $V$ be a 4-dimensional vector space.
 Consider the natural action of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
@@ -1298,24 +1345,32 @@ Therefore, this family gives the relation
 \end{equation}
 
 \subsection{Families over a base variety}
-By choosing a suitable base $B$ and a map $B \to B \mathbb G_m$, we can construct an isotrivial family over $B$ by pulling back one of the families above.
-We describe this explicitly in an example.
+By choosing a suitable base $B$ and a map $B \to B \mathbb G_m$, we
+can construct an isotrivial family over $B$ by pulling back one of the
+families above.  We describe this explicitly in an example.
 
-Let $B = \mathbb P^4$.
-Set
-\[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus \mathcal O(-7).\]
-Let $x_0, x_1, x_2, x_3$ be generators of the four summands on the standard $\mathbb A^4 \subset \mathbb P^4$.
-We have the section $(x_3x_0^2-x_1^3-x_2^3)$ of $\Sym^3 V = \mathcal O(3)^{\oplus 20}$.
-Note that this section has a pole of order $3$ along the hyperplane at infinity.
-As a result, it defines a section $\xi$ of $\Sym^3 V \otimes \mathcal O(-3)$, which is nowhere vanishing.
-Equivalently, $\xi$ is a section of $\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.
-Our family $\mathcal X \to B$ is defined by the zero-locus of $\xi$ in $\P V  \to B$.
+Let $B = \mathbb P^4$.  Set
+\[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus
+  \mathcal O(-7).\] Let $x_0, x_1, x_2, x_3$ be generators of the four
+summands on the standard $\mathbb A^4 \subset \mathbb P^4$.  We have
+the section $(x_3x_0^2-x_1^3-x_2^3)$ of
+$\Sym^3 V = \mathcal O(3)^{\oplus 20}$.  Note that this section has a
+pole of order $3$ along the hyperplane at infinity.  As a result, it
+defines a section $\xi$ of $\Sym^3 V \otimes \mathcal O(-3)$, which is
+nowhere vanishing.  Equivalently, $\xi$ is a section of
+$\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.  Our family
+$\mathcal X \to B$ is defined by the zero-locus of $\xi$ in
+$\P V \to B$.
 
 \appendix
 
 \section{Existance of a universal formula}
 
-In this section, we recall statements from equivariant intersection theory that guarantee the existence of the formula \eqref{eq:P}. On this first pass, we will let $\mathbb{P}(V)$ denote the projective bundle of 1-dimensional subspaces in the fibers of $V$ and correct for the sign later if people want to work with duals. 
+In this section, we recall statements from equivariant intersection
+theory that guarantee the existence of the formula \eqref{eq:P}. On
+this first pass, we will let $\mathbb{P}(V)$ denote the projective
+bundle of 1-dimensional subspaces in the fibers of $V$ and correct for
+the sign later if people want to work with duals.
 
 \begin{lemma}
 \label{lem:Q_Zclass}

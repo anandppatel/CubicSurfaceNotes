@@ -1,6 +1,7 @@
 \documentclass[12pt,reqno]{amsart}
 \usepackage[margin = 1.35 in]{geometry}
 \usepackage[frenchmath,defaultmathsizes]{mathastext}
+\usepackage{cite}
 \usepackage{
   hyperref,
   amsmath,
@@ -81,21 +82,21 @@
 \section{Introduction}
 \label{sec:intro}
 
-\subsection{Counting cubic surfaces}
-The beautiful enumerative geometry of cubic surfaces has captured the
-imagination of algebraic geometers for centuries. Yet, it is easy
-to ask natural enumerative questions about cubic surfaces whose
-solutions elude us.
+\subsection{Counting cubic surfaces}\label{sec:counting}
+Cubic surfaces have captured our imagination for centuries. Beginning
+with Cayley and Salmon's discovery of the the 27 lines, a long list of
+algebraic geometers have revealed intricate facets of their geometry,
+using new and increasingly sophisticated tools. We add to this
+development by answering a family of natural enumerative questions
+about families of cubic surfaces.
 
-One family of such questions concerns counting the moduli of cubic
-surfaces in families. It is well-known that the isomorphism classes of
-cubic surfaces form a 4-dimensional moduli space. Therefore, in any
-4-dimensional family of cubic surfaces, a general isomorphism class is
-expected to appear finitely many times. How do we determine this
-number? For example, how many times does a general cubic surface
-appear, up to isomorphism, as
+It is well-known that the isomorphism classes of cubic surfaces form a
+4-dimensional moduli space. So, we expect that in a 4-dimensional
+family of cubic surfaces, a general isomorphism class would appear
+finitely many times. How do we determine this number? For example, how
+many times does a general cubic surface appear, up to isomorphism, as
 \begin{enumerate}
-\item a member of a 4-dimensional general linear system of cubic surfaces in $\mathbb
+\item \label{orbit} a member of a 4-dimensional general linear system of cubic surfaces in $\mathbb
   P^3$?
 \item a hyperplane section of a general cubic threefold in $\mathbb
   P^4$?
@@ -106,16 +107,20 @@ We prove an enumerative formula that answers all questions of this kind.
 (The answers to these specific questions are $96120$, $42120$, and
 $25920$, respectively).
 
-To state our theorem, denote by $\mathcal M$ the coarse moduli space
-of $\PGL(4)$-semistable cubic surfaces in $\mathbb P^3$.
-By a family of cubic surfaces, we mean a flat, proper morphism whose
-geometric fibers are isomorphic to cubic surfaces in $\mathbb P^3$.
+To state our theorem, we must fix a precise moduli space for the
+cubics.  Let us denote by $\mathcal M$ the GIT quotient of the set of
+semi-stable cubic surfaces in $\mathbb P^3$ by the action of
+$\PGL(4)$.  By a family of cubic surfaces, we mean a flat, proper
+morphism whose geometric fibers are isomorphic to cubic surfaces in
+$\mathbb P^3$.
+
 \begin{theorem}\label{theorem:main}
-  Let $\pi \colon X \to B$ be family of cubic surfaces.  Let $\V$ be
-  the rank 4 bundle $\V = \pi_* \left(\omega_\pi^{-1}\right)$, and let
-  \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that
-  every fiber of $\pi$ is good and a general fiber is GIT semi-stable.
-  Let $\mu \colon B \dashrightarrow \mathcal M$ be the rational map
+  Let $B$ be proper and let $\pi \colon X \to B$ be a good family of
+  cubic surfaces. Let $\V$ be the rank 4 bundle
+  $\V = \pi_* \left(\omega_\pi^{-1}\right)$, and let
+  \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
+  general fiber of $\pi$ is semi-stable, and let
+  $\mu \colon B \dashrightarrow \mathcal M$ be the rational map
   induced by $\pi$.  Then we have the equality
   \begin{align}
     \deg \mu =
@@ -123,12 +128,75 @@ geometric fibers are isomorphic to cubic surfaces in $\mathbb P^3$.
     1080 \int_{B} \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right).
   \end{align}
 \end{theorem}
-\autoref{def:goodfamily} gives the precise meaning of ``good''. All
-semi-stable surfaces and all surfaces (possibly singular) with a
-finite automorphism group are good.
+\autoref{def:goodfamily} gives the precise meaning of ``good''.  This
+notion includes all families whose fibers are GIT-semistable or have a finite automorphism group.
 
-\subsection{Equivariant orbit classes}
+\subsection{Degree of the orbit closure}
+Question~\ref{orbit} in \autoref{sec:counting} is equivalent to a question
+that has been an ongoing topic of investigation.
+Consider a hypersurface \(X\) in a projective space $\mathbb P V$ cut out by
+a homogeneous polynomial $F \in \Sym^d V$.
+In $\P\Sym^dV$, consider the orbit of $[F]$ under the action of
+$\GL(V)$, and let $\Orb([F])$ be its closure.
+In a series of seminal papers, Aluffi and Faber computed the degree of
+$\Orb([F])$ when \(F\) is a homogeneous polynomial in 2 or 3 variables,
+that is, when \(X\) is the set of points in $\mathbb P^1$ or a curve
+in $\mathbb P^2$ \cite{alu.fab:00,alu.fab:93,alu.fab:93*1}.
+The next unknown case is that of cubic surfaces in $\mathbb P^3$.
+The answer to Problem~\ref{orbit} says that the degree of the
+orbit closure of a general cubic surface is $96120$.
 
+Question~\ref{orbit} appears as one of the ``twenty-seven questions
+about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
+In 2019, Brustenga i Moncus\'i, Timme, and Weinstein gave a
+``numerical proof'' for the number 96120 and in 2020, Cazzador and
+Skauli outlined an approach towards a complete proof following the
+techniques of Aluffi and Faber \cite{bru-i-mon.tim.wei:20,caz.ska:20}.
+Our approach is different.
+
+\subsection{The equivariant class of the orbit closure}
+The key idea is to consider not just the degree of the orbit closure,
+but the class of the orbit closure in the equivariant Chow ring
+$A^\bullet_{\GL V}(\Sym^dV)$, or equivalently, in the Chow ring of the
+stack $[\Sym^dV/\GL V]$. The problem of finding the equivariant class
+of the orbit closure subsumes the original problem of finding its
+degree.  It turns out that, counter-intuitively, the more
+general problem is easier to solve---it is amenable to techniques that
+were not originally available.
+
+How does the equivariant class yields the degree of the
+orbit?
+We have natural maps
+\[
+\begin{tikzcd}
+  A^\bullet_{\GL V}(\Sym^dV) \ar{r}& A^\bullet_{\GL V}(\Sym^d V \setminus
+  \{0\}) \ar[equal]{d}\\
+  &A^\bullet_{\PGL V}(\mathbb P \Sym^dV) \ar{r}&
+  A^\bullet(\mathbb P \Sym^dV).
+\end{tikzcd}
+\]
+Under the composite map, the class of $\Orb(F) \in A^\bullet_{\GL
+  V}(\Sym^dV)$ is mapped to the class of $\Orb([F]) \in
+A^\bullet(\mathbb P \Sym^dV)$, which encodes simply the degree of $\Orb([F])$.
+
+Why makes it possible to find the equivariant class?  The ring
+$A^\bullet_{\GL V}(\Sym^dV)$ is the polynomial ring in variables
+$c_1, \dots, c_r$, where $r = \dim V$; the variable $c_i$ has degree
+$i$.  The equivariant class of $\Orb(F)$ lies in the graded component
+$A^m(\Sym^dV)$, where $m = \dim \Sym^d V - \dim \GL V$.  As a result,
+it can be expressed as a $\mathbb Z$-linear combination of monomials
+in $c_i$ of total degree $m$. We can then use the method of
+undetermined coefficients.
+We construct maps $B \to [\Sym^dV/\GL V]$ where the pull-back
+of $\Orb(F)$ as well as the classes $c_i$ can be explicitly computed.
+Enough families give enough information to find all the coefficients.
+For cubic surfaces, we write more than enough families---there are 5
+coefficients to be determined; we write 7 families.
+Being able to write enough families where both sides can be
+computed is the main obstacle in solving the question for
+hypersurfaces of higher degree.
+
+\subsection{Further remarks}
 
 The formula has a curious consequence:
 
@@ -326,7 +394,7 @@ denote the $\GL(E)$-orbit closure of the point $[F]$.  We let
 $$\partial \Orb(F) = \Orb(F) \setminus \GL(E) \cdot [F]$$
 denote the {\sl boundary}, i.e. the complement of the orbit of $[F]$
 in its closure. $\Orb(F)$ is a $15$ dimensional variety whose singular
-locus lies in the proper subvariety $\partial \Orb(F)$.  
+locus lies in the proper subvariety $\partial \Orb(F)$. 
 
 \begin{definition}
 \label{def:goodfamily}

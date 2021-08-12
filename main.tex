@@ -1121,11 +1121,19 @@ to demonstrate that this assignment extends over the boundary of
 $\hM_{0,7}$, yielding a good family of cubic surfaces from which we
 can extract one more relation.
 
-One final remark before starting the analysis: The need for using the
-alternate compactification $\hM_{0,7}$ ultimately traces to the
+Before starting the analysis, we make some remarks: The need for using
+the alternate compactification $\hM_{0,7}$ ultimately traces to the
 requirement that our family must be good.  There are several possible
 variants of the construction, but the reader will eventually realize
 that, very often, there will be a few non-good fibers present.
+
+
+Finally, in the interest of brevity, {\sl we assume the reader is
+  familiar with the intersection theory of $\o{\M}_{0,n}$, as
+  explained in, for example \cite[??].}  Therefore, we will at time
+translate intersection products on $\hM_{0,7}$ into calculations on
+$\o{\M}_{0,7}$, and then leave it to the reader to check the results
+there.
 
 \subsection{The spaces $\hM_{0,n}$}
 \label{sec:spaces-hm_0-n}
@@ -1197,6 +1205,34 @@ follows that
   \hpsi_{0} + \hpsi_{\infty} = 0.
 \end{align}
 
+
+Finally, we indicate the simple relationship between $\hpsi_{0}$ on
+$\hM_{0,n}$ with $\psi_{0}$ on $\o{\M}_{0,n}$.  Let
+$\delta_{\{i,0\}}, i=1, \dots, n-2$ denote the boundary divisor in
+$\o{\M}_{0,n}$ whose general point corresponds to the union of two
+marked $\P^{1}$'s, one of which contains only $0$-th and $i$-th marked
+points.
+
+
+
+Then,
+\begin{align}
+  \label{eq:relationpsis}
+\zeta^{*}(\hpsi_{0}) = \psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}.  
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{definition}
   \label{def:boundary}
   For each distinct pair of indices
@@ -1207,17 +1243,24 @@ follows that
   \Delta_{i,\infty}.$$
 \end{definition}
 
-The boundary divisors $\Delta_{i, \infty}$, where the section
+The specific boundary divisors $\Delta_{i, \infty}$, where the section
 $\sigma_{i}$ collides with $\sigma_{\infty}$ will play an especially
 important role in our calculations, so we briefly collect some
-observations:
-\begin{itemize}
+observations about them:
+\begin{itemize}\label{item:boundaryprops}
 \item Each boundary divisor $\Delta_{i,\infty} \subset \hM_{0,n}$ is
   naturally isomorphic to $\hM_{0,n-1}$ via a map
-  $$\eta: \hM_{0,n-1} \to \hM_{0,n}$$ that sends
+  $$\eta_{i}: \hM_{0,n-1} \to \hM_{0,n}$$ that sends
   $(C, s_{0}, \dots, s_{n-3}, s_{\infty})$ to
   $(C, s_{0}, \dots, s_{i-1}, s_{i}=s_{\infty}, s_{i+1} \dots,
   s_{\infty})$.
+
+  In the same way, if $i \neq j$, then the intersection
+  $\Delta_{i,\infty} \cap \Delta_{j, \infty}$ is isomorphic to
+  $\hM_{0,n-2}$ via a similarly defined map
+  $$\eta_{i,j}: \hM_{0,n-2} \to \hM_{0,n},$$ and so on.  This provides a
+  nice inductive structure among the Hassett spaces $\hM_{0,n}$.
+  
 \item Under $\eta$, we clearly have $\eta^{*}\hpsi_{0} = \hpsi_{0}$
   and $\eta^{*}\hpsi_{\infty} = \hpsi_{\infty}.$
 \item We have:
@@ -1234,14 +1277,115 @@ follows.
 \end{itemize}
 
 
+\subsubsection{Computing integrals in $\hM_{0,n}$}
+
+These observations are enough to compute, using an inductive method,
+any top degree integral involving $\hpsi_{0}, \hpsi_{\infty},$ and the
+boundary divisors $\Delta_{i, \infty}$.
+
+\begin{example}
+  \label{ex:toppsi}
+  Let's first indicate how to
+  compute $$\int_{\hM_{0,n}}\hpsi_{0}^{n-3}.$$ Using
+  \eqref{eq:relationpsis}, this amounts to computing
+  $$\int_{\o{\M}_{0,n}} \left(\psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}\right)^{n-3}.$$
+  Now, in the Chow ring of $\o{\M}_{0,n}$, recall that:
+  \begin{itemize}
+  \item $\psi_{0} \cdot \delta_{\{i,0\}} = 0$, 
+  \item $\delta_{\{i,0\}} \cdot \delta_{\{j,0\}} = 0$ for $i \neq j$,
+    and
+  \item $\int_{\o{\M}_{0,n}}\delta_{\{i,0\}}^{n-3} = (-1)^{n}$, for
+    all $i$, and
+  \item $\int_{\o{\M}_{0,n}} \psi_{0}^{n-3} = 1$.
+  \end{itemize}
+
+  Using these, we deduce:
+  \begin{align}
+    \label{eq:hpsitop}
+    \int_{\hM_{0,n}}\hpsi_{0}^{n-3} = -(n-3). 
+  \end{align}
+\end{example}
+
+Next, we do an example involving $\Delta_{i, \infty}$'s.
+
+\begin{example}
+  Consider
+  $$\int_{\hM_{0,7}} \Delta_{i, \infty}^{2}\Delta_{j, \infty}^{2},$$
+  where $i \neq j$.  Using the parametrization
+  $\eta_{i,j} : \hM_{0,5} \to \Delta_{i,\infty} \cap
+  \Delta_{j,\infty}$, we see that this integral is the same as
+  $$\int_{\hM_{0,5}}\eta_{i,j}^{*}[\Delta_{i, \infty}] \cdot \eta_{i,j}^{*}[\Delta_{j, \infty}],$$
+  which in turn is equal to
+  $$\int_{\hM_{0,5}}(-\hpsi_{\infty})^{2} = \int_{\hM_{0,5}}\hpsi_{0}^{2} = -2,$$
+  as seen by combining \eqref{eq:hpsitop} with previous observations
+  on how boundary divisors pull back along $\eta_{i}$ maps.
+\end{example}
+
+\subsection{Construction of the family over $\hM_{0,7}$}
+\label{sec:constr-family-hM07}
+
+Let us proceed to the formal construction of our family, starting with
+the universal curve
+$$\varphi: \cC \to \hM_{0,7}.$$
+The idea is to map $\cC$ to a relative cuspidal cubic curve in a
+$\P^{2}$-bundle so that $\sigma_{0}$ becomes the cusp point and
+$\sigma_{\infty}$ becomes the flex point.
+
+
+Consider the rank $2$
+vector bundle $\mathcal{A} = \varphi_{*}\O_{\cC}(\sigma_{\infty})$ --
+since $\sigma_{\infty}$ and $\sigma_{0}$ are disjoint, and since
+$\O_{\cC}(\sigma_{\infty})|_{\sigma_{\infty}} = \hL_{\infty}^{-1}$ and
+$\O_{\cC}(\sigma_{0})|_{\sigma_{0}} \simeq \O_{\hM_{0,7}}$, it follows
+that
+$$\mathcal{A} \simeq \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1}.$$
+We emphasize that the above direct sum decomposition is induced by
+applying $\varphi_{*}$ to the restriction map
+$\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
+  \cup \sigma_{\infty}}.$
+
+  Next, consider the subbundle
+  \begin{align}
+    \label{eq:S}
+    \mathcal{S} = :\O_{\hM_{0,7}} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3} \subset \Sym^{3} \mathcal{A} = \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3},
+  \end{align}
+  and denote by
+  \begin{align}
+    \label{eq:nu}
+    \nu: \cC \to \P \mathcal{S}^{\smvee}
+  \end{align}
+  the $\hM_{0,7}$-morphism induced by the surjection
+  $\varphi^{*}\mathcal{S} \to \O_{\cC}(3\sigma_{\infty})$. Denote by
+  $\rho: \P \mathcal{S}^{\smvee} \to \hM_{0,7}$ the $\P^{2}$-bundle
+  structural map.  Fiber-by-fiber, the effect of $\nu$ is to map the
+  fibers of $\cC$ to a cuspidal cubic curve, with $\nu(\sigma_{0})$
+  the cusp point and $\nu(\sigma_{\infty})$ the flex point.
+
+  We denote by $\mathcal{Z} \subset \cC$ the union of the six sections
+  $\sigma_{1}, \dots, \sigma_{\infty}$.  Because at most one of the
+  sections $\sigma_{i}, i \in \{1, \dots, \infty\}$ is allowed to
+  intersect $\sigma_{0}$ (which becomes the cusp under $\nu$), it
+  follows that $\nu|_{\mathcal{Z}}:\mathcal{Z} \to \nu(\mathcal{Z})$
+  is an isomorphism. As will be demonstrated in
+  \autoref{sec:goodness3}, every member of the family of length $6$
+  subschemes $\nu(\mathcal{Z}) \subset \P \mathcal{S}^{\smvee}$ is
+  admissible, and has a {\sl good} associated cubic surface.
+  Therefore, our attention is brought upon the natural rank $4$ bundle
+  \begin{align}
+    \label{eq:V3}
+    \V := \rho_{*}\left(\omega_{\rho}^{-1} \otimes \mathcal{I}_{\nu(\mathcal{Z})}\right)
+  \end{align}
+  of our putative good family $$\pi: X \to \hM_{0,7},$$ with
+  $X := \Bl_{\nu(\mathcal{Z})}\P \mathcal{S}^{\smvee}$.
+
+
+\subsection{Goodness}
+\label{sec:goodness3}
 
 
 
 
-
-
-
-
+  
 
 %-------------------------------------------------------------------------
 

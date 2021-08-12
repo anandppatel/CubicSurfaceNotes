@@ -211,27 +211,53 @@
 
 ("fig:FigureB3" "f" "Third family schematic. The point $\\nu(s_{\\infty})$ is the point at infinity. It, along with $\\nu(s_" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      5.1 The spaces $\\hM_{0,n}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "5.1" "\\subsection{The spaces $\\hM_{0,n}$}" 43461)
+(toc "toc" "      5.1 The spaces $\\hM_{0,n}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "5.1" "\\subsection{The spaces $\\hM_{0,n}$}" 43808)
 
 ("sec:spaces-hm_0-n" "s" "In order to carry out the calculations needed for our third relation, we need to investigate the bas" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("def:hM0n" "s" "For each $n \\geq 4$, we define $\\hM_{0,n}$ to be the compactification of $\\M_{0,n}$ by ${\\bf w}$-sta" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:stab" "e" " " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+("eq:stab" "e" "\\zeta: \\overline{\\M}_{0,n} \\to \\hM_{0,n} " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "        5.1.1 Divisor classes on $\\hM_{0,n}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 4 "5.1.1" "\\subsubsection{Divisor classes on $\\hM_{0,n}$}" 45433)
+(toc "toc" "        5.1.1 Divisor classes on $\\hM_{0,n}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 4 "5.1.1" "\\subsubsection{Divisor classes on $\\hM_{0,n}$}" 45780)
 
 ("sec:divisor-classes-hm_0" "s" "Certain divisors on $\\hM_{0,n}$ will play an essential role in our computations, so we take this sec" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("def:psihats" "s" "We let $\\hL_{0}, \\hL_{\\infty}$ denote the line bundles $\\omega_{\\varphi}|_{\\sigma_{0}}, \\omega_{\\var" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-("eq:opposites" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+("eq:opposites" "e" "\\hpsi_{0} + \\hpsi_{\\infty} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    6 Family $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "6" "\\section{Family $B_4$}" 47677)
+("eq:relationpsis" "e" "\\zeta^{*}(\\hpsi_{0}) = \\psi_{0} - \\sum_{i \\in \\{1, \\dots, n-2\\}} \\delta_{\\{i,0\\}}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+("def:boundary" "s" "For each distinct pair of indices $i,j \\in \\{0, 1, 2, \\dots, n-2, \\infty \\}$, we define $\\Delta_{i,j" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+("eq:pullbackdelta" "e" "\\eta^{*}([\\Delta_{i,\\infty}]) = -\\hpsi_{\\infty} \\in A^{1}(\\hM_{0,n-1}). " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+(toc "toc" "        5.1.2 Computing integrals in $\\hM_{0,n}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 4 "5.1.2" "\\subsubsection{Computing integrals in $\\hM_{0,n}$}" 48785)
+
+("ex:toppsi" "s" "Let's first indicate how to compute $$\\int_{\\hM_{0,n}}\\hpsi_{0}^{n-3}.$$ Using \\eqref{eq:relationpsi" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+("eq:hpsitop" "e" " " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
+
+(toc "toc" "      5.2 Construction of the family over $\\hM_{0,7}$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "5.2" "\\subsection{Construction of the family over $\\hM_{0,7}$}" 50458)
+
+("sec:constr-family-hM07" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+("eq:S" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+("eq:nu" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+("eq:V3" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+(toc "toc" "      5.3 Goodness" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "5.3" "\\subsection{Goodness}" 53109)
+
+("sec:goodness3" "s" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+(toc "toc" "    6 Family $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "6" "\\section{Family $B_4$}" 53239)
 
 ("sec:family-b_4" "s" "We construct our third family $B_3$ be starting with a quintic del Pezzo surface $S$, which is the b" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      6.1 Construction of $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "6.1" "\\subsection{Construction of $B_4$}" 48258)
+(toc "toc" "      6.1 Construction of $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "6.1" "\\subsection{Construction of $B_4$}" 53820)
 
 ("sec:construction-b_4" "s" "Let $Z \\subset S^{[2]} \\times S$ denote the universal degree two subscheme; $Z$ is smooth and the fi" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
@@ -255,13 +281,13 @@
 
 ("proposition:resolv-b3" "s" "There exists a line bundle $\\mathcal{L}$ on $Y'$ which induces a rational map \\begin{align*} \\rho: Y" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      6.2 Relation $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "6.2" "\\subsection{Relation $B_4$}" 51743)
+(toc "toc" "      6.2 Relation $B_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "6.2" "\\subsection{Relation $B_4$}" 57305)
 
 ("sec:relation-b_4" "s" "The relation we get from family $B_3$ ultimately appears to be: \\begin{align}  6a_{1^{4}} + 21a_{1^{" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("eq:relationB4" "e" "6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} = 36 \\times 6! = 25920. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    7 Isotrivial family of surface with 3 $A_2$ singularities" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "7" "\\section{Isotrivial family of surface with 3 $A_2$ singularities}" 52080)
+(toc "toc" "    7 Isotrivial family of surface with 3 $A_2$ singularities" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "7" "\\section{Isotrivial family of surface with 3 $A_2$ singularities}" 57642)
 
 ("sec:isotrivial3A2" "s" "We outline the idea and give references, in order to fill in the computation relating to \\eqref{eq:e" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
@@ -271,49 +297,49 @@
 
 ("prop:isotrivialfamily" "s" "Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\\otimes 3}\\cong L_Y\\otimes L_" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      7.1 Isotrivial Relation" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "7.1" "\\subsection{Isotrivial Relation}" 55335)
+(toc "toc" "      7.1 Isotrivial Relation" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "7.1" "\\subsection{Isotrivial Relation}" 60897)
 
 ("sec:isotrivial-relation" "s" "The relation we obtain from Dennis's trick appears to be: \\begin{align}  a_{2^{2}} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("eq:relationDennis" "e" "a_{2^{2}} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    8 More isotrivial families" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "8" "\\section{More isotrivial families}" 55532)
+(toc "toc" "    8 More isotrivial families" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "8" "\\section{More isotrivial families}" 61094)
 
 ("prop:nolimit" "s" "Let $t$ be a positive rational number. Suppose $S \\subset \\P^3$ is a cubic surface such that for eve" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("cor:nolimit" "s" "Let $X$ be as in \\autoref{prop:nolimit} and assume $0 < t \\leq 3/7$. Let $S$ be a smooth cubic surfa" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      8.1 The family $3A_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.1" "\\subsection{The family $3A_2$}" 61164)
+(toc "toc" "      8.1 The family $3A_2$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.1" "\\subsection{The family $3A_2$}" 66726)
 
 ("eqn:iso1" "e" "a_{2^2} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      8.2 The family $A_3 + 2A_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.2" "\\subsection{The family $A_3 + 2A_1$}" 61920)
+(toc "toc" "      8.2 The family $A_3 + 2A_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.2" "\\subsection{The family $A_3 + 2A_1$}" 67482)
 
 ("eqn:iso2" "e" "a_{1^4} - a_{1^2 2}- a_{13} + a_{2^2} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      8.3 The family $A_4 + A_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.3" "\\subsection{The family $A_4 + A_1$}" 62702)
+(toc "toc" "      8.3 The family $A_4 + A_1$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.3" "\\subsection{The family $A_4 + A_1$}" 68264)
 
 ("eqn:iso3" "e" "16a_{1^4} -4a_{1^2 2}- 4a_{13} + 1 a_{2^2} = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      8.4 The family $D_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.4" "\\subsection{The family $D_4$}" 63446)
+(toc "toc" "      8.4 The family $D_4$" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.4" "\\subsection{The family $D_4$}" 69008)
 
 ("eqn:iso4" "e" "81a_{1^4} +9a_{1^2 2}- 9a_{13} + a_{2^2}-2a_4 = 0. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      8.5 Families over a base variety" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.5" "\\subsection{Families over a base variety}" 64190)
+(toc "toc" "      8.5 Families over a base variety" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "8.5" "\\subsection{Families over a base variety}" 69752)
 
 (appendix . t)
 
-(toc "toc" "    A Existance of a universal formula" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "A" "\\section{Existance of a universal formula}" 65126)
+(toc "toc" "    A Existance of a universal formula" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "A" "\\section{Existance of a universal formula}" 70688)
 
 ("lem:Q_Zclass" "s" "Let $W$ be an $r+1$-dimensional vector space and $Z\\subset \\operatorname{Sym}^d W^{\\vee}$ be a subva" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("eq:equivariantSym" "e" "i_0,\\ldots,i_r\\geq 0}}(H-i_0 t_0 - \\cdots - i_r t_r)\\right)} " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "    B Congruence relations from hypersurfaces with finite automorphisms" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "B" "\\section{Congruence relations from hypersurfaces with finite automorphisms}" 69607)
+(toc "toc" "    B Congruence relations from hypersurfaces with finite automorphisms" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 2 "B" "\\section{Congruence relations from hypersurfaces with finite automorphisms}" 75169)
 
 ("prop:isotrivial2" "s" "Let $X\\subset \\mathbb{P}^r$ be a hypersurface with a linear automorphism group $G\\subset \\operatorna" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
-(toc "toc" "      B.1 Fermat hypersurfaces" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "B.1" "\\subsection{Fermat hypersurfaces}" 72843)
+(toc "toc" "      B.1 Fermat hypersurfaces" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil 3 "B.1" "\\subsection{Fermat hypersurfaces}" 78405)
 
 ("lem:mu_d" "s" "Under the inclusion $\\mu_d\\hookrightarrow \\mathbb{G}_m$, the map in group cohomology is given by \\be" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 

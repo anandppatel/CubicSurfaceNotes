@@ -10,13 +10,12 @@
   amsthm,
   thmtools,
   microtype,
-  enumitem,
   stmaryrd,
   tikz-cd,
   mathrsfs,
 }
 \usepackage{graphicx}
-
+\usepackage[shortlabels]{enumitem}
 
 \linespread{1.1}
 \usepackage[all]{xy}
@@ -83,22 +82,22 @@
 \label{sec:intro}
 
 \subsection{Counting cubic surfaces}\label{sec:counting}
-Cubic surfaces have captured our imagination for centuries. Beginning
-with Cayley and Salmon's discovery of the the 27 lines, a long list of
-algebraic geometers have revealed intricate facets of their geometry,
-using new and increasingly sophisticated tools. We add to this
+Cubic surfaces have fascinated us for centuries. Ever since Cayley and
+Salmon discovered the 27 lines, a long list of
+algebraic geometers have revealed beautiful facets of their geometry,
+using increasingly sophisticated tools. We add to this
 development by answering a family of natural enumerative questions
 about families of cubic surfaces.
 
-It is well-known that the isomorphism classes of cubic surfaces form a
-4-dimensional moduli space. So, we expect that in a 4-dimensional
-family of cubic surfaces, a general isomorphism class would appear
-finitely many times. How do we determine this number? For example, how
-many times does a general cubic surface appear, up to isomorphism, as
-\begin{enumerate}
+The isomorphism classes of cubic surfaces form a 4-dimensional moduli
+space. So, we expect that in a 4-dimensional family, a general
+isomorphism class would appear finitely many times. How do we
+determine this number? For example, how many times does a general
+cubic surface appear, up to isomorphism, as
+\begin{enumerate}[(A)]
 \item \label{orbit} a member of a 4-dimensional general linear system of cubic surfaces in $\mathbb
   P^3$?
-\item a hyperplane section of a general cubic threefold in $\mathbb
+\item \label{slice} a hyperplane section of a general cubic threefold in $\mathbb
   P^4$?
 \item a blow up of 6 points in $\mathbb P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
@@ -129,43 +128,40 @@ $\mathbb P^3$.
   \end{align}
 \end{theorem}
 \autoref{def:goodfamily} gives the precise meaning of ``good''.  This
-notion includes all families whose fibers are GIT-semistable or have a finite automorphism group.
+notion includes all families whose fibers are GIT-semistable or have a
+finite automorphism group.
 
 \subsection{Degree of the orbit closure}
-Question~\ref{orbit} in \autoref{sec:counting} is equivalent to a question
-that has been an ongoing topic of investigation.
+Question~\ref{orbit} in \autoref{sec:counting} fits in a broader
+story that has been an ongoing topic of study.
 Consider a hypersurface \(X\) in a projective space $\mathbb P V$ cut out by
 a homogeneous polynomial $F \in \Sym^d V$.
 In $\P\Sym^dV$, consider the orbit of $[F]$ under the action of
 $\GL(V)$, and let $\Orb([F])$ be its closure.
 In a series of seminal papers, Aluffi and Faber computed the degree of
 $\Orb([F])$ when \(F\) is a homogeneous polynomial in 2 or 3 variables,
-that is, when \(X\) is the set of points in $\mathbb P^1$ or a curve
+that is, when \(X\) is a set of points in $\mathbb P^1$ or a curve
 in $\mathbb P^2$ \cite{alu.fab:00,alu.fab:93,alu.fab:93*1}.
 The next unknown case is that of cubic surfaces in $\mathbb P^3$.
-The answer to Problem~\ref{orbit} says that the degree of the
+The answer to Question~\ref{orbit} says that the degree of the
 orbit closure of a general cubic surface is $96120$.
 
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
 In 2019, Brustenga i Moncus\'i, Timme, and Weinstein gave a
-``numerical proof'' for the number 96120 and in 2020, Cazzador and
-Skauli outlined an approach towards a complete proof following the
+``numerical proof'' for the number 96120. In 2020, Cazzador and
+Skauli outlined an approach towards a proof by following the
 techniques of Aluffi and Faber \cite{bru-i-mon.tim.wei:20,caz.ska:20}.
 Our approach is different.
 
 \subsection{The equivariant class of the orbit closure}
-The key idea is to consider not just the degree of the orbit closure,
+Our key idea is to consider not just the degree of the orbit closure,
 but the class of the orbit closure in the equivariant Chow ring
-$A^\bullet_{\GL V}(\Sym^dV)$, or equivalently, in the Chow ring of the
-stack $[\Sym^dV/\GL V]$. The problem of finding the equivariant class
-of the orbit closure subsumes the original problem of finding its
-degree.  It turns out that, counter-intuitively, the more
-general problem is easier to solve---it is amenable to techniques that
-were not originally available.
+$A^\bullet_{\GL V}(\Sym^dV)$. The equivariant class subsumes the
+degree. But counter-intuitively, finding it turns out to be easier
+than finding the degree.
 
-How does the equivariant class yields the degree of the
-orbit?
+Let us explain how the equivariant class yields the degree.
 We have natural maps
 \[
 \begin{tikzcd}
@@ -179,114 +175,78 @@ Under the composite map, the class of $\Orb(F) \in A^\bullet_{\GL
   V}(\Sym^dV)$ is mapped to the class of $\Orb([F]) \in
 A^\bullet(\mathbb P \Sym^dV)$, which encodes simply the degree of $\Orb([F])$.
 
-Why makes it possible to find the equivariant class?  The ring
-$A^\bullet_{\GL V}(\Sym^dV)$ is the polynomial ring in variables
-$c_1, \dots, c_r$, where $r = \dim V$; the variable $c_i$ has degree
-$i$.  The equivariant class of $\Orb(F)$ lies in the graded component
-$A^m(\Sym^dV)$, where $m = \dim \Sym^d V - \dim \GL V$.  As a result,
-it can be expressed as a $\mathbb Z$-linear combination of monomials
-in $c_i$ of total degree $m$. We can then use the method of
-undetermined coefficients.
-We construct maps $B \to [\Sym^dV/\GL V]$ where the pull-back
-of $\Orb(F)$ as well as the classes $c_i$ can be explicitly computed.
-Enough families give enough information to find all the coefficients.
+Let us explain what makes it possible to find the equivariant
+class.  The ring $A^\bullet_{\GL V}(\Sym^dV)$ is the polynomial ring
+in variables $c_1, \dots, c_r$, where $r = \dim V$, and the variable
+$c_i$ has degree $i$.  The equivariant class of $\Orb(F)$ lies in the
+graded component $A^m(\Sym^dV)$, where
+$m = \dim \Sym^d V - \dim \GL V$.  As a result, it can be expressed as
+a $\mathbb Z$-linear combination of monomials in $c_i$ of total degree
+$m$. We can now use the method of undetermined coefficients.  We
+construct maps $B \to [\Sym^dV/\GL V]$ where the pull-back of
+$\Orb(F)$ as well as the classes $c_i$ can be explicitly
+computed. Every such family gives a linear relationship between the
+coefficients in the expression of $\Orb(F)$, which are to be determined.
+If we have enough families, we get enough information to find all the coefficients.
 For cubic surfaces, we write more than enough families---there are 5
-coefficients to be determined; we write 7 families.
-Being able to write enough families where both sides can be
-computed is the main obstacle in solving the question for
-hypersurfaces of higher degree.
+coefficients to be determined and we write 9 families. The redundancy
+serves as an extra check on the result.
+\begin{theorem}\label{thm:eqvclass}
+  Let $V$ be a 4-dimensional vector space and let $F$ be a general
+  element of $\Sym^3 V$.
+  The equivariant class of the $\GL(V)$-orbit closure $\Orb(F)$ of $F$
+  in $A^\bullet_{\GL V}(\Sym^3 V)$ is given by
+  \[
+    [\Orb F] = 24c_1^4 + 12c_1^2c_2 - 6c_1c_3 + 9c_4,
+  \]
+  where the \(c_i = c_i(V)\) are the Chern classes of the tautological vector
+  bundle $V$.
+\end{theorem}
+The formula in \autoref{thm:eqvclass} appears to be different from the one
+in \autoref{theorem:main}, but they are related by a simple change of
+variables.
+
+Most of the paper is devoted to constructing good families of cubic
+surfaces on which we can compute $\deg \mu$ and the Chern classes
+$c_i$. The bases $B$ in our families are $\mathbb P^4$, $\overline
+M_{0,7}$, a Hassett-weighted variant of $\overline M_{0,7}$, a blow
+up of the Hilbert scheme of two points on a quintic del Pezzo surface,
+and last but not the least, the stack $B\G_m$.
+
+The method of undetermined coefficients applies to hypersurfaces of
+any degree and dimension.  The obstacle is constructing enough
+families.
 
 \subsection{Further remarks}
-
-The formula has a curious consequence:
-
+The formula in \autoref{theorem:main} has some curious consequences.
 \begin{corollary}
-  \label{cor:ineq} If $\pi: X \to B$ is a good family of cubic
+  \label{cor:ineq} If $\pi \colon X \to B$ is a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$,
   then $$\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0$$ with
   equality holding if and only if a general cubic surface does not
   arise as a fiber.
 \end{corollary}
 
+\begin{corollary}
+  \label{cor:ineq} Let $\pi \colon X \to B$ is a good family of cubic
+  surfaces parametrized by a $4$ dimensional proper variety $B$.
+  Assume that a general fiber of $\pi$ is smooth and the induced map
+  $\mu \colon B \dashrightarrow \mathcal M$ is dominant.
+  Then the degree of $\mu$ is divisible by 1080.
+\end{corollary}
+In particular, a parameter space for cubic surfaces that carries a
+universal family must cover $\mathcal M$ by a map of degree divisible
+by 1080.
+Interestingly, the number 1080 is also the least common multiple of the
+orders of the finite groups that arise as automorphism groups of cubic surfaces.
 
+\subsection{Acknowledgements}
+We thank Radu Laza, who asked Question~\ref{slice} to the first two
+authors during a meeting at Oberwolfach in 2017.
 
-\subsection{Strategy}
-\label{sec:strategy}
+\todo{More acknowledgements}
 
-The overall strategy of the proof is straightforward. We argue that a
-priori there must exist a formula of the form
-
-\begin{align}
-  \label{eq:P}
-  \int_{B} a_{1^4}v_{1}^{4} + a_{1^{2}2}v_{1}^{2}v_{2} + a_{13}v_{1}v_{3} + a_{2^2}v_{2}^{2} + a_{4}v_{4} = \deg \mu,
-\end{align}
-as found in \autoref{theorem:main} -- this is merely an instance of a
-foundational theorem in equivariant enumerative geometry \cite[].
-Then, we determine the five coefficients $a_{\bullet}$ by exhibiting
-several good families for which we know all $v_{i}$ {\sl and}
-$\deg \mu$.  The construction of these good families requires some
-effort and occupies most of the paper.  The bases $B$ of our families
-are : $\P^4$, $\overline{\M}_{0,7}$ and a Hassett-weighted variant of
-it, a blow up of the Hilbert scheme of two points on a quintic del
-Pezzo surface, and amusingly, the classifying stack $B\G_m$.
-
-
-In this way, we obtain a system of linear equations in the five
-unknowns $a_{\bullet}$, which turns out to have a unique solution.  In
-fact, we exhibit {\sl nine} total families/equations; the redundancy
-provides extra checks on the end result.
   
-
-\subsection{History and context}
-\label{sec:context}
-
-The enumerative problem (A) was first mentioned in print in
-K. Ranestad and B. Sturmfeld's \cite[], and the number $96120$ was
-first arrived at by \cite[] using numerical methods, though the method
-was one verification short of constituting a proof.  R. Laza brought
-(B) to the first two authors' attention during a meeting at
-Oberwolfach in 2017.
-
-
-\autoref{theorem:main} actually represents a frontier case of a much
-more substantial ongoing enumerative story, which we briefly advertise
-here. If $E$ is an $n+1$ dimensional vector space and if
-$F \in \Sym^dE^{\smvee}$ is a non-zero degree $d$ homogeneous form on
-$E$, then we let $$\Orb(F) \subset \P \Sym^d E^{\smvee}$$ denote the
-closure of the $\GL(E)$-orbit of the point
-$[F] \in \P \Sym^{d}E^{\smvee}$.  Simple questions about the geometry
-of the variety $\Orb(F)$, and its relationship to the geometry of the
-hypersurface defined by $F$, remain unanswered.  Here, perhaps the
-most well-studied problem is {\sl the calculation of the degree of the
-  orbit-closure $\Orb(F)$}.  Aluffi and Faber, in a series of
-remarkable papers \cite[], initially brought attention to this
-enumerative problem and completely solved it when $n=1, 2$ and $d$
-arbitrary.
-
-We propose a slight shift in perspective on the problem: We should
-instead aim to compute the {\sl equivariant fundamental class} of the
-orbit closure, denoted
-$$[\Orb(F)] \in A_{\GL(E)}^{\bullet}(\P \Sym^{d}E^{\smvee}).$$
-This class not only determines the degree of the orbit closure, but
-also tracks many more enumerative problems like (B).  As is
-demonstrated in the appendix \cite[], \autoref{theorem:main} contains
-the same content as the calculation of $[\Orb(F)]$ when $F$ is assumed
-to be a {\sl general} degree $3$ form in four variables.
-
-This change in perspective opens up our avenue of attack.  As will be
-seen in \autoref{section:???} we exploit certain {\sl isotrivial}
-families of cubic surfaces to obtain quick relations on the
-coefficients $a_{\bullet}$.  In order to justify the use of these
-isotrivial families, it is necessary to know whether a cubic surface
-is represented by a point in the closure of $\Orb(F)$, with $F$
-general.  This is an instance of the much more general ``Orbit Closure
-Problem'' \cite[].
-
-
-
-
-
-
 \section{Preliminaries}
 \label{sec:good}
 

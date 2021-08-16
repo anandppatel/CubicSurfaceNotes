@@ -1194,11 +1194,24 @@ For a pair of positive integers $a, b$, the action lifts uniquely to an action o
 \begin{proposition}\label{prop:nolimit}
   Let $t$ be a positive rational number.
   Suppose $S \subset \P^3$ is a cubic surface such that for every hyperplane $H$, the pair $(S,H)$ is $t$-stable.
-  Let $X \subset \P^3$ be a cubic surface with stabilizer group $\mathbb G_m \subset \SL_4$ such that for some $\mathbb G_m$-fixed hyperplane $H \subset \mathbb P^3$, the pair $(X, H)$ is $t$-semistable.
+  Let $X \subset \P^3$ be a cubic surface such that the set of hyperplanes $H$ for which $(X, H)$ is $t$-unstable spans a proper linear subspace of the dual projective space ${\mathbb P^3}^\vee$.
   Then $X$ does not lie in the closure of the $\SL_4$-orbit of $S$.
 \end{proposition}
 \begin{proof}
   Suppose $X$ lies in the orbit closure of $S$.
+  We exhibit a set of hyperplanes $H$ such that $(X, H)$ is $t$-unstable and the set spans the dual projective space.
+
+  Since $X$ lies in the orbit closure of $S$, there exists a discrete valuation ring $R$, with fraction field $K$ and residue field $\k$, and $\alpha \in \GL_4(K)$ such that the flat limit of the hypersurface $\alpha(S) \subset \mathbb P^3_K$ is $X \subset \mathbb P^3_\k$.
+  By \cite{a result in Mukai's book}, we can write $\alpha$ as a product
+  \[ \alpha = A D B,\]
+  where $A$ and $B$ lie in $\GL_4(R)$ and $D \in \GL_4(K)$ is a diagonal matrix.
+  Let $[X_0: X_1: X_2: X_3]$ be the homogeneous coordinates on $\mathbb P^3$.
+  Consider the hyperplane $B^{-1} (X_i) \subset \mathbb P^3_K$.
+  Since $D$ is diagonal, the flat limit of $B^{-1}(X_i)$ is the hyperplane $A_0(X_i)$, where $A_0 \in \GL_4(k)$ is the image of $A \in \GL_k(R)$.
+  As a result, the flat limit of the pair $(\alpha(X), \alpha())$
+  
+  and a map from the generic point $\Delta^\circ$ of $\Delta$ to $\GL_4$ such that the flat limit of 
+  
   Then there exists a one-parameter subgroup $\alpha \colon \mathbb G_m \to \SL_4$ and a cubic surface $Y \subset \P^3$ such that $Y$ is in the $\SL_4$-orbit of $S$ and
   \[ \lim_{t \to 0} \alpha_t(Y) = X.\]
   Since the stabilizer of $X$ is assumed to be a particular $\mathbb G_m \subset \SL_4$, the map $\alpha$ must factor through this $\mathbb G_m \subset \SL_4$.

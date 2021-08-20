@@ -607,7 +607,7 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 
 \begin{figure}[!]
   \centering
-  \incfig{FamilyB1}
+%  \incfig{FamilyB1}
   \caption{Schematic for the family parametrized by $B_1$. The points
     $Z$ vary freely on the conic $C$, and we blow up the plane at the
     six points $Z \cup \{y_{1},y_{2}\}$.}
@@ -1027,7 +1027,7 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 
 \begin{figure}[!]
     \centering
-    \incfig{FamilyB2}
+%    \incfig{FamilyB2}
     \caption{Schematic for our second family. We blow up the plane at
       the points $\{s_{1}, \dots, s_{5}, t\}$.}
     \label{fig:FamilyB2}
@@ -1089,7 +1089,7 @@ we find our second relation:
 
 \begin{figure}[!]
     \centering
-    \incfig{FigureB3}
+%    \incfig{FigureB3}
     \caption{Third family schematic. The point $\nu(s_{\infty})$ is
       the point at infinity. It, along with
       $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
@@ -1548,73 +1548,7 @@ The relation we get from family $B_3$ ultimately appears to be:
 (There is an 80 percent chance I made a mistake in the long
 calculation, so be careful.)
 
-\section{Isotrivial family of surface with 3 $A_2$ singularities}
-\label{sec:isotrivial3A2}
-
-We outline the idea and give references, in order to fill in the computation relating to \eqref{eq:equality} later. 
-
-Our starting point is the following fact:
-\begin{proposition}
-\label{prop:3A2}
-The cubic surface defined by $X^3 + YZW = 0$ has singularity type $3A_2$ and is semistable.
-\end{proposition}
-
-\begin{remark}
-\cite[Proposition 2.2]{N05} shows that the most special singularity types that correspond to semistable surfaces are $3A_2$ and $4A_1$. 
-\end{remark}
-
-\begin{proof}
-The fact that $X^3 + YZW=0$ has singularity type $3A_2$ follows from \cite[Proof of 3.1.12]{N00}. Semistability follows from \cite[Proposition 2.3]{N05}.
-\end{proof}
-
-Given \autoref{prop:3A2}, we summarize the two facts about the $3A_2$ cubic surface that makes this family work:
-\begin{proposition}
-\label{prop:twofacts}
-The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer and is not in the orbit closure of any stable cubic surface.
-\end{proposition}
-
-\begin{remark}
-  I think that this cubic surface is the most special surface that has
-  a nontrivial torus stabilizer but is still semistable, which is
-  means this method of finding a twisted isotrivial family of surfaces
-  missing the general orbit closure only works for exactly this $3A_2$
-  surface.
-\end{remark}
-
-\begin{proof}
-  The fact that the $3A_2$ cubic surface does not lie in the general
-  cubic surface orbit closure follows for GIT. Indeed, we have the map
-  $\pi: \mathbb{P}^{19}\dashrightarrow \mathbb{P}^{19}//PGL_4$ and by
-  definition of semistability, the point defined by $X^3 + YZW = 0$ is
-  not contained in its indeterminacy locus. After removing the
-  indeterminancy locus, orbits of stable points are fibers of $\pi$,
-  so they cannot contain the point defined by $X^3 + YZW =
-  0$. {\color{red} add GIT references to make sure}
-\end{proof}
-
-Finally, we obtain our test family:
-\begin{proposition}
-\label{prop:isotrivialfamily}
-Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, we can form the projective bundle $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$. Inside of $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$ we have the cubic surface $\mathcal{X}$ defined by $\{X^3 + YZW = 0\}$ over each trivialization of $L_X, L_Y, L_Z, L_W$ over $B$. Because $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, the cubic surface glues compatibly under transition maps.
-
-The family $\mathcal{X}\to B$ is a nontrivial family of cubic surfaces where no member is a contained in the orbit closure of a stable cubic surface.
-\end{proposition}
-
-Thus, \autoref{prop:isotrivialfamily} affords an enumerative problem whose answer is zero. We worked with a general base $B$, but it suffices for our purposes to let $B=\mathbb{P}^4$. 
-
-{\color{red} I suspect we can relate this to a collection of 6 points on $P^2$ with a stabilizer, so this family looks more like Anand's many families. From \cite[Proposition 3.3]{N05}, it looks like the length 6 scheme corresponding to the $3A_2$ surface is the intersection of the union of two lines with a triple line. Don't see it yet, but writing this down to not forget.}
-
-\subsection{Isotrivial Relation}
-\label{sec:isotrivial-relation}
-
-The relation we obtain from Dennis's trick appears to be:
-
-\begin{align}
-  \label{eq:relationDennis}
-  a_{2^{2}} = 0.
-\end{align}
-
-\section{More isotrivial families}
+\section{Isotrivial families}
 In this section, we exhibit a number of good isotrivial families.  All
 of these families will arise from a cubic surface $X$ with
 automorphism group $\mathbb G_m$.  To make sure that these families
@@ -1624,20 +1558,61 @@ the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows
 from GIT.  We now explain an extension of this idea that allows for
 even more examples.
 
-Let $V$ be a 4-dimensional vector space.
-Consider the natural action of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
-That is, consider the action of $\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a cubic surface and $H \subset \P^3$ is a hyperplane.
-For a pair of positive integers $a, b$, the action lifts uniquely to an action on the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT of the resulting linearized action depends only on the ratio $t = a/b$.
+Let $V$ be a 4-dimensional vector space.  Consider the natural action
+of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space
+of one-dimensional subspaces).  That is, consider the action of
+$\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a
+cubic surface and $H \subset \P^3$ is a hyperplane.  For a pair of
+positive integers $a, b$, the action lifts uniquely to an action on
+the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT
+of the resulting linearized action depends only on the ratio
+$t = a/b$.
 
 \begin{proposition}\label{prop:nolimit}
   Let $t$ be a positive rational number.
   Suppose $S \subset \P^3$ is a cubic surface such that for every hyperplane $H$, the pair $(S,H)$ is $t$-stable.
-  Let $X \subset \P^3$ be a cubic surface with stabilizer group $\mathbb G_m \subset \SL_4$ such that for some $\mathbb G_m$-fixed hyperplane $H \subset \mathbb P^3$, the pair $(X, H)$ is $t$-semistable.
+  Let $X \subset \P^3$ be a cubic surface whose stabilizer group in $\PGL(4)$ is reductive and such that for some $\mathbb G_m$-fixed hyperplane $H \subset \mathbb P^3$, the pair $(X, H)$ is $t$-semistable.
   Then $X$ does not lie in the closure of the $\SL_4$-orbit of $S$.
 \end{proposition}
+
+For the proof, we need a slightly technical lemma.
+\begin{lemma}
+  Suppose $X$ is a cubic surface whose stabilizer group $H \subset \PGL(4)$ is reductive.
+  If $X$ lies in the closure of the $\PGL(4)$ orbit of a cubic surface $S$, then there exists a one-parameter subgroup $\lambda \colon \mathbb G_m \to H$ and a cubic surface $S'$ isomorphic to $S$ such that we have
+  \[ X = \lim_{t \to 0} \lambda(t) \cdot S'.\]
+\end{lemma}
 \begin{proof}
+  This is a consequence of the Hilbert--Mumford criterion and the \'etale local structure of algebraic stacks near a point with a reductive stabilizer (see \cite[\S~1.3 Immediate consequences (5)]{alp.hal.ryd:20}).
+  For the convenience of the reader, we include the details.
+  By \cite[Theorem~3]{alp:10}, there exists a $H$-invariant locally closed affine $W \subset \mathbb P \Sym^3 (4)$ containing the point $[X]$ such that the map
+  \[ \pi \colon [W/H] \to [\mathbb P \Sym^3(4) / \PGL(4)]\]
+  is affine and \'etale.
+  (Note that we need only this result, which is substantially easier than the main theorem of \cite{alp.hal.ryd:20}.)
+  Define $Z$ as the fiber product
+  \[
+    \begin{tikzcd}
+      Z \ar{r}\ar{d}& {[W/H]}\ar{d}{\pi}\\
+      \spec \k \ar{r}{[S]}& {[\mathbb P \Sym^3(4) / \PGL(4)]}.
+    \end{tikzcd}
+  \]
+  Since $\pi$ is representable, \'etale, and of finite type, $Z$ is a finite disjoint of copies of $\spec \k$.
+  Let $s_1, \dots, s_n \in [W/H](\k)$ be the points so that $Z = \sqcup s_i$.
+  Since the point $[X] \in [\mathbb P \Sym^3 (4) / \PGL(4)](\k)$ lies in the closure of $[S] \in [\mathbb P \Sym^3(4)/\PGL(4)]$ and the map $\pi$ is \'etale (and hence open), the point $[X] \in [W/H](\k)$ lies in the closure of the set $\{s_1,\dots, s_n\}$.
+  But then $[X]$ lies in the closure of $s_i$ for some $i$.
+  In other words, the point $[X] \in W(\k)$ lies in the closure of the $H$-orbit of a lift $s_i \in W(\k)$ of $s_i \in [W/H](\k)$.
+  By the Hilbert--Mumford criterion \cite[Theorem~1.4]{kem:78}, there exists a one-parameter subgroup $\lambda \colon \mathbb G_m \to H$ such that we have the equation
+  \begin{equation}\label{eqn:specialization}
+    [X] = \lim_{t \to 0} \lambda (t) \cdot s_i
+  \end{equation}
+  in $W(\k)$.
+  Since $s_i \in [W/H](k)$ maps to $[S]$, the cubic surface $S'$ represented by $s_i \in W(\k)$ is isomorphic to $S$.
+  Equation~\eqref{eqn:specialization} then yields the claim.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{prop:nolimit}]
   Suppose $X$ lies in the orbit closure of $S$.
-  Then there exists a one-parameter subgroup $\alpha \colon \mathbb G_m \to \SL_4$ and a cubic surface $Y \subset \P^3$ such that $Y$ is in the $\SL_4$-orbit of $S$ and
+  Let $H \subset \PGL(4)$ be the stabilizer of $X$.
+  Then there exists a one-parameter subgroup $\alpha \colon \mathbb G_m \to H$ and a cubic surface $Y \subset \P^3$ such that $Y$ is in the $\PGL(4)$-orbit of $S$ and
   \[ \lim_{t \to 0} \alpha_t(Y) = X.\]
   Since the stabilizer of $X$ is assumed to be a particular $\mathbb G_m \subset \SL_4$, the map $\alpha$ must factor through this $\mathbb G_m \subset \SL_4$.
   Consider the $\alpha$-fixed hyperplane $H \subset \P^3$ such that $(X, H)$ is $t$-semistable.
@@ -1669,6 +1644,14 @@ For a pair of positive integers $a, b$, the action lifts uniquely to an action o
 \begin{proof}
   Together with a suitable $\mathbb G_m$-invariant hyperplane section $H$, these surfaces are $t$-semistable for $0 < t < 1$, $t = 1/5$, $t = 1/3$, and $t = 3/7$, respectively (\cite[Table~2]{gal.mar:19}).
   We now apply \autoref{cor:nolimit}.
+
+  This proof needs to be fixed. For that we need information about which hyperplane sections are semi-stable.
+  \begin{enumerate}
+  \item $x_0x_1x_3 = x_2^3$. \quad All $H$.
+  \item $x_3(x_0x_2-x_1^2) = x_0x_1^2$. \quad 
+  \item $x_3(x_0x_2-x_1^2) = x_0^2x_1$ \quad $(A_4 + A_1)$
+  \item $x_3x_0^2 = x_1^3 + x_2^3$ \quad $(D_4)$
+  \end{enumerate}
 \end{proof}
 
 Let $X$ be a good cubic surface (not in the closure of a general orbit) with stabilizer group $\mathbb G_m$.

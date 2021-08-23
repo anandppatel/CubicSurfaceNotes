@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="FigureB3.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.77771465"
+     inkscape:cx="396.67505"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1284"
+     inkscape:window-height="1081"
+     inkscape:window-x="4365"
+     inkscape:window-y="177"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient28293"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop28291" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 75.525772,112.26803 c 37.082468,0 54.092788,-54.092772 54.092788,-54.092772"
+       id="path83" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 75.525772,112.26803 c 37.082478,0 54.092788,54.09277 54.092788,54.09277"
+       id="path165" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="59.876286"
+       y="108.86596"
+       id="text23020"><tspan
+         sodipodi:role="line"
+         id="tspan23018"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="59.876286"
+         y="108.86596">$\nu(s_{0})$</tspan></text>
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503"
+       cx="112.26804"
+       cy="91.175255"
+       r="0.68041241" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503-3"
+       cx="118.39175"
+       cy="81.649483"
+       r="0.68041241" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503-9"
+       cx="100.36082"
+       cy="121.45361"
+       r="0.68041241" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503-7"
+       cx="117.71133"
+       cy="141.18556"
+       r="0.68041241" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503-99"
+       cx="126.8969"
+       cy="158.87628"
+       r="0.68041241" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path28503-1"
+       cx="75.865974"
+       cy="112.26804"
+       r="0.68041241" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="102.67783"
+       y="95.400688"
+       id="text23020-1"><tspan
+         sodipodi:role="line"
+         id="tspan23018-0"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="102.67783"
+         y="95.400688">$\nu(s_{2})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="111.52319"
+       y="78.730583"
+       id="text23020-5"><tspan
+         sodipodi:role="line"
+         id="tspan23018-6"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="111.52319"
+         y="78.730583">$\nu(s_{1})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="82.605659"
+       y="123.2976"
+       id="text23020-50"><tspan
+         sodipodi:role="line"
+         id="tspan23018-9"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="82.605659"
+         y="123.2976">$\nu(s_{3})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="100.29638"
+       y="143.36977"
+       id="text23020-4"><tspan
+         sodipodi:role="line"
+         id="tspan23018-8"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="100.29638"
+         y="143.36977">$\nu(s_{4})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="108.80154"
+       y="161.06049"
+       id="text23020-3"><tspan
+         sodipodi:role="line"
+         id="tspan23018-2"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="108.80154"
+         y="161.06049">$\nu(s_{5})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="119.00772"
+       y="56.957394"
+       id="text23020-15"><tspan
+         sodipodi:role="line"
+         id="tspan23018-99"
+         style="font-size:5.29167px;stroke-width:0.264583"
+         x="119.00772"
+         y="56.957394">$\nu(C)$</tspan></text>
+  </g>
+</svg>

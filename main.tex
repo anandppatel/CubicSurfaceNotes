@@ -15,7 +15,22 @@
   mathrsfs,
 }
 \usepackage{graphicx}
+<<<<<<< HEAD
 \usepackage[shortlabels]{enumitem}
+=======
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{booktabs}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+>>>>>>> iso
 
 \linespread{1.1}
 \usepackage[all]{xy}
@@ -58,9 +73,11 @@
 \newcommand{\V}{\mathcal V}
 \newcommand{\cP}{\mathcal P}
 \newcommand{\cC}{\mathcal{C}}
+\newcommand{\hL}{\widehat{\mathcal{L}}}
+\newcommand{\hpsi}{\widehat{\psi}}
 \newcommand{\fm}{\mathfrak m}
 \newcommand{\smvee}{\raise0.5ex\hbox{$\scriptscriptstyle\vee$}}
-
+\newcommand{\hM}{\widehat{\M}}
 \newcommand{\compl}[1]{\widehat{#1}}
 \newcommand{\Spec}{{\text{\rm Spec}\,}}
 \newcommand{\Spf}{{\text{\rm Spf}\,}}
@@ -468,7 +485,7 @@ $\mathcal{M} := \Sym^{3}E^{\smvee} \sslash GL(E)$.
   
 \end{proof}
 
-
+%-------------------------------------------------------------------------
 
 
 \section{Family $B_1$}
@@ -632,6 +649,16 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 \label{sec:enum-cubics-b_1}
 
 
+\begin{figure}[!]
+  \centering
+%  \incfig{FamilyB1}
+  \caption{Schematic for the family parametrized by $B_1$. The points
+    $Z$ vary freely on the conic $C$, and we blow up the plane at the
+    six points $Z \cup \{y_{1},y_{2}\}$.}
+    \label{fig:FamilyB1}
+\end{figure}
+
+
 For $B_1$ to be of any use, we must {\sl a priori} know the degree of
 the map to moduli $\mu: B_1 \dashrightarrow \M$.  First note that
 $\mu$ factors through the quasi-finite, degree
@@ -718,8 +745,8 @@ $\deg \mu'$.
 \end{proof}
 
 
-\subsection{Relation}
-\label{sec:relation}
+\subsection{First relation}
+\label{sec:firstrelation}
 
 The results in this section, taken together, yield the following
 relation on the indetermined coefficients in \eqref{eq:P}:
@@ -729,6 +756,8 @@ relation on the indetermined coefficients in \eqref{eq:P}:
   \label{eq:relation1}
   16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 72 \times \frac{6!}{4!} \times 2 = 4320.
 \end{align}
+
+%------------------------------------------------------------------------------------
 
 \section{Family $B_2$}
 \label{sec:family-b_2}
@@ -929,28 +958,504 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
   $\O_{\mathcal{P}}(3) \otimes \rho^{*}\mathcal{L}^{3}$, and
   \begin{align}
     \label{eq:rnk10}
-    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A}^{\smvee})\otimes \mathcal{L}^{3}.
+    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A})\otimes \mathcal{L}^{3}.
   \end{align}
 \end{lemma}
 
 \begin{proof}
-  It suffices to prove
+  It suffices to prove the first assertion, that
   $\omega_{\rho}^{-1} \simeq \O_{\mathcal{P}}(3) \otimes
   \rho^{*}\mathcal{L}^{3}$.  This follows directly from the relative
   Euler exact sequence for $\rho$:
   \begin{align}
     \label{eq:eulerexact}
-    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A})(-1) \to \O_{\cP} \to 0.
+    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A}^{\smvee})(-1) \to \O_{\cP} \to 0.
   \end{align}
 \end{proof}
 
+\begin{corollary}
+  \label{cor:chern10} The Chern polynomial of
+  $\rho_{*}(\omega_{\rho}^{-1})$ is
+  \begin{align}
+    \label{eq:chern10}
+    (1-9\psi_{\infty}^{2}t^{2})(1-4\psi_{\infty}^{2}t^{2})(1-\psi_{\infty}^{2}t^{2})^{2}.
+  \end{align}
+\end{corollary}
+
 \begin{proposition}
-  \label{prop:omegarestrictZ} 
+  \label{prop:omegarestrictZ} The Chern polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$ is
+  \begin{align}
+    \label{eq:rank6}
+    (1+3\psi_{\infty}t) (1+2\psi_{\infty}t) (1+\psi_{\infty}t)  (1-\psi_{\infty}t)
+  \end{align}
 \end{proposition}
+
+\begin{proof}
+  First, because $\mathcal{Z}$ is the disjoint union of
+  $\Sigma \subset \o{\mathcal{C}}$ and $\tau$, we get a direct sum
+  decomposition
+  \begin{align}
+    \label{eq:dirsum}
+    \rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}}) = \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) \oplus \rho_{*}(\omega_{\rho}^{-1}|_{\tau}).
+  \end{align}
+  The line bundle $\rho_{*}(\omega_{\rho}^{-1}|_{\tau})$ is easy to
+  identify -- in fact it is trivial.  Indeed, \autoref{lemma:tau}
+  implies that $\O_{\cP}(1)|_{\tau} \simeq \mathcal{L}^{-1}$, and the
+  first claim in \autoref{lemma:rank10} then implies
+  $\rho_{*}(\omega_{\rho}^{-1}|_{\tau}) \simeq \mathcal{L}^{-3}
+  \otimes \mathcal{L}^{3} = \O_{\o{\M}_{0,7}}$.
+
+  Thus, the Chern polynomial we need is the same as the Chern
+  polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\Sigma})$ -- we spend
+  the rest of the proof extracting it.  Since
+  \begin{align*}
+    \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) = \o{\varphi}_{*}(\iota^{*}\omega_{\rho}^{-1}|_{\Sigma})
+  \end{align*}
+  we may instead work within the $\P^{1}$-bundle $\o{\cC}$, where
+  $\Sigma$ is a divisor.  Since
+  $$\iota^{*}\O_{\cP}(1) = \O_{\o{\cC}}(2) = \O_{\o{\cC}}(2\o{\sigma}_{\infty}),$$
+  and since $\Sigma$ is disjoint from $\o{\sigma}_{\infty}$, it follows that
+  $$\omega_{\rho}^{-1}|_{\Sigma} \simeq \o{\varphi}^{*}(\mathcal{L}^{3})|_{\Sigma},$$ and therefore that
+  $$\rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) \simeq \o{\varphi}_{*}(\o{\varphi}^{*}(\mathcal{L}^{3})|_{\Sigma}) = (\o{\varphi}_{*}\O_{\Sigma})\otimes \mathcal{L}^{3}.$$
+
+  This means we must find the Chern polynomial of
+  $\o{\varphi}_{*}\O_{\Sigma}$.  For this, we use a little trick.  In
+  the $\P^{1}$-bundle $\o{\cC}$, every section $\o{\sigma}_{i}$ other
+  than $\o{\sigma}_{\infty}$ is linearly equivalent to any other such
+  section -- we leave it to the reader to deduce this from the
+  observation that $\o{\sigma}_{\infty}$ is disjoint from all other
+  sections $\o{\sigma}_{i}$.  So, there exists a one-parameter family
+  of divisors interpolating between $\Sigma$ and, say, the divisor
+  $5\o{\sigma}_{0}$.  Since the Chow ring of $\o{\M}_{0,7}$ is
+  finitely generated, it follows that the Chern polynomials of
+  $\o{\varphi}_{*}(\O_{\Sigma})$ and
+  $\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})$ are identical.
+
+  In order to identify the Chern polynomial of
+  $\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})$, we iteratively use the sequences
+  $$0 \to \mathcal{I}_{\o{\sigma}_{0}}^{n-1}/\mathcal{I}_{\o{\sigma}_{0}}^{n} \to \O_{n\o{\sigma}_{0}} \to \O_{(n-1)\o{\sigma}_{0}} \to 0$$ along with the isomorphism of line bundles
+  $$\mathcal{I}_{\o{\sigma}_{0}}^{n-1}/\mathcal{I}_{\o{\sigma}_{0}}^{n} \simeq (\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{\otimes n-1}$$ to deduce that
+  \begin{align}
+    \label{eq:rk5}
+    c(\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})) = c(\O_{\o{\M}_{0,7}})c(\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})c((\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{2})\cdots c((\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{4}).
+  \end{align}
+
+  It remains to identify the conormal bundle
+  $\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2}$ and
+  its relationship with the class $\psi_{\infty}$. For this, we leave
+  it to the reader to verify: {\sl if a $\P^{1}$-bundle has two
+    disjoint sections, then their conormal bundles are inverse to
+    each other.}  Therefore,
+  $$c(\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})) = c(\O)c(\mathcal{L}^{-1})c(\mathcal{L}^{-2})c(\mathcal{L}^{-3})c(\mathcal{L}^{-4}).$$
+
+  The proposition now follows by tracing backwards, starting with this
+  latest identity.
+\end{proof}
+
+\begin{corollary}
+  \label{cor:chernpolyV2} The Chern polynomial of $\V$ is
+  $(1-3\psi_{\infty}t)(1-2
+  \psi_{\infty}t)(1-\psi_{\infty}^{2}t^{2})$. Therefore,
+  \begin{align}
+    \label{eq:chernV2}
+    v_1 = -5\psi_{\infty}\\
+    v_2 = 5 \psi_{\infty}^{2}\\ \nonumber
+    v_3 = 5 \psi_{\infty}^{3}\\ \nonumber
+    v_{4} = -6 \psi_{\infty}^{4}.\\ \nonumber
+  \end{align}
+\end{corollary}
+
+\subsection{Enumerating cubics in $B_{2}$}
+\label{sec:enum-cubics-b_2}
+
+
+\begin{figure}[!]
+    \centering
+%    \incfig{FamilyB2}
+    \caption{Schematic for our second family. We blow up the plane at
+      the points $\{s_{1}, \dots, s_{5}, t\}$.}
+    \label{fig:FamilyB2}
+\end{figure}
+
+
+Now that we've identified the $v_{i}$, we need only establish
+$\deg \mu$, where $\mu: B_{2} \dashrightarrow \M$ is the map to
+moduli.  Clearly, $\mu$ factors through
+$\mu':B_{2} \dashrightarrow \M^{\dagger}$: $\mu'$ sends a general
+$7$-pointed stable curve $(C,s_0,s_1, \dots, s_5, s_{\infty})$ to the
+marked cubic surface
+$(Bl_{\{s_1, \dots, s_{5}, t\}}\P^{2}, E_1, \dots, E_5, E_t)$. Here,
+$C$ is embedded in the plane as a conic, and $E_i$ denotes the
+exceptional divisor over the corresponding point.
+
+Clearly, $\deg \mu = 51840 \times \deg \mu'$.  Thus our analysis will
+be complete once we show:
+
+\begin{lemma}
+  \label{lemma:muprime2} $\deg \mu' = 2.$
+\end{lemma}
+
+\begin{proof}
+  We need to show that a general marked cubic surface
+  $(X, \ell_{1}, \dots, \ell_{6}) \in \M^{\dagger}$ has two preimages
+  in $\o{\M_{0,7}}$.
+  
+  
+  Starting with $(X, \ell_{1}, \dots, \ell_{6})$, let
+  $(s_1, \dots, s_5, t) \subset \P^{2}$ denote the images of
+  $\ell_{i}$ under the map blowing down the six, well defined up to
+  $\Aut \P^{2}$.  The five points $s_{i}$ lie on a unique smooth conic
+  $C$ on which there is a unique un-ordered pair of points $\{x,y\}$
+  whose tangent lines intersect at $t$.  The two stable curves
+  $(C,x,s_1, \dots, s_5, y)$ and $(C,y,s_1, \dots, s_5, x)$ are then
+  the two claimed preimage points in $\o{\M}_{0,7}$, proving the
+  lemma.
+\end{proof}
+
+
+\subsection{Second relation}
+\label{sec:secondrelation}
+
+By assembling the information in this section, using
+\autoref{theorem:psi} to compute the various monomials in the $v_{i}$,
+we find our second relation:
+\begin{align}
+  \label{eq:relation2}
+  625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} = 2 \times 51840.
+\end{align}
+
+%------------------------------------------------------------------------------
 
 
 \section{Family $B_3$}
 \label{sec:family-b_3}
+
+
+\begin{figure}[!]
+    \centering
+%    \incfig{FigureB3}
+    \caption{Third family schematic. The point $\nu(s_{\infty})$ is
+      the point at infinity. It, along with
+      $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
+    \label{fig:FigureB3}
+\end{figure}
+
+
+Let us reset notation once again.  Our third family is a variant of
+the family in the previous section \autoref{sec:family-b_2}.  It is
+parametrized by the base variety
+$$B_{3} := \hM_{0,7}.$$
+
+Here, $\hM_{0,7}$ is a particular Hassett space parametrizing
+${\bf w}$-stable $7$-pointed genus $0$ curves, where
+$${\bf w} = \left(1-\epsilon, \epsilon, \dots, \epsilon, 1-3 \epsilon \right), 0 < \epsilon \ll 1$$
+is the weight vector on the marked points
+$(s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$ on a genus $0$ curve.
+
+Before getting buried in details, we explain the basic construction of
+the family of cubic surfaces over the interior, $\M_{0,7}$.  Begin
+with $(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$, a smooth rational
+curve with $7$ distinct marked points, and choose a map
+$$\nu: C \to \P^{2},$$ birational onto its image
+$\nu(C)$, which is a {\sl cuspidal cubic curve with cusp point
+  $\nu(s_{0})$ and unique flex point $\nu(s_{\infty})$.}  Let
+$Z = \nu(\{s_{1}, \dots, s_{5}, s_{\infty}\}) $, and now assign the
+cubic surface $\Bl_{Z}\P^{2}$.  The main objective of this section is
+to demonstrate that this assignment extends over the boundary of
+$\hM_{0,7}$, yielding a good family of cubic surfaces from which we
+can extract one more relation.
+
+Before starting the analysis, we make some remarks: The need for using
+the alternate compactification $\hM_{0,7}$ ultimately traces to the
+requirement that our family must be good.  There are several possible
+variants of the construction, but the reader will eventually realize
+that, very often, there will be a few non-good fibers present.
+
+
+Finally, in the interest of brevity, {\sl we assume the reader is
+  familiar with the intersection theory of $\o{\M}_{0,n}$, as
+  explained in, for example \cite[??].}  Therefore, we will at time
+translate intersection products on $\hM_{0,7}$ into calculations on
+$\o{\M}_{0,7}$, and then leave it to the reader to check the results
+there.
+
+\subsection{The spaces $\hM_{0,n}$}
+\label{sec:spaces-hm_0-n}
+
+In order to carry out the calculations needed for our third relation,
+we need to investigate the basic geometry of a series of
+Hassett-spaces which we denote by $\hM_{0,n}$.  We do that in this
+section.
+
+\begin{definition}
+  \label{def:hM0n} For each $n \geq 4$, we define $\hM_{0,n}$ to be
+  the compactification of $\M_{0,n}$ by ${\bf w}$-stable, $n$-pointed,
+  genus $0$ curves, where
+  $${\bf w} = \left(1- \epsilon, \epsilon, \dots, \epsilon, 1-(n-4)\epsilon \right), 0 < \epsilon \ll 1.$$
+\end{definition}
+
+We will denote a ${\bf w}$-stable curve by
+$(C, s_{0}, s_{1}, \dots, s_{n-2}, s_{\infty})$.  The indices are
+meant to indicate that the two points $s_{0}$ and $s_{\infty}$ are two
+``more interesting'' points, as will become apparent in the next
+paragraph.
+
+The pointed curves $(C, s_{0}, s_{1}, \dots, s_{n-2}, s_{\infty})$
+parametrized by $\hM_{0,n}$ are actually very simple to describe:
+
+\begin{itemize}
+\item $C$ is a {\sl smooth} rational curve,
+\item $s_{0}$ and $s_{\infty}$ must be distinct,
+\item at most one of the $s_{i}$, $i=1, \dots, n-2$ can coincide with
+  $s_{0}$,
+\item at most $n-4$ of the $s_{i}$, $i=1, \dots, n-2$ can coincide
+  with $s_{\infty}$.
+\item there are no constraints on how the points $s_{i}$,
+  $i=1, \dots, n-2$ can coincide with each other.
+\end{itemize}
+Therefore, the universal curve $$\varphi: \cC \to \hM_{0,n}$$ is in
+fact a $\P^{1}$-bundle, the projectivization of a particular rank $2$
+vector bundle $\mathcal{W}$ on $\hM_{0,n}$. We let
+$\sigma_{i} \subset \cC$,
+$i \in \left\{0,1,2, \dots, n-2, \infty\right\}$ denote the universal
+sections providing the marked points, and we denote by
+\begin{align}
+  \label{eq:stab}
+  \zeta: \overline{\M}_{0,n} \to \hM_{0,n}
+\end{align}
+the stabilization morphism.  We will sometimes use $\zeta$ to
+pull-back enumerative calculations on $\hM_{0,n}$ back to
+$\overline{\M}_{0,n}$, where they are better understood.
+
+\subsubsection{Divisor classes on $\hM_{0,n}$}
+\label{sec:divisor-classes-hm_0}
+
+Certain divisors on $\hM_{0,n}$  play an essential role in our
+computations, so we take this section to introduce them.
+
+\begin{definition}
+  \label{def:psihats} We let $\hL_{0}, \hL_{\infty}$ denote the line
+  bundles
+  $\omega_{\varphi}|_{\sigma_{0}},
+  \omega_{\varphi}|_{\sigma_{\infty}}$, respectively, and let
+  $\hpsi_{0}, \hpsi_{\infty} \in A^{1}(\hM_{0,n})$ denote their first
+  Chern classes.
+\end{definition}
+
+Since the sections $\sigma_{0}$ and $\sigma_{\infty}$ are disjoint, it
+follows that
+\begin{align}
+  \label{eq:opposites}
+  \hpsi_{0} + \hpsi_{\infty} = 0.
+\end{align}
+
+
+Finally, we indicate the simple relationship between $\hpsi_{0}$ on
+$\hM_{0,n}$ with $\psi_{0}$ on $\o{\M}_{0,n}$.  Let
+$\delta_{\{i,0\}}, i=1, \dots, n-2$ denote the boundary divisor in
+$\o{\M}_{0,n}$ whose general point corresponds to the union of two
+marked $\P^{1}$'s, one of which contains only $0$-th and $i$-th marked
+points.
+
+
+
+Then,
+\begin{align}
+  \label{eq:relationpsis}
+\zeta^{*}(\hpsi_{0}) = \psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}.  
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{definition}
+  \label{def:boundary}
+  For each distinct pair of indices
+  $i,j \in \{0, 1, 2, \dots, n-2, \infty \}$, we define
+  $\Delta_{i,j} \subset \hM_{0,n}$ to be the divisor over which the
+  sections $\sigma_{i}$ and $\sigma_{j}$ intersect, and we set
+  $$\Delta_{\infty} = \sum_{i \in \{1, \dots, n-2 \}}
+  \Delta_{i,\infty}.$$
+\end{definition}
+
+The specific boundary divisors $\Delta_{i, \infty}$, where the section
+$\sigma_{i}$ collides with $\sigma_{\infty}$ will play an especially
+important role in our calculations will be important for us, so we
+briefly collect some observations about them:
+\begin{itemize}\label{item:boundaryprops}
+\item Each boundary divisor $\Delta_{i,\infty} \subset \hM_{0,n}$ is
+  naturally isomorphic to $\hM_{0,n-1}$ via a map
+  $$\eta_{i}: \hM_{0,n-1} \to \hM_{0,n}$$ that sends
+  $(C, s_{0}, \dots, s_{n-3}, s_{\infty})$ to
+  $(C, s_{0}, \dots, s_{i-1}, s_{i}=s_{\infty}, s_{i+1} \dots,
+  s_{\infty})$.
+
+  In the same way, if $i \neq j$, then the intersection
+  $\Delta_{i,\infty} \cap \Delta_{j, \infty}$ is isomorphic to
+  $\hM_{0,n-2}$ via a similarly defined map
+  $$\eta_{i,j}: \hM_{0,n-2} \to \hM_{0,n},$$ and so on.  This provides a
+  nice inductive structure among the Hassett spaces $\hM_{0,n}$.
+  
+\item Under $\eta$, we clearly have $\eta^{*}\hpsi_{0} = \hpsi_{0}$
+  and $\eta^{*}\hpsi_{\infty} = \hpsi_{\infty}.$
+\item We have:
+\begin{align}\label{eq:pullbackdelta}
+  \eta^{*}([\Delta_{i,\infty}]) = -\hpsi_{\infty} \in A^{1}(\hM_{0,n-1}).
+\end{align}
+To see this, first note that
+$\Delta_{i, \infty} = \varphi_{*}(\sigma_{i}\sigma_{\infty})$, and so
+$\eta^{*}([\Delta_{i,\infty}]) = \varphi_{*}(\sigma_{\infty}^{2})$,
+where the latter equation is happening in the divisor class group of
+$\hM_{0,n-1}$.  But
+$\varphi_{*}(\sigma_{\infty}^{2}) = - \hpsi_{\infty}$, and the claim
+follows.
+\end{itemize}
+
+
+\subsubsection{Computing integrals in $\hM_{0,n}$}
+
+These observations are enough to compute, using an inductive method,
+any top degree integral involving $\hpsi_{0}, \hpsi_{\infty},$ and the
+boundary divisors $\Delta_{i, \infty}$.
+
+\begin{example}
+  \label{ex:toppsi}
+  Let's first indicate how to
+  compute $$\int_{\hM_{0,n}}\hpsi_{0}^{n-3}.$$ Using
+  \eqref{eq:relationpsis}, this amounts to computing
+  $$\int_{\o{\M}_{0,n}} \left(\psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}\right)^{n-3}.$$
+  Now, in the Chow ring of $\o{\M}_{0,n}$, recall that:
+  \begin{itemize}
+  \item $\psi_{0} \cdot \delta_{\{i,0\}} = 0$, 
+  \item $\delta_{\{i,0\}} \cdot \delta_{\{j,0\}} = 0$ for $i \neq j$,
+    and
+  \item $\int_{\o{\M}_{0,n}}\delta_{\{i,0\}}^{n-3} = (-1)^{n}$, for
+    all $i$, and
+  \item $\int_{\o{\M}_{0,n}} \psi_{0}^{n-3} = 1$.
+  \end{itemize}
+
+  Using these, we deduce:
+  \begin{align}
+    \label{eq:hpsitop}
+    \int_{\hM_{0,n}}\hpsi_{0}^{n-3} = -(n-3). 
+  \end{align}
+\end{example}
+
+Next, we do an example involving $\Delta_{i, \infty}$'s.
+
+\begin{example}
+  Consider
+  $$\int_{\hM_{0,7}} \Delta_{i, \infty}^{2}\Delta_{j, \infty}^{2},$$
+  where $i \neq j$.  Using the parametrization
+  $\eta_{i,j} : \hM_{0,5} \to \Delta_{i,\infty} \cap
+  \Delta_{j,\infty}$, we see that this integral is the same as
+  $$\int_{\hM_{0,5}}\eta_{i,j}^{*}[\Delta_{i, \infty}] \cdot \eta_{i,j}^{*}[\Delta_{j, \infty}],$$
+  which in turn is equal to
+  $$\int_{\hM_{0,5}}(-\hpsi_{\infty})^{2} = \int_{\hM_{0,5}}\hpsi_{0}^{2} = -2,$$
+  as seen by combining \eqref{eq:hpsitop} with previous observations
+  on how boundary divisors pull back along $\eta_{i}$ maps.
+\end{example}
+
+\subsection{Construction of the family over $\hM_{0,7}$}
+\label{sec:constr-family-hM07}
+
+Let us proceed to the formal construction of our family, starting with
+the universal curve
+$$\varphi: \cC \to \hM_{0,7}.$$
+The idea is to map $\cC$ to a relative cuspidal cubic curve in a
+$\P^{2}$-bundle so that $\sigma_{0}$ becomes the cusp point and
+$\sigma_{\infty}$ becomes the flex point.
+
+
+Consider the rank $2$
+vector bundle $\mathcal{A} = \varphi_{*}\O_{\cC}(\sigma_{\infty})$ --
+since $\sigma_{\infty}$ and $\sigma_{0}$ are disjoint, and since
+$\O_{\cC}(\sigma_{\infty})|_{\sigma_{\infty}} = \hL_{\infty}^{-1}$ and
+$\O_{\cC}(\sigma_{0})|_{\sigma_{0}} \simeq \O_{\hM_{0,7}}$, it follows
+that
+$$\mathcal{A} \simeq \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1}.$$
+We emphasize that the above direct sum decomposition is induced by
+applying $\varphi_{*}$ to the restriction map
+$\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
+  \cup \sigma_{\infty}}.$
+
+  Next, consider the subbundle
+  \begin{align}
+    \label{eq:S}
+    \mathcal{S} = :\O_{\hM_{0,7}} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3} \subset \Sym^{3} \mathcal{A} = \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3},
+  \end{align}
+  and denote by
+  \begin{align}
+    \label{eq:nu}
+    \nu: \cC \to \P \mathcal{S}^{\smvee}
+  \end{align}
+  the $\hM_{0,7}$-morphism induced by the surjection
+  $\varphi^{*}\mathcal{S} \to \O_{\cC}(3\sigma_{\infty})$. Denote by
+  $\rho: \P \mathcal{S}^{\smvee} \to \hM_{0,7}$ the $\P^{2}$-bundle
+  structural map.  Fiber-by-fiber, the effect of $\nu$ is to map the
+  fibers of $\cC$ to a cuspidal cubic curve, with $\nu(\sigma_{0})$
+  the cusp point and $\nu(\sigma_{\infty})$ the flex point.
+
+  We denote by $\mathcal{Z} \subset \cC$ the union of the six sections
+  $\sigma_{1}, \dots, \sigma_{\infty}$.  Because at most one of the
+  sections $\sigma_{i}, i \in \{1, \dots, \infty\}$ is allowed to
+  intersect $\sigma_{0}$ (which becomes the cusp under $\nu$), it
+  follows that $\nu|_{\mathcal{Z}}:\mathcal{Z} \to \nu(\mathcal{Z})$
+  is an isomorphism. As will be demonstrated in
+  \autoref{sec:goodness3}, every member of the family of length $6$
+  subschemes $\nu(\mathcal{Z}) \subset \P \mathcal{S}^{\smvee}$ is
+  admissible, and has a {\sl good} associated cubic surface.
+  Therefore, our attention is brought upon the natural rank $4$ bundle
+  \begin{align}
+    \label{eq:V3}
+    \V := \rho_{*}\left(\omega_{\rho}^{-1} \otimes \mathcal{I}_{\nu(\mathcal{Z})}\right)
+  \end{align}
+  of our claimed good family $$\pi: X \to \hM_{0,7},$$ with
+  $X := \Bl_{\nu(\mathcal{Z})}\P \mathcal{S}^{\smvee}$.
+
+
+\subsection{Goodness}
+\label{sec:goodness3}
+
+\begin{proposition}
+  \label{prop:goodcusp}
+  Let $C \subset \P^{2}$ be a cuspidal cubic, and let
+  $s_{i} \in C, i \in \{1, \dots, 5, \infty \}$ be six, not
+  necessarily distinct, points satisfying:
+  \begin{enumerate}
+  \item At most one $s_{i}$ is the cusp point,
+  \item $s_{\infty}$ is the flex point of $C$, and
+  \item at most three $s_{i}, i \leq 5$ are equal to $s_{\infty}$.
+  \end{enumerate}
+  Then the length $6$ subscheme $Z := \sum_{i}s_{i}$, interpreted as a
+  divisor on $C$, is admissible and $\Aut(\P^{2},Z)$ is finite. NOT TRUE!!!?
+\end{proposition}
+
+\begin{proof}
+  
+\end{proof}
+
+  
+
+%-------------------------------------------------------------------------
+
+
+
+\section{Family $B_4$}
+
+
+
+
+\label{sec:family-b_4}
 
 We construct our third family $B_3$ be starting with a quintic del
 Pezzo surface $S$, which is the blow up of the plane at four general
@@ -963,8 +1468,8 @@ $\Lambda_1, \dots, \Lambda_{10}$, namely the Hilbert schemes of pairs
 of points contained in the lines $L_{i}$. Let
 $\Lambda = \cup_{i}\Lambda_{i}$.
 
-\subsection{Construction of $B_3$}
-\label{sec:construction-b_3}
+\subsection{Construction of $B_4$}
+\label{sec:construction-b_4}
 
 Let $Z \subset S^{[2]} \times S$ denote the universal degree two
 subscheme; $Z$ is smooth and the first projection
@@ -1075,142 +1580,96 @@ exceptional divisor $\varphi^{-1}(F)$.
 (This one I still am confident in -- one simple blow-up resolves the situation.)
 
 
-\subsection{Relation $B_3$}
-\label{sec:relation-b_3}
+\subsection{Relation $B_4$}
+\label{sec:relation-b_4}
 
 The relation we get from family $B_3$ ultimately appears to be:
 \begin{align}
-  \label{eq:relationB3}
+  \label{eq:relationB4}
   6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} = 36 \times 6! = 25920.
 \end{align}
 
 (There is an 80 percent chance I made a mistake in the long
 calculation, so be careful.)
 
-\section{Family $B_4$}
-\label{sec:family-b_4}
+\section{Isotrivial families}
+In this section, we exhibit a number of good isotrivial families.  All
+of these families will arise from a cubic surface $X$ with
+automorphism group $\mathbb G_m$.  To make sure that these families
+are good, we must prove that $X$ does not lie in the closure of the
+orbit of a generic cubic surface.  If $X$ is a semi-stable point of
+the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows
+from GIT.  We now explain an extension of this idea that allows for
+even more examples.
 
-For this family, we fix a degree $6$ del Pezzo surface $S$, the blow
-up of the plane at three non-collinear points, and then we fix a
-general ``line'' (which is really a twisted cubic) $L$ in $S$ disjoint
-from the three points blown up.  An open subset $U$ of the variety
-$L \times L \times S$ carries a good family of cubic surfaces in the
-obvious way. However, as in the case of $B_3$, the complement of $U$
-is a union of surfaces which need to be blown up before obtaining a
-good family of cubic surfaces.
-
-
-\section{Family $B_5$}
-\label{sec:family-b_5-1}
-
-This family is similar to $B_1$. Fix a degree $7$ del Pezzo surface
-$S$, and let $D \subset S$ denote a general hyperplane section; $D$ is
-a degree $7$ elliptic normal curve.  Next observe that any degree four
-subscheme $Z \subset D$ imposes independent conditions on sections of
-$O_{S}(1)$, and that $\langle Z \rangle \cap S = Z$.  Furthermore, for
-each $Z$, the projection map
-$p_{\langle Z \rangle}: S \dashrightarrow \P^{3}$ has as image an
-irreducible cubic, with finite automorphism group (check this!).
-
-
-Therefore, the Hilbert scheme $B_{5} = D^{[4]}$ carries a good family
-of cubic surfaces.  (The reason I like this family is that, unlike
-$B_1$'s case, the natural bundle $V$ has more non-trivial chern
-classes. Therefore, the relation we get this time is probably not the
-same as for $B_1$.
-
-\subsection{Difficulty with $B_5$}
-\label{sec:difficulty-with-b_5}
-
-The main obstacle in using this simple family is: I do not a priori
-know the cubic surface count!!!
-\section{Isotrivial family of surface with 3 $A_2$ singularities}
-\label{sec:isotrivial3A2}
-
-We outline the idea and give references, in order to fill in the computation relating to \eqref{eq:equality} later. 
-
-Our starting point is the following fact:
-\begin{proposition}
-\label{prop:3A2}
-The cubic surface defined by $X^3 + YZW = 0$ has singularity type $3A_2$ and is semistable.
-\end{proposition}
-
-\begin{remark}
-\cite[Proposition 2.2]{N05} shows that the most special singularity types that correspond to semistable surfaces are $3A_2$ and $4A_1$. 
-\end{remark}
-
-\begin{proof}
-The fact that $X^3 + YZW=0$ has singularity type $3A_2$ follows from \cite[Proof of 3.1.12]{N00}. Semistability follows from \cite[Proposition 2.3]{N05}.
-\end{proof}
-
-Given \autoref{prop:3A2}, we summarize the two facts about the $3A_2$ cubic surface that makes this family work:
-\begin{proposition}
-\label{prop:twofacts}
-The cubic surface defined by $X^3 + YZW = 0$ has a nontrivial torus stabilizer and is not in the orbit closure of any stable cubic surface.
-\end{proposition}
-
-\begin{remark}
-I think that this cubic surface is the most special surface that has a nontrivial torus stabilizer but is still semistable, which is means this method of finding a twisted isotrivial family of surfaces missing the general orbit closure only works for exactly this $3A_2$ surface. 
-\end{remark}
-
-\begin{proof}
-The fact that the $3A_2$ cubic surface does not lie in the general cubic surface orbit closure follows for GIT. Indeed, we have the map $\pi: \mathbb{P}^{19}\dashrightarrow \mathbb{P}^{19}//PGL_4$ and by definition of semistability, the point defined by $X^3 + YZW = 0$ is not contained in its indeterminacy locus. After removing the indeterminancy locus, orbits of stable points are fibers of $\pi$, so they cannot contain the point defined by $X^3 + YZW = 0$. {\color{red} add GIT references to make sure}
-\end{proof}
-
-Finally, we obtain our test family:
-\begin{proposition}
-\label{prop:isotrivialfamily}
-Given a base $B$ and line bundles $L_X, L_Y, L_Z, L_W$ such that $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, we can form the projective bundle $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$. Inside of $\mathbb{P}(L_X\oplus L_Y\oplus L_Z\oplus L_W)$ we have the cubic surface $\mathcal{X}$ defined by $\{X^3 + YZW = 0\}$ over each trivialization of $L_X, L_Y, L_Z, L_W$ over $B$. Because $L_X^{\otimes 3}\cong L_Y\otimes L_Z\otimes L_W$, the cubic surface glues compatibly under transition maps.
-
-The family $\mathcal{X}\to B$ is a nontrivial family of cubic surfaces where no member is a contained in the orbit closure of a stable cubic surface.
-\end{proposition}
-
-Thus, \autoref{prop:isotrivialfamily} affords an enumerative problem whose answer is zero. We worked with a general base $B$, but it suffices for our purposes to let $B=\mathbb{P}^4$. 
-
-{\color{red} I suspect we can relate this to a collection of 6 points on $P^2$ with a stabilizer, so this family looks more like Anand's many families. From \cite[Proposition 3.3]{N05}, it looks like the length 6 scheme corresponding to the $3A_2$ surface is the intersection of the union of two lines with a triple line. Don't see it yet, but writing this down to not forget.}
-
-\subsection{Isotrivial Relation}
-\label{sec:isotrivial-relation}
-
-The relation we obtain from Dennis's trick appears to be:
-
-\begin{align}
-  \label{eq:relationDennis}
-  a_{2^{2}} = 0.
-\end{align}
-
-\section{More isotrivial families}
-In this section, we exhibit a number of good isotrivial families.
-All of these families will arise from a cubic surface $X$ with automorphism group $\mathbb G_m$.
-To make sure that these families are good, we must prove that $X$ does not lie in the closure of the orbit of a generic cubic surface.
-If $X$ is a semi-stable point of the $\SL_4$ action on the space of cubics $\P^{19}$, then this follows from GIT.
-We now explain an extension of this idea that allows for even more examples.
-
-Let $V$ be a 4-dimensional vector space.
-Consider the natural action of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space of one-dimensional subspaces).
-That is, consider the action of $\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a cubic surface and $H \subset \P^3$ is a hyperplane.
-For a pair of positive integers $a, b$, the action lifts uniquely to an action on the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT of the resulting linearized action depends only on the ratio $t = a/b$.
+Let $V$ be a 4-dimensional vector space.  Consider the natural action
+of $\SL(V)$ on $\P(\Sym^3V) \times \P V$ (here $\P$ denotes the space
+of one-dimensional subspaces).  That is, consider the action of
+$\SL_4$ on the set of pairs $(X, H)$, where $X \subset \P^3$ is a
+cubic surface and $H \subset \P^3$ is a hyperplane.  For a pair of
+positive integers $a, b$, the action lifts uniquely to an action on
+the ample line bundle $\mathcal O(a)\boxtimes \mathcal O(b)$; the GIT
+of the resulting linearized action depends only on the ratio
+$t = a/b$.
 
 \begin{proposition}\label{prop:nolimit}
   Let $t$ be a positive rational number.
   Suppose $S \subset \P^3$ is a cubic surface such that for every hyperplane $H$, the pair $(S,H)$ is $t$-stable.
-  Let $X \subset \P^3$ be a cubic surface with stabilizer group $\mathbb G_m \subset \SL_4$ such that for some $\mathbb G_m$-fixed hyperplane $H \subset \mathbb P^3$, the pair $(X, H)$ is $t$-semistable.
-  Then $X$ does not lie in the closure of the $\SL_4$-orbit of $S$.
+  Let $X \subset \P^3$ be a cubic surface whose stabilizer group $T \subset \PGL(4)$ is reductive.
+  Let $T_0 \circ T$ be the connected component of the identity, and assume that there exists a $T_0$-fixed hyperplane $H \subset \mathbb P^3$ such that the pair $(X, H)$ is $t$-semistable.
+  Then $X$ does not lie in the closure of the $\PGL_4$-orbit of $S$.
 \end{proposition}
+
+For the proof, we need a lemma.
+\begin{lemma}\label{prop:oneparam}
+  Let \(U\) be a smooth scheme over $\k$ with an action of a linear algebraic group $G$.
+  Let $x \in U(\k)$ be a point whose stabilizer group $T \subset G$ is reductive.
+  If $x$ lies in the closure of the $G$-orbit of a point $s \in U(\k)$, then there exists a one-parameter subgroup $\lambda \colon \mathbb G_m \to T$ and a point $s'$ in the $G$-orbit of $s$ such that
+  \[ x = \lim_{t \to 0} \lambda(t) \cdot s'.\]
+\end{lemma}
 \begin{proof}
+  This is a consequence of the Hilbert--Mumford criterion and the \'etale local structure of algebraic stacks near a point with a reductive stabilizer (see \cite[\S~1.3 Immediate consequences (5)]{alp.hal.ryd:20}).
+  For the convenience of the reader, we include the details.
+  By \cite[Theorem~3]{alp:10}, there exists a $T$-invariant locally closed affine $W \subset U$ containing the point $x$ such that the map
+  \[ \pi \colon [W/T] \to [U / G]\]
+  is affine and \'etale.
+  (Note that this result is substantially easier than the main theorem of \cite{alp.hal.ryd:20}.)
+  Define $Z$ as the fiber product
+  \[
+    \begin{tikzcd}
+      Z \ar{r}\ar{d}& {[W/T]}\ar{d}{\pi}\\
+      \spec \k \ar{r}{[S]}& {[U/G]}.
+    \end{tikzcd}
+  \]
+  Since $\pi$ is representable, \'etale, and of finite type, $Z$ is a finite disjoint of copies of $\spec \k$.
+  Let $z_1, \dots, z_n \in [W/T](\k)$ be the points so that $Z = \sqcup s_i$.
+  Since the point $x \in [U/G](\k)$ lies in the closure of $s \in [U/G](\k)$ and the map $\pi$ is \'etale (and hence open), the point $x \in [W/T](\k)$ lies in the closure of the set $\{z_1,\dots, z_n\}$.
+  But then $x$ lies in the closure of $z_i$ for some $i$.
+  In other words, the point $x \in W(\k)$ lies in the closure of the $T$-orbit of a lift $s_i \in W(\k)$ of $z_i \in [W/T](\k)$.
+  By the Hilbert--Mumford criterion \cite[Theorem~1.4]{kem:78}, there exists a one-parameter subgroup $\lambda \colon \mathbb G_m \to T$ such that we have the equation
+  \begin{equation}\label{eqn:specialization}
+    x = \lim_{t \to 0} \lambda (t) \cdot s_i
+  \end{equation}
+  in $W(\k)$.
+  Since $s_i \in [W/T](\k)$ maps to $s \in [U/G](\k)$, the image $s' \in U(\k)$ of $s_i \in W(\k)$ is in the same $G$-orbit of $s$.
+  Mapping both sides of equation~\eqref{eqn:specialization} to $U(\k)$ yields the claim.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{prop:nolimit}]
   Suppose $X$ lies in the orbit closure of $S$.
-  Then there exists a one-parameter subgroup $\alpha \colon \mathbb G_m \to \SL_4$ and a cubic surface $Y \subset \P^3$ such that $Y$ is in the $\SL_4$-orbit of $S$ and
-  \[ \lim_{t \to 0} \alpha_t(Y) = X.\]
-  Since the stabilizer of $X$ is assumed to be a particular $\mathbb G_m \subset \SL_4$, the map $\alpha$ must factor through this $\mathbb G_m \subset \SL_4$.
-  Consider the $\alpha$-fixed hyperplane $H \subset \P^3$ such that $(X, H)$ is $t$-semistable.
+  We prove that for any $T_0$-stable hyperplane $H$, the pair $(X, H)$ must be $t$-unstable.
+  By applying \autoref{prop:oneparam} to $U = \mathbb P \Sym^3V$ and $G = \PGL V$, we deduce that there exists a one-parameter subgroup $\lambda \colon \mathbb G_m \to T_0$ and a cubic surface $S' \subset \P^3$ such that $S'$ is in the $\PGL_4$-orbit of $S$ and
+  \[ X = \lim_{t \to 0} \lambda_t \cdot S'.\]
+  Consider any $\lambda$-fixed hyperplane $H \subset \P^3$.
   We have
-  \[ \lim_{t \to 0} \alpha_t(Y, H) = (X, H).\]
-  This contradicts that $(Y, H)$ is $t$-stable.
+  \[ \lim_{t \to 0} \lambda_t(S', H) = (X, H).\]
+  Since $(S', H)$ is $t$-stable, the limit $(X, H)$ must be $t$-unstable.
+  The proof is then complete.
 \end{proof}
 \begin{corollary}\label{cor:nolimit}
   Let $X$ be as in \autoref{prop:nolimit} and assume $0 < t \leq 3/7$.
   Let $S$ be a smooth cubic surface without an Eckardt point.
-  Then $X$ is not in the closure of the $\SL_4$ orbit of $S$.
+  Then $X$ is not in the closure of the $\PGL_4$ orbit of $S$.
 \end{corollary}
 \begin{proof}
   We use the classification of $t$-stable pairs $(S,H)$ due to Gallardo and Martinez-Garcia \cite{gal.mar:19}.
@@ -1220,7 +1679,7 @@ For a pair of positive integers $a, b$, the action lifts uniquely to an action o
 \end{proof}
 
 \begin{corollary}
-  The following surfaces with stabilizer $\mathbb G_m \subset \SL_4$ are not in the closure of the $\SL_4$-orbit of a generic cubic surface (the parenthesis describes the singularities):
+  The following surfaces are not in the closure of the $\PGL_4$-orbit of a generic cubic surface (the parenthesis describes the singularities):
   \begin{enumerate}
   \item $x_0x_1x_3 = x_2^3$ \quad $(3A_2)$
   \item $x_3(x_0x_2-x_1^2) = x_0x_1^2$ \quad $(A_3 + 2A_1)$
@@ -1229,8 +1688,24 @@ For a pair of positive integers $a, b$, the action lifts uniquely to an action o
   \end{enumerate}
 \end{corollary}
 \begin{proof}
-  Together with a suitable $\mathbb G_m$-invariant hyperplane section $H$, these surfaces are $t$-semistable for $0 < t < 1$, $t = 1/5$, $t = 1/3$, and $t = 3/7$, respectively (\cite[Table~2]{gal.mar:19}).
+  Each surface $X$ in this list has a reductive stabilizer group $T$, and there exists a $T_0$-fixed hyperplane section $H$ such that the pair $(X, H)$ is $t$-semistable for some $0 < t \leq 3/7$.
   We now apply \autoref{cor:nolimit}.
+
+  In the following table, we list the automorphism groups, the hyperplane $H$, and the relevant value of $t$.
+  The automorphism groups are from \cite[Theorem~3]{sak:10} and the data of the $t$-semistable hyperplane is from \cite[Table~2]{gal.mar:19}.
+  We denote the symmetric group on $n$ letters by $\Sigma_n$.
+  \begin{center}
+  \begin{tabular}{l l l l}
+    \toprule
+    $X$ & $\Aut(X)$ & $H$ & $t$\\
+    \midrule
+    $x_0x_1x_3 = x_2^3$& $\mathbb G_m^2 \rtimes \Sigma_3$ & $x_2 = 0$ & All $0 < t < 1$\\
+    $x_3(x_0x_2-x_1^2) = x_0x_1^2$& $\mathbb G_m \rtimes \Sigma_2$ & $x_2 = 0$ & $1/5$ \\
+    $x_3(x_0x_2-x_1^2) = x_0^2x_1$& $\mathbb G_m$ & $x_2 = 0$ & $1/3$\\
+    $x_3x_0^2 = x_1^3 + x_2^3$& $\mathbb G_m \rtimes \Sigma_3$ & $x_3 = 0$ & $3/7$\\
+    \bottomrule
+  \end{tabular}
+\end{center}
 \end{proof}
 
 Let $X$ be a good cubic surface (not in the closure of a general orbit) with stabilizer group $\mathbb G_m$.
@@ -1337,24 +1812,32 @@ Therefore, this family gives the relation
 \end{equation}
 
 \subsection{Families over a base variety}
-By choosing a suitable base $B$ and a map $B \to B \mathbb G_m$, we can construct an isotrivial family over $B$ by pulling back one of the families above.
-We describe this explicitly in an example.
+By choosing a suitable base $B$ and a map $B \to B \mathbb G_m$, we
+can construct an isotrivial family over $B$ by pulling back one of the
+families above.  We describe this explicitly in an example.
 
-Let $B = \mathbb P^4$.
-Set
-\[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus \mathcal O(-7).\]
-Let $x_0, x_1, x_2, x_3$ be generators of the four summands on the standard $\mathbb A^4 \subset \mathbb P^4$.
-We have the section $(x_3x_0^2-x_1^3-x_2^3)$ of $\Sym^3 V = \mathcal O(3)^{\oplus 20}$.
-Note that this section has a pole of order $3$ along the hyperplane at infinity.
-As a result, it defines a section $\xi$ of $\Sym^3 V \otimes \mathcal O(-3)$, which is nowhere vanishing.
-Equivalently, $\xi$ is a section of $\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.
-Our family $\mathcal X \to B$ is defined by the zero-locus of $\xi$ in $\P V  \to B$.
+Let $B = \mathbb P^4$.  Set
+\[V = \mathcal O(5) \oplus \mathcal O(1) \oplus \mathcal O(1) \oplus
+  \mathcal O(-7).\] Let $x_0, x_1, x_2, x_3$ be generators of the four
+summands on the standard $\mathbb A^4 \subset \mathbb P^4$.  We have
+the section $(x_3x_0^2-x_1^3-x_2^3)$ of
+$\Sym^3 V = \mathcal O(3)^{\oplus 20}$.  Note that this section has a
+pole of order $3$ along the hyperplane at infinity.  As a result, it
+defines a section $\xi$ of $\Sym^3 V \otimes \mathcal O(-3)$, which is
+nowhere vanishing.  Equivalently, $\xi$ is a section of
+$\mathcal O_{\P V}(3) \otimes \pi^* \mathcal O(-3)$.  Our family
+$\mathcal X \to B$ is defined by the zero-locus of $\xi$ in
+$\P V \to B$.
 
 \appendix
 
 \section{Existance of a universal formula}
 
-In this section, we recall statements from equivariant intersection theory that guarantee the existence of the formula \eqref{eq:P}. On this first pass, we will let $\mathbb{P}(V)$ denote the projective bundle of 1-dimensional subspaces in the fibers of $V$ and correct for the sign later if people want to work with duals. 
+In this section, we recall statements from equivariant intersection
+theory that guarantee the existence of the formula \eqref{eq:P}. On
+this first pass, we will let $\mathbb{P}(V)$ denote the projective
+bundle of 1-dimensional subspaces in the fibers of $V$ and correct for
+the sign later if people want to work with duals.
 
 \begin{lemma}
 \label{lem:Q_Zclass}

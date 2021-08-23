@@ -1402,7 +1402,12 @@ $\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
 
   
 
-%-------------------------------------------------------------------------
+
+
+
+
+
+%----------------------------------------------------------------------------
 
 
 
@@ -1419,15 +1424,19 @@ general points) and, informally, ``blowing up $S$ at two points which
 vary freely.''  The complication arises because we get a non-good
 cubic surface by blowing up the surface $S$ at a pair of points
 contained in one of its ten lines.  Some care is needed in resolving
-this issue.
+this situation.
  
 
-The surface $S$ has $10$ exceptional lines $L_{1}, \dots, L_{10}$.  We
-let $S^{[2]}$ denote the Hilbert scheme of pairs of points on $S$.
-$S^{[2]}$ contains $10$ disjoint $\P^{2}$'s,
-$\Lambda_1, \dots, \Lambda_{10}$, namely the Hilbert schemes of pairs
-of points contained in the lines $L_{i}$. Let
-$\Lambda = \cup_{i}\Lambda_{i}$.
+The surface $S$ has $10$ exceptional lines which we denote by
+$L_{1}, \dots, L_{10}$.  We let $S^{[2]}$ denote the Hilbert scheme of
+pairs of points on $S$.  $S^{[2]}$ contains $10$ disjoint $\P^{2}$'s, 
+$\Lambda_1, \dots, \Lambda_{10}$, namely the Hilbert schemes
+$L_{i}^{[2]}$ parametrizing degree $2$ subschemes contained in the
+lines $L_{i}$. Let $\Lambda = \cup_{i}\Lambda_{i}$.
+
+We let $\pi_{1}, \pi_{2}$ denote the projections of $S^{[2]} \times S$
+to either factor, and denote by
+$$\mathcal{Z} \subset S^{[2]} \times S$$ the universal subscheme. 
 
 \subsection{Construction of $B_4$}
 \label{sec:construction-b_4}
@@ -1437,9 +1446,19 @@ subscheme; $Z$ is smooth and the first projection
 $\pi_1 : Z \to S^{[2]}$ is finite, flat, and has degree two.
 
 
+%%%%%%%% diagram
+\begin{center}
+\begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
+  hook, "i"] \arrow[ur, dotted, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
+  "{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
+  "\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
+  S^{[2]}
+\end{tikzcd}
+\end{center}
+
 
 First, observe that the open set
-\begin{align}
+\begin{align} 
   \label{eq:UB3}
   U := S^{[2]} \setminus \Lambda
 \end{align}

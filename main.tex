@@ -262,43 +262,77 @@ authors during a meeting at Oberwolfach in 2017.
 \section{Preliminaries}
 \label{sec:good}
 
-After establishing notation, conventions, and classical facts about
-cubic surfaces, this section introduces the notion of a {\sl good}
-family of cubic surfaces and then provides the main tool
-(\autoref{prop:good}) for verifying the goodness of several families
-occurring in the paper.
-
+In this chapter, we introduce the notion of a good family of cubic surfaces (\autoref{def:goodfamily}) and provide a tool (\autoref{prop:good}) to verify that a family is good.  Before we do so, we first establish notation and recall some classical facts about cubic surfaces.
 
 \subsection{Notation and conventions}
 \label{sec:notation-conventions}
-All schemes are assumed of finite-type over an algebraically closed,
-characteristic zero field, $\k$.
+Fix an algebraically closed field $\k$ of characteristic zero.
+In this paper, a `scheme' means `a scheme of finite type over $\k$' and a `point' means a `$\k$-point', unless explicitly stated otherwise.
+We do not distinguish between a vector bundle and the associated locally free sheaf of its sections.
 
-\begin{itemize}
+Given a map of schemes $\pi \colon X \to Y$ and a point $y \in Y$, we let $X_y$ denote the fiber scheme $\pi^{-1}(y)$.  If $\pi$ is proper and Gorenstein, we write $\omega_{X/Y}$ or $\omega_\pi$ for the dualizing line bundle.  If $X$ and $Y$ are themselves Gorenstein and $\pi$ is flat, then we have $\omega_{X/Y} = \omega_X \otimes \pi^*\omega_Y^{-1}$.
 
-\item If $\pi: X \to Y$ is a map of schemes and if $y \in Y$ is a
-  point, then we let $X_y$ denote the fiber scheme $\pi^{-1}(y)$, and
-  if both $X$ and $Y$ have dualizing line bundles
-  $\omega_{X}, \omega_{Y}$ respectively, then we write $\omega_{X/Y}$,
-  or $\omega_{\pi}$, for the line bundle
-  $\omega_{X} \otimes \pi^{*}\omega_{Y}^{-1}$.
-\item If $\mathcal{W}$ is a
-  vector bundle, then we let $\P \mathcal{W}$ denote its
-  projectivization, which parametrizes $1$-dimensional {\sl subspaces}
-  in the fibers of $\mathcal{W}$. $\P \mathcal{W}$ comes naturally
-  equipped with the line bundle $\O_{\P \mathcal{W}}(1)$, whose
-  push-forward to the base scheme is $\mathcal{W}^{\smvee}$.
+Given a vector bundle $\mathcal W$, we let $\P \mathcal W$ be its projectivization.  Contrary to Grothendieck's convention, $\P \mathcal W$ parametrizes $1$-dimensional subspaces in the fibers of $\mathcal W$.  In other words, we set
+\[ \P \mathcal W = \Proj \Sym(\mathcal W^\vee).\]
+As a result, $\P \mathcal W$ comes equipped with a line bundle $\O(1)$ whose push-forward to the base is $\mathcal W^\vee$.
 
-\item If a smooth conic $C \subset \P^{2}$ is given, and if
-  $p \in \P^{2}$ is any point, we let $\Polar(p)$ denote the line
-  polar to $p$ with respect to $C$.  Similarly, if $L \subset \P^{2}$
-  is any line, we let $\Pole(L)$ denote the point polar to $L$.
+Let $Q \subset \P V$ be a non-degenerate quadric.  The bilinear form associated to $Q$ gives an isomorphism of $\P V$ with the dual projective space $\P V^\vee$.  Given a point $p \in \P V$, we denote by $\Polar(p) \subset \P V$ the hyperplane dual to $p$ with respect to $Q$. Similarly, given a hyperplane $H \subset \P V$, we denote by $\Pole(H) \in \P V$ the point dual to $H$  with respect to $Q$.  In almost all cases, we use these constructions when $\P V$ is $\P^2$.
 
-\end{itemize}
-
-
-\subsection{Classical facts about cubic surfaces}
+\subsection{Cubic surfaces and their moduli}
 \label{sec:classical-facts}
+Let $\pi \colon X \to B$ be a family of cubic surfaces.
+That is, let $\pi$ be a flat, proper morphism whose fibers are isomorphic to cubic hypersurfaces in $\P^3$.
+Since $\pi$ is flat and its fibers are Gorenstein, it is a Gorenstein morphism, and hence admits a dualizing line bundle $\omega_\pi$.
+By the adjunction formula, it follows that the restriction of $\omega_{\pi}^{-1}$ to every fiber is isomorphic to the restriction of $\O(1)$ with respect to an embedding of the fiber as a cubic hypersurface in $\P^3$.
+By standard theorems about cohomology and base-change, it follows that $R^i\pi_* \left(\omega_{\pi}^{-1}\right)$ vanishes for $i > 0$, and is a vector bundle for $i = 0$.
+Set
+\[ \mathcal V = \pi_* \left( \omega_\pi^{-1} \right).\]
+The natural map 
+\[ \pi^*\mathcal V \to \omega_{\pi}^{-1}\]
+yields a closed embedding
+\begin{equation}\label{eqn:relcanx}
+  X \subset \P \mathcal V^\vee.
+\end{equation}
+We know that
+\[ \omega_{\P \mathcal V^\vee/B} = \O(-4) \otimes \det \mathcal V^\vee,\]
+and hence, by adjunction,
+\[ \omega_{X/B}= \O(-4) \otimes \O(X) \otimes \det \mathcal V^\vee |_X.\]
+By construction, we also have
+\[ \omega_{X/B} = \O(-1)|_X,\]
+and hence we obtain that
+\begin{equation}\label{eqn:ox}
+  \O(X) = \O(3) \otimes \det \mathcal V.
+\end{equation}
+In other words, $X \subset \P \mathcal V^\vee$ is the zero locus of a section of the line bundle $\O(3) \otimes \det \mathcal V^\vee$.
+
+Consider the category $\mathscr {C}$ fibered in groupoids over the category of schemes whose objects over a scheme $B$ are families of cubic surfaces $\pi \colon X \to B$, and whose morphisms are pull-back diagrams.
+Consider the category $\mathscr {M}$ fibered in groupoids over the category of schemes whose objects over a scheme $B$ are vector bundles $\mathcal V$ over $B$ of rank 4 along with a nowhere zero section $\xi$ of $\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, and whose morphisms are pull-back diagrams.
+Let $V$ be a $\k$-vector space of dimension 4.
+Note that $\mathscr{M}$ is simply the quotient stack
+\[\mathscr{M} = \left[\Sym^3 V^\vee \otimes \det V \setminus \{0\} / \GL V \right]. \]
+\begin{proposition}
+  The category $\mathscr{C}$ of families of cubic surfaces is equivalent to the category $\mathscr{M}$.
+\end{proposition}
+\begin{proof}
+  Let $\pi \colon X \to B$ be a family of cubic surfaces, and set $\mathcal V = \pi_* \left( \omega_{\pi}^{-1} \right)$.
+  Consider the relative canonical embedding $X \subset \P \mathcal V^\vee$.
+  In this embedding, $X$ is cut out by a section of $\O(3) \otimes \det \mathcal V$ on $\P \mathcal V^\vee$, or equivalently, by a section of $\xi$ of  $\Sym^3V^\vee \otimes \det \mathcal V$ on $B$.
+  Since $\pi$ is flat, $\xi$ is nowhere zero on $B$.
+  We thus have a natural transformation from $\mathscr{C}$ to $\mathscr{M}$.
+
+  To go from $\mathscr{M}$ to $\mathscr{C}$, given a rank 4 bundle $\mathcal V$ and a nowhere section $\xi$ of $\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, define $X \subset \P \mathcal V^\vee$ as the zero-locus of the corresponding section of $\O(3) \otimes \det \mathcal V$.
+\end{proof}
+
+We call $\mathscr{M}$ the \emph{moduli stack of cubic surfaces}.
+Sometimes, it will be convenient to add in the zero section and consider the bigger stack
+\[ \mathscr{M}^* = \left[\Sym^3 V^\vee \otimes \det V / \GL V \right].\]
+Note that the diagonal $\G_m \subset \GL V$ acts by weight $-1$ on $\Sym^3 V^\vee \otimes \det V$.
+In particular, its action is free.
+Therefore, the stack $\mathscr{M}$ is isomorphic to the quotient stack
+\[ \mathscr{M} = \left[ \P \Sym^3V^\vee / \PGL V \right].\]
+
+We let $\mathcal M$ denote the GIT quotient of $\P \Sym^3V^\vee$ by the action of $\PGL V$.
+Mumford describes the semi-stable and stable locus of the action; see \cite{MFK} or \cite{StabProjVar}.
 
 \begin{theorem}[Cayley, Salmon]
   \label{theorem:cayleysalmon} Every smooth cubic surface contains

@@ -1392,7 +1392,7 @@ ${5 \choose 3 } = 10$ points.  Using \autoref{prop:good}, it will be
 relatively easy to show that $\pi: \mathcal{X} \to B_{4}$ is good over
 the open set $B_{4} \setminus T$.  The argument showing that the
 fibers over $T$ are also good is quite a bit more involved.  In the
-interest of exposition, we have placed it in \cite[???]
+interest of exposition, we have placed it in \cite[???].
 
 \begin{proposition}
   \label{prop:goodcusp}

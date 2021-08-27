@@ -16,15 +16,15 @@
 }
 \usepackage{graphicx}
 
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
+%\usepackage{import}
+%\usepackage{xifthen}
+%\usepackage{pdfpages}
+%\usepackage{transparent}
 
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
-}
+%\newcommand{\incfig}[1]{%
+ %   \def\svgwidth{\columnwidth}
+  %  \import{./figures/}{#1.pdf_tex}
+%}
 
 
 \linespread{1.1}
@@ -34,6 +34,7 @@
 \title{Counting Cubic Surfaces}
 \author{Anand Deopurkar, Anand Patel
   \& Dennis Tseng}
+
 
 
 
@@ -605,14 +606,14 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 \label{sec:enum-cubics-b_1}
 
 
-\begin{figure}[!]
-  \centering
-  \incfig{FamilyB1}
-  \caption{Schematic for the family parametrized by $B_1$. The points
-    $Z$ vary freely on the conic $C$, and we blow up the plane at the
-    six points $Z \cup \{y_{1},y_{2}\}$.}
-    \label{fig:FamilyB1}
-\end{figure}
+%\begin{figure}[!]
+ % \centering
+  %\incfig{FamilyB1}
+  %\caption{Schematic for the family parametrized by $B_1$. The points
+   % $Z$ vary freely on the conic $C$, and we blow up the plane at the
+    %six points $Z \cup \{y_{1},y_{2}\}$.}
+    %\label{fig:FamilyB1}
+%\end{figure}
 
 
 For $B_1$ to be of any use, we must {\sl a priori} know the degree of
@@ -1026,13 +1027,13 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 \label{sec:enum-cubics-b_2}
 
 
-\begin{figure}[!]
-    \centering
-    \incfig{FamilyB2}
-    \caption{Schematic for our second family. We blow up the plane at
-      the points $\{s_{1}, \dots, s_{5}, t\}$.}
-    \label{fig:FamilyB2}
-\end{figure}
+%\begin{figure}[!]
+   % \centering
+   %\incfig{FamilyB2}
+    %\caption{Schematic for our second family. We blow up the plane at
+     % the points $\{s_{1}, \dots, s_{5}, t\}$.}
+    %\label{fig:FamilyB2}
+    % \end{figure}
 
 
 Now that we've identified the $v_{i}$, we need only establish
@@ -1088,14 +1089,14 @@ we find our second relation:
 \label{sec:family-b_3}
 
 
-\begin{figure}[!]
-    \centering
-    \incfig{FigureB3}
-    \caption{Third family schematic. The point $\nu(s_{\infty})$ is
-      the point at infinity. It, along with
-      $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
-    \label{fig:FigureB3}
-\end{figure}
+%\begin{figure}[!]
+  %  \centering
+   % \incfig{FigureB3}
+    %\caption{Third family schematic. The point $\nu(s_{\infty})$ is
+     % the point at infinity. It, along with
+      %$\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
+    %\label{fig:FigureB3}
+%\end{figure}
 
 
 Let us reset notation once again.  Our third family is a variant of
@@ -1395,10 +1396,10 @@ fibers over $T$ are also good is quite a bit more involved.  In the
 interest of exposition, we have placed it in \autoref[???].
 
 
-The first proposition takes care of goodness over $B_{3} \setminus T$.
+The following theorem takes care of goodness over $B_{3} \setminus T$.
 
-\begin{proposition}
-  \label{prop:goodcusp}
+\begin{theorem}
+  \label{theorem:goodcusp}
   Let $C \subset \P^{2}$ be a cuspidal cubic, and let
   $s_{i} \in C, i \in \{1, \dots, 5, \infty \}$ be six, not
   necessarily distinct, points satisfying:
@@ -1411,7 +1412,7 @@ The first proposition takes care of goodness over $B_{3} \setminus T$.
   The length $6$ subscheme $Z := s_{1} + \dots + s_{5} + s_{\infty}$,
   interpreted as a divisor on $C$, is admissible and $\Aut(\P^{2},Z)$
   is finite.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
   First note that since no length $4$ subscheme of $Z$ is contained in
@@ -1420,7 +1421,8 @@ The first proposition takes care of goodness over $B_{3} \setminus T$.
   which we denote by $Q$.
 
   The proof proceeds in cases, depending on the nature of the conic
-  $Q$.  Observe first that every element in the identity component of
+  $Q$ and its relative position with respect to the cuspidal cubic
+  $C$.  Observe first that every element in the identity component of
   $\Aut(\P^{2},Z)$ must preserve the conic $Q$. So, it suffices to
   show that there are only finitely many elements in $\Aut(\P^{2},Z)$
   preserving $Q$.  Let $g \in \Aut(\P^{2},Z)$ denote an arbitrary
@@ -1442,20 +1444,21 @@ The first proposition takes care of goodness over $B_{3} \setminus T$.
   $\G_{a}$, with origin corresponding to $s_{\infty}$. If
   $Z \subset Q$ were supported on less than three points, necessarily
   $s_{\infty}$ and, say $s_{1}$, then, given condition (3) we deduce
-  that $s_{1}$ must be contained in $C^{\circ}$ and must by a torsion
+  that $s_{1}$ must be contained in $C^{\circ}$ and must be a torsion
   point in the group law, meaning $s_{1} = s_{\infty}$. Thus, $Z$
   would have to be entirely supported on $s_{\infty}$, which is
-  contrary to assumption.  Thus, $Z$ has at least three points of
-  support, and once again $g =\id$.
+  contrary to assumption.  Since $Z$ has at least three points of
+  support, we deduce $g =\id$.
 
   {\bf Case 3}: {\sl $Q$ is twice a line $L$.} $L$ cannot be the flex
-  line at $s_{\infty}$, because then $Z$ would be $6 s_{\infty}$,
-  contrary to condition (3).  Nor can $L$ be the unique line joining
-  $s_{\infty}$ and the cusp of $C$, since then the support of $Z$
-  would have to contain that cusp with multiplicity at least $2$,
-  contrary to condition (1). Thus, $L$ meets $C$ transversely at three
-  distinct smooth points, including $s_{\infty}$.  Without loss of
-  generality, we may assume $Z = 2s_1 + 2s_2 + 2s_{\infty}$, where
+  line at $s_{\infty}$, because it would force $Z$ to be
+  $6 s_{\infty}$, violating condition (3).  Nor can $L$ be the unique
+  line joining $s_{\infty}$ and the cusp of $C$, since then the
+  support of $Z$ would have to contain that cusp with multiplicity at
+  least $2$, contrary to condition (1). Thus, $L$ meets $C$
+  transversely at three distinct smooth points, including
+  $s_{\infty}$.  Without loss of generality, we may assume
+  $Z = 2s_1 + 2s_2 + 2s_{\infty}$, where
   $L \cap C = s_{1}+s_{2} + s_{\infty}$.
 
   Now, $g \in \Aut(\P^{2},Z)$ fixes three points on $L$, and hence
@@ -1467,14 +1470,15 @@ The first proposition takes care of goodness over $B_{3} \setminus T$.
   $p$ must be a point on the flex line, and must therefore not lie on
   $C$. Projecting $C$ from $p$ would yield an order $2$ ramification
   point at $s_{\infty}$, two simple ramification points at
-  $s_{1}, s_{2}$ and a $5$'th ramification point at the cusp.  This
-  violated the Riemann-Hurwitz formula for a degree $3$ map between
-  rational curves.  Thus, $g$ fixes $L$, and fixes at least two other
-  points outside $L$ -- the reader can check that this forces
-  $g = \id$.
+  $s_{1}, s_{2}$ and another ramification point at the cusp.  This
+  exceeds the length $4$ ramification scheme given by the
+  Riemann-Hurwitz formula for a degree $3$ map between rational
+  curves.  Thus, $g$ fixes $L$, and fixes at least two other points
+  outside $L$ -- the reader can check that this forces $g = \id$.
 
   {\bf Case 4}: {\sl $Q$ is the union of two distinct lines
-    $L \cup M$.}  Let $x$ denote the point $L \cap M$. NEED TO FINISH...
+    $L \cup M$, neither of which is the flex line at $s_{\infty}$.}
+  Let $x$ denote the point $L \cap M$. NEED TO FINISH...
   
 \end{proof}
 
@@ -1525,14 +1529,14 @@ $\pi_1 : Z \to S^{[2]}$ is finite, flat, and has degree two.
 
 
 %%%%%%%% diagram
-\begin{center}
-\begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
-  hook, "i"] \arrow[ur, dotted, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
-  "{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
-  "\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
-  S^{[2]}
-\end{tikzcd}
-\end{center}
+%\begin{center}
+%\begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
+ % hook, "i"] \arrow[ur, dotted, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
+  %"{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
+  %"\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
+  %S^{[2]}
+%\end{tikzcd}
+%\end{center}
 
 
 First, observe that the open set

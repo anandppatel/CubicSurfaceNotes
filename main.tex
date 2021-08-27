@@ -153,8 +153,8 @@ $\GL(V)$, and let $\Orb([F])$ be its closure.
 In a series of seminal papers, Aluffi and Faber computed the degree of
 $\Orb([F])$ when \(F\) is a homogeneous polynomial in 2 or 3 variables,
 that is, when \(X\) is a set of points in $\P^1$ or a curve
-in $\P^2$ \cite{alu.fab:00,alu.fab:93,alu.fab:93*1}.
-The next unknown case is that of cubic surfaces in $\P^3$.
+in $\P^2$ \cite{alu.fab:00,alu.fab:93}.
+The next case is that of cubic surfaces in $\P^3$.
 The answer to Question~\ref{orbit} says that the degree of the
 orbit closure of a general cubic surface is $96120$.
 
@@ -457,22 +457,68 @@ A family of cubic surfaces $\pi \colon X \to B$ is \emph{good} if the following 
   By shrinking $U$ if necessary, we may assume that $U$ consists of semi-stable points and maps to $W \subset \mathcal M$ in the coarse space.
   Then, for every $u \in U$, we have
   \begin{align*}
-    \deg \mu^* \Orb(u) &= # X \times_{\mathscr M} u \\
-                       &= X \times_{\mathcal M} u \\
-    &= \deg m.
+    \deg \mu^* \Orb(u) &= \# X \times_{\mathscr M} u \\
+                       &= \# X \times_{\mathcal M} u \\
+                       &= \deg m.
   \end{align*}
 \end{proof}
 
-\begin{definition}
-  \label{def:admissible} A length $6$ subscheme $Z \subset \P^{2}$
-  with ideal sheaf $\mathcal{I}_{Z}$ is {\sl admissible} if:
+\subsection{Cubic surfaces as blow-ups}
+We know that a cubic surfaces arise as blow ups of $\P^2$ at six points.
+Blowing up a varying length 6 subscheme of $\P^2$ is a convenient source of families of cubic surfaces.
+
+\begin{definition}[Admissible length 6 subscheme]
+  We say that \label{def:admissible} a length $6$ subscheme $Z \subset \P^{2}$
+  with ideal sheaf $\mathcal{I}_{Z}$ is \emph{admissible} if
   \begin{enumerate}
-  \item $Z$ is curvilinear, i.e $Z$ is contained in a smooth curve,
+  \item $Z$ is curvilinear (contained in a smooth curve),
   \item $h^{0}(\mathcal{I}_Z(3)) = 4$, and
   \item $Z$ is the scheme cut out by the vector space of cubics
     $H^0(\P^2, \mathcal{I}_Z(3))$.
   \end{enumerate}
 \end{definition}
+
+\begin{proposition}
+Let $Z \subset \P^2$ be an admissible length 6 subscheme.
+Set $X = \Bl_Z\P^2$.
+Then the following hold.
+\begin{enumerate}
+\item $X$ has at worst $A_n$ singularities.
+\item $H^0\left(X, \omega^{-1}_X\right)$ is $4$-dimensional and base-point free.
+\item The image of the map $X \to \P^3$ induced by $\omega_X^{-1}$ is a cubic surface.
+\item We have $H^i(X,\omega_X^{-n)}) = 0$ for all $n \geq 0$ and $i > 0$.
+\item The graded ring $\bigoplus_n H^0\left(X, \omega_X^{-n}\right)$ is generated in degree 1.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+  Let $\pi \colon X \to \P^2$ be the blow-up.
+  For every point $z$ in the support of $Z$, the support $E_z$ of the pre-image $\pi^{-1}(z)$ is a copy of $\P^1$.
+  
+  The surface $X$ has at worst $A_n$ singularities since $Z$ is curvilinear.
+  Indeed, if $Z$ is isomorphic to $\spec k[t]/t^{n+1}$ at the point $z$, the surface $X$ is singular at a unique point of $\pi^{-1}(z)$, and this is an $A_n$ singularity.
+
+  Let $E \subset X$ be the exceptional divisor, namely, the Cartier divisor defined by the ideal $\pi^{-1}I_Z$.
+  Note that $E$ is not necessarily reduced---over the point $z$ as above, the component $E_z$ has multiplicity $n$.
+  Furthermore, we have $(nE_z)^2 = -n$, and hence $E^2 = -6$.
+  Also, it is easy to check that we have
+  \begin{equation}\label{eqn:wx}
+    \omega_X = \pi^* \omega_{\P^2} \otimes (E),
+  \end{equation}
+  and therefore,
+  \[ \omega_X^{-1} = \pi^* \omega^{-1}_{\P^2} \otimes (-E).\]
+  By applying $\pi_*$, we get
+  \[ \pi_* \left( \omega_X^{-1} \right) = \O_{\P^2}(3) \otimes I_Z.\]
+  By our assumption, $H^0\left(\P^2, \O(3) \otimes I_Z\right)$ is $4$-dimensional and its base-locus is precisely $Z$.
+  Hence $H^0\left( X, \omega_X^{-1} \right)$ is $4$-dimensional, and base-point free.
+
+  The degree of the image of $X \to \P^2$ is the self-intersection $(\omega_X)^2$.
+  Using \eqref{eqn:wx} and $E^2 = -6$, we compute
+  \[ \omega_X^2 = (\omega_{\P^2})^2 - 6 = 3.\]
+
+  
+  
+\end{proof}
+
 
 \begin{definition}
   \label{def:cubicZ} Let $Z \subset \P^2$ be an admissible length $6$

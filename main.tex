@@ -1384,15 +1384,18 @@ $\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
 \label{sec:goodness3}
 
 Here we address the goodness of the family
-$\pi: \mathcal{X} \to B_{4}$. We let $$T \subset B_{4} = \hM_{0,7}$$
+$\pi: \mathcal{X} \to B_{3}$. We let $$T \subset B_{3} = \hM_{0,7}$$
 denote the finite set parametrizing marked curves
 $(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$ where three of the
 $s_{i}, i=1, \dots, 5$ coincide with $s_{\infty}$.  $T$ consists of
 ${5 \choose 3 } = 10$ points.  Using \autoref{prop:good}, it will be
 relatively easy to show that $\pi: \mathcal{X} \to B_{4}$ is good over
-the open set $B_{4} \setminus T$.  The argument showing that the
+the open set $B_{3} \setminus T$.  The argument showing that the
 fibers over $T$ are also good is quite a bit more involved.  In the
-interest of exposition, we have placed it in \cite[???]
+interest of exposition, we have placed it in \autoref[???].
+
+
+The first proposition takes care of goodness over $B_{3} \setminus T$.
 
 \begin{proposition}
   \label{prop:goodcusp}
@@ -1402,13 +1405,76 @@ interest of exposition, we have placed it in \cite[???]
   \begin{enumerate}
   \item At most one $s_{i}$ is the cusp point,
   \item $s_{\infty}$ is the flex point of $C$, and
-  \item at most three $s_{i}, i \leq 5$ are equal to $s_{\infty}$.
+  \item at most {\bf two} $s_{i}, 1 \leq i \leq 5$ are equal to $s_{\infty}$.
   \end{enumerate}
-  Then the length $6$ subscheme $Z := \sum_{i}s_{i}$, interpreted as a
-  divisor on $C$, is admissible and $\Aut(\P^{2},Z)$ is finite. NOT TRUE!!!?
+  
+  The length $6$ subscheme $Z := s_{1} + \dots + s_{5} + s_{\infty}$,
+  interpreted as a divisor on $C$, is admissible and $\Aut(\P^{2},Z)$
+  is finite.
 \end{proposition}
 
 \begin{proof}
+  First note that since no length $4$ subscheme of $Z$ is contained in
+  a line, it follows that the length $5$ subscheme
+  $Z' := s_1 + s_2 + s_3 +s_4 +s_5$ is contained in a unique conic,
+  which we denote by $Q$.
+
+  The proof proceeds in cases, depending on the nature of the conic
+  $Q$.  Observe first that every element in the identity component of
+  $\Aut(\P^{2},Z)$ must preserve the conic $Q$. So, it suffices to
+  show that there are only finitely many elements in $\Aut(\P^{2},Z)$
+  preserving $Q$.  Let $g \in \Aut(\P^{2},Z)$ denote an arbitrary
+  element in the identity component -- we must deduce in every case
+  that $g = \id$.
+
+  {\bf Case 1}: {\sl $Q$ is smooth and $s_{\infty} \notin Q$.}    Then
+  $g$ must preserve the pair of points $\Polar(s_{\infty})$. Since $Z$
+  is a subscheme of the irreducible cubic curve $C$, it follows that
+  $Z'$ must have multiplicity at most $2$ at each of the pair of
+  points $\Polar(s_{\infty})$.  This implies that $Z' \subset Q$ is
+  supported on at least three points, and so $g$ is an automorphism of
+  $Q$ fixing three points, i.e. $g = \id$.
+
+
+  {\bf Case 2}: {\sl $Q$ is smooth and $s_{\infty} \in Q$.}  Let
+  $C^{\circ}$ denote the smooth part of $C$ -- The classical chord and
+  tangent method makes $C^{\circ}$ isomorphic to the additive group
+  $\G_{a}$, with origin corresponding to $s_{\infty}$. If
+  $Z \subset Q$ were supported on less than three points, necessarily
+  $s_{\infty}$ and, say $s_{1}$, then, given condition (3) we deduce
+  that $s_{1}$ must be contained in $C^{\circ}$ and must by a torsion
+  point in the group law, meaning $s_{1} = s_{\infty}$. Thus, $Z$
+  would have to be entirely supported on $s_{\infty}$, which is
+  contrary to assumption.  Thus, $Z$ has at least three points of
+  support, and once again $g =\id$.
+
+  {\bf Case 3}: {\sl $Q$ is twice a line $L$.} $L$ cannot be the flex
+  line at $s_{\infty}$, because then $Z$ would be $6 s_{\infty}$,
+  contrary to condition (3).  Nor can $L$ be the unique line joining
+  $s_{\infty}$ and the cusp of $C$, since then the support of $Z$
+  would have to contain that cusp with multiplicity at least $2$,
+  contrary to condition (1). Thus, $L$ meets $C$ transversely at three
+  distinct smooth points, including $s_{\infty}$.  Without loss of
+  generality, we may assume $Z = 2s_1 + 2s_2 + 2s_{\infty}$, where
+  $L \cap C = s_{1}+s_{2} + s_{\infty}$.
+
+  Now, $g \in \Aut(\P^{2},Z)$ fixes three points on $L$, and hence
+  restricts to the identity on $L$. Let
+  $q_{1,2}, q_{1, \infty}, q_{2,\infty}$ denote the corresponding
+  pairwise intersections of the three tangent lines to $C$ at
+  $s_1, s_2, s_{\infty}$. $q_{1,2}, q_{1, \infty},$ and
+  $ q_{2,\infty}$ are distinct: If two coincided at a point $p$, then
+  $p$ must be a point on the flex line, and must therefore not lie on
+  $C$. Projecting $C$ from $p$ would yield an order $2$ ramification
+  point at $s_{\infty}$, two simple ramification points at
+  $s_{1}, s_{2}$ and a $5$'th ramification point at the cusp.  This
+  violated the Riemann-Hurwitz formula for a degree $3$ map between
+  rational curves.  Thus, $g$ fixes $L$, and fixes at least two other
+  points outside $L$ -- the reader can check that this forces
+  $g = \id$.
+
+  {\bf Case 4}: {\sl $Q$ is the union of two distinct lines
+    $L \cup M$.}  Let $x$ denote the point $L \cap M$. NEED TO FINISH...
   
 \end{proof}
 

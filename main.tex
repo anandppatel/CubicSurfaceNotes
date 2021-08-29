@@ -457,14 +457,14 @@ A family of cubic surfaces $\pi \colon X \to B$ is \emph{good} if the following 
   By shrinking $U$ if necessary, we may assume that $U$ consists of semi-stable points and maps to $W \subset \mathcal M$ in the coarse space.
   Then, for every $u \in U$, we have
   \begin{align*}
-    \deg \mu^* \Orb(u) &= \# X \times_{\mathscr M} u \\
-                       &= \# X \times_{\mathcal M} u \\
+    \deg \mu^* \Orb(u) &= \# \left(X \times_{\mathscr M} u \right)\\
+                       &= \# \left(X \times_{\mathcal M} u\right) \\
                        &= \deg m.
   \end{align*}
 \end{proof}
 
 \subsection{Cubic surfaces as blow-ups}
-We know that a cubic surfaces arise as blow ups of $\P^2$ at six points.
+We know that a cubic surfaces arises as blow ups of $\P^2$ at six points.
 Blowing up a varying length 6 subscheme of $\P^2$ is a convenient source of families of cubic surfaces.
 
 \begin{definition}[Admissible length 6 subscheme]
@@ -479,6 +479,7 @@ Blowing up a varying length 6 subscheme of $\P^2$ is a convenient source of fami
 \end{definition}
 
 \begin{proposition}
+  \label{prop:admissibleblowup}
 Let $Z \subset \P^2$ be an admissible length 6 subscheme.
 Set $X = \Bl_Z\P^2$.
 Then the following hold.
@@ -486,9 +487,10 @@ Then the following hold.
 \item $X$ has at worst $A_n$ singularities.
 \item $H^0\left(X, \omega^{-1}_X\right)$ is $4$-dimensional and base-point free.
 \item We have $H^i(X,\omega_X^{-n}) = 0$ for all $n \geq 0$ and $i > 0$.
-\item The image of the map $X \to \P^3$ induced by $\omega_X^{-1}$ is a cubic surface $Y$.
+\item The image of the map $X \to \P^3$ induced by $\omega_X^{-1}$ is a cubic surface $Y$; the map $X \to Y$ is birational.
 \item Let $S = \bigoplus_n S_n$ be the homogeneous coordinate ring of $Y$.
   The pull-back map $S \to \bigoplus_n H^0\left(X, \omega_X^{-n}\right)$ is an isomorphism.
+\item $Y$ is normal.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -498,7 +500,7 @@ Then the following hold.
   The surface $X$ has at worst $A_n$ singularities since $Z$ is curvilinear.
   Indeed, if $Z$ is isomorphic to $\spec k[t]/t^{n+1}$ at the point $z$, the surface $X$ is singular at a unique point of $\pi^{-1}(z)$, and this is an $A_n$ singularity.
 
-  Let $E \subset X$ be the exceptional divisor, namely, the Cartier divisor defined by the ideal $\pi^{-1}I_Z$.
+  Let $E \subset X$ be the exceptional divisor, namely, the Cartier divisor defined by the ideal $\pi^{-1}\mathcal I_Z$.
   Over the point $z$ as above, the component $E$ has multiplicity $n$ along the component $E_z$.
   Furthermore, we have $(nE_z)^2 = -n$, and hence $E^2 = -6$.
   Also, it is easy to check that we have
@@ -508,8 +510,8 @@ Then the following hold.
   and therefore,
   \[ \omega_X^{-1} = \pi^* \omega^{-1}_{\P^2} \otimes (-E).\]
   By applying $\pi_*$, we get
-  \[ \pi_* \left( \omega_X^{-1} \right) = \O_{\P^2}(3) \otimes I_Z.\]
-  By our assumption, $H^0\left(\P^2, \O(3) \otimes I_Z\right)$ is $4$-dimensional and its base-locus is precisely $Z$.
+  \[ \pi_* \left( \omega_X^{-1} \right) = \O_{\P^2}(3) \otimes \mathcal I_Z.\]
+  By our assumption, $H^0\left(\P^2, \O(3) \otimes \mathcal I_Z\right)$ is $4$-dimensional and its base-locus is precisely $Z$.
   Hence $H^0\left( X, \omega_X^{-1} \right)$ is $4$-dimensional, and base-point free.
 
   For the vanishing of higher cohomology, we induct on $n$.
@@ -525,9 +527,11 @@ Then the following hold.
   Hence, by applying the long exact sequence in cohomology, we see that $h^i(\omega_X^{-n+1}) = 0$ implies $h^i(\omega_X^{-n}) = 0$ for $i > 0$.
   We conclude $h^i(\omega_X^{-n}) = 0$ for all $n \geq 0$ and $i > 0$ by induction on $n$.
     
-  The degree of the image of $X \to \P^2$ is the self-intersection $(\omega_X)^2$.
+  To get the degree of the image of $X \to \P^3$, we compute the self-intersection $c_1(\omega_X)^2$.
   Using \eqref{eqn:wx} and $E^2 = -6$, we compute
-  \[ \omega_X^2 = (\omega_{\P^2})^2 - 6 = 3.\]
+  \[ c_1(\omega_X)^2 = c_1(\omega_{\P^2})^2 - 6 = 3.\]
+  Thus, either the image is a hyperplane $\Pi$ and the map $X \to \Pi$ has degree 3, or the image is a cubic surface $Y$ and the map $X \to Y$ is birational.
+  We rule out the first possibility since the map $X \to \P^3$ is defined by linearly independent sections, and hence does not factor through a hyperplane.
 
   By Riemann--Roch, we get that $\chi(X,\omega_X^{-n}) = \chi(Y, \O(n))$.
   We also know that for $i > 0$ and $n \geq 0$, both $h^i(X, \omega_X^{-n})$ and $h^i(Y, \O(n))$ vanish.
@@ -535,75 +539,82 @@ Then the following hold.
   Recall that, the $n$-th graded component $S_n$ of the homogeneous coordinate ring of $Y$ is precisely $H^0(Y, \O(n))$.
   Since $X \to Y$ is surjective, the natural map $S_n \to H^0(X, \omega_X^{-n})$ is injective.
   Since the dimensions of the source and the target are equal, it must be an isomorphism.
-\end{proof}
 
+  Since
+  \[ Y = \Proj\left( \bigoplus_{n \geq 0}H^0\left(X, \omega_X^{-1} \right) \right),\]
+  and $X$ is normal, so is $Y$.
+\end{proof}
 
 \begin{definition}
   \label{def:cubicZ} Let $Z \subset \P^2$ be an admissible length $6$
-  subscheme.  The {\sl cubic surface associated to $Z$}, denoted
-  $X_Z \subset \P^3$ is the image of the anti-canonical map
-  $\kappa: \Bl_{Z}\P^2 \to \P^3$ induced by the linear system
-  $H^0(\P^2,\mathcal{I}_Z(3))$.
+  subscheme.  The \emph{cubic surface associated to $Z$}, denoted by
+  $X_Z \subset \P^3$, is the image of the map
+  $\kappa \colon \Bl_{Z}\P^2 \to \P^3$ induced by the anti-canonical linear system $H^0\left(\Bl_Z\P^2, \omega_{\Bl_Z\P^2}^{-1}\right)$.
 \end{definition}
+By \autoref{prop:admissibleblowup}, we may equivalently define $X_Z$ as
+\[ X_Z = \Proj \left( \bigoplus_{n \geq 0} H^0\left( \Bl_Z\P^2, \omega_{\Bl_Z\P^2}^{-n} \right) \right).\]
+
+Note that an automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ and hence an automorphism of the associated cubic surface $X_Z$.
 
 \begin{proposition}
   \label{prop:good} Let $Z \subset \P^2$ be an admissible, length $6$
-  subscheme with $X_Z \subset \P^3$ its associated cubic surface. Then
-  $\dim \Aut(\P^2,Z) > 0$ if and only if $\dim \Aut(\P^3,X_Z) > 0$.
+  subscheme and $X_Z \subset \P^3$ its associated cubic surface.
+  The map
+  \[ \Aut(\P^2, Z) \to \Aut(X_Z)\]
+  is injective and its image has finite index.
+  In particular, $\Aut(\P^2, Z)$ is finite if and only if $\Aut(X_Z)$ is.
 \end{proposition}
 
-\begin{proof} The implication
-  $\dim \Aut(\P^2,Z) > 0 \implies \dim \Aut(\P^3,X_Z) > 0$ is simpler:
-  Any automorphism $g \in \Aut(\P^2,Z)$ naturally lifts to an
-  automorphism $g' \in \Aut \Bl_{Z}\P^2$. This latter automorphism
-  must preserve the anti-canonical line bundle
-  $\omega_{\Bl_{Z}(\P^2)}^{-1}$, and therefore induces an element in
-  $\Aut(\P^3, X_Z)$. This element is nontrivial if $g$ is, because
-  $\kappa: \Bl_{Z}(\P^2) \to X_Z$ is birational. The implication
-  follows.
+\begin{proof}
+  Since we have a birational isomorphism $\P^2 \dashrightarrow X_Z$, a non-trivial automorphism of $\P^2$ must induce a non-trivial automorphism of $X_Z$.
+  Hence the map of automorphism groups is injective.
 
+  To show that the image has finite index, let $\widetilde Y \to \Bl_Z\P^2$ be the minimal desingularization and set $Y = X_Z$.
+  Since $\Bl_Z\P^2$ has only $A_n$ singularities and such singularities are canonical, we conclude that
+  \[\tau^* \omega_{\Bl_Z\P^2} = \omega_{\widetilde Y}.\]
+  Consider the composite
+  \[\mu = \kappa \circ \tau \colon \widetilde Y \to Y.\]
+  Note that
+  \[ \mu^* \omega_Y = \omega_{\widetilde Y}.\]
+  We claim that $\mu \colon \widetilde Y \to Y$ is the minimal desingularization of $Y$.
 
-  The opposite implication
-  $\dim \Aut(\P^3,X_Z) > 0 \implies \dim \Aut(\P^2,Z) > 0$ is more
-  intricate. First, note that $\Bl_{Z}\P^2$ is a surface with finitely
-  many $A_n$ singularities, thanks to the curvilinearity of $Z$; let
-  $\tau: Y \to \Bl_{Z}\P^2$ denote its minimal desingularization.
-  Since $A_n$ singularities are canonical, we conclude that
-  $\tau^{*}(\omega_{\Bl_{Z}\P^2}) = \omega_{Y}$.  The composite
-  $\kappa':= \kappa \circ \tau: Y \to X_{Z}$ can only contract a curve
-  $C \subset Y$ to a singular point of $X_Z$.  This follows because   
-  $\kappa'^{*}\omega_{X_{Z}} = \omega_{Y}$. Thus,
-  $\kappa': \kappa'^{-1}(X_{Z}^{sm}) \to X_{Z}^{sm}$ is an
-  isomorphism. Our claim is that $\kappa':Y \to X_{Z}$ is also the
-  minimal desingularization of $X_Z$.
-
-  Since $Y$ is {\sl some} desingularization of $X_Z$,
-  $\kappa':Y \to X_{Z}$ factors through the minimal desingularization
-  $\widetilde{X_{Z}} \to X_{Z}$ of $X_{Z}$; let
-  $\alpha: Y \to \widetilde{X_{Z}}$ denote the induced map. $\alpha$
-  is a birational morphism between smooth surfaces. Therefore, if it
-  is not biregular, there must be a smooth $(-1)$ rational curve
-  $E \subset Y$ contracted by $\alpha$.  Since $\omega_{Y}$ is pulled
-  back from $\widetilde{X_{Z}}$, it follows that $\omega_{Y}|_{E}$ is
-  trivial. This, along with $E \cdot E = -1$, contradicts the
-  adjunction formula.  Hence $\alpha$ is an isomorphism.
-
-  Every automorphism of a surface lifts uniquely to its minimal
-  desingularization. Therefore, if $\dim \Aut(\P^3,X_Z) >0 $, it
-  follows that $\dim \Aut(Y) >0$. Under this assumption, let
-  $G \subset \Aut(Y)$ denote the connected component containing
-  identity.
-
-  The Picard group $\Pic(Y)$ is discrete, so the connected group $G$
-  acts trivially on $\Pic(Y)$.  In particular, the line bundle $L$ on
-  $\Bl_{Z}\P^2$ inducing the morphism $Y \to \Bl_{Z}\P^2 \to \P^2$ is
-  preserved by $G$. Therefore, $G$ induces an action on
-  $\P H^0(Y,L)= \P^2$.  This action renders the blow-down map
-  $\Bl_{Z}\P^2 \to \P^2$ $G$-equivariant, from which it follows that
-  the action of $G$ on $\P^2$ preserves the subscheme $Z$, which is
-  what we sought to show.
-
+  To see this, let $Y' \to Y$ be the minimal desingularization.
+  Since $\widetilde Y$ is non-singular, the birational morphism $\mu \colon \widetilde Y \to Y$ factors as a composite
+  \[ \widetilde Y \xrightarrow{\alpha} Y' \to Y.\]
+  Since $\alpha$ is a birational morphism between non-singular surfaces, it is a composite of blow-ups at points.
+  In particular, if it is not an isomorphism, then there exists a $(-1)$-curve $E \subset \widetilde Y$ contracted by $\alpha$.
+  But then we have 
+  \[ E \cdot \omega_{\widetilde Y} = E \cdot \mu^* \omega_Y = 0,\]
+  which contradicts the adjunction formula
+  \[ \left(\omega_{\widetilde Y}+ E\right) \cdot E = -2.\]
+  Thus, we deduce that $\alpha$ is an isomorphism, and hence $\widetilde Y \to Y$ is the minimal desingularization of $Y$.
   
+  Since every automorphism of a surface lifts uniquely to its minimal
+  desingularization, we have an injective map
+  \[ \Aut(\P^3, X_Z) \to \Aut(\widetilde Y).\]
+  It suffices to show that the image of $\Aut(\P^2, Z)$ has finite index in $\Aut(\widetilde Y)$.
+
+  Let $H \in \Pic(\widetilde Y)$ be the pullback of $\O(1)$ under the map $\widetilde Y \to \P^2$.
+  See that the orbit of $H$ under $\Aut(\widetilde Y)$ is finite.
+  Indeed, note that we have
+  \[ H^2 = 1 \text{ and } \omega_{\widetilde Y} \cdot H = -3, \]
+  and hence $(\omega_{\widetilde Y} + H)$ is orthogonal to $\omega_{\widetilde Y}$ under the intersection pairing.
+  Since $\omega_{\widetilde Y}$ has positive self-intersection, its orthogonal complement $\omega_{\widetilde Y}^\perp \subset \Pic(Y) = {\rm NS}(Y)$ is a negative definite lattice by the Hodge index theorem.
+  Thus, it has only finitely many elements of a given self-intersection.
+  Since any automorphism of $\widetilde Y$ preserves $\omega_{\widetilde Y}$ and the self-intersection number.
+  Therefore, under $\Aut(\widetilde Y)$, the orbit of $\omega_{\widetilde Y} + H$ and hence the orbit of $H$, must be finite.
+
+  Since the orbit of $H$ is finite, its stabilizer is a finite index subgroup.
+  We claim that this subgroup is precisely the image of $\Aut(\P^2, Z)$.
+  Let $\tau \colon \widetilde Y \to \widetilde Y$ be an automorphism fixing $H$.
+  The map $\beta \colon \widetilde Y \to \P^2$ is given by the complete linear system $|H|$.
+  Hence $\tau$ induces an automorphism $\tau' \colon \P^2 \to \P^2$.
+  It remains to show that $\tau'$ preserves $Z$.
+  Note that we have
+  \[ \beta_* \left(\omega_{\widetilde Y}^{-1}\right) = \omega^{-1}_{\P^2} \otimes \mathcal I_Z,\]
+  and hence
+  \[ \beta_* \left( \omega_{\widetilde Y}^{-1} (-3H) \right) = \mathcal I_Z.\]
+  Therefore, the induced map $\tau'$ preserves $\mathcal I_Z$, and hence $Z$.
 \end{proof}
 
 %-------------------------------------------------------------------------

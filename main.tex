@@ -21,6 +21,7 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{booktabs}
+\usepackage{subcaption}
 
 \newcommand{\incfig}[1]{%
     \def\svgwidth{\columnwidth}
@@ -1748,11 +1749,11 @@ which in turn gives a linear relation among the coefficients of the universal ex
 To get a useful relation, the group $A^4(BG)$ must be rich.
 In particular, we must take $G$ to be infinite; otherwise, $A^4(BG)$ is torsion, and we only get a congruence relation.
 
-If we wish to obtain a family over a schematic base, instead of $BG$, we can easily do so.
+If we wish to obtain a family over a schematic base instead of $BG$, we can easily do so.
 We consider an arbitrary scheme $B$ with the free action of $G$ such that the quotient $B/G$ is a scheme, and take the family to be
 \[ \pi \colon (X \times B)/G \to B/G,\]
 where $G$ acts on $X \times B$ diagonally.
-In particular, for $G = \G_m$---the only necessary case in our case---we can take $B$ to be an arbitrary $\G_m$-torsor (line bundle minus the zero section) over a scheme.
+In particular, for $G = \G_m$---the only group we use---we can take $B$ to be an arbitrary $\G_m$-torsor (line bundle minus the zero section) over a scheme.
 See \autoref{sec:schematicexample} for an example.
 
 To implement the strategy outlined above, we need some techniques to prove that a cubic surface $X$ with an infinite automorphism group does not lie in the closure of the orbit of a generic cubic surface.
@@ -1848,6 +1849,7 @@ For the proof, we need a lemma.
   \item $x_3x_0^2 = x_1^3 + x_2^3$ \quad $(D_4)$
   \end{enumerate}
 \end{proposition}
+For the reader's amusement, we include real pictures of the surfaces above in \autoref{fig:surfaces}.
 \begin{proof}
   Each surface $X$ in this list has a reductive stabilizer group $T$, and there exists a $T_0$-fixed hyperplane section $H$ such that the pair $(X, H)$ is $t$-semistable for some $0 < t \leq 3/7$.
 
@@ -1859,7 +1861,7 @@ For the proof, we need a lemma.
     \toprule
     $X$ & $\Aut(X)$ & $H$ & $t$\\
     \midrule
-    $x_0x_1x_3 = x_2^3$& $\G_m^2 \rtimes \Sigma_3$ & $x_2 = 0$ & All $0 < t < 1$\\
+    $x_0x_1x_3 = x_2^3$& $\G_m^2 \rtimes \Sigma_3$ & $x_2 = 0$ & All $t \in (0,1)$\\
     $x_3(x_0x_2-x_1^2) = x_0x_1^2$& $\G_m \rtimes \Sigma_2$ & $x_2 = 0$ & $1/5$ \\
     $x_3(x_0x_2-x_1^2) = x_0^2x_1$& $\G_m$ & $x_2 = 0$ & $1/3$\\
     $x_3x_0^2 = x_1^3 + x_2^3$& $\G_m \rtimes \Sigma_3$ & $x_3 = 0$ & $3/7$\\
@@ -1868,6 +1870,31 @@ For the proof, we need a lemma.
 \end{center}
 The statement now follows from  \autoref{cor:nolimit}.
 \end{proof}
+
+\begin{figure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{cubic3A2}
+    \caption{$3A_2$}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{cubicA3_2A1}
+    \caption{$A_3+2A_1$}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{cubicA4_A1}
+    \caption{$A_4+A_1$}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{cubicD4}
+    \caption{$D_4$}
+  \end{subfigure}
+  \caption{Some cubic surfaces with a $\G_m$-action that are not in the closure of the orbit of a generic cubic surface.}
+  \label{fig:surfaces}
+\end{figure}
 
 We now the reap the benefits.
 Let $X \subset \P^3$ be a cubic surface $X$ which does not lie in the closure of the orbit of a generic cubic surface.
@@ -1893,7 +1920,7 @@ Write $V^\vee$ for the $k$-vector space $\langle x_0, x_1, x_2,x_3 \rangle$.
 As a $\G_m$-representation, we have
 \[ V^\vee = \chi(w_1) \oplus \chi(w_2) \oplus \chi(w_3) \otimes \chi(w_4).\]
 The cubic $F$ defines a $\G_m$-invariant section of $\Sym^3 V^\vee \otimes \chi(-w)$.
-In other words, $X \subset \P V$ is the zero locus of the line bundle $\O(3) \otimes \pi^*\chi(-w)$ in the projective bundle $\pi \colon [\P V/\G_m] \to B\G_m$.
+Thus, we can view $X$ as the zero locus of the line bundle $\O(3) \otimes \pi^*\chi(-w)$ in the projective bundle $\pi \colon [\P V/\G_m] \to B\G_m$.
 By the adjunction formula, we get
 \[ \omega_X^{-1} = \O_{\P V}(1) \otimes \det V \otimes \pi^*\chi(w) |_X,\]
 and hence

@@ -203,7 +203,7 @@ If we have enough families, we get enough information to find all the coefficien
 For cubic surfaces, we construct more than enough families---there are 5
 coefficients to be determined and we construct 9 families. The redundancy
 serves as an extra check on the result.
-\begin{theorem}\label{thm:eqvclass}
+\begin{theorem}\label{thm:eqvclass2}
   Let $V$ be a 4-dimensional vector space and let $F$ be a general
   element of $\Sym^3 V$.
   The equivariant class of the $\GL(V)$-orbit closure $\Orb(F)$ of $F$
@@ -214,9 +214,9 @@ serves as an extra check on the result.
   where the \(c_i = c_i(V)\) are the Chern classes of the tautological vector
   bundle $V$.
 \end{theorem}
-The formula in \autoref{thm:eqvclass} appears to be different from the one
+The formula in \autoref{thm:eqvclass2} appears to be different from the one
 in \autoref{theorem:main}, but they are related by a simple change of
-variables.
+variables; see \autoref{proof:eqvclass2}.
 
 Most of the paper is devoted to constructing good families of cubic
 surfaces on which we can compute $\deg \mu$ and the Chern classes
@@ -2012,7 +2012,7 @@ Recall our notation $W$ for the $\GL V$ representation
 and
 \[\mathscr M = \left[ W \setminus \{0\} / \GL V \right]\]
 for the moduli stack of cubic surfaces.
-\begin{theorem}
+\begin{theorem}\label{thm:eqvclass}
   Let $X$ be a generic cubic surface.
   Then the class of $\Orb(X)$ in $A^4_{\GL V}(W) = A^4(\mathscr M)$ is given by
   \[
@@ -2046,16 +2046,53 @@ for the moduli stack of cubic surfaces.
 \begin{proof}
   Let $F_i$ for $i = 0,\dots,4$ be generic cubic forms in four variables.
   Consider the linear system of cubic surfaces
-  \[ u_0F_0 + \dots u_4F_4\]
+  \[ u_0F_0 + \dots + u_4F_4\]
   parametrized by $[u_0:\dots:u_4] \in \P^4$.
   More formally, consider the hypersurface
-  \[ \mathcal X \subset \P^3 \otimes \P^4\]
+  \[ \mathcal X \subset \P^3 \times \P^4\]
   defined by
-  \[ \mathcal X = V(u_0F_0 + \dots u_4F_4),\]
-  and the resulting family $\pi \colon \mathcal X \to \P^4$.
-  The dimension of the set of cubic surfaces with a positive dimensional automorphism group 
-  It is easy to check that $\pi$ is a good family
+  \[ \mathcal X = V(u_0F_0 + \dots + u_4F_4).\]
+  The second projection gives a family of cubic surfaces $\pi \colon \mathcal X \to \P^4$ and hence a map $\P^4 \to \mathscr M$.
+  By adjunction, we have
+  \[ \omega_\pi = \O(1) \boxtimes \O(1),\]
+  and hence
+  \[ \mathcal V = \pi_* \omega_\pi \cong \O(1)^{\oplus 4}.\]
+  Let $S \subset \P^3$ be a cubic surface.
+  By \autoref{thm:eqvclass}, if $S$ is generic, then the degree of the pull-back of $\Orb(S)$ to $\P^4$ is given by
+  \[ 1080 \cdot \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right) = 96120.\]
 \end{proof}
+
+\begin{corollary}
+  Let $X \subset \P^4$ be a general cubic 3-fold, and let $\pi \colon \mathcal X \to \P^4$ be the family of hyperplane sections of $X$.
+  Given a generic cubic surface $S$, there are $42120$ fibers of $\pi$ isomorphic to $S$.
+\end{corollary}
+\begin{proof}
+  Note that two cubic surfaces are isomorphic if and only if they are in the same $\PGL_4$ orbit.
+  Consider the pull-back of $\Orb(S)$ to the base $\P^4$ of the family.
+  By the genericity of $X$ and $S$, this pull-back consists of distinct reduced points corresponding to the points of $\Orb(S) \setminus \partial \Orb(S)$.
+  The statement now follows from \autoref{thm:eqvclass} and the computation of the right hand side, which we omit.
+\end{proof}
+
+\subsection{Proof of \texorpdfstring{\autoref{theorem:main}}{first theorem} from the introduction}
+%\label{proof:main}
+The theorem follows immediately from \autoref{thm:eqvclass} and \autoref{prop:goodisgood}.
+
+\subsection{Proof of \texorpdfstring{\autoref{thm:eqvclass2}}{second theorem} from the introduction}\label{proof:eqvclass2}
+Let $V$ be a 4-dimensional vector space.
+Set
+\[\mathscr N = \left[ \Sym^3V^\vee \setminus \{0\} / \GL V \right]. \]
+Let $\mathcal V$ denote the vector bundle on $\mathscr N$ corresponding to the standard representation of $\GL V$.
+The tautological non-zero section of $\Sym^3V^\vee$ on $\mathscr N$ defines a family of cubic surfaces
+\[ \pi \colon \mathscr X \to \mathscr N,\]
+and hence a map $\mathscr N \to \mathscr M$.
+Under this map, the pull-back of a generic orbit closure is a generic orbit closure.
+Note that $\mathscr X \subset \P \mathcal V$ is the zero locus of $\O(3)$.
+By adjunction, we have
+\[ \omega_\pi = \O(1) \otimes \det V |_{\mathscr X},\]
+and hence
+\[ \pi_* \omega_\pi = V^\vee \otimes \det V.\]
+\autoref{thm:eqvclass} gives the class of the pull-back of a generic orbit closure in terms of the Chern classes $v_i = c_i(V^\vee \otimes \det V)$.
+Writing them in terms of $c_i = c_i(V)$ yields the result.
 
 \appendix
 

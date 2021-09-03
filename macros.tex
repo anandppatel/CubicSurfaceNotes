@@ -2,7 +2,7 @@
 % Let us also define things only if they are previously undefined.
 
 % Common theorem-like environments
-\ifcsname theorem\endcsname{}\else\declaretheorem[parent=section]{theorem}\fi
+\ifcsname theorem\endcsname{}\else\declaretheorem[parent=subsection]{theorem}\fi
 \ifcsname corollary\endcsname{}\else\declaretheorem[sibling=theorem]{corollary}\fi
 \ifcsname lemma\endcsname{}\else\declaretheorem[sibling=theorem]{lemma}\fi
 \ifcsname proposition\endcsname{}\else\declaretheorem[sibling=theorem]{proposition}\fi

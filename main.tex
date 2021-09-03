@@ -262,6 +262,11 @@ authors during a meeting at Oberwolfach in 2017.
 \todo{More acknowledgements}
 
   
+
+
+%---------------------------------------------------------------------------
+
+
 \section{Preliminaries}
 \label{sec:good}
 
@@ -667,6 +672,7 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \end{proof}
 
 %-------------------------------------------------------------------------
+\section{Test families}\label{sec:testfamilies}
 
 \section{Test families}\label{sec:testfamilies}
 \subsection{Family $B_1$}
@@ -1553,7 +1559,7 @@ The intersection theory described in this subsection yields:
   \end{align}
 \end{lemma}
 
-\subsection{Construction of the family over $\hM_{0,7}$}
+\subsubsection{Construction of the family over $\hM_{0,7}$}
 \label{sec:constr-family-hM07}
 
 Let us proceed to the formal construction of our family, starting with
@@ -1776,7 +1782,7 @@ interest), we have moved it to \autoref{sec:goodnessA5}.
   \label{cor:good3} $\pi: \cX \to B_{3}$ is good.
 \end{corollary}
 
-\subsection{The bundle $\V$ and its Chern classes}
+\subsubsection{The bundle $\V$ and its Chern classes}
 \label{sec:bundle-v3}
 
 As usual, we must compute the Chern classes of
@@ -1808,7 +1814,7 @@ skip the details, and report the results:
   \autoref{lemma:monomials} to compute the monomials.
 \end{proof}
 
-\subsection{Third relation}
+\subsubsection{Third relation}
 \label{sec:third-relation}
 
 The degree of the natural map
@@ -1843,7 +1849,12 @@ contained in one of its ten lines.  Most effort is concentrated on
 resolving this issue.
 
 The surface $S$ has $10$ exceptional lines which we denote by
-$L_{1}, \dots, L_{10}$.  We let $S^{[2]}$ denote the Hilbert scheme of
+$L_{1}, \dots, L_{10}$.  Each line $L_{i}$ meets exactly three other
+(mutually disjoint) lines, and we let $T_{i} \subset S$ denote their
+union. Furthermore, we let $\tau_{i} \subset L_{i}$ denote
+$T_{i} \cap L_{i}$.
+
+We let $S^{[2]}$ denote the Hilbert scheme of
 pairs of points on $S$.  $S^{[2]}$ contains $10$ disjoint $\P^{2}$'s,
 $\Lambda_1, \dots, \Lambda_{10}$, namely the Hilbert schemes
 $L_{i}^{[2]}$ parametrizing degree $2$ subschemes contained in the
@@ -1861,15 +1872,6 @@ $$\mathcal{Z} \subset S^{[2]} \times S$$ the universal subscheme.
 
 
 
-%%%%%%%% diagram
-\begin{center}
-\begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
-  hook, "i"] \arrow[ur, dotted, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
-  "{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
-  "\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
-  S^{[2]}
-\end{tikzcd}
-\end{center}
 
 
 First, it is easy to see (we leave the verification to the reader)
@@ -1992,27 +1994,207 @@ each $F_{i}$, which in turn correspond to the ten lines $L_{i}$.
 \end{proposition}
 
 
+\begin{proof}
+  (1): The claim follows after understanding the geometry of the
+  blowup $\mathcal{Y} = \Bl_{F} \left( \td{S^{[2]}} \times S
+  \right)$. In order to do this, we must understand the normal bundle
+  $N_{F/ \td{S^{[2]}} \times S }$.  It suffices to focus
+  on the particular component $F_{i} = E_{i} \times L_{i}$.  Clearly,
+  $N_{F_{i}/ \td{S^{[2]}} \times S } = \td{\pi}_{1}^{*}
+  N_{E_{i}/\td{S^{[2]}}} \oplus \td{\pi}_{2}^{*}N_{L_{i}/S}$.  Here,
+  $\td{\pi}_{2}: E_{i} \times L_{i} \to L_{i}$ denotes the second
+  projection.
+
+  The component of $\mathcal{F}$ lying above $F_{i}$ is the
+  projectivization $\P N_{F_{i}/ \td{S^{[2]}} \times S }$; restricting
+  this to $L_{i} = \{e\} \times L_{i}$ yields
+  $\P (\O_{L_{i}} \oplus \O_{L_{i}}(-1))$.  Thus,
+  $\mathcal{F}_{e} \simeq \F_{1}$.  Furthermore, since
+  $\{e\} \times S \cap F_{i} = \{e\} \times L_{i}$ is a Cartier
+  divisor on $S = \{e\} \times S$, the proper transform of $S$ in
+  $\mathcal{Y}$ is just $S$ again.  Furthermore, it meets
+  $\mathcal{F}_{e} = \P (\O_{L_{i}} \oplus \O_{L_{i}}(-1)) \simeq
+  \F_{1}$ along the section corresponding to the summand
+  $N_{L_{i}/S} = \O_{L_{i}}(-1)$. Altogether, we get the description of $\mathcal{Y}_{e}$ provided in (1).
+
+  (2): This also follows from the geometry of the blow up described in
+  the proof of part (1).
+
+  (3): The lift $j: \td{\mathcal{Z}} \hookrightarrow \mathcal{Y}$ is
+  produced by using compatibility of blowups.  This implies that
+  \[j^{-1}(\mathcal{F}) = F \cap \td{\mathcal{Z}},\] since the latter
+is the exceptional divisor of the blowup (i.e. identity morphism)
+$\td{\mathcal{Z}} = \Bl_{F}(\td{\mathcal{Z}}) \to \td{\mathcal{Z}}$.
+But
+$F \cap \td{\mathcal{Z}} = \td{\pi}_{1}^{-1}(E) \cap
+\td{\mathcal{Z}}$.  Restricting attention to a specific point
+$e \in E_{i}$ implies
+$j(\td{\mathcal{Z}_{e}}) \subset \mathcal{F}_{e}$. Finally consider
+the intersection product of cycles:
+$[\td{\mathcal{Z}}] \cdot [\mathcal{Y}_{e}]$.  On the one hand, since
+$\td{\pi}_{1}: \td{\mathcal{Z}} \to \td{S^{[2]}} \times S$ is finite,
+flat and has degree $2$, this intersection product is $2$.  On the
+other hand, by part (1), it is equal to
+$[\td{\mathcal{Z}}] \cdot ([\mathcal{F}_{e}]+ [S]),$ and since
+$\td{\mathcal{Z}}_{e} \subset \mathcal{F}_{e}$, it follows that
+$[\td{\mathcal{Z}}] \cdot [S] = 0$, and therefore
+$\td{\mathcal{Z}} \cap S = \emptyset$, concluding part (3).
+
+(4): The restriction of $\eta$ to $j(\td{\mathcal{Z}})$ is the
+identity map $\td{\mathcal{Z}} \to \td{\mathcal{Z}}$.  Part (4)
+  immediately follows.
+
+\end{proof}
+
+
+Why have we created the variety $\mathcal{Y}$? Recall that we are
+trying to extend a family of good cubic surfaces over $U$ across the
+divisor $E \subset \td{S^{[2]}}$. If $e \in E_{i}$ is any point, then
+by \autoref{prop:geometry}, the fiber $\mathcal{Y}_{e}$ is a
+$2$-component surface $S \cup_{L_{i}} \F_{1}$, with the $\F_{1}$
+containing a distinquished length $2$ subscheme, namely
+$\mathcal{Z}_{e}$. However, there are three further distinguished
+points on $\F_{1}$, namely $\tau_{i} \subset L_{i} \subset \F_{1}$.
+Therefore, there is now a natural length $5$ subscheme
+\[\tau_{i} \cup \td{\mathcal{Z}}_{e} \subset \F_{1}.\]
+{\sl The idea now is to extend our good family which lives over $U$ by
+  assigning to $e \in E_{i}$ the cubic surface which is the
+  anticanonical image of
+  $\Bl_{\tau_{i} \cup \td{\mathcal{Z}}_{e}}\F_{1}$.}
+
+First, we must understand how $\td{\mathcal{Z}}_{e}$ is situated
+inside $\F_{1}$.
+
+\begin{proposition}
+  \label{prop:nodirectrix} Maintain the setting above.  The length two
+  subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not entirely
+  contained in the directrix $D$ of $\F_{1}$.
+\end{proposition}
+
+\begin{proof}
+  The main idea is to unravel what a point $e \in E_{i}$ represents.
+  The point $\beta(e) \in S^{[2]}$ represents a length two subscheme
+  of $L_{i}$ -- in fact, it is naturally identified with
+  $\td{\mathcal{Z}}_{e}$. Let us first identify the $2$-dimensional
+  vector space $N_{\Lambda_{i}/S^{[2]}}\big|_{\beta(e)}$.  We leave it
+  to the reader to check that
+  $N_{\Lambda_{i}/S^{[2]}} = N_{L_{i}/S}^{[2]} \simeq
+  \O_{L_{i}}(-1)^{[2]}$.  So,
+  \begin{align}
+    \label{eq:N2}
+    N_{\Lambda_{i}/S^{[2]}}\big|_{\beta(e)} = H^{0}\left(\td{\mathcal{Z}}_{e}, N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right). 
+  \end{align}
+  Thus, the point $e \in E_{i}$ corresponds to a $1$-dimensional
+  linear subspace, denoted
+  \[\langle e \rangle \subset H^{0}\left(\td{\mathcal{Z}}_{e},
+      N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right).\]
+
+  In fact, since $N_{E_{i}/\td{S^{[2]}}}$ restricts to $\O(-1)$ on the
+  $\P^{1}$ fibers of $\beta: E_{i} \to \Lambda_{i}$, we can and will
+  identify this $1$-dimensional subspace with
+  $N_{E_{i}/\td{S^{[2]}}}\big|_{e}$.
+
+  Tracing through the construction, the inclusion
+  $j: \td{\mathcal{Z}}_{e} \hookrightarrow \mathcal{F}_{e} =
+  \P(N_{E_{i}/\td{S^{[2]}}}\big|_{e} \oplus N_{L_{i}/S})$
+  (\autoref{prop:geometry}) is induced by the natural inclusion
+  \begin{align}
+    \label{eq:naturalinclusion}
+    \O_{\td{\mathcal{Z}}_{e}} \otimes N_{E_{i}/\td{S^{[2]}}}\big|_{e} \hookrightarrow \left(\O_{\td{\mathcal{Z}}_{e}} \otimes N_{E_{i}/\td{S^{[2]}}}\big|_{e} \right) \oplus N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}
+  \end{align}
+  induced by $(\id, \epsilon)$, where $\epsilon$ is obtained by taking
+  the composite
+  \[N_{E_{i}/\td{S^{[2]}}}\big|_{e} \hookrightarrow
+    H^{0}\left(\td{\mathcal{Z}}_{e},
+      N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right) \to
+    N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\] (the latter being
+  evaluation) and tensoring with $ \O_{\td{\mathcal{Z}}_{e}}$. Note
+  that the latter evaluation map is an isomorphism of $k$-vector
+  spaces.
+
+  The proposition is equivalent to the claim that the composition of
+  the inclusion \eqref{eq:naturalinclusion} with the projection to the
+  factor $ N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}$ is not identically
+  $0$.  It can only be zero if the original $1$-dimensional subspace
+  $\langle e \rangle$ was $0$, which is absurd.  The proposition
+  follows.
+\end{proof}
+
+Next, we define a line bundle on $\mathcal{Y}$ which will induce a
+(rational map) to our family of cubic surfaces.   Let
+\begin{align}
+  \label{eq:linebundle}
+  \mathcal{L} :=\eta^{*} \left( \td{\pi}_{2}^{*}\omega_{S}^{-1} \right)(-2\mathcal{F})\otimes \eta^{*}\td{\pi}_{1}^{*}\O_{\td{S^{[2]}}}(E).
+\end{align}
+Here again, $\td{\pi}_{1}, \td{\pi}_{2}$ are the projections of
+$\td{S^{[2]}} \times S$ to respective factors. The specific reason for
+choosing this line bundle will be elucidated as we go, but first we
+identify the restriction of $\mathcal{L}$ to a fiber
+$\mathcal{Y}_{e}$, $e \in E_{i}$.
+
+\begin{proposition}
+  \label{prop:LYe}
+  Let $e \in E_{i}$ be an arbitrary point, $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.  Then
+  \begin{enumerate}
+  \item $\mathcal{L}|_{S} \simeq \O_{S}(T_{i})$
+  \item $\mathcal{L}|_{\F_{1}} \simeq \O_{\F_{1}}(3L_{i}-D)$.
+  \end{enumerate}
+  Furthermore, the restriction map
+  \begin{align}
+    \label{eq:restrL}
+    H^{0}(\mathcal{Y}_{e}, \mathcal{L}|_{\mathcal{Y}_{e}}) \to H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D))
+  \end{align}
+  is an isomorphism onto the $6$ dimensional vector space
+  $H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal I_{\tau_{i}}).$
+\end{proposition}
+
+Here, $D \subset \F_{1}$ denotes the directrix curve.
+
+\begin{proof}
+  The assertion about the restriction map follows from the
+  identifications (1) and (2), after noting that $\O_{S}(T_{i})$ has a
+  unique global section vanishing simply along the three disjoint
+  lines $T_{i} \subset S$.
+
+  By the definition of $\mathcal{L}$ and \autoref{prop:geometry} (1),
+  we see that
+  $\mathcal{L}|_{S} = \omega_{S}^{-1} \otimes \O_{S}(-2L_{i})$. Now
+  since $c_{1}( \omega_{S}^{-1}) = T_{i} + 2L_{i}$, assertion (1) follows.
+
+  
+\end{proof}
+
+
+
+
+
+So, let $\mathcal{Y}' = \Bl_{\td{\mathcal{Z}}}\mathcal{Y}$ and let
+$\pi': \mathcal{Y}' \to \td{S^{[2]}}$ denote the obvious
+map. Furthermore, let $\mathcal{F}' \subset \mathcal{Y}'$ denote the
+preimage of $\mathcal{F} \subset \mathcal{Y}$ under the blowdown;
+$\mathcal{F}'$ is a Cartier divisor in $\mathcal{Y}'$. Under $\pi'$,
+$\mathcal{Y}'$ is a family of surfaces which, over
+$U \subset \td{S^{[2]}}$ is a good family of cubic surfaces, and over
+a point $e \in E_{i}$ has $2$-component fiber
+\begin{align}
+  \label{eq:Yprimefiber}
+  S \cup_{L_{i}} \Bl_{\td{\mathcal{Z}}_{e}} \F_{1}.
+\end{align}
+Here, ``$\cup_{L_{i}}$'' emphasizes that the surfaces meet
+transversely along $L_{i}$ according to the description found in
+\autoref{prop:geometry} part (1).
+
+
+
+
+
+
+
+
+
+
 %up to here so far%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-We are close to describing our good family of cubic surfaces over
-$\widetilde{S^{[2]}}$.  We first let
-\begin{align}
-  \label{eq:XB3}
-  Y' := \Bl_{\widetilde{Z}}Y
-\end{align}
-denote the blow-up,
-\begin{align}
-  \label{eq:phiB3}
-  \varphi: Y' \to Y
-\end{align}
-the blow-down map, and
-\begin{align}
-  \label{eq:piB3}
-  \pi: Y' \to \widetilde{S^{[2]}}
-\end{align}
-the natural projection. Finally, let $F' \subset Y'$ denote the
-exceptional divisor $\varphi^{-1}(F)$.
 \begin{proposition}
   \label{proposition:resolv-b3}
   There exists a line bundle $\mathcal{L}$ on $Y'$ which induces a
@@ -2029,6 +2211,9 @@ exceptional divisor $\varphi^{-1}(F)$.
 
 (This one I still am confident in -- one simple blow-up resolves the situation.)
 
+
+\subsubsection{Relation $B_4$}
+\label{sec:relation-b_4}
 
 The relation we get from family $B_3$ ultimately appears to be:
 \begin{align}
@@ -2411,241 +2596,8 @@ Writing them in terms of $c_i = c_i(V)$ yields the result.
 
 \appendix
 
-\section{Existance of a universal formula}
 
-In this section, we recall statements from equivariant intersection
-theory that guarantee the existence of the formula \eqref{eq:P}. On
-this first pass, we will let $\mathbb{P}(V)$ denote the projective
-bundle of 1-dimensional subspaces in the fibers of $V$ and correct for
-the sign later if people want to work with duals.
-
-\begin{lemma}
-\label{lem:Q_Zclass}
-Let $W$ be an $r+1$-dimensional vector space and
-$Z\subset \operatorname{Sym}^d W^{\vee}$ be a subvariety. Then, the
-equivariant class $[\mathbb{P}Z]$ inside the equivariant Chow ring
-\begin{align}
-  A^{\bullet}(\mathbb{P}_{GL_{r+1}}(\operatorname{Sym}^d W^{\vee}))\cong \frac{\mathbb{Z}[H, t_0,\ldots,t_{r}]^{S^{r+1}}}{\left(\displaystyle\prod_{\substack{i_0+\cdots+i_{r}=d\\ i_0,\ldots,i_r\geq 0}}(H-i_0 t_0 - \cdots - i_r t_r)\right)}\label{eq:equivariantSym}
-\end{align}
-can be expressed as
-\begin{align*}
-    Q_Z(t_0-\frac{H}{d},\ldots,t_{r}-\frac{H}{d}),
-\end{align*}
-for polynomial homogeneous $Q_Z$ with degree equal to the codimension
-of $Z$.
-\end{lemma}
-
-The variables $t_i$'s in \autoref{lem:Q_Zclass} can either be viewed
-as chern roots or via the inclusion into the torus-equivariant Chow
-ring
-\begin{align*}
-  A^{\bullet}(\mathbb{P}_{T}(\operatorname{Sym}^d W^{\vee}))\cong \frac{\mathbb{Z}[H, t_0,\ldots,t_{r}]}{\left(\displaystyle\prod_{\substack{i_0+\cdots+i_{r}=d\\ i_0,\ldots,i_r\geq 0}}(H-i_0 t_0 - \cdots - i_r t_r)\right)}
-\end{align*}
-where $T\subset GL_{r+1}$ is the standard torus.
-
-\begin{proof}[Proof of \autoref{lem:Q_Zclass}]
-  The formula for the Chow ring of
-  $A^{\bullet}(\mathbb{P}_{GL_{r+1}}(\operatorname{Sym}^d W^{\vee}))$
-  in \eqref{eq:equivariantSym} follows from the Chow ring of a
-  projective
-  bundle. %applied to the construction of an equivariant Chow ring,
-          %didn't find a quick reference for this than other people
-          %saying its obvious
-
-  The formula for $[\mathbb{P}Z]$ in terms of a polynomial $Q_Z$
-  follows from \cite[Theorem 6.1]{FNR05}, where $Q_Z$ is the formula
-  for the class of $[Z]$ in
-  $A^{\bullet}_{GL_r+1}(\operatorname{Sym}^d W^{\vee})\cong
-  \mathbb{Z}[H, t_0,\ldots,t_{r}]$.
-\end{proof}
-
-\begin{proposition}
-  In the context of \autoref{def:goodfamily} a universal polynomial
-  $P$ as in \eqref{eq:P} exists.
-\end{proposition}
-
-\begin{proof}
-  Following the setup in \eqref{eq:P}, we start with a good family
-  $\pi: X\to B$ and let $V=\pi_{*}\omega_{X/B}^{-1}$. Since each fiber
-  of $X\to B$ is embedded into $\mathbb{P}(V)$ as a cubic surface via
-  the anticanonical map, we get a section $\sigma$ of the bundle
-  $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})\to B$. The section
-  $\sigma$ maps each point $b$ to the equation of the cubic surface
-  $X_b$ lying above it.
-
-  Inside of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, the section
-  $\sigma$ is induced by the inclusion of a line bundle
-  $L=\det(V^{\vee})\hookrightarrow \operatorname{Sym}^3
-  V^{\vee}$. {\color{red} Check this, the main thing we need is that
-    the line bundle can be expressed in terms of $c_1(V)$ only. I
-    don't have a clean proof yet.}
-
-  Now, we apply \autoref{lem:Q_Zclass}, where
-  $Z\subset \operatorname{Sym}^3(\mathbb{C}^{4\ast})$ is the $GL_4$
-  orbit closure of a general degree 3 homogenous equation in 4
-  variables. The vector bundle $V\to B$ induces a map
-  $B\to [\operatorname{pt}/GL_4]$ under which
-  $[\operatorname{Sym}^3(\mathbb{C}^{4\ast})/GL_4]$ pulls back to
-  $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$. Under the pullback the
-  equivariant class of the projectivized orbit closure $[\mathbb{P}Z]$
-  pulls back to the class of the relative orbit closure
-  $\mathcal{Z}\subset \mathbb{P}(\operatorname{Sym}^3 V^{\vee})$,
-  where each fiber of $\mathcal{Z}\to B$ is given by $Z$. By
-  \autoref{lem:Q_Zclass}, the class of $\mathcal{Z}$ depends only on
-  the chern classes of $V$.
-
-  The polynomial $P$ in \eqref{eq:P} is the intersection number of
-  $\sigma$ with the class of $\mathcal{Z}$. The class of $\sigma$, the
-  Chow ring of $\mathbb{P}(\operatorname{Sym}^3 V^{\vee})$, and the
-  class of $\mathcal{Z}$ are depend only on the chern classes of
-  $V$. Thus, the final intersection number depends only on the chern
-  classes of $V$ as desired.  {\color{red} I don't think it'll be any
-    harder to actually determine the formula of $P$ in \eqref{eq:P} in
-    terms of the equivariant class of an orbit closure of a cubic
-    surface, but we don't seem to need the formula. The point is that
-    $P$ and the equivariant class of the orbit closure are equivalent
-    by some substitution.}
-\end{proof}
-
-\section{Congruence relations from hypersurfaces with finite automorphisms}
-As another another check for the class, I think we can get congruence
-relations from isotrivial families of hypersurfaces with finite linear
-automorphisms. This is the same idea as the $3A_2$ family, except the
-condition holds in $H_{G}(\operatorname{pt})$ with $G$ a finite group
-instead of $\mathbb{G}_m$.
-
-\begin{proposition}
-\label{prop:isotrivial2}
-Let $X\subset \mathbb{P}^r$ be a hypersurface with a linear
-automorphism group $G\subset \operatorname{Aut}(X)\subset
-GL_{r+1}$. Let $Q$ be the polynomial $Q_Z$ in \autoref{lem:Q_Zclass}
-where $Z$ \emph{any} equivariant cycle in the space of hypersurfaces
-not containing $X$. Then, under the linear representation
-$G\hookrightarrow GL_{r+1}$, $Q$ is sent to zero under the
-characteristic class map:
-\begin{align*}
-    A^{\bullet}_{GL_{r+1}}\cong \mathbb{Z}[t_0,\ldots,t_{r}]\to A^{\bullet}_{G}(\operatorname{pt}). 
-\end{align*}
-\end{proposition}
-
-% \begin{proof}
-%   Continue: the key point is that the twisted family of
-%   hypersurfaces comes from descending a trivial section of Sym^d of
-%   the universal vector bundle pulled back from BG\to BGL_{r+1}, so
-%   intersecting this section with the orbit closure picks out
-%   constant term of the projective equivariant class. This constant
-%   term is exactly $Q$ in the proposition.
-
-%   This is just the general construction of the twisted family: Given
-%   a hypersurface $X\subset \mathbb{P}^r$ with a finite linear
-%   automorphism group $G=\operatorname{Aut}(X)\subset GL_{r+1}$, we
-%   want to construct a twisted version of $X$ over $BG$. To this end,
-%   take
-%   $X\times ((\mathbb{C}^{r+1})^N\backslash Z)\subset \mathbb{P}^r
-%   \times ((\mathbb{C}^{r+1})^N\backslash Z)$, where $N>>0$ and $Z$
-%   is some closed set of high codimension. Here $G$ acts on $X$ and
-%   $\mathbb{P}^{r+1}$ by linear automorphisms and on each factor of
-%   $\mathbb{C}^{r+1}$ via $GL_{r+1}$. The closed set $Z$ is chosen to
-%   $G$ acts freely on $(\mathbb{C}^{r+1})^N\backslash Z$.
-
-%   Taking the quotient by $G$ yields a nontrivial family of
-%   hypersurfaces
-%   $\mathcal{X}\to ((\mathbb{C}^{r+1})^N\backslash Z)/G$ inside the
-%   projectivization of some vector bundle $W$ over
-%   $((\mathbb{C}^{r+1})^N\backslash Z)/G$.
-% \end{proof}
-\begin{example}
-  \autoref{prop:isotrivial2} specializes to
-  \autoref{sec:isotrivial3A2} when applied to the cubic surface
-  $X^3=YZW$.
-\end{example}
-
-\begin{example}
-  Every coefficient of every class of a quartic plane curve we
-  computed in \cite{LPT19} is divisible by 4 (even after dividing by
-  the automorphism groups). I think this is a consequence of the
-  Fermat quartic having automorphism group containing
-  $(\mu_4)^3\hookrightarrow GL_3$. Similarly, every equivariant class
-  of a cubic curve orbit is divisible by 3 in \cite[Appendix
-  C]{LPT19}, and this should follow from the Fermat cubic. We will try
-  to prove this in \autoref{prop:divd} below.
-\end{example}
-
-Given the example, we will try to flesh out the application of
-\autoref{prop:3A2} to the Fermat hypersurface applied to the case
-$G=(\mu_d)^{r+1}\subset GL_{r+1}$. In general, I don't know how to
-compute the map
-$A^{\bullet}_{GL_{r+1}}\to A^{\bullet}_{G}(\operatorname{pt})$ (google
-``characteristic class of a linear representation'').
-
-\subsection{Fermat hypersurfaces}
-A Fermat hypersurface $X\subset \mathbb{P}^r$ of degree $d$ has a
-linear automorphism group containing $(\mu_d)^{r+1}$. {\color{red} You
-  can also permute the coordinates, curious what condition in
-  $A^{\bullet}_{S_{r+1}}$ that gives...}
-
-\begin{lemma}
-\label{lem:mu_d}
-Under the inclusion $\mu_d\hookrightarrow \mathbb{G}_m$, the map in
-group cohomology is given by
-\begin{align*}
-  \mathbb{Z}[t]=A^{\bullet}_{\mathbb{G}_m}(\operatorname{pt})\to A^{\bullet}_{\mu_d}(\operatorname{pt})=\mathbb{Z}[t]/(dt)
-\end{align*}
-\end{lemma}
-
-\begin{proof}
-  The ring structure of $A^{\bullet}_{\mu_d}(\operatorname{pt})$ is
-  given by the cohomology ring of the Lens space
-  \href{https://mathoverflow.net/questions/133974/reference-for-ring-structure-on-group-cohomology}{(mathoverflow
-    link)}. To compute the map, we take an approximation of
-  $B\mathbb{G}_m$ and $B\mu_d$ to compute the map in
-  $A^{1}_{\mathbb{G}_m}(\operatorname{pt})\to
-  A^{1}_{\mu_d}(\operatorname{pt})$. This reduces to a familiar
-  geometric example of a cone over a rational normal curve.
-
-We approximate using the map $B\mu_d\to B\mathbb{G}_m$ using
-\begin{align*}
-  \pi: S=\operatorname{Spec}(\mathbb{C}[x^d, x^{d-1}y,\ldots,y^d])=(\mathbb{A}^2\backslash\{0\})/\mu_d\to (\mathbb{A}^2\backslash\{0\})/\mathbb{G}_m=\mathbb{P}^1. 
-\end{align*}
-The map $\pi$ is the projection of the cone over a degree $d$ rational
-normal curve (minus the origin) onto the rational normal curve. The
-content of \autoref{lem:mu_d} is that a ruling of the cone $S$ over a
-rational normal curve generates the class group of the cone.
-
-This is true because $S\backslash L\cong \mathbb{A}^2$ where $L$ is a
-ruling. (The more nontrivial fact is that
-$A^{1}(S)\cong \mathbb{Z}/d\mathbb{Z}$, so $[L]$ is exactly
-$d$-torsion. This is implied by the cohomology of the lens space
-above, but one can probably prove it directly. For example, $[L]$ is
-nontrivial in the class group because it cannot be cut out by a single
-equation (since the tangent space at the cone is at least
-3-dimensional for $d>1$).)
-\end{proof}
-
-\begin{proposition}
-\label{prop:divd}
-If $Q$ is the polynomial associated to the equivariant class of
-\emph{any} equivariant class in the space of degree $d$ hypersurfaces
-not containing the Fermat hypersurface, then every coefficient of $Q$
-is divisible by $d$.
-\end{proposition}
-
-\begin{proof}
-  This follows from \autoref{lem:mu_d} and \autoref{prop:isotrivial2}.
-\end{proof}
-
-\begin{example}
-  For a general cubic surface, our current guess is that:
-$$Q = 25920 c_1^4+12960 c_1^2 c_2-6480 c_1 c_3+9720 c_4$$
- and
-$$P = 1080 c_1^2 c_2-1080 c_1 c_3+9720 c_4,$$
-where the $P$ and $Q$ are related by
-\begin{align*}
-  P(t_0,t_1,t_2,t_3) &= Q(t_0 - \frac{t_0+\cdots+t_3}{3},\ldots, t_3 - \frac{t_0+\cdots+t_3}{3})\\
-  P(t_0 - (t_0+\cdots+t_3), \ldots, t_3 - (t_0+\cdots+t_3)) &= Q(t_0,\ldots,t_3)
-\end{align*}
-The coefficients of $Q$ are all divisible by 3 as predicted.
-\end{example}
+\appendix
 
 \section{The goodness of the $A5$ cubic surface}
 \label{sec:goodnessA5}

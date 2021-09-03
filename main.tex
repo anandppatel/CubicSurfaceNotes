@@ -26,10 +26,12 @@
     \import{./figures/}{#1.pdf_tex}
 }
 
+\usepackage{showlabels}
 
 \linespread{1.1}
 \usepackage[all]{xy}
 \usepackage{eucal}
+
 
 \title{Counting Cubic Surfaces}
 \author{Anand Deopurkar, Anand Patel
@@ -1816,7 +1818,7 @@ $\mathcal{Y}_{e}$, $e \in E_{i}$.
     H^{0}(\mathcal{Y}_{e}, \mathcal{L}|_{\mathcal{Y}_{e}}) \to H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D))
   \end{align}
   is an isomorphism onto the $6$ dimensional vector space
-  $H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \cI_{\tau_{i}}).$
+  $H^{0}\left(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal{I}_{\tau_{i}}\right).$
 \end{proposition}
 
 Here, $D \subset \F_{1}$ denotes the directrix curve.
@@ -1832,17 +1834,85 @@ Here, $D \subset \F_{1}$ denotes the directrix curve.
   $\mathcal{L}|_{S} = \omega_{S}^{-1} \otimes \O_{S}(-2L_{i})$. Now
   since $c_{1}( \omega_{S}^{-1}) = T_{i} + 2L_{i}$, assertion (1) follows.
 
-  
+  Assertion (2) requires us to identify how
+  $\O_{\mathcal{Y}}(\mathcal{F})$ restricts to $\mathcal{F}_{e}$. Let
+  $\mathcal{S} \subset \mathcal{Y}$ denote the proper transform of
+  $E \times S$ in $\mathcal{Y}$; note that
+  $\eta: \mathcal{S} \to E \times S$ is an isomorphism.  Then on
+  $\mathcal{Y}$ we get an equality of divisors:
+  \[\mathcal{F} = \eta^{*}\td{\pi}_{1}^{*}(E) - \mathcal{S}.\]
+  Restricting both sides to $\mathcal{F}_{e}$, while using
+  \autoref{prop:geometry} part (1), we get:
+  \[\O_{\F_{1}}(\mathcal{F}) = \O_{\F_{1}}(-L_{i}).\] Finally, letting
+  $R \subset \F_{1}$ denote a ruling line (so $R+D = L_{i}$), we get
+  that
+  $\eta^{*}\td{\pi}_{2}^{*}(\omega_{S}^{-1})|_{\F_{1}} =
+  \O_{\F_{1}}(R)$ because $\omega_{S}^{-1}$ has degree $1$ on $L_{i}$.
+  Now, we simply use the definition of $\mathcal{L}$ to deduce
+  assertion (2).
 \end{proof}
 
+Finally, we set
+\begin{align}
+  \label{eq:V4}
+  \mathcal{W} := (\td{\pi}_{1} \circ \eta)_{*}\left(\mathcal{L} \otimes \mathcal{I}_{\td{\mathcal{Z}}}\right).
+\end{align}
 
+By combining \autoref{prop:geometry}, \autoref{prop:nodirectrix}, and
+\autoref{prop:LYe}, we leave it to the reader to check that:
 
+\begin{enumerate}\label{propertieskappa}
+\item $\mathcal{W}$ is a rank $4$ vector bundle on $\td{S^{[2]}}$, and
+\item for each $e \in E_{i}$, the base scheme of
+  $\mathcal{W}|_{e} \subset
+  H^{0}\left(\mathcal{Y}_{e},\mathcal{L}_{\mathcal{Y}_{e}}\right)$ is
+  the scheme $T_{i} \cup \td{\mathcal{Z}}_{e}$.
+\end{enumerate}
 
+The natural evaluation map
+$(\td{\pi}_{1} \circ \eta)^{*}\mathcal{W} \to \mathcal{L}$ on
+$\mathcal{Y}$ induces a rational map
+\begin{align}
+  \label{eq:kappa4}
+  \kappa: \mathcal{Y} \dashrightarrow \P \mathcal{W}.
+\end{align}
 
+The image of $\kappa$, by which we mean the closure of the image of
+the locus on which $\kappa$ is defined, will be denoted
+\[\mathcal{X} \subset \P \mathcal{W}, \] and $\pi: \mathcal{X} \to \td{S^{[2]}}$ the natural map. By \autoref{prop:LYe}, if
+$e \in E_{i}$ is any point, the surface $\mathcal{X}_{e}$ is the
+anti-canonical image of the surface
+$\Bl_{\td{\mathcal{Z}}_{e} \cup \tau_{i}} \F_{1}$.  Note that
+$\mathcal{X}_{e}$ is singular, because the proper transform of $L_{i}$
+is a contracted $(-2)$-curve. We leave it to the reader to prove the
+following, using \autoref{prop:geometry} (3) and (4), and
+\autoref{prop:nodirectrix}:
 
+\begin{proposition}
+  \label{prop:good4} The family $\pi: \mathcal{X} \to \td{S^{[2]}}$ is
+  good.
+\end{proposition}
 
+\begin{proof}
+  Omitted.
+\end{proof}
 
+The attentive reader will ask: what role does the twist by
+$\O_{\td{S^{[2]}}}(E)$ in the definition of $\mathcal{L}$
+\eqref{eq:linebundle} play? (It has played no role in the analysis up
+to this point.)  The next proposition explains this:
 
+\begin{proposition}
+  \label{prop:whyE} Maintain the setting above.  Then
+  $\mathcal{W} = \pi_{*}\omega_{\pi}$, i.e. $\mathcal{W} = \V$.
+\end{proposition}
+
+\begin{proof}
+  The indeterminacy locus of $\kappa$ is a codimension $2$ subscheme
+  of $\mathcal{Y}$, therefore, it makes sense to pull back line
+  bundles under $\kappa$.  The content of the proposition is to show that:
+  \[ \mathcal{L} = \kappa^{*}\left( \omega_{\pi} \right).\]
+\end{proof}
 
 
 

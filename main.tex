@@ -1904,14 +1904,15 @@ to this point.)  The next proposition explains this:
 
 \begin{proposition}
   \label{prop:whyE} Maintain the setting above.  Then
-  $\mathcal{W} = \pi_{*}\omega_{\pi}$, i.e. $\mathcal{W} = \V$.
+  $\mathcal{W} = \pi_{*}\left( \omega_{\pi}^{-1} \right)$,
+  i.e. $\mathcal{W} = \V$.
 \end{proposition}
 
 \begin{proof}
   The indeterminacy locus of $\kappa$ is a codimension $2$ subscheme
   of $\mathcal{Y}$, therefore, it makes sense to pull back line
   bundles under $\kappa$.  The content of the proposition is to show that:
-  \[ \mathcal{L} = \kappa^{*}\left( \omega_{\pi} \right).\]
+  \[ \mathcal{L} = \kappa^{*}\left( \omega_{\pi}^{-1} \right).\]
 
   To see this, first note that these two line bundles agree over the
   open set $U \times S \subset \mathcal{Y}$.  The complement
@@ -1921,10 +1922,10 @@ to this point.)  The next proposition explains this:
   $\mathcal{F} + \mathcal{S}$.)
 
    We conclude there is a relationship of the form
-  \[c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}
-      \right) \right) = a\mathcal{F} + b\mathcal{S}.\] We must show
-  that $a = b = 0$.  To do so, we will restrict this relation to
-  certain subschemes of $\mathcal{Y}$.
+   \[c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left(
+         \omega_{\pi}^{-1} \right) \right) = a\mathcal{F} +
+     b\mathcal{S}.\] We must show that $a = b = 0$.  To do so, we will
+   restrict this relation to certain subschemes of $\mathcal{Y}$.
 
   First, choose any point $e \in E_{i}$, and restrict the relation to
   the surface $\mathcal{F}_{e} \simeq \F_{1}$.  The left hand side
@@ -1932,7 +1933,7 @@ to this point.)  The next proposition explains this:
   $\O\left( (b-a)L_{i} \right)$.  Thus, $a=b$.
 
   Thus,
-  $c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}
+  $c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}^{-1}
     \right) \right)$ is the pullback of $\O_{\td{S^{[2]}}}(aE_{i})$
   for some integer $a$, and we must prove that $a = 0$.  In order to
   do this, we will restrict to a different surface.  First, choose a
@@ -1945,58 +1946,67 @@ to this point.)  The next proposition explains this:
   $\mathcal{F}_{P} := \mathcal{F} \cap (\td{\pi_{1}} \circ
   \eta)^{-1}(P)$; the map $\eta$ expresses $\mathcal{F}_{P}$ as a
   $\P^{1}$-bundle over $P \times L$, namely the projectivization
-  $\P \left( \O_{P}(-1) \oplus \O_{L_{i}}(-1) \right).$
+  $\P \left( \O_{P}(-1) \oplus \O_{L_{i}}(-1) \right).$ (Here and in
+  what follows, we will suppress pull-back notation when we pull line
+  bundles back along the two projection maps
+  $P \times L_{i} \to L_{i}$.)
+
+  With regard to the $\P^{1}$-bundle structure of
+  $\eta: \mathcal{F}_{P} \to P \times L_{i}$, the divisor
+  $\mathcal{D} \subset \mathcal{F}_{P}$ is a section, corresponding to
+  the inclusion of the first factor
+  \[\O_{P}(-1) \hookrightarrow \O_{P}(-1) \oplus \O_{L_{i}}(-1). \]
+
+  Therefore, letting $\O_{\mathcal{F}}(1)$ denote the natural line
+  bundle of the projective bundle $\mathcal{F}$, this translates into
+  $\O_{\mathcal{F}}(-1)|_{\mathcal{D}} = \O_{P}(-1)$. (Here we are
+  identifying $\mathcal{D}$ with $P \times L_{i}$ in the natural way.)
+  As is generally true about blow-ups, we know that
+  $\O_{\mathcal{Y}}(\mathcal{F})\big|_{\mathcal{F}} =
+  \O_{\mathcal{F}}(-1)$, and therefore,
+  \begin{align}\label{eq:FtoD}
+    \O_{\mathcal{Y}}(\mathcal{F}) \big|_{\mathcal{D}} = \O_{P}(-1).
+  \end{align}
+
+  Now we can identify $\mathcal{L}|_{\mathcal{D}}$: The three factors
+  of $\mathcal{L}$ are (suppressing pullbacks):
+  $\omega_{S}^{-1}, \O_{\mathcal{Y}}(\mathcal{F}),$ and $\O(E)$. These
+  three restrict to $\mathcal{D}$ as: $\O_{L_{i}}(1), \O_{P}(-1),$ and
+  $ \O_{P}(-1)$ respectively, thanks to \eqref{eq:FtoD}, and the fact
+  that $\O_{E}(E) = \O_{E}(-1)$.  Thus,
+  \begin{align}
+    \label{eq:LtoD}
+    \mathcal{L}|_{\mathcal{D}} = \O_{P}(1) \otimes \O_{L_{i}}(1).
+  \end{align}
+
+  Next, we identify $\kappa^{*}(\omega_{\pi})|_{\mathcal{D}}$.
+  Restricting attention over $P$, the map
+  $\kappa: \mathcal{F}_{P} \dashrightarrow \mathcal{X}_{P}$ is still
+  defined outside a codimension $2$ subscheme of $\mathcal{F}_{P}$.
+  The pullback of forms map
+  $\kappa^{*}(\omega_{\mathcal{X}_{P}/P}) \to
+  \omega_{\mathcal{F}_{P}/P}$ is, fiber by fiber over $P$, an
+  isomorphism outside a set of codimension $2$, therefore,
+  $\kappa^* \left( \omega_{\pi} \right) = \omega_{\mathcal{F}_{P}/P}.$
+  The latter is
+  $\omega_{\mathcal{F}_{P}/P \times L_{i}} + \omega_{P \times
+    L_{i}/P}$, which, using the Euler exact sequence, is:
+  $\O_{P}(-1) \otimes \O_{L_{i}}(-1)$.  This is exactly the opposite
+  of $\mathcal{L}\big|_{\mathcal{D}}$, which is what we wanted to
+  show.
+
+  
 \end{proof} 
 
 
+\subsubsection{Chern classes of $\V$}
+\label{sec:chern-classes-v4}
+
+Now we move to the task of calculating the Chern classes of $\V$. 
 
 
 
 
-
-
-So, let $\mathcal{Y}' = \Bl_{\td{\mathcal{Z}}}\mathcal{Y}$ and let
-$\pi': \mathcal{Y}' \to \td{S^{[2]}}$ denote the obvious
-map. Furthermore, let $\mathcal{F}' \subset \mathcal{Y}'$ denote the
-preimage of $\mathcal{F} \subset \mathcal{Y}$ under the blowdown;
-$\mathcal{F}'$ is a Cartier divisor in $\mathcal{Y}'$. Under $\pi'$,
-$\mathcal{Y}'$ is a family of surfaces which, over
-$U \subset \td{S^{[2]}}$ is a good family of cubic surfaces, and over
-a point $e \in E_{i}$ has $2$-component fiber
-\begin{align}
-  \label{eq:Yprimefiber}
-  S \cup_{L_{i}} \Bl_{\td{\mathcal{Z}}_{e}} \F_{1}.
-\end{align}
-Here, ``$\cup_{L_{i}}$'' emphasizes that the surfaces meet
-transversely along $L_{i}$ according to the description found in
-\autoref{prop:geometry} part (1).
-
-
-
-
-
-
-
-
-
-
-%up to here so far%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{proposition}
-  \label{proposition:resolv-b3}
-  There exists a line bundle $\mathcal{L}$ on $Y'$ which induces a
-  rational map
-  \begin{align*}
-    \rho: Y' \dashrightarrow \P(\pi_{*}\mathcal{L})
-  \end{align*}
-  whose image $X \subset \P(\pi_{*}\mathcal{L})$ is a good family of
-  cubic surfaces over $\widetilde{S^{[2]}}$ with natural bundle
-  $V = \pi_{*} \mathcal{L}$.
-\end{proposition}
-
-(By image, we mean ``closure of image''.)
-
-(This one I still am confident in -- one simple blow-up resolves the situation.)
 
 
 \subsubsection{Relation $B_4$}

@@ -1917,30 +1917,35 @@ to this point.)  The next proposition explains this:
   open set $U \times S \subset \mathcal{Y}$.  The complement
   $\mathcal{Y} \setminus U \times S$ is the union of two divisors,
   $\mathcal{F}$ and $\mathcal{S}$ -- see the proof of
-  \autoref{prop:LYe}.  The pullback of $E$ to $\mathcal{Y}$ is
-  $\mathcal{F} + \mathcal{S}$.
+  \autoref{prop:LYe}.  (The pullback of $E$ to $\mathcal{Y}$ is
+  $\mathcal{F} + \mathcal{S}$.)
 
-  So, we conclude there is a relationship of the form
+   We conclude there is a relationship of the form
   \[c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}
       \right) \right) = a\mathcal{F} + b\mathcal{S}.\] We must show
   that $a = b = 0$.  To do so, we will restrict this relation to
   certain subschemes of $\mathcal{Y}$.
 
   First, choose any point $e \in E_{i}$, and restrict the relation to
-  $\mathcal{F}_{e} \simeq \F_{1}$.  The left hand side restricts to
-  $\O_{\F_{1}}$.  The right side restricts to
+  the surface $\mathcal{F}_{e} \simeq \F_{1}$.  The left hand side
+  restricts to $\O_{\F_{1}}$.  The right side restricts to
   $\O\left( (b-a)L_{i} \right)$.  Thus, $a=b$.
 
   Thus,
   $c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}
     \right) \right)$ is the pullback of $\O_{\td{S^{[2]}}}(aE_{i})$
   for some integer $a$, and we must prove that $a = 0$.  In order to
-  do this, we will restrict to a surface.  First, choose a general
-  fiber $P \subset E_{i}$ of the blow-down map
+  do this, we will restrict to a different surface.  First, choose a
+  general fiber $P \subset E_{i}$ of the blow-down map
   $\beta: E_{i} \to \Lambda_{i}$; $P \simeq \P^{1}$.  Let
   $\mathcal{D} \subset \mathcal{Y}$ denote the surface which is traced
   out by the directrices of $\mathcal{F}_{e}$ as $e$ varies in $P$.
-  Note that $\mathcal{D} \simeq P \times L_{i}$.  
+  Note that $\mathcal{D} \simeq P \times L_{i}$.  $\mathcal{D}$ is a
+  divisor in the threefold
+  $\mathcal{F}_{P} := \mathcal{F} \cap (\td{\pi_{1}} \circ
+  \eta)^{-1}(P)$; the map $\eta$ expresses $\mathcal{F}_{P}$ as a
+  $\P^{1}$-bundle over $P \times L$, namely the projectivization
+  $\P \left( \O_{P}(-1) \oplus \O_{L_{i}}(-1) \right).$
 \end{proof} 
 
 

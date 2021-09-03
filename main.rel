@@ -313,6 +313,10 @@
 
 ("eq:restrL" "e" " " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
+("eq:V4" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
+("eq:kappa4" "e" nil "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil "")
+
 ("eq:Yprimefiber" "e" "S \\cup_{L_{i}} \\Bl_{\\td{\\mathcal{Z}}_{e}} \\F_{1}. " "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)
 
 ("proposition:resolv-b3" "s" "There exists a line bundle $\\mathcal{L}$ on $Y'$ which induces a rational map \\begin{align*} \\rho: Y" "c:/Users/Anand/Documents/GitHub/CubicSurfaceNotes/main.tex" nil)

@@ -101,15 +101,15 @@
 
 \subsection{Counting cubic surfaces}\label{sec:counting}
 Cubic surfaces have fascinated us for centuries. Ever since Cayley and
-Salmon discovered the 27 lines, a long list of
-algebraic geometers have revealed beautiful facets of their geometry,
-using increasingly sophisticated tools. We add to this
-development by answering a family of natural enumerative questions
-about families of cubic surfaces.
+Salmon discovered the 27 lines, it has become a tradition for
+algebraic geometers to revisit their geometry, using increasingly
+sophisticated tools to uncover more and more. Our contribution to
+this story provides a universal answer to a large collection of
+natural enumerative questions about families of cubic surfaces.
 
 The isomorphism classes of cubic surfaces form a 4-dimensional moduli
 space. So, we expect that in a 4-dimensional family, a general
-isomorphism class would appear finitely many times. How do we
+isomorphism class would appear finitely many times. How can we
 determine this number? For example, how many times does a general
 cubic surface appear, up to isomorphism, as
 \begin{enumerate}[(A)]
@@ -120,16 +120,15 @@ cubic surface appear, up to isomorphism, as
 \item a blow up of 6 points in $\P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
 \end{enumerate}
-We prove an enumerative formula that answers all questions of this kind.
-(The answers to these specific questions are $96120$, $42120$, and
-$25920$, respectively).
+We will establish an enumerative formula that answers all questions of
+this kind.  (The answers to these specific questions are $96120$,
+$42120$, and $25920$, respectively).
 
-To state our theorem, we must fix a precise moduli space for the
+To state our formula, we must fix a precise moduli space for the
 cubics.  Let us denote by $\mathcal M$ the GIT quotient of the set of
-semi-stable cubic surfaces in $\P^3$ by the action of
-$\PGL_4$.  By a family of cubic surfaces, we mean a flat, proper
-morphism whose geometric fibers are isomorphic to cubic surfaces in
-$\P^3$.
+semi-stable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
+{\sl family of cubic surfaces}, we mean a flat, proper morphism whose
+geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 
 \begin{theorem}\label{theorem:main}
   Let $B$ be proper and let $\pi \colon \cX \to B$ be a good family of
@@ -145,9 +144,9 @@ $\P^3$.
     1080 \int_{B} \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right).
   \end{align}
 \end{theorem}
-\autoref{def:goodfamily} gives the precise meaning of ``good''.  This
-notion includes all families whose fibers are GIT-semistable or have a
-finite automorphism group.
+\autoref{def:goodfamily} gives the precise meaning of a ``good''
+family.  This notion includes any family whose fibers are
+GIT-semistable or have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
 Question~\ref{orbit} in \autoref{sec:counting} fits in a broader story
@@ -222,12 +221,15 @@ The formula in \autoref{thm:eqvclass2} appears to be different from the one
 in \autoref{theorem:main}, but they are related by a simple change of
 variables; see \autoref{proof:eqvclass2}.
 
-Most of the paper is devoted to constructing good families of cubic
-surfaces on which we can compute $\deg \mu$ and the Chern classes
-$c_i$. The bases $B$ in our families are $\P^4$, $\overline
-M_{0,7}$, a Hassett-weighted variant of $\overline M_{0,7}$, a blow
-up of the Hilbert scheme of two points on a quintic del Pezzo surface,
-and last but not the least, the stack $B\G_m$.
+Most of the paper is devoted to constructing {\sl provably} good
+families of cubic surfaces on which we can compute $\deg \mu$ and the
+Chern classes $c_i$.  Proofs of goodness are sometimes subtle -- this
+is an instance of the general problem of determining which homogeneous
+forms lie in the $GL$-orbit closure of which other forms. The bases
+$B$ in our families are $\P^4$, $\overline M_{0,7}$, a
+Hassett-weighted variant of $\overline M_{0,7}$, a blow up of the
+Hilbert scheme of two points on a quintic del Pezzo surface, and last
+but not the least, the stack $B\G_m$.
 
 The method of undetermined coefficients applies to hypersurfaces of
 any degree and dimension.  The obstacle, in general, is in constructing enough
@@ -258,10 +260,10 @@ orders of the finite groups that arise as automorphism groups of cubic surfaces.
 
 \subsection{Acknowledgements}
 We thank Radu Laza, who asked Question~\ref{slice} to the first two
-authors during a meeting at Oberwolfach in 2017.  We thank Hunter
-Spink for important discussions early in the project.  We thank Paulo
-Aluffi for quickly providing an enumerative reference on cuspidal
-cubic curves.  
+authors during a meeting at Oberwolfach in the summer of 2016.  We
+thank Hunter Spink for important discussions during the infancy
+of the project.  We thank Paulo Aluffi for quickly providing an
+enumerative reference on cuspidal cubic curves.  
 
 \todo{More acknowledgements}
 
@@ -274,7 +276,11 @@ cubic curves.
 \section{Preliminaries}
 \label{sec:good}
 
-In this chapter, we introduce the notion of a good family of cubic surfaces (\autoref{def:goodfamily}) and provide a tool (\autoref{prop:good}) to verify that a family is good.  Before we do so, we first establish notation and recall some classical facts about cubic surfaces.
+In this chapter, we introduce the notion of a good family of cubic
+surfaces (\autoref{def:goodfamily}) and provide a tool
+(\autoref{prop:good}) to verify that a family is good.  Before we do
+so, we first establish notation and recall some classical facts about
+cubic surfaces.
 
 \subsection{Notation and conventions}
 \label{sec:notation-conventions}
@@ -1062,7 +1068,7 @@ result about $\overline{\M}_{0,7}$ we will use in this section is:
   $$\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1.$$
 \end{theorem}
 
-\subsubsection{Construction of the family}
+\subsubsection{Construction of $\mathcal{X}/B_{2}$}
 \label{sec:construction-familyB2}
 
 
@@ -1629,7 +1635,7 @@ The intersection theory described in this subsection yields:
   \end{align}
 \end{lemma}
 
-\subsubsection{Construction of the family over $\hM_{0,7}$}
+\subsubsection{Construction of the family $\cX/\hM_{0,7}$}
 \label{sec:constr-family-hM07}
 
 Let us proceed to the formal construction of our family, starting with
@@ -2891,11 +2897,12 @@ for the moduli stack of cubic surfaces.
   \begin{align*}
     16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} &= 4320 \text{ from \eqref{eq:relation1}}\\
     625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} &= 103680 \text{ from \eqref{eq:relation2}}\\
+    3436a_{1^4} + 1076 a_{1^{2}2} +116 a_{13} + 316 a_{2^2} &= 1036800 \text{ from \eqref{eq:relation3}}\\
     6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} &= 25920 \text{ from \eqref{eq:relationB4}}\\
     a_{2^2} &= 0  \text{ from \eqref{eqn:iso1}}\\
     a_{1^4} - a_{1^2 2}- a_{13} +  a_{2^2}  &= 0  \text{ from \eqref{eqn:iso2}}\\
     16a_{1^4} -4a_{1^2 2}- 4a_{13} +  a_{2^2}  &= 0  \text{ from \eqref{eqn:iso3}}\\
-      81a_{1^4} +9a_{1^2 2}- 9a_{13} +  a_{2^2}-2a_4  &= 0  \text{ from \eqref{eqn:iso4}}.
+    81a_{1^4} +9a_{1^2 2}- 9a_{13} +  a_{2^2}-2a_4  &= 0  \text{ from \eqref{eqn:iso4}}.
   \end{align*}
   These equations uniquely determine all the coefficients $a_i$ to be as stated.
 \end{proof}

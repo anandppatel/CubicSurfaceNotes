@@ -28,6 +28,8 @@
     \import{./figures/}{#1.pdf_tex}
 }
 
+\usepackage{showlabels}
+
 \linespread{1.1}
 \usepackage[all]{xy}
 \usepackage{eucal}
@@ -836,14 +838,14 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 \label{sec:enum-cubics-b_1}
 
 
-%\begin{figure}[!]
- % \centering
-  %\incfig{FamilyB1}
-  %\caption{Schematic for the family parametrized by $B_1$. The points
-   % $Z$ vary freely on the conic $C$, and we blow up the plane at the
-    %six points $Z \cup \{y_{1},y_{2}\}$.}
-    %\label{fig:FamilyB1}
-%\end{figure}
+\begin{figure}[!]
+  \centering
+  \incfig{FamilyB1}
+  \caption{Schematic for the family parametrized by $B_1$. The points
+    $Z$ vary freely on the conic $C$, and we blow up the plane at the
+    six points $Z \cup \{y_{1},y_{2}\}$.}
+    \label{fig:FamilyB1}
+\end{figure}
 
 
 For $B_1$ to be of any use, we must {\sl a priori} know the degree of
@@ -2145,7 +2147,7 @@ $\mathcal{Y}_{e}$, $e \in E_{i}$.
     H^{0}(\mathcal{Y}_{e}, \mathcal{L}|_{\mathcal{Y}_{e}}) \to H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D))
   \end{align}
   is an isomorphism onto the $6$ dimensional vector space
-  $H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal I_{\tau_{i}}).$
+  $H^{0}\left(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal{I}_{\tau_{i}}\right).$
 \end{proposition}
 
 Here, $D \subset \F_{1}$ denotes the directrix curve.
@@ -2161,68 +2163,358 @@ Here, $D \subset \F_{1}$ denotes the directrix curve.
   $\mathcal{L}|_{S} = \omega_{S}^{-1} \otimes \O_{S}(-2L_{i})$. Now
   since $c_{1}( \omega_{S}^{-1}) = T_{i} + 2L_{i}$, assertion (1) follows.
 
+  Assertion (2) requires us to identify how
+  $\O_{\mathcal{Y}}(\mathcal{F})$ restricts to $\mathcal{F}_{e}$. Let
+  $\mathcal{S} \subset \mathcal{Y}$ denote the proper transform of
+  $E \times S$ in $\mathcal{Y}$; note that
+  $\eta: \mathcal{S} \to E \times S$ is an isomorphism.  Then on
+  $\mathcal{Y}$ we get an equality of divisors:
+  \[\mathcal{F} = \eta^{*}\td{\pi}_{1}^{*}(E) - \mathcal{S}.\]
+  Restricting both sides to $\mathcal{F}_{e}$, while using
+  \autoref{prop:geometry} part (1), we get:
+  \[\O_{\F_{1}}(\mathcal{F}) = \O_{\F_{1}}(-L_{i}).\] Finally, letting
+  $R \subset \F_{1}$ denote a ruling line (so $R+D = L_{i}$), we get
+  that
+  $\eta^{*}\td{\pi}_{2}^{*}(\omega_{S}^{-1})|_{\F_{1}} =
+  \O_{\F_{1}}(R)$ because $\omega_{S}^{-1}$ has degree $1$ on $L_{i}$.
+  Now, we simply use the definition of $\mathcal{L}$ to deduce
+  assertion (2).
+\end{proof}
+
+Finally, we set
+\begin{align}
+  \label{eq:V4}
+  \mathcal{W} := (\td{\pi}_{1} \circ \eta)_{*}\left(\mathcal{L} \otimes \mathcal{I}_{\td{\mathcal{Z}}}\right).
+\end{align}
+
+By combining \autoref{prop:geometry}, \autoref{prop:nodirectrix}, and
+\autoref{prop:LYe}, we leave it to the reader to check that:
+
+\begin{enumerate}\label{propertieskappa}
+\item $\mathcal{W}$ is a rank $4$ vector bundle on $\td{S^{[2]}}$, and
+\item for each $e \in E_{i}$, the base scheme of
+  $\mathcal{W}|_{e} \subset
+  H^{0}\left(\mathcal{Y}_{e},\mathcal{L}_{\mathcal{Y}_{e}}\right)$ is
+  the scheme $T_{i} \cup \td{\mathcal{Z}}_{e}$.
+\end{enumerate}
+
+The natural evaluation map
+$(\td{\pi}_{1} \circ \eta)^{*}\mathcal{W} \to \mathcal{L}$ on
+$\mathcal{Y}$ induces a rational map
+\begin{align}
+  \label{eq:kappa4}
+  \kappa: \mathcal{Y} \dashrightarrow \P \mathcal{W}.
+\end{align}
+
+The image of $\kappa$, by which we mean the closure of the image of
+the locus on which $\kappa$ is defined, will be denoted
+\[\mathcal{X} \subset \P \mathcal{W}, \] and $\pi: \mathcal{X} \to \td{S^{[2]}}$ the natural map. By \autoref{prop:LYe}, if
+$e \in E_{i}$ is any point, the surface $\mathcal{X}_{e}$ is the
+anti-canonical image of the surface
+$\Bl_{\td{\mathcal{Z}}_{e} \cup \tau_{i}} \F_{1}$.  Note that
+$\mathcal{X}_{e}$ is singular, because the proper transform of $L_{i}$
+is a contracted $(-2)$-curve. We leave it to the reader to verify the
+following, using \autoref{prop:geometry} (3) and (4), and
+\autoref{prop:nodirectrix}:
+
+\begin{proposition}
+  \label{prop:good4} The family $\pi: \mathcal{X} \to \td{S^{[2]}}$ is
+  good.
+\end{proposition}
+
+\begin{proof}
+  Omitted.
+\end{proof}
+
+The attentive reader will ask: what role does the twist by
+$\O_{\td{S^{[2]}}}(E)$ in the definition of $\mathcal{L}$
+\eqref{eq:linebundle} play? (It has played no role in the analysis up
+to this point.)  The next proposition explains this:
+
+\begin{proposition}
+  \label{prop:whyE} Maintain the setting above.  Then
+  $\mathcal{W} = \pi_{*}\left( \omega_{\pi}^{-1} \right)$,
+  i.e. $\mathcal{W} = \V$.
+\end{proposition}
+
+\begin{proof}
+  The indeterminacy locus of $\kappa$ is a codimension $2$ subscheme
+  of $\mathcal{Y}$, therefore, it makes sense to pull back line
+  bundles under $\kappa$.  The content of the proposition is to show that:
+  \[ \mathcal{L} = \kappa^{*}\left( \omega_{\pi}^{-1} \right).\]
+
+  To see this, first note that these two line bundles agree over the
+  open set $U \times S \subset \mathcal{Y}$.  The complement
+  $\mathcal{Y} \setminus U \times S$ is the union of two divisors,
+  $\mathcal{F}$ and $\mathcal{S}$ -- see the proof of
+  \autoref{prop:LYe}.  (The pullback of $E$ to $\mathcal{Y}$ is
+  $\mathcal{F} + \mathcal{S}$.)
+
+   We conclude there is a relationship of the form
+   \[c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left(
+         \omega_{\pi}^{-1} \right) \right) = a\mathcal{F} +
+     b\mathcal{S}.\] We must show that $a = b = 0$.  To do so, we will
+   restrict this relation to certain subschemes of $\mathcal{Y}$.
+
+  First, choose any point $e \in E_{i}$, and restrict the relation to
+  the surface $\mathcal{F}_{e} \simeq \F_{1}$.  The left hand side
+  restricts to $\O_{\F_{1}}$.  The right side restricts to
+  $\O\left( (b-a)L_{i} \right)$.  Thus, $a=b$.
+
+  Thus,
+  $c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}^{-1}
+    \right) \right)$ is the pullback of $\O_{\td{S^{[2]}}}(aE_{i})$
+  for some integer $a$, and we must prove that $a = 0$.  In order to
+  do this, we will restrict to a different surface.  First, choose a
+  general fiber $P \subset E_{i}$ of the blow-down map
+  $\beta: E_{i} \to \Lambda_{i}$; $P \simeq \P^{1}$.  Let
+  $\mathcal{D} \subset \mathcal{Y}$ denote the surface which is traced
+  out by the directrices of $\mathcal{F}_{e}$ as $e$ varies in $P$.
+  Note that $\mathcal{D} \simeq P \times L_{i}$.  $\mathcal{D}$ is a
+  divisor in the threefold
+  $\mathcal{F}_{P} := \mathcal{F} \cap (\td{\pi_{1}} \circ
+  \eta)^{-1}(P)$; the map $\eta$ expresses $\mathcal{F}_{P}$ as a
+  $\P^{1}$-bundle over $P \times L$, namely the projectivization
+  $\P \left( \O_{P}(-1) \oplus \O_{L_{i}}(-1) \right).$ (Here and in
+  what follows, we will suppress pull-back notation when we pull line
+  bundles back along the two projection maps
+  $P \times L_{i} \to L_{i}$.)
+
+  With regard to the $\P^{1}$-bundle structure of
+  $\eta: \mathcal{F}_{P} \to P \times L_{i}$, the divisor
+  $\mathcal{D} \subset \mathcal{F}_{P}$ is a section, corresponding to
+  the inclusion of the first factor
+  \[\O_{P}(-1) \hookrightarrow \O_{P}(-1) \oplus \O_{L_{i}}(-1). \]
+
+  Therefore, letting $\O_{\mathcal{F}}(1)$ denote the natural line
+  bundle of the projective bundle $\mathcal{F}$, this translates into
+  $\O_{\mathcal{F}}(-1)|_{\mathcal{D}} = \O_{P}(-1)$. (Here we are
+  identifying $\mathcal{D}$ with $P \times L_{i}$ in the natural way.)
+  As is generally the case with blow-ups, we know that
+  $\O_{\mathcal{Y}}(\mathcal{F})\big|_{\mathcal{F}} =
+  \O_{\mathcal{F}}(-1)$, and therefore,
+  \begin{align}\label{eq:FtoD}
+    \O_{\mathcal{Y}}(\mathcal{F}) \big|_{\mathcal{D}} = \O_{P}(-1).
+  \end{align}
+
+  Now we can identify $\mathcal{L}|_{\mathcal{D}}$: The three factors
+  of $\mathcal{L}$ are (suppressing pullbacks):
+  $\omega_{S}^{-1}, \O_{\mathcal{Y}}(\mathcal{F}),$ and $\O(E)$. These
+  three restrict to $\mathcal{D}$ as: $\O_{L_{i}}(1), \O_{P}(-1),$ and
+  $ \O_{P}(-1)$ respectively, thanks to \eqref{eq:FtoD}, and the fact
+  that $\O_{E}(E) = \O_{E}(-1)$.  Thus,
+  \begin{align}
+    \label{eq:LtoD}
+    \mathcal{L}|_{\mathcal{D}} = \O_{P}(1) \otimes \O_{L_{i}}(1).
+  \end{align}
+
+  Next, we identify $\kappa^{*}(\omega_{\pi})|_{\mathcal{D}}$.
+  Restricting attention over $P$, the map
+  $\kappa: \mathcal{F}_{P} \dashrightarrow \mathcal{X}_{P}$ is still
+  defined outside a codimension $2$ subscheme of $\mathcal{F}_{P}$.
+  The pullback of forms map
+  $\kappa^{*}(\omega_{\mathcal{X}_{P}/P}) \to
+  \omega_{\mathcal{F}_{P}/P}$ is, fiber by fiber over $P$, an
+  isomorphism outside a set of codimension $2$, therefore,
+  $\kappa^* \left( \omega_{\pi} \right) = \omega_{\mathcal{F}_{P}/P}.$
+  The latter is
+  $\omega_{\mathcal{F}_{P}/P \times L_{i}} + \omega_{P \times
+    L_{i}/P}$, which, using the Euler exact sequence, is:
+  $\O_{P}(-1) \otimes \O_{L_{i}}(-1)$.  This is exactly the opposite
+  of $\mathcal{L}\big|_{\mathcal{D}}$ \eqref{eq:LtoD}, which is what we wanted to
+  show.
+
   
+\end{proof} 
+
+
+\subsubsection{Chern classes of $\V$}
+\label{sec:chern-classes-v4}
+
+Now we move to the task of calculating the Chern classes of
+$\V = (\td{\pi}_{1} \circ \eta)_{*}\left(\mathcal{L} \otimes
+  \mathcal{I}_{\td{\mathcal{Z}}}\right)$. For this, we
+let \[\mathcal{A} := (\td{\pi}_{1} \circ \eta)_{*}\mathcal{L},\] and
+we let \[\mathcal{B} := (\td{\pi}_{1} \circ \eta)_{*} \left(
+    \mathcal{L}\big|_{\td{\mathcal{Z}}} \right).\]
+
+The reader can check that $\mathcal{A}, \mathcal{B}$ are rank $6$ and
+rank $2$ vector bundles on $\td{S^{[2]}}$, respectively.  Since
+$c(\V) = c(\mathcal{A})/c(\mathcal{B})$, it suffices to identify
+$c(\mathcal{A})$ and $c(\mathcal{B})$.
+
+Identifying $c(\mathcal{B})$ is easier, so we begin with that. Let
+$\mathcal{U} := \left( \omega_{S}^{-1} \right)^{[2]}$ be the rank $2$
+tautological bundle over $S^{[2]}$.  Then, by using the push-pull
+formula and the fact that
+$\O_{\td{\mathcal{Z}}}(\mathcal{F}) = \O_{\td{\mathcal{Z}}}(E)$,
+(pullbacks suppressed) we get:
+\begin{align}
+    \label{eq:B}
+    \mathcal{B} = \left(\beta^{*}\mathcal{U} \right) \otimes \O_{\td{S^{[2]}}}(-E).
+\end{align}
+Let $u_{1}, u_{2}$ denote the Chern classes of $\mathcal{U}$.
+
+\begin{lemma}
+  \label{lemma:uE}
+  $\beta^{*}(u_{1}) \cdot E = \beta^{*}(u_{2}) \cdot E = 0$.
+\end{lemma}
+
+\begin{proof}
+  It suffices to show that $u_{i}$ is represented by cycles which are
+  disjoint from $\Lambda \subset S$.
+
+  We begin with $u_{2}$.  Fix a smooth curve $C \subset S$ in the
+  anti-canonical series $|\omega_{S}^{-1}|$; $C$ meets every line
+  $L_{i}$ transversely at a single point.  By definition, $u_{2}$ is
+  represented by the surface $C^{[2]} \subset S^{[2]}$, which is
+  clearly disjoint from $\Lambda$.
+
+  Next, we address $u_{1}$. Fix, now, a general pencil of curves
+  $C_{t}, t\in \P^{1}$ in the anti-canonical series
+  $|\omega_{S}^{-1}|$.  By generality of the pencil, every curve
+  $C_{t}$ meets each line $L_{i}$ transversely at a single point.  The
+  class $u_{1}$ is representable by the subvariety
+  \[\{[Z] \in S^{[2]} \mid Z \subset C_{t}, \,\, \textrm{some 
+      $t\in \P^{1}$}\}.\] This variety is clearly disjoint from
+  $\Lambda$, and the lemma now follows.
+\end{proof}
+
+This gives simple expressions for the Chern classes of $\mathcal{B}$:
+\begin{corollary}
+  \label{cor:cB} We have: $c_{1}(\mathcal{B}) = \beta^{*}(u_{1}) -2E,$
+  and $c_{2}(\mathcal{B}) = \beta^{*}(u_{2}) + E^{2}$.
+\end{corollary}
+
+Before beginning the analysis of $c(\mathcal{A})$, we catalog those
+top degree intersection products which will factor into the final calculation:
+
+\begin{proposition}
+  \label{prop:monomialsU} We have:
+  \begin{align}
+    \label{eq:monU}
+    \deg u_{1}^{4} &= 36,\\
+    \deg u_{1}^{2}u_{2} &= 15,\\
+    \deg u_{2}^{2} &= 10,\\
+    \deg E^{4} &= -30.
+  \end{align}
+\end{proposition}
+
+\begin{proof} In the interest of brevity, we will only indicate the
+  main technique in certain calculations, leaving the details to the reader.
+
+  $u_{1}^{4}$: We translate the computation into an enumerative
+  problem, whose solution is found using the {\sl double point
+    formula} \cite[3264??].  Choose $4$ general pencils of
+  anti-canonical curves on $S$, and let $S'$ denote the blow up of $S$
+  along the union of all $4$ base loci.  $S'$ is a smooth surface, and
+  $u_{1}^{4}$ is the number of pairs of points having the same image
+  under the map $f: S' \to \left( \P^{1} \right)^{4}$ induced by the
+  four pencils.  We leave the details of the calculation to the
+  reader, but the end result is $36$ pairs of such points.
+
+  $u_{1}^{2}u_{2}$: This monomial translates into the following
+  enumerative problem.  Fix one smooth anti-canonical curve
+  $C \subset S$, and also choose two general pencils of such curves.
+  Let $S'$ denote the blow up of $S$ along the union of the two base
+  loci.  Under the map $f: S' \to \P^{1} \times \P^{1}$, the curve $C$
+  maps birationally to a $(5,5)$ curve. Since the genus of $C$ is $1$,
+  and its image has arithmetic genus $16$, we conclude that the
+  double-point locus of $f: C \to \P^{1} \times \P^{1}$ consists of
+  $15$ pairs of points.
+
+  $u_{2}^{2}$: Choose two general anti-canonical curves $C_{1},C_{2}$
+  on $S$.  There are ${5 \choose 2} = 10$ pairs of points common to
+  both, yielding the result.
+
+  $E^{4}$: First, $E$ is the disjoint union of the ten exceptional
+  divisors $E_{i}$ $i=1, \dots, 10$, so $E^{4} = 10 \times E_{1}^{4}$
+  and it suffices to show $E_{1}^{4} = -3$.  $E_{i}$ is the
+  projectivization of the normal bundle $N_{\Lambda_{1}/S^{[2]}}$,
+  which is the rank two tautological bundle
+  $N_{L_{i}/S}^{[2]} = \O_{L_{i}}(-1)^{[2]}$.  By identifying
+  $\Lambda_{1}$ with $\P^{2}$, it is easy to see that
+  $N_{L_{i}/S}^{[2]} \simeq \O_{\P^{2}}(-1) \oplus
+  \O_{\P^{2}}(-1)$. It is a standard calculation now to see that
+  $E_{i}^{4} = -3$.
+\end{proof}
+
+Let us now explain how to calculate $c(\mathcal{A})$.  We only provide
+the pathway for the calculation, leaving the details to the
+reader. Recall the codimension $2$ smooth subscheme
+$F \subset \td{S^{[2]}} \times S$ which we blow up to get
+$\mathcal{Y}$, and let $\mathcal{I}_{F}$ denote its ideal sheaf.
+Denote by $2F$ the scheme defined by $\mathcal{I}_{F}^{2}$.  Then, \
+\[\eta_{*}\mathcal{L} = \omega_{S}^{-1} \otimes \mathcal{I}_{2F} \otimes \O_{\td{S^{[2]}}}(E)\]
+(pullbacks suppressed).  $\mathcal{A}$ is the pushforward of this
+sheaf down to $\td{S^{[2]}}$.
+
+By using (1) the pair of sequences
+\begin{align}
+  \label{eq:seqA}
+  0 \to \mathcal{I}_{2F} \to \O_{\td{S^{[2]}} \times S} \to \O_{2F} \to 0,\\
+  0 \to \mathcal{I}_{F}/\mathcal{I}_{F}^{2} \to \O_{2F} \to \O_{F} \to 0,
+\end{align}
+(2) the identification of
+$\mathcal{I}_{F_{i}}/\mathcal{I}_{F_{i}}^{2} = \O_{\td{S^{[2]}}}(-E)
+\oplus \O_{L_{i}}(1)$ (pullbacks suppressed) on each component
+$F_{i} := E_{i} \times L_{i}$ of $F$, (3) tensoring by
+$\omega_{S}^{-1} \otimes \O_{\td{S^{[2]}}}(E)$, and (4) pushing down
+to $\td{S^{[2]}}$ using the push-pull formula, we ultimately get:
+
+\begin{lemma}
+  \label{lemma:cA} $c(\mathcal{A}) = 1 - Et-E^{2}t^{2}+E^{3}t^{3} .$
+\end{lemma}
+
+\begin{proof}
+  The calculation steps are sketched immediately before the lemma.
+\end{proof}
+
+\begin{corollary}
+  \label{cor:cV4} The Chern classes of $\V$ are:
+  \begin{align}
+    \label{eq:cV4}
+    v_{1} &= -\beta^{*}(u_{1}) + E,\\ \nonumber
+    v_{2} &= \beta^{*}\left(u_{1}^{2} - u_{2}\right),\\\nonumber
+    v_{3} &= \beta^{*}\left( 2u_{1}u_{2} - u_{1}^{3} \right),\\\nonumber
+    \deg v_{4} &= 1,\nonumber
+  \end{align}
+  and the degree $4$ monomials in these classes satisfy:
+  \begin{align}
+    \label{eq:monomialsV4}
+    \deg v_{1}^{4} &= 6,\\\nonumber
+    \deg v_{1}^{2}v_{2} &= 21,\\\nonumber
+    \deg v_{1}v_{3} &= 6, \\\nonumber
+    \deg v_{2}^{2} &= 16, \\\nonumber
+    \deg v_{4} &= 1.\nonumber
+  \end{align}
+\end{corollary}
+
+\begin{proof}
+  Recall that $c(\V) = c(\mathcal{A})/c(\mathcal{B})$.  Now combine:
+  \autoref{cor:cB}, \autoref{prop:monomialsU}, and \autoref{lemma:cA}.
 \end{proof}
 
 
 
-
-
-So, let $\mathcal{Y}' = \Bl_{\td{\mathcal{Z}}}\mathcal{Y}$ and let
-$\pi': \mathcal{Y}' \to \td{S^{[2]}}$ denote the obvious
-map. Furthermore, let $\mathcal{F}' \subset \mathcal{Y}'$ denote the
-preimage of $\mathcal{F} \subset \mathcal{Y}$ under the blowdown;
-$\mathcal{F}'$ is a Cartier divisor in $\mathcal{Y}'$. Under $\pi'$,
-$\mathcal{Y}'$ is a family of surfaces which, over
-$U \subset \td{S^{[2]}}$ is a good family of cubic surfaces, and over
-a point $e \in E_{i}$ has $2$-component fiber
-\begin{align}
-  \label{eq:Yprimefiber}
-  S \cup_{L_{i}} \Bl_{\td{\mathcal{Z}}_{e}} \F_{1}.
-\end{align}
-Here, ``$\cup_{L_{i}}$'' emphasizes that the surfaces meet
-transversely along $L_{i}$ according to the description found in
-\autoref{prop:geometry} part (1).
-
-
-
-
-
-
-
-
-
-
-%up to here so far%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{proposition}
-  \label{proposition:resolv-b3}
-  There exists a line bundle $\mathcal{L}$ on $Y'$ which induces a
-  rational map
-  \begin{align*}
-    \rho: Y' \dashrightarrow \P(\pi_{*}\mathcal{L})
-  \end{align*}
-  whose image $X \subset \P(\pi_{*}\mathcal{L})$ is a good family of
-  cubic surfaces over $\widetilde{S^{[2]}}$ with natural bundle
-  $V = \pi_{*} \mathcal{L}$.
-\end{proposition}
-
-(By image, we mean ``closure of image''.)
-
-(This one I still am confident in -- one simple blow-up resolves the situation.)
-
-
-\subsubsection{Relation $B_4$}
+\subsubsection{Fourth relation}
 \label{sec:relation-b_4}
 
-The relation we get from family $B_3$ ultimately appears to be:
+Given \autoref{cor:cV4}, the relation we get from the test family
+$\pi: \mathcal{X} \to B_{4}$ studied in this section is:
 \begin{align}
   \label{eq:relationB4}
-  6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} = 36 \times 6! = 25920.
+  6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} =  25920.
 \end{align}
 
-(There is an 80 percent chance I made a mistake in the long
-calculation, so be careful.)
+Only the right hand side needs explanation: the map to moduli
+\[\mu: B_{4} \dashrightarrow \M \] factors through
+$\mu' : \dashrightarrow \M^{\dagger}/S_{2}$ where the symmetric group
+permutes the last two lines of a marking.  The map $\mu'$ is clearly
+birational, and therefore $\deg \mu = 51840/2 = 25920$ as claimed in
+\eqref{eq:relationB4}.
+
+
 
 \subsection{Isotrivial families}
 In this section, we continue the theme of constructing good families, but with a twist.
@@ -2596,9 +2888,264 @@ Writing them in terms of $c_i = c_i(V)$ yields the result.
 
 \appendix
 
+
+
 \section{The goodness of the $A5$ cubic surface}
 \label{sec:goodnessA5}
 
+\subsection{Objective}
+Let $X \subset \P^{3}$ denote the cubic surface defined in homogeneous
+coordinates $\left(x_{0}, x_{1}, x_{2}, x_{3}\right)$ by the equation
+\[x_{3}f_{2} - f_{3} = 0,\] where $f_{2} = x_{0}x_{1}$ and
+$f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.  This is the unique
+cubic surface possessing a single $A_5$ singularity, up to projective
+equivalence.
+
+$X$ is the cubic surface associated to the admissible length $6$
+subscheme $Z \subset \P^{2}$ defined by the common vanishing of the
+forms $f_{2}$ and $f_{3}$ -- we leave it to the reader to check that
+$\Aut(\P^{2},Z)$ is one-dimensional, with $\G_{a}$ as identity
+component.  Thus, the techniques used in the main body of the paper
+cannot address the goodness of $X$.
+
+Our purpose in this appendix is to provide a proof of the following
+theorem:
+
+\begin{theorem}
+  \label{theorem:A5good} The surface $X$ is good, i.e. $X$ does not
+  lie in the $\PGL(4)$-orbit closure of a general cubic surface.
+\end{theorem}
+
+The proof proceeds by contradiction, in several steps. Let
+$\Delta = \spec \k [[t]]$ with closed point denoted $0$ and generic
+point denoted $\eta$, and suppose for sake of contradiction, that
+\[\pi: \mathcal{X} \to \Delta\]
+is a family of cubic surfaces with the properties:
+\begin{enumerate}
+\item $\mathcal{X}_{0} \simeq X$, and\\
+\item $\mathcal{\eta} \simeq Y \times_{\spec \k} \eta$, where $Y$ is a
+  general fixed cubic surface.
+\end{enumerate}
+
+The overall strategy is to transfer to the setting of families of
+length $6$ subschemes of the plane, and reduce to proving that
+$[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL(3)$-orbit closure
+of a length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.  We will
+sketch several parts of the reduction, leaving lesser details to the
+reader.
+
+\begin{lemma}[Brieskorn]
+  \label{lemma:simult} There exists a {\sl smooth} family of cubic
+  surfaces \[\pi': \mathcal{X}' \to \Delta\] and a morphism
+  $\beta: \mathcal{X}' \to \mathcal{X}$ of $\Delta$-schemes which is
+  an isomorphism over $\eta$ and is a minimal desingularization over
+  $0$.
+\end{lemma}
+
+Let $\kappa: \Bl_{Z}\P^2 \to X$ denote the anti-canonical map. The
+minimal desingularization $\beta_{0}: X' \to X$ factors through
+$\kappa$, and is also the minimal desingularization of $\Bl_{Z}\P^{2}$
+-- the argument for this can be found in the proof of
+\autoref{prop:good}. Let $\kappa':X' \to \Bl_{Z}\P^{2} \to \P^{2}$
+denote the composite map.  The line bundle
+\[\mathcal{L}_{0} := \kappa'^{*}\O_{\P^{2}}(1)\] is easily seen to have
+no higher cohomology, and $h^{0}(X', \mathcal{L}_{0}) = 3$.
+
+Our next step is to extend $\mathcal{L}_{0}$ to $\mathcal{X'}$.
+
+\begin{lemma}
+  \label{lemma:extends} There exists a line bundle $\mathcal{L}$ on
+  $\mathcal{X}'$ extending $\mathcal{L}_{0}$ on
+  $X' \subset \mathcal{X}'$.
+\end{lemma}
+
+\begin{proof}[Proof sketch.]
+  The deformation space of the pair $(X', \mathcal{L}_{0})$ is the
+  cohomology group $H^1 \left( X', \mathcal{E} \right)$, where
+  $\mathcal{E}$ is the extension
+  \[0 \to \O_{X'} \to \mathcal{E} \to T_{X'} \to 0 \] defined by the
+  element $c_{1} \mathcal{L}_{0} \in H^{1}(X', \Omega_{X'})$. Since
+  $H^{2}(\O_{X'}) = 0$, it follows that $\mathcal{L}_{0}$ lifts to
+  every infinitesimal deformation of $X'$.  Thus, $\mathcal{L}_{0}$
+  lifts to the formal completion of $\mathcal{X'}$ along $X'$.  By an
+  algebraization argument \cite[Reference]... Anand: how to do this??
+\end{proof}
+
+Next, we choose an isomorphism
+$\P \left( \pi'_{*}(\mathcal{L})^{\smvee} \right) \simeq \P^{2}
+_{\Delta}$, and let
+\[\varphi: \mathcal{X}' \to \P^{2}_{\Delta}\] denote the map induced
+by the line bundle $\mathcal{L}$ referenced in
+\autoref{lemma:extends}.  The natural injection of line bundles
+(induced by pullback of forms)
+$\omega_{\mathcal{X'}/\Delta}^{-1} \hookrightarrow
+\varphi^{*}\omega_{\P^{2}_{\Delta}/\Delta}^{-1}$ induces an inclusion
+of free $\k[[t]]$-modules
+\[\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
+  H^{0}\left(\P^{2}_{\Delta}, \O(3)\right).\] The former is a rank $4$
+free module, and the latter is a rank $10$ free module.  We let
+\[\mathcal{Z} \subset \P^{2}_{\Delta}\] denote the closed subscheme defined by the common vanishing of the cubic forms on $\P^{2}_{\Delta}$ lying in the submodule $\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
+H^{0}\left(\P^{2}_{\Delta}, \O(3)\right)$.
+
+Tracing through the construction fiber-by-fiber over $\Delta$, the
+reader can check that $\mathcal{Z} \to \Delta$ is a finite, flat
+degree $6$ cover, with central fiber $\mathcal{Z}_{0} \subset \P^{2}$
+isomorphic to the admissible scheme $Z \subset \P^{2}$ from the
+beginning of this appendix.  Furthermore, since the cubic surface $Y$
+was chosen to be general, and since the generic fiber
+$\mathcal{X'}_{\eta} \simeq \mathcal{X}_{\eta}$ is isomorphic to the
+constant family $Y \times _{\spec \k} \eta$, it follows that
+$\mathcal{Z}_{\eta} \subset \P^{2} \times_{\spec _{\k}} \eta$ is
+isomorphic to a general, constant family of subschemes, namely, that
+there exists a general length $6$ subscheme $Z_{gen} \subset \P^{2}$
+and an element $g \in \Aut (\P^{2}_{\eta})$ such that
+$g(Z_{gen}) = \mathcal{Z}_{\eta}$.
+
+After performing a finite, ramified base change $t \mapsto t^{k}$, we
+may assume that $\mathcal{Z} \subset \P^{2}_{\Delta}$ is the union of
+$6$ sections,
+$a, b, z_{1}, z_{2}, z_{3}, z_{4}: \Delta \to \P^{2}_{\Delta}$, where:
+\begin{itemize}
+\item $a$ and $b$ do not intersect, and
+  $a(0) = [0:1:1], b(0) = [0:-1:1]$ are the two smooth points of
+  $Z \subset \P^{2}$, and
+\item $z_{i}(0) =[0:0:1] =: p$.
+\end{itemize}
+Here, we are using homogeneous coordinates $[x_0 :x_1 : x_2]$ on
+$\P^{2}$ where $Z \subset \P^{2}$ is the common vanishing scheme of
+$f_{2} = x_0 x_1$ and $f_3 = x_0^3+x_1^3-x_1x_2^2$.  Let
+$L_{0}, L_{1} \subset \P^{2}$ denote the lines $x_0 = 0$ and $x_1=0$,
+respectively -- $L_0$ contains the three points supporting $Z$, while
+$L_1$ is the tangent line of $Z$ at its multiplicity $4$ point $p$.
+
+
+\subsection{Resolving rational maps $\P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$}
+\label{sec:resolv-rati-maps}
+
+Maintaining the notation above, we have arrived at the following
+situation:
+\begin{enumerate}
+\item $Z_{gen} \subset \P^{2}$ is a general set of $6$ points, denoted $q_{1}, q_{2}, p_{1}, p_{2}, \dots, p_{4}$,\\
+\item A rational map
+  $g : \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$ restricting to
+  an element of $\Aut \P^{2}_{\eta}$ over the generic point $\eta$, \\
+\item The Zariski closure
+  $\overline{g(Z_{gen} \times_{\spec \k} \eta)}$ is
+  $\mathcal{Z} \subset \P^{2}_{\Delta}$.  We assume that
+  $q_{1}, q_{2}$ map to $a,b$ correspondingly, and that $p_{i}$ maps
+  to $z_{i}$.
+\end{enumerate}
+
+The strategy then to show that this situation is impossible.  For
+this, we need to study the basic anatomy of a rational map
+\[g: \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta} \] induced by an
+element of $\Aut \P^{2}_{\eta}$.
+
+Letting $[x_0 : x_1 : x_2]$ denote homogeneous coorinates on $\P^{2}$,
+the rational map $g$ is given by $3$ homogeneous linear forms
+$A_0, A_1, A_2 \in \k(\!(t)\!)[x_0,x_{1},x_{2}]$.  By multpilying by a
+suitable power of $t$, (not affecting the map $g$), we may assume that
+$A_{i} \in \k[\![t]\!][x_0, x_1, x_2]$, and that not all $A_i$ vanish
+modulo $(t)$.  Furthermore, by swapping $A_{i}$ by suitable
+$\k$-linear combinations, we may assume that
+$V(A_{i}) \subset \P^{2}_{\Delta}$ is an irreducible (hence smooth in
+this case) divisor for all $i$.  Let $\Lambda_{i}$ denote the
+subscheme $V(A_{i})$; $\Lambda_{i}$ restricts to a line over each
+point of $\Delta$.
+
+
+The resolution of the rational map $g$ proceeds in two stages.  First,
+suppose all three divisors $\Lambda_{i}$ intersect along a line
+$\lambda \subset \P^{2}_{0}$ in the fiber over $0 \in \Delta$.  We
+blow up the line $\lambda$ to obtain
+\[ \beta_{1}: \P^{2}_{\Delta}\left(1 \right) :=
+  \Bl_{\lambda}\P^{2}_{\Delta} \to \P^{2}_{\Delta}\]
+
+The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(1)$ is the
+transverse union of
+\begin{enumerate}
+\item $P$: the proper transform of $\P^{2}_{0}$, and\\
+\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$,
+\end{enumerate}
+where $P$ intersects $F(1)$ along $\lambda \subset P$.  On $F(1)$,
+$\lambda$ is the directrix. Furthermore, $F(1)$ is the exceptional
+divisor of $\beta_{1}$.  If we let $\Lambda_{i}(1)$ denote the proper
+transforms of $\Lambda_{i}$, then the reader can check that
+$\Lambda_{i}(1)$ are all smooth, and that $\Lambda_{i}(1)\big|_{0}$ is
+a line in $F(1)$ for all $i$.  (By a {\sl line} in $\F_{1}$ we mean
+the preimage of a line under the blowdown map $\F_{1} \to \P^{2}$.)
+
+Next, suppose $\Lambda_{i}(1)$, $i=1,2,3,$ all intersect along a
+particular line $\lambda(1) \subset F(1)$. Note that $\lambda(1)$ is
+disjoint from the directrix $\lambda \subset F(1)$.  We can once again
+blow up $\lambda(1) \subset \P^{2}_{\Delta}(1)$ to obtain
+\[\beta_{2}: \P^{2}_{\Delta}(2) \to \P^{2}_{\Delta}(1).\]
+
+The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(2)$ is a chain of
+three surfaces
+\begin{enumerate}
+\item $P(0)$: the proper transform of $\P^{2}_{0}$, and\\
+\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$, and\\
+\item $F(2)$: another copy of $\F_{1}$, 
+\end{enumerate}
+where $P(0) \cup F(1)$ is the proper transform of the same named
+surfaces in $\P^{2}_{\Delta}(1)$, and $F(2)$ meets $F(1)$ along
+$\lambda(1)$, where $\lambda(1)$ is the directrix of
+$F(2)$. Similarly, we let $\Lambda_{i}(2)$ denote the strict
+transforms of $\Lambda_{i}(1)$; the surfaces $\Lambda_{i}(2)$
+intersect $F(2)$ along lines which avoid the directrix.
+
+Proceeding in this manner, we end up with the scheme
+$\P^{2}_{\Delta}(n)$, whose fiber over $0 \in \Delta$ is an
+``accordion'' of surfaces $P \cup F(1) \cup \dots \cup F(n)$, {\sl and
+  such that the three smooth surfaces $\Lambda_{i}(n)$ now only
+  intersect at a point $x \in F(n)$ not lying on the directrix of
+  $F(n)$.}
+
+Thus, the rational map
+$g \circ \beta_{1} \circ \dots \circ \beta_{n}: \P^{2}_{\Delta}(n)
+\dashrightarrow \P^{2}_{\Delta}$ now has indeterminacy scheme
+$B = \cap_{i} \Lambda_{i}(n)$ supported at the single point
+$x \in F(n)$.  Note that $B$ is now a global complete intersection
+subscheme of $\P^{2}(n)$, being the intersection of the three surfaces
+$\Lambda_{i}(n)$, therefore, if we finally let
+\[\td{\P^{2}_{\Delta}(n)}\]
+denote the blow up $\Bl_{B}\P^{2}_{\Delta}(n)$, with blowdown map
+denoted $\beta: \td{\P^{2}_{\Delta}(n)} \to \P^{2}_{\Delta}(n)$, we
+obtain the resolution of indeterminacy $\td{g}$ of the original map
+$g$:
+\begin{center}
+  \begin{tikzcd} & \td{\P^{2}_{\Delta}(n)} \arrow[dl] \arrow[dr, "\td{g}"]  & & \\
+    \P^{2}_{\Delta} \arrow[rr, dashed, "g"] & & \P^{2}_{\Delta}
+  \end{tikzcd}
+\end{center}
+Let $P(\infty) = \beta^{-1}(x) \subset \td{\P^{2}_{\Delta}(n)}$ denote
+the exceptional surface; $P(\infty)$ is isomorphic to $\P^{2}$.
+
+The map $\td{g}$ has the following effect on the fiber
+$P(0) \cup F(1) \cup \dots \cup F(n-1) \cup \Bl_{x}F(n) \cup
+P(\infty)$:
+\begin{enumerate}
+\item $\td{g}\big|_{P(\infty)}: \P(\infty) \to \P^{2}_{\Delta}$ is an
+  isomorphism \\
+\item $\td{g}\big|_{\Bl_{x}F(n)}: \Bl_{x}F(n) \to \P^{2}_{\Delta}$ is
+  ``projection from the point $x$'', if we think of $F(n)$ as the blow
+  up of a plane at a point not equal to $x$.  The $\td{g}$-image of
+  $\Bl_{x}F(n)$ is a line $\lambda' \subset \P^{2}_{0}$.\\
+\item $\td{g}$ contracts $P_{0} \cup \dots \cup F(n-1)$ to a single
+  point on the line $\lambda'$.
+\end{enumerate}
+
+\subsection{Finishing the argument}
+\label{sec:finishargument}
+
+Now we are in a position to finish the argument.  We must show that
+the constant subscheme $Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$
+cannot transform into $\mathcal{Z}$ under $g$.  To aide the reader, we
+state here the fundamental detail obstructing this possibility: The
+line $L_0$ containing the support $\{[0:1:1], [0:-1:1], [0:0:1]\}$ of
+$Z$ is {\sl distinct} from the line $L_1$ which is the tangent line of
+$[0:0:1] \in Z$.
 
 
 

@@ -502,14 +502,14 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 \label{sec:enum-cubics-b_1}
 
 
-%\begin{figure}[!]
- % \centering
-  %\incfig{FamilyB1}
-  %\caption{Schematic for the family parametrized by $B_1$. The points
-   % $Z$ vary freely on the conic $C$, and we blow up the plane at the
-    %six points $Z \cup \{y_{1},y_{2}\}$.}
-    %\label{fig:FamilyB1}
-%\end{figure}
+\begin{figure}[!]
+  \centering
+  \incfig{FamilyB1}
+  \caption{Schematic for the family parametrized by $B_1$. The points
+    $Z$ vary freely on the conic $C$, and we blow up the plane at the
+    six points $Z \cup \{y_{1},y_{2}\}$.}
+    \label{fig:FamilyB1}
+\end{figure}
 
 
 For $B_1$ to be of any use, we must {\sl a priori} know the degree of
@@ -2168,29 +2168,285 @@ to $\td{S^{[2]}}$ using the push-pull formula, we ultimately get:
 
 
 
-\subsubsection{Relation $B_4$}
+\subsubsection{Fourth relation}
 \label{sec:relation-b_4}
 
-Given \autoref{cor:monomialsV4}, the relation we get from the test
-family $\pi: \mathcal{X} \to B_{4} = \td{S^{[2]}}$ is:
+Given \autoref{cor:cV4}, the relation we get from the test family
+$\pi: \mathcal{X} \to B_{4}$ studied in this section is:
 \begin{align}
   \label{eq:relationB4}
   6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} =  25920.
 \end{align}
 
-Indeed, the map to moduli \[\mu: B_{4} \dashrightarrow \M \] factors
-through $\mu' : \dashrightarrow \M^{\dagger}/S_{2}$ where the
-symmetric group permutes the last two lines of a marking.  The map
-$\mu'$ is clearly birational, and therefore
-$\deg \mu = 51840/2 = 25920$ as claimed in \eqref{eq:relationB4}.
+Only the right hand side needs explanation: the map to moduli
+\[\mu: B_{4} \dashrightarrow \M \] factors through
+$\mu' : \dashrightarrow \M^{\dagger}/S_{2}$ where the symmetric group
+permutes the last two lines of a marking.  The map $\mu'$ is clearly
+birational, and therefore $\deg \mu = 51840/2 = 25920$ as claimed in
+\eqref{eq:relationB4}.
 
 
 
 \appendix
 
+
+
 \section{The goodness of the $A5$ cubic surface}
 \label{sec:goodnessA5}
 
+\subsection{Objective}
+Let $X \subset \P^{3}$ denote the cubic surface defined in homogeneous
+coordinates $\left(x_{0}, x_{1}, x_{2}, x_{3}\right)$ by the equation
+\[x_{3}f_{2} - f_{3} = 0,\] where $f_{2} = x_{0}x_{1}$ and
+$f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.  This is the unique
+cubic surface possessing a single $A_5$ singularity, up to projective
+equivalence.
+
+$X$ is the cubic surface associated to the admissible length $6$
+subscheme $Z \subset \P^{2}$ defined by the common vanishing of the
+forms $f_{2}$ and $f_{3}$ -- we leave it to the reader to check that
+$\Aut(\P^{2},Z)$ is one-dimensional, with $\G_{a}$ as identity
+component.  Thus, the techniques used in the main body of the paper
+cannot address the goodness of $X$.
+
+Our purpose in this appendix is to provide a proof of the following
+theorem:
+
+\begin{theorem}
+  \label{theorem:A5good} The surface $X$ is good, i.e. $X$ does not
+  lie in the $\PGL(4)$-orbit closure of a general cubic surface.
+\end{theorem}
+
+The proof proceeds by contradiction, in several steps. Let
+$\Delta = \spec \k [[t]]$ with closed point denoted $0$ and generic
+point denoted $\eta$, and suppose for sake of contradiction, that
+\[\pi: \mathcal{X} \to \Delta\]
+is a family of cubic surfaces with the properties:
+\begin{enumerate}
+\item $\mathcal{X}_{0} \simeq X$, and\\
+\item $\mathcal{\eta} \simeq Y \times_{\spec \k} \eta$, where $Y$ is a
+  general fixed cubic surface.
+\end{enumerate}
+
+The overall strategy is to transfer to the setting of families of
+length $6$ subschemes of the plane, and reduce to proving that
+$[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL(3)$-orbit closure
+of a length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.  We will
+sketch several parts of the reduction, leaving lesser details to the
+reader.
+
+\begin{lemma}[Brieskorn]
+  \label{lemma:simult} There exists a {\sl smooth} family of cubic
+  surfaces \[\pi': \mathcal{X}' \to \Delta\] and a morphism
+  $\beta: \mathcal{X}' \to \mathcal{X}$ of $\Delta$-schemes which is
+  an isomorphism over $\eta$ and is a minimal desingularization over
+  $0$.
+\end{lemma}
+
+Let $\kappa: \Bl_{Z}\P^2 \to X$ denote the anti-canonical map. The
+minimal desingularization $\beta_{0}: X' \to X$ factors through
+$\kappa$, and is also the minimal desingularization of $\Bl_{Z}\P^{2}$
+-- the argument for this can be found in the proof of
+\autoref{prop:good}. Let $\kappa':X' \to \Bl_{Z}\P^{2} \to \P^{2}$
+denote the composite map.  The line bundle
+\[\mathcal{L}_{0} := \kappa'^{*}\O_{\P^{2}}(1)\] is easily seen to have
+no higher cohomology, and $h^{0}(X', \mathcal{L}_{0}) = 3$.
+
+Our next step is to extend $\mathcal{L}_{0}$ to $\mathcal{X'}$.
+
+\begin{lemma}
+  \label{lemma:extends} There exists a line bundle $\mathcal{L}$ on
+  $\mathcal{X}'$ extending $\mathcal{L}_{0}$ on
+  $X' \subset \mathcal{X}'$.
+\end{lemma}
+
+\begin{proof}[Proof sketch.]
+  The deformation space of the pair $(X', \mathcal{L}_{0})$ is the
+  cohomology group $H^1 \left( X', \mathcal{E} \right)$, where
+  $\mathcal{E}$ is the extension
+  \[0 \to \O_{X'} \to \mathcal{E} \to T_{X'} \to 0 \] defined by the
+  element $c_{1} \mathcal{L}_{0} \in H^{1}(X', \Omega_{X'})$. Since
+  $H^{2}(\O_{X'}) = 0$, it follows that $\mathcal{L}_{0}$ lifts to
+  every infinitesimal deformation of $X'$.  Thus, $\mathcal{L}_{0}$
+  lifts to the formal completion of $\mathcal{X'}$ along $X'$.  By an
+  algebraization argument \cite[Reference]... Anand: how to do this??
+\end{proof}
+
+Next, we choose an isomorphism
+$\P \left( \pi'_{*}(\mathcal{L})^{\smvee} \right) \simeq \P^{2}
+_{\Delta}$, and let
+\[\varphi: \mathcal{X}' \to \P^{2}_{\Delta}\] denote the map induced
+by the line bundle $\mathcal{L}$ referenced in
+\autoref{lemma:extends}.  The natural injection of line bundles
+(induced by pullback of forms)
+$\omega_{\mathcal{X'}/\Delta}^{-1} \hookrightarrow
+\varphi^{*}\omega_{\P^{2}_{\Delta}/\Delta}^{-1}$ induces an inclusion
+of free $\k[[t]]$-modules
+\[\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
+  H^{0}\left(\P^{2}_{\Delta}, \O(3)\right).\] The former is a rank $4$
+free module, and the latter is a rank $10$ free module.  We let
+\[\mathcal{Z} \subset \P^{2}_{\Delta}\] denote the closed subscheme defined by the common vanishing of the cubic forms on $\P^{2}_{\Delta}$ lying in the submodule $\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
+H^{0}\left(\P^{2}_{\Delta}, \O(3)\right)$.
+
+Tracing through the construction fiber-by-fiber over $\Delta$, the
+reader can check that $\mathcal{Z} \to \Delta$ is a finite, flat
+degree $6$ cover, with central fiber $\mathcal{Z}_{0} \subset \P^{2}$
+isomorphic to the admissible scheme $Z \subset \P^{2}$ from the
+beginning of this appendix.  Furthermore, since the cubic surface $Y$
+was chosen to be general, and since the generic fiber
+$\mathcal{X'}_{\eta} \simeq \mathcal{X}_{\eta}$ is isomorphic to the
+constant family $Y \times _{\spec \k} \eta$, it follows that
+$\mathcal{Z}_{\eta} \subset \P^{2} \times_{\spec _{\k}} \eta$ is
+isomorphic to a general, constant family of subschemes, namely, that
+there exists a general length $6$ subscheme $Z_{gen} \subset \P^{2}$
+and an element $g \in \Aut (\P^{2}_{\eta})$ such that
+$g(Z_{gen}) = \mathcal{Z}_{\eta}$.
+
+After performing a finite, ramified base change $t \mapsto t^{k}$, we
+may assume that $\mathcal{Z} \subset \P^{2}_{\Delta}$ is the union of
+$6$ sections,
+$a, b, z_{1}, z_{2}, z_{3}, z_{4}: \Delta \to \P^{2}_{\Delta}$, where:
+\begin{itemize}
+\item $a$ and $b$ do not intersect, and
+  $a(0) = [0:1:1], b(0) = [0:-1:1]$ are the two smooth points of
+  $Z \subset \P^{2}$, and
+\item $z_{i}(0) =[0:0:1] =: p$.
+\end{itemize}
+Here, we are using homogeneous coordinates $[x_0 :x_1 : x_2]$ on
+$\P^{2}$ where $Z \subset \P^{2}$ is the common vanishing scheme of
+$f_{2} = x_0 x_1$ and $f_3 = x_0^3+x_1^3-x_1x_2^2$.  Let
+$L_{0}, L_{1} \subset \P^{2}$ denote the lines $x_0 = 0$ and $x_1=0$,
+respectively -- $L_0$ contains the three points supporting $Z$, while
+$L_1$ is the tangent line of $Z$ at its multiplicity $4$ point $p$.
+
+
+\subsection{Resolving rational maps $\P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$}
+\label{sec:resolv-rati-maps}
+
+Maintaining the notation above, we have arrived at the following
+situation:
+\begin{enumerate}
+\item $Z_{gen} \subset \P^{2}$ is a general set of $6$ points, denoted $q_{1}, q_{2}, p_{1}, p_{2}, \dots, p_{4}$,\\
+\item A rational map
+  $g : \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$ restricting to
+  an element of $\Aut \P^{2}_{\eta}$ over the generic point $\eta$, \\
+\item The Zariski closure
+  $\overline{g(Z_{gen} \times_{\spec \k} \eta)}$ is
+  $\mathcal{Z} \subset \P^{2}_{\Delta}$.  We assume that
+  $q_{1}, q_{2}$ map to $a,b$ correspondingly, and that $p_{i}$ maps
+  to $z_{i}$.
+\end{enumerate}
+
+The strategy then to show that this situation is impossible.  For
+this, we need to study the basic anatomy of a rational map
+\[g: \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta} \] induced by an
+element of $\Aut \P^{2}_{\eta}$.
+
+Letting $[x_0 : x_1 : x_2]$ denote homogeneous coorinates on $\P^{2}$,
+the rational map $g$ is given by $3$ homogeneous linear forms
+$A_0, A_1, A_2 \in \k(\!(t)\!)[x_0,x_{1},x_{2}]$.  By multpilying by a
+suitable power of $t$, (not affecting the map $g$), we may assume that
+$A_{i} \in \k[\![t]\!][x_0, x_1, x_2]$, and that not all $A_i$ vanish
+modulo $(t)$.  Furthermore, by swapping $A_{i}$ by suitable
+$\k$-linear combinations, we may assume that
+$V(A_{i}) \subset \P^{2}_{\Delta}$ is an irreducible (hence smooth in
+this case) divisor for all $i$.  Let $\Lambda_{i}$ denote the
+subscheme $V(A_{i})$; $\Lambda_{i}$ restricts to a line over each
+point of $\Delta$.
+
+
+The resolution of the rational map $g$ proceeds in two stages.  First,
+suppose all three divisors $\Lambda_{i}$ intersect along a line
+$\lambda \subset \P^{2}_{0}$ in the fiber over $0 \in \Delta$.  We
+blow up the line $\lambda$ to obtain
+\[ \beta_{1}: \P^{2}_{\Delta}\left(1 \right) :=
+  \Bl_{\lambda}\P^{2}_{\Delta} \to \P^{2}_{\Delta}\]
+
+The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(1)$ is the
+transverse union of
+\begin{enumerate}
+\item $P$: the proper transform of $\P^{2}_{0}$, and\\
+\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$,
+\end{enumerate}
+where $P$ intersects $F(1)$ along $\lambda \subset P$.  On $F(1)$,
+$\lambda$ is the directrix. Furthermore, $F(1)$ is the exceptional
+divisor of $\beta_{1}$.  If we let $\Lambda_{i}(1)$ denote the proper
+transforms of $\Lambda_{i}$, then the reader can check that
+$\Lambda_{i}(1)$ are all smooth, and that $\Lambda_{i}(1)\big|_{0}$ is
+a line in $F(1)$ for all $i$.  (By a {\sl line} in $\F_{1}$ we mean
+the preimage of a line under the blowdown map $\F_{1} \to \P^{2}$.)
+
+Next, suppose $\Lambda_{i}(1)$, $i=1,2,3,$ all intersect along a
+particular line $\lambda(1) \subset F(1)$. Note that $\lambda(1)$ is
+disjoint from the directrix $\lambda \subset F(1)$.  We can once again
+blow up $\lambda(1) \subset \P^{2}_{\Delta}(1)$ to obtain
+\[\beta_{2}: \P^{2}_{\Delta}(2) \to \P^{2}_{\Delta}(1).\]
+
+The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(2)$ is a chain of
+three surfaces
+\begin{enumerate}
+\item $P(0)$: the proper transform of $\P^{2}_{0}$, and\\
+\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$, and\\
+\item $F(2)$: another copy of $\F_{1}$, 
+\end{enumerate}
+where $P(0) \cup F(1)$ is the proper transform of the same named
+surfaces in $\P^{2}_{\Delta}(1)$, and $F(2)$ meets $F(1)$ along
+$\lambda(1)$, where $\lambda(1)$ is the directrix of
+$F(2)$. Similarly, we let $\Lambda_{i}(2)$ denote the strict
+transforms of $\Lambda_{i}(1)$; the surfaces $\Lambda_{i}(2)$
+intersect $F(2)$ along lines which avoid the directrix.
+
+Proceeding in this manner, we end up with the scheme
+$\P^{2}_{\Delta}(n)$, whose fiber over $0 \in \Delta$ is an
+``accordion'' of surfaces $P \cup F(1) \cup \dots \cup F(n)$, {\sl and
+  such that the three smooth surfaces $\Lambda_{i}(n)$ now only
+  intersect at a point $x \in F(n)$ not lying on the directrix of
+  $F(n)$.}
+
+Thus, the rational map
+$g \circ \beta_{1} \circ \dots \circ \beta_{n}: \P^{2}_{\Delta}(n)
+\dashrightarrow \P^{2}_{\Delta}$ now has indeterminacy scheme
+$B = \cap_{i} \Lambda_{i}(n)$ supported at the single point
+$x \in F(n)$.  Note that $B$ is now a global complete intersection
+subscheme of $\P^{2}(n)$, being the intersection of the three surfaces
+$\Lambda_{i}(n)$, therefore, if we finally let
+\[\td{\P^{2}_{\Delta}(n)}\]
+denote the blow up $\Bl_{B}\P^{2}_{\Delta}(n)$, with blowdown map
+denoted $\beta: \td{\P^{2}_{\Delta}(n)} \to \P^{2}_{\Delta}(n)$, we
+obtain the resolution of indeterminacy $\td{g}$ of the original map
+$g$:
+\begin{center}
+  \begin{tikzcd} & \td{\P^{2}_{\Delta}(n)} \arrow[dl] \arrow[dr, "\td{g}"]  & & \\
+    \P^{2}_{\Delta} \arrow[rr, dashed, "g"] & & \P^{2}_{\Delta}
+  \end{tikzcd}
+\end{center}
+Let $P(\infty) = \beta^{-1}(x) \subset \td{\P^{2}_{\Delta}(n)}$ denote
+the exceptional surface; $P(\infty)$ is isomorphic to $\P^{2}$.
+
+The map $\td{g}$ has the following effect on the fiber
+$P(0) \cup F(1) \cup \dots \cup F(n-1) \cup \Bl_{x}F(n) \cup
+P(\infty)$:
+\begin{enumerate}
+\item $\td{g}\big|_{P(\infty)}: \P(\infty) \to \P^{2}_{\Delta}$ is an
+  isomorphism \\
+\item $\td{g}\big|_{\Bl_{x}F(n)}: \Bl_{x}F(n) \to \P^{2}_{\Delta}$ is
+  ``projection from the point $x$'', if we think of $F(n)$ as the blow
+  up of a plane at a point not equal to $x$.  The $\td{g}$-image of
+  $\Bl_{x}F(n)$ is a line $\lambda' \subset \P^{2}_{0}$.\\
+\item $\td{g}$ contracts $P_{0} \cup \dots \cup F(n-1)$ to a single
+  point on the line $\lambda'$.
+\end{enumerate}
+
+\subsection{Finishing the argument}
+\label{sec:finishargument}
+
+Now we are in a position to finish the argument.  We must show that
+the constant subscheme $Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$
+cannot transform into $\mathcal{Z}$ under $g$.  To aide the reader, we
+state here the fundamental detail obstructing this possibility: The
+line $L_0$ containing the support $\{[0:1:1], [0:-1:1], [0:0:1]\}$ of
+$Z$ is {\sl distinct} from the line $L_1$ which is the tangent line of
+$[0:0:1] \in Z$.
 
 
 

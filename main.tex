@@ -259,7 +259,10 @@ orders of the finite groups that arise as automorphism groups of cubic surfaces.
 
 \subsection{Acknowledgements}
 We thank Radu Laza, who asked Question~\ref{slice} to the first two
-authors during a meeting at Oberwolfach in 2017.
+authors during a meeting at Oberwolfach in 2017.  We thank Hunter
+Spink for important discussions early in the project.  We thank Paulo
+Aluffi for quickly providing an enumerative reference on cuspidal
+cubic curves.  
 
 \todo{More acknowledgements}
 
@@ -838,7 +841,7 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 \label{sec:enum-cubics-b_1}
 
 
-\begin{figure}[!]
+\begin{figure}
   \centering
   \incfig{FamilyB1}
   \caption{Schematic for the family parametrized by $B_1$. The points
@@ -1255,13 +1258,14 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 \label{sec:enum-cubics-b_2}
 
 
-%\begin{figure}[!]
-   % \centering
-   %\incfig{FamilyB2}
-    %\caption{Schematic for our second family. We blow up the plane at
-     % the points $\{s_{1}, \dots, s_{5}, t\}$.}
-    %\label{fig:FamilyB2}
-    % \end{figure}
+
+\begin{figure}[!]
+    \centering
+   \incfig{FamilyB2}
+    \caption{Schematic for our second family. We blow up the plane at
+      the points $\{s_{1}, \dots, s_{5}, t\}$.}
+    \label{fig:FamilyB2}
+     \end{figure}
 
 
 Now that we've identified the $v_{i}$, we need only establish
@@ -1314,14 +1318,14 @@ we find our second relation:
 \label{sec:family-b_3}
 
 
-%\begin{figure}[!]
-  %  \centering
-   % \incfig{FigureB3}
-    %\caption{Third family schematic. The point $\nu(s_{\infty})$ is
-     % the point at infinity. It, along with
-      %$\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
-    %\label{fig:FigureB3}
-%\end{figure}
+\begin{figure}[!]
+    \centering
+    \incfig{FigureB3}
+    \caption{Third family schematic. The point $\nu(s_{\infty})$ is
+      the point at infinity. It, along with
+      $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
+    \label{fig:FigureB3}
+\end{figure}
 
 
 Let us reset notation once again.  Our third family is a variant of
@@ -2923,16 +2927,16 @@ point denoted $\eta$, and suppose for sake of contradiction, that
 is a family of cubic surfaces with the properties:
 \begin{enumerate}
 \item $\mathcal{X}_{0} \simeq X$, and\\
-\item $\mathcal{\eta} \simeq Y \times_{\spec \k} \eta$, where $Y$ is a
+\item $\mathcal{X}_{\eta} \simeq Y \times_{\spec \k} \eta$, where $Y$ is a
   general fixed cubic surface.
 \end{enumerate}
 
 The overall strategy is to transfer to the setting of families of
 length $6$ subschemes of the plane, and reduce to proving that
 $[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL(3)$-orbit closure
-of a length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.  We will
-sketch several parts of the reduction, leaving lesser details to the
-reader.
+of a {\sl general} length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.
+We will sketch several parts of the reduction, leaving lesser details
+to the reader.
 
 \begin{lemma}[Brieskorn]
   \label{lemma:simult} There exists a {\sl smooth} family of cubic
@@ -3126,13 +3130,13 @@ The map $\td{g}$ has the following effect on the fiber
 $P(0) \cup F(1) \cup \dots \cup F(n-1) \cup \Bl_{x}F(n) \cup
 P(\infty)$:
 \begin{enumerate}
-\item $\td{g}\big|_{P(\infty)}: \P(\infty) \to \P^{2}_{\Delta}$ is an
+\item $\td{g}\big|_{P(\infty)}: \P(\infty) \to \P^{2}_{0}$ is an
   isomorphism \\
-\item $\td{g}\big|_{\Bl_{x}F(n)}: \Bl_{x}F(n) \to \P^{2}_{\Delta}$ is
+\item $\td{g}\big|_{\Bl_{x}F(n)}: \Bl_{x}F(n) \to \P^{2}_{0}$ is
   ``projection from the point $x$'', if we think of $F(n)$ as the blow
   up of a plane at a point not equal to $x$.  The $\td{g}$-image of
   $\Bl_{x}F(n)$ is a line $\lambda' \subset \P^{2}_{0}$.\\
-\item $\td{g}$ contracts $P_{0} \cup \dots \cup F(n-1)$ to a single
+\item $\td{g}$ contracts $P(0) \cup \dots \cup F(n-1)$ to a single
   point on the line $\lambda'$.
 \end{enumerate}
 
@@ -3141,11 +3145,78 @@ P(\infty)$:
 
 Now we are in a position to finish the argument.  We must show that
 the constant subscheme $Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$
-cannot transform into $\mathcal{Z}$ under $g$.  To aide the reader, we
-state here the fundamental detail obstructing this possibility: The
-line $L_0$ containing the support $\{[0:1:1], [0:-1:1], [0:0:1]\}$ of
-$Z$ is {\sl distinct} from the line $L_1$ which is the tangent line of
-$[0:0:1] \in Z$.
+cannot transform into $\mathcal{Z}$ under $g$.  To help the reader
+focus, we state from the outset the fundamental detail ultimately
+obstructing this possibility: The line $L_0$ containing the support
+$\{[0:1:1], [0:-1:1], [0:0:1]\}$ of $Z$ is {\sl distinct} from the
+line $L_1$ which is the tangent line of $Z$ at $[0:0:1] \in Z$.
+
+\begin{proof}[Proof of \autoref{theorem:A5good}]
+  We assume the existence of a rational map $g$ under which
+  $Z_{gen} \times \Delta$ transforms into $\mathcal{Z}$, and will
+  eventually arrive at a contradiction.  We recall that
+  $Z_{gen} = \{q_1, q_2, p_1, \dots, p_4\}$.
+
+  First, note that in the resolution of $g$, we {\sl must} begin with
+  blowing up a line $\lambda$ -- in fact, we must blow up the line
+  $\lambda = \langle q_{1}, q_{2} \rangle \subset \P^{2}_{0}$.  If we
+  did not do so, then by the description of the resolution $\td{g}$
+  given at the end of \autoref{sec:resolv-rati-maps}, at least one of
+  the two points $q_{i}$ would become identified with the four points
+  $p_{j}$ under $\td{g}$ in the fiber over $0 \in \Delta$, contrary to
+  the nature of $Z$.
+
+  Next, we claim that in the resolution of $g$, in the final step,
+  there {\sl must} be a finite, non-empty base point $x \in F(n)$ as
+  described in the general resolution process in
+  \autoref{sec:resolv-rati-maps}.  If not, then $\td{g}\big|_{F(n)}$
+  would be the contraction of the Hirzebruch surface $F(n)$ down to
+  $\P^{2}_{0}$.  By the reasoning in the previous paragraph, the
+  proper transforms of the sections $\{q_{i}\} \times \Delta$ in
+  $\P^{2}_{\Delta}(n)$ must meet $F(n)$ in a pair of points
+  $\td{q}_{i}$ outside the directrix of $F(n)$ while the proper
+  transforms of $\{p_{j}\} \times \Delta$ must lie in
+  $P(0)$. Furthermore, the line
+  $\langle \td{q}_{1}, \td{q}_{2} \rangle \subset F(n)$ must be
+  disjoint from the directrix, because otherwise the pair $\td{q}_{i}$
+  would be identified under the blow-down map to the domain
+  $\P^{2}_{\Delta}$, which is obviously not the case.  Thus, if there
+  were no further basepoint $x$ to resolve in $F(n)$, the
+  $\td{g}$-images of the pair $\td{q}_{i}$ would span a line which
+  does not contain the point $p \in Z$, again contrary to the nature
+  of $Z$.
+
+  Thus, the map $g$ would need to be resolved by blowing up a finite
+  scheme $B \subset \P^{2}_{\Delta}(n)$ meeting $F(n)$ at a point $x$,
+  as described in \autoref{sec:resolv-rati-maps}. In our current
+  situation, the surface $F(n)$ contains the pair of points
+  $\td{q}_{i}$ and also the basepoint $x$, which may or may not
+  coincide with one of the $\td{q_{i}}$.  In any case, since the
+  effect of $\td{g}$ on $F(n)$ is ``projection away from $x$'', we
+  deduce that the image of $F(n)$ must be the line
+  $L_0 \subset \P^{2}_{0}$ joining $a$ or $b$ with $p$.  Our proof
+  will be complete after we contradict this conclusion.
+
+  
+  To continue, we let $\Sigma_{j,k}$ denote the irreducible surface in
+  $\P^{2}_{\Delta}(n)$ obtained by taking the closure of the line
+  $\langle \{p_{j}\} \times \eta, \{p_{k}\} \times \eta \rangle$
+  defined over the generic point $\eta$.  Let
+  $C_{j,k} \subset P(0) \cup \dots \cup F(n)$ denote the fiber of
+  $\Sigma_{j,k}$ over $0 \in \Delta$. $C_{j,k}$ is a chain of
+  $\P^{1}$'s, with $C_{j,k} \cap P(0)$ being the line joining
+  $p_{j}, p_{k}$ viewed as points in $P(0)$. $C_{j,k} \cap F(m)$ is
+  then a ruling line which is uniquely determined by the locations of
+  the points
+  $\langle q_{1}, q_{2} \rangle \cap \langle p_{j}, p_{k} \rangle$,
+  which, by generality of $Z_{gen}$, is a set of $6$ distinct points.
+  In particular, $x \notin C_{j,k}$ for some pair $j,k$.  This implies
+  that $\td{g}(C_{j,k})$ = $L_{0} \subset \P^{2}_{0}$.  However,
+  $\td{g}(C_{j,k})$ must {\sl also} be the limit of the line joining
+  the pair of sections $z_{j}, z_{k} \subset \mathcal{Z}$ over the
+  generic point $\eta$.  This latter line is $L_{1}$, which is
+  distinct from $L_0$, providing our desired contradition.
+\end{proof}
 
 
 

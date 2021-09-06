@@ -93,8 +93,8 @@
 
 
 
-
 \maketitle
+
 
 \section{Introduction}
 \label{sec:intro}
@@ -132,7 +132,7 @@ morphism whose geometric fibers are isomorphic to cubic surfaces in
 $\P^3$.
 
 \begin{theorem}\label{theorem:main}
-  Let $B$ be proper and let $\pi \colon X \to B$ be a good family of
+  Let $B$ be proper and let $\pi \colon \cX \to B$ be a good family of
   cubic surfaces. Let $\V$ be the rank 4 bundle
   $\V = \pi_* \left(\omega_\pi^{-1}\right)$, and let
   \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
@@ -150,19 +150,18 @@ notion includes all families whose fibers are GIT-semistable or have a
 finite automorphism group.
 
 \subsection{Degree of the orbit closure}
-Question~\ref{orbit} in \autoref{sec:counting} fits in a broader
-story that has been an ongoing topic of study.
-Consider a hypersurface \(X\) in a projective space $\P V$ cut out by
-a homogeneous polynomial $F \in \Sym^d V$.
-In $\P\Sym^dV$, consider the orbit of $[F]$ under the action of
-$\GL(V)$, and let $\Orb([F])$ be its closure.
-In a series of seminal papers, Aluffi and Faber computed the degree of
-$\Orb([F])$ when \(F\) is a homogeneous polynomial in 2 or 3 variables,
-that is, when \(X\) is a set of points in $\P^1$ or a curve
-in $\P^2$ \cite{alu.fab:00,alu.fab:93}.
-The next case is that of cubic surfaces in $\P^3$.
-The answer to Question~\ref{orbit} says that the degree of the
-orbit closure of a general cubic surface is $96120$.
+Question~\ref{orbit} in \autoref{sec:counting} fits in a broader story
+that has been an ongoing topic of study.  Consider a hypersurface
+\(X\) in a projective space $\P V$ cut out by a homogeneous polynomial
+$F \in \Sym^d V$.  In $\P\Sym^dV$, consider the orbit of $[F]$ under
+the action of $\GL(V)$, and let $\Orb([F])$ be its closure.  In a
+series of seminal papers, Aluffi and Faber computed the degree of
+$\Orb([F])$ when \(F\) is {\sl any} homogeneous polynomial in 2 or 3
+variables, that is, when \(X\) is a set of points in $\P^1$ or a curve
+in $\P^2$ \cite{alu.fab:00,alu.fab:93}.  The next case is that of
+cubic surfaces in $\P^3$, established in this paper.  The answer to
+Question~\ref{orbit} says that the degree of the orbit closure of a
+general cubic surface is $96120$.
 
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
@@ -237,7 +236,7 @@ families.
 \subsection{Further remarks}
 The formula in \autoref{theorem:main} has some curious consequences.
 \begin{corollary}
-  \label{cor:ineq} If $\pi \colon X \to B$ is a good family of cubic
+  \label{cor:ineq} If $\pi \colon \cX \to B$ is a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$,
   then $$\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0$$ with
   equality holding if and only if a general cubic surface does not
@@ -245,7 +244,7 @@ The formula in \autoref{theorem:main} has some curious consequences.
 \end{corollary}
 
 \begin{corollary}
-  \label{cor:ineq} Let $\pi \colon X \to B$ is a good family of cubic
+  \label{cor:ineq} Let $\pi \colon \cX \to B$ is a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$.
   Assume that a general fiber of $\pi$ is smooth and the induced map
   $\mu \colon B \dashrightarrow \mathcal M$ is dominant.
@@ -279,61 +278,94 @@ In this chapter, we introduce the notion of a good family of cubic surfaces (\au
 
 \subsection{Notation and conventions}
 \label{sec:notation-conventions}
-Fix an algebraically closed field $\k$ of characteristic zero.
-In this paper, a `scheme' means `a scheme of finite type over $\k$' and a `point' means a `$\k$-point', unless explicitly stated otherwise.
-We do not distinguish between a vector bundle and the associated locally free sheaf of its sections.
+Fix an algebraically closed field $\k$ of characteristic zero.  In
+this paper, a `scheme' means `a scheme of finite type over $\k$' and a
+`point' means a `$\k$-point', unless explicitly stated otherwise.  We
+do not distinguish between a vector bundle and the associated locally
+free sheaf of its sections.
 
-Given a map of schemes $\pi \colon X \to Y$ and a point $y \in Y$, we let $X_y$ denote the fiber scheme $\pi^{-1}(y)$.  If $\pi$ is proper and Gorenstein, we write $\omega_{X/Y}$ or $\omega_\pi$ for the dualizing line bundle.  If $X$ and $Y$ are themselves Gorenstein and $\pi$ is flat, then we have $\omega_{X/Y} = \omega_X \otimes \pi^*\omega_Y^{-1}$.
+Given a map of schemes $\pi \colon X \to Y$ and a point $y \in Y$, we
+let $X_y$ denote the fiber scheme $\pi^{-1}(y)$.  If $\pi$ is proper
+and Gorenstein, we write $\omega_{X/Y}$ or $\omega_\pi$ for the
+dualizing line bundle.  If $X$ and $Y$ are themselves Gorenstein and
+$\pi$ is flat, then we have
+$\omega_{X/Y} = \omega_X \otimes \pi^*\omega_Y^{-1}$.
 
-Given a vector bundle $\mathcal W$, we let $\P \mathcal W$ be its projectivization.  Contrary to Grothendieck's convention, $\P \mathcal W$ parametrizes $1$-dimensional subspaces in the fibers of $\mathcal W$.  In other words, we set
-\[ \P \mathcal W = \Proj \Sym(\mathcal W^\vee).\]
-As a result, $\P \mathcal W$ comes equipped with a line bundle $\O(1)$ whose push-forward to the base is $\mathcal W^\vee$.
+Given a vector bundle $\mathcal W$, we let $\P \mathcal W$ be its
+projectivization.  Contrary to Grothendieck's convention,
+$\P \mathcal W$ parametrizes $1$-dimensional subspaces in the fibers
+of $\mathcal W$.  In other words, we set
+\[ \P \mathcal W = \Proj \Sym(\mathcal W^\vee).\] As a result,
+$\P \mathcal W$ comes equipped with a line bundle $\O(1)$ whose
+push-forward to the base is $\mathcal W^\vee$.
 
-Let $Q \subset \P V$ be a non-degenerate quadric.  The bilinear form associated to $Q$ gives an isomorphism of $\P V$ with the dual projective space $\P V^\vee$.  Given a point $p \in \P V$, we denote by $\Polar(p) \subset \P V$ the hyperplane dual to $p$ with respect to $Q$. Similarly, given a hyperplane $H \subset \P V$, we denote by $\Pole(H) \in \P V$ the point dual to $H$  with respect to $Q$.  In almost all cases, we use these constructions when $\P V$ is $\P^2$.
+Let $Q \subset \P V$ be a non-degenerate quadric.  The bilinear form
+associated to $Q$ gives an isomorphism of $\P V$ with the dual
+projective space $\P V^\vee$.  Given a point $p \in \P V$, we denote
+by $\Polar(p) \subset \P V$ the hyperplane dual to $p$ with respect to
+$Q$. Similarly, given a hyperplane $H \subset \P V$, we denote by
+$\Pole(H) \in \P V$ the point dual to $H$ with respect to $Q$.  In
+almost all cases, we use these constructions when $\P V$ is $\P^2$.
 
 \subsection{Moduli of cubic surfaces}
 \label{sec:classical-facts}
-Let $\pi \colon X \to B$ be a family of cubic surfaces.
-That is, let $\pi$ be a flat, proper morphism whose fibers are isomorphic to cubic hypersurfaces in $\P^3$.
-Since $\pi$ is flat and its fibers are Gorenstein, it is a Gorenstein morphism, and hence admits a dualizing line bundle $\omega_\pi$.
-By the adjunction formula, it follows that the restriction of $\omega_{\pi}^{-1}$ to every fiber is isomorphic to the restriction of $\O(1)$ with respect to an embedding of the fiber as a cubic hypersurface in $\P^3$.
-By standard theorems about cohomology and base-change, it follows that $R^i\pi_* \left(\omega_{\pi}^{-1}\right)$ vanishes for $i > 0$, and is a vector bundle for $i = 0$.
-Set
+Let $\pi \colon \cX \to B$ be a family of cubic surfaces.  That is,
+let $\pi$ be a flat, proper morphism whose fibers are isomorphic to
+cubic hypersurfaces in $\P^3$.  Since $\pi$ is flat and its fibers are
+Gorenstein, it is a Gorenstein morphism, and hence admits a dualizing
+line bundle $\omega_\pi$.  By the adjunction formula, it follows that
+the restriction of $\omega_{\pi}^{-1}$ to every fiber is isomorphic to
+the restriction of $\O(1)$ with respect to an embedding of the fiber
+as a cubic hypersurface in $\P^3$.  By standard theorems about
+cohomology and base-change, it follows that
+$R^i\pi_* \left(\omega_{\pi}^{-1}\right)$ vanishes for $i > 0$, and is
+a vector bundle for $i = 0$.  Set
 \[ \mathcal V = \pi_* \left( \omega_\pi^{-1} \right).\]
 The natural map 
 \[ \pi^*\mathcal V \to \omega_{\pi}^{-1}\]
 yields a closed embedding
 \begin{equation}\label{eqn:relcanx}
-  X \subset \P \mathcal V^\vee.
+  \cX \subset \P \mathcal V^\vee.
 \end{equation}
 We know that
 \[ \omega_{\P \mathcal V^\vee/B} = \O(-4) \otimes \det \mathcal V^\vee,\]
 and hence, by adjunction,
-\[ \omega_{X/B}= \O(-4) \otimes \O(X) \otimes \det \mathcal V^\vee |_X.\]
+\[ \omega_{\cX/B}= \O(-4) \otimes \O(\cX) \otimes \det \mathcal V^\vee |_\cX.\]
 By construction, we also have
-\[ \omega_{X/B} = \O(-1)|_X,\]
+\[ \omega_{\cX/B} = \O(-1)|_\cX,\]
 and hence we obtain that
 \begin{equation}\label{eqn:ox}
-  \O(X) = \O(3) \otimes \det \mathcal V.
+  \O(\cX) = \O(3) \otimes \det \mathcal V.
 \end{equation}
-In other words, $X \subset \P \mathcal V^\vee$ is the zero locus of a section of the line bundle $\O(3) \otimes \det \mathcal V^\vee$.
+In other words, $\cX \subset \P \mathcal V^\vee$ is the zero locus of
+a section of the line bundle $\O(3) \otimes \det \mathcal V^\vee$.
 
-Consider the category $\mathscr {C}$ fibered in groupoids over the category of schemes whose objects over a scheme $B$ are families of cubic surfaces $\pi \colon X \to B$, and whose morphisms are pull-back diagrams.
-Consider the category $\mathscr {M}$ fibered in groupoids over the category of schemes whose objects over a scheme $B$ are vector bundles $\mathcal V$ over $B$ of rank 4 along with a nowhere zero section $\xi$ of $\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, and whose morphisms are pull-back diagrams.
-Let $V$ be a $\k$-vector space of dimension 4.
-Note that $\mathscr{M}$ is simply the quotient stack
+Consider the category $\mathscr {C}$ fibered in groupoids over the
+category of schemes whose objects over a scheme $B$ are families of
+cubic surfaces $\pi \colon \cX \to B$, and whose morphisms are pull-back
+diagrams.  Consider the category $\mathscr {M}$ fibered in groupoids
+over the category of schemes whose objects over a scheme $B$ are
+vector bundles $\mathcal V$ over $B$ of rank 4 along with a nowhere
+zero section $\xi$ of
+$\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, and whose morphisms
+are pull-back diagrams.  Let $V$ be a $\k$-vector space of dimension
+4.  Note that $\mathscr{M}$ is simply the quotient stack
 \[\mathscr{M} = \left[\Sym^3 V^\vee \otimes \det V \setminus \{0\} / \GL V \right]. \]
 \begin{proposition}\label{prop:cubicstack}
   The category $\mathscr{C}$ of families of cubic surfaces is equivalent to the category $\mathscr{M}$.
 \end{proposition}
 \begin{proof}
-  Let $\pi \colon X \to B$ be a family of cubic surfaces, and set $\mathcal V = \pi_* \left( \omega_{\pi}^{-1} \right)$.
-  Consider the relative canonical embedding $X \subset \P \mathcal V^\vee$.
-  In this embedding, $X$ is cut out by a section of $\O(3) \otimes \det \mathcal V$ on $\P \mathcal V^\vee$, or equivalently, by a section of $\xi$ of  $\Sym^3V^\vee \otimes \det \mathcal V$ on $B$.
-  Since $\pi$ is flat, $\xi$ is nowhere zero on $B$.
-  We thus have a natural transformation from $\mathscr{C}$ to $\mathscr{M}$.
+  Let $\pi \colon \cX \to B$ be a family of cubic surfaces, and set
+  $\mathcal V = \pi_* \left( \omega_{\pi}^{-1} \right)$.  Consider the
+  relative canonical embedding $\cX \subset \P \mathcal V^\vee$.  In
+  this embedding, $\cX$ is cut out by a section of
+  $\O(3) \otimes \det \mathcal V$ on $\P \mathcal V^\vee$, or
+  equivalently, by a section of $\xi$ of
+  $\Sym^3V^\vee \otimes \det \mathcal V$ on $B$.  Since $\pi$ is flat,
+  $\xi$ is nowhere zero on $B$.  We thus have a natural transformation
+  from $\mathscr{C}$ to $\mathscr{M}$.
 
-  To go from $\mathscr{M}$ to $\mathscr{C}$, given a rank 4 bundle $\mathcal V$ and a nowhere section $\xi$ of $\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, define $X \subset \P \mathcal V^\vee$ as the zero-locus of the corresponding section of $\O(3) \otimes \det \mathcal V$.
+  To go from $\mathscr{M}$ to $\mathscr{C}$, given a rank 4 bundle $\mathcal V$ and a nowhere section $\xi$ of $\Sym^3 \mathcal V^\vee \otimes \det \mathcal V$, define $\cX \subset \P \mathcal V^\vee$ as the zero-locus of the corresponding section of $\O(3) \otimes \det \mathcal V$.
 \end{proof}
 
 We call $\mathscr{M}$ the \emph{moduli stack of cubic surfaces}.
@@ -344,21 +376,30 @@ In particular, its action is free.
 Therefore, the stack $\mathscr{M}$ is isomorphic to the quotient stack
 \[ \mathscr{M} = \left[ \P \Sym^3V^\vee / \PGL V \right].\]
 
-We let $\mathcal M$ denote the GIT quotient of $\P \Sym^3V^\vee$ by the action of $\PGL V$.
-The semi-stable and stable locus of the action were computed by Mumford; see \cite[Chapter 4, \S 2]{mum.fog.kir:94} or \cite[1.14]{mum:77}.
-The stable locus consists of surfaces with at worst $A_1$ singularities, and the semi-stable locus includes surfaces with at worst $A_2$ singularities.
-The ring of invariants was computed much earlier, in the 1860s, by Salmon \cite{sal.cay:60} and Clebsch \cite{cle:61,cle:61*1}, and later by Beklemishev \cite{bek:82} using more modern methods.
-The invariant ring is freely generated by polynomials of degree 8, 16, 24, 32, and 40, and as a result, the coarse moduli space $\mathcal M$ is isomorphic to the weighted projective space $\P(1,2,3,4,5)$. 
+We let $\mathcal M$ denote the GIT quotient of $\P \Sym^3V^\vee$ by
+the action of $\PGL V$.  The semi-stable and stable locus of the
+action were computed by Mumford; see \cite[Chapter 4, \S
+2]{mum.fog.kir:94} or \cite[1.14]{mum:77}.  The stable locus consists
+of surfaces with at worst $A_1$ singularities, and the semi-stable
+locus includes surfaces with at worst $A_2$ singularities.  The ring
+of invariants was computed much earlier, in the 1860s, by Salmon
+\cite{sal.cay:60} and Clebsch \cite{cle:61,cle:61*1}, and later by
+Beklemishev \cite{bek:82} using more modern methods.  The invariant
+ring is freely generated by polynomials of degree 8, 16, 24, 32, and
+40, and as a result, the coarse moduli space $\mathcal M$ is
+isomorphic to the weighted projective space $\P(1,2,3,4,5)$.
 
 We recall perhaps the most famous fact about cubic surfaces, discovered in 1849. 
 \begin{theorem}[Cayley \cite{cay:49}, Salmon \cite{sal:49}]
   \label{theorem:cayleysalmon}
   Every smooth cubic surface contains exactly $27$ lines.
 \end{theorem}
-As we know, the 27 lines are key to understanding geometry of the cubic surface.
-Each line is a $(-1)$-curve, and hence contractible by Castelnuovo's theorem.
-A set of lines that are pairwise skew is particularly important, because they can be blown down simultaneously.
-The maximum number of such lines is 6, and they allow us to realize the cubic surface as a blow up of $\mathbb P^2$ at 6 points.
+As we know, the 27 lines are key to understanding geometry of the
+cubic surface.  Each line is a $(-1)$-curve, and hence contractible by
+Castelnuovo's theorem.  A set of lines that are pairwise skew is
+particularly important, because they can be blown down simultaneously.
+The maximum number of such lines is 6, and they allow us to realize
+the cubic surface as a blow up of $\mathbb P^2$ at 6 points.
 
 Following Schl\"afli \cite{sch:58}, we call an ordered tuple of pairwise disjoint six lines $(\ell_1, \dots, \ell_6)$ on a cubic surface a \emph{six}.
 A \emph{double six} is an unordered pair of sixes $\{(\ell_1, \dots, \ell_6), (\ell_1', \dots, \ell_6')\}$ such that
@@ -370,20 +411,27 @@ A \emph{double six} is an unordered pair of sixes $\{(\ell_1, \dots, \ell_6), (\
 \begin{theorem}[Schl\"{a}fli \cite{sch:58}]
   \label{theorem:schlafli} Each six on a smooth cubic surface has a unique extension to a double-six, and every smooth cubic surface contains $36$ double-sixes.
 \end{theorem}
-Thus, each smooth cubic surface admits 72 distinct maps to $\mathbb P^2$, up to automorphisms of $\mathbb P^2$, each of which blows down 6 lines.
+Thus, each smooth cubic surface admits 72 distinct maps to
+$\mathbb P^2$, up to automorphisms of $\mathbb P^2$, each of which
+blows down 6 lines.
 
-The sixes on a cubic surface allow us to relate $\mathcal M$ to a more familiar moduli space.
-Let $\mathcal M^\dagger$ denote the moduli space of pairs $(S, \ell)$, where $S$ is a smooth cubic surface and $\ell$ is a six on $S$.
-By \autoref{theorem:schlafli}, the natural forgetful map
+The sixes on a cubic surface allow us to relate $\mathcal M$ to a more
+familiar moduli space.  Let $\mathcal M^\dagger$ denote the moduli
+space of pairs $(S, \ell)$, where $S$ is a smooth cubic surface and
+$\ell$ is a six on $S$.  By \autoref{theorem:schlafli}, the natural
+forgetful map
 \begin{align*}
   \sigma \colon \mathcal M^\dagger &\to \mathcal M \\
   (S, \ell) &\mapsto S
 \end{align*}
 is dominant and quasi-finite of degree
-\[ \deg \sigma = 72 \times 6! = 51840.\]
-On the other hand, the space $\mathcal M^\dagger$ is isomorphic to the configuration space of 6 ordered points on $\P^2$
-\[ \mathcal M^\dagger \xrightarrow{\sim} \left( (\P^2)^6 \setminus \text{Diagonals} \right) / \Aut(\P^2).\]
-The isomorphism sends $(S, (\ell_i))$ to $(\P^2, (p_i))$, where $\beta \colon S \to \P^2$ blows down the lines $\ell_i$ and $p_i = \beta(\ell_i)$.
+\[ \deg \sigma = 72 \times 6! = 51840.\] On the other hand, the space
+$\mathcal M^\dagger$ is isomorphic to the configuration space of 6
+ordered points on $\P^2$
+\[ \mathcal M^\dagger \xrightarrow{\sim} \left( (\P^2)^6 \setminus
+    \text{Diagonals} \right) / \Aut(\P^2).\] The isomorphism sends
+$(S, (\ell_i))$ to $(\P^2, (p_i))$, where $\beta \colon S \to \P^2$
+blows down the lines $\ell_i$ and $p_i = \beta(\ell_i)$.
 
 % \begin{theorem}[Schubert]
 %   \label{theorem:Schubert} There are $20$ cuspidal cubic curves
@@ -395,24 +443,33 @@ The isomorphism sends $(S, (\ell_i))$ to $(\P^2, (p_i))$, where $\beta \colon S 
 The standard reference for equivariant Chow theory is \cite{edi.gra:98}.
 We recall a few relevant notions, mostly to set notation.
 
-Given an algebraic space $X$ with an action of an algebraic group $G$, denote by $A^i_G(X)$ the $G$-equivariant Chow group of codimension $i$ cycles.
-Given a $G$-invariant subspace $Y \subset X$ of pure codimension $i$, denote by $[Y] \in A^i_G(X)$ the fundamental class of $Y$.
-If $Y \subset X$  has codimension $> i$, then the restriction map
-\[ A^i_G(X) \to A^i_G(X \setminus Y)\]
-A $G$-linearized vector bundle $V$ on $X$ admits equivariant Chern classes $c_i(V) \in A^i_G(X)$.
-The equivariant Chow groups are homotopy invariant: if $Y \to X$ is a $G$-equivariant vector bundle, then the pull-back map $A^i_G(X) \to A^i_G(Y)$ is an isomorphism.
-If $X$ is smooth, then $A^*_G(X)$ is a graded ring, where the multiplication is given by the intersection product.
+Given an algebraic space $X$ with an action of an algebraic group $G$,
+denote by $A^i_G(X)$ the $G$-equivariant Chow group of codimension $i$
+cycles.  Given a $G$-invariant subspace $Y \subset X$ of pure
+codimension $i$, denote by $[Y] \in A^i_G(X)$ the fundamental class of
+$Y$.  If $Y \subset X$ has codimension $> i$, then the restriction map
+\[ A^i_G(X) \to A^i_G(X \setminus Y)\] A $G$-linearized vector bundle
+$V$ on $X$ admits equivariant Chern classes $c_i(V) \in A^i_G(X)$.
+The equivariant Chow groups are homotopy invariant: if $Y \to X$ is a
+$G$-equivariant vector bundle, then the pull-back map
+$A^i_G(X) \to A^i_G(Y)$ is an isomorphism.  If $X$ is smooth, then
+$A^*_G(X)$ is a graded ring, where the multiplication is given by the
+intersection product.
 
-The $G$-equivariant Chow groups of $X$ are the same as the Chow groups of the quotient stack $[X/G]$:
+The $G$-equivariant Chow groups of $X$ are the same as the Chow groups
+of the quotient stack $[X/G]$:
 \[ A^i\left( [X/G] \right) = A^i_G(X).\]
 
-The equivariant Chow ring of a point with the action of $G = \GL_n$ is the polynomial ring
-\[ A_{\GL_n}(\cdot) = \mathbb Z[c_1,\dots, c_n],\]
-where $c_i$ has degree $i$ and can be identified with the $i$-th Chern class of the standard $n$-dimensional representation of $\GL_n$.
-By homotopy invariance, for any $\GL_n$ representation $W$, we have
-\[ A_{\GL_n}(W) = \mathbb Z[c_1,\dots,c_n].\]
-If the general linear group under consideration is $\GL V$, where $V$ is a vector space, then we write $v_i$ for the $i$-th Chern class of the tautological representation $V$.
-Then we have
+The equivariant Chow ring of a point with the action of $G = \GL_n$ is
+the polynomial ring
+\[ A_{\GL_n}(\cdot) = \mathbb Z[c_1,\dots, c_n],\] where $c_i$ has
+degree $i$ and can be identified with the $i$-th Chern class of the
+standard $n$-dimensional representation of $\GL_n$.  By homotopy
+invariance, for any $\GL_n$ representation $W$, we have
+\[ A_{\GL_n}(W) = \mathbb Z[c_1,\dots,c_n].\] If the general linear
+group under consideration is $\GL V$, where $V$ is a vector space,
+then we write $v_i$ for the $i$-th Chern class of the tautological
+representation $V$.  Then we have
 \[ A_{\GL V}(W) = \mathbb Z[v_1,\dots,v_n].\]
 
 Let $V$ be a $4$-dimensional $\k$-vector space.
@@ -443,25 +500,30 @@ A good family is one that does not suffer from this defect.
 Recall that $V$ is a $4$-dimensional $\k$-vector space.
 \begin{definition}[Good family]
 \label{def:goodfamily}
-A family of cubic surfaces $\pi \colon X \to B$ is \emph{good} if the following holds: there exists a non-empty Zariski open subset $U \subset \Sym^3V^\vee$ such that for every $F \in U$ and $b \in B$, the fiber $X_b$ does not lie in $\partial \Orb(F)$.
+A family of cubic surfaces $\pi \colon \cX \to B$ is \emph{good} if
+the following holds: there exists a non-empty Zariski open subset
+$U \subset \Sym^3V^\vee$ such that for every $F \in U$ and $b \in B$,
+the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
 \end{definition}
 \begin{example}[Fibers with finite automorphism groups]
-  Suppose every $X_b$ has a finite automorphism group.
-  Then $\pi \colon X \to B$ is good.
-  Indeed, let $U$ be the subset consisting of elements with finite automorphism group.
-  For every $F \in U$, the boundary $\partial \Orb(F)$ consists of elements with a positive dimensional automorphism group, and hence it cannot contain $X_b$.
+  Suppose every $\cX_b$ has a finite automorphism group.  Then
+  $\pi \colon \cX \to B$ is good.  Indeed, let $U$ be the subset
+  consisting of elements with finite automorphism group.  For every
+  $F \in U$, the boundary $\partial \Orb(F)$ consists of elements with
+  a positive dimensional automorphism group, and hence it cannot
+  contain $\cX_b$.
 \end{example}
 \begin{example}[GIT semistable fibers]
   \label{ex:semistable}
-  Suppose every fiber $X_b$ is GIT-semistable.
-  Then the family $\pi \colon X \to B$ is good.
+  Suppose every fiber $\cX_b$ is GIT-semistable.
+  Then the family $\pi \colon \cX \to B$ is good.
   Indeed, let $U$ be the subset consisting of GIT-stable elements.
-  For every $F \in U$, the orbit of $F$ is closed in the semi-stable locus, and hence $\partial \Orb(F)$ cannot contain $X_b$.
+  For every $F \in U$, the orbit of $F$ is closed in the semi-stable locus, and hence $\partial \Orb(F)$ cannot contain $\cX_b$.
 \end{example}
 
 \begin{proposition}\label{prop:goodisgood}
-  Let $\pi \colon X \to B$ be a good family of cubic surfaces.
-  Assume that $B$ is proper of dimension 4 and a general fiber $X_b$ is semi-stable.
+  Let $\pi \colon \cX \to B$ be a good family of cubic surfaces.
+  Assume that $B$ is proper of dimension 4 and a general fiber $\cX_b$ is semi-stable.
   Let $\mu \colon B \to \mathscr M$ be the map induced by $\pi$ and $m \colon B \dashrightarrow \mathcal M$ the rational map to the coarse moduli space.
   Then
   \[ \deg m = \deg \mu^*\left( \Orb(F) \right)\]
@@ -476,12 +538,12 @@ A family of cubic surfaces $\pi \colon X \to B$ is \emph{good} if the following 
 
   Let $U$ be as in the definition a good family.
   Then, for every $u \in U$, we have the equality
-  \[ X \times_{\mathscr M} u = X \times_{\mathscr M} \overline u.\]
+  \[ \cX \times_{\mathscr M} u = \cX \times_{\mathscr M} \overline u.\]
   By shrinking $U$ if necessary, we may assume that $U$ consists of semi-stable points and maps to $W \subset \mathcal M$ in the coarse space.
   Then, for every $u \in U$, we have
   \begin{align*}
-    \deg \mu^* \Orb(u) &= \# \left(X \times_{\mathscr M} u \right)\\
-                       &= \# \left(X \times_{\mathcal M} u\right) \\
+    \deg \mu^* \Orb(u) &= \# \left(\cX \times_{\mathscr M} u \right)\\
+                       &= \# \left(\cX \times_{\mathcal M} u\right) \\
                        &= \deg m.
   \end{align*}
 \end{proof}
@@ -586,7 +648,9 @@ The family of cubic surfaces $X_Z \to B$ associated to $Z \subset P \to B$ is de
 \[
   X_Z = \Proj_B \left(\bigoplus_{n \geq 0}\pi_*\left(\Bl_ZP, \omega_{\Bl_ZP/B}^{-n}\right)\right).
 \]
-By \autoref{prop:admissibleblowup}, we see that $X_Z$ is flat over $B$ and its fiber over $b \in B$ is the cubic surface associated to $Z_b \subset P_b$, as in \autoref{def:cubicZ}.
+By \autoref{prop:admissibleblowup}, we see that $X_Z$ is flat over $B$
+and its fiber over $b \in B$ is the cubic surface associated to
+$Z_b \subset P_b$, as in \autoref{def:cubicZ}.
 \begin{proposition}\label{prop:blow-ups-and-base-change}
   Let $\pi \colon P \to B$ be a smooth morphism and $Z \subset P$ a closed subscheme flat and lci over $B$.
   Then $\Bl_ZP \to B$ is flat and for any $C \to B$, the canonical map
@@ -677,7 +741,7 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \end{proof}
 
 %-------------------------------------------------------------------------
-\section{Test families}\label{sec:testfamilies}
+
 
 \section{Test families}\label{sec:testfamilies}
 \subsection{Family $B_1$}
@@ -742,16 +806,16 @@ projections of $B_1 \times S$ to its respective factors.
 Then we set
 \begin{align}
   \label{eq:X1}
-  X' := \Bl_{\mathcal{Z}} \left( B_1 \times S \right).
+  \cX' := \Bl_{\mathcal{Z}} \left( B_1 \times S \right).
 \end{align}
 Abusing notation, we continue to let $\pi_{1}$ and $\pi_{2}$ denote
-the natural maps from $X'$ to $B_1$ and $S$, respectively.  We
-let $E \subset X'$ denote the exceptional divisor over $\mathcal{Z}$.
+the natural maps from $\cX'$ to $B_1$ and $S$, respectively.  We
+let $E \subset \cX'$ denote the exceptional divisor over $\mathcal{Z}$.
 
 
 Consider the line bundle
 $\mathcal{L} := \pi_{2}^{*}\omega_{S}^{-1} (-E) =
-\omega_{X'/B_{1}}^{-1}$ on $X'$.  By \autoref{prop:B1},
+\omega_{\cX'/B_{1}}^{-1}$ on $\cX'$.  By \autoref{prop:B1},
 \begin{align}
   \label{eq:V1}
   \V := \pi_{1 *}\mathcal{L}
@@ -764,13 +828,13 @@ is a rank $4$ vector bundle on $B_1$, and the canonical evaluation map
 is surjective.  Therefore, we obtain a map
 \begin{align}
   \label{eq:X11}
-  \kappa: X' \to \P \V^{\smvee}
+  \kappa: \cX' \to \P \V^{\smvee}
 \end{align}
-whose image $X := \kappa(X')$ is a family of cubic surfaces
-parametrized by $B_1$.  Let $\pi: X \to B_1$ denote the natural map.
+whose image $\cX := \kappa(\cX')$ is a family of cubic surfaces
+parametrized by $B_1$.  Let $\pi: \cX \to B_1$ denote the natural map.
 By tracing through the construction, one can see that the vector
-bundle $\V$ is equal to $\pi_{*} \omega_{X/B_1}'$, i.e. $\V$ is the
-natural bundle for $\pi: X \to B_1$.
+bundle $\V$ is equal to $\pi_{*} \omega_{\cX/B_1}'$, i.e. $\V$ is the
+natural bundle for $\pi: \cX \to B_1$.
 
 \subsubsection{Chern classes of $\V$}
 \label{sec:chern-classes-b_1}
@@ -815,11 +879,11 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
   \label{lemma:chernB1}
   For the natural bundle $\V$ over $B_1= \P^{4}$, we have:
   \begin{align}\nonumber
-    v_{1}^{4} = 16,\\\nonumber
-    v_{1}^{2}v_{2} = 4,\\\nonumber
-    v_{1}v_{3} =0,\\\nonumber
-    v_2^{2} = 1,\\\nonumber
-    v_{4} = 0.
+    \int_{B_{1}}v_{1}^{4} &= 16,\\\nonumber
+    \int_{B_{1}}v_{1}^{2}v_{2} &= 4,\\\nonumber
+    \int_{B_{1}}v_{1}v_{3} &=0,\\\nonumber
+    \int_{B_{1}}v_2^{2} &= 1,\\\nonumber
+    \int_{B_{1}}v_{4} &= 0.
   \end{align}
 \end{lemma}
 
@@ -907,7 +971,7 @@ $\deg \mu'$.
 
 \begin{proposition}
   \label{prop:B1good}
-  The family $\pi: X \to B_1$ is good.
+  The family $\pi: \cX \to B_1$ is good.
 \end{proposition}
 
 \begin{proof}
@@ -920,7 +984,7 @@ $\deg \mu'$.
   \end{align*}
   Here, we view $C$ as a conic in $\P^{2}$ containing $y_{2}$, and the
   sum in $Z + y_{2}$ is as divisors on $C$.  The cubic surface
-  $X_{[Z]} = \pi^{-1}([Z])$ is the same as the cubic surface $X_{Z'}$
+  $\cX_{[Z]} = \pi^{-1}([Z])$ is the same as the cubic surface $X_{Z'}$
   associated to $Z'$.
 
   In order to use \autoref{prop:good}, we next verify that the group
@@ -955,7 +1019,7 @@ This section constructs and analyzes a good family over the base
 $$B_2 := \overline{\M}_{0,7},$$
 the moduli space of Deligne-Mumford stable $7$-pointed genus $0$
 curves.  To avoid unnecessary accumulation of symbols, we reset
-notation such as $C,S,X, \dots$ from previous sections, and start
+notation such as $C,S,\cX, \dots$ from previous sections, and start
 anew.
 
 
@@ -1110,12 +1174,12 @@ $\rho$. In light of this, we let
   \mathcal{V} := \rho_{*}(\mathcal{I}_{\mathcal{Z}} \otimes \omega_{\rho}^{-1});
 \end{align}
 $\V$ is the natural rank $4$ vector bundle for the family of cubic
-surfaces $$\pi: X \to \o{\M}_{0,7}$$ obtained by taking, for each
+surfaces $$\pi: \cX \to \o{\M}_{0,7}$$ obtained by taking, for each
 fiber of $\rho$, the cubic associated to the admissible subscheme
 $\mathcal{Z} \subset \cP$.
 
 \begin{proposition}
-  \label{prop:goodnessB2} The family $\pi: X \to \o{\M}_{0,7}$ is
+  \label{prop:goodnessB2} The family $\pi: \cX \to \o{\M}_{0,7}$ is
   good.
 \end{proposition}
 
@@ -1247,10 +1311,10 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
   \psi_{\infty}t)(1-\psi_{\infty}^{2}t^{2})$. Therefore,
   \begin{align}
     \label{eq:chernV2}
-    v_1 = -5\psi_{\infty}\\
-    v_2 = 5 \psi_{\infty}^{2}\\ \nonumber
-    v_3 = 5 \psi_{\infty}^{3}\\ \nonumber
-    v_{4} = -6 \psi_{\infty}^{4}.\\ \nonumber
+    v_1 &= -5\psi_{\infty}\\
+    v_2 &= 5 \psi_{\infty}^{2}\\ \nonumber
+    v_3 &= 5 \psi_{\infty}^{3}\\ \nonumber
+    v_{4} &= -6 \psi_{\infty}^{4}.\\ \nonumber
   \end{align}
 \end{corollary}
 
@@ -1806,11 +1870,11 @@ skip the details, and report the results:
   Furthermore, we have:
   \begin{align}
     \label{eq:monomialsV3}
-    v_{1}^{4}& = 3436, \\ \nonumber
-    v_{1}^{2}v_{2}& = 1076,\\ \nonumber
-    v_{2}^{2}& = 316, \\ \nonumber
-    v_{1}v_{3}& = 116, \\ \nonumber
-    v_{4}& = 0. \nonumber
+    \int_{B_{3}}v_{1}^{4}& = 3436, \\ \nonumber
+    \int_{B_{3}} v_{1}^{2}v_{2}& = 1076,\\ \nonumber
+    \int_{B_{3}} v_{2}^{2}& = 316, \\ \nonumber
+    \int_{B_{3}} v_{1}v_{3}& = 116, \\ \nonumber
+    \int_{B_{3}} v_{4}& = 0. \nonumber
   \end{align}
 \end{proposition}
 
@@ -1846,7 +1910,7 @@ calculated in this section, we finally obtain our third relation:
 
 \label{sec:family-b_4}
 
-We construct our fourth family $\pi: X \to B_4$ by starting with a
+We construct our fourth family $\pi: \cX \to B_4$ by starting with a
 quintic del Pezzo surface $S$ (the blow up of the plane at four
 general points) and, informally, ``blowing up $S$ at two points which
 vary freely.''  The complication arises because we get a non-good
@@ -1889,11 +1953,11 @@ that the open set
 supports a good family of cubic surfaces, namely
 \begin{align}
   \label{eq:XUB3}
-  X^{\circ} := \Bl_{\mathcal{Z}_{U}}(U \times S).
+  \cX^{\circ} := \Bl_{\mathcal{Z}_{U}}(U \times S).
 \end{align}
 
 
-However, when we extend $X^{\circ}$ in the naive way over $S^{[2]}$
+However, when we extend $\cX^{\circ}$ in the naive way over $S^{[2]}$
 the family acquires non-good fibers, namely unions of quadrics and
 planes, and therefore we must modify $S^{[2]}$ along $\Lambda$.
 
@@ -2397,10 +2461,10 @@ top degree intersection products which will factor into the final calculation:
   \label{prop:monomialsU} We have:
   \begin{align}
     \label{eq:monU}
-    \deg u_{1}^{4} &= 36,\\
-    \deg u_{1}^{2}u_{2} &= 15,\\
-    \deg u_{2}^{2} &= 10,\\
-    \deg E^{4} &= -30.
+     \int_{B_{4}} u_{1}^{4} &= 36,\\
+   \int_{B_{4}}  u_{1}^{2}u_{2} &= 15,\\
+   \int_{B_{4}}  u_{2}^{2} &= 10,\\
+   \int_{B_{4}}  E^{4} &= -30.
   \end{align}
 \end{proposition}
 
@@ -2481,16 +2545,16 @@ to $\td{S^{[2]}}$ using the push-pull formula, we ultimately get:
     v_{1} &= -\beta^{*}(u_{1}) + E,\\ \nonumber
     v_{2} &= \beta^{*}\left(u_{1}^{2} - u_{2}\right),\\\nonumber
     v_{3} &= \beta^{*}\left( 2u_{1}u_{2} - u_{1}^{3} \right),\\\nonumber
-    \deg v_{4} &= 1,\nonumber
+    \int_{B_{4}} v_{4} &= 1,\nonumber
   \end{align}
   and the degree $4$ monomials in these classes satisfy:
   \begin{align}
     \label{eq:monomialsV4}
-    \deg v_{1}^{4} &= 6,\\\nonumber
-    \deg v_{1}^{2}v_{2} &= 21,\\\nonumber
-    \deg v_{1}v_{3} &= 6, \\\nonumber
-    \deg v_{2}^{2} &= 16, \\\nonumber
-    \deg v_{4} &= 1.\nonumber
+    \int_{B_{4}} v_{1}^{4} &= 6,\\\nonumber
+    \int_{B_{4}} v_{1}^{2}v_{2} &= 21,\\\nonumber
+    \int_{B_{4}} v_{1}v_{3} &= 6, \\\nonumber
+    \int_{B_{4}} v_{2}^{2} &= 16, \\\nonumber
+    \int_{B_{4}} v_{4} &= 1.\nonumber
   \end{align}
 \end{corollary}
 
@@ -2910,10 +2974,14 @@ subscheme $Z \subset \P^{2}$ defined by the common vanishing of the
 forms $f_{2}$ and $f_{3}$ -- we leave it to the reader to check that
 $\Aut(\P^{2},Z)$ is one-dimensional, with $\G_{a}$ as identity
 component.  Thus, the techniques used in the main body of the paper
-cannot address the goodness of $X$.
+cannot address the goodness of $X$.  The techniques developed in this
+appendix most probably have a larger scope, but we have not pursued
+greater generality here in the interest of keeping the paper more
+focused.
 
-Our purpose in this appendix is to provide a proof of the following
-theorem:
+
+
+In this appendix we provide a proof of the following theorem:
 
 \begin{theorem}
   \label{theorem:A5good} The surface $X$ is good, i.e. $X$ does not
@@ -2921,7 +2989,7 @@ theorem:
 \end{theorem}
 
 The proof proceeds by contradiction, in several steps. Let
-$\Delta = \spec \k [[t]]$ with closed point denoted $0$ and generic
+$\Delta = \spec \k [\![t]\!]$ with closed point denoted $0$ and generic
 point denoted $\eta$, and suppose for sake of contradiction, that
 \[\pi: \mathcal{X} \to \Delta\]
 is a family of cubic surfaces with the properties:
@@ -3143,13 +3211,15 @@ P(\infty)$:
 \subsection{Finishing the argument}
 \label{sec:finishargument}
 
-Now we are in a position to finish the argument.  We must show that
-the constant subscheme $Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$
-cannot transform into $\mathcal{Z}$ under $g$.  To help the reader
-focus, we state from the outset the fundamental detail ultimately
-obstructing this possibility: The line $L_0$ containing the support
-$\{[0:1:1], [0:-1:1], [0:0:1]\}$ of $Z$ is {\sl distinct} from the
-line $L_1$ which is the tangent line of $Z$ at $[0:0:1] \in Z$.
+Now we are in a position to finish the proof of
+\autoref{theorem:A5good}.  Given what happened in the last section, we
+must show that the constant subscheme
+$Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$ cannot transform into
+$\mathcal{Z}$ under $g$.  To help the reader focus, we state from the
+outset the fundamental detail ultimately obstructing this possibility:
+The line $L_0$ containing the support $\{[0:1:1], [0:-1:1], [0:0:1]\}$
+of $Z$ is {\sl distinct} from the line $L_1$ which is the tangent line
+of $Z$ at $[0:0:1] \in Z$.
 
 \begin{proof}[Proof of \autoref{theorem:A5good}]
   We assume the existence of a rational map $g$ under which

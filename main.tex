@@ -1,5 +1,5 @@
 \documentclass[12pt,reqno]{amsart}
-\usepackage[margin = 1.3in]{geometry}
+\usepackage[margin = 1.3 in]{geometry}
 %\usepackage[frenchmath,defaultmathsizes]{mathastext}
 \usepackage{cite}
 \usepackage{
@@ -24,7 +24,7 @@
 \usepackage{booktabs}
 \usepackage{subcaption}
 
-%\usepackage{showlabels}
+\usepackage{showlabels}
 
 \linespread{1.1}
 \usepackage[all]{xy}
@@ -93,7 +93,7 @@
 
 \begin{abstract}
   Using equivariant geometry, we find a universal formula that computes the number of times a general cubic surface arises in a family.
-  As applications, we show that the $\PGL_4$-orbit closure of a generic cubic surface has degree 96120, and that a general cubic surface arises 42120 times as a hyperplane section of a general cubic 3-fold.
+  As applications, we show that the $\PGL_4$ orbit closure of a generic cubic surface has degree 96120, and that a general cubic surface arises 42120 times as a hyperplane section of a general cubic 3-fold.
 \end{abstract}
 
 
@@ -103,11 +103,11 @@
 \label{sec:intro}
 
 Cubic surfaces have fascinated us for centuries. Ever since Cayley and
-Salmon discovered the 27 lines, it has become somewhat of a tradition
-to revisit their geometry, using increasingly sophisticated tools to
-uncover more and more. Our contribution to this story provides a
-universal answer to a collection of natural enumerative questions
-about families of cubic surfaces.
+Salmon discovered the 27 lines, it has become a tradition for
+algebraic geometers to revisit their geometry, using increasingly
+sophisticated tools to uncover more and more. Our contribution to
+this story provides a universal answer to a large collection of
+natural enumerative questions about families of cubic surfaces.
 
 The isomorphism classes of cubic surfaces form a 4-dimensional moduli
 space. So, we expect that in a 4-dimensional family, a general
@@ -120,11 +120,12 @@ cubic surface appear, up to isomorphism, as
 \item a blow up of 6 points in $\P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
 \end{enumerate}
-Our formula answers all questions of this kind.  The answers to these
-specific questions are $96120$, $42120$, and $25920$, respectively.
+We will establish an enumerative formula that answers all questions of
+this kind.  (The answers to these specific questions are $96120$,
+$42120$, and $25920$, respectively).
 
-To state our formula, we must fix a precise moduli space of cubics.
-Let us denote by $\mathcal M$ the GIT quotient of the set of
+To state our formula, we must fix a precise moduli space for the
+cubics.  Let us denote by $\mathcal M$ the GIT quotient of the set of
 semi-stable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
 {\sl family of cubic surfaces}, we mean a flat, proper morphism whose
 geometric fibers are isomorphic to cubic surfaces in $\P^3$.
@@ -135,8 +136,8 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
   $ \pi_* \left(\omega_\pi^{-1}\right)$, and let
   \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
   general fiber of $\pi$ is semi-stable, and let
-  $\mu \colon B \dashrightarrow \mathcal M$ be the induced moduli map.
-  Then,
+  $\mu \colon B \dashrightarrow \mathcal M$ be the rational map
+  induced by $\pi$.  Then,
   \begin{align}
     \deg \mu =
     \label{eq:MAIN}
@@ -145,23 +146,19 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 \end{theorem}
 \autoref{def:goodfamily} gives the precise meaning of a ``good''
 family.  This notion includes any family whose fibers are
-GIT-semi-stable or have a finite automorphism group.
+GIT-semistable or have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
 Question~\ref{orbit} in \autoref{sec:intro} fits in a broader story
 that has been an ongoing topic of study.  Consider a hypersurface
 \(X\) in a projective space $\P V$ cut out by a homogeneous polynomial
-$F \in \Sym^d V^\vee$.  In $\P\Sym^dV^\vee$, consider the orbit of
-$[F]$ under the action of $\GL(V)$, and let $\Orb([F])$ be its
-closure.  To our knowledge, this story begins in 1897 with Enriques
-and Fano, who computed the degree of the orbit closure of simple
-binary forms of all degrees \cite{enriques.fano:97}.  In a series of
-seminal papers, Aluffi and Faber computed the degree of the orbit
-closure for \emph{all} binary and ternary forms.  That is, the case of
-points in $\P^1$ and curves in $\P^2$ has been done.  The next case is
-that of a general cubic surface in $\P^3$, which we do in this paper.
-\autoref{theorem:main} applied to Question~\ref{orbit} says that the
-degree of the orbit closure of a general cubic surface is $96120$.
+$F \in \Sym^d V^\vee$.  In $\P\Sym^dV^\vee$, consider the orbit of $[F]$ under
+the action of $\GL(V)$, and let $\Orb([F])$ be its closure.
+To our knowledge, the story begins with Enriques and Fano, who computed the degree of the orbit closure of binary forms of all degrees \cite{EF}.  
+In a series of seminal papers, Aluffi and Faber computed the degree of the orbit closure for \emph{all} binary and ternany forms.
+That is, the case of points in $\P^1$ and curves in $\P^2$ has been done.
+The next case is that of cubic surfaces in $\P^3$, established in this paper.
+\autoref{theorem:main} applied to Question~\ref{orbit} says that the degree of the orbit closure of a general cubic surface is $96120$.
 
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
@@ -270,7 +267,7 @@ cubic surface $F=0$ registers its own equivariant orbit class
 $[\Orb(F)]$.  A refined study of the methods developed in this paper
 may afford us a complete understanding of how this class changes
 according to special changes in the geometry of $F=0$, e.g. acquiring
-singularities or Eckhart points.  This is something we hope to pursue
+singularities or Ekckhart points.  This is something we hope to pursue
 in the future.
 
 In a different direction, there should be analogous formulas counting
@@ -287,6 +284,7 @@ thank Hunter Spink for important discussions during the infancy
 of the project.  We thank Paulo Aluffi for quickly providing an
 enumerative reference on cuspidal cubic curves and Jarod Alper for discussions on equivariant geometry.
 
+\todo{More acknowledgements}
 
   
 
@@ -410,7 +408,7 @@ action were computed by Mumford; see \cite[Chapter 4, \S
 of surfaces with at worst $A_1$ singularities, and the semi-stable
 locus includes surfaces with at worst $A_2$ singularities.  The ring
 of invariants was computed much earlier, in the 1860s, by Salmon
-\cite{sal:60} and Clebsch \cite{cle:61,cle:61*1}, and later by
+\cite{sal.cay:60} and Clebsch \cite{cle:61,cle:61*1}, and later by
 Beklemishev \cite{bek:82} using more modern methods.  The invariant
 ring is freely generated by polynomials of degree 8, 16, 24, 32, and
 40, and as a result, the coarse moduli space $\mathcal M$ is
@@ -460,16 +458,11 @@ ordered points on $\P^2$
 $(S, (\ell_i))$ to $(\P^2, (p_i))$, where $\beta \colon S \to \P^2$
 blows down the lines $\ell_i$ and $p_i = \beta(\ell_i)$.
 
-Finally, in our third test family we will need to use the following
-enumerative fact, originally due to Schubert, about cuspidal cubic
-curves -- see the remarkable paper of Miret and Xamb\'o
-\cite{miret1989geometry}.
-
- \begin{theorem}[Schubert, Miret, Xamb\'o]
-   \label{theorem:Schubert} There are $20$ cuspidal cubic curves
-   containing all of five general points in $\P^{2}$, and flexed at a
-   sixth general point.
- \end{theorem}
+% \begin{theorem}[Schubert]
+%   \label{theorem:Schubert} There are $20$ cuspidal cubic curves
+%   containing all of five general points in $\P^{2}$, and flexed at a
+%   sixth general point.
+% \end{theorem}
 
 \subsection{Equivariant Chow groups and equivariant orbits}
 The standard reference for equivariant Chow theory is \cite{edi.gra:98}.
@@ -545,9 +538,9 @@ the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
   a positive dimensional automorphism group, and hence it cannot
   contain $\cX_b$.
 \end{example}
-\begin{example}[GIT semi-stable fibers]
+\begin{example}[GIT semistable fibers]
   \label{ex:semistable}
-  Suppose every fiber $\cX_b$ is GIT-semi-stable.
+  Suppose every fiber $\cX_b$ is GIT-semistable.
   Then the family $\pi \colon \cX \to B$ is good.
   Indeed, let $U$ be the subset consisting of GIT-stable elements.
   For every $F \in U$, the orbit of $F$ is closed in the semi-stable locus, and hence $\partial \Orb(F)$ cannot contain $\cX_b$.
@@ -1006,8 +999,9 @@ $\deg \mu'$.
 
 \begin{proof}
   We use \autoref{prop:good}. If $[Z] \in B_{1}$ is any point,
-  corresponding to a length $4$ subscheme $Z \subset C$, we get a
-  length $6$ admissible subscheme $Z' \subset \P^2$ by the rule
+  corresponding to a length $4$ subscheme $Z \subset C$, we
+  immediately get a length $6$ admissible subscheme (see \cite[] )
+  $Z' \subset \P^2$ by the rule
   \begin{align*}
     Z' = (Z+y_2) \cup \{y_{1}\}.
   \end{align*}
@@ -1031,8 +1025,7 @@ $\deg \mu'$.
 
 
 The results in this section, taken together, yield the following
-relation on the indetermined coefficients in
-\eqref{eqn:chernexpansion}:
+relation on the indetermined coefficients in \eqref{eq:P}:
 
 \begin{align}
   \label{eq:relation1}
@@ -1084,11 +1077,10 @@ We let $\mathcal{L}$ denote the line bundle
 $\O_{\mathcal{C}}(-\sigma_{\infty})|_{\sigma_{\infty}} \simeq
 \omega_{\varphi}|_{\sigma_{\infty}}$ -- we view it as a line bundle on
 $\overline{\M}_{0,7}$, as is customary.  Following standard notation,
-we set $\psi_{\infty} := c_{1}\mathcal{L}$.  The sole, standard,
-enumerative result about $\overline{\M}_{0,7}$ we will use in this
-section is:
+we set $\psi_{\infty} := c_{1}\mathcal{L}$.  The sole enumerative
+result about $\overline{\M}_{0,7}$ we will use in this section is:
 
-\begin{theorem}
+\begin{theorem}[ ???2 ]
   \label{theorem:psi}
   $$\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1.$$
 \end{theorem}
@@ -1369,7 +1361,7 @@ moduli.  Clearly, $\mu$ factors through
 $\mu':B_{2} \dashrightarrow \M^{\dagger}$: $\mu'$ sends a general
 $7$-pointed stable curve $(C,s_0,s_1, \dots, s_5, s_{\infty})$ to the
 marked cubic surface
-$(\Bl_{\{s_1, \dots, s_{5}, t\}}\P^{2}, E_1, \dots, E_5, E_t)$. Here,
+$(Bl_{\{s_1, \dots, s_{5}, t\}}\P^{2}, E_1, \dots, E_5, E_t)$. Here,
 $C$ is embedded in the plane as a conic, and $E_i$ denotes the
 exceptional divisor over the corresponding point.
 
@@ -1452,9 +1444,10 @@ variants of the construction, but the reader will eventually realize
 that, very often, there will be a few non-good fibers present.
 
 
-Finally, {\sl we assume the reader is familiar with the intersection
-  theory of $\o{\M}_{0,n}$.}  Therefore, we will at times translate
-intersection products on $\hM_{0,7}$ into calculations on
+Finally, in the interest of brevity, {\sl we assume the reader is
+  familiar with the intersection theory of $\o{\M}_{0,n}$, as
+  explained in, for example \cite[??].}  Therefore, we will at time
+translate intersection products on $\hM_{0,7}$ into calculations on
 $\o{\M}_{0,7}$, and then leave it to the reader to check the results
 there.
 
@@ -2501,12 +2494,12 @@ top degree intersection products which will factor into the final calculation:
 
   $u_{1}^{4}$: We translate the computation into an enumerative
   problem, whose solution is found using the {\sl double point
-    formula} (see \cite[~Theorem 2]{fulton1978note}).  Choose $4$ general pencils
-  of anti-canonical curves on $S$, and let $S'$ denote the blow up of
-  $S$ along the union of all $4$ base loci.  $S'$ is a smooth surface,
-  and $u_{1}^{4}$ is the number of pairs of points having the same
-  image under the map $f: S' \to \left( \P^{1} \right)^{4}$ induced by
-  the four pencils.  We leave the details of the calculation to the
+    formula} \cite[3264??].  Choose $4$ general pencils of
+  anti-canonical curves on $S$, and let $S'$ denote the blow up of $S$
+  along the union of all $4$ base loci.  $S'$ is a smooth surface, and
+  $u_{1}^{4}$ is the number of pairs of points having the same image
+  under the map $f: S' \to \left( \P^{1} \right)^{4}$ induced by the
+  four pencils.  We leave the details of the calculation to the
   reader, but the end result is $36$ pairs of such points.
 
   $u_{1}^{2}u_{2}$: This monomial translates into the following
@@ -2709,7 +2702,7 @@ For the proof, we need a lemma.
 \begin{proposition}\label{cor:nolimit}
   Let $X$ be as in \autoref{prop:nolimit} and assume $0 < t \leq 3/7$.
   Let $S$ be a smooth cubic surface without an Eckardt point.
-  Then $X$ is not in the closure of the $\PGL_4$-orbit of $S$.
+  Then $X$ is not in the closure of the $\PGL_4$ orbit of $S$.
 \end{proposition}
 \begin{proof}
   We use the classification of $t$-stable pairs $(S,H)$ due to Gallardo and Martinez-Garcia \cite{gal.mar:19}.
@@ -2729,10 +2722,10 @@ For the proof, we need a lemma.
 \end{proposition}
 For the reader's amusement, we include real pictures of the surfaces above in \autoref{fig:surfaces}.
 \begin{proof}
-  Each surface $X$ in this list has a reductive stabilizer group $T$, and there exists a $T_0$-fixed hyperplane section $H$ such that the pair $(X, H)$ is $t$-semi-stable for some $0 < t \leq 3/7$.
+  Each surface $X$ in this list has a reductive stabilizer group $T$, and there exists a $T_0$-fixed hyperplane section $H$ such that the pair $(X, H)$ is $t$-semistable for some $0 < t \leq 3/7$.
 
   In the following table, we list the automorphism groups, the hyperplane $H$, and the relevant value of $t$.
-  The automorphism groups are from \cite[Theorem~3]{sak:10} and the data of the $t$-semi-stable hyperplane is from \cite[Table~2]{gal.mar:19}.
+  The automorphism groups are from \cite[Theorem~3]{sak:10} and the data of the $t$-semistable hyperplane is from \cite[Table~2]{gal.mar:19}.
   We denote the symmetric group on $n$ letters by $\Sigma_n$.
   \begin{center}
   \begin{tabular}{l l l l}
@@ -2770,11 +2763,7 @@ The statement now follows from  \autoref{cor:nolimit}.
     \includegraphics[width=\textwidth]{cubicD4}
     \caption{$D_4$}
   \end{subfigure}
-  \caption{Some cubic surfaces with a $\G_m$-action that are not in
-    the closure of the orbit of a generic cubic surface. We used the
-    nice 3D grapher
-    \href{https://singsurf.org/parade/Cubics.php}{here} for these
-    images.}
+  \caption{Some cubic surfaces with a $\G_m$-action that are not in the closure of the orbit of a generic cubic surface.}
   \label{fig:surfaces}
 \end{figure}
 
@@ -2934,7 +2923,7 @@ for the moduli stack of cubic surfaces.
 \end{proof}
 
 \begin{corollary}
-  The degree of the closure of the $\PGL_4$-orbit of a generic cubic surface in $\P^3$ is $96120$.
+  The degree of the closure of the $\PGL_4$ orbit of a generic cubic surface in $\P^3$ is $96120$.
 \end{corollary}
 \begin{proof}
   Let $F_i$ for $i = 0,\dots,4$ be generic cubic forms in four variables.
@@ -2960,7 +2949,7 @@ for the moduli stack of cubic surfaces.
   Given a generic cubic surface $S$, there are $42120$ fibers of $\pi$ isomorphic to $S$.
 \end{corollary}
 \begin{proof}
-  Note that two cubic surfaces are isomorphic if and only if they are in the same $\PGL_4$-orbit.
+  Note that two cubic surfaces are isomorphic if and only if they are in the same $\PGL_4$ orbit.
   Consider the pull-back of $\Orb(S)$ to the base $\P^4$ of the family.
   By the genericity of $X$ and $S$, this pull-back consists of distinct reduced points corresponding to the points of $\Orb(S) \setminus \partial \Orb(S)$.
   The statement now follows from \autoref{thm:eqvclass} and the computation of the right hand side, which we omit.
@@ -3001,11 +2990,18 @@ coordinates $\left(x_{0}, x_{1}, x_{2}, x_{3}\right)$ by the equation
 $f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.  This is the unique
 cubic surface possessing a single $A_5$ singularity, up to projective
 equivalence.
+For the reader's amusement, we include a real picture of $X$ in \autoref{fig:cubicA5}.
 
 \begin{figure}
   \centering
   \input{figures/curveA5argument}
   \caption{The surface $X$ with an $A_5$ singularity is obtained by blowing up the subscheme $a+b+4p$ in a smooth cubic $C$, where $p \in C$ is a flex point and $a, b, p$ are collinear.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.25\textwidth]{cubicA5}
+  \caption{The unique cubic surface $X$ with an $A_5$ singularity}
 \end{figure}
 
 $X$ is the cubic surface associated to the admissible length $6$
@@ -3014,19 +3010,16 @@ forms $f_{2}$ and $f_{3}$ -- we leave it to the reader to check that
 $\Aut(\P^{2},Z)$ is one-dimensional, with $\G_{a}$ as identity
 component.  Thus, the techniques used in the main body of the paper
 cannot address the goodness of $X$.  The techniques developed in this
-appendix likely have broader range, but we have not pursued greater
-generality here in the interest of keeping the paper more focused.
+appendix most probably have a larger scope, but we have not pursued
+greater generality here in the interest of keeping the paper more
+focused.
 
 
-<<<<<<< HEAD
-Our goal is to show:
-=======
 In this appendix we provide a proof of the following theorem:
->>>>>>> 7364e5f1c63c53ca7501ae95b1608ddebfd41b2c
 
 \begin{theorem}
   \label{theorem:A5good} The surface $X$ is good, i.e. $X$ does not
-  lie in the $\PGL_4$-orbit closure of a general cubic surface.
+  lie in the $\PGL(4)$-orbit closure of a general cubic surface.
 \end{theorem}
 
 The proof proceeds by contradiction, in several steps. Let
@@ -3042,12 +3035,10 @@ is a family of cubic surfaces with the properties:
 
 The overall strategy is to transfer to the setting of families of
 length $6$ subschemes of the plane, and reduce to proving that
-$[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL_3$-orbit closure
+$[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL(3)$-orbit closure
 of a {\sl general} length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.
 We will sketch several parts of the reduction, leaving lesser details
 to the reader.
-
-The following is an instance of Brieskorn's ``simultaneous resolution of singularities'':
 
 \begin{lemma}[Brieskorn]
   \label{lemma:simult} There exists a {\sl smooth} family of cubic
@@ -3056,10 +3047,6 @@ The following is an instance of Brieskorn's ``simultaneous resolution of singula
   an isomorphism over $\eta$ and is a minimal desingularization over
   $0$.
 \end{lemma}
-
-\begin{proof}
-  See \cite{brieskorn1970singular}.
-\end{proof}
 
 Let $\kappa: \Bl_{Z}\P^2 \to X$ denote the anti-canonical map. The
 minimal desingularization $\beta_{0}: X' \to X$ factors through
@@ -3085,10 +3072,9 @@ Our next step is to extend $\mathcal{L}_{0}$ to $\mathcal{X'}$.
   \[0 \to \O_{X'} \to \mathcal{E} \to T_{X'} \to 0 \] defined by the
   element $c_{1} \mathcal{L}_{0} \in H^{1}(X', \Omega_{X'})$. Since
   $H^{2}(\O_{X'}) = 0$, it follows that $\mathcal{L}_{0}$ lifts to
-  every infinitesimal deformation of $X'$.  In particular,
-  $\mathcal{L}_{0}$ lifts to the formal completion of $\mathcal{X'}$
-  along $X'$.  By standard algebraization arguments, we deduce a lift
-  to $\mathcal{X'}$ itself.
+  every infinitesimal deformation of $X'$.  Thus, $\mathcal{L}_{0}$
+  lifts to the formal completion of $\mathcal{X'}$ along $X'$.  By an
+  algebraization argument \cite[Reference]... Anand: how to do this??
 \end{proof}
 
 Next, we choose an isomorphism
@@ -3100,7 +3086,7 @@ by the line bundle $\mathcal{L}$ referenced in
 (induced by pullback of forms)
 $\omega_{\mathcal{X'}/\Delta}^{-1} \hookrightarrow
 \varphi^{*}\omega_{\P^{2}_{\Delta}/\Delta}^{-1}$ induces an inclusion
-of free $\k[\![t]\!]$-modules
+of free $\k[[t]]$-modules
 \[\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
   H^{0}\left(\P^{2}_{\Delta}, \O(3)\right).\] The former is a rank $4$
 free module, and the latter is a rank $10$ free module.  We let
@@ -3234,7 +3220,7 @@ $g \circ \beta_{1} \circ \dots \circ \beta_{n}: \P^{2}_{\Delta}(n)
 $B = \cap_{i} \Lambda_{i}(n)$ supported at the single point
 $x \in F(n)$.  Note that $B$ is now a global complete intersection
 subscheme of $\P^{2}(n)$, being the intersection of the three surfaces
-$\Lambda_{i}(n)$. If we finally let
+$\Lambda_{i}(n)$, therefore, if we finally let
 \[\td{\P^{2}_{\Delta}(n)}\]
 denote the blow up $\Bl_{B}\P^{2}_{\Delta}(n)$, with blowdown map
 denoted $\beta: \td{\P^{2}_{\Delta}(n)} \to \P^{2}_{\Delta}(n)$, we
@@ -3246,8 +3232,7 @@ $g$:
   \end{tikzcd}
 \end{center}
 Let $P(\infty) = \beta^{-1}(x) \subset \td{\P^{2}_{\Delta}(n)}$ denote
-the exceptional surface; $P(\infty)$ is isomorphic to $\P^{2}$ because
-$B$ is a complete intersection.
+the exceptional surface; $P(\infty)$ is isomorphic to $\P^{2}$.
 
 The map $\td{g}$ has the following effect on the fiber
 $P(0) \cup F(1) \cup \dots \cup F(n-1) \cup \Bl_{x}F(n) \cup

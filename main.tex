@@ -13,6 +13,7 @@
   stmaryrd,
   tikz-cd,
   mathrsfs,
+  pgfplots
 }
 \usepackage{graphicx}
 \usepackage[shortlabels]{enumitem}
@@ -1406,10 +1407,8 @@ we find our second relation:
 
 \begin{figure}[!]
     \centering
-%    \incfig{FigureB3}
-    \caption{Third family schematic. The point $\nu(s_{\infty})$ is
-      the point at infinity. It, along with
-      $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
+    \input{figures/familyB3}
+    \caption{In the family $B_3$, we blow up the points $t_i$ for $i = 1, \dots, 5$ and a fixed point $t_\infty$ at infinity (not shown) as the points $\{t_1, \dots, t_5\}$ move freely on a fixed cuspidal cubic $C$ with a flex at $t_\infty$.}
     \label{fig:FigureB3}
 \end{figure}
 
@@ -2992,6 +2991,12 @@ $f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.  This is the unique
 cubic surface possessing a single $A_5$ singularity, up to projective
 equivalence.
 
+\begin{figure}
+  \centering
+  \input{figures/curveA5argument}
+  \caption{The surface $X$ with an $A_5$ singularity is obtained by blowing up the subscheme $a+b+4p$ in a smooth cubic $C$, where $p \in C$ is a flex point and $a, b, p$ are collinear.}
+\end{figure}
+
 $X$ is the cubic surface associated to the admissible length $6$
 subscheme $Z \subset \P^{2}$ defined by the common vanishing of the
 forms $f_{2}$ and $f_{3}$ -- we leave it to the reader to check that
@@ -3001,7 +3006,6 @@ cannot address the goodness of $X$.  The techniques developed in this
 appendix most probably have a larger scope, but we have not pursued
 greater generality here in the interest of keeping the paper more
 focused.
-
 
 
 In this appendix we provide a proof of the following theorem:
@@ -3196,6 +3200,12 @@ $\P^{2}_{\Delta}(n)$, whose fiber over $0 \in \Delta$ is an
   such that the three smooth surfaces $\Lambda_{i}(n)$ now only
   intersect at a point $x \in F(n)$ not lying on the directrix of
   $F(n)$.}
+
+\begin{figure}
+  \centering
+  \input{figures/appendix1}
+  \caption{A family of surfaces with an accordion like central fiber arise while resolving the rational map $\P^2_\Delta \to \P^2_\Delta$.}
+\end{figure}
 
 Thus, the rational map
 $g \circ \beta_{1} \circ \dots \circ \beta_{n}: \P^{2}_{\Delta}(n)

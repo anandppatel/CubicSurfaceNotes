@@ -1,6 +1,6 @@
 \documentclass[12pt,reqno]{amsart}
 \usepackage[margin = 1.3 in]{geometry}
-\usepackage[frenchmath,defaultmathsizes]{mathastext}
+%\usepackage[frenchmath,defaultmathsizes]{mathastext}
 \usepackage{cite}
 \usepackage{
   hyperref,
@@ -22,11 +22,6 @@
 \usepackage{transparent}
 \usepackage{booktabs}
 \usepackage{subcaption}
-
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
-}
 
 \usepackage{showlabels}
 
@@ -936,11 +931,9 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 
 \begin{figure}
   \centering
-%  \incfig{FamilyB1}
-  \caption{Schematic for the family parametrized by $B_1$. The points
-    $Z$ vary freely on the conic $C$, and we blow up the plane at the
-    six points $Z \cup \{y_{1},y_{2}\}$.}
-    \label{fig:FamilyB1}
+  \input{figures/familyB1}
+  \caption{In the family $B_1$, we blow up the plane at the six points $Z \cup \{y_1, y_2\}$ as the length 4 scheme $Z$ varies freely on a fixed conic $C$}
+  \label{fig:FamilyB1}
 \end{figure}
 
 
@@ -1354,9 +1347,9 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 
 \begin{figure}[!]
     \centering
-%   \incfig{FamilyB2}
-    \caption{Schematic for our second family. We blow up the plane at
-      the points $\{s_{1}, \dots, s_{5}, t\}$.}
+    \input{figures/familyB2}
+    \caption{
+      In the family $B_2$, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a fixed conic $C$.}
     \label{fig:FamilyB2}
      \end{figure}
 

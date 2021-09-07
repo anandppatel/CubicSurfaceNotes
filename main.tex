@@ -131,13 +131,13 @@ semi-stable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
 geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 
 \begin{theorem}\label{theorem:main}
-  Let $B$ be proper and let $\pi \colon \cX \to B$ be a good family of
-  cubic surfaces. Let $\V$ be the rank 4 bundle
-  $\V = \pi_* \left(\omega_\pi^{-1}\right)$, and let
+  Let $\pi \colon \cX \to B$ be a good family of cubic surfaces over a
+  proper base $B$, let $\V$ denote the rank 4 vector bundle
+  $ \pi_* \left(\omega_\pi^{-1}\right)$, and let
   \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
   general fiber of $\pi$ is semi-stable, and let
   $\mu \colon B \dashrightarrow \mathcal M$ be the rational map
-  induced by $\pi$.  Then we have the equality
+  induced by $\pi$.  Then,
   \begin{align}
     \deg \mu =
     \label{eq:MAIN}
@@ -204,7 +204,7 @@ computed. Every such family gives a linear relationship between the
 coefficients in the expression of $\Orb(F)$, which are to be determined.
 If we have enough families, we get enough information to find all the coefficients.
 For cubic surfaces, we construct more than enough families---there are 5
-coefficients to be determined and we construct 9 families. The redundancy
+coefficients to be determined and we construct 8 families. The redundancy
 serves as an extra check on the result.
 \begin{theorem}\label{thm:eqvclass2}
   Let $V$ be a 4-dimensional vector space and let $F$ be a general
@@ -223,17 +223,19 @@ variables; see \autoref{proof:eqvclass2}.
 
 Most of the paper is devoted to constructing {\sl provably} good
 families of cubic surfaces on which we can compute $\deg \mu$ and the
-Chern classes $c_i$.  Proofs of goodness are sometimes subtle -- this
-is an instance of the general problem of determining which homogeneous
-forms lie in the $GL$-orbit closure of which other forms. The bases
-$B$ in our families are $\P^4$, $\overline M_{0,7}$, a
-Hassett-weighted variant of $\overline M_{0,7}$, a blow up of the
+Chern classes $c_i$.  Proofs of goodness are sometimes challenging --
+this is an instance of the general problem of determining which
+homogeneous forms lie in the $GL$-orbit closure of which other
+forms. The bases $B$ in our families are $\P^4$, $\overline M_{0,7}$,
+a Hassett-weighted variant of $\overline M_{0,7}$, a blow up of the
 Hilbert scheme of two points on a quintic del Pezzo surface, and last
 but not the least, the stack $B\G_m$.
 
 The method of undetermined coefficients applies to hypersurfaces of
-any degree and dimension.  The obstacle, in general, is in constructing enough
-families.
+any degree and dimension.  The obstacle, in general, is in
+constructing enough families.  Our constructions crucially use the
+beautiful geometry of the lines on a cubic, and therefore are very
+specific to the cubic surface case.
 
 \subsection{Further remarks}
 The formula in \autoref{theorem:main} has some curious consequences.
@@ -253,10 +255,29 @@ The formula in \autoref{theorem:main} has some curious consequences.
   Then the degree of $\mu$ is divisible by 1080.
 \end{corollary}
 In particular, a parameter space for cubic surfaces that carries a
-universal family must cover $\mathcal M$ by a map of degree divisible
-by 1080.
-Interestingly, the number 1080 is also the least common multiple of the
-orders of the finite groups that arise as automorphism groups of cubic surfaces.
+good universal family must cover $\mathcal M$ by a map of degree
+divisible by 1080.  Interestingly, the number 1080 is also the least
+common multiple of the orders of the finite groups that arise as
+automorphism groups of cubic surfaces.  It would be nice to establish
+the minimal positive integer realizable as $\deg \mu$ as we vary
+across all good families of cubic surfaces.
+
+\subsection{Future directions}
+
+\autoref{thm:eqvclass2} is only the beginning.  Each {\sl particular}
+cubic surface $F=0$ registers its own equivariant orbit class
+$[\Orb(F)]$.  A refined study of the methods developed in this paper
+may afford us a complete understanding of how this class changes
+according to special changes in the geometry of $F=0$, e.g. acquiring
+singularities or Ekckhart points.  This is something we hope to pursue
+in the future.
+
+In a different direction, there should be analogous formulas counting
+Del Pezzo surfaces of degrees $1,2$ and $4$ -- we fully expect our
+methods to establish formulas in these settings, though we have not
+even begun the analysis.  
+
+
 
 \subsection{Acknowledgements}
 We thank Radu Laza, who asked Question~\ref{slice} to the first two
@@ -3282,18 +3303,21 @@ of $Z$ at $[0:0:1] \in Z$.
   $C_{j,k} \subset P(0) \cup \dots \cup F(n)$ denote the fiber of
   $\Sigma_{j,k}$ over $0 \in \Delta$. $C_{j,k}$ is a chain of
   $\P^{1}$'s, with $C_{j,k} \cap P(0)$ being the line joining
-  $p_{j}, p_{k}$ viewed as points in $P(0)$. $C_{j,k} \cap F(m)$ is
-  then a ruling line which is uniquely determined by the locations of
-  the points
+  $p_{j}, p_{k}$ viewed as points in $P(0)$. The curves
+  $C_{j,k} \cap F(m)$, varying across all choices of $j,k$ are then
+  ruling lines which are uniquely determined by the locations of the
+  points
   $\langle q_{1}, q_{2} \rangle \cap \langle p_{j}, p_{k} \rangle$,
-  which, by generality of $Z_{gen}$, is a set of $6$ distinct points.
-  In particular, $x \notin C_{j,k}$ for some pair $j,k$.  This implies
-  that $\td{g}(C_{j,k})$ = $L_{0} \subset \P^{2}_{0}$.  However,
-  $\td{g}(C_{j,k})$ must {\sl also} be the limit of the line joining
-  the pair of sections $z_{j}, z_{k} \subset \mathcal{Z}$ over the
-  generic point $\eta$.  This latter line is $L_{1}$, which is
-  distinct from $L_0$, providing our desired contradition.
+  which in turn (using the generality of $Z_{gen}$) is a set of $6$
+  distinct points.  In particular, $x \notin C_{j,k}$ for some pair
+  $j,k$.  This implies that $\td{g}(C_{j,k})$ =
+  $L_{0} \subset \P^{2}_{0}$.  However, $\td{g}(C_{j,k})$ must {\sl
+    also} be the limit of the line joining the pair of sections
+  $z_{j}, z_{k} \subset \mathcal{Z}$ over the generic point $\eta$.
+  This latter line is $L_{1}$, which is distinct from $L_0$, providing
+  our desired contradition.
 \end{proof}
+
 
 
 

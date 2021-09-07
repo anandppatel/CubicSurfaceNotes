@@ -62,3 +62,5 @@
 # Dropbox files
 **/*.dropbox.attr
 **/*.dropbox
+
+!**/family*.pdf

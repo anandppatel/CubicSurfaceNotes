@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="FamilyB1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,12 +24,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.77771465"
-     inkscape:cx="396.67505"
-     inkscape:cy="561.25984"
-     inkscape:window-width="1284"
-     inkscape:window-height="1081"
-     inkscape:window-x="4336"
-     inkscape:window-y="43"
+     inkscape:cx="469.96672"
+     inkscape:cy="450.67944"
+     inkscape:window-width="720"
+     inkscape:window-height="817"
+     inkscape:window-x="720"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -135,14 +135,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="95.257729"
-       y="150.37112"
+       x="95.597939"
+       y="146.7859"
        id="text24578"><tspan
          sodipodi:role="line"
          id="tspan24576"
          style="font-size:5.29167px;stroke-width:0.264583"
-         x="95.257729"
-         y="150.37112"> $C$</tspan></text>
+         x="95.597939"
+         y="146.7859"> $C$</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"

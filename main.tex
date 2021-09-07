@@ -90,17 +90,22 @@
 
 %%% BEGIN DOCUMENT
 
+
 \begin{document}
 
-
-
 \maketitle
+
+\begin{abstract}
+  Using equivariant geometry, we find a universal formula that computes the number of times a general cubic surface arises in a family.
+  As applications, we show that the $\PGL_4$ orbit closure of a generic cubic surface has degree 96120, and that a general cubic surface arises 42120 times as a hyperplane section of a general cubic 3-fold.
+\end{abstract}
+
+
 
 
 \section{Introduction}
 \label{sec:intro}
 
-\subsection{Counting cubic surfaces}\label{sec:counting}
 Cubic surfaces have fascinated us for centuries. Ever since Cayley and
 Salmon discovered the 27 lines, it has become a tradition for
 algebraic geometers to revisit their geometry, using increasingly
@@ -114,10 +119,8 @@ isomorphism class would appear finitely many times. How can we
 determine this number? For example, how many times does a general
 cubic surface appear, up to isomorphism, as
 \begin{enumerate}[(A)]
-\item \label{orbit} a member of a 4-dimensional general linear system of cubic surfaces in $\mathbb
-  P^3$?
-\item \label{slice} a hyperplane section of a general cubic threefold in $\mathbb
-  P^4$?
+\item \label{orbit} a member of a 4-dimensional general linear system of cubic surfaces in $\P^3$?
+\item \label{slice} a hyperplane section of a general cubic threefold in $\P^4$?
 \item a blow up of 6 points in $\P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
 \end{enumerate}
@@ -150,18 +153,16 @@ family.  This notion includes any family whose fibers are
 GIT-semistable or have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
-Question~\ref{orbit} in \autoref{sec:counting} fits in a broader story
+Question~\ref{orbit} in \autoref{sec:intro} fits in a broader story
 that has been an ongoing topic of study.  Consider a hypersurface
 \(X\) in a projective space $\P V$ cut out by a homogeneous polynomial
-$F \in \Sym^d V$.  In $\P\Sym^dV$, consider the orbit of $[F]$ under
-the action of $\GL(V)$, and let $\Orb([F])$ be its closure.  In a
-series of seminal papers, Aluffi and Faber computed the degree of
-$\Orb([F])$ when \(F\) is {\sl any} homogeneous polynomial in 2 or 3
-variables, that is, when \(X\) is a set of points in $\P^1$ or a curve
-in $\P^2$ \cite{alu.fab:00,alu.fab:93}.  The next case is that of
-cubic surfaces in $\P^3$, established in this paper.  The answer to
-Question~\ref{orbit} says that the degree of the orbit closure of a
-general cubic surface is $96120$.
+$F \in \Sym^d V^\vee$.  In $\P\Sym^dV^\vee$, consider the orbit of $[F]$ under
+the action of $\GL(V)$, and let $\Orb([F])$ be its closure.
+To our knowledge, the story begins with Enriques and Fano, who computed the degree of the orbit closure of binary forms of all degrees \cite{EF}.  
+In a series of seminal papers, Aluffi and Faber computed the degree of the orbit closure for \emph{all} binary and ternany forms.
+That is, the case of points in $\P^1$ and curves in $\P^2$ has been done.
+The next case is that of cubic surfaces in $\P^3$, established in this paper.
+\autoref{theorem:main} applied to Question~\ref{orbit} says that the degree of the orbit closure of a general cubic surface is $96120$.
 
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
@@ -174,32 +175,32 @@ Our approach is different.
 \subsection{The equivariant class of the orbit closure}
 Our key idea is to consider not just the degree of the orbit closure,
 but the class of the orbit closure in the equivariant Chow ring
-$A^\bullet_{\GL V}(\Sym^dV)$. Although the equivariant class subsumes the
+$A^\bullet_{\GL V}(\Sym^dV^\vee)$. Although the equivariant class subsumes the
 degree, finding it turns out to be easier than finding the degree.
 
 Let us explain how the equivariant class yields the degree.
 We have natural maps
 \[
 \begin{tikzcd}
-  A^\bullet_{\GL V}(\Sym^dV) \ar{r}& A^\bullet_{\GL V}(\Sym^d V \setminus
+  A^\bullet_{\GL V}(\Sym^dV^\vee) \ar{r}& A^\bullet_{\GL V}(\Sym^d V^\vee \setminus
   \{0\}) \otimes \Q \ar[equal]{d}\\
-  &A^\bullet_{\PGL V}(\P \Sym^dV) \otimes \Q \ar{r}&
-  A^\bullet(\P \Sym^dV) \otimes \Q.
+  &A^\bullet_{\PGL V}(\P \Sym^dV^\vee) \otimes \Q \ar{r}&
+  A^\bullet(\P \Sym^dV^\vee) \otimes \Q.
 \end{tikzcd}
 \]
 Under the composite map, the class of $\Orb(F) \in A^\bullet_{\GL
-  V}(\Sym^dV)$ is mapped to the class of $\Orb([F]) \in
-A^\bullet(\P \Sym^dV) \otimes \Q$, which is simply the degree of $\Orb([F])$.
+  V}(\Sym^dV^\vee)$ is mapped to the class of $\Orb([F]) \in
+A^\bullet(\P \Sym^dV^\vee) \otimes \Q$, which is simply the degree of $\Orb([F])$.
 
 Let us explain what makes it possible to find the equivariant
-class.  The ring $A^\bullet_{\GL V}(\Sym^dV)$ is the polynomial ring
+class.  The ring $A^\bullet_{\GL V}(\Sym^dV^\vee)$ is the polynomial ring
 in variables $c_1, \dots, c_r$, where $r = \dim V$, and the variable
 $c_i$ has degree $i$.  The equivariant class of $\Orb(F)$ lies in the
-graded component $A^m(\Sym^dV)$, where
-$m = \dim \Sym^d V - \dim \GL V$.  As a result, it can be expressed as
-a $\mathbb Z$-linear combination of monomials in $c_i$ of total degree
+graded component $A^m(\Sym^dV^\vee)$, where
+$m = \dim \Sym^d V^\vee - \dim \GL V$.  As a result, it can be expressed as
+a $\Z$-linear combination of monomials in $c_i$ of total degree
 $m$. We can now use the method of undetermined coefficients.  We
-construct maps $B \to [\Sym^dV/\GL V]$ where the pull-back of
+construct maps $B \to [\Sym^dV^\vee/\GL V]$ where the pull-back of
 $\Orb(F)$ as well as the classes $c_i$ can be explicitly
 computed. Every such family gives a linear relationship between the
 coefficients in the expression of $\Orb(F)$, which are to be determined.
@@ -209,9 +210,9 @@ coefficients to be determined and we construct 8 families. The redundancy
 serves as an extra check on the result.
 \begin{theorem}\label{thm:eqvclass2}
   Let $V$ be a 4-dimensional vector space and let $F$ be a general
-  element of $\Sym^3 V$.
+  element of $\Sym^3 V^\vee$.
   The equivariant class of the $\GL(V)$-orbit closure $\Orb(F)$ of $F$
-  in $A^\bullet_{\GL V}(\Sym^3 V)$ is given by
+  in $A^\bullet_{\GL V}(\Sym^3 V^\vee)$ is given by
   \[
     [\Orb F] = 24c_1^4 + 12c_1^2c_2 - 6c_1c_3 + 9c_4,
   \]
@@ -259,8 +260,8 @@ In particular, a parameter space for cubic surfaces that carries a
 good universal family must cover $\mathcal M$ by a map of degree
 divisible by 1080.  Interestingly, the number 1080 is also the least
 common multiple of the orders of the finite groups that arise as
-automorphism groups of cubic surfaces.  It would be nice to establish
-the minimal positive integer realizable as $\deg \mu$ as we vary
+automorphism groups of cubic surfaces.
+We wonder if $1080$ is the minimal positive integer realizable as $\deg \mu$ as we vary
 across all good families of cubic surfaces.
 
 \subsection{Future directions}
@@ -285,7 +286,7 @@ We thank Radu Laza, who asked Question~\ref{slice} to the first two
 authors during a meeting at Oberwolfach in the summer of 2016.  We
 thank Hunter Spink for important discussions during the infancy
 of the project.  We thank Paulo Aluffi for quickly providing an
-enumerative reference on cuspidal cubic curves.  
+enumerative reference on cuspidal cubic curves and Jarod Alper for discussions on equivariant geometry.
 
 \todo{More acknowledgements}
 
@@ -427,7 +428,7 @@ cubic surface.  Each line is a $(-1)$-curve, and hence contractible by
 Castelnuovo's theorem.  A set of lines that are pairwise skew is
 particularly important, because they can be blown down simultaneously.
 The maximum number of such lines is 6, and they allow us to realize
-the cubic surface as a blow up of $\mathbb P^2$ at 6 points.
+the cubic surface as a blow up of $\P^2$ at 6 points.
 
 Following Schl\"afli \cite{sch:58}, we call an ordered tuple of pairwise disjoint six lines $(\ell_1, \dots, \ell_6)$ on a cubic surface a \emph{six}.
 A \emph{double six} is an unordered pair of sixes $\{(\ell_1, \dots, \ell_6), (\ell_1', \dots, \ell_6')\}$ such that
@@ -440,7 +441,7 @@ A \emph{double six} is an unordered pair of sixes $\{(\ell_1, \dots, \ell_6), (\
   \label{theorem:schlafli} Each six on a smooth cubic surface has a unique extension to a double-six, and every smooth cubic surface contains $36$ double-sixes.
 \end{theorem}
 Thus, each smooth cubic surface admits 72 distinct maps to
-$\mathbb P^2$, up to automorphisms of $\mathbb P^2$, each of which
+$\P^2$, up to automorphisms of $\P^2$, each of which
 blows down 6 lines.
 
 The sixes on a cubic surface allow us to relate $\mathcal M$ to a more
@@ -490,15 +491,15 @@ of the quotient stack $[X/G]$:
 
 The equivariant Chow ring of a point with the action of $G = \GL_n$ is
 the polynomial ring
-\[ A_{\GL_n}(\cdot) = \mathbb Z[c_1,\dots, c_n],\] where $c_i$ has
+\[ A_{\GL_n}(\cdot) = \Z[c_1,\dots, c_n],\] where $c_i$ has
 degree $i$ and can be identified with the $i$-th Chern class of the
 standard $n$-dimensional representation of $\GL_n$.  By homotopy
 invariance, for any $\GL_n$ representation $W$, we have
-\[ A_{\GL_n}(W) = \mathbb Z[c_1,\dots,c_n].\] If the general linear
+\[ A_{\GL_n}(W) = \Z[c_1,\dots,c_n].\] If the general linear
 group under consideration is $\GL V$, where $V$ is a vector space,
 then we write $v_i$ for the $i$-th Chern class of the tautological
 representation $V$.  Then we have
-\[ A_{\GL V}(W) = \mathbb Z[v_1,\dots,v_n].\]
+\[ A_{\GL V}(W) = \Z[v_1,\dots,v_n].\]
 
 Let $V$ be a $4$-dimensional $\k$-vector space.
 Consider the $\GL V$ representation $W = \Sym^3 V^\vee \otimes \det V$.
@@ -507,7 +508,7 @@ Note that the action of $\GL V$ on $W$ is generically free, and hence the codime
 Given a point $w \in W$, let $\Orb(w)$ denote the closure of its $\GL V$ orbit, and let
 \[ [\Orb(w)] \in A^4_{\GL V}(W) = A^4(\mathscr M)\]
 denote the fundamental class.
-By a slight abuse of notation, if $X \subset \mathbb P^3$ is a cubic surface or $F \in k[X_0, \dots, X_3]$ is a non-zero cubic form, we let $\Orb(X)$ or $\Orb(F)$ denote the closure of the orbit in $W$ of the corresponding point $w$, and $[\Orb(X)]$ or $\Orb(F)$ the fundamental class.
+By a slight abuse of notation, if $X \subset \P^3$ is a cubic surface or $F \in k[X_0, \dots, X_3]$ is a non-zero cubic form, we let $\Orb(X)$ or $\Orb(F)$ denote the closure of the orbit in $W$ of the corresponding point $w$, and $[\Orb(X)]$ or $\Orb(F)$ the fundamental class.
 Since $\A^4(\mathscr M)$ is generated by monomials in the Chern classes $c_i$ of total degree 4, we have an expression
 \begin{equation}\label{eqn:chernexpansion}
   [\Orb(X)] = a_{1^4}v_1^4 + a_{1^2\cdot 2} v_1^2v_2 + a_{1\cdot 3} v_1v_3 + a_{2^2}v_2^2 + a_4 v_4,
@@ -682,7 +683,7 @@ $Z_b \subset P_b$, as in \autoref{def:cubicZ}.
 \begin{proposition}\label{prop:blow-ups-and-base-change}
   Let $\pi \colon P \to B$ be a smooth morphism and $Z \subset P$ a closed subscheme flat and lci over $B$.
   Then $\Bl_ZP \to B$ is flat and for any $C \to B$, the canonical map
-  \[ \Bl_ZP \times_B C \to \Bl_{Z_C} P_C\]
+  \[  \Bl_{Z_C} P_C \to \Bl_ZP \times_B C.\]
   is an isomorphism.
 \end{proposition}
 \begin{proof}
@@ -935,7 +936,7 @@ $\V$ -- for brevity's sake, we equate a $0$-cycle with its degree.
 
 \begin{figure}
   \centering
-  \incfig{FamilyB1}
+%  \incfig{FamilyB1}
   \caption{Schematic for the family parametrized by $B_1$. The points
     $Z$ vary freely on the conic $C$, and we blow up the plane at the
     six points $Z \cup \{y_{1},y_{2}\}$.}
@@ -1353,7 +1354,7 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 
 \begin{figure}[!]
     \centering
-   \incfig{FamilyB2}
+%   \incfig{FamilyB2}
     \caption{Schematic for our second family. We blow up the plane at
       the points $\{s_{1}, \dots, s_{5}, t\}$.}
     \label{fig:FamilyB2}
@@ -1412,7 +1413,7 @@ we find our second relation:
 
 \begin{figure}[!]
     \centering
-    \incfig{FigureB3}
+%    \incfig{FigureB3}
     \caption{Third family schematic. The point $\nu(s_{\infty})$ is
       the point at infinity. It, along with
       $\nu(s_{i}), i=1, \dots, 5$ are to be blown up.}
@@ -2638,8 +2639,8 @@ To implement the strategy outlined above, we need some techniques to prove that 
 We use Geometric Invariant Theory (GIT) to achieve this.
 We begin with an easy observation (see \autoref{ex:semistable}).
 \begin{proposition}
-  Let $X \subset \mathbb P^3$ be a singular cubic surface which is semi-stable for the action of $\PGL_4$.
-  Let $S \subset \mathbb P^3$ be any smooth cubic surface.
+  Let $X \subset \P^3$ be a singular cubic surface which is semi-stable for the action of $\PGL_4$.
+  Let $S \subset \P^3$ be any smooth cubic surface.
   Then $X$ does not lie in the closure of the $\PGL_4$-orbit of $S$.
 \end{proposition}
 \begin{proof}

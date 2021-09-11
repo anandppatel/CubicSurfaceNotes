@@ -782,6 +782,10 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \section{Test families}\label{sec:testfamilies}
 \subsection{Family $B_1$}
 \label{sec:first-test-family}
+We begin with an informal description of the family.
+Fix two points $y_1$ and $y_2$ in $\P^2$ and a conic $C \subset \P^2$ containing $y_2$.
+We vary 4 points $z_1, z_2, z_3, z_4$ on $C$.
+Blowing up the six points $\{z_1,\dots, z_4, y_1, y_2\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
 \begin{figure}
   \centering
   \input{figures/familyB1}
@@ -789,9 +793,40 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
   \label{fig:FamilyB1}
 \end{figure}
 
-In this section, we construct a good family over $B_{1} = \P^{4}$.
-Let $S$ denote the blow up of $\P^{2}$ at two points $y_1,y_2$. We let
-$E_{1}, E_{2}$ denote the corresponding exceptional lines on $S$ and
+\subsubsection{The formal construction}
+We now make the construction more precise.
+Let $S$ denote the blow-up of $\P^2$ at two distinct points $y_1$ and $y_2$.
+Let $E_{1}$ and $E_{2}$ denote the corresponding exceptional divisors on $S$.
+Let $C \subset S$ be the proper transform of a general conic through $y_2$.
+\begin{proposition}
+  \label{prop:B1}
+  Let $Z \subset S$ be a subscheme of $C$ of length 4.
+  Then
+  \begin{enumerate}
+  \item $h^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1}) = 4$, and
+  \item the evaluation map
+    \[ H^0\left(S, \mathcal I_Z \otimes \omega_S^{-1}\right) \otimes \O_S \to \mathcal I_Z \otimes \omega_S^{-1}\]
+    is surjective.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  We have the sequence
+  \begin{equation}\label{eqn:zcs}
+    0 \to \mathcal I_C \otimes \omega_S^{-1} \to \mathcal I_Z \otimes \omega_S^{-1} \to \mathcal I_{Z/C} \otimes \omega_S^{-1} \to 0,
+  \end{equation}
+  where $\mathcal I_{Z/C} \subset \O_C$ is the ideal sheaf of $Z \subset C$.
+  The kernel $\mathcal I_C \otimes \omega_S^{-1}$ is a line bundle on $S$, and its divisor class is represented by proper transforms of lines in $\P^2$ passing through $y_2$.
+  Since this linear series is 1-dimensional and base-point free, the space $H^0\left(\mathcal I_C \otimes \omega_S^{-1}\right)$ is $2$-dimensional and genererates $\mathcal I_C \otimes \omega_S^{-1}$.
+  The cokernel $\mathcal I_{Z/C} \otimes \omega_S^{-1}$ is a line bundle supported on $C \cong \P^1$ isomorphic to $\O(1)$.
+  Thus, the space $H^0\left( \mathcal I_{Z/C} \otimes \omega_S^{-1} \right)$ is $2$-dimensional and generates $\mathcal I_{C/Z} \otimes \omega_S^{-1}$.
+  The long exact sequence in cohomology applied to \eqref{eqn:zcs} implies that the map
+  \[H^0\left(\mathcal I_Z \otimes \omega_S^{-1}\right) \to H^0\left( \mathcal I_{Z/C} \otimes \omega_S^{-1} \right)\]
+  is surjective.
+  It follows that $H^0\left(\mathcal I_Z \otimes \omega_S^{-1}\right)$ is 4-dimensional and generates $\mathcal I_Z \otimes \omega_S^{-1}$.
+\end{proof}
+
+
+and
 we let $L \subset S$ denote the proper transform of a line in $\P^2$
 passing through the two points $y_1,y_2$. Finally, we pick a general
 conic through $y_{2}$ and let $C \subset S$ denote its proper
@@ -812,34 +847,6 @@ each degree $4$ divisor $Z \subset C$, we assign the cubic surface
 $X_{Z}$ which is the image of $\Bl_{Z}S$ under its anti-canonical
 map. The following proposition justifies this construction:
 
-\begin{proposition}
-  \label{prop:B1} Let $Z \subset S$ be any length $4$ subscheme of $C$
-  with ideal sheaf $\mathcal{I}_{Z} \subset \mathcal{O}_{S}$. Then
-  \begin{enumerate}
-  \item $h^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1}) = 4$, and
-  \item $Z \subset S$ is the subscheme defined by the vector space of
-    sections $H^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1})$.
-  \end{enumerate}
-\end{proposition}
-
-\begin{proof}
-  We translate (1) and (2) into geometric statements about the
-  anti-canonical embedding $S \subset \P^{7}$.  The line bundle
-  $\omega_{S}^{-1}(-C)$ on $S$ is basepoint free, as its divisor class
-  is represented by proper transforms of lines through
-  $y_{1} \in \P^2$, which become separated in the blow up.  The
-  geometric consequence of this is: {\sl If
-    $\langle C \rangle \simeq \P^5 \subset \P^7$ is the linear span of
-    $C$, then $\langle C \rangle \cap S = C$, scheme theoretically.}
-
-  Now $C$ is a rational normal quintic curve in its span
-  $\langle C \rangle$. The following is a basic fact about rational
-  normal curves: {\sl Every length $m \leq n$ subscheme of rational
-    normal curve of degree $n$ spans a linear space of dimension $m-1$
-    which, in turn, intersects the rational normal curve precisely at
-    the length $m$ scheme.}  Both (1) and (2) follow directly from
-  this.
-\end{proof}
 
 Let $\mathcal{Z} \subset B_1 \times C$ denote the universal
 length $4$ subscheme, and consider $\mathcal{Z}$ as a closed subscheme

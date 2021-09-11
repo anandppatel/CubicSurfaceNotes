@@ -677,7 +677,7 @@ Then the following hold.
 By \autoref{prop:admissibleblowup}, we may equivalently define $X_Z$ as
 \[ X_Z = \Proj \left( \bigoplus_{n \geq 0} H^0\left( \Bl_ZS, \omega_{\Bl_Z S}^{-n} \right) \right).\]
 More generally, we need to make the construction $Z \leadsto X_Z$ in families.
-Let $B$ be a scheme, $P \to B$ an $S$-bundle, and $Z \subset  P$ a closed subscheme, flat over $B$, whose fibers are admissible subschemes of $S$.
+Let $B$ be a scheme, $P \to B$ a smooth proper family of del-Pezzo surfaces and $Z \subset  P$ a closed subscheme, flat over $B$, whose fibers are admissible subschemes.
 Consider the blowup $\Bl_{ Z}  P$.
 Note that $Z \subset  P$ is a local complete intersection, and hence the blow-up is $B$-flat and commutes with arbitrary base change.
 In particular, the fiber $(\Bl_ZP)_b$ is the blow up of $P_b$ along $Z_b$.
@@ -785,58 +785,32 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \subsection{Family $B_1$}
 \label{sec:first-test-family}
 We begin with an informal description of the family.
-Fix two points $y_1$ and $y_2$ in $\P^2$ and a conic $C \subset \P^2$ containing $y_2$.
-We vary 4 points $z_1, z_2, z_3, z_4$ on $C$.
-Blowing up the six points $\{z_1,\dots, z_4, y_1, y_2\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
+Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
+We vary 5 points $z_1, \dots, z_5$ in a general 4-dimensional linear series on $C$.
+Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
 \begin{figure}
   \centering
   \input{figures/familyB1}
-  \caption{In the family $B_1$, we blow up the plane along $Z \cup \{y_1, y_2\}$ as the length 4 scheme $Z$ varies freely on a fixed conic $C$}
+  \caption{In the family $B_1$, we blow up the plane along $\{z_0, \dots, z_5\}$ as $z_0$ stays fixed and $z_1,\dots,z_5$ vary in a general 4-dimensional series on a fixed conic $C$.}
   \label{fig:FamilyB1}
 \end{figure}
 
-\subsubsection{The formal construction}
-We now make the construction more precise.
-Let $S$ denote the blow-up of $\P^2$ at two distinct points $y_1$ and $y_2$.
-Let $E_{1}$ and $E_{2}$ denote the corresponding exceptional divisors on $S$.
-Let $C \subset S$ be the proper transform of a general conic through $y_2$.
+\subsubsection{The formal construction}\label{sec:construction-b_1}
+To make the construction more precise, observe the following.
 \begin{proposition}
   \label{prop:B1}
-  Let $Z \subset S$ be a subscheme of $C$ of length 4.
-  Then
-  \begin{enumerate}
-  \item $h^{0}(S, \mathcal{I}_{Z} \otimes \omega_{S}^{-1}) = 4$, and
-  \item the evaluation map
-    \[ H^0\left(S, \mathcal I_Z \otimes \omega_S^{-1}\right) \otimes \O_S \to \mathcal I_Z \otimes \omega_S^{-1}\]
-    is surjective.
-  \end{enumerate}
+  Let $C$ be a plane conic, $Z' \subset C$ a subscheme of length 5, and $z_0 \in \P^2$ a point not on $C$.
+  Then the subscheme $Z = Z' \cup \{z_0\} \subset \P^2$ is admissible.
 \end{proposition}
 \begin{proof}
-  We have the sequence
-  \begin{equation}\label{eqn:zcs}
-    0 \to \mathcal I_C \otimes \omega_S^{-1} \to \mathcal I_Z \otimes \omega_S^{-1} \to \mathcal I_{Z/C} \otimes \omega_S^{-1} \to 0,
-  \end{equation}
-  where $\mathcal I_{Z/C} \subset \O_C$ is the ideal sheaf of $Z \subset C$.
-  The kernel $\mathcal I_C \otimes \omega_S^{-1}$ is a line bundle on $S$, and its divisor class is represented by proper transforms of lines in $\P^2$ passing through $y_2$.
-  Since this linear series is 1-dimensional and base-point free, the space $H^0\left(\mathcal I_C \otimes \omega_S^{-1}\right)$ is $2$-dimensional and genererates $\mathcal I_C \otimes \omega_S^{-1}$.
-  The cokernel $\mathcal I_{Z/C} \otimes \omega_S^{-1}$ is a line bundle supported on $C \cong \P^1$ isomorphic to $\O(1)$.
-  Thus, the space $H^0\left( \mathcal I_{Z/C} \otimes \omega_S^{-1} \right)$ is $2$-dimensional and generates $\mathcal I_{C/Z} \otimes \omega_S^{-1}$.
-  The long exact sequence in cohomology applied to \eqref{eqn:zcs} implies that the map
-  \[H^0\left(\mathcal I_Z \otimes \omega_S^{-1}\right) \to H^0\left( \mathcal I_{Z/C} \otimes \omega_S^{-1} \right)\]
+  The subscheme $Z$ is clearly curvilinear.
+  It remains to verify that $H^0\left(\mathcal I_Z \otimes \omega_{\P^2}^{-1}\right)$ is 4-dimensional and the evaluation map
+  \[ H^0\left(\mathcal I_Z \otimes \omega_{\P^2}^{-1}\right) \otimes \O_{\P^2} \to \mathcal I_Z \otimes \omega_{\P^2}^{-1}\]
   is surjective.
-  It follows that $H^0\left(\mathcal I_Z \otimes \omega_S^{-1}\right)$ is 4-dimensional and generates $\mathcal I_Z \otimes \omega_S^{-1}$.
+  This is straightforward, so we omit it.
 \end{proof}
 
 
-and
-we let $L \subset S$ denote the proper transform of a line in $\P^2$
-passing through the two points $y_1,y_2$. Finally, we pick a general
-conic through $y_{2}$ and let $C \subset S$ denote its proper
-transform. Let $\omega_{S}^{-1}$ denote the anti-canonical line bundle
-on $S$.  
-
-\subsubsection{Construction of $B_1$}
-\label{sec:construction-b_1}
 
 
 The base of our first family is

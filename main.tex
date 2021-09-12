@@ -853,7 +853,7 @@ By combining \eqref{eqn:v11} and \eqref{eqn:v12}, we see that $\mathcal V$ is an
 \begin{equation}\label{eqn:V1}
   0 \to \O_{B}^2 \to \mathcal V \to \O_{B}(-1)^2 \to 0.
 \end{equation}
-The Chern class calculation is not straightforward, using the Whitney sum formula.
+The Chern class calculation is now straightforward using the Whitney sum formula.
 \end{proof}
 
 Let us find the degree of the map to moduli $B \dashrightarrow \M$.
@@ -966,7 +966,7 @@ be the family of cubic surfaces associated to $\mathcal Z \subset \mathcal P$ (s
 \end{proof}
 
 We now compute the Chern classes of the anti-canonical section bundle.
-\begin{lemma}\label{lem:v2}
+\begin{proposition}\label{lem:v2}
   Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$.
   Then we have
   \[
@@ -975,9 +975,9 @@ We now compute the Chern classes of the anti-canonical section bundle.
       &\int_{\overline \M_{0,7}}v_2^{2} = 25,\quad \int_{\overline \M_{0,7}}v_{4} = -6.
     \end{split}
   \]
-\end{lemma}
+\end{proposition}
 For the proof, we use the following.
-\begin{lemma}
+\begin{lemma}\label{lem:push}
   Let $\pi \colon P \to B$ be a $\P^1$-bundle with a section $\sigma$.
   Let $D \subset P$ be a divisor of relative degree $d$ with respect to $\pi$ with $d \geq -1$.
   Then, in the Grothendieck group of $B$, we have
@@ -1005,333 +1005,32 @@ For the proof, we use the following.
   Since $\mathcal Z$ is the disjoint union $\Sigma \cup \tau$, the second term is a sum
   \[ \rho_*(\omega_\rho^{-1}|_{\mathcal Z}) = \rho_*(\omega_\rho^{-1}|_{\tau}) + \rho_*(\omega_\rho^{-1}|_{\Sigma}). \]
   Since $\tau$ is defined by the surjection $\Sym^2 \mathcal A \to \mathcal L$, the restriction $\omega_\rho^{-1}|_\tau$ is trivial.
-  To compute the restriction to $\Sigma$, we view $\Sigma$ as a divisor in $\overline{\mathcal C} = \P A^\vee$ and let $ = \omega_\rho^{-1}|_{\overline C}$.
+  To compute the restriction to $\Sigma$, we view $\Sigma$ as a divisor in $\overline{\mathcal C} = \P A^\vee$ and let $\lambda = \omega_\rho^{-1}|_{\overline C} = \O(6) \otimes \overline \phi^* \mathcal L^3$.
   Thus, in the Grothendieck group, we have
-  \[ \rho_*(\omega_\rho^{-1}|_{\Sigma}) = \overline\phi_*\left(M\right) - \overline\phi_* \left( \O_{\overline{\mathcal C}}(D-\Sigma)\right).\]
-  
-  The pull-back of $\omega_\rho^{-1}$ to $\P A^\vee$ is $\O(6) \otimes \overline\phi^* \mathcal L^3 = \O(6 \cdot \overline \sigma_\infty) \otimes \overline\phi^* \mathcal L^3$.
-
-  
+  \begin{equation}\label{eqn:diff2}
+    \rho_*(\omega_\rho^{-1}|_{\Sigma}) = \overline\phi_*\left(\lambda\right) - \overline\phi_* \left( \lambda(-\Sigma)\right).
+  \end{equation}
+  We now use \autoref{lem:push} with the section $\sigma_\infty$ to compute the terms on the right hand side of \eqref{eqn:diff2}.
+  Putting this together with \eqref{eqn:diff} and \eqref{eqn:diff1}, we get
+  \[ [\mathcal V] = \mathcal L^{-3}+ \mathcal L^{1}+ \mathcal L^{-1}+ \mathcal L^{-2}\]
+  in the Grothendieck group.
+  The result now a simple computation using $c_1(\mathcal L) = \psi_\theta$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
 \end{proof}
 
-Since $\overline \sigma_0$ and $\overline \sigma_\infty$ are distinct in every fiber, the three points $\tau$, $\overline \sigma_0$, and $\overline \sigma_\infty$ are non-collinear in every fiber.
-
-As is customary, we denote its Chern class by $\psi_\infty$.
-
-We denote a general stable $7$-pointed genus zero curve by
-$$(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty}),$$
-and we let 
-\begin{align}
-  \label{eq:PM07}
-  \varphi: \mathcal{C} \to \overline{\M}_{0,7}
-\end{align}
-denote the universal stable curve, with universal marking sections
-denoted $$\sigma_{0}, \sigma_{1}, \dots, \sigma_{5}, \sigma_{\infty} \subset \mathcal{C}.$$
-
-We let $\mathcal{L}$ denote the line bundle
-$\O_{\mathcal{C}}(-\sigma_{\infty})|_{\sigma_{\infty}} \simeq
-\omega_{\varphi}|_{\sigma_{\infty}}$. We view it as a line bundle on
-$\overline{\M}_{0,7}$, as is customary.  Following standard notation,
-we set $\psi_{\infty} := c_{1}\mathcal{L}$.  The sole, standard,
-enumerative result about $\overline{\M}_{0,7}$ we will use in this
-section is:
-\begin{theorem}
-  \label{theorem:psi}
-  $$\int_{\overline{\M}_{0,7}} \psi_{\infty}^{4} = 1.$$
-\end{theorem}
-
-\subsubsection{Construction of $\mathcal{X}/B_{2}$}
-\label{sec:construction-familyB2}
-
-
-We move on to the construction of our good family over $B_2$. Start
-with the rank $2$ vector bundle
-$$\mathcal{A} := \varphi_{*}\O_{\mathcal{C}}(\sigma_{\infty})$$ on
-$\overline{\M}_{0,7}$.  From the fact that the line bundle
-$\O_{\mathcal{C}}(\sigma_{\infty})$ restricts to $\mathcal{L}^{-1}$ on
-$\sigma_{\infty}$ and $\O_{\sigma_{0}}$ on $\sigma_{0}$, it follows
-that
-\begin{align*}
-  \mathcal{A} \simeq \O_{\overline{\M}_{0,7}} \oplus \mathcal{L}^{-1}.
-\end{align*}
-
-Next, put $\o{\mathcal{C}} := \P \mathcal{A}^{\smvee}$;
-$\overline{\mathcal{C}}$ is a $\P^{1}$-bundle over
-$\overline{\M}_{0,7}$ with structural map
-$$\o{\varphi}: \o{\cC} \to \o{\M}_{0,7}$$ and the surjection
-$\varphi^{*}\mathcal{A} \to \O_{\mathcal{C}}(\sigma_{\infty})$ induces
-a {\sl contraction map}
-
-\begin{align}
-  \label{eq:contract}
-  \gamma: \mathcal{C} \to \overline{\mathcal{C}}.
-\end{align}
-
-The effect of $\gamma$ on a stable curve $(C, s_0, \dots, s_{\infty})$
-is to contract all irreducible components not containing the marked
-point $s_{\infty}$, leaving the unique $\P^{1}$ containing the marked
-point $s_{\infty}$.  This remaining $\P^{1}$ is the corresponding
-fiber of the $\P^{1}$-bundle $\overline{\mathcal{C}}$.
-
-Under $\gamma$, the sections $\sigma_{i}$ map to sections, which we
-denote by $\overline{\sigma_{i}}$, of $\o{\varphi}$.  These sections
-have the following properties:
-
-
-
-
-The next step is to invoke the relative $2$-veronese embedding
-$$\iota: \overline{\mathcal{C}} \hookrightarrow \cP:= \P \Sym^{2}\mathcal{A}^{\smvee}.$$
-We let $\rho: \cP \to \o{\M}_{0,7}$ denote the structural map of this
-$\P^{2}$-bundle.  In this way, $\overline{\mathcal{C}} \subset \cP$ is
-a family of smooth conics with $7$ marked points
-$\overline{\sigma}_{0}, \dots, \overline{\sigma}_{\infty}$ satisfying
-the two properties just mentioned above.
-
-\begin{definition}
-  \label{def:tau} Let $\tau \subset \cP$ denote the section obtained
-  by taking, fiber-by-fiber, the point polar (with respect to the
-  conic $\iota(\overline{\mathcal{C}})$) to the line spanned by
-  $\overline{\sigma}_{0}$ and $\overline{\sigma}_{\infty}$ in each
-  fiber.
-\end{definition}
-
-Observe that, since $\o{\sigma}_{0}$ and $\o{\sigma}_{\infty}$ are {\sl
-    disjoint}, it follows that the three sections
-  $\tau, \o{\sigma}_{0},$ and $\o{\sigma}_{\infty}$ are non-collinear
-  in every fiber of $\rho: \cP \to \o{\M}_{0,7}$.
-
-\begin{lemma}
-  \label{lemma:tau}
-  The section $\tau \subset \cP$ is induced by an inclusion of the
-  form
-  $${\mathcal{L}} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}.$$
-\end{lemma}
-
-\begin{proof}
-  Let $\mathcal{T} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}$
-  denote the line sub-bundle corresponding to the section $\tau$. We
-  must show $\mathcal{T} \simeq \mathcal{L}$.
-
-  The sections
-  $\o{\sigma_{0}}$ and $\o{\sigma}_{\infty}$ correspond, respectively,
-  to inclusions of the form
-  \begin{align*}
-    \O \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}, \\
-    \mathcal{L}^{2} \hookrightarrow \Sym^{2} \mathcal{A}^{\smvee}. \\
-  \end{align*}
-
-  Since $\tau$, $\o{\sigma}_{0}$, and $\o{\sigma}_{\infty}$ are
-  non-collinear in every fiber of $\rho$, we deduce that the induced
-  map
-  $$\mathcal{T} \oplus \mathcal{L}^{2} \oplus \O \to \Sym^{2}
-  \mathcal{A}^{\smvee}$$ is an isomorphism.  Since
-  $\Sym^{2} \mathcal{A}^{\smvee} \simeq \O \oplus \mathcal{L} \oplus
-  \mathcal{L}^{2}$, the claim now follows by considering determinants.
-\end{proof}
-
-
-\begin{definition}
-  \label{def:ZB2} We let $\Sigma \subset \iota(\o{\mathcal{C}})$
-  denote the union of the sections
-  $\o{\sigma}_{1}, \dots, \o{\sigma}_{5}$.  We let
-  $\mathcal{Z} \subset \cP$ denote the (disjoint) union
-  $\Sigma \bigsqcup \tau$.
-\end{definition}
-
-The reader can immediately check that $\mathcal{Z} \subset \cP$
-registers an admissible length $6$ subscheme in each fiber of
-$\rho$. In light of this, we let
-\begin{align}
-  \label{eq:VB2}
-  \mathcal{V} := \rho_{*}(\mathcal{I}_{\mathcal{Z}} \otimes \omega_{\rho}^{-1});
-\end{align}
-$\V$ is the natural rank $4$ vector bundle for the family of cubic
-surfaces $$\pi: \cX \to \o{\M}_{0,7}$$ obtained by taking, for each
-fiber of $\rho$, the cubic associated to the admissible subscheme
-$\mathcal{Z} \subset \cP$.
-
+Having computed the Chern classes, we need to find the degree of the map $\overline \M_{0,7} \dashrightarrow \M$.
 \begin{proposition}
-  \label{prop:goodnessB2} The family $\pi: \cX \to \o{\M}_{0,7}$ is
-  good.
+  The degree of $\overline \M_{0,7} \dashrightarrow \M$ is $103680$.
 \end{proposition}
-
 \begin{proof}
-  Apply \autoref{prop:good}, after noting that in
-  each fiber of $\rho$ the subscheme
-  $\Sigma \subset \iota(\o{\mathcal{C}})$ is supported on at least
-  three points.
+  The map lifths to $\overline \M_{0,7} \dashrightarrow \M^\dagger$,
+  and since the degree of $\M^\dagger \to \M$ is $51840$, we must prove that the degree of $\overline \M_{0,7} \dashrightarrow \M^\dagger$ is $2$.
+
+  Recall that $\M^\dagger$ is isomorphic to the configuration of 6 points in $\P^2$.
+  Given a general 6-tuple of points $(s_1,\dots, s_5, y)$ in $\P^2$, there is a unique conic $C$ passing through $s_1,\dots, s_5$.
+  Let $x$ and $y$ be the two points of $\Polar(t) \cap C$.
+  Then the two pre-images of $(s_1,\dots, s_5, t)$ in $\overline \M_{0,7}$ are $(C, x, s_1, \dots, s_5, y)$ and $(C,y, s_1, \dots, s_5, x)$.
+  The proof is thus complete.
 \end{proof}
-
-\subsubsection{Chern classes of $\V$}
-\label{sec:chern-classes-v2}
-
-We must now determing the Chern polynomial of the vector bundle
-$\V = \rho_{*}(\mathcal{I}_{\mathcal{Z}} \otimes
-\omega_{\rho}^{-1})$. In light of the exact sequence
-\begin{align}
-  \label{eq:exact2}
-  0 \to \V \to \rho_{*}\omega_{\rho}^{-1} \to \rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}}) \to 0
-\end{align}
-it clearly suffices to determine the Chern polynomials of the rank
-$10$ bundle $\rho_{*}(\omega_{\rho}^{-1})$ and the rank $6$ bundle
-$\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
-
-\begin{lemma}
-  \label{lemma:rank10}
-  The bundle $\omega_{\rho}^{-1}$ is isomorphic to
-  $\O_{\mathcal{P}}(3) \otimes \rho^{*}\mathcal{L}^{3}$, and
-  \begin{align}
-    \label{eq:rnk10}
-    \rho_{*}(\omega_{\rho}^{-1}) \simeq \Sym^{3}(\Sym^{2} \mathcal{A})\otimes \mathcal{L}^{3}.
-  \end{align}
-\end{lemma}
-
-\begin{proof}
-  It suffices to prove the first assertion, that
-  $\omega_{\rho}^{-1} \simeq \O_{\mathcal{P}}(3) \otimes
-  \rho^{*}\mathcal{L}^{3}$.  This follows directly from the relative
-  Euler exact sequence for $\rho$:
-  \begin{align}
-    \label{eq:eulerexact}
-    0 \to \Omega_{\mathcal{P}/\o{\M}_{0,7}} \to \rho^{*}(\Sym^{2}\mathcal{A}^{\smvee})(-1) \to \O_{\cP} \to 0.
-  \end{align}
-\end{proof}
-
-\begin{corollary}
-  \label{cor:chern10} The Chern polynomial of
-  $\rho_{*}(\omega_{\rho}^{-1})$ is
-  \begin{align}
-    \label{eq:chern10}
-    (1-9\psi_{\infty}^{2}t^{2})(1-4\psi_{\infty}^{2}t^{2})(1-\psi_{\infty}^{2}t^{2})^{2}.
-  \end{align}
-\end{corollary}
-
-\begin{proposition}
-  \label{prop:omegarestrictZ} The Chern polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$ is
-  \begin{align}
-    \label{eq:rank6}
-    (1+3\psi_{\infty}t) (1+2\psi_{\infty}t) (1+\psi_{\infty}t)  (1-\psi_{\infty}t)
-  \end{align}
-\end{proposition}
-
-\begin{proof}
-  First, because $\mathcal{Z}$ is the disjoint union of
-  $\Sigma \subset \o{\mathcal{C}}$ and $\tau$, we get a direct sum
-  decomposition
-  \begin{align}
-    \label{eq:dirsum}
-    \rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}}) = \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) \oplus \rho_{*}(\omega_{\rho}^{-1}|_{\tau}).
-  \end{align}
-  The line bundle $\rho_{*}(\omega_{\rho}^{-1}|_{\tau})$ is easy to
-  identify---in fact it is trivial.  Indeed, \autoref{lemma:tau}
-  implies that $\O_{\cP}(1)|_{\tau} \simeq \mathcal{L}^{-1}$, and the
-  first claim in \autoref{lemma:rank10} then implies
-  $\rho_{*}(\omega_{\rho}^{-1}|_{\tau}) \simeq \mathcal{L}^{-3}
-  \otimes \mathcal{L}^{3} = \O_{\o{\M}_{0,7}}$.
-
-  Thus, the Chern polynomial we need is the same as the Chern
-  polynomial of $\rho_{*}(\omega_{\rho}^{-1}|_{\Sigma})$. We spend
-  the rest of the proof extracting it.  Since
-  \begin{align*}
-    \rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) = \o{\varphi}_{*}(\iota^{*}\omega_{\rho}^{-1}|_{\Sigma})
-  \end{align*}
-  we may instead work within the $\P^{1}$-bundle $\o{\cC}$, where
-  $\Sigma$ is a divisor.  Since
-  $$\iota^{*}\O_{\cP}(1) = \O_{\o{\cC}}(2) = \O_{\o{\cC}}(2\o{\sigma}_{\infty}),$$
-  and since $\Sigma$ is disjoint from $\o{\sigma}_{\infty}$, it follows that
-  $$\omega_{\rho}^{-1}|_{\Sigma} \simeq \o{\varphi}^{*}(\mathcal{L}^{3})|_{\Sigma},$$ and therefore that
-  $$\rho_{*}(\omega_{\rho}^{-1}|_{\Sigma}) \simeq \o{\varphi}_{*}(\o{\varphi}^{*}(\mathcal{L}^{3})|_{\Sigma}) = (\o{\varphi}_{*}\O_{\Sigma})\otimes \mathcal{L}^{3}.$$
-
-  This means we must find the Chern polynomial of
-  $\o{\varphi}_{*}\O_{\Sigma}$.  For this, we use a little trick.  In
-  the $\P^{1}$-bundle $\o{\cC}$, every section $\o{\sigma}_{i}$ other
-  than $\o{\sigma}_{\infty}$ is linearly equivalent to any other such
-  section---we leave it to the reader to deduce this from the
-  observation that $\o{\sigma}_{\infty}$ is disjoint from all other
-  sections $\o{\sigma}_{i}$.  So, there exists a one-parameter family
-  of divisors interpolating between $\Sigma$ and, say, the divisor
-  $5\o{\sigma}_{0}$.  Since the Chow ring of $\o{\M}_{0,7}$ is
-  finitely generated, it follows that the Chern polynomials of
-  $\o{\varphi}_{*}(\O_{\Sigma})$ and
-  $\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})$ are identical.
-
-  In order to identify the Chern polynomial of
-  $\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})$, we iteratively use the
-  sequences
-  $$0 \to \mathcal{I}_{\o{\sigma}_{0}}^{n-1}/\mathcal{I}_{\o{\sigma}_{0}}^{n} \to \O_{n\o{\sigma}_{0}} \to \O_{(n-1)\o{\sigma}_{0}} \to 0$$ along with the isomorphism of line bundles
-  $$\mathcal{I}_{\o{\sigma}_{0}}^{n-1}/\mathcal{I}_{\o{\sigma}_{0}}^{n} \simeq (\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{\otimes n-1}$$ to deduce that
-  \begin{align}
-    \label{eq:rk5}
-    c(\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})) = c(\O_{\o{\M}_{0,7}})c(\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})c((\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{2})\cdots c((\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2})^{4}).
-  \end{align}
-
-  It remains to identify the conormal bundle
-  $\mathcal{I}_{\o{\sigma}_{0}}/\mathcal{I}_{\o{\sigma}_{0}}^{2}$ and
-  its relationship with the class $\psi_{\infty}$. For this, we leave
-  it to the reader to verify: {\sl if a $\P^{1}$-bundle has two
-    disjoint sections, then their conormal bundles are inverse to each
-    other.}  Therefore,
-  $$c(\o{\varphi}_{*}(\O_{5 \o{\sigma}_{0}})) = c(\O)c(\mathcal{L}^{-1})c(\mathcal{L}^{-2})c(\mathcal{L}^{-3})c(\mathcal{L}^{-4}).$$
-
-  The proposition now follows by tracing backwards, starting with this
-  latest identity.
-\end{proof}
-
-\begin{corollary}
-  \label{cor:chernpolyV2} The Chern polynomial of $\V$ is
-  $(1-3\psi_{\infty}t)(1-2
-  \psi_{\infty}t)(1-\psi_{\infty}^{2}t^{2})$. Therefore,
-  \begin{align}
-    \label{eq:chernV2}
-    v_1 &= -5\psi_{\infty}\\
-    v_2 &= 5 \psi_{\infty}^{2}\\ \nonumber
-    v_3 &= 5 \psi_{\infty}^{3}\\ \nonumber
-    v_{4} &= -6 \psi_{\infty}^{4}.\\ \nonumber
-  \end{align}
-\end{corollary}
-
-\subsubsection{Enumerating cubics in $B_{2}$}
-\label{sec:enum-cubics-b_2}
-
-
-
-
-
-Now that we've identified the $v_{i}$, we need only establish
-$\deg \mu$, where $\mu: B_{2} \dashrightarrow \M$ is the map to
-moduli.  Clearly, $\mu$ factors through
-$\mu':B_{2} \dashrightarrow \M^{\dagger}$: $\mu'$ sends a general
-$7$-pointed stable curve $(C,s_0,s_1, \dots, s_5, s_{\infty})$ to the
-marked cubic surface
-$(\Bl_{\{s_1, \dots, s_{5}, t\}}\P^{2}, E_1, \dots, E_5, E_t)$. Here,
-$C$ is embedded in the plane as a conic, and $E_i$ denotes the
-exceptional divisor over the corresponding point.
-
-Clearly, $\deg \mu = 51840 \times \deg \mu'$.  Thus our analysis will
-be complete once we show:
-
-\begin{lemma}
-  \label{lemma:muprime2} $\deg \mu' = 2.$
-\end{lemma}
-
-\begin{proof}
-  We need to show that a general marked cubic surface
-  $(X, \ell_{1}, \dots, \ell_{6}) \in \M^{\dagger}$ has two preimages
-  in $\o{\M_{0,7}}$.
-  
-  
-  Starting with $(X, \ell_{1}, \dots, \ell_{6})$, let
-  $(s_1, \dots, s_5, t) \subset \P^{2}$ denote the images of
-  $\ell_{i}$ under the map blowing down the six, well defined up to
-  $\Aut \P^{2}$.  The five points $s_{i}$ lie on a unique smooth conic
-  $C$ on which there is a unique un-ordered pair of points $\{x,y\}$
-  whose tangent lines intersect at $t$.  The two stable curves
-  $(C,x,s_1, \dots, s_5, y)$ and $(C,y,s_1, \dots, s_5, x)$ are then
-  the two claimed preimage points in $\o{\M}_{0,7}$, proving the
-  lemma.
-\end{proof}
-
 
 By assembling the information in this section, using
 \autoref{theorem:psi} to compute the various monomials in the $v_{i}$,

@@ -910,7 +910,7 @@ As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
     \centering
     \input{figures/familyB2}
     \caption{
-      In the second test family, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a fixed conic $C$.}
+      In the second test family, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a conic $C$.}
     \label{fig:FamilyB2}
   \end{figure}
 
@@ -953,7 +953,7 @@ Hence, in the Veronese embedding, they correspond to the projections $\Sym^2 A \
 Using the quadratic form on $\Sym^2 \mathcal A$ given by the Veronese conic, it is easy to check that the section $\tau$ is given by the third projection $\Sym^2 A \to \mathcal L^{-1}$.
 
 We let $\Sigma \subset \overline{\mathcal C}$ denote the closed subscheme associated to the divisor $\overline \sigma_1 + \dots + \overline \sigma_5$ and $\mathcal Z \subset \mathcal P$ the disjoint union $\Sigma \sqcup \tau$.
-By \autoref{prop:B1}, the $\mathcal Z \subset \mathcal P$ is a family of admissible subschemes.
+By \autoref{prop:B1}, $\mathcal Z \subset \mathcal P$ is a family of admissible subschemes.
 We let
 \[ \pi \colon \mathcal X \to \overline \M_{0,7}\]
 be the family of cubic surfaces associated to $\mathcal Z \subset \mathcal P$ (see \autoref{def:cubicZ}).
@@ -998,10 +998,18 @@ For the proof, we use the following.
   \begin{equation}\label{eqn:diff}
     [\mathcal V] = \rho_*(\omega_\rho^{-1}) - \rho_*(\omega_\rho^{-1}|_{\mathcal Z}).
   \end{equation}
-  By the relative Euler sequence, we see that $\omega^{-1}_\rho$ is isomorphic to $\O_{\mathcal P}(3) \otimes \rho^* \mathcal L^3$, and hence the first term in \eqref{diff} is
+  By the relative Euler sequence, we see that $\omega^{-1}_\rho$ is isomorphic to $\O_{\mathcal P}(3) \otimes \rho^* \det (\Sym^2 \mathcal A)^\vee$, and hence the first term in \eqref{eqn:diff} is
   \begin{equation}\label{eqn:diff1}
     \rho_*(\omega_\rho^{-1}) = \Sym^3(\Sym^2 \mathcal A) \otimes \mathcal L^3.
   \end{equation}
+  Since $\mathcal Z$ is the disjoint union $\Sigma \cup \tau$, the second term is a sum
+  \[ \rho_*(\omega_\rho^{-1}|_{\mathcal Z}) = \rho_*(\omega_\rho^{-1}|_{\tau}) + \rho_*(\omega_\rho^{-1}|_{\Sigma}). \]
+  Since $\tau$ is defined by the surjection $\Sym^2 \mathcal A \to \mathcal L$, the restriction $\omega_\rho^{-1}|_\tau$ is trivial.
+  To compute the restriction to $\Sigma$, we view $\Sigma$ as a divisor in $\overline{\mathcal C} = \P A^\vee$ and let $ = \omega_\rho^{-1}|_{\overline C}$.
+  Thus, in the Grothendieck group, we have
+  \[ \rho_*(\omega_\rho^{-1}|_{\Sigma}) = \overline\phi_*\left(M\right) - \overline\phi_* \left( \O_{\overline{\mathcal C}}(D-\Sigma)\right).\]
+  
+  The pull-back of $\omega_\rho^{-1}$ to $\P A^\vee$ is $\O(6) \otimes \overline\phi^* \mathcal L^3 = \O(6 \cdot \overline \sigma_\infty) \otimes \overline\phi^* \mathcal L^3$.
 
   
 \end{proof}

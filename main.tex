@@ -126,7 +126,7 @@ specific questions are $96120$, $42120$, and $25920$, respectively.
 To state our formula, we must fix a precise moduli space of cubics.
 Let us denote by $\mathcal M$ the GIT quotient of the set of
 semi-stable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
-{\sl family of cubic surfaces}, we mean a flat, proper morphism whose
+\emph{family of cubic surfaces}, we mean a flat, proper morphism whose
 geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 
 \begin{theorem}\label{theorem:main}
@@ -332,7 +332,7 @@ push-forward to the base is $\mathcal W^\vee$.
 Let $Q \subset \P V$ be a non-degenerate quadric.  The bilinear form
 associated to $Q$ gives an isomorphism of $\P V$ with the dual
 projective space $\P V^\vee$.  Given a point $p \in \P V$, we denote
-by $\Polar(p) \subset \P V$ the hyperplane dual to $p$ with respect to
+by $\Polar_Q(p) \subset \P V$ the hyperplane dual to $p$ with respect to
 $Q$. Similarly, given a hyperplane $H \subset \P V$, we denote by
 $\Pole(H) \in \P V$ the point dual to $H$ with respect to $Q$.  In
 almost all cases, we use these constructions when $\P V$ is $\P^2$.
@@ -540,6 +540,7 @@ $U \subset \Sym^3V^\vee$ such that for every $F \in U$ and $b \in B$,
 the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
 \end{definition}
 \begin{example}[Fibers with finite automorphism groups]
+  \label{ex:finaut}
   Suppose every $\cX_b$ has a finite automorphism group.  Then
   $\pi \colon \cX \to B$ is good.  Indeed, let $U$ be the subset
   consisting of elements with finite automorphism group.  For every
@@ -561,7 +562,7 @@ the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
   Let $\mu \colon B \to \mathscr M$ be the map induced by $\pi$ and $m \colon B \dashrightarrow \mathcal M$ the rational map to the coarse moduli space.
   Then
   \[ \deg m = \deg \mu^*\left( \Orb(F) \right)\]
-  for a generic cubic form $F$.
+  for a general cubic form $F$.
 \end{proposition}
 \begin{proof}
   There exists an open $W \subset \mathcal M$ such that $m^{-1} (W) \to W$ is a finite \'etale morphism.
@@ -808,148 +809,93 @@ We now formally define the family.
 Let $H = \Hilb^5(C) \cong \P^5$ and let $B_1 \cong \P^4 \subset H \cong \P^5$ be a general hyperplane.
 Let $Z \subset B_1 \times C$ be the restriction of the universal closed subscheme.
 Set 
-\[Z' = Z \cup B_1 \times \{z_0\} \subset B_1 \times \P^2.\]
-Our first family
-\[\pi \colon X_1 \to B_1\]
+\[Z' = Z \sqcup B_1 \times \{z_0\} \subset B_1 \times \P^2.\]
+Our family
+\[\pi \colon X \to B_1\]
 is the family of cubic surfaces associated to $Z' \subset B_1 \times \P^2$ (see \autoref{def:cubicZ}).
+It is easy to see that the family is good.
+\begin{lemma}\label{lem:good1}
+  The family $\pi \colon X \to B_1$ is good.
+\end{lemma}
+\begin{proof}
+  We show that for every $b \in B_1$, the group $\Aut(X_b)$ is finite (see \autoref{ex:finaut}).
+  By \autoref{prop:good}, it suffices to show that the group $\Aut(\P^2, Z_b')$ is finite.
+  Since the support of $Z_b'$ is finite, it suffices to show that the subgroup of $\Aut(\P^2, Z'_b)$ that acts trivially on the support is finite.
+  Let $\sigma \in \Aut(\P^2, Z'_b)$ act trivially on the support.
+  Since $C$ is the unique conic containing $Z_b$, the element $\sigma$ must preserve $C$.
+  Since $\sigma(z_0) = z_0$, and $\sigma$ preserves $C$, it must fix the pair of points $\Polar_C(z_0) \cap C$.
+  Since $B_1 \subset \Hilb^5C$ is general, we may assume that it does not contain the finitely many length 5 schemes supported on $\Polar_C(z_0) \cap C$.
+  Then $\sigma$ fixes at least 3 points of $C$, namely the two points $\Polar_C(z_0) \cap C$ and the points of $Z \subset C$.
+  It follows that $\sigma$ fixes all points of $C$ and hence all points of $\P^2$.
+\end{proof}
 
-We now compute the Chern classes of the push-forward of the anti-canonical bundle $\mathcal V$.
-By construction, $\mathcal V$ is the rank 4 bundle
-\[ \mathcal V = \pi_* (\mathcal I_{\mathcal Z} \otimes \omega_\pi^{-1}),\]
-where $\pi \colon B_1 \times \P^2 \to B_1$ is the first projection.
-In the Grothendieck group, we have
-\begin{equation}\label{eqn:v11}
-  \begin{split}
-    [\mathcal V] &= \pi_*\left(\omega_\pi^{-1}\right) - \pi_*\left(\omega_\pi^{-1}|_{Z'}\right)\\
-    &= \pi_*\left(\omega_\pi^{-1}\right) - \pi_*(\omega_\pi|_{B_1 \times \{z_0\}})- \pi_*\left(\omega_\pi^{-1}|_{Z}\right) \\
-    &= [\O^{9}_{B_1}]- \pi_*\left(\omega_\pi^{-1}|_{Z}\right) .
-  \end{split}
-\end{equation}
-Observe that $Z \subset B_1 \times C$ is a hypersurface of class $(1,5)$, and $\omega_\pi^{-1}$ on $B_1 \times C$ is isomorphic to $\O(0,6)$.
-By applying $\pi_*$ to the exact sequence
-\[ 0 \to \O(-1,1) \to \O(0,6) \to \O(0,6)|_Z \to 0,\]
-we get
-\begin{equation}\label{eqn:v12}
-  \begin{split}
-    \pi_*\left(\omega_\pi^{-1}|_{Z}\right) &= \pi_* \O(0,6) - \pi_* \O(-1,1)\\
-    &= [\O_{B_1}^7] - [\O_{B_1}(-1)^2].
-  \end{split}
-\end{equation}
-By combining \eqref{eqn:v11} and \eqref{eqn:v12}, we get
-\begin{equation}\label{eqn:V1}
-  [\mathcal V] = [\O_{B_1}^2] + [\O_{B_1}(-1)^2].
-\end{equation}
-\begin{lemma}
-  For the bundle $\mathcal V$ on $B_1$, we have
+Let us evaluate the degree 4 monomials in the Chern classes of the anti-canonical section bundle.
+\begin{lemma}\label{lem:v1}
+  Let $\mathcal V = \pi_* \left( \omega_{X/B_1}^{-1} \right)$.
+  Then we have
   \[
     \int_{B_{1}}v_{1}^{4} = 16, \quad \int_{B_{1}}v_{1}^{2}v_{2} = 4,\quad \int_{B_{1}}v_{1}v_{3} =0,\quad \int_{B_{1}}v_2^{2} = 1,\quad \int_{B_{1}}v_{4} = 0.\]
 \end{lemma}
 \begin{proof}
-  Follows from $[\mathcal V] = [\O^2] + [\O(-1)^2]$ after a straightforward computation.
+By the construction of the cubic surface, we see that $\mathcal V$ is the rank 4 bundle
+\[ \mathcal V = \pi_* (\mathcal I_{Z'} \otimes \omega_{\pi}^{-1}),\]
+where $\pi \colon B_1 \times \P^2 \to B_1$ is the first projection.
+It contains the constant rank 2 bundle
+\begin{equation}\label{eqn:v11}
+  \pi_*\left( \mathcal I_{B_1 \times C} \otimes \mathcal I_{B_1 \times z_0} \otimes \omega_\pi^{-1} \right) = H^0\left(\mathcal I_{C} \otimes \mathcal I_{z_0} \otimes \omega_{\P^2}^{-1}\right) \otimes \O_{B_1},
+\end{equation}
+and the quotient is the rank 2 bundle $\pi_*\left( I_{Z/B_1 \times C} \otimes \omega_\pi^{-1} \right)$.
+To identify the quotient, note that $Z \subset B_1 \times C$ is a divisor of class $(1,5)$ and $\omega^{-1}_{\pi}|_{B_1\times C}$ is isomophic to $\O(0,6)$.
+Hence, $I_{Z/B_1 \times C} \otimes \omega_\pi^{-1}$ is isomorphic to $\O(-1,1)$, and therefore
+\begin{equation}\label{eqn:v12}
+  \begin{split}
+    \pi_*\left( I_{Z/B_1 \times C} \otimes \omega_\pi^{-1} \right) \cong \O_{B_1}(-1)^{2}.
+  \end{split}
+\end{equation}
+By combining \eqref{eqn:v11} and \eqref{eqn:v12}, we see that $\mathcal V$ is an extension
+\begin{equation}\label{eqn:V1}
+  0 \to \O_{B_1}^2 \to \mathcal V \to \O_{B_1}(-1)^2 \to 0.
+\end{equation}
+The Chern class calculation is not straightforward, using the Whitney sum formula.
 \end{proof}
 
-
-
-
-
-\subsubsection{Enumerating cubics in $B_1$}
-\label{sec:enum-cubics-b_1}
-
-
-
-
-For $B_1$ to be of any use, we must {\sl a priori} know the degree of
-the map to moduli $\mu: B_1 \dashrightarrow \M$.  First note that
-$\mu$ factors through the quasi-finite, degree
-$72 \times \frac{6!}{4!}$ cover $\M^{\dagger}/S_{4} \to \M$.  Here,
-the symmetric group $S_4$ acts by permuting the last four lines in a
-six $(\ell_{1}, \dots, \ell_{6})$ on a cubic surface.
-
-
-The moduli map $\mu: B_{1} \dashrightarrow \M$ naturally factors
-through a map $\mu': B_1 \dashrightarrow \M^{\dagger}/S_{4}$ by
-sending a general subscheme $Z \subset C$ to the marked cubic surface
-$(\Bl_{Z}S, E_1, E_2, E_{Z})$. Here, $E_Z$ denotes the union of four
-exceptional lines above the points of $Z$.
-
-
-Thus, in order to compute $\deg \mu$, we merely need to compute
-$\deg \mu'$.
-
-  \begin{lemma}
-    \label{lemma:degreemudaggerB1}
-    $\mu': B_1 \dashrightarrow \M^{\dagger}/S_{4}$ has degree $2$.
-  \end{lemma}
-
-  \begin{proof}
-    Beginning with a general marked cubic surface
-    $(X, \ell_{1}, \ell_2, \dots, \ell_{6})$ we can blow down the six
-    to produce a map $\varphi: X \to \P^2$. The map $\varphi$ is only
-    well-defined up to the action of $\Aut(\P^{2})$.  By composing
-    with an automorphism, we may assume that
-    $\varphi(\ell_{1}) = y_{1}$ and $\varphi(\ell_{2}) = y_{2}$.
-
-    The $4$ dimensional subgroup $H \subset \Aut(\P^{2})$ fixing the
-    points $y_{1}, y_{2}$ acts on the $\P^{4}$ of conics passing
-    through $y_{2}$. Let $G \subset H$ denote the stabilizer of $C$,
-    viewed as a conic through $y_{2}$.  We will now show that $|G|=2$,
-    from which the lemma follows.
-
-    Any automorphism $h \in H$ preserving $C$ must fix the three
-    points $y_{1},y_{2}$ and the point
-    $y_{3}:= (\overline{y_{1},y_{2}} \cap C) \setminus \{y_{2}\}.$
-    Therefore, $h$ must also fix $p := \Pole(y_{2},y_{3}) \in \P^{2}$.
-    At the same time, $h$ must preserve the un-ordered pair of points
-    $\Polar(y_{1}) \subset C$. It is now a simple exercise to see that
-    there is a unique involution on $\P^{2}$ fixing $p$, preserving
-    $C$ and interchanging the points of $\Polar(y_{1})$. Hence
-    $|G|=2$, as desired.
-  \end{proof}
-
-
-
-
-\subsubsection{Goodness}
-\label{sec:goodness1}
-
-\begin{proposition}
-  \label{prop:B1good}
-  The family $\pi: \cX \to B_1$ is good.
-\end{proposition}
-
+Let us find the degree of the map to moduli $B_1 \dashrightarrow \mathfrak M$.
+\begin{lemma}\label{lem:deg1}
+  The degree of $B_1 \dashrightarrow \mathfrak M$ is $4320$.
+\end{lemma}
 \begin{proof}
-  We use \autoref{prop:good}. If $[Z] \in B_{1}$ is any point,
-   corresponding to a length $4$ subscheme $Z \subset C$, we get a
-  length $6$ admissible subscheme $Z' \subset \P^2$ by the rule
-  \begin{align*}
-    Z' = (Z+y_2) \cup \{y_{1}\}.
-  \end{align*}
-  Here, we view $C$ as a conic in $\P^{2}$ containing $y_{2}$, and the
-  sum in $Z + y_{2}$ is as divisors on $C$.  The cubic surface
-  $\cX_{[Z]} = \pi^{-1}([Z])$ is the same as the cubic surface $X_{Z'}$
-  associated to $Z'$.
+  Consider space of marked cubic surfaces $\mathfrak M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
+  We have the action of $S_5$ on $\mathfrak M^\dagger$ via permutations of the last 5 points.
+  The map $B_1 \dashrightarrow \mathfrak M$ lifts to
+  \begin{equation}\label{eqn:b1lift}
+    B_1 \to \mathfrak M^\dagger / S_5,
+  \end{equation}
+  where $b \in B_1$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.
+  Let us compute the degree of this map.
+  Given a general $(y_0, y_1 + \dots + y_5)$ in $\mathfrak M^\dagger / S_5$, there is a unique conic $Q$ through $y_1 + \dots + y_5$.
+  Note that there exists an automorphism of $\P^2$ that takes $(C, z_0)$ to $(Q, y_0)$, and such an automorphism is unique up to automorphisms preserving $(C, z_0)$.
+  Suppose, under one such automorphism, $y_1 + \dots + y_5 \subset Q$ is taken to $z_1' + \dots + z_5' \subset C$.
+  We must find out how many points of $B_1$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
+  Let $w_0 + w_\infty \subset C$ be the scheme $\Polar_C(z_0) \cap C$.
+  Then we have
+   \[\Aut(\P^2, C, z_0) = \Aut(C, w_0 + w_{\infty}) \cong \G_m \times \Z/2\Z. \]
+   Choose an isomorphism $C \cong \P^1$ such that $w_0$ and $w_\infty$ are identified with $[0:1]$ and $[1:0]$.
+   Then the $\G_m$ corresponds to the diagonal $\G_m \subset \PGL_2$ and the $\Z/2\Z$ corresponds to the swapping of the two homogeneous coordinates.
+   Write $z_1' + \dots + z_5'$ as the vanishing locus of a binary quintic form $F$.
+   It is easy to see that under the action of the $\G_m$, the closure of the orbit of $V(F)$ in $\Hilb^5 C \cong \P^5$ is a rational normal curve.
+   Hence, a general hyperplane $B_1$ intersects the orbit in 5 points.
+   Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B_1$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
+   Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
 
-  In order to use \autoref{prop:good}, we next verify that the group
-  $\Aut(\P^{2},Z')$ is finite.  First observe that $C \subset \P^{2}$
-  must be the unique conic containing the length $5$ subscheme
-  $ Z + y_{2} \subset Z'$.  Therefore, any element
-  $h \in \Aut(\P^{2},Z')$ must preserve $C$.  As $y_{1}$ does not lie
-  on $C$, we conclude that $h(y_{1}) = y_{1}$, and therefore $h$ must
-  preserve the pair of points $\Polar(y_{1}) \subset C$. Furthermore,
-  if we assume $h$ also fixes $y_{2}$, which we can do by passing to
-  the connected component of the identity element in
-  $\Aut(\P^{2},Z')$, then $h$ would have to preserve three distinct
-  points on $C$, from which finiteness follows.
+   Since the degree of $\mathfrak M^\dagger \to \mathfrak M$ is $51840$, the degree of $B_1 \to \mathfrak M$ is
+   \[51840/5! \times 10 = 4320.\]
 \end{proof}
 
-
-The results in this section, taken together, yield the following
-relation on the undetermined coefficients in
-\eqref{eqn:chernexpansion}:
-
+Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
+\eqref{eqn:chernexpansion} for a general cubic surface $X$:
 \begin{align}
   \label{eq:relation1}
-  16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 72 \times \frac{6!}{4!} \times 2 = 4320.
+  16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 4320.
 \end{align}
 
 %------------------------------------------------------------------------------------

@@ -779,7 +779,7 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 
 
 \section{Test families}\label{sec:testfamilies}
-\subsection{Family $B_1$}
+\subsection{The first test family}
 \label{sec:family-b_1}
 We begin with an informal description of the family.
 Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
@@ -788,7 +788,7 @@ Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cu
 \begin{figure}
   \centering
   \input{figures/familyB1}
-  \caption{In the family $B_1$, we blow up the plane along $\{z_0, \dots, z_5\}$ as $z_0$ stays fixed and $z_1,\dots,z_5$ vary in a general 4-dimensional series on a fixed conic $C$.}
+  \caption{In the first test family, we blow up the plane along $\{z_0, \dots, z_5\}$ as $z_0$ stays fixed and $z_1,\dots,z_5$ vary in a general 4-dimensional series on a fixed conic $C$.}
   \label{fig:FamilyB1}
 \end{figure}
 
@@ -803,32 +803,32 @@ Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cu
 \end{proof}
 
 We now formally define the family.
-Let $H = \Hilb^5(C) \cong \P^5$ and let $B_1 \cong \P^4 \subset H \cong \P^5$ be a general hyperplane.
-Let $Z \subset B_1 \times C$ be the restriction of the universal closed subscheme.
+Let $H = \Hilb^5(C) \cong \P^5$ and let $B \cong \P^4 \subset H \cong \P^5$ be a general hyperplane.
+Let $Z \subset B \times C$ be the restriction of the universal closed subscheme.
 Set 
-\[Z' = Z \sqcup B_1 \times \{z_0\} \subset B_1 \times \P^2.\]
+\[Z' = Z \sqcup B \times \{z_0\} \subset B \times \P^2.\]
 Our family
-\[\pi \colon X \to B_1\]
-is the family of cubic surfaces associated to $Z' \subset B_1 \times \P^2$ (see \autoref{def:cubicZ}).
+\[\pi \colon X \to B\]
+is the family of cubic surfaces associated to $Z' \subset B \times \P^2$ (see \autoref{def:cubicZ}).
 It is easy to see that the family is good.
-\begin{lemma}\label{lem:good1}
-  The family $\pi \colon X \to B_1$ is good.
+\begin{lemma}\label{prop:goodnessB1}
+  The family $\pi \colon X \to B$ is good.
 \end{lemma}
 \begin{proof}
-  We show that for every $b \in B_1$, the group $\Aut(X_b)$ is finite (see \autoref{ex:finaut}).
+  We show that for every $b \in B$, the group $\Aut(X_b)$ is finite (see \autoref{ex:finaut}).
   By \autoref{prop:good}, it suffices to show that the group $\Aut(\P^2, Z_b')$ is finite.
   Since the support of $Z_b'$ is finite, it suffices to show that the subgroup of $\Aut(\P^2, Z'_b)$ that acts trivially on the support is finite.
   Let $\sigma \in \Aut(\P^2, Z'_b)$ act trivially on the support.
   Since $C$ is the unique conic containing $Z_b$, the element $\sigma$ must preserve $C$.
   Since $\sigma(z_0) = z_0$, and $\sigma$ preserves $C$, it must fix the pair of points $\Polar_C(z_0) \cap C$.
-  Since $B_1 \subset \Hilb^5C$ is general, we may assume that it does not contain the finitely many length 5 schemes supported on $\Polar_C(z_0) \cap C$.
+  Since $B \subset \Hilb^5C$ is general, we may assume that it does not contain the finitely many length 5 schemes supported on $\Polar_C(z_0) \cap C$.
   Then $\sigma$ fixes at least 3 points of $C$, namely the two points $\Polar_C(z_0) \cap C$ and the points of $Z \subset C$.
   It follows that $\sigma$ fixes all points of $C$ and hence all points of $\P^2$.
 \end{proof}
 
 Let us evaluate the degree 4 monomials in the Chern classes of the anti-canonical section bundle.
 \begin{lemma}\label{lem:v1}
-  Let $\mathcal V = \pi_* \left( \omega_{X/B_1}^{-1} \right)$.
+  Let $\mathcal V = \pi_* \left( \omega_{X/B}^{-1} \right)$.
   Then we have
   \[
     \int_{B_{1}}v_{1}^{4} = 16, \quad \int_{B_{1}}v_{1}^{2}v_{2} = 4,\quad \int_{B_{1}}v_{1}v_{3} =0,\quad \int_{B_{1}}v_2^{2} = 1,\quad \int_{B_{1}}v_{4} = 0.\]
@@ -836,43 +836,43 @@ Let us evaluate the degree 4 monomials in the Chern classes of the anti-canonica
 \begin{proof}
 By the construction of the cubic surface, we see that $\mathcal V$ is the rank 4 bundle
 \[ \mathcal V = \pi_* (\mathcal I_{Z'} \otimes \omega_{\pi}^{-1}),\]
-where $\pi \colon B_1 \times \P^2 \to B_1$ is the first projection.
+where $\pi \colon B \times \P^2 \to B$ is the first projection.
 It contains the constant rank 2 bundle
 \begin{equation}\label{eqn:v11}
-  \pi_*\left( \mathcal I_{B_1 \times C} \otimes \mathcal I_{B_1 \times z_0} \otimes \omega_\pi^{-1} \right) = H^0\left(\mathcal I_{C} \otimes \mathcal I_{z_0} \otimes \omega_{\P^2}^{-1}\right) \otimes \O_{B_1},
+  \pi_*\left( \mathcal I_{B \times C} \otimes \mathcal I_{B \times z_0} \otimes \omega_\pi^{-1} \right) = H^0\left(\mathcal I_{C} \otimes \mathcal I_{z_0} \otimes \omega_{\P^2}^{-1}\right) \otimes \O_{B},
 \end{equation}
-and the quotient is the rank 2 bundle $\pi_*\left( I_{Z/B_1 \times C} \otimes \omega_\pi^{-1} \right)$.
-To identify the quotient, note that $Z \subset B_1 \times C$ is a divisor of class $(1,5)$ and $\omega^{-1}_{\pi}|_{B_1\times C}$ is isomophic to $\O(0,6)$.
-Hence, $I_{Z/B_1 \times C} \otimes \omega_\pi^{-1}$ is isomorphic to $\O(-1,1)$, and therefore
+and the quotient is the rank 2 bundle $\pi_*\left( I_{Z/B \times C} \otimes \omega_\pi^{-1} \right)$.
+To identify the quotient, note that $Z \subset B \times C$ is a divisor of class $(1,5)$ and $\omega^{-1}_{\pi}|_{B\times C}$ is isomophic to $\O(0,6)$.
+Hence, $I_{Z/B \times C} \otimes \omega_\pi^{-1}$ is isomorphic to $\O(-1,1)$, and therefore
 \begin{equation}\label{eqn:v12}
   \begin{split}
-    \pi_*\left( I_{Z/B_1 \times C} \otimes \omega_\pi^{-1} \right) \cong \O_{B_1}(-1)^{2}.
+    \pi_*\left( I_{Z/B \times C} \otimes \omega_\pi^{-1} \right) \cong \O_{B}(-1)^{2}.
   \end{split}
 \end{equation}
 By combining \eqref{eqn:v11} and \eqref{eqn:v12}, we see that $\mathcal V$ is an extension
 \begin{equation}\label{eqn:V1}
-  0 \to \O_{B_1}^2 \to \mathcal V \to \O_{B_1}(-1)^2 \to 0.
+  0 \to \O_{B}^2 \to \mathcal V \to \O_{B}(-1)^2 \to 0.
 \end{equation}
 The Chern class calculation is not straightforward, using the Whitney sum formula.
 \end{proof}
 
-Let us find the degree of the map to moduli $B_1 \dashrightarrow \M$.
+Let us find the degree of the map to moduli $B \dashrightarrow \M$.
 \begin{lemma}\label{lem:deg1}
-  The degree of $B_1 \dashrightarrow \M$ is $4320$.
+  The degree of $B \dashrightarrow \M$ is $4320$.
 \end{lemma}
 \begin{proof}
   Consider space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
   We have the action of $S_5$ on $\M^\dagger$ via permutations of the last 5 points.
-  The map $B_1 \dashrightarrow \M$ lifts to
+  The map $B \dashrightarrow \M$ lifts to
   \begin{equation}\label{eqn:b1lift}
-    B_1 \to \M^\dagger / S_5,
+    B \to \M^\dagger / S_5,
   \end{equation}
-  where $b \in B_1$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.
+  where $b \in B$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.
   Let us compute the degree of this map.
   Given a general $(y_0, y_1 + \dots + y_5)$ in $\M^\dagger / S_5$, there is a unique conic $Q$ through $y_1 + \dots + y_5$.
   Note that there exists an automorphism of $\P^2$ that takes $(C, z_0)$ to $(Q, y_0)$, and such an automorphism is unique up to automorphisms preserving $(C, z_0)$.
   Suppose, under one such automorphism, $y_1 + \dots + y_5 \subset Q$ is taken to $z_1' + \dots + z_5' \subset C$.
-  We must find out how many points of $B_1$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
+  We must find out how many points of $B$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
   Let $w_0 + w_\infty \subset C$ be the scheme $\Polar_C(z_0) \cap C$.
   Then we have
    \[\Aut(\P^2, C, z_0) = \Aut(C, w_0 + w_{\infty}) \cong \G_m \times \Z/2\Z. \]
@@ -880,11 +880,11 @@ Let us find the degree of the map to moduli $B_1 \dashrightarrow \M$.
    Then the $\G_m$ corresponds to the diagonal $\G_m \subset \PGL_2$ and the $\Z/2\Z$ corresponds to the swapping of the two homogeneous coordinates.
    Write $z_1' + \dots + z_5'$ as the vanishing locus of a binary quintic form $F$.
    It is easy to see that under the action of the $\G_m$, the closure of the orbit of $V(F)$ in $\Hilb^5 C \cong \P^5$ is a rational normal curve.
-   Hence, a general hyperplane $B_1$ intersects the orbit in 5 points.
-   Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B_1$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
+   Hence, a general hyperplane $B$ intersects the orbit in 5 points.
+   Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
    Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
 
-   Since the degree of $\M^\dagger \to \M$ is $51840$, the degree of $B_1 \to \M$ is
+   Since the degree of $\M^\dagger \to \M$ is $51840$, the degree of $B \to \M$ is
    \[51840/5! \times 10 = 4320.\]
 \end{proof}
 
@@ -897,7 +897,7 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 %------------------------------------------------------------------------------------
 
-\subsection{Family $B_2$}
+\subsection{The second test family}
 \label{sec:family-b_2}
 We begin with an informal description of the family.
 Forget the notation introduced in \autoref{sec:family-b_1}.
@@ -906,9 +906,18 @@ Let $t \in \P^2$ be the pole, with respect to $C$, of the line joining $s_0$ and
 We blow up the six points $s_1,\dots, s_5, t$ to get a cubic surface (see \autoref{fig:FamilyB2}).
 As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
 
-We now make the construction more precise, and show that it can be extended to $\overline {\M}_{0,7}$.
+\begin{figure}
+    \centering
+    \input{figures/familyB2}
+    \caption{
+      In the second test family, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a fixed conic $C$.}
+    \label{fig:FamilyB2}
+  \end{figure}
+
+
+We now make the construction more precise, and show how to use it construct a family of cubic surfaces over $\overline {\M}_{0,7}$.
 Let $\phi \colon \mathcal C \to \overline \M_{0,7}$ be the universal curve with the universal sections denoted by $\sigma_0, \sigma_1, \dots, \sigma_5, \sigma_\infty$.
-Let $\mathcal L$ be the line bundle $\sigma_\infty^*\left(\omega_\phi\right)$ on $\overline \M_{0,7}$ defined by
+Let $\mathcal L$ be the line bundle $\sigma_\infty^*\left(\omega_\phi\right)$ on $\overline \M_{0,7}$.
 Consider the rank 2 vector bundle
 \[ \mathcal A = \phi_* \O_{\mathcal C}\left(\sigma_\infty\right).\]
 It is easy to check that the evaluation maps yield an isomorphism
@@ -920,27 +929,82 @@ Set $\overline {\mathcal C} = \P \mathcal A^\vee$ with the structure map $\overl
 The evaluation map $\phi^*\mathcal A \to \O_{\mathcal C}\left(\sigma_\infty\right)$ yields a map $\gamma \colon \mathcal C \to \overline {\mathcal C}$.
 The effect of $\gamma$ on a stable curve $(C, s_0, \dots, s_\infty)$ is to contract all irreducible components of $C$ not containing the marked point $s_\infty$.
 The unique remaining $\P^1$ is identified with the corresponding fiber of $\overline \phi$.
-Set $\overline \sigma_i = \sigma_i \circ \gamma$; these $\overline \sigma_i$ are sections of $\overline \phi \colon \overline C \to \overline \M_{0,7}$.
+Set $\overline \sigma_i = \sigma_i \circ \gamma$; these $\overline \sigma_i$ are sections of $\overline \phi \colon \overline {\mathcal C} \to \overline \M_{0,7}$.
 They satisfy the following properties
 \begin{itemize}
-\item $\overline{\sigma}_{\infty}$ is disjoint from all other sections, and
+\item $\overline{\sigma}_{\infty}$ is disjoint from all the other sections, and
 \item in each fiber of $\overline \phi$, the union of all seven sections
   is supported on at least three points.
 \end{itemize}
 
 We now invoke the relative 2-Veronese embedding
 \[
-\iota \colon \overline C \to \mathcal P := \P \Sym^2 \mathcal A^\vee.
+\iota \colon \overline {\mathcal C} \to \mathcal P := \P \Sym^2 \mathcal A^\vee.
 \]
 Let $\rho \colon \mathcal P \to \overline{\M}_{0,7}$ be the structure morphism.
 Then $\overline {\mathcal C} \subset \mathcal P$ is a family of smooth conics with 7 marked points $\sigma_0, \dots, \sigma_\infty$ satisfying the two properties above.
 
-Let $\tau \colon \overline \M_{0,7} \to \mathcal P$ be the section obtained by taking fiberwise the pole with respect to $\overline {\mathcal C}$ of the line joining the points $\overline \sigma_0$ and $\overline \sigma_\infty$.
-The direct sum decomposition $\mathcal A^\vee = \O \oplus \mathcal L$ gives the decomposition
-\[ \Sym^2 \mathcal A^\vee = \O \oplus \mathcal L \oplus \mathcal L^2.\]
+Let $\tau \colon \overline \M_{0,7} \to \mathcal P$ be the section obtained by fiberwise taking the pole with respect to $\overline {\mathcal C}$ of the line joining the points $\overline \sigma_0$ and $\overline \sigma_\infty$.
+Here is an alternate description of $\tau$.
+The direct sum decomposition $\mathcal A = \O \oplus \mathcal L^{-1}$ gives the decomposition
+\[ \Sym^2 \mathcal A = \O \oplus \mathcal L^{-1} \oplus \mathcal L^{-2}.\]
 In $\P \mathcal A^\vee$, the sections $\overline \sigma_0$ and $\overline \sigma_\infty$ correspond to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
 Hence, in the Veronese embedding, they correspond to the projections $\Sym^2 A \to \O$ and $\Sym^2 A \to \mathcal L^{-2}$, respectively.
-Using the quadratic form on $\Sym^2 A$ given by the Veronese conic, it is easy to check that their polar $\tau$ is given by the third projection $\Sym^2 A \to \mathcal L^{-1}$.
+Using the quadratic form on $\Sym^2 \mathcal A$ given by the Veronese conic, it is easy to check that the section $\tau$ is given by the third projection $\Sym^2 A \to \mathcal L^{-1}$.
+
+We let $\Sigma \subset \overline{\mathcal C}$ denote the closed subscheme associated to the divisor $\overline \sigma_1 + \dots + \overline \sigma_5$ and $\mathcal Z \subset \mathcal P$ the disjoint union $\Sigma \sqcup \tau$.
+By \autoref{prop:B1}, the $\mathcal Z \subset \mathcal P$ is a family of admissible subschemes.
+We let
+\[ \pi \colon \mathcal X \to \overline \M_{0,7}\]
+be the family of cubic surfaces associated to $\mathcal Z \subset \mathcal P$ (see \autoref{def:cubicZ}).
+
+\begin{lemma}  \label{prop:goodnessB2}
+  The family $\pi \colon \mathcal X \to \overline \M_{0,7}$ is good.
+\end{lemma}
+\begin{proof}
+  All fibers have finite automorphism groups by the same proof as \autoref{prop:goodnessB1}.
+\end{proof}
+
+We now compute the Chern classes of the anti-canonical section bundle.
+\begin{lemma}\label{lem:v2}
+  Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$.
+  Then we have
+  \[
+    \begin{split}
+      \int_{\overline \M_{0,7}}v_{1}^{4} = 625&, \quad \int_{\overline \M_{0,7}}v_{1}^{2}v_{2} = 125,\quad \int_{\overline \M_{0,7}}v_{1}v_{3} = -25,\\
+      &\int_{\overline \M_{0,7}}v_2^{2} = 25,\quad \int_{\overline \M_{0,7}}v_{4} = -6.
+    \end{split}
+  \]
+\end{lemma}
+For the proof, we use the following.
+\begin{lemma}
+  Let $\pi \colon P \to B$ be a $\P^1$-bundle with a section $\sigma$.
+  Let $D \subset P$ be a divisor of relative degree $d$ with respect to $\pi$ with $d \geq -1$.
+  Then, in the Grothendieck group of $B$, we have
+  \[ [\pi_* \O(D)] = [\sigma^*\O(D)] + \dots + [\sigma^*\O(D-(d-1)\sigma)].\]
+\end{lemma}
+\begin{proof}
+  We induct on $d$.
+  Both sides are 0 for $d = -1$.
+  The exact sequence
+  \[ 0 \to \O(D-\sigma) \to \O(D) \to \O(D)|_\sigma \to 0\]
+  pushed-forward to $B$ provides the induction step.
+\end{proof}
+\begin{proof}[Proof of \autoref{lem:v2}]
+  Recall that $\mathcal X \to \overline \M_{0,7}$ is the cubic surface associated to $\mathcal Z \subset \mathcal P$ in the $\P^2$-bundle $\rho \colon \mathcal P \to \overline \M_{0,7}$.
+  By construction, we have
+  \[ \mathcal V = \rho_*(\mathcal I_{\mathcal Z} \otimes \omega^{-1}\rho).\]
+  Hence, in the Grothendieck group of $\overline \M_{0,7}$, we have
+  \begin{equation}\label{eqn:diff}
+    [\mathcal V] = \rho_*(\omega_\rho^{-1}) - \rho_*(\omega_\rho^{-1}|_{\mathcal Z}).
+  \end{equation}
+  By the relative Euler sequence, we see that $\omega^{-1}_\rho$ is isomorphic to $\O_{\mathcal P}(3) \otimes \rho^* \mathcal L^3$, and hence the first term in \eqref{diff} is
+  \begin{equation}\label{eqn:diff1}
+    \rho_*(\omega_\rho^{-1}) = \Sym^3(\Sym^2 \mathcal A) \otimes \mathcal L^3.
+  \end{equation}
+
+  
+\end{proof}
 
 Since $\overline \sigma_0$ and $\overline \sigma_\infty$ are distinct in every fiber, the three points $\tau$, $\overline \sigma_0$, and $\overline \sigma_\infty$ are non-collinear in every fiber.
 
@@ -1224,13 +1288,6 @@ $\rho_{*}(\omega_{\rho}^{-1}|_{\mathcal{Z}})$.
 
 
 
-\begin{figure}[!]
-    \centering
-    \input{figures/familyB2}
-    \caption{
-      In the family $B_2$, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a fixed conic $C$.}
-    \label{fig:FamilyB2}
-     \end{figure}
 
 
 Now that we've identified the $v_{i}$, we need only establish

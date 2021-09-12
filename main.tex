@@ -918,6 +918,7 @@ As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
 We now make the construction more precise, and show how to use it construct a family of cubic surfaces over $\overline {\M}_{0,7}$.
 Let $\phi \colon \mathcal C \to \overline \M_{0,7}$ be the universal curve with the universal sections denoted by $\sigma_0, \sigma_1, \dots, \sigma_5, \sigma_\infty$.
 Let $\mathcal L$ be the line bundle $\sigma_\infty^*\left(\omega_\phi\right)$ on $\overline \M_{0,7}$.
+As is customary, we denote its Chern class by $\psi_\infty$.
 Consider the rank 2 vector bundle
 \[ \mathcal A = \phi_* \O_{\mathcal C}\left(\sigma_\infty\right).\]
 It is easy to check that the evaluation maps yield an isomorphism
@@ -1014,7 +1015,7 @@ For the proof, we use the following.
   Putting this together with \eqref{eqn:diff} and \eqref{eqn:diff1}, we get
   \[ [\mathcal V] = \mathcal L^{-3}+ \mathcal L^{1}+ \mathcal L^{-1}+ \mathcal L^{-2}\]
   in the Grothendieck group.
-  The result now a simple computation using $c_1(\mathcal L) = \psi_\theta$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
+  The result now a simple computation using $c_1(\mathcal L) = \psi_\infty$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
 \end{proof}
 
 Having computed the Chern classes, we need to find the degree of the map $\overline \M_{0,7} \dashrightarrow \M$.
@@ -1022,22 +1023,21 @@ Having computed the Chern classes, we need to find the degree of the map $\overl
   The degree of $\overline \M_{0,7} \dashrightarrow \M$ is $103680$.
 \end{proposition}
 \begin{proof}
-  The map lifths to $\overline \M_{0,7} \dashrightarrow \M^\dagger$,
-  and since the degree of $\M^\dagger \to \M$ is $51840$, we must prove that the degree of $\overline \M_{0,7} \dashrightarrow \M^\dagger$ is $2$.
+  The map lifts to $\overline \M_{0,7} \dashrightarrow \M^\dagger$.
+  Since the degree of $\M^\dagger \to \M$ is $51840$, we must prove that the degree of $\overline \M_{0,7} \dashrightarrow \M^\dagger$ is $2$.
 
-  Recall that $\M^\dagger$ is isomorphic to the configuration of 6 points in $\P^2$.
+  Recall that $\M^\dagger$ is isomorphic to the configuration space of 6 points in $\P^2$.
   Given a general 6-tuple of points $(s_1,\dots, s_5, y)$ in $\P^2$, there is a unique conic $C$ passing through $s_1,\dots, s_5$.
   Let $x$ and $y$ be the two points of $\Polar(t) \cap C$.
   Then the two pre-images of $(s_1,\dots, s_5, t)$ in $\overline \M_{0,7}$ are $(C, x, s_1, \dots, s_5, y)$ and $(C,y, s_1, \dots, s_5, x)$.
   The proof is thus complete.
 \end{proof}
 
-By assembling the information in this section, using
-\autoref{theorem:psi} to compute the various monomials in the $v_{i}$,
-we find our second relation:
+Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
+\eqref{eqn:chernexpansion} for a general cubic surface $X$:
 \begin{align}
   \label{eq:relation2}
-  625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} = 2 \times 51840.
+  625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} = 103680.
 \end{align}
 
 %------------------------------------------------------------------------------

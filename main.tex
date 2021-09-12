@@ -494,7 +494,7 @@ of the quotient stack $[X/G]$:
 
 The equivariant Chow ring of a point with the action of $G = \GL_n$ is
 the polynomial ring
-\[ A_{\GL_n}(\cdot) = \Z[c_1,\dots, c_n],\] where $c_i$ has
+\[ A_{\GL_n}(\bullet) = \Z[c_1,\dots, c_n],\] where $c_i$ has
 degree $i$ and can be identified with the $i$-th Chern class of the
 standard $n$-dimensional representation of $\GL_n$.  By homotopy
 invariance, for any $\GL_n$ representation $W$, we have
@@ -780,8 +780,7 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 
 \section{Test families}\label{sec:testfamilies}
 \subsection{Family $B_1$}
-\label{sec:first-test-family}
-\label{sec:construction-b_1}
+\label{sec:family-b_1}
 We begin with an informal description of the family.
 Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
 We vary 5 points $z_1, \dots, z_5$ in a general 4-dimensional linear series on $C$.
@@ -857,20 +856,20 @@ By combining \eqref{eqn:v11} and \eqref{eqn:v12}, we see that $\mathcal V$ is an
 The Chern class calculation is not straightforward, using the Whitney sum formula.
 \end{proof}
 
-Let us find the degree of the map to moduli $B_1 \dashrightarrow \mathfrak M$.
+Let us find the degree of the map to moduli $B_1 \dashrightarrow \M$.
 \begin{lemma}\label{lem:deg1}
-  The degree of $B_1 \dashrightarrow \mathfrak M$ is $4320$.
+  The degree of $B_1 \dashrightarrow \M$ is $4320$.
 \end{lemma}
 \begin{proof}
-  Consider space of marked cubic surfaces $\mathfrak M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
-  We have the action of $S_5$ on $\mathfrak M^\dagger$ via permutations of the last 5 points.
-  The map $B_1 \dashrightarrow \mathfrak M$ lifts to
+  Consider space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
+  We have the action of $S_5$ on $\M^\dagger$ via permutations of the last 5 points.
+  The map $B_1 \dashrightarrow \M$ lifts to
   \begin{equation}\label{eqn:b1lift}
-    B_1 \to \mathfrak M^\dagger / S_5,
+    B_1 \to \M^\dagger / S_5,
   \end{equation}
   where $b \in B_1$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.
   Let us compute the degree of this map.
-  Given a general $(y_0, y_1 + \dots + y_5)$ in $\mathfrak M^\dagger / S_5$, there is a unique conic $Q$ through $y_1 + \dots + y_5$.
+  Given a general $(y_0, y_1 + \dots + y_5)$ in $\M^\dagger / S_5$, there is a unique conic $Q$ through $y_1 + \dots + y_5$.
   Note that there exists an automorphism of $\P^2$ that takes $(C, z_0)$ to $(Q, y_0)$, and such an automorphism is unique up to automorphisms preserving $(C, z_0)$.
   Suppose, under one such automorphism, $y_1 + \dots + y_5 \subset Q$ is taken to $z_1' + \dots + z_5' \subset C$.
   We must find out how many points of $B_1$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
@@ -885,7 +884,7 @@ Let us find the degree of the map to moduli $B_1 \dashrightarrow \mathfrak M$.
    Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B_1$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
    Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
 
-   Since the degree of $\mathfrak M^\dagger \to \mathfrak M$ is $51840$, the degree of $B_1 \to \mathfrak M$ is
+   Since the degree of $\M^\dagger \to \M$ is $51840$, the degree of $B_1 \to \M$ is
    \[51840/5! \times 10 = 4320.\]
 \end{proof}
 
@@ -900,32 +899,52 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 \subsection{Family $B_2$}
 \label{sec:family-b_2}
+We begin with an informal description of the family.
+Forget the notation introduced in \autoref{sec:family-b_1}.
+We take a smooth conic $C \subset \P^2$ and 7 distinct marked points $s_0, s_1, \dots, s_5, s_\infty$ on $C$.
+Let $t \in \P^2$ be the pole, with respect to $C$, of the line joining $s_0$ and $s_\infty$.
+We blow up the six points $s_1,\dots, s_5, t$ to get a cubic surface (see \autoref{fig:FamilyB2}).
+As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
 
+We now make the construction more precise, and show that it can be extended to $\overline {\M}_{0,7}$.
+Let $\phi \colon \mathcal C \to \overline \M_{0,7}$ be the universal curve with the universal sections denoted by $\sigma_0, \sigma_1, \dots, \sigma_5, \sigma_\infty$.
+Let $\mathcal L$ be the line bundle $\sigma_\infty^*\left(\omega_\phi\right)$ on $\overline \M_{0,7}$ defined by
+Consider the rank 2 vector bundle
+\[ \mathcal A = \phi_* \O_{\mathcal C}\left(\sigma_\infty\right).\]
+It is easy to check that the evaluation maps yield an isomorphism
+\begin{align*}
+  \mathcal A &\xrightarrow{\sim} \sigma_\infty^*\O_{\mathcal C}\left( \sigma_\infty \right) \oplus \sigma_0^*\O_{\mathcal C}\left( \sigma_\infty \right)\\
+  &= \mathcal L^{-1} \oplus \O_{\overline \M_{0,7}}.
+\end{align*}
+Set $\overline {\mathcal C} = \P \mathcal A^\vee$ with the structure map $\overline \phi \colon \overline {\mathcal C} \to \overline \M_{0,7}$.
+The evaluation map $\phi^*\mathcal A \to \O_{\mathcal C}\left(\sigma_\infty\right)$ yields a map $\gamma \colon \mathcal C \to \overline {\mathcal C}$.
+The effect of $\gamma$ on a stable curve $(C, s_0, \dots, s_\infty)$ is to contract all irreducible components of $C$ not containing the marked point $s_\infty$.
+The unique remaining $\P^1$ is identified with the corresponding fiber of $\overline \phi$.
+Set $\overline \sigma_i = \sigma_i \circ \gamma$; these $\overline \sigma_i$ are sections of $\overline \phi \colon \overline C \to \overline \M_{0,7}$.
+They satisfy the following properties
+\begin{itemize}
+\item $\overline{\sigma}_{\infty}$ is disjoint from all other sections, and
+\item in each fiber of $\overline \phi$, the union of all seven sections
+  is supported on at least three points.
+\end{itemize}
 
-This section constructs and analyzes a good family over the base
-$$B_2 := \overline{\M}_{0,7},$$
-the moduli space of Deligne-Mumford stable $7$-pointed genus $0$
-curves.  To avoid unnecessary accumulation of symbols, we reset
-notation such as $C,S,\cX, \dots$ from previous sections, and start
-anew.
+We now invoke the relative 2-Veronese embedding
+\[
+\iota \colon \overline C \to \mathcal P := \P \Sym^2 \mathcal A^\vee.
+\]
+Let $\rho \colon \mathcal P \to \overline{\M}_{0,7}$ be the structure morphism.
+Then $\overline {\mathcal C} \subset \mathcal P$ is a family of smooth conics with 7 marked points $\sigma_0, \dots, \sigma_\infty$ satisfying the two properties above.
 
+Let $\tau \colon \overline \M_{0,7} \to \mathcal P$ be the section obtained by taking fiberwise the pole with respect to $\overline {\mathcal C}$ of the line joining the points $\overline \sigma_0$ and $\overline \sigma_\infty$.
+The direct sum decomposition $\mathcal A^\vee = \O \oplus \mathcal L$ gives the decomposition
+\[ \Sym^2 \mathcal A^\vee = \O \oplus \mathcal L \oplus \mathcal L^2.\]
+In $\P \mathcal A^\vee$, the sections $\overline \sigma_0$ and $\overline \sigma_\infty$ correspond to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
+Hence, in the Veronese embedding, they correspond to the projections $\Sym^2 A \to \O$ and $\Sym^2 A \to \mathcal L^{-2}$, respectively.
+Using the quadratic form on $\Sym^2 A$ given by the Veronese conic, it is easy to check that their polar $\tau$ is given by the third projection $\Sym^2 A \to \mathcal L^{-1}$.
 
+Since $\overline \sigma_0$ and $\overline \sigma_\infty$ are distinct in every fiber, the three points $\tau$, $\overline \sigma_0$, and $\overline \sigma_\infty$ are non-collinear in every fiber.
 
-Before diving into details, we summarize the construction. Let
-$C \subset \P^{2}$ be a smooth conic with $7$ distinct marked points
-$s_{0}, s_{1}, \dots, s_{5}, s_{\infty}$ on $C$, and let
-$t \in \P^{2} \setminus C$ denote the intersection point of the
-tangent lines of $C$ at $s_{0}$ and $s_{\infty}$, i.e.
-$t = \Pole(s_{0},s_{\infty})$.  Then the scheme
-$Z := \{s_{1}, \dots , s_{5}, t \}$ is an admissible length $6$
-subscheme of $\P^{2}$, and its associated cubic surface $X_{Z}$ has a
-finite automorphism group.  The main objective of this section is to
-demonstrate how this construction {\sl can be extended over the
-  boundary of $\overline{\M}_{0,7}$, yielding a good family of cubic
-  surfaces.}
-
-\subsubsection{Basics of $\overline{\M}_{0,7}$}
-\label{sec:basics-overlinem_0-7}
+As is customary, we denote its Chern class by $\psi_\infty$.
 
 We denote a general stable $7$-pointed genus zero curve by
 $$(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty}),$$
@@ -985,11 +1004,6 @@ fiber of the $\P^{1}$-bundle $\overline{\mathcal{C}}$.
 Under $\gamma$, the sections $\sigma_{i}$ map to sections, which we
 denote by $\overline{\sigma_{i}}$, of $\o{\varphi}$.  These sections
 have the following properties:
-\begin{itemize}
-\item $\overline{\sigma}_{\infty}$ is disjoint from all other sections, and
-\item in each fiber of $\o{\varphi}$, the union of all seven sections
-  is supported on at least three points.
-\end{itemize}
 
 
 

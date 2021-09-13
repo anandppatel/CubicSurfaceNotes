@@ -154,7 +154,7 @@ $F \in \Sym^d V^\vee$.  In $\P\Sym^dV^\vee$, consider the orbit of
 $[F]$ under the action of $\GL(V)$, and let $\Orb([F])$ be its
 closure.  To our knowledge, this story begins in 1897 with Enriques
 and Fano, who computed the degree of the orbit closure of simple
-binary forms of all degrees \cite{enriques.fano:97}.  In a series of
+binary forms of all degrees \cite{enr.fan:97}.  In a series of
 seminal papers, Aluffi and Faber computed the degree of the orbit
 closure for \emph{all} binary and ternary forms.  That is, the case of
 points in $\P^1$ and curves in $\P^2$ has been done.  The next case is
@@ -464,7 +464,7 @@ blows down the lines $\ell_i$ and $p_i = \beta(\ell_i)$.
 Finally, in our third test family we will need to use the following
 enumerative fact, originally due to Schubert, about cuspidal cubic
 curves---see the remarkable paper of Miret and Xamb\'o
-\cite{miret1989geometry}.
+\cite{m,mir.des:89}.
 
  \begin{theorem}[Schubert, Miret, Xamb\'o]
    \label{theorem:Schubert} There are $20$ cuspidal cubic curves
@@ -1043,16 +1043,66 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 %------------------------------------------------------------------------------
 
 
-\subsection{Family $B_3$}
+\subsection{The third test family}
 \label{sec:family-b_3}
+We explain the basic construction of the third family, resetting the notation introduced before.
+We take a cuspidal plane cubic $C \subset \P^2$ and let $t_\infty$ be its unique flex point.
+We vary 5 points $\{t_1, \dots, t_5\}$ on $C$ and blow up the plane at $\{t_1, \dots, t_5, t_\infty\}$ to get a cubic surface (see \autoref{fig:FigureB3}).
+Since $\Aut(C)$ is one dimensional, this gives us a 4-parameter family of cubic surfaces.
 
-
-\begin{figure}[!]
+\begin{figure}
     \centering
     \input{figures/familyB3}
     \caption{In the family $B_3$, we blow up the points $t_i$ for $i = 1, \dots, 5$ and a fixed point $t_\infty$ at infinity (not shown) as the points $\{t_1, \dots, t_5\}$ move freely on a fixed cuspidal cubic $C$ with a flex at $t_\infty$.}
     \label{fig:FigureB3}
 \end{figure}
+
+We now convert the above construction into a good family of cubic surfaces over a complete base.
+We take our base to be $\widehat \M_{0,7}$, one of the compactifications of $\M_{0,7}$ constructed by Hassett \cite{has:03}.
+Precisely, set
+\[
+  \mathbf w = \left(1-\epsilon, \epsilon, \dots, \epsilon, 1-3 \epsilon \right), \text{ where } 0 < \epsilon \ll 1,
+\]
+and let $\widehat \M_{0,7}$ be the space of $\mathbf w$-weighted stable pointed curves $(C, s_0, s_1, \dots, s_5, s_\infty)$.
+Such curves are easy to describe:
+\begin{itemize}
+\item $C$ must be a smooth rational curve,
+\item $s_{0}$ and $s_{\infty}$ must be distinct,
+\item at most one $s_1, \dots, s_5$ can coincide with $s_{0}$,
+\item at most three of the $s_1, \dots, s_5$ can coincide with $s_{\infty}$.
+\end{itemize}
+There are no constraints on how many of the the points $s_1, \dots, s_5$ coincide with each other.
+Let $\nu \colon C \to \P^2$ be the map which is birational onto its image, which is a cuspidal cubic, and such that $s_0$ maps to the unique cusp point and $s_\infty$ to the unique flex point.
+Let $Z \subset C$ be the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
+Since at most one of the points $s_1, \dots, s_5$ can coincide with $s_0$, it follows that $\nu \colon Z \to \P^2$ is a closed embedding and the image is a curvilinear subscheme.
+It is also easy to check that the image is cut out by cubics.
+That is, $Z \subset \P^2$ is an admissible subscheme (see \autoref{def:admissible}).
+We let $X_Z$ be the associated cubic surface (see \autoref{def:cubicZ}).
+
+We now formalize the construction as a family over $\widehat \M_{0,7}$.
+Let $\phi \colon \mathcal C \to \widehat \M_{0,7}$ be the universal curve with universal sections $\sigma_0, \sigma_1, \dots, \sigma_5, \sigma_\infty$.
+Observe that $\phi$ is a $\P^1$-bundle.
+Consider the rank 2 bundle
+\[ \mathcal A = \phi_* \O_{\mathcal C}(\sigma_\infty).\]
+As before, the evaluation maps yield an isomorphism
+\begin{align*}
+  \mathcal A &\xrightarrow{\sim} \sigma_\infty^*\O_{\mathcal C}\left( \sigma_\infty \right) \oplus \sigma_0^*\O_{\mathcal C}\left( \sigma_\infty \right)\\
+  &= \mathcal L^{-1} \oplus \O_{\widehat \M_{0,7}},
+\end{align*}
+where $\mathcal L = \sigma_\infty^*(\omega_\phi)$.
+We have a map $\mathcal C \to \P \mathcal A^\vee$ induced by the surjection $\phi^* \mathcal A \to \O_{\mathcal C}(\sigma_\infty)$, and since $\mathcal C \to \widehat \M_{0,7}$ is a $\P^1$-bundle, this map is an isomorphism.
+Observe that the sections $\sigma_0$ and $\sigma_\infty$ corresponds to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
+Now consider the summand
+\[ \mathcal S := \O_{\widehat \M_{0,7}} \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \subset \Sym^3 \mathcal A,\]
+and denote by
+\[ \nu \colon \mathcal C \to \P \mathcal S^\vee\]
+the map induced by the surjection $\phi^* \mathcal S \to \O_{\mathcal C}(3\sigma_\infty)$.
+Let $\rho \colon \P\mathcal S^\vee \to \widehat \M_{0,7}$ be the structure map.
+Thanks to our choice of $\mathcal S$, fiberwise the map $\nu$ maps $\mathcal C$ to cuspidal cubics with $s_0$ mapping to the cusp and $s_\infty$ to the flex.
+Let $\mathcal Z \subset \mathcal C$ be the subscheme corresponding to the divisor $\sigma_1 + \dots + \sigma_\infty$.
+Our family 
+\[ \pi \colon \mathcal X \to \widehat \M_{0,7}\]
+is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon Z \to \P \mathcal S^\vee$.
 
 
 Let us reset notation once again.  Our third family is a variant of
@@ -1062,7 +1112,7 @@ $$B_{3} := \hM_{0,7}.$$
 
 Here, $\hM_{0,7}$ is a particular Hassett space parametrizing
 ${\bf w}$-stable $7$-pointed genus $0$ curves, where
-$${\bf w} = \left(1-\epsilon, \epsilon, \dots, \epsilon, 1-3 \epsilon \right), 0 < \epsilon \ll 1$$
+
 is the weight vector on the marked points
 $(s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$ on a genus $0$ curve.
 
@@ -2134,7 +2184,7 @@ top degree intersection products which will factor into the final calculation:
 
   $u_{1}^{4}$: We translate the computation into an enumerative
   problem, whose solution is found using the {\sl double point
-    formula} (see \cite[~Theorem 2]{fulton1978note}).  Choose $4$ general pencils
+    formula} (see \cite[~Theorem 2]{ful:78}).  Choose $4$ general pencils
   of anti-canonical curves on $S$, and let $S'$ denote the blow up of
   $S$ along the union of all $4$ base loci.  $S'$ is a smooth surface,
   and $u_{1}^{4}$ is the number of pairs of points having the same
@@ -2684,7 +2734,7 @@ of a {\sl general} length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.
 We will sketch several parts of the reduction, leaving lesser details
 to the reader.
 
-The following is an instance of Brieskorn's ``simultaneous resolution of singularities'', see \cite{brieskorn1970singular}:
+The following is an instance of Brieskorn's ``simultaneous resolution of singularities'', see \cite{bri:70}:
 
 \begin{lemma}[Brieskorn]
   \label{lemma:simult} There exists a {\sl smooth} family of cubic

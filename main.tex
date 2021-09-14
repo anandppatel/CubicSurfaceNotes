@@ -125,7 +125,7 @@ specific questions are $96120$, $42120$, and $25920$, respectively.
 
 To state our formula, we must fix a precise moduli space of cubics.
 Let us denote by $\mathcal M$ the GIT quotient of the set of
-semi-stable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
+semistable cubic surfaces in $\P^3$ by the action of $\PGL_4$.  By a
 \emph{family of cubic surfaces}, we mean a flat, proper morphism whose
 geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 
@@ -134,7 +134,7 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
   proper base $B$, let $\V$ denote the rank 4 vector bundle
   $ \pi_* \left(\omega_\pi^{-1}\right)$, and let
   \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
-  general fiber of $\pi$ is semi-stable, and let
+  general fiber of $\pi$ is semistable, and let
   $\mu \colon B \dashrightarrow \mathcal M$ be the induced moduli map.  Then,
   \begin{align}
     \deg \mu =
@@ -144,7 +144,7 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 \end{theorem}
 \autoref{def:goodfamily} gives the precise meaning of a ``good''
 family.  This notion includes any family whose fibers are
-GIT-semi-stable or have a finite automorphism group.
+GIT-semistable or have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
 Question~\ref{orbit} in \autoref{sec:intro} fits in a broader story
@@ -405,10 +405,10 @@ Therefore, the stack $\mathscr{M}$ is isomorphic to the quotient stack
 \[ \mathscr{M} = \left[ \P \Sym^3V^\vee / \PGL V \right].\]
 
 We let $\mathcal M$ denote the GIT quotient of $\P \Sym^3V^\vee$ by
-the action of $\PGL V$.  The semi-stable and stable locus of the
+the action of $\PGL V$.  The semistable and stable locus of the
 action were computed by Mumford; see \cite[Chapter 4, \S
 2]{mum.fog.kir:94} or \cite[1.14]{mum:77}.  The stable locus consists
-of surfaces with at worst $A_1$ singularities, and the semi-stable
+of surfaces with at worst $A_1$ singularities, and the semistable
 locus includes surfaces with at worst $A_2$ singularities.  The ring
 of invariants was computed much earlier, in the 1860s, by Salmon
 \cite{sal:60} and Clebsch \cite{cle:61,cle:61*1}, and later by
@@ -551,12 +551,12 @@ the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
   Suppose every fiber $\cX_b$ is GIT-semistable.
   Then the family $\pi \colon \cX \to B$ is good.
   Indeed, let $U$ be the subset consisting of GIT-stable elements.
-  For every $F \in U$, the orbit of $F$ is closed in the semi-stable locus, and hence $\partial \Orb(F)$ cannot contain $\cX_b$.
+  For every $F \in U$, the orbit of $F$ is closed in the semistable locus, and hence $\partial \Orb(F)$ cannot contain $\cX_b$.
 \end{example}
 
 \begin{proposition}\label{prop:goodisgood}
   Let $\pi \colon \cX \to B$ be a good family of cubic surfaces.
-  Assume that $B$ is proper of dimension 4 and a general fiber $\cX_b$ is semi-stable.
+  Assume that $B$ is proper of dimension 4 and a general fiber $\cX_b$ is semistable.
   Let $\mu \colon B \to \mathscr M$ be the map induced by $\pi$ and $m \colon B \dashrightarrow \mathcal M$ the rational map to the coarse moduli space.
   Then
   \[ \deg m = \deg \mu^*\left( \Orb(F) \right)\]
@@ -572,7 +572,7 @@ the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
   Let $U$ be as in the definition a good family.
   Then, for every $u \in U$, we have the equality
   \[ \cX \times_{\mathscr M} u = \cX \times_{\mathscr M} \overline u.\]
-  By shrinking $U$ if necessary, we may assume that $U$ consists of semi-stable points and maps to $W \subset \mathcal M$ in the coarse space.
+  By shrinking $U$ if necessary, we may assume that $U$ consists of semistable points and maps to $W \subset \mathcal M$ in the coarse space.
   Then, for every $u \in U$, we have
   \begin{align*}
     \deg \mu^* \Orb(u) &= \# \left(\cX \times_{\mathscr M} u \right)\\
@@ -1104,6 +1104,10 @@ Our family
 \[ \pi \colon \mathcal X \to \widehat \M_{0,7}\]
 is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon Z \to \P \mathcal S^\vee$.
 
+We now address the issue of goodness of the family $\pi \colon \mathcal X \to \widehat \M_{0,7}$.
+Let $T \subset \widehat \M_{0,7}$ be the locus of curves $(C, s_0, s_1, \dots, s_5, s_\infty)$ where three among the $s_1,\dots, s_5$ coincide with $s_\infty$.
+
+
 
 Let us reset notation once again.  Our third family is a variant of
 the family in the previous section \autoref{sec:family-b_2}.  It is
@@ -1468,7 +1472,7 @@ $\P^{2}$.
   $g \in \Aut(\P^{2},Z)$ denote an arbitrary element in the identity
   component---we must deduce in every case that $g = \id$.  This
   strategy works in the first four cases. The fifth case proceeds
-  differently, and appeals to the classification of semi-stable cubic
+  differently, and appeals to the classification of semistable cubic
   surfaces.
 
   
@@ -1548,7 +1552,7 @@ $\P^{2}$.
   positive dimensional automorphism group, and therefore
   \autoref{prop:good} does not apply.  Instead, the reader can check
   that $X_{Z}$ is a normal cubic surface with only $A_{1}$ and $A_{2}$
-  singularities.  Hence $X_{Z}$ is GIT semi-stable.  Semi-stable
+  singularities.  Hence $X_{Z}$ is GIT semistable.  Semistable
   surfaces are automatically good, finishing this case.
   
 \end{proof}
@@ -2321,12 +2325,12 @@ To implement the strategy outlined above, we need some techniques to prove that 
 We use Geometric Invariant Theory (GIT) to achieve this.
 We begin with an easy observation (see \autoref{ex:semistable}).
 \begin{proposition}
-  Let $X \subset \P^3$ be a singular cubic surface which is semi-stable for the action of $\PGL_4$.
+  Let $X \subset \P^3$ be a singular cubic surface which is semistable for the action of $\PGL_4$.
   Let $S \subset \P^3$ be any smooth cubic surface.
   Then $X$ does not lie in the closure of the $\PGL_4$-orbit of $S$.
 \end{proposition}
 \begin{proof}
-  Smooth cubic surfaces are stable, and hence their orbit is closed in the semi-stable locus.  The statement follows.
+  Smooth cubic surfaces are stable, and hence their orbit is closed in the semistable locus.  The statement follows.
 \end{proof}
 
 We develop an extension of this idea using variation of the GIT linearization.

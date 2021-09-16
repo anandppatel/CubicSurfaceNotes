@@ -3032,6 +3032,58 @@ of $Z$ at $[0:0:1] \in Z$.
   our desired contradition.
 \end{proof}
 
+\subsection{The anatomy of linear rational maps $\P_t^2 \dashrightarrow \P_t^2$}
+Let $R$ be a discrete valuation ring with residue field $\k$, fraction field $K$, and uniformizer $t$.
+For an $R$-module $M$, we set $M_K = M \otimes_R K$ and $M_0 = M \otimes_R k$.
+
+Let $\phi \colon \P^2_K \to \P^2_K$ be an isomorphism.
+We analyze the corresponding rational map $\P^2_R \dashrightarrow \P^2_R$.
+The analysis should hold for $\P^n$ for any $n$; we stick to $n = 2$ to keep us focused.
+
+Let $M$ and $N$ be free $R$-modules of rank 3, and suppose $\phi \colon M_K \to N_K$ is a $K$-linear isomorphism.
+By scaling $\phi$ by the correct power of the uniformizer, assume that $\phi$ induces a map $\phi \colon M \to N$ such that $\phi_0 \colon M_0 \to N_0$ is non-zero.
+We are interested in the rational map $\phi \colon \P M \dashrightarrow \P N$.
+
+By making a change of basis on $M$ and $N$, we may assume that $\phi$ is given by a diagonal matrix
+\[
+  \phi \equiv
+  \begin{pmatrix}
+    1 & & \\
+     & t^a & \\
+    & & t^b
+  \end{pmatrix},
+\]
+where $0 \leq a \leq b$ are integers.
+
+If $a = b = 0$, then there is nothing to analyze.
+
+Suppose $a = 0$ and $b > 0$, or equivalently, $\rk \phi_0 = 2$.
+In this case, the rational map $\phi$ is defined away from the point $[0:0:1]$ in $\P M_0$.
+It sends the point $[a:b:c]$ to the point $[a:b:0]$, which lies on the line $Z = 0$.
+Said in a coordinate free manner, the rational map $\phi$ is defined away from a particular point $p \in \P M_0$.
+For $q \in \P M_0 \setminus \{0\}$, the image $\phi(q)$ lies on a particular line $L \subset \P N_0$, and the map
+\[\phi \colon \P M_0 \setminus \{p\} \to L\]
+is the linear projection from $p$ followed by an isomorphism.
+
+Suppose $a > 0$, or equivalently $\rk \phi_0 = 1$.
+In this case, the rational map $\phi$ is defined away from the line $X = 0$ in $\P M_0$.
+It sends the point $[a:b:c]$ to the point $[1:0:0]$.
+Said in a coordinate free manner, the rational map $\phi$ is defined away from a particular line $L \subset \P M_0$ and the map
+\[ \phi \colon \P M_0 \setminus L \to \P N_0\]
+is constant.
+
+
+
+
+
+Our goal is to explicitly describe a resolution of this rational map.
+The analysis should hold for $\P^n$ for any $n$, but we stick to $n = 2$ to keep the exposition focused.
+
+Fix a free $R$ module $M$ of rank 3.
+Consider an isomorphism
+\[ \phi \colon \P\left(M_K^\vee\right) \to \P^2.\]
+Then $\phi$ is defined by a $K$-basis $(H_0, H_1, H_2)$ of $M_K$.
+By multiplying by a suitable power of $t$
 
 
 

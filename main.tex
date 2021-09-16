@@ -3033,8 +3033,8 @@ of $Z$ at $[0:0:1] \in Z$.
 \end{proof}
 
 \subsection{The anatomy of linear rational maps $\P_t^2 \dashrightarrow \P_t^2$}
-Let $R$ be a discrete valuation ring with residue field $\k$, fraction field $K$, and uniformizer $t$.
-For an $R$-module $M$, we set $M_K = M \otimes_R K$ and $M_0 = M \otimes_R k$.
+Let $R$ be a $\k$-algebra which is a discrete valuation ring with residue field $\k$, fraction field $K$, and uniformizer $t$.
+For an $R$-module $M$, we set $M_K = M \otimes_R K$ and $M_0 = M \otimes_R \k$.
 
 Let $\phi \colon \P^2_K \to \P^2_K$ be an isomorphism.
 We analyze the corresponding rational map $\P^2_R \dashrightarrow \P^2_R$.
@@ -3042,7 +3042,7 @@ The analysis should hold for $\P^n$ for any $n$; we stick to $n = 2$ to keep us 
 
 Let $M$ and $N$ be free $R$-modules of rank 3, and suppose $\phi \colon M_K \to N_K$ is a $K$-linear isomorphism.
 By scaling $\phi$ by the correct power of the uniformizer, assume that $\phi$ induces a map $\phi \colon M \to N$ such that $\phi_0 \colon M_0 \to N_0$ is non-zero.
-We are interested in the rational map $\phi \colon \P M \dashrightarrow \P N$.
+By the \emph{rank} of $\phi$, we mean the rank of $\phi_0$.
 
 By making a change of basis on $M$ and $N$, we may assume that $\phi$ is given by a diagonal matrix
 \[
@@ -3062,29 +3062,61 @@ In this case, the rational map $\phi$ is defined away from the point $[0:0:1]$ i
 It sends the point $[a:b:c]$ to the point $[a:b:0]$, which lies on the line $Z = 0$.
 Said in a coordinate free manner, the rational map $\phi$ is defined away from a particular point $p \in \P M_0$.
 For $q \in \P M_0 \setminus \{0\}$, the image $\phi(q)$ lies on a particular line $L \subset \P N_0$, and the map
-\[\phi \colon \P M_0 \setminus \{p\} \to L\]
+\begin{equation}\label{eqn:rk2}
+  \phi \colon \P M_0 \setminus \{p\} \to L
+\end{equation}
 is the linear projection from $p$ followed by an isomorphism.
 
 Suppose $a > 0$, or equivalently $\rk \phi_0 = 1$.
 In this case, the rational map $\phi$ is defined away from the line $X = 0$ in $\P M_0$.
 It sends the point $[a:b:c]$ to the point $[1:0:0]$.
 Said in a coordinate free manner, the rational map $\phi$ is defined away from a particular line $L \subset \P M_0$ and the map
-\[ \phi \colon \P M_0 \setminus L \to \P N_0\]
+\begin{equation}\label{eqn:rk1}
+  \phi \colon \P M_0 \setminus L \to \P N_0
+\end{equation}
 is constant.
 
+We use the analysis above to understand limits of a general set of six points in $\P^2$ under a one-parameter family of automorphisms.
+Let $Z \subset \P^2$ be a configuration of 6 distinct points, with no three collinear points.
+A point $p \in \P^2 \setminus Z$ is a \emph{star point} if, for some ordering $\{z_1, \dots, z_6\}$ of $Z$, the lines $\langle z_1, z_2 \rangle$ and $\langle  z_3, z_4 \rangle$ and $\langle  z_5, z_6 \rangle$ are concurrent at $p$.
+A \emph{star-free} configuration is one without any star points.
 
+Recall that $R$ is a $\k$-algebra DVR with fraction field $K$.
+We assume, as usual, that $R$ is a $\k$-algebra.
+\begin{proposition}\label{prop:limit4}
+  Let $Z \subset \P^2$ be a set of 6 points forming a star-free configuration.
+  Given $\phi \in \Aut(\P^2_K)$, let $W \subset \P^2$ be the flat limit of $\phi(Z_K) \subset \P^2_K$.
+  If $\phi$ has rank 2, then there exists a line in $\P^2$ containing at least 4 distinct points of $W$.
+  If $\phi$ has rank 1, then there exists a point in $\P^2$ at which $W$ has multiplicity at least 4.
+\end{proposition}
+\begin{proof}
+  Consider the rational map
+  \[ \phi \colon \P^2_R \dashrightarrow \P^2_R.\]
+  We analyze the limit of $\phi$ applied to the constant subscheme $Z_R \subset \P^2_R$.
 
+  Note that we only need information about $W$ as a cycle.
+  For $z \in Z$, let $z_K$ denote the constant section $z$ of $\P^2_K$, and let $\phi(z)_0$ be the flat limit of $\phi(z_K)$.
+  Then the cycle $[W]$ of $W$ is simply
+  \[ [W] = \sum_{z \in Z} \phi(z)_0.\]
 
+  Suppose $\phi$ has rank 2.
+  Then the indeterminacy locus of $\phi$ consists of a single point $p$ in the central fiber, and the map $\phi_0 \colon \P^2 \dashrightarrow \P^2$
+  is the linear projection with center $p$ onto a line $L \subset \P^2$ (see \eqref{eqn:rk2}).
+  If $p \not \in Z$, then  $\phi_0$ is defined on $Z$, and $\phi(z)_0$ is simply $\phi_0(z)$.
+  Since $Z$ is star-free, the linear projection from $p$ can identify at most 2 pairs of points from $Z$.
+  As a result, the set $\{\phi_0(z) \mid z \in Z\}$ consists of at least 4 distinct points on $L$.
+  If $p \in Z$, consider $Z' = Z \setminus \{p\}$.
+  Then $\phi_0$ is defined on $Z'$, and $\phi(z)_0$ is simply $\phi_0(z)$ for $z \in Z'$.
+  Since no 3 points of $Z$ are collinear, the linear projection from $p$ maps the poins of $Z'$ to distinct points.
+  As a result, the set $\{\phi_0(z) \mid z \in Z\}$ actually consists of 5 distinct points on $L$.
 
-Our goal is to explicitly describe a resolution of this rational map.
-The analysis should hold for $\P^n$ for any $n$, but we stick to $n = 2$ to keep the exposition focused.
-
-Fix a free $R$ module $M$ of rank 3.
-Consider an isomorphism
-\[ \phi \colon \P\left(M_K^\vee\right) \to \P^2.\]
-Then $\phi$ is defined by a $K$-basis $(H_0, H_1, H_2)$ of $M_K$.
-By multiplying by a suitable power of $t$
-
+  Suppose $\phi$ has rank 1.
+  Then the indeterminacy locus of $\phi_0$ is a line $L \subset \P^2$ and $\phi_0$ is constant on $\P^2 \setminus L$.
+  Let $Z' = Z \setminus L$.
+  Since no three points of $Z$ are collinear, $L$ contains at most 2 points of $Z$, and hence $Z'$ contains at least 4 points.
+  By construction, $\phi_0$ is defined on $Z'$, and hence $\phi(z)_0 = \phi_0(z)$ for $z \in Z'$.
+  Since $\phi_0$ is constant, we conclude that $W$ contains a point of multiplicity at least 4.
+\end{proof}
 
 
 \bibliographystyle{plain}

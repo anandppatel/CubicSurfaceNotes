@@ -2698,7 +2698,7 @@ We first show that the problem can be reduced to studying orbit closures of 6 po
   We know from the proof of \autoref{prop:good} that $X'$ is also the minimal desingularization of $\Bl_Z\P^2$.
   Let $X' \to \P^2$ be the composite $X' \to \Bl_Z \P^2 \to \P^2$, and let $L'$ be pullback of $\O(1)$ to $\mathcal X'_0$.
   It is easy to see that $h^i(X', L') = 0$ for $i > 0$ and $h^0(X', L') = 3$.
-  Since $H^2(X', \O_{X'}) = 0$, there are no obstructions to deforming $L'$, it extends to compatible family of line bundles on $\mathcal X' \times_R \spec R/t^n$ for every $n$, where $t \in R$ is the uniformizer. 
+  Since $H^2(X', \O_{X'}) = 0$, there are no obstructions to deforming $L'$---it extends to compatible family of line bundles on $\mathcal X' \times_R \spec R/t^n$ for every $n$, where $t \in R$ is the uniformizer. 
   By the approximation theorem \cite{art:69} applied to the relative Picard functor of $\pi'$, we deduce that $L'$ extends to a line bundle $\mathcal L$ on $\mathcal X'$, after possibly replacing $R$ by a finite \'etale cover.
   By cohomology and base change, we see that $\pi'_* \mathcal L$ is a free $R$-module of rank 3.
   It is also easy to see that the evaluation map $\pi'^*\pi'_* \mathcal L \to \mathcal L$ is surjective.
@@ -2709,7 +2709,7 @@ We first show that the problem can be reduced to studying orbit closures of 6 po
   The complete linear system $|L|$ gives a map $a \colon S \to \P^2$.
   It is easy to check that the map $\alpha \colon \mathcal X'_K \to \P^2_K$ and $a_K \colon \mathcal X'_K \to \P^2_K$ are equal, up to an automorphism of $\P^2_K$.
   
-  The natural map $\alpha^* \omega_{\P^2_R/R} \to \omega_{\mathcal X'/R}$ gives a map $\omega^{-1}_{\mathcal X'/R} \to \alpha^* \omega_{\P^2_R/R}$ and hence an evaluation map
+  The natural map $\alpha^* \omega_{\P^2_R/R} \to \omega_{\mathcal X'/R}$ gives a map $\omega^{-1}_{\mathcal X'/R} \to \alpha^* \omega^{-1}_{\P^2_R/R}$ and hence an evaluation map
   \[ \pi'_* \left(\omega_{\mathcal X'/R}\right) \otimes_R \O_{\P^2_R} \to \omega_{\P^2_R/R}^{-1}.\]
   Tensor by $\omega_{\P^2_R/R}$ to get
   \[ \pi'_* \left(\omega_{\mathcal X'/R}\right) \otimes_R \omega_{\P^2_R/R} \to \O_{\P^2_R}.\]
@@ -2792,7 +2792,8 @@ Likewise, the last surface $P_n$ is $\F_1$ if $a = b$ or $\P^2$ if $b > a$.
 \begin{figure}
   \centering
   \input{figures/appendix1}
-  \caption{A family of surfaces with an accordion like central fiber arises while resolving the rational map $\P^2_\Delta \dashrightarrow \P^2_\Delta$.}
+  \caption{A family of surfaces with an accordion like central fiber arises while resolving a linear rational map $\P^2_R \dashrightarrow \P^2_R$.}
+  \label{fig:accordion}
 \end{figure}
 
 \subsection{Orbit closure of 6 general points in $\P^2$}\label{sec:orb6}
@@ -2847,16 +2848,16 @@ A \emph{star-free} configuration is one without any star points.
   \[\phi^\vee \colon (\P^2)_R^\vee \dashrightarrow (\P^2)_R^\vee.\]
   If $A$ is the $3 \times 3$ matrix defining $\phi$, then the matrix defining $\phi^\vee$ is $(A^T)^{-1}$.
 
-  If $\phi_0^\vee$ is defined for a line $\ell \in (\P^2)^\vee$, then the flat limit of the family of lines $\phi(\ell_K) \subset \P^2_K$ is the line corresponding to $\phi^\vee(\ell)$.
+  If $\phi_0^\vee$ is defined for a line $\ell \in (\P^2)^\vee$, then the flat limit of the family of lines $\phi(\ell_K) \subset \P^2_K$ is the line corresponding to $\phi_0^\vee(\ell)$.
   The statements \eqref{eqn:rk2} and \eqref{eqn:rk1} for the dual projective space say the following.
   If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of a particular line $\Lambda$.
   For lines $\ell \neq \Lambda$, the map $\phi_0^\vee$ is the composite of $\ell \mapsto \ell \cap \Lambda$ and a linear inclusion $\Lambda \to (\P^2)^\vee$.
   In this case, a fiber of $\phi_0^\vee$ consists of a collection of concurrent lines, with the point of concurrency on $\Lambda$.
   If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of lines through a particular point $p$.
-  For lines $\ell$ not containing $p$, the map $\phi^\vee$ is constant.
+  For lines $\ell$ not containing $p$, the map $\phi_0^\vee$ is constant.
 
-  Now, consider a line $\ell$ joining pairs of points of $Z$.
-  By semi-continuity, the flat limit $T$ of $\phi(\ell_K)$ must intersect $W$ in a scheme of length at least 2.
+  Consider a line $\ell$ joining pairs of points of $Z$.
+  By semi-continuity, the flat limit of $\phi(\ell_K)$ must intersect $W$ in a scheme of length at least 2.
   There are at most four lines in $\P^2$ that intersect $W$ in a scheme of multiplicity at least 2: the lines $\overline{pq}$, $\overline{pr}$, $\overline{qr}$, and $T_rW$.
   In particular, if $\phi_0^\vee$ is defined at $\ell$, then $\phi_0^\vee(\ell)$ must be one of these 4.
   This immediately implies that $\phi^\vee$ cannot have rank 1.
@@ -2866,12 +2867,12 @@ A \emph{star-free} configuration is one without any star points.
   But it is easy to check that this is impossible for a star-free configuration $Z$.
 
   We have now concluded that $\phi$ has rank 2, and hence $\phi_0^\vee$ is constant on its domain.
+  Suppose the constant value of $\phi_0^\vee$ corresponds to the line $L \subset \P^2$.
   Suppose $z_1 \in Z$ (resp. $z_2 \in Z$) is such that the flat limit of $\phi(z_1)$ is $p$ (resp. $q$).
-  Consider the 8 lines $\overline {z_i, z}$ for $z \in Z \setminus \{z_1,z_2\}$.
-  Since these lines are not all concurrent, $\phi_0^\vee$ is defined for at least one of them, say $\ell = \overline {z_1, z}$.
-  Suppose $L \subset \P^2$ is the line corresponding to $\phi_0^\vee(\ell)$.
+  Consider the 8 lines $\overline {z_i z}$ for $z \in Z \setminus \{z_1,z_2\}$.
+  Since these lines are not all concurrent, $\phi_0^\vee$ is defined for at least one of them, say $\ell = \overline {z_1 z}$.
+  Then $\phi^\vee_0(\ell)$ corresponds to the line $L$.
   Since $\ell$ contains $z_1$, the flat limit $L$ of $\phi(\ell)$ contains the flat limit $p$ of $\phi(z_1)$.
-  Since $\phi_0^\vee$ is constant on its domain, its constant value corresponds to the line $L$.
 
   Now consider the ${4 \choose 2} = 6$ lines joining pairs of points of $Z \setminus \{z_1,z_2\}$.
   Since the 6 lines are not all concurrent, $\phi_0^\vee$ is defined on at least one of them, say $\ell$.

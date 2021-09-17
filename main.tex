@@ -52,6 +52,7 @@
 \DeclareMathOperator{\Hilb}{Hilb}
 \DeclareMathOperator{\Sing}{Sing}
 \DeclareMathOperator{\M}{\mathcal{M}}
+\DeclareMathOperator{\mult}{mult}
 \renewcommand{\to}{{\longrightarrow}}
 
 \renewcommand{\sectionautorefname}{\S}
@@ -610,7 +611,7 @@ Then the following hold.
 \item The image of the map $X \to \P^3$ induced by $\omega_X^{-1}$ is a cubic surface $Y$; the map $X \to Y$ is birational.
 \item Let $S = \bigoplus_{n \geq 0} S_n$ be the homogeneous coordinate ring of $Y$.
   The pull-back map $S_n \to H^0\left(X, \omega_X^{-n}\right)$ is an isomorphism.
-\item $Y$ is normal.
+\item $Y$ is normal and has rational double point (ADE) singularities.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -662,6 +663,7 @@ Then the following hold.
   From the isomorphism $S \cong \bigoplus_{n \geq 0} H^0(X, \omega_X^{-n})$, we get
   \[ Y = \Proj\left( \bigoplus_{n \geq 0}H^0\left(X, \omega_X^{-1} \right) \right).\]
   Since $X$ is normal, so is $Y$.
+  It is known that an irreducible, normal, rational cubic surface, such as $Y$, only has rational double point (ADE) singularities \cite{bru.wal:79}.
 \end{proof}
 
 \begin{definition}[Associated cubic surface]
@@ -2676,366 +2678,52 @@ Writing them in terms of $c_i = c_i(V)$ yields the result.
 
 \appendix
 
+\section{The orbit closure problem for certain cubic surfaces}
+We develop tools to prove that certain cubic surfaces do not lie in the $\PGL_4$ orbit closure of a generic cubic surface.
+Using our tools we can show, for example, that the cubic surface with the $A_5$ singularity has this property.
+(This particular surface had been immune to all our previous strategies.)
 
+We first show that the problem can be reduced to studying orbit closures of 6 points in $\P^2$.
+\begin{proposition}\label{prop:cubictopoints}
+  Let $W \subset \P^2$ be an admissible length 6 subscheme and let $X = X_W$ be the cubic surface associated to $W$.
+  Let $S \subset \P^2$ be a smooth cubic surface, and suppose $X$ lies in the $\PGL_4$-orbit closure of $S$.
+  Then $W$ lies in the $\PGL_3$ orbit closure of a length 6 scheme $Z \subset \P^2$ such that $\Bl_Z \P^2$ is isomorphic to $S$.
+\end{proposition}
+\begin{proof}
+  Since $W$ is in the orbit closure of $S$, there exists a $\k$-algebra DVR $R$ with fraction field $K$ and residue field $k$ with a family of cubic surfaces $\pi \colon \mathcal X \to \spec R$ whose central fiber $\mathcal X_0$ is isomorphic to $X$ and whose general fiber $\mathcal X_K$ is isomorphic to $S_K = S \times_k K$.
+  We know that $X$ has only ADE singularities (\autoref{prop:admissibleblowup}) and hence we can resolve the singularities of $X$ in the family.
+  That is, there exists a smooth and projective $\pi' \colon \mathcal X' \to \spec R$ and $\beta \colon \mathcal X' \to \mathcal X$ such that $\beta_K$ is an isomorphism and $\beta_0$ is the minimal resolution of singularities; see \cite{bri:70} or \cite{tju:70}.
 
-\section{The goodness of the $A5$ cubic surface}
-\label{sec:goodnessA5}
-
-\subsection{Objective}
-Let $X \subset \P^{3}$ denote the cubic surface defined in homogeneous
-coordinates $\left(x_{0}, x_{1}, x_{2}, x_{3}\right)$ by the equation
-\[x_{3}f_{2} - f_{3} = 0,\] where $f_{2} = x_{0}x_{1}$ and
-$f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.  This is the unique
-cubic surface possessing a single $A_5$ singularity, up to projective
-equivalence.  For the reader's amusement, we include a real picture of
-$X$ in \autoref{figure:cubicA5}.
-
-\begin{figure}
-  \centering
-  \input{figures/curveA5argument}
-  \caption{The surface $X$ with an $A_5$ singularity is obtained by blowing up the subscheme $a+b+4p$ in a smooth cubic $C$, where $p \in C$ is a flex point and $a, b, p$ are collinear.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.25\textwidth]{cubicA5}
-  \caption{The unique cubic surface $X$ with an $A_5$ singularity}
-  \label{figure:cubicA5}
-\end{figure}
-
-$X$ is the cubic surface associated to the admissible length $6$
-subscheme $Z \subset \P^{2}$ defined by the common vanishing of the
-forms $f_{2}$ and $f_{3}$. We leave it to the reader to check that
-$\Aut(\P^{2},Z)$ is one-dimensional, with $\G_{a}$ as identity
-component.  Thus, the techniques used in the main body of the paper
-cannot address the goodness of $X$.  The techniques developed in this
-appendix likely have broader range, but we have not pursued greater
-generality here in the interest of keeping the paper more focused.
-
-
-Our goal is to show:
-
-\begin{theorem}
-  \label{theorem:A5good} The surface $X$ is good, i.e. $X$ does not
-  lie in the $\PGL_4$-orbit closure of a general cubic surface.
-\end{theorem}
-
-The proof proceeds by contradiction, in several steps. Let
-$\Delta = \spec \k [\![t]\!]$ with closed point denoted $0$ and generic
-point denoted $\eta$, and suppose for sake of contradiction, that
-\[\pi: \mathcal{X} \to \Delta\]
-is a family of cubic surfaces with the properties:
-\begin{enumerate}
-\item $\mathcal{X}_{0} \simeq X$, and\\
-\item $\mathcal{X}_{\eta} \simeq Y \times_{\spec \k} \eta$, where $Y$ is a
-  general fixed cubic surface.
-\end{enumerate}
-
-The overall strategy is to transfer to the setting of families of
-length $6$ subschemes of the plane, and reduce to proving that
-$[Z] \in \Hilb^{6}\P^{2}$ does not lie in the $\PGL_3$-orbit closure
-of a {\sl general} length $6$ scheme $[Z_{gen}] \in \Hilb^{6}\P^{2}$.
-We will sketch several parts of the reduction, leaving lesser details
-to the reader.
-
-The following is an instance of Brieskorn's ``simultaneous resolution of singularities'', see \cite{bri:70}:
-
-\begin{lemma}[Brieskorn]
-  \label{lemma:simult} There exists a {\sl smooth} family of cubic
-  surfaces \[\pi': \mathcal{X}' \to \Delta\] and a morphism
-  $\beta: \mathcal{X}' \to \mathcal{X}$ of $\Delta$-schemes which is
-  an isomorphism over $\eta$ and is a minimal desingularization over
-  $0$.
-\end{lemma}
-
-Let $\kappa: \Bl_{Z}\P^2 \to X$ denote the anti-canonical map. The
-minimal desingularization $\beta_{0}: X' \to X$ factors through
-$\kappa$, and is also the minimal desingularization of $\Bl_{Z}\P^{2}$
--- the argument for this can be found in the proof of
-\autoref{prop:good}. Let $\kappa':X' \to \Bl_{Z}\P^{2} \to \P^{2}$
-denote the composite map.  The line bundle
-\[\mathcal{L}_{0} := \kappa'^{*}\O_{\P^{2}}(1)\] is easily seen to have
-no higher cohomology, and $h^{0}(X', \mathcal{L}_{0}) = 3$.
-
-Our next step is to extend $\mathcal{L}_{0}$ to $\mathcal{X'}$.
-
-\begin{lemma}
-  \label{lemma:extends} There exists a line bundle $\mathcal{L}$ on
-  $\mathcal{X}'$ extending $\mathcal{L}_{0}$ on
-  $X' \subset \mathcal{X}'$.
-\end{lemma}
-
-\begin{proof}[Proof sketch.]
-  The deformation space of the pair $(X', \mathcal{L}_{0})$ is the
-  cohomology group $H^1 \left( X', \mathcal{E} \right)$, where
-  $\mathcal{E}$ is the extension
-  \[0 \to \O_{X'} \to \mathcal{E} \to T_{X'} \to 0 \] defined by the
-  element $c_{1} \mathcal{L}_{0} \in H^{1}(X', \Omega_{X'})$. Since
-  $H^{2}(\O_{X'}) = 0$, it follows that $\mathcal{L}_{0}$ lifts to
-   every infinitesimal deformation of $X'$.  In particular,
-  $\mathcal{L}_{0}$ lifts to the formal completion of $\mathcal{X'}$
-  along $X'$.  By standard algebraization arguments, we deduce a lift
-  to $\mathcal{X'}$ itself.
-\end{proof}
-
-Next, we choose an isomorphism
-$\P \left( \pi'_{*}(\mathcal{L})^{\smvee} \right) \simeq \P^{2}
-_{\Delta}$, and let
-\[\varphi: \mathcal{X}' \to \P^{2}_{\Delta}\] denote the map induced
-by the line bundle $\mathcal{L}$ referenced in
-\autoref{lemma:extends}.  The natural injection of line bundles
-(induced by pullback of forms)
-$\omega_{\mathcal{X'}/\Delta}^{-1} \hookrightarrow
-\varphi^{*}\omega_{\P^{2}_{\Delta}/\Delta}^{-1}$ induces an inclusion
-of free $\k[\![t]\!]$-modules
-\[\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
-  H^{0}\left(\P^{2}_{\Delta}, \O(3)\right).\] The former is a rank $4$
-free module, and the latter is a rank $10$ free module.  We let
-\[\mathcal{Z} \subset \P^{2}_{\Delta}\] denote the closed subscheme defined by the common vanishing of the cubic forms on $\P^{2}_{\Delta}$ lying in the submodule $\pi'_{*}\left(\omega_{\mathcal{X'}/\Delta}^{-1} \right) \hookrightarrow
-H^{0}\left(\P^{2}_{\Delta}, \O(3)\right)$.
-
-Tracing through the construction fiber-by-fiber over $\Delta$, the
-reader can check that $\mathcal{Z} \to \Delta$ is a finite, flat
-degree $6$ cover, with central fiber $\mathcal{Z}_{0} \subset \P^{2}$
-isomorphic to the admissible scheme $Z \subset \P^{2}$ from the
-beginning of this appendix.  Furthermore, since the cubic surface $Y$
-was chosen to be general, and since the generic fiber
-$\mathcal{X'}_{\eta} \simeq \mathcal{X}_{\eta}$ is isomorphic to the
-constant family $Y \times _{\spec \k} \eta$, it follows that
-$\mathcal{Z}_{\eta} \subset \P^{2} \times_{\spec _{\k}} \eta$ is
-isomorphic to a general, constant family of subschemes, namely, that
-there exists a general length $6$ subscheme $Z_{gen} \subset \P^{2}$
-and an element $g \in \Aut (\P^{2}_{\eta})$ such that
-$g(Z_{gen}) = \mathcal{Z}_{\eta}$.
-
-After performing a finite, ramified base change $t \mapsto t^{k}$, we
-may assume that $\mathcal{Z} \subset \P^{2}_{\Delta}$ is the union of
-$6$ sections,
-$a, b, z_{1}, z_{2}, z_{3}, z_{4}: \Delta \to \P^{2}_{\Delta}$, where:
-\begin{itemize}
-\item $a$ and $b$ do not intersect, and
-  $a(0) = [0:1:1], b(0) = [0:-1:1]$ are the two smooth points of
-  $Z \subset \P^{2}$, and
-\item $z_{i}(0) =[0:0:1] =: p$.
-\end{itemize}
-Here, we are using homogeneous coordinates $[x_0 :x_1 : x_2]$ on
-$\P^{2}$ where $Z \subset \P^{2}$ is the common vanishing scheme of
-$f_{2} = x_0 x_1$ and $f_3 = x_0^3+x_1^3-x_1x_2^2$.  Let
-$L_{0}, L_{1} \subset \P^{2}$ denote the lines $x_0 = 0$ and $x_1=0$,
-respectively. The line $L_0$ contains the three points supporting $Z$, while
-$L_1$ is the tangent line of $Z$ at its multiplicity $4$ point $p$.
-
-
-\subsection{Resolving rational maps $\P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$}
-\label{sec:resolv-rati-maps}
-
-Maintaining the notation above, we have arrived at the following
-situation:
-\begin{enumerate}
-\item $Z_{gen} \subset \P^{2}$ is a general set of $6$ points, denoted $q_{1}, q_{2}, p_{1}, p_{2}, \dots, p_{4}$,\\
-\item A rational map
-  $g : \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta}$ restricting to
-  an element of $\Aut \P^{2}_{\eta}$ over the generic point $\eta$, \\
-\item The Zariski closure
-  $\overline{g(Z_{gen} \times_{\spec \k} \eta)}$ is
-  $\mathcal{Z} \subset \P^{2}_{\Delta}$.  We assume that
-  $q_{1}, q_{2}$ map to $a,b$ correspondingly, and that $p_{i}$ maps
-  to $z_{i}$.
-\end{enumerate}
-
-The strategy then to show that this situation is impossible.  For
-this, we need to study the basic anatomy of a rational map
-\[g: \P^{2}_{\Delta} \dashrightarrow \P^{2}_{\Delta} \] induced by an
-element of $\Aut \P^{2}_{\eta}$.
-
-Letting $[x_0 : x_1 : x_2]$ denote homogeneous coorinates on $\P^{2}$,
-the rational map $g$ is given by $3$ homogeneous linear forms
-$A_0, A_1, A_2 \in \k(\!(t)\!)[x_0,x_{1},x_{2}]$.  By multpilying by a
-suitable power of $t$, (not affecting the map $g$), we may assume that
-$A_{i} \in \k[\![t]\!][x_0, x_1, x_2]$, and that not all $A_i$ vanish
-modulo $(t)$.  Furthermore, by swapping $A_{i}$ by suitable
-$\k$-linear combinations, we may assume that
-$V(A_{i}) \subset \P^{2}_{\Delta}$ is an irreducible (hence smooth in
-this case) divisor for all $i$.  Let $\Lambda_{i}$ denote the
-subscheme $V(A_{i})$; $\Lambda_{i}$ restricts to a line over each
-point of $\Delta$.
-
-
-The resolution of the rational map $g$ proceeds in two stages.  First,
-suppose all three divisors $\Lambda_{i}$ intersect along a line
-$\lambda \subset \P^{2}_{0}$ in the fiber over $0 \in \Delta$.  We
-blow up the line $\lambda$ to obtain
-\[ \beta_{1}: \P^{2}_{\Delta}\left(1 \right) :=
-  \Bl_{\lambda}\P^{2}_{\Delta} \to \P^{2}_{\Delta}\]
-
-The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(1)$ is the
-transverse union of
-\begin{enumerate}
-\item $P$: the proper transform of $\P^{2}_{0}$, and\\
-\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$,
-\end{enumerate}
-where $P$ intersects $F(1)$ along $\lambda \subset P$.  On $F(1)$,
-$\lambda$ is the directrix. Furthermore, $F(1)$ is the exceptional
-divisor of $\beta_{1}$.  If we let $\Lambda_{i}(1)$ denote the proper
-transforms of $\Lambda_{i}$, then the reader can check that
-$\Lambda_{i}(1)$ are all smooth, and that $\Lambda_{i}(1)\big|_{0}$ is
-a line in $F(1)$ for all $i$.  (By a {\sl line} in $\F_{1}$ we mean
-the preimage of a line under the blowdown map $\F_{1} \to \P^{2}$.)
-
-Next, suppose $\Lambda_{i}(1)$, $i=1,2,3,$ all intersect along a
-particular line $\lambda(1) \subset F(1)$. Note that $\lambda(1)$ is
-disjoint from the directrix $\lambda \subset F(1)$.  We can once again
-blow up $\lambda(1) \subset \P^{2}_{\Delta}(1)$ to obtain
-\[\beta_{2}: \P^{2}_{\Delta}(2) \to \P^{2}_{\Delta}(1).\]
-
-The fiber over $0 \in \Delta$ in $\P^{2}_{\Delta}(2)$ is a chain of
-three surfaces
-\begin{enumerate}
-\item $P(0)$: the proper transform of $\P^{2}_{0}$, and\\
-\item $F(1)$: a surface isomorphic to the Hirzebruch surface $\F_{1}$, and\\
-\item $F(2)$: another copy of $\F_{1}$, 
-\end{enumerate}
-where $P(0) \cup F(1)$ is the proper transform of the same named
-surfaces in $\P^{2}_{\Delta}(1)$, and $F(2)$ meets $F(1)$ along
-$\lambda(1)$, where $\lambda(1)$ is the directrix of
-$F(2)$. Similarly, we let $\Lambda_{i}(2)$ denote the strict
-transforms of $\Lambda_{i}(1)$; the surfaces $\Lambda_{i}(2)$
-intersect $F(2)$ along lines which avoid the directrix.
-
-Proceeding in this manner, we end up with the scheme
-$\P^{2}_{\Delta}(n)$, whose fiber over $0 \in \Delta$ is an
-``accordion'' of surfaces $P \cup F(1) \cup \dots \cup F(n)$, {\sl and
-  such that the three smooth surfaces $\Lambda_{i}(n)$ now only
-  intersect at a point $x \in F(n)$ not lying on the directrix of
-  $F(n)$.}
-
-\begin{figure}
-  \centering
-  \input{figures/appendix1}
-  \caption{A family of surfaces with an accordion like central fiber arises while resolving the rational map $\P^2_\Delta \dashrightarrow \P^2_\Delta$.}
-\end{figure}
-
-Thus, the rational map
-$g \circ \beta_{1} \circ \dots \circ \beta_{n}: \P^{2}_{\Delta}(n)
-\dashrightarrow \P^{2}_{\Delta}$ now has indeterminacy scheme
-$B = \cap_{i} \Lambda_{i}(n)$ supported at the single point
-$x \in F(n)$.  Note that $B$ is now a global complete intersection
-subscheme of $\P^{2}(n)$, being the intersection of the three surfaces
-$\Lambda_{i}(n)$. If we finally let
-\[\td{\P^{2}_{\Delta}(n)}\]
-denote the blow up $\Bl_{B}\P^{2}_{\Delta}(n)$, with blowdown map
-denoted $\beta: \td{\P^{2}_{\Delta}(n)} \to \P^{2}_{\Delta}(n)$, we
-obtain the resolution of indeterminacy $\td{g}$ of the original map
-$g$:
-\begin{center}
-  \begin{tikzcd} & \td{\P^{2}_{\Delta}(n)} \arrow[dl] \arrow[dr, "\td{g}"]  & & \\
-    \P^{2}_{\Delta} \arrow[rr, dashed, "g"] & & \P^{2}_{\Delta}
-  \end{tikzcd}
-\end{center}
-Let $P(\infty) = \beta^{-1}(x) \subset \td{\P^{2}_{\Delta}(n)}$ denote
-the exceptional surface; $P(\infty)$ is isomorphic to $\P^{2}$ because
-$B$ is a complete intersection.
-
-The map $\td{g}$ has the following effect on the fiber
-$P(0) \cup F(1) \cup \dots \cup F(n-1) \cup \Bl_{x}F(n) \cup
-P(\infty)$:
-\begin{enumerate}
-\item $\td{g}\big|_{P(\infty)}: \P(\infty) \to \P^{2}_{0}$ is an
-  isomorphism \\
-\item $\td{g}\big|_{\Bl_{x}F(n)}: \Bl_{x}F(n) \to \P^{2}_{0}$ is
-  ``projection from the point $x$'', if we think of $F(n)$ as the blow
-  up of a plane at a point not equal to $x$.  The $\td{g}$-image of
-  $\Bl_{x}F(n)$ is a line $\lambda' \subset \P^{2}_{0}$.\\
-\item $\td{g}$ contracts $P(0) \cup \dots \cup F(n-1)$ to a single
-  point on the line $\lambda'$.
-\end{enumerate}
-
-\subsection{Finishing the argument}
-\label{sec:finishargument}
-
-Now we are in a position to finish the proof of
-\autoref{theorem:A5good}.  Given what happened in the last section, we
-must show that the constant subscheme
-$Z_{gen} \times \Delta \subset \P^{2}_{\Delta}$ cannot transform into
-$\mathcal{Z}$ under $g$.  To help the reader focus, we state from the
-outset the fundamental detail ultimately obstructing this possibility:
-The line $L_0$ containing the support $\{[0:1:1], [0:-1:1], [0:0:1]\}$
-of $Z$ is {\sl distinct} from the line $L_1$ which is the tangent line
-of $Z$ at $[0:0:1] \in Z$.
-
-\begin{proof}[Proof of \autoref{theorem:A5good}]
-  We assume the existence of a rational map $g$ under which
-  $Z_{gen} \times \Delta$ transforms into $\mathcal{Z}$, and will
-  eventually arrive at a contradiction.  We recall that
-  $Z_{gen} = \{q_1, q_2, p_1, \dots, p_4\}$.
-
-  First, note that in the resolution of $g$, we {\sl must} begin with
-  blowing up a line $\lambda$. In fact, we must blow up the line
-  $\lambda = \langle q_{1}, q_{2} \rangle \subset \P^{2}_{0}$.  If we
-  did not do so, then by the description of the resolution $\td{g}$
-  given at the end of \autoref{sec:resolv-rati-maps}, at least one of
-  the two points $q_{i}$ would become identified with the four points
-  $p_{j}$ under $\td{g}$ in the fiber over $0 \in \Delta$, contrary to
-  the nature of $Z$.
-
-  Next, we claim that in the resolution of $g$, in the final step,
-  there {\sl must} be a finite, non-empty base point $x \in F(n)$ as
-  described in the general resolution process in
-  \autoref{sec:resolv-rati-maps}.  If not, then $\td{g}\big|_{F(n)}$
-  would be the contraction of the Hirzebruch surface $F(n)$ down to
-  $\P^{2}_{0}$.  By the reasoning in the previous paragraph, the
-  proper transforms of the sections $\{q_{i}\} \times \Delta$ in
-  $\P^{2}_{\Delta}(n)$ must meet $F(n)$ in a pair of points
-  $\td{q}_{i}$ outside the directrix of $F(n)$ while the proper
-  transforms of $\{p_{j}\} \times \Delta$ must lie in
-  $P(0)$. Furthermore, the line
-  $\langle \td{q}_{1}, \td{q}_{2} \rangle \subset F(n)$ must be
-  disjoint from the directrix, because otherwise the pair $\td{q}_{i}$
-  would be identified under the blow-down map to the domain
-  $\P^{2}_{\Delta}$, which is obviously not the case.  Thus, if there
-  were no further basepoint $x$ to resolve in $F(n)$, the
-  $\td{g}$-images of the pair $\td{q}_{i}$ would span a line which
-  does not contain the point $p \in Z$, again contrary to the nature
-  of $Z$.
-
-  Thus, the map $g$ would need to be resolved by blowing up a finite
-  scheme $B \subset \P^{2}_{\Delta}(n)$ meeting $F(n)$ at a point $x$,
-  as described in \autoref{sec:resolv-rati-maps}. In our current
-  situation, the surface $F(n)$ contains the pair of points
-  $\td{q}_{i}$ and also the basepoint $x$, which may or may not
-  coincide with one of the $\td{q_{i}}$.  In any case, since the
-  effect of $\td{g}$ on $F(n)$ is ``projection away from $x$'', we
-  deduce that the image of $F(n)$ must be the line
-  $L_0 \subset \P^{2}_{0}$ joining $a$ or $b$ with $p$.  Our proof
-  will be complete after we contradict this conclusion.
-
+  Set $X' = \mathcal X'_0$.
+  We know from the proof of \autoref{prop:good} that $X'$ is also the minimal desingularization of $\Bl_Z\P^2$.
+  Let $X' \to \P^2$ be the composite $X' \to \Bl_Z \P^2 \to \P^2$, and let $L'$ be pullback of $\O(1)$ to $\mathcal X'_0$.
+  It is easy to see that $h^i(X', L') = 0$ for $i > 0$ and $h^0(X', L') = 3$.
+  Since $H^2(X', \O_{X'}) = 0$, there are no obstructions to deforming $L'$, it extends to compatible family of line bundles on $\mathcal X' \times_R \spec R/t^n$ for every $n$, where $t \in R$ is the uniformizer. 
+  By the approximation theorem \cite{art:69} applied to the relative Picard functor of $\pi'$, we deduce that $L'$ extends to a line bundle $\mathcal L$ on $\mathcal X'$, after possibly replacing $R$ by a finite \'etale cover.
+  By cohomology and base change, we see that $\pi'_* \mathcal L$ is a free $R$-module of rank 3.
+  It is also easy to see that the evaluation map $\pi'^*\pi'_* \mathcal L \to \mathcal L$ is surjective.
+  After choosing an isomorphism $\pi'_* \mathcal L \cong R^3$, we get a map $\alpha \colon \mathcal X' \to \P^2_R$, which restricts to the original map $X' \to \P^2$ on the central fiber.
   
-  To continue, we let $\Sigma_{j,k}$ denote the irreducible surface in
-  $\P^{2}_{\Delta}(n)$ obtained by taking the closure of the line
-  $\langle \{p_{j}\} \times \eta, \{p_{k}\} \times \eta \rangle$
-  defined over the generic point $\eta$.  Let
-  $C_{j,k} \subset P(0) \cup \dots \cup F(n)$ denote the fiber of
-  $\Sigma_{j,k}$ over $0 \in \Delta$. $C_{j,k}$ is a chain of
-  $\P^{1}$'s, with $C_{j,k} \cap P(0)$ being the line joining
-  $p_{j}, p_{k}$ viewed as points in $P(0)$. The curves
-  $C_{j,k} \cap F(m)$, varying across all choices of $j,k$ are then
-  ruling lines which are uniquely determined by the locations of the
-  points
-  $\langle q_{1}, q_{2} \rangle \cap \langle p_{j}, p_{k} \rangle$,
-  which in turn (using the generality of $Z_{gen}$) is a set of $6$
-  distinct points.  In particular, $x \notin C_{j,k}$ for some pair
-  $j,k$.  This implies that $\td{g}(C_{j,k})$ =
-  $L_{0} \subset \P^{2}_{0}$.  However, $\td{g}(C_{j,k})$ must {\sl
-    also} be the limit of the line joining the pair of sections
-  $z_{j}, z_{k} \subset \mathcal{Z}$ over the generic point $\eta$.
-  This latter line is $L_{1}$, which is distinct from $L_0$, providing
-  our desired contradition.
+  Recall that $\mathcal X'_K = \mathcal X_K = S \times_k K$.
+  Since $H^1(S, \O_S) = 0$, it follows that the line bundle $\mathcal L$ on $S \times_k K$ is constant, that is, isomorphic to $L \otimes_k K$ for some line bundle $L$ on $S$.
+  The complete linear system $|L|$ gives a map $a \colon S \to \P^2$.
+  It is easy to check that the map $\alpha \colon \mathcal X'_K \to \P^2_K$ and $a_K \colon \mathcal X'_K \to \P^2_K$ are equal, up to an automorphism of $\P^2_K$.
+  
+  The natural map $\alpha^* \omega_{\P^2_R/R} \to \omega_{\mathcal X'/R}$ gives a map $\omega^{-1}_{\mathcal X'/R} \to \alpha^* \omega_{\P^2_R/R}$ and hence an evaluation map
+  \[ \pi'_* \left(\omega_{\mathcal X'/R}\right) \otimes_R \O_{\P^2_R} \to \omega_{\P^2_R/R}^{-1}.\]
+  Tensor by $\omega_{\P^2_R/R}$ to get
+  \[ \pi'_* \left(\omega_{\mathcal X'/R}\right) \otimes_R \omega_{\P^2_R/R} \to \O_{\P^2_R}.\]
+  Then the cokernel is $\O_{\mathcal Z}$ for a closed subscheme $\mathcal Z \subset \P^2_R$.
+  Note that both the general and the special fiber of $\mathcal Z \to \spec R$ have length 6, and hence $\mathcal Z \to \spec R$ is flat.
+  The central fiber is the subscheme $W \subset \P^2$ and, up to an automorphism of $\P^2_K$, the general fiber is $Z \times_k K \subset \P^2_K$, where $Z \subset \P^2$ is such that $S \cong \Bl_Z \P^2$.
+  The proof is now complete.
 \end{proof}
 
-\subsection{The anatomy of linear rational maps $\P_t^2 \dashrightarrow \P_t^2$}
+\subsection{The anatomy of linear rational maps $\P_t^2 \dashrightarrow \P_t^2$}\label{sec:ratmap}
+To study orbit closures of collections of points in $\P^2$, we must understand one parameter families of automorphisms of $\P^2$.
+
 Let $R$ be a $\k$-algebra which is a discrete valuation ring with residue field $\k$, fraction field $K$, and uniformizer $t$.
 For an $R$-module $M$, we set $M_K = M \otimes_R K$ and $M_0 = M \otimes_R \k$.
-
 Let $\phi \colon \P^2_K \to \P^2_K$ be an isomorphism.
 We analyze the corresponding rational map $\P^2_R \dashrightarrow \P^2_R$.
 The analysis should hold for $\P^n$ for any $n$; we stick to $n = 2$ to keep us focused.
@@ -3076,25 +2764,53 @@ Said in a coordinate free manner, the rational map $\phi$ is defined away from a
 \end{equation}
 is constant.
 
-We use the analysis above to understand limits of a general set of six points in $\P^2$ under a one-parameter family of automorphisms.
+Using the matrix of $\phi$, we can explicitly construct a resolution of the rational map $\phi \colon \P^2_R \dashrightarrow \P^2_R$ using a sequence of elementary transformations.
+Let $L \subset \P^2$ be the locus of indeterminacy of $\phi$ (with the reduced scheme structure).
+Let $\widetilde P \to \P^2_R$ be the blow up of $L$.
+Then the central fiber of $\widetilde P$ is the union of $\Bl_L\P^2$ and the exceptional divisor $E$.
+If $\phi$ has rank 1, then $L$ is a line, and these two components are $\P^2$ and the Hirzebruch surface $\F_1$, respectively, meeting along $L \subset \P^2$ and the unique $(-1)$ curve on $\F_1$.
+If $\phi$ has rank 2, then $L$ is a point, and these two components are $\F_1$ and $\P^2$, respectively, meeting along the $(-1)$-curve on $\F_1$ and a line in $\P^2$.
+In both cases, the first component can be contracted: to a point in the rank 1 case and to a line in the rank 2 case.
+The resulting threefold is again isomorphic to $\P^2_R$.
+The rational map $\P^2_R \dashrightarrow \P^2_R$ after this operation corresponds to the diagonal matrix with entries $(1,t^{a-1}, t^{b-1})$ in the rank 1 case and $(1, 1, t^{b-1})$ in the rank 2 case.
+Observe that the new locus of indeterminacy is disjoint from the image of the contracted component.
+We repeat the procedure until we reach the identity matrix.
+Alternatively, we can do all the blow-ups first, and then all the contractions.
+We then get a diagram
+\[
+\begin{tikzpicture}[node distance=5em]
+  \node (t) {$\widehat P$};
+  \node (l) [below left of=t] {$\P^2_R$};
+  \node (r) [below right of=t] {$\P^2_R$};
+  \path [->] (l) edge[dashed]  node[above] {$\phi$}  (r) (t) edge (l) (t) edge (r);
+\end{tikzpicture}
+\]
+The central fiber of $\widehat P$ has an accordion like structure $P_0 \cup \dots \cup P_n$ (see \autoref{fig:accordion}), where each $P_i$ is a copy of $\F_1$ for $i = 1, \dots, n-1$, meeting the previous surface along the $(-1)$-curve and the next one along a $(+1)$-curve.
+The first surface $P_0$ is $\F_1$ if $a = 0$ (that is, $\phi$ has rank 2) or $\P^2$ if $a > 0$ (that is, $\phi$ has rank 1).
+Likewise, the last surface $P_n$ is $\F_1$ if $a = b$ or $\P^2$ if $b > a$.
+
+\begin{figure}
+  \centering
+  \input{figures/appendix1}
+  \caption{A family of surfaces with an accordion like central fiber arises while resolving the rational map $\P^2_\Delta \dashrightarrow \P^2_\Delta$.}
+\end{figure}
+
+\subsection{Orbit closure of 6 general points in $\P^2$}\label{sec:orb6}
+We use the analysis in \autoref{sec:ratmap} to understand limits of a general set of six points in $\P^2$ under a one-parameter family of automorphisms.
 Let $Z \subset \P^2$ be a configuration of 6 distinct points, with no three collinear points.
 A point $p \in \P^2 \setminus Z$ is a \emph{star point} if, for some ordering $\{z_1, \dots, z_6\}$ of $Z$, the lines $\langle z_1, z_2 \rangle$ and $\langle  z_3, z_4 \rangle$ and $\langle  z_5, z_6 \rangle$ are concurrent at $p$.
 A \emph{star-free} configuration is one without any star points.
 
-Recall that $R$ is a $\k$-algebra DVR with fraction field $K$.
-We assume, as usual, that $R$ is a $\k$-algebra.
 \begin{proposition}\label{prop:limit4}
   Let $Z \subset \P^2$ be a set of 6 points forming a star-free configuration.
-  Given $\phi \in \Aut(\P^2_K)$, let $W \subset \P^2$ be the flat limit of $\phi(Z_K) \subset \P^2_K$.
-  If $\phi$ has rank 2, then there exists a line in $\P^2$ containing at least 4 distinct points of $W$.
-  If $\phi$ has rank 1, then there exists a point in $\P^2$ at which $W$ has multiplicity at least 4.
+  Suppose $W \subset \P^2$ is in the $\PGL_3$ orbit closure of $Z$.
+  Then there exists a line in $\P^2$ containing at least 4 distinct points of $W$ or there exists a point in $\P^2$ at which $W$ has multiplicity at least 4.
 \end{proposition}
 \begin{proof}
+  There exists a $\k$-algebra DVR $R$ with fraction field $K$ and $\phi \in \Aut(\P^2_K)$ such that $W$ is the flat limit of $\phi(Z_K)$.
   Consider the rational map
   \[ \phi \colon \P^2_R \dashrightarrow \P^2_R.\]
-  We analyze the limit of $\phi$ applied to the constant subscheme $Z_R \subset \P^2_R$.
-
-  Note that we only need information about $W$ as a cycle.
+  We use $\phi$ to understand $W$ as a cycle.
   For $z \in Z$, let $z_K$ denote the constant section $z$ of $\P^2_K$, and let $\phi(z)_0$ be the flat limit of $\phi(z_K)$.
   Then the cycle $[W]$ of $W$ is simply
   \[ [W] = \sum_{z \in Z} \phi(z)_0.\]
@@ -3118,9 +2834,83 @@ We assume, as usual, that $R$ is a $\k$-algebra.
   Since $\phi_0$ is constant, we conclude that $W$ contains a point of multiplicity at least 4.
 \end{proof}
 
+\begin{proposition}\label{prop:pq4r}
+  Let $W \subset \P^2$ be a curvilinear scheme of length 6 whose cycle is $p + q + 4r$, where $p,q,r$ are distinct and $T_rW$ does not contain $p$ or $q$.
+  Then $W$ does not lie in the $\PGL_3$ orbit closure of a star-free configuration $Z$.
+\end{proposition}
+\begin{proof}
+  We prove the contrapositive.
+  Let $\phi \in \Aut(\P^2_K)$ be an automorphism such that $W$ is the flat limit of $\phi(Z_K)$.
+  We show that $T_r W$ contains $p$ or $q$.
+  The key idea is to consider flat limits of lines in $\P^2$ under the action of $\phi$.
+  To do so, we use the same analysis as before but for the map between dual projective spaces
+  \[\phi^\vee \colon (\P^2)_R^\vee \dashrightarrow (\P^2)_R^\vee.\]
+  If $A$ is the $3 \times 3$ matrix defining $\phi$, then the matrix defining $\phi^\vee$ is $(A^T)^{-1}$.
+
+  If $\phi_0^\vee$ is defined for a line $\ell \in (\P^2)^\vee$, then the flat limit of the family of lines $\phi(\ell_K) \subset \P^2_K$ is the line corresponding to $\phi^\vee(\ell)$.
+  The statements \eqref{eqn:rk2} and \eqref{eqn:rk1} for the dual projective space say the following.
+  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of a particular line $\Lambda$.
+  For lines $\ell \neq \Lambda$, the map $\phi_0^\vee$ is the composite of $\ell \mapsto \ell \cap \Lambda$ and a linear inclusion $\Lambda \to (\P^2)^\vee$.
+  In this case, a fiber of $\phi_0^\vee$ consists of a collection of concurrent lines, with the point of concurrency on $\Lambda$.
+  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of lines through a particular point $p$.
+  For lines $\ell$ not containing $p$, the map $\phi^\vee$ is constant.
+
+  Now, consider a line $\ell$ joining pairs of points of $Z$.
+  By semi-continuity, the flat limit $T$ of $\phi(\ell_K)$ must intersect $W$ in a scheme of length at least 2.
+  There are at most four lines in $\P^2$ that intersect $W$ in a scheme of multiplicity at least 2: the lines $\overline{pq}$, $\overline{pr}$, $\overline{qr}$, and $T_rW$.
+  In particular, if $\phi_0^\vee$ is defined at $\ell$, then $\phi_0^\vee(\ell)$ must be one of these 4.
+  This immediately implies that $\phi^\vee$ cannot have rank 1.
+  To see this, suppose it has rank 1.
+  Consider the ${6 \choose  2} = 15$ lines joining pairs of points of $Z$.
+  If $\phi_0^\vee$ takes only 4 values on these lines (or may be undefined on one of them), we would be able to partition them into 4 collections of concurrent lines, such that the points of concurrency are collinear.
+  But it is easy to check that this is impossible for a star-free configuration $Z$.
+
+  We have now concluded that $\phi$ has rank 2, and hence $\phi_0^\vee$ is constant on its domain.
+  Suppose $z_1 \in Z$ (resp. $z_2 \in Z$) is such that the flat limit of $\phi(z_1)$ is $p$ (resp. $q$).
+  Consider the 8 lines $\overline {z_i, z}$ for $z \in Z \setminus \{z_1,z_2\}$.
+  Since these lines are not all concurrent, $\phi_0^\vee$ is defined for at least one of them, say $\ell = \overline {z_1, z}$.
+  Suppose $L \subset \P^2$ is the line corresponding to $\phi_0^\vee(\ell)$.
+  Since $\ell$ contains $z_1$, the flat limit $L$ of $\phi(\ell)$ contains the flat limit $p$ of $\phi(z_1)$.
+  Since $\phi_0^\vee$ is constant on its domain, its constant value corresponds to the line $L$.
+
+  Now consider the ${4 \choose 2} = 6$ lines joining pairs of points of $Z \setminus \{z_1,z_2\}$.
+  Since the 6 lines are not all concurrent, $\phi_0^\vee$ is defined on at least one of them, say $\ell$.
+  Then the flat limit of $\phi(\ell)$ is also $L$.
+  Since the flat limit of a point of $Z \setminus \{z_1,z_2\}$ is $r$, by semicontinuity, we have
+  \[ \mult_r(L \cap W) \geq 2.\]
+  In other words, $L = T_rW$.
+  But then $T_rW$ contains $p$.
+\end{proof}
+\begin{remark}\label{prop:2p4r}
+  The same conclusion holds for a curvilinear $W$ with cycle structure $2p + 4r$ such that $T_rW$ does not contain $p$.
+  The proof is almost the same.
+\end{remark}
+
+\subsection{Applications}
+Let $X \subset \P^{3}$ denote the cubic surface defined in homogeneous coordinates $\left(x_{0}, x_{1}, x_{2}, x_{3}\right)$ by the equation \[x_{3}f_{2} - f_{3} = 0,\] where $f_{2} = x_{0}x_{1}$ and $f_{3} = x_{0}^3 + x_{1}^{3}-x_{1}x_{2}^{2}$.
+This is the unique cubic surface possessing a single $A_5$ singularity, up to projective equivalence.
+For the reader's amusement, we include a real picture of $X$ in \autoref{figure:cubicA5}.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.25\textwidth]{cubicA5}
+  \caption{The unique cubic surface $X$ with an $A_5$ singularity}
+  \label{figure:cubicA5}
+\end{figure}
+
+The surface $X$ is the cubic surface associated to the length 6 subscheme $W \subset \P^2$ defined by $f_2 = 0$ and $f_3 = 0$.
+The scheme $W$ has the cycle $p + q + 4r$, where $p$, $q$, $r$ are distinct but collinear, and the tangent line $T_rW$ is distinct from the line $\overline{pqr}$.
+The identity component of the automorphism group of $X$ is $\G_a$.
+\begin{proposition}
+  Let $S$ be a smooth cubic surface without an Eckardt point.
+  Then $X$ is not in the $\PGL_4$ orbit closure of $S$.
+\end{proposition}
+\begin{proof}
+  We know that $S$ is isomorphic to $\Bl_Z \P^2$, where $Z \subset \P^2$ is a star-free configuration.
+  The result now follows from \autoref{prop:cubictopoints} and \autoref{prop:pq4r}.
+\end{proof}
 
 \bibliographystyle{plain}
-\bibliography{references.bib}
+\bibliography{references}
 \end{document}
 
 %%% Local Variables:

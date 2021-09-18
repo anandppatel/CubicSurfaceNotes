@@ -1106,9 +1106,32 @@ Our family
 \[ \pi \colon \mathcal X \to \widehat \M_{0,7}\]
 is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon Z \to \P \mathcal S^\vee$.
 
-We now address the issue of goodness of the family $\pi \colon \mathcal X \to \widehat \M_{0,7}$.
-Let $T \subset \widehat \M_{0,7}$ be the locus of curves $(C, s_0, s_1, \dots, s_5, s_\infty)$ where three among the $s_1,\dots, s_5$ coincide with $s_\infty$.
+\begin{proposition}\label{prop:goodness3}
+  The family $\pi \colon \mathcal X \to \M_{0,7}$ is good.
+\end{proposition}
+\begin{proof}
+  We show that no fiber $\mathcal X_b$ is in the closure of the orbit of any smooth cubic surface $S$ without Eckardt points.
+  Let $Z \subset \P^2$ be the image of $\nu \colon Z_b \to \P \mathcal S^\vee$.
+  By construction, $Z$ does not have a point of multiplicity 5 or 6, and since $Z$ lies on a cubic, no four distinct points of $Z$ can be collinear.
+  Suppose $Z$ does not have a point of multiplicity 4.
+  Then we use \autoref{prop:cubictopoints} and \autoref{prop:limit4} to conclude that $\mathcal X_b$ is not in the orbit closure of $S$.
 
+  We now treat cases where $Z$ has a point of multiplicity 4.
+  Suppose $Z = p + q + 4r \subset C$, where $p, q, r$ are distinct.
+  Since $r$ occurs with multiplicity greater than 1 in $Z$, it must be distinct from the cusp point.
+  If the tangent line $T_rZ = T_rC$ does not contain $p$ or $q$, we appeal to \autoref{prop:pq4r} or \autoref{prop:2p4r}.
+  Suppose $T_rZ$ contains $p$.
+  Then it cannot also contain $q$, and hence $p, q, r$  are not collinear.
+  Let $Q$ be the unique conic containing $4r+q \subset C$.
+  See that no line contains a length 3 subscheme of $4r + q \subset C$, and hence $Q$ is smooth.
+  Since $r \neq p$ and $T_rZ = T_rQ$ contains $p$, we see that $p \not \in Q$.
+  We thus see that up to automorphism of $\P^2$, there are two possibilities for $Z$: the first corresponds to $p = T_rQ \cap T_qQ$, and the second corresponds to $p \in T_rQ$ but $p \not \in T_qQ$.
+  In either case, the associated cubic surface has a unique singular point, which is of type $D_4$.
+  In the second case, $\Aut(\P^2, Z)$ and hence $X_Z$ has a finite automorphism group.
+  In the first case, the automorphism group is infinite---the connected component of the identity is $\G_m$.
+  It is known that, up to isomorphism, there are exactly two cubic surfaces with singularity $D_4$ (see \cite[Lemma~4]{bru.wal:79}).
+  We now appeal to \autoref{prop:isogood}.
+\end{proof}
 
 
 Let us reset notation once again.  Our third family is a variant of
@@ -1403,171 +1426,6 @@ $\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
   of our claimed good family $$\pi: \cX \to \hM_{0,7},$$ with
   $\cX := \Bl_{\nu(\mathcal{Z})}\P \mathcal{S}^{\smvee}$.
 
-
-\subsubsection{Goodness}
-\label{sec:goodness3}
-
-Here we address the goodness of the family
-$\pi: \mathcal{X} \to B_{3}$. We let $$T \subset B_{3} = \hM_{0,7}$$
-denote the finite set parametrizing marked curves
-$(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$ where three of the
-$s_{i}, i=1, \dots, 5$ coincide with $s_{\infty}$.  $T$ consists of
-${5 \choose 3 } = 10$ points.  Using \autoref{prop:good}, it will be
-relatively easy to show that $\pi: \mathcal{X} \to B_{4}$ is good over
-the open set $B_{3} \setminus T$.  The argument showing that the
-fibers over $T$ are also good is quite a bit more involved.  In the
-interest of exposition, we have placed it in \autoref{sec:goodnessA5}.
-
-
-
-
-\autoref{theorem:goodcusp} below essentially states that
-$\pi : \mathcal{X} \to B_{3}$ is a good family over the open set
-$B_{3} \setminus T$. The following elementary lemma, which we leave to
-the reader, contains simple observations about automorphisms of
-$\P^{2}$.
-
-\begin{lemma}
-  \label{lemma:identity} Suppose $g \in \Aut(\P^{2})$ satisfies one of:
-  \begin{enumerate}
-  \item $g$ restricts to the identity on a line $L \subset \P^{2}$ and
-    also fixes two points outside $L$, or
-  \item $g$ restricts to the identity on a line $L$, preserves another
-    line $L'$ and fixes a point outside $L \cup L'$, or
-  \item $g$ fixes $4$ points, no three collinear.
-  \end{enumerate}
-  Then $g = \id$.
-\end{lemma}
-
-\begin{proof}
-  Omitted.
-\end{proof}
-
-\begin{theorem}
-  \label{theorem:goodcusp}
-  Let $C \subset \P^{2}$ be a cuspidal cubic, and let
-  $s_{i} \in C, i \in \{1, \dots, 5, \infty \}$ be six, not
-  necessarily distinct, points satisfying:
-  \begin{enumerate}
-  \item At most one $s_{i}$ is the cusp point,
-  \item $s_{\infty}$ is the flex point of $C$, and
-  \item at most {\bf two} $s_{i}, 1 \leq i \leq 5$ are equal to $s_{\infty}$.
-  \end{enumerate}
-  
-  The length $6$ subscheme $Z := s_{1} + \dots + s_{5} + s_{\infty}$,
-  interpreted as a divisor on $C$, is admissible and the associated
-  cubic $X_{Z}$ is good.
-\end{theorem}
-
-\begin{proof}
-  First note that since no length $4$ subscheme of $Z$ is contained in
-  a line, it follows that the length $5$ subscheme
-  $Z' := s_1 + s_2 + s_3 +s_4 +s_5$ is contained in a unique conic,
-  which we denote by $Q$.
-
-  The verification proceeds in cases, depending on the rank of the
-  conic $Q$ and its relative position with respect to the cuspidal
-  cubic $C$.  Observe first that every element in the identity
-  component of $\Aut(\P^{2},Z)$ must preserve the conic $Q$. So, in
-  light of \autoref{prop:good} it suffices to show that there are only
-  finitely many elements in $\Aut(\P^{2},Z)$ preserving $Q$.  Let
-  $g \in \Aut(\P^{2},Z)$ denote an arbitrary element in the identity
-  component---we must deduce in every case that $g = \id$.  This
-  strategy works in the first four cases. The fifth case proceeds
-  differently, and appeals to the classification of semistable cubic
-  surfaces.
-
-  
-  {\bf Case 1}: {\sl $Q$ is smooth and $s_{\infty} \notin Q$.}    Then
-  $g$ must preserve the pair of points $\Polar(s_{\infty})$. Since $Z$
-  is a subscheme of the irreducible cubic curve $C$, it follows that
-  $Z'$ must have multiplicity at most $2$ at each of the pair of
-  points $\Polar(s_{\infty})$.  This implies that $Z' \subset Q$ is
-  supported on at least three points, and so $g$ is an automorphism of
-  $Q$ fixing three points, i.e. $g = \id$.
-
-  
-
-  {\bf Case 2}: {\sl $Q$ is smooth and $s_{\infty} \in Q$.}  Let
-  $C^{\circ}$ denote the smooth part of $C$. The classical chord and
-  tangent method makes $C^{\circ}$ isomorphic to the additive group
-  $\G_{a}$, with origin corresponding to $s_{\infty}$. If
-  $Z \subset Q$ were supported on less than three points, necessarily
-  $s_{\infty}$ and, say $s_{1}$, then, given condition (3) we deduce
-  that $s_{1}$ must be contained in $C^{\circ}$ and must be a torsion
-  point in the group law, meaning $s_{1} = s_{\infty}$. Thus, $Z$
-  would have to be entirely supported on $s_{\infty}$, which is
-  contrary to assumption.  Since $Z$ has at least three points of
-  support, we deduce $g =\id$.
-
-  
-  {\bf Case 3}: {\sl $Q$ is twice a line $L$.} $L$ cannot be the flex
-  line at $s_{\infty}$, because it would force $Z$ to be
-  $6 s_{\infty}$, violating condition (3).  Nor can $L$ be the unique
-  line joining $s_{\infty}$ and the cusp of $C$, since then the
-  support of $Z$ would have to contain that cusp with multiplicity at
-  least $2$, contrary to condition (1). Thus, $L$ meets $C$
-  transversely at three distinct smooth points, including
-  $s_{\infty}$.  Without loss of generality, we may assume
-  $Z = 2s_1 + 2s_2 + 2s_{\infty}$, where
-  $L \cap C = s_{1}+s_{2} + s_{\infty}$.
-
-  
-  Now, $g \in \Aut(\P^{2},Z)$ fixes three points on $L$, and hence
-  restricts to the identity on $L$. Let
-  $q_{1,2}, q_{1, \infty}, q_{2,\infty}$ denote the corresponding
-  pairwise intersections of the three tangent lines to $C$ at
-  $s_1, s_2, s_{\infty}$. $q_{1,2}, q_{1, \infty},$ and
-  $ q_{2,\infty}$ are distinct: If two coincided at a point $p$, then
-  $p$ must be a point on the flex line, and must therefore not lie on
-  $C$. Projecting $C$ from $p$ would yield an order $2$ ramification
-  point at $s_{\infty}$, two simple ramification points at 
-  $s_{1}, s_{2}$ and another ramification point at the cusp.  This
-  exceeds the length $4$ ramification scheme given by the
-  Riemann-Hurwitz formula for a degree $3$ map between rational
-  curves.  Thus, $g$ fixes $L$, and fixes at least two other points
-  outside $L$; by \autoref{lemma:identity}, $g =\id$.
-
-  
-  {\bf Case 4}: {\sl $Q$ is the union of two distinct lines
-    $L \cup M$, neither of which is the flex line at $s_{\infty}$.}
-  Let $x$ denote the point $L \cap M$, and {\sl first assume that
-    $x \notin C$.} $Z'$ must contain at least two points on each of
-  the lines. Since $g$ must fix $x$, we can apply
-  \autoref{lemma:identity} to deduce $g =\id$ in this case.
-
-  Next, assume $x \in C$: $x$ is not the cusp point, because then
-  there is no room for $Z'$, given condition (1). We leave it to the
-  reader to check all combinatorial possibilities in this situation,
-  depending on whether $L$ and $M$ are tangent to $C$ or not.  All
-  situations here are accounted for by \autoref{lemma:identity}.
-
-  {\bf Case 5}: {\sl $Q$ is the union of two distinct lines
-    $L \cup M$, where $M$ is the flex line through $s_{\infty}$.} This
-  is the most interesting case.  Once again, let $x = L\cap M$.  If
-  $x \in C$, $x$ must be the flex point $s_{\infty}$, and $Z$ would
-  have to have multiplicity at least $4$ at $s_{\infty}$, violating
-  condition (3).
-
-  So, we can assume $x \notin C$.  There is now only one option for
-  $Z$: $Z$ must equal $Q \cap C$.  In this case, $\Aut(\P^{2}, Z)$ has
-  positive dimensional automorphism group, and therefore
-  \autoref{prop:good} does not apply.  Instead, the reader can check
-  that $X_{Z}$ is a normal cubic surface with only $A_{1}$ and $A_{2}$
-  singularities.  Hence $X_{Z}$ is GIT semistable.  Semistable
-  surfaces are automatically good, finishing this case.
-  
-\end{proof}
-
-  
-It remains to prove that the finitely many fibers of
-$\pi: \mathcal{X} \to B_{3}$ over $T \subset B_{3}$ are good.  Since
-this argument is rather involved (and contains a method of independent
-interest), we have moved it to \autoref{sec:goodnessA5}.
-
-\begin{corollary}
-  \label{cor:good3} $\pi: \cX \to B_{3}$ is good.
-\end{corollary}
 
 \subsubsection{The bundle $\V$ and its Chern classes}
 \label{sec:bundle-v3}
@@ -2407,7 +2265,7 @@ For the proof, we need a lemma.
   We now use \autoref{prop:nolimit}.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{prop:isogood}
   The following singular cubic surfaces are not in the closure of the $\PGL_4$-orbit of any smooth cubic surface without an Eckardt point (the parenthesis describes the singularities):
   \begin{enumerate}
   \item $x_0x_1x_3 = x_2^3$ \quad $(3A_2)$
@@ -2884,7 +2742,7 @@ A \emph{star-free} configuration is one without any star points.
 \end{proof}
 \begin{remark}\label{prop:2p4r}
   The same conclusion holds for a curvilinear $W$ with cycle structure $2p + 4r$ such that $T_rW$ does not contain $p$.
-  The proof is almost the same.
+  The same proof works with $p = q$.
 \end{remark}
 
 \subsection{Applications}

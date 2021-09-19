@@ -970,7 +970,7 @@ be the family of cubic surfaces associated to $\mathcal Z \subset \mathcal P$ (s
 
 We now compute the Chern classes of the anti-canonical section bundle.
 \begin{proposition}\label{lem:v2}
-  Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$.
+  Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$ and let $v_i = c_i(\mathcal V)$.
   Then we have
   \[
     \begin{split}
@@ -1085,7 +1085,10 @@ We now formalize the construction as a family over $\widehat \M_{0,7}$.
 Let $\phi \colon \mathcal C \to \widehat \M_{0,7}$ be the universal curve with universal sections $\sigma_0, \sigma_1, \dots, \sigma_5, \sigma_\infty$.
 Observe that $\phi$ is a $\P^1$-bundle.
 Consider the rank 2 bundle
-\[ \mathcal A = \phi_* \O_{\mathcal C}(\sigma_\infty).\]
+\begin{equation}\label{eqn:hatA}
+  \mathcal A = \phi_* \O_{\mathcal C}(\sigma_\infty).
+\end{equation}
+
 As before, the evaluation maps yield an isomorphism
 \begin{align*}
   \mathcal A &\xrightarrow{\sim} \sigma_\infty^*\O_{\mathcal C}\left( \sigma_\infty \right) \oplus \sigma_0^*\O_{\mathcal C}\left( \sigma_\infty \right)\\
@@ -1095,7 +1098,9 @@ where $\mathcal L = \sigma_\infty^*(\omega_\phi)$.
 We have a map $\mathcal C \to \P \mathcal A^\vee$ induced by the surjection $\phi^* \mathcal A \to \O_{\mathcal C}(\sigma_\infty)$, and since $\mathcal C \to \widehat \M_{0,7}$ is a $\P^1$-bundle, this map is an isomorphism.
 Observe that the sections $\sigma_0$ and $\sigma_\infty$ corresponds to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
 Now consider the summand
-\[ \mathcal S := \O_{\widehat \M_{0,7}} \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \subset \Sym^3 \mathcal A,\]
+\begin{equation}\label{eqn:hatS}
+  \mathcal S := \O_{\widehat \M_{0,7}} \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \subset \Sym^3 \mathcal A,
+\end{equation}
 and denote by
 \[ \nu \colon \mathcal C \to \P \mathcal S^\vee\]
 the map induced by the surjection $\phi^* \mathcal S \to \O_{\mathcal C}(3\sigma_\infty)$.
@@ -1107,7 +1112,7 @@ Our family
 is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon Z \to \P \mathcal S^\vee$.
 
 \begin{proposition}\label{prop:goodness3}
-  The family $\pi \colon \mathcal X \to \M_{0,7}$ is good.
+  The family $\pi \colon \mathcal X \to \widehat \M_{0,7}$ is good.
 \end{proposition}
 \begin{proof}
   We show that no fiber $\mathcal X_b$ is in the closure of the orbit of any smooth cubic surface $S$ without Eckardt points.
@@ -1118,343 +1123,71 @@ is the family of cubic surfaces associated to the family of admissible subscheme
 
   We now treat cases where $Z$ has a point of multiplicity 4.
   Suppose $Z = p + q + 4r \subset C$, where $p, q, r$ are distinct.
-  Since $r$ occurs with multiplicity greater than 1 in $Z$, it must be distinct from the cusp point.
-  If the tangent line $T_rZ = T_rC$ does not contain $p$ or $q$, we appeal to \autoref{prop:pq4r} or \autoref{prop:2p4r}.
+  Since $r$ occurs with multiplicity greater than 1 in $Z$, it must be distinct from the cusp point (so $4r$ is unambiguous).
+  If the tangent line $T_rZ = T_rC$ does not contain $p$ or $q$, we appeal to \autoref{prop:pq4r} and \autoref{prop:2p4r}.
   Suppose $T_rZ$ contains $p$.
   Then $T_rZ$ cannot contain $q$, and hence $p, q, r$  are not collinear.
-  One of $p,q,r$ must be the flex point $s_\infty$---the only possibility is $q = s_\infty$.
-  Then $Z \subset C$ is uniquely determined up to an automorphism of $(\P^2, C)$.
+  By the construction of $Z$, one of $p,q,r$ must be the flex point $s_\infty$, and we see that the only possibility is $q = s_\infty$.
+  Now $Z \subset C$ is uniquely determined up to an automorphism of $(\P^2, C)$.
   It is easy to write down such a $Z$ and check directly that $\Aut(\P^2, Z)$ is finite.
   Alternatively, we see that the cubic surface associated to $Z$ has a unique singular point, which is of type $D_4$.
   It is known that, up to isomorphism, there are exactly two cubic surfaces with singularity $D_4$ (see \cite[Lemma~4]{bru.wal:79}).
   One has a finite automorphism group and the other one is treated by \autoref{prop:isogood}.
 \end{proof}
 
-
-Let us reset notation once again.  Our third family is a variant of
-the family in the previous section \autoref{sec:family-b_2}.  It is
-parametrized by the base variety
-$$B_{3} := \hM_{0,7}.$$
-
-Here, $\hM_{0,7}$ is a particular Hassett space parametrizing
-${\bf w}$-stable $7$-pointed genus $0$ curves, where
-
-is the weight vector on the marked points
-$(s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$ on a genus $0$ curve.
-
-Before getting buried in details, we explain the basic construction of
-the family of cubic surfaces over the interior, $\M_{0,7}$.  Begin
-with $(C, s_{0}, s_{1}, \dots, s_{5}, s_{\infty})$, a smooth rational
-curve with $7$ distinct marked points, and choose a map
-$$\nu: C \to \P^{2},$$ birational onto its image
-$\nu(C)$, which is a {\sl cuspidal cubic curve with cusp point
-  $\nu(s_{0})$ and unique flex point $\nu(s_{\infty})$.}  Let
-$Z = \nu(\{s_{1}, \dots, s_{5}, s_{\infty}\}) $, and now assign the
-cubic surface $\Bl_{Z}\P^{2}$.  The main objective of this section is
-to demonstrate that this assignment extends over the boundary of
-$\hM_{0,7}$, yielding a good family of cubic surfaces from which we
-can extract one more relation.
-
-Before starting the analysis, we make some remarks: The need for using
-the alternate compactification $\hM_{0,7}$ ultimately traces to the
-requirement that our family must be good.  There are several possible
-variants of the construction, but the reader will eventually realize
-that, very often, there will be a few non-good fibers present.
-
-
-We assume the reader is familiar with the intersection theory of
-$\o{\M}_{0,n}$.  Therefore, we will at times translate intersection
-products on $\hM_{0,7}$ into calculations on $\o{\M}_{0,7}$, and then
-leave it to the reader to check the results there.
-
-\subsubsection{The spaces $\hM_{0,n}$}
-\label{sec:spaces-hm_0-n}
-
-In order to carry out the calculations needed for our third relation,
-we need to investigate the basic geometry of a series of
-Hassett-spaces which we denote by $\hM_{0,n}$.  We do that in this
-section.
-
-\begin{definition}
-  \label{def:hM0n} For each $n \geq 4$, we define $\hM_{0,n}$ to be
-  the compactification of $\M_{0,n}$ by ${\bf w}$-stable, $n$-pointed,
-  genus $0$ curves, where
-  $${\bf w} = \left(1- \epsilon, \epsilon, \dots, \epsilon, 1-(n-4)\epsilon \right), 0 < \epsilon \ll 1.$$
-\end{definition}
-
-We will denote a ${\bf w}$-stable curve by
-$(C, s_{0}, s_{1}, \dots, s_{n-2}, s_{\infty})$.  The indices are
-meant to indicate that the two points $s_{0}$ and $s_{\infty}$ are two
-``more interesting'' points, as will become apparent in the next
-paragraph.
-
-The pointed curves $(C, s_{0}, s_{1}, \dots, s_{n-2}, s_{\infty})$
-parametrized by $\hM_{0,n}$ are actually very simple to describe:
-
-\begin{itemize}
-\item $C$ is a {\sl smooth} rational curve,
-\item $s_{0}$ and $s_{\infty}$ must be distinct,
-\item at most one of the $s_{i}$, $i=1, \dots, n-2$ can coincide with
-  $s_{0}$,
-\item at most $n-4$ of the $s_{i}$, $i=1, \dots, n-2$ can coincide
-  with $s_{\infty}$.
-\item there are no constraints on how the points $s_{i}$,
-  $i=1, \dots, n-2$ can coincide with each other.
-\end{itemize}
-Therefore, the universal curve $$\varphi: \cC \to \hM_{0,n}$$ is in
-fact a $\P^{1}$-bundle, the projectivization of a particular rank $2$
-vector bundle $\mathcal{W}$ on $\hM_{0,n}$. We let
-$\sigma_{i} \subset \cC$,
-$i \in \left\{0,1,2, \dots, n-2, \infty\right\}$ denote the universal
-sections providing the marked points, and we denote by
-\begin{align}
-  \label{eq:stab}
-  \zeta: \overline{\M}_{0,n} \to \hM_{0,n}
-\end{align}
-the stabilization morphism.  We will sometimes use $\zeta$ to
-pull-back enumerative calculations on $\hM_{0,n}$ back to
-$\overline{\M}_{0,n}$, where they are better understood.
-
-\paragraph{Divisor classes on $\hM_{0,n}$}
-\label{sec:divisor-classes-hm_0}
-
-Certain divisors on $\hM_{0,n}$  play an essential role in our
-computations, so we take this section to introduce them.
-
-\begin{definition}
-  \label{def:psihats} We let $\hL_{0}, \hL_{\infty}$ denote the line
-  bundles
-  $\omega_{\varphi}|_{\sigma_{0}},
-  \omega_{\varphi}|_{\sigma_{\infty}}$, respectively, and let
-  $\hpsi_{0}, \hpsi_{\infty} \in A^{1}(\hM_{0,n})$ denote their first
-  Chern classes.
-\end{definition}
-
-Since the sections $\sigma_{0}$ and $\sigma_{\infty}$ are disjoint, it
-follows that
-\begin{align}
-  \label{eq:opposites}
-  \hpsi_{0} + \hpsi_{\infty} = 0.
-\end{align}
-
-
-Finally, we indicate the simple relationship between $\hpsi_{0}$ on
-$\hM_{0,n}$ with $\psi_{0}$ on $\o{\M}_{0,n}$.  Let
-$\delta_{\{i,0\}}, i=1, \dots, n-2$ denote the boundary divisor in
-$\o{\M}_{0,n}$ whose general point corresponds to the union of two
-marked $\P^{1}$'s, one of which contains only $0$-th and $i$-th marked
-points.
-
-
-
-Then,
-\begin{align}
-  \label{eq:relationpsis}
-\zeta^{*}(\hpsi_{0}) = \psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}.  
-\end{align}
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{definition}
-  \label{def:boundary}
-  For each distinct pair of indices
-  $i,j \in \{0, 1, 2, \dots, n-2, \infty \}$, we define
-  $\Delta_{i,j} \subset \hM_{0,n}$ to be the divisor over which the
-  sections $\sigma_{i}$ and $\sigma_{j}$ intersect, and we set
-  $$\Delta_{\infty} = \sum_{i \in \{1, \dots, n-2 \}}
-  \Delta_{i,\infty}.$$
-\end{definition}
-
-The specific boundary divisors $\Delta_{i, \infty}$, where the section
-$\sigma_{i}$ collides with $\sigma_{\infty}$ will play an especially
-important role in our calculations will be important for us, so we
-briefly collect some observations about them:
-\begin{itemize}\label{item:boundaryprops}
-\item Each boundary divisor $\Delta_{i,\infty} \subset \hM_{0,n}$ is
-  naturally isomorphic to $\hM_{0,n-1}$ via a map
-  $$\eta_{i}: \hM_{0,n-1} \to \hM_{0,n}$$ that sends
-  $(C, s_{0}, \dots, s_{n-3}, s_{\infty})$ to
-  $(C, s_{0}, \dots, s_{i-1}, s_{i}=s_{\infty}, s_{i+1} \dots,
-  s_{\infty})$.
-
-  In the same way, if $i \neq j$, then the intersection
-  $\Delta_{i,\infty} \cap \Delta_{j, \infty}$ is isomorphic to
-  $\hM_{0,n-2}$ via a similarly defined map
-  $$\eta_{i,j}: \hM_{0,n-2} \to \hM_{0,n},$$ and so on.  This provides a
-  nice inductive structure among the Hassett spaces $\hM_{0,n}$.
-  
-\item Under $\eta$, we clearly have $\eta^{*}\hpsi_{0} = \hpsi_{0}$
-  and $\eta^{*}\hpsi_{\infty} = \hpsi_{\infty}.$
-\item We have:
-\begin{align}\label{eq:pullbackdelta}
-  \eta^{*}([\Delta_{i,\infty}]) = -\hpsi_{\infty} \in A^{1}(\hM_{0,n-1}).
-\end{align}
-To see this, first note that
-$\Delta_{i, \infty} = \varphi_{*}(\sigma_{i}\sigma_{\infty})$, and so
-$\eta^{*}([\Delta_{i,\infty}]) = \varphi_{*}(\sigma_{\infty}^{2})$,
-where the latter equation is happening in the divisor class group of
-$\hM_{0,n-1}$.  But
-$\varphi_{*}(\sigma_{\infty}^{2}) = - \hpsi_{\infty}$, and the claim
-follows.
-\end{itemize}
-
-
-\paragraph{Computing integrals in $\hM_{0,n}$}
-
-These observations are enough to compute, using an inductive method,
-any top degree integral involving $\hpsi_{0}, \hpsi_{\infty},$ and the
-boundary divisors $\Delta_{i, \infty}$.
-
-\begin{example}
-  \label{ex:toppsi}
-  Let's first indicate how to
-  compute $$\int_{\hM_{0,n}}\hpsi_{0}^{n-3}.$$ Using
-  \eqref{eq:relationpsis}, this amounts to computing
-  $$\int_{\o{\M}_{0,n}} \left(\psi_{0} - \sum_{i \in \{1, \dots, n-2\}} \delta_{\{i,0\}}\right)^{n-3}.$$
-  Now, in the Chow ring of $\o{\M}_{0,n}$, recall that:
-  \begin{itemize}
-  \item $\psi_{0} \cdot \delta_{\{i,0\}} = 0$, 
-  \item $\delta_{\{i,0\}} \cdot \delta_{\{j,0\}} = 0$ for $i \neq j$,
-    and
-  \item $\int_{\o{\M}_{0,n}}\delta_{\{i,0\}}^{n-3} = (-1)^{n}$, for
-    all $i$, and
-  \item $\int_{\o{\M}_{0,n}} \psi_{0}^{n-3} = 1$.
-  \end{itemize}
-
-  Using these, we deduce:
-  \begin{align}
-    \label{eq:hpsitop}
-    \int_{\hM_{0,n}}\hpsi_{0}^{n-3} = -(n-3). 
-  \end{align}
-\end{example}
-
-Next, we do an example involving $\Delta_{i, \infty}$'s.
-
-\begin{example}
-  Consider
-  $$\int_{\hM_{0,7}} \Delta_{i, \infty}^{2}\Delta_{j, \infty}^{2},$$
-  where $i \neq j$.  Using the parametrization
-  $\eta_{i,j} : \hM_{0,5} \to \Delta_{i,\infty} \cap
-  \Delta_{j,\infty}$, we see that this integral is the same as
-  $$\int_{\hM_{0,5}}\eta_{i,j}^{*}[\Delta_{i, \infty}] \cdot \eta_{i,j}^{*}[\Delta_{j, \infty}],$$
-  which in turn is equal to
-  $$\int_{\hM_{0,5}}(-\hpsi_{\infty})^{2} = \int_{\hM_{0,5}}\hpsi_{0}^{2} = -2,$$
-  as seen by combining \eqref{eq:hpsitop} with previous observations
-  on how boundary divisors pull back along $\eta_{i}$ maps.
-\end{example}
-
-The intersection theory described in this subsection yields:
-
-\begin{lemma}
-  \label{lemma:monomials} On $\hM_{0,7}$ we have:
-  \begin{align}
-    \int_{\hM_{0,7}}\widehat{\psi}_{0}^{4}& = -4, \\ \nonumber
-    \int_{\hM_{0,7}}\widehat{\psi}_{0}^{3}\Delta_{\infty}& = -15, \\ \nonumber
-    \int_{\hM_{0,7}}\widehat{\psi}_{0}^{2}\Delta_{\infty}^{2}& = -55, \\ \nonumber
-    \int_{\hM_{0,7}}\widehat{\psi}_{0}\Delta_{\infty}^{3}& = -195, \\ \nonumber
-    \int_{\hM_{0,7}}\Delta_{\infty}^{4}& = -655
-  \end{align}
-\end{lemma}
-
-\subsubsection{Construction of the family $\cX/\hM_{0,7}$}
-\label{sec:constr-family-hM07}
-
-Let us proceed to the formal construction of our family, starting with
-the universal curve
-$$\varphi: \cC \to \hM_{0,7}.$$
-The idea is to map $\cC$ to a relative cuspidal cubic curve in a
-$\P^{2}$-bundle so that $\sigma_{0}$ becomes the cusp point and
-$\sigma_{\infty}$ becomes the flex point.
-
-
-Consider the rank $2$
-vector bundle $\mathcal{A} = \varphi_{*}\O_{\cC}(\sigma_{\infty})$ --
-since $\sigma_{\infty}$ and $\sigma_{0}$ are disjoint, and since
-$\O_{\cC}(\sigma_{\infty})|_{\sigma_{\infty}} = \hL_{\infty}^{-1}$ and
-$\O_{\cC}(\sigma_{0})|_{\sigma_{0}} \simeq \O_{\hM_{0,7}}$, it follows
-that
-$$\mathcal{A} \simeq \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1}.$$
-We emphasize that the above direct sum decomposition is induced by
-applying $\varphi_{*}$ to the restriction map
-$\O_{\cC}(\sigma_{\infty}) \to \O_{\cC}(\sigma_{\infty})|_{\sigma_{0}
-  \cup \sigma_{\infty}}.$
-
-  Next, consider the subbundle
-  \begin{align}
-    \label{eq:S}
-    \mathcal{S} = :\O_{\hM_{0,7}} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3} \subset \Sym^{3} \mathcal{A} = \O_{\hM_{0,7}} \oplus \hL_{\infty}^{-1} \oplus \hL_{\infty}^{-2} \oplus \hL_{\infty}^{-3},
-  \end{align}
-  and denote by
-  \begin{align}
-    \label{eq:nu}
-    \nu: \cC \to \P \mathcal{S}^{\smvee}
-  \end{align}
-  the $\hM_{0,7}$-morphism induced by the surjection
-  $\varphi^{*}\mathcal{S} \to \O_{\cC}(3\sigma_{\infty})$. Denote by
-  $\rho: \P \mathcal{S}^{\smvee} \to \hM_{0,7}$ the $\P^{2}$-bundle
-  structural map.  Fiber-by-fiber, the effect of $\nu$ is to map the
-  fibers of $\cC$ to a cuspidal cubic curve, with $\nu(\sigma_{0})$
-  the cusp point and $\nu(\sigma_{\infty})$ the flex point.
-
-  We denote by $\mathcal{Z} \subset \cC$ the union of the six sections
-  $\sigma_{1}, \dots, \sigma_{\infty}$.  Because at most one of the
-  sections $\sigma_{i}, i \in \{1, \dots, \infty\}$ is allowed to
-  intersect $\sigma_{0}$ (which becomes the cusp under $\nu$), it
-  follows that $\nu|_{\mathcal{Z}}:\mathcal{Z} \to \nu(\mathcal{Z})$
-  is an isomorphism. As will be demonstrated in
-  \autoref{sec:goodness3}, every member of the family of length $6$
-  subschemes $\nu(\mathcal{Z}) \subset \P \mathcal{S}^{\smvee}$ is
-  admissible, and has a {\sl good} associated cubic surface.
-  Therefore, our attention is brought upon the natural rank $4$ bundle
-  \begin{align}
-    \label{eq:V3}
-    \V := \rho_{*}\left(\omega_{\rho}^{-1} \otimes \mathcal{I}_{\nu(\mathcal{Z})}\right)
-  \end{align}
-  of our claimed good family $$\pi: \cX \to \hM_{0,7},$$ with
-  $\cX := \Bl_{\nu(\mathcal{Z})}\P \mathcal{S}^{\smvee}$.
-
-
-\subsubsection{The bundle $\V$ and its Chern classes}
-\label{sec:bundle-v3}
-
-As usual, we must compute the Chern classes of
-$\V = \pi_{*}\left( \omega_{\pi}^{-1} \right)$.  The analysis runs
-parallel to that found in \autoref{sec:chern-classes-v2}, and so we
-skip the details, and report the results:
-
-\begin{proposition}
-  \label{prop:chernV3} The total Chern polynomial of $\V$ is:
-  \begin{align}
-    \label{eq:chernV3}
-    c(\V) = \frac{1+\hpsi_{0}t}{1-4 \hpsi_{0}t}\left(1-\Delta_{\infty}t \right) \left(1 + (\hpsi_{0}-\Delta_{\infty})t \right)  \left(1 + (2\hpsi_{0}-\Delta_{\infty})t \right) \left(1 + (3\hpsi_{0}-\Delta_{\infty})t \right).
-  \end{align}
-
-  Furthermore, we have:
-  \begin{align}
-    \label{eq:monomialsV3}
-    \int_{B_{3}}v_{1}^{4}& = 3436, \\ \nonumber
-    \int_{B_{3}} v_{1}^{2}v_{2}& = 1076,\\ \nonumber
-    \int_{B_{3}} v_{2}^{2}& = 316, \\ \nonumber
-    \int_{B_{3}} v_{1}v_{3}& = 116, \\ \nonumber
-    \int_{B_{3}} v_{4}& = 0. \nonumber
-  \end{align}
+It is time for enumerative computations.
+\begin{proposition}\label{prop:v3}
+  Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$ and let $v_i = c_i(\mathcal V)$.
+  Then we have
+  \[
+    \begin{split}
+      \int_{\widehat \M_{0,7}}v_{1}^{4} = 3436&, \quad \int_{\widehat \M_{0,7}}v_{1}^{2}v_{2} = 1076,\quad \int_{\widehat \M_{0,7}}v_{1}v_{3} = 116,\\
+      &\int_{\widehat \M_{0,7}}v_2^{2} = 316,\quad \int_{\widehat \M_{0,7}}v_{4} = 0.
+    \end{split}
+  \]
 \end{proposition}
-
 \begin{proof}
-  Mimic the analysis done in \autoref{sec:chern-classes-v2} to
-  identify $c(V)$, and use the calculations in
-  \autoref{lemma:monomials} to compute the monomials.
+  We first find the class of $\mathcal V$ in the Grothendieck group of $\widehat M_{0,7}$.
+  The computation parallels the computation in the proof \autoref{lem:v2}, so we will be brief.
+  Recall that $\phi \colon \mathcal C \to \widehat M_{0,7}$ is the universal curve with sections $\sigma_0, \sigma_1, \dots, \sigma_\infty$.
+  Setting $\mathcal L = \sigma_\infty^* \omega_\phi$, recall the bundles
+  \begin{align}
+    \mathcal A = \O \oplus \mathcal L^{-1} \text{ from \eqref{eqn:hatA}, and }
+    \mathcal S = \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \text{ from \eqref{eqn:hatS}}.
+  \end{align}
+  The cuspidal cubic $\nu \colon \mathcal C \to \P \mathcal S^\vee$ is defined by the surjection
+  \[ \phi^* \mathcal S \to \O_{\mathcal C}(3\sigma_\infty).\]
+  Let $\rho \colon \P \mathcal S^\vee \to \widehat M_{0,7}$ be the structure map and let $Z \subset \mathcal C$ be the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
+  In the Grothendieck group of $\widehat M_{0,7}$, we have
+  \begin{equation}\label{eqn:v31}
+    \begin{split}
+      \mathcal V &= \rho_* \omega^{-1}_\rho - \phi_* \left( \nu^* \omega^{-1}_\rho |_Z\right)\\
+      &= \left[(\Sym^3 \mathcal S) \otimes \det \mathcal S^\vee\right] - \left[\phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\det \mathcal S^\vee|_Z\right)\right]\\
+      &= (\Sym^3 \left( \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \right)) \otimes \mathcal L^5 - \phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\mathcal L^5\right) \\
+      & \qquad +  \phi_*\left(\mathcal \O\left(9\sigma_\infty-Z\right) \otimes \phi^*\mathcal L^5\right)\\
+      &= \mathcal L^{-1} - \mathcal L^4 + (\mathcal L^2 + \mathcal L^3 + \mathcal L^4 + \mathcal L^5) \otimes \O\left(-\Delta_0\right).       
+    \end{split}
+  \end{equation}
+  Here $\Delta_0 \subset \widehat M_{0,7}$ is the divisor $\sigma_0^* \O(\sigma_1 + \dots + \sigma_5)$.
+  This is the locus of marked curves where the marked point $\sigma_0$ coincides with $\sigma_i$ for some $i = 1, \dots, 5$.
+  In the last step of the computation, we have used \autoref{lem:push} with the section $\sigma_0$ and that 
+  \[ \sigma_0^* \O(\sigma_0) = \sigma_\infty^*\O(-\sigma_\infty) = \mathcal L,\]
+  which holds since $\sigma_0$ and $\sigma_\infty$ are two disjoint sections of a $\P^1$-bundle.
+  The rest is a straightforward computation using the Whitney sum formula.
 \end{proof}
+Let us indicate how to carry out the Chern class computation on $\widehat \M_{0,7}$.
+The boundary divisors of the Hassett spaces are products of smaller Hassett spaces.
+We can use this inductive structure to break down the computation, similar to how it is done on the usual $\overline \M_{0,7}$.
+Alternatively, we can use the map $\zeta \colon \overline \M_{0,7} \to \widehat \M_{0,7}$ to pull back the classes to $\overline \M_{0,7}$, and do the computation there.
+Let $\widehat \psi_i = c_1(\sigma_i^* \omega_\phi)$ denote the $\psi$-classes on $\widehat \M_{0,7}$ and $\psi_i$ its analogue on $\overline \M_{0,7}$.
+Let $\Delta_{i,j} \subset \overline \M_{0,7}$ be the boundary divisor whose general point corresponds to the nodal union of two smooth rational curves with one component only containing the marksed points indexed $i$ and $j$.
+It is easy to see that
+\begin{align*}
+  \zeta^* \widehat \psi_0 &= \psi_0 - \sum_{i= 1}^5 [\Delta_{0,i}], \text{ and }\\
+  \zeta^* [\Delta_{0}] &= \sum_{i= 1}^5 [\Delta_{0,i}],
+\end{align*}
+using which we can transport the entire Chern class computation to $\overline \M_{0,7}$.
+
 
 \subsubsection{Third relation}
 \label{sec:third-relation}

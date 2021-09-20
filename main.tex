@@ -1211,20 +1211,30 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 
 
-\subsection{Family $B_4$}
-
-
-
-
+\subsection{The fourth test family}
 \label{sec:family-b_4}
+Our fourth family is perhaps the most obvious one.
+We blow up 6 points on $\P^2$, four of which remain fixed, and the remaining two vary freely.
+A complication arises, however, while formalizing this construction.
+When the two varying points lie on the line joining two of the fixed points, the resulting configuration is no longer admissible.
+It takes significant effort to resolve this issue, and takes up most of this section.
+
 
 We construct our fourth family $\pi: \cX \to B_4$ by starting with a
-quintic del Pezzo surface $S$ (the blow up of the plane at four
-general points) and, informally, ``blowing up $S$ at two points which
-vary freely.''  The complication arises because we get a non-good
-cubic surface by blowing up the surface $S$ at a pair of points
-contained in one of its ten lines.  Most effort is concentrated on
-resolving this issue.
+quintic del Pezzo surface $S$ and blowing up $S$ at two points varying freely on $S$.
+To formalize this construction, the obvious choice is to take the base to be $S^{[2]}$, the Hilbert scheme of 2 points on $S$.
+However, a complication arises, which needs significant effort to be overcome.
+
+Recall that a quintic del Pezzo $S$ is the blow-up of $\P^2$ at 4 general points.
+It contains $10$ exceptional curves, say $L_1, \dots, L_{10}$.
+The cubic surface associated to a length 2 subscheme supported on $L_i$ turns out to be in the closure of every smooth cubic surface.
+As a result, the simple-minded family over $S^{[2]}$ is not good.
+Most of this section is devoted to resolving this issue.
+
+Let $\Lambda_i \subset S^{[2]}$ be the Hilbert scheme of length 2 subschemes of $L_i$.
+Then $\Lambda_i$ is isomorphic to $\P^2$.
+For $i \neq j$, the lines $L_i$ and $L_j$ are either disjoint or intersect in a single (reduced) point.
+ Therefore, $\Lambda_i$ and  $\Lambda_j$ are disjoint.
 
 The surface $S$ has $10$ exceptional lines which we denote by
 $L_{1}, \dots, L_{10}$.  Each line $L_{i}$ meets exactly three other

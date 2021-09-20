@@ -1377,17 +1377,12 @@ The last part follows immediately from the fact that $\widetilde Z \subset \math
 
 Why have we created $\mathcal{Y}$?
 We are trying to extend the family of cubic surfaces over $U$ across the
-divisor $E \subset \td{S^{[2]}}$. If $e \in E_{i}$ is any point, then
-by \autoref{prop:geometry}, the fiber $\mathcal{Y}_{e}$ is a
-$2$-component surface $S \cup_{L_{i}} \F_{1}$, with the $\F_{1}$
-containing a distinquished length $2$ subscheme, namely
-$\mathcal{Z}_{e}$.
-There are three further distinguished
-points on $\F_{1}$, all lying on $L_i$.
+divisor $E \subset \td{S^{[2]}}$.
+If $e \in E_{i}$ is any point, then by \autoref{prop:geometry}, the fiber $\mathcal{Y}_{e}$ is a $2$-component surface $S \cup_{L_{i}} \F_{1}$, with the $\F_{1}$ containing a distinquished length $2$ subscheme, namely $\mathcal{Z}_{e}$.
+There are three further distinguished points on $\F_{1}$, all lying on $L_i$.
 Each exceptional curve in $S$ intersects precisely three other exceptional curves.
-The three distinguished points of $L_i$ are its intersection points with three other exceptional curves.
-Denote the set of these 3 points by $\tau_i$.
-We will construct an extension of the family $\pi \colon \mathcal X^\circ \to U$ such that its fiber over $e \in E$ is the blow up of $\F_1$ along the length 5 scheme $\widetilde{\mathcal Z}_e \cup \tau_i$.
+The three distinguished points of $L_i$ are its intersection points with three other exceptional curves. Denote the set of these 3 points by $\tau_i$.
+In our eventual family of cubic surfaces, the fiber over $e$ will be the anti-canonical image of the blow up of $\F_1$ along the length 5 scheme $\widetilde{\mathcal Z}_e \cup \tau_i$.
 First, we must understand how $\td{\mathcal{Z}}_{e}$ is situated
 inside $\F_{1}$.
 \begin{proposition}
@@ -1445,7 +1440,9 @@ identify the restriction of $\mathcal{L}$ to a fiber
 $\mathcal{Y}_{e}$ over $e \in E_{i}$.
 \begin{proposition}
   \label{prop:LYe}
-  Let $e \in E_{i}$ be an arbitrary point, and $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.  Then
+  Let $e \in E_{i}$ be an arbitrary point, and $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.
+  Let $D \subset \F_1$ be the directrix and $T_i \subset S$ the (disjoint) union of the three exceptional curves meeting $L_i$.
+  Then
   \begin{enumerate}
   \item $\mathcal{L}|_{S} \simeq \O_{S}(T_{i})$
   \item $\mathcal{L}|_{\F_{1}} \simeq \O_{\F_{1}}(3L_{i}-D)$.
@@ -1458,8 +1455,6 @@ $\mathcal{Y}_{e}$ over $e \in E_{i}$.
   is an isomorphism onto the $6$ dimensional vector space
   $H^{0}\left(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal{I}_{\tau_{i}}\right).$
 \end{proposition}
-
-Here, $D \subset \F_{1}$ denotes the directrix curve.
 
 \begin{proof}
   The assertion about the restriction map follows from the

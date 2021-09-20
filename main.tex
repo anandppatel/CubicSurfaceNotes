@@ -462,16 +462,6 @@ ordered points on $\P^2$
 $(S, (\ell_i))$ to $(\P^2, (p_i))$, where $\beta \colon S \to \P^2$
 blows down the lines $\ell_i$ and $p_i = \beta(\ell_i)$.
 
-Finally, in our third test family we will need to use the following
-enumerative fact, originally due to Schubert, about cuspidal cubic
-curves---see the remarkable paper of Miret and Xamb\'o
-\cite{m,mir.des:89}.
-
- \begin{theorem}[Schubert, Miret, Xamb\'o]
-   \label{theorem:Schubert} There are $20$ cuspidal cubic curves
-   containing all of five general points in $\P^{2}$, and flexed at a
-   sixth general point.
- \end{theorem}
 \subsection{Equivariant Chow groups and equivariant orbits}
 The standard reference for equivariant Chow theory is \cite{edi.gra:98}.
 We recall a few relevant notions, mostly to set notation.
@@ -813,9 +803,9 @@ Our family
 \[\pi \colon X \to B\]
 is the family of cubic surfaces associated to $Z' \subset B \times \P^2$ (see \autoref{def:cubicZ}).
 It is easy to see that the family is good.
-\begin{lemma}\label{prop:goodnessB1}
+\begin{proposition}\label{prop:goodnessB1}
   The family $\pi \colon X \to B$ is good.
-\end{lemma}
+\end{proposition}
 \begin{proof}
   We show that for every $b \in B$, the group $\Aut(X_b)$ is finite (see \autoref{ex:finaut}).
   By \autoref{prop:good}, it suffices to show that the group $\Aut(\P^2, Z_b')$ is finite.
@@ -829,12 +819,12 @@ It is easy to see that the family is good.
 \end{proof}
 
 Let us evaluate the degree 4 monomials in the Chern classes of the anti-canonical section bundle.
-\begin{lemma}\label{lem:v1}
+\begin{proposition}\label{lem:v1}
   Let $\mathcal V = \pi_* \left( \omega_{X/B}^{-1} \right)$.
   Then we have
   \[
     \int_{B_{1}}v_{1}^{4} = 16, \quad \int_{B_{1}}v_{1}^{2}v_{2} = 4,\quad \int_{B_{1}}v_{1}v_{3} =0,\quad \int_{B_{1}}v_2^{2} = 1,\quad \int_{B_{1}}v_{4} = 0.\]
-\end{lemma}
+\end{proposition}
 \begin{proof}
 By the construction of the cubic surface, we see that $\mathcal V$ is the rank 4 bundle
 \[ \mathcal V = \pi_* (\mathcal I_{Z'} \otimes \omega_{\pi}^{-1}),\]
@@ -859,9 +849,9 @@ The Chern class calculation is now straightforward using the Whitney sum formula
 \end{proof}
 
 Let us find the degree of the map to moduli $B \dashrightarrow \M$.
-\begin{lemma}\label{lem:deg1}
+\begin{proposition}\label{lem:deg1}
   The degree of $B \dashrightarrow \M$ is $4320$.
-\end{lemma}
+\end{proposition}
 \begin{proof}
   Consider space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
   We have the action of $S_5$ on $\M^\dagger$ via permutations of the last 5 points.
@@ -886,8 +876,8 @@ Let us find the degree of the map to moduli $B \dashrightarrow \M$.
    Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
    Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
 
-   Since the degree of $\M^\dagger \to \M$ is $51840$, the degree of $B \to \M$ is
-   \[51840/5! \times 10 = 4320.\]
+   Since the degree of $\M^\dagger \to \M$ is $72 \times 6!$, the degree of $B \to \M$ is
+   \[72 \times 6! / 5! \times 10 = 4320.\]
 \end{proof}
 
 Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
@@ -961,9 +951,9 @@ We let
 \[ \pi \colon \mathcal X \to \overline \M_{0,7}\]
 be the family of cubic surfaces associated to $\mathcal Z \subset \mathcal P$ (see \autoref{def:cubicZ}).
 
-\begin{lemma}  \label{prop:goodnessB2}
+\begin{proposition}  \label{prop:goodnessB2}
   The family $\pi \colon \mathcal X \to \overline \M_{0,7}$ is good.
-\end{lemma}
+\end{proposition}
 \begin{proof}
   All fibers have finite automorphism groups by the same proof as \autoref{prop:goodnessB1}.
 \end{proof}
@@ -1020,13 +1010,13 @@ For the proof, we use the following.
   The result now a simple computation using $c_1(\mathcal L) = \psi_\infty$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
 \end{proof}
 
-Having computed the Chern classes, we need to find the degree of the map $\overline \M_{0,7} \dashrightarrow \M$.
-\begin{proposition}
-  The degree of $\overline \M_{0,7} \dashrightarrow \M$ is $103680$.
+Having computed the Chern classes, we need to find the degree of the moduli map $\overline \M_{0,7} \dashrightarrow \M$.
+\begin{proposition}\label{prop:deg2}
+  The degree of the map $\overline \M_{0,7} \dashrightarrow \M$ is $2 \times 72 \times 6!$.
 \end{proposition}
 \begin{proof}
   The map lifts to $\overline \M_{0,7} \dashrightarrow \M^\dagger$.
-  Since the degree of $\M^\dagger \to \M$ is $51840$, we must prove that the degree of $\overline \M_{0,7} \dashrightarrow \M^\dagger$ is $2$.
+  Since the degree of $\M^\dagger \to \M$ is $72 \times 6!$, we must prove that the degree of $\overline \M_{0,7} \dashrightarrow \M^\dagger$ is $2$.
 
   Recall that $\M^\dagger$ is isomorphic to the configuration space of 6 points in $\P^2$.
   Given a general 6-tuple of points $(s_1,\dots, s_5, y)$ in $\P^2$, there is a unique conic $C$ passing through $s_1,\dots, s_5$.
@@ -1039,7 +1029,7 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 \eqref{eqn:chernexpansion} for a general cubic surface $X$:
 \begin{align}
   \label{eq:relation2}
-  625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} = 103680.
+  625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} = 2 \times 72 \times 6!.
 \end{align}
 
 %------------------------------------------------------------------------------
@@ -1155,7 +1145,7 @@ It is time for enumerative computations.
     \mathcal A = \O \oplus \mathcal L^{-1} \text{ from \eqref{eqn:hatA}, and }
     \mathcal S = \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \text{ from \eqref{eqn:hatS}}.
   \end{align}
-  The cuspidal cubic $\nu \colon \mathcal C \to \P \mathcal S^\vee$ is defined by the surjection
+
   \[ \phi^* \mathcal S \to \O_{\mathcal C}(3\sigma_\infty).\]
   Let $\rho \colon \P \mathcal S^\vee \to \widehat M_{0,7}$ be the structure map and let $Z \subset \mathcal C$ be the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
   In the Grothendieck group of $\widehat M_{0,7}$, we have
@@ -1188,20 +1178,33 @@ It is easy to see that
 \end{align*}
 using which we can transport the entire Chern class computation to $\overline \M_{0,7}$.
 
+We now compute the degree of the rational map from $\widehat \M_{0,7}$ to the moduli space $\M$ of cubic surfaces, induced by the family $\mathcal X \to \widehat \M_{0,7}$.
+\begin{proposition}\label{prop:deg3}
+  The degree of the map $\widehat \M_{0,7} \dashrightarrow \mathfrak M$ is $20 \times 72 \times 6!$.
+\end{proposition}
+\begin{proof}
+  The map lifts to $\widehat \M_{0,7} \dashrightarrow \M^\dagger$.
+  The degree of this map is the answer to the following enumerative problem: given 6 general points in $\P^2$, how many cuspidal cubics contain the first five and have a flex point at the sixth?
+  Fortunately for us, this question has been answered already---the answer is 20.
+  The answers appears in a remarkable paper \cite{mir.des:89} of Miret and Xamb\'o, who credit it to Schubert. 
+  The paper contains a staggering number of enumerative results about cuspidal cubics.
+  Our answer is in the first column in the row labelled $v^2$ in the second table (titled ``Order 2'') in Section~12 of \cite{mir.des:89}.
 
-\subsubsection{Third relation}
-\label{sec:third-relation}
+  We briefly explain how to read off the result from the table in \cite{mir.des:89}.
+  The letter $v$ denotes the map from the (7-dimensional) space of cuspidal cubics to $\P^2$,
+  the symbol $X_0$ the locus of cuspidal cubics passing through a general point in $\P^2$, and the symbol $X_1$ the locus of cuspidal cubics tangent to a general line in $\P^2$.
+  The $i$-th column in the row labelled $v^2$ is the intersection number $(v^* H)^2 \cdot X_0^{6-i}X_1^{i-1}$, where $H \subset \P^2$ is a general line.
+  For $i = 1$, this is precisely the number of cuspidal cubics flexed at a given point and passing through 5 general points.
 
-The degree of the natural map
-$\mu': B_{3} \dashrightarrow \M^{\dagger}$ is $20$, by
-\autoref{theorem:Schubert}. Therefore, by compiling all that we have
-calculated in this section, we finally obtain our third relation:
-\begin{align}
+  Since the degree of $\M^\dagger \to M$ is $72 \times 6!$, the degree of $\widehat \M_{0,7} \dashrightarrow \M$ is $20 \times 72 \times 6!$.
+\end{proof}
+
+Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
+\eqref{eqn:chernexpansion} for a general cubic surface $X$:
+\begin{equation}
   \label{eq:relation3}
-  3436a_{1^4} + 1076a_{1^{2}2} + 116 a_{13} + 316 a_{2^{2}} = 20 \times 51840.
-\end{align}
-
-
+  3436a_{1^4} + 1076a_{1^{2}2} + 116 a_{13} + 316 a_{2^{2}} = 20 \times 72 \times 6!.
+\end{equation}
 
 
 %----------------------------------------------------------------------------

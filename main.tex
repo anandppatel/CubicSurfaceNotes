@@ -1290,7 +1290,8 @@ The next lemma is critical to our construction.
   $j: \widetilde{\mathcal{Z}} \hookrightarrow  \mathcal{Y}$.
 \end{lemma}
 \begin{proof}
-  From $\Lambda_i = \Hilb^2 L_i$, we get an equality of schemes
+  Since $\Lambda_i = \Hilb^2 L_i$, the subscheme $(\Lambda_i \times S) \cap Z$ is contained in $(\Lambda_i \times L_i)$.
+  Hence, we have an equality of schemes
   \[
     (\Lambda_i \times L_i) \cap \mathcal Z = (\Lambda_i \times S) \cap \mathcal Z.
   \]
@@ -1307,184 +1308,144 @@ The next lemma is critical to our construction.
 The following diagram summarizes the situation so far:
 \begin{center}
 \begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
-  hook, "i"] \arrow[ur, dotted, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
+  hook, "i"] \arrow[ur, dashed, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
   "{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
   "\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
-  S^{[2]}
+  S^{[2]}.
 \end{tikzcd}
 \end{center}
 
-Next, we let $\mathcal{F} \subset \mathcal{Y}$ denote the exceptional
+We let $\mathcal{F} \subset \mathcal{Y}$ denote the exceptional
 divisor of $\eta$. It has $10$ disjoint components, corresponding to
 each $F_{i}$, which in turn correspond to the ten lines $L_{i}$.
 
+To ease notation, we suppress the map $j \colon \widetilde{\mathcal Z} \to \mathcal Y$, and write $\widetilde{\mathcal Z} \subset \mathcal Y$.
+The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \mathcal Y)$ over a point $e \in E_i$.
 \begin{proposition}
   \label{prop:geometry}
   Let $e \in E_{i}$ be any point, and let
   $\mathcal{Y}_{e} = (\td{\pi}_{1} \circ \eta)^{-1}(e)$.
   \begin{enumerate}
-  \item $\mathcal{Y}_{e}$ is the union of two surfaces,
-    $S \cup \mathcal{F}_{e}$, meeting transversely along
-    $L_{i} \subset S$.  The surface $\mathcal{F}_{e}$ is isomorphic to
-    the Hirzebruch surface $\F_{1}$, and $L_{i} \subset \F_{1}$ is a
-    line, i.e. a section with self-intersection $1$.
-  \item The identification of $\mathcal{F}_{e}$ with $\F_{1}$ is such
-    that $\eta|_{\mathcal{F}_{e}} : \mathcal{F}_{e} \to L_{i}$ is the
-    natural projection expressing $\F_{1}$ as a $\P^{1}$-bundle over
-    $L_{i}$.
-  \item View the length $2$ scheme $\td{\mathcal{Z}}_{e}$ as a closed
-    subscheme of $\mathcal{Y}_{e}$ via the inclusion
-    $j : \td{\mathcal{Z}} \hookrightarrow \mathcal{Y}$.  Then
-    $\td{\mathcal{Z}}_{e} \subset \mathcal{F}_{e}$, and
-    $\td{\mathcal{Z}}_{e} \cap S = \emptyset$.
-
-  \item The subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ maps
-    isomorphically onto its image in $L_{i}$ under $\eta$.
+  \item $\mathcal{Y}_{e}$ is the union of two surfaces $S$ and $\mathcal F_e$, where $\mathcal F_e$ is a copy of the Hirzebruch surface $\F_1$.
+    They meet transversely along $L_{i} \subset S$ and a curve of self-intersection $1$ in $\F_1$.
+  \item The subscheme $\widetilde{\mathcal Z}_e \subset \mathcal Y_e$ lies in $\mathcal F_e$ and is disjoint from $S$.
+    It maps isomorphically onto its image in $L_{i}$ under $\eta$.
   \end{enumerate}
 \end{proposition}
-
-
 \begin{proof}
-  (1): The claim follows after understanding the geometry of the
-  blowup $\mathcal{Y} = \Bl_{F} \left( \td{S^{[2]}} \times S
-  \right)$. In order to do this, we must understand the normal bundle
-  $N_{F/ \td{S^{[2]}} \times S }$.  It suffices to focus
-  on the particular component $F_{i} = E_{i} \times L_{i}$.  Clearly,
-  $N_{F_{i}/ \td{S^{[2]}} \times S } = \td{\pi}_{1}^{*}
-  N_{E_{i}/\td{S^{[2]}}} \oplus \td{\pi}_{2}^{*}N_{L_{i}/S}$.  Here,
-  $\td{\pi}_{2}: E_{i} \times L_{i} \to L_{i}$ denotes the second
-  projection.
-
+  We study the blowup $\mathcal{Y} = \Bl_{F} \left( \td{S^{[2]}} \times S
+  \right)$, beginning with the normal bundle $N_{F/ \td{S^{[2]}} \times S }$.
+  We focus on the component $F_{i} = E_{i} \times L_{i}$.
+  Denoting by $\widetilde{\pi}_1 \colon F_i \to E_i$ and $\widetilde{\pi}_2 \colon F_1 \to L_i$ the two projections, we have
+  \[N_{F_{i}/ \td{S^{[2]}} \times S } = \td{\pi}_{1}^{*}
+    N_{E_{i}/\td{S^{[2]}}} \oplus \td{\pi}_{2}^{*}N_{L_{i}/S}.\]
   The component of $\mathcal{F}$ lying above $F_{i}$ is the
-  projectivization $\P N_{F_{i}/ \td{S^{[2]}} \times S }$; restricting
-  this to $L_{i} = \{e\} \times L_{i}$ yields
-  $\P (\O_{L_{i}} \oplus \O_{L_{i}}(-1))$.  Thus,
-  $\mathcal{F}_{e} \simeq \F_{1}$.  Furthermore, since
-  $\{e\} \times S \cap F_{i} = \{e\} \times L_{i}$ is a Cartier
-  divisor on $S = \{e\} \times S$, the proper transform of $S$ in
-  $\mathcal{Y}$ is just $S$ again.  Furthermore, it meets
+  projectivization $\P N_{F_{i}/ \td{S^{[2]}} \times S }$.
+  Restricting the projectivization to $\{e\} \times L_{i} \simeq L_i$ yields
+  $\P (\O_{L_{i}} \oplus \O_{L_{i}}(-1))$.
+  Thus we get  $\mathcal{F}_{e} \simeq \F_{1}$.
+  Since $(\{e\} \times S) \cap F_{i} = \{e\} \times L_{i}$ is a Cartier
+  divisor on $\{e\} \times S$, the proper transform of $\{e\} \times S$ in
+  $\mathcal{Y}$ is again a copy of $S$.
+  It meets
   $\mathcal{F}_{e} = \P (\O_{L_{i}} \oplus \O_{L_{i}}(-1)) \simeq
   \F_{1}$ along the section corresponding to the summand
-  $N_{L_{i}/S} = \O_{L_{i}}(-1)$. Altogether, we get the description of $\mathcal{Y}_{e}$ provided in (1).
+  $N_{L_{i}/S} = \O_{L_{i}}(-1)$.
+  Altogether, we get the description of $\mathcal{Y}_{e}$ provided in (1).
 
-  (2): This also follows from the geometry of the blow up described in
-  the proof of part (1).
+  Since the embedding $\widetilde {\mathcal Z} \to \widetilde{S^{[2]}} \times S$ is the composite of $\widetilde {\mathcal Z} \to \mathcal Y$ and the blow-down $\eta \colon \mathcal Y \to \widetilde{S^{[2]}} \times S$, and $\mathcal F = \eta^{-1}F$, we have
+  \[ \widetilde {\mathcal Z} \cap \mathcal F = \widetilde {\mathcal Z} \cap F.\]
+  But $F \cap \td{\mathcal{Z}} = \td{\pi}_{1}^{-1}(E) \cap
+  \td{\mathcal{Z}}$.
+  Restricting the first coordinate to a point $e \in E_i$ implies
+  $\td{\mathcal{Z}_{e}} \subset \mathcal{F}_{e}$.
 
-  (3): The lift $j: \td{\mathcal{Z}} \hookrightarrow \mathcal{Y}$ is
-  produced by using compatibility of blowups.  This implies that
-  \[j^{-1}(\mathcal{F}) = F \cap \td{\mathcal{Z}},\] since the latter
-is the exceptional divisor of the blowup (i.e. identity morphism)
-$\td{\mathcal{Z}} = \Bl_{F}(\td{\mathcal{Z}}) \to \td{\mathcal{Z}}$.
-But
-$F \cap \td{\mathcal{Z}} = \td{\pi}_{1}^{-1}(E) \cap
-\td{\mathcal{Z}}$.  Restricting attention to a specific point
-$e \in E_{i}$ implies
-$j(\td{\mathcal{Z}_{e}}) \subset \mathcal{F}_{e}$. Finally consider
+  Finally consider
 the intersection product of cycles:
 $[\td{\mathcal{Z}}] \cdot [\mathcal{Y}_{e}]$.  On the one hand, since
 $\td{\pi}_{1}: \td{\mathcal{Z}} \to \td{S^{[2]}} \times S$ is finite,
-flat and has degree $2$, this intersection product is $2$.  On the
+flat, and has degree $2$, this intersection product is $2$.  On the
 other hand, by part (1), it is equal to
 $[\td{\mathcal{Z}}] \cdot ([\mathcal{F}_{e}]+ [S]),$ and since
 $\td{\mathcal{Z}}_{e} \subset \mathcal{F}_{e}$, it follows that
 $[\td{\mathcal{Z}}] \cdot [S] = 0$, and therefore
-$\td{\mathcal{Z}} \cap S = \emptyset$, concluding part (3).
+$\td{\mathcal{Z}} \cap S = \emptyset$.
 
-(4): The restriction of $\eta$ to $j(\td{\mathcal{Z}})$ is the
-identity map $\td{\mathcal{Z}} \to \td{\mathcal{Z}}$.  Part (4)
-  immediately follows.
-
+The last part follows immediately from the fact that $\widetilde Z \subset \mathcal Y$ maps isomorphically to its image in $\widetilde{S^{[2]}} \times S$.
 \end{proof}
 
 
-Why have we created the variety $\mathcal{Y}$? Recall that we are
-trying to extend a family of good cubic surfaces over $U$ across the
+Why have we created $\mathcal{Y}$?
+We are trying to extend the family of cubic surfaces over $U$ across the
 divisor $E \subset \td{S^{[2]}}$. If $e \in E_{i}$ is any point, then
 by \autoref{prop:geometry}, the fiber $\mathcal{Y}_{e}$ is a
 $2$-component surface $S \cup_{L_{i}} \F_{1}$, with the $\F_{1}$
 containing a distinquished length $2$ subscheme, namely
-$\mathcal{Z}_{e}$. However, there are three further distinguished
-points on $\F_{1}$, namely $\tau_{i} \subset L_{i} \subset \F_{1}$.
-Therefore, there is now a natural length $5$ subscheme
-\[\tau_{i} \cup \td{\mathcal{Z}}_{e} \subset \F_{1}.\]
-{\sl The idea now is to extend our good family which lives over $U$ by
-  assigning to $e \in E_{i}$ the cubic surface which is the
-  anticanonical image of
-  $\Bl_{\tau_{i} \cup \td{\mathcal{Z}}_{e}}\F_{1}$.}
-
+$\mathcal{Z}_{e}$.
+There are three further distinguished
+points on $\F_{1}$, all lying on $L_i$.
+Each exceptional curve in $S$ intersects precisely three other exceptional curves.
+The three distinguished points of $L_i$ are its intersection points with three other exceptional curves.
+Denote the set of these 3 points by $\tau_i$.
+We will construct an extension of the family $\pi \colon \mathcal X^\circ \to U$ such that its fiber over $e \in E$ is the blow up of $\F_1$ along the length 5 scheme $\widetilde{\mathcal Z}_e \cup \tau_i$.
 First, we must understand how $\td{\mathcal{Z}}_{e}$ is situated
 inside $\F_{1}$.
-
 \begin{proposition}
   \label{prop:nodirectrix} Maintain the setting above.  The length two
   subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not entirely
   contained in the directrix $D$ of $\F_{1}$.
 \end{proposition}
-
 \begin{proof}
-  The main idea is to unravel what a point $e \in E_{i}$ represents.
-  The point $\beta(e) \in S^{[2]}$ represents a length two subscheme
-  of $L_{i}$. In fact, it is naturally identified with
-  $\td{\mathcal{Z}}_{e}$. Let us first identify the $2$-dimensional
-  vector space $N_{\Lambda_{i}/S^{[2]}}\big|_{\beta(e)}$.  We leave it
-  to the reader to check that
-  $N_{\Lambda_{i}/S^{[2]}} = N_{L_{i}/S}^{[2]} \simeq
-  \O_{L_{i}}(-1)^{[2]}$.  So,
-  \begin{align}
-    \label{eq:N2}
-    N_{\Lambda_{i}/S^{[2]}}\big|_{\beta(e)} = H^{0}\left(\td{\mathcal{Z}}_{e}, N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right). 
-  \end{align}
-  Thus, the point $e \in E_{i}$ corresponds to a $1$-dimensional
-  linear subspace, denoted
-  \[\langle e \rangle \subset H^{0}\left(\td{\mathcal{Z}}_{e},
-      N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right).\]
-
-  In fact, since $N_{E_{i}/\td{S^{[2]}}}$ restricts to $\O(-1)$ on the
-  $\P^{1}$ fibers of $\beta: E_{i} \to \Lambda_{i}$, we can and will
-  identify this $1$-dimensional subspace with
-  $N_{E_{i}/\td{S^{[2]}}}\big|_{e}$.
-
-  Tracing through the construction, the inclusion
-  $j: \td{\mathcal{Z}}_{e} \hookrightarrow \mathcal{F}_{e} =
-  \P(N_{E_{i}/\td{S^{[2]}}}\big|_{e} \oplus N_{L_{i}/S})$
-  (\autoref{prop:geometry}) is induced by the natural inclusion
-  \begin{align}
-    \label{eq:naturalinclusion}
-    \O_{\td{\mathcal{Z}}_{e}} \otimes N_{E_{i}/\td{S^{[2]}}}\big|_{e} \hookrightarrow \left(\O_{\td{\mathcal{Z}}_{e}} \otimes N_{E_{i}/\td{S^{[2]}}}\big|_{e} \right) \oplus N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}
-  \end{align}
-  induced by $(\id, \epsilon)$, where $\epsilon$ is obtained by taking
-  the composite
-  \[N_{E_{i}/\td{S^{[2]}}}\big|_{e} \hookrightarrow
-    H^{0}\left(\td{\mathcal{Z}}_{e},
-      N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\right) \to
-    N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}\] (the latter being
-  evaluation) and tensoring with $ \O_{\td{\mathcal{Z}}_{e}}$. Note
-  that the latter evaluation map is an isomorphism of $k$-vector
-  spaces.
-
-  The proposition is equivalent to the claim that the composition of
-  the inclusion \eqref{eq:naturalinclusion} with the projection to the
-  factor $ N_{L_{i}/S}\big|_{\td{\mathcal{Z}}_{e}}$ is not identically
-  $0$.  It can only be zero if the original $1$-dimensional subspace
-  $\langle e \rangle$ was $0$, which is absurd.  The proposition
-  follows.
+  The main idea is to unravel the map
+  \[ j \colon \widetilde {\mathcal Z}_e \to \F_1.\]
+  Set $Z = \widetilde{\mathcal Z}_e$ and let $N_e$ be the 1-dimensional vector space
+  \[ N_e = N_{E_i/\widetilde{S^{[2]}}} \big|_e. \]
+  From the proof of \autoref{prop:geometry}, we write the $\F_1$ component more canonically as
+  \[
+    \F_1 = \P\left(N_e \otimes \O_{L_i} \oplus N_{L_i/S}\right).
+  \]
+  The point $e \in E$ gives a (non-zero) map
+  \[
+    d \beta \colon N_e \to N_{\Lambda_i / S^{[2]}}|_{\beta(e)}.
+  \]
+  The point $\beta(e) \in \Lambda_i \subset S^{[2]}$ corresponds to the length 2 subscheme $\widetilde Z \subset L_i \subset S$.
+  It is easy to see that we have a canonical identification
+  \[
+    N_{\Lambda_i / S^{[2]}}\big |_{\beta(e)} = H^0\left(Z, N_{L_i/S}|_Z\right).
+  \]
+  We thus get a map
+  \[
+    d \beta \colon N_e \to H^0\left(Z, N_{L_i/S}|_Z\right).
+  \]
+  We leave it to the reader to verify that the map $j \colon Z \to \F_1$ is induced by the map
+  \begin{equation}\label{eqn:emap}
+    N_e \otimes \O_Z \to N_e \otimes \O_Z \oplus N_{L_i/S}|_Z
+  \end{equation}
+  given by $(\id, \epsilon \circ d\beta)$, where
+  \[
+    \epsilon \colon H^0\left(Z, N_{L_i/S}|_Z\right) \otimes \O_Z \to N_{L_i/S}|_Z
+  \]
+  Since $\epsilon$ is an isomorphism and $d \beta$ is non-zero, the second coordinate of \eqref{eqn:emap} is non-zero.
+  This non-vanishing equivalent to the proposition.
+  (Incidentally, note that the first coordinate of \eqref{eqn:emap} is invertible.
+  This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the complementary section, which is where $\F_1$ meets the other component $S$.
+  In the proof of \autoref{prop:geometry}, we concluded this fact using intersection numbers.)
 \end{proof}
 
 Next, we define a line bundle on $\mathcal{Y}$ which will induce a
-(rational map) to our family of cubic surfaces.   Let
+(rational) map to our family of cubic surfaces.   Let
 \begin{align}
   \label{eq:linebundle}
   \mathcal{L} :=\eta^{*} \left( \td{\pi}_{2}^{*}\omega_{S}^{-1} \right)(-2\mathcal{F})\otimes \eta^{*}\td{\pi}_{1}^{*}\O_{\td{S^{[2]}}}(E).
 \end{align}
 Here again, $\td{\pi}_{1}, \td{\pi}_{2}$ are the projections of
-$\td{S^{[2]}} \times S$ to respective factors. The specific reason for
+$\td{S^{[2]}} \times S$ to the respective factors. The specific reason for
 choosing this line bundle will be elucidated as we go, but first we
 identify the restriction of $\mathcal{L}$ to a fiber
-$\mathcal{Y}_{e}$, $e \in E_{i}$.
-
+$\mathcal{Y}_{e}$ over $e \in E_{i}$.
 \begin{proposition}
   \label{prop:LYe}
-  Let $e \in E_{i}$ be an arbitrary point, $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.  Then
+  Let $e \in E_{i}$ be an arbitrary point, and $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.  Then
   \begin{enumerate}
   \item $\mathcal{L}|_{S} \simeq \O_{S}(T_{i})$
   \item $\mathcal{L}|_{\F_{1}} \simeq \O_{\F_{1}}(3L_{i}-D)$.

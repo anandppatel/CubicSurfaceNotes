@@ -1217,15 +1217,14 @@ Our fourth family is perhaps the most obvious one.
 We blow up 6 points on $\P^2$, four of which remain fixed, and the remaining two vary freely.
 A complication arises, however, while formalizing this construction.
 When the two varying points lie on the line joining two of the fixed points, the resulting configuration is no longer admissible.
-It takes significant effort to resolve this issue, and takes up most of this section.
+It takes some effort to resolve this issue.
 
 Let $S$ be the blow up of $\P^2$ at 4 general points.
 Then $S$ is a quintic del Pezzo. 
 Let $S^{[2]}$ denote the Hilbert scheme of 2 points on $S$.
 We have 10 exceptional curves $L_1, \dots, L_{10}$ on $S$.
-Set $\Lambda_i = \Hilb^2 L_i \subset S^{[2]}$; this is a copy of $\P^2$.
+Set $\Lambda_i = \Hilb^2 L_i \subset S^{[2]}$; this $\Lambda_i$ is a copy of $\P^2$.
 Observe that a length 2 subscheme $Z \subset S$ is not admissible precisely when $Z$ is contained in $L_i$ for some $i$.
-(If it is, then the anti-canonical sections vanishing on $Z$ vanish along all of $L_i$.)
 For $i \neq j$, the lines $L_i$ and $L_j$ are either disjoint or intersect in a single (reduced) point.
 Therefore, $\Lambda_i$ and  $\Lambda_j$ are disjoint subsets of $S^{[2]}$.
 Let $\Lambda$ be the union of all $\Lambda_i$.
@@ -1233,65 +1232,40 @@ The crux of this
 section is to show that the blow up $\Bl_{\Lambda}S^{[2]}$ hosts a
 good family of cubic surfaces.
 
-Let $\pi_{1}$ and $\pi_{2}$ be the projections of $S^{[2]} \times S$
-two factors, and let
-\[\mathcal{Z} \subset S^{[2]} \times S\]
-be the universal subscheme. 
-Set
-\begin{equation} 
-  \label{eq:UB3}
-  U := S^{[2]} \setminus \Lambda.
-\end{equation}
-It is easy to check that if $Z \subset S$ corresponds to a point of $U$, then it is an admissible subscheme of $S$.
-Using \autoref{prop:good}, it is also easy to check that the associated cubic surface has a finite automorphism group.
-Thus, $\mathcal Z \subset S^{[2]} \times S$ yields a good family of cubic surfaces over $U$.
-By construction, it is the anti-canonical image of the blow-up
-\begin{equation}
-  \label{eq:XUB3}
-  \cX^{\circ} := \Bl_{\mathcal{Z}_{U}}(U \times S).
-\end{equation}
 Set
 \begin{equation}
   \label{eq:S2tilde}
-  \widetilde {S^{[2]}} := \Bl_{\Lambda}S^{[2]}
+  \widetilde {S^{[2]}} := \Bl_{\Lambda}S^{[2]},
 \end{equation}
-and let $\beta \colon \widetilde {S^{[2]}} \to S^{[2]}$ be the blow-down map.
+with $\beta \colon \widetilde {S^{[2]}} \to S^{[2]}$ being the blow-down map.
 For $i=1, \dots, 10$, let $E_{i} = \beta^{-1}(\Lambda_{i})$ denote the
 components of the of the exceptional divisor of the blow-up.
-Then $\beta$ expresses $E_{i}$ as a $\P^{1}$-bundle over $\Lambda_{i}$.
-
-Next, let $\widetilde{Z} = \widetilde{S^{[2]}} \times_{S^{[2]}} Z$
-be the fiber-product.
-Then $\widetilde{Z}$ is a closed subscheme of the
-product $\widetilde{S^{[2]}} \times S$, and is a finite, flat, degree
-two cover of $\widetilde{S^{[2]}}$ under the first projection
-$\widetilde{\pi}_{1} : \widetilde{Z} \to \widetilde{S^{[2]}}.$
-
-Inside the product $\widetilde{S^{[2]}} \times S$ we define the
-smooth, closed, codimension $2$ subschemes
-\begin{align}
-  \label{eq:Fi}
-  F_{i} := E_{i} \times L_{i},
-\end{align}
-and we let $F$ be the (disjoint) union $\bigcup_{i}F_{i}$.
-We perform one more blow-up along $F$ to get
+Consider
+\[ F_i: = E_i \times L_i \subset \widetilde {S^{[2]}} \times S,\]
+and let $F$ be the (disjoint) union $F = \bigcup_i F_i$.
+Set
 \begin{equation}
   \label{eq:Xtilde}
   \mathcal{Y} := \Bl_{F}\left( \widetilde{S^{[2]}} \times S \right),
 \end{equation}
-and denote by $\eta: \mathcal{Y} \to \widetilde{S^{[2]}} \times S $
-the blowdown.
+with $\eta \colon \mathcal Y \to  \widetilde{S^{[2]}} \times S$ being the blow-down map.
+Consider the map
+\[ \widetilde \pi \colon \mathcal Y \to \widetilde {S^{[2]}}\]
+obtained by composing $\eta$ with the projection on to the first factor.
+It is easy to check that $\widetilde \pi$ is a flat family of surfaces, isomorphic to the constant family with fiber $S$ over the complement of $E$ in $\widetilde{S^{[2]}}$.
 
+Let $\mathcal Z \subset S^{[2]} \times S$ be the universal closed subscheme of length 2.
+Let $\widetilde {\mathcal Z} \subset \widetilde{S^{[2]}} \times S$ be the fiber product
+\[ \widetilde {\mathcal Z} = \mathcal Z \times_{S^{[2]}} \widetilde {S^{[2]}}.\]
 The next lemma is critical to our construction.
-.
 \begin{lemma}
-  The closed immersion
+  The closed embedding
   $i: \widetilde{\mathcal{Z}} \hookrightarrow \widetilde{S^{[2]}}
-  \times S$ lifts to a closed immersion
+  \times S$ lifts to a closed embedding
   $j: \widetilde{\mathcal{Z}} \hookrightarrow  \mathcal{Y}$.
 \end{lemma}
 \begin{proof}
-  Since $\Lambda_i = \Hilb^2 L_i$, the subscheme $(\Lambda_i \times S) \cap Z$ is contained in $(\Lambda_i \times L_i)$.
+  Since $\Lambda_i = \Hilb^2 L_i$, the subscheme $(\Lambda_i \times S) \cap \mathcal Z$ is contained in $(\Lambda_i \times L_i)$.
   Hence, we have an equality of schemes
   \[
     (\Lambda_i \times L_i) \cap \mathcal Z = (\Lambda_i \times S) \cap \mathcal Z.
@@ -1301,17 +1275,15 @@ The next lemma is critical to our construction.
     \label{eq:Cartier}
     F_i \cap \widetilde{\mathcal{Z}} = (E_i \times S) \cap \widetilde{\mathcal{Z}}.
   \end{equation}
-  By the universal property of the blow up, we get a lift
-  \[ j \colon \widetilde{\mathcal Z} \to \mathcal Y.\]
+  In particular, $F_i \cap \widetilde {\mathcal Z}$ is a Cartier divisor.
+  By the universal property of the blow up, we get a lift $j \colon \widetilde{\mathcal Z} \to \mathcal Y$.
   Since $i = \beta \circ j$ is a closed embedding, so is $j$.
 \end{proof}
 
 The following diagram summarizes the situation so far:
 \begin{center}
 \begin{tikzcd} & \mathcal{Y} \arrow[d, "\eta"] & & \\ \td{\mathcal{Z}} \arrow[r,
-  hook, "i"] \arrow[ur, dashed, hook, "j"] & \td{S^{[2]}} \times S \arrow[r,
-  "{(\beta \times \id)}"] \arrow[d, "\td{\pi}_{1}"] & S^{[2]}\times S \arrow[d,
-  "\pi_{1}"] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
+  hook, "i"] \arrow[ur, hook, "j"] & \td{S^{[2]}} \times S \arrow[r] \arrow[d] & S^{[2]}\times S \arrow[d] \\ & \td{S^{[2]}} \arrow[r, "\beta"] &
   S^{[2]}.
 \end{tikzcd}
 \end{center}
@@ -1319,15 +1291,15 @@ The following diagram summarizes the situation so far:
 We let $\mathcal{F} \subset \mathcal{Y}$ denote the exceptional
 divisor of $\eta$. It has $10$ disjoint components, corresponding to
 each $F_{i}$, which in turn correspond to the ten lines $L_{i}$.
-
 To ease notation, we suppress the map $j \colon \widetilde{\mathcal Z} \to \mathcal Y$, and write $\widetilde{\mathcal Z} \subset \mathcal Y$.
-It is easy to check that the map $\mathcal Y \to \widetilde{S^{[2]}}$ is flat.
-Its fiber over a point in the complement of the $E_i$'s is just $S$.
-The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \mathcal Y)$ over a point $e \in E_i$; see \autoref{fig:familyY} for a picture.
+
+Let us study the family $\widetilde \pi \colon \mathcal Y \to \widetilde{S^{[2]}}$.
+Its fiber over a point in the complement of $E$ is just $S$.
+The following proposition describes the fiber of $\mathcal Y$ over $e \in E_i$, along with the fiber of $\widetilde{\mathcal Z}$ in it; see \autoref{fig:familyY} for a picture.
 \begin{figure}
   \centering
     \input{figures/familyY}
-    \caption{The family of surfaces $\mathcal Y \to \widetilde S^{[2]}$ and the subscheme $\widetilde {\mathcal Z} \subset \mathcal Y$.
+    \caption{The family of surfaces $\mathcal Y \to \widetilde {S^{[2]}}$ and the subscheme $\widetilde {\mathcal Z} \subset \mathcal Y$.
       The dashed lines on the central fiber represent the three exceptional curves of $S$ intersecting the double curve.
     }
     \label{fig:familyY}
@@ -1336,7 +1308,7 @@ The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \m
 \begin{proposition}
   \label{prop:geometry}
   Let $e \in E_{i}$ be any point, and let
-  $\mathcal{Y}_{e} = (\td{\pi}_{1} \circ \eta)^{-1}(e)$.
+  $\mathcal{Y}_{e} = \widetilde \pi^{-1}(e)$.
   \begin{enumerate}
   \item $\mathcal{Y}_{e}$ is the union of two surfaces $S$ and $\mathcal F_e$, where $\mathcal F_e$ is a copy of the Hirzebruch surface $\F_1$.
     They meet transversely along $L_{i} \subset S$ and a curve of self-intersection $1$ in $\F_1$.
@@ -1349,9 +1321,9 @@ The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \m
   We study the blowup $\mathcal{Y} = \Bl_{F} \left( \td{S^{[2]}} \times S
   \right)$, beginning with the normal bundle $N_{F/ \td{S^{[2]}} \times S }$.
   We focus on the component $F_{i} = E_{i} \times L_{i}$.
-  Denoting by $\widetilde{\pi}_1 \colon F_i \to E_i$ and $\widetilde{\pi}_2 \colon F_1 \to L_i$ the two projections, we have
-  \[N_{F_{i}/ \td{S^{[2]}} \times S } = \td{\pi}_{1}^{*}
-    N_{E_{i}/\td{S^{[2]}}} \oplus \td{\pi}_{2}^{*}N_{L_{i}/S}.\]
+  Denoting by ${\pi}_1 \colon F_i \to E_i$ and ${\pi}_2 \colon F_i \to L_i$ the two projections, we have
+  \[N_{F_{i}/ \td{S^{[2]}} \times S } = {\pi}_{1}^{*}
+    N_{E_{i}/\td{S^{[2]}}} \oplus {\pi}_{2}^{*}N_{L_{i}/S}.\]
   The component of $\mathcal{F}$ lying above $F_{i}$ is the
   projectivization $\P N_{F_{i}/ \td{S^{[2]}} \times S }$.
   Restricting the projectivization to $\{e\} \times L_{i} \simeq L_i$ yields
@@ -1366,46 +1338,40 @@ The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \m
   $N_{L_{i}/S} = \O_{L_{i}}(-1)$.
   Altogether, we get the description of $\mathcal{Y}_{e}$ provided in (1).
 
-  Since the embedding $\widetilde {\mathcal Z} \to \widetilde{S^{[2]}} \times S$ is the composite of $\widetilde {\mathcal Z} \to \mathcal Y$ and the blow-down $\eta \colon \mathcal Y \to \widetilde{S^{[2]}} \times S$, and $\mathcal F = \eta^{-1}F$, we have
+  Since the embedding $\widetilde {\mathcal Z} \to \widetilde{S^{[2]}} \times S$ is the composite
+  \[\widetilde {\mathcal Z} \to \mathcal Y \xrightarrow{\eta} \widetilde{S^{[2]}} \times S,\]
+  and $\mathcal F = \eta^{-1}(F)$, we have
   \[ \widetilde {\mathcal Z} \cap \mathcal F = \widetilde {\mathcal Z} \cap F.\]
-  But $F \cap \td{\mathcal{Z}} = \td{\pi}_{1}^{-1}(E) \cap
-  \td{\mathcal{Z}}$.
-  Restricting the first coordinate to a point $e \in E_i$ implies
+  We have already seen in \eqref{eq:Cartier} that
+  \[F \cap \td{\mathcal{Z}} = (E \times S)\cap \td{\mathcal{Z}}.\]
+  Restricting the first coordinate of $E \times S$ to $e$ implies
   $\td{\mathcal{Z}_{e}} \subset \mathcal{F}_{e}$.
 
-  Finally consider
-the intersection product of cycles:
+  To see that $\widetilde Z_e$ is disjoint from $S$, consider
+the intersection product
 $[\td{\mathcal{Z}}] \cdot [\mathcal{Y}_{e}]$.  On the one hand, since
-$\td{\pi}_{1}: \td{\mathcal{Z}} \to \td{S^{[2]}} \times S$ is finite,
+$\td{\mathcal{Z}} \to \td{S^{[2]}} \times S$ is finite,
 flat, and has degree $2$, this intersection product is $2$.  On the
 other hand, by part (1), it is equal to
-$[\td{\mathcal{Z}}] \cdot ([\mathcal{F}_{e}]+ [S]),$ and since
-$\td{\mathcal{Z}}_{e} \subset \mathcal{F}_{e}$, it follows that
-$[\td{\mathcal{Z}}] \cdot [S] = 0$, and therefore
-$\td{\mathcal{Z}} \cap S = \emptyset$.
+$[\td{\mathcal{Z}}] \cdot ([\mathcal{F}_{e}]+ [S])$.
+Since we have
+$\td{\mathcal{Z}}_{e} \subset \mathcal{F}_{e}$, we get
+$[\td{\mathcal{Z}}] \cdot [S] = 0$, and hence $\td{\mathcal Z}$ must be disjoint from $S$.
 
-The last part follows immediately from the fact that $\widetilde Z \subset \mathcal Y$ maps isomorphically to its image in $\widetilde{S^{[2]}} \times S$.
+The last assertion follows immediately from the fact that $\widetilde Z \subset \mathcal Y$ maps isomorphically to its image in $\widetilde{S^{[2]}} \times S$.
 \end{proof}
 
-
-Why have we created $\mathcal{Y}$?
-We are trying to extend the family of cubic surfaces over $U$ across the
-divisor $E \subset \td{S^{[2]}}$.
-If $e \in E_{i}$ is any point, then by \autoref{prop:geometry}, the fiber $\mathcal{Y}_{e}$ is a $2$-component surface $S \cup_{L_{i}} \F_{1}$, with the $\F_{1}$ containing a distinquished length $2$ subscheme, namely $\mathcal{Z}_{e}$.
-There are three further distinguished points on $\F_{1}$, all lying on $L_i$.
-Each exceptional curve in $S$ intersects precisely three other exceptional curves.
-The three distinguished points of $L_i$ are its intersection points with three other exceptional curves. Denote the set of these 3 points by $\tau_i$.
-In our eventual family of cubic surfaces, the fiber over $e$ will be the anti-canonical image of the blow up of $\F_1$ along the length 5 scheme $\widetilde{\mathcal Z}_e \cup \tau_i$.
-First, we must understand how $\td{\mathcal{Z}}_{e}$ is situated
-inside $\F_{1}$.
+The following proposition provides one more necessary detail about the position of $\widetilde {\mathcal Z}_e$ in the $\F_1$ component of $\mathcal Y_e$.
 \begin{proposition}
-  \label{prop:nodirectrix} Maintain the setting above.  The length two
-  subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not entirely
-  contained in the directrix $D$ of $\F_{1}$.
+  \label{prop:nodirectrix}
+  Maintain the notation of \autoref{prop:geometry}.
+  The length two
+  subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not contained in the directrix of $\F_{1}$.
 \end{proposition}
 \begin{proof}
-  The main idea is to unravel the map
-  \[ j \colon \widetilde {\mathcal Z}_e \to \F_1.\]
+  The proof follows easily from unraveling the map
+  \[ j \colon \widetilde {\mathcal Z}_e \to \F_1,\]
+  which we now do.
   Set $Z = \widetilde{\mathcal Z}_e$ and let $N_e$ be the 1-dimensional vector space
   \[ N_e = N_{E_i/\widetilde{S^{[2]}}} \big|_e. \]
   From the proof of \autoref{prop:geometry}, we write the $\F_1$ component more canonically as
@@ -1416,7 +1382,7 @@ inside $\F_{1}$.
   \[
     d \beta \colon N_e \to N_{\Lambda_i / S^{[2]}}|_{\beta(e)}.
   \]
-  The point $\beta(e) \in \Lambda_i \subset S^{[2]}$ corresponds to the length 2 subscheme $\widetilde Z \subset L_i \subset S$.
+  The point $\beta(e) \in \Lambda_i \subset S^{[2]}$ corresponds to the length 2 subscheme $Z \subset L_i \subset S$.
   It is easy to see that we have a canonical identification
   \[
     N_{\Lambda_i / S^{[2]}}\big |_{\beta(e)} = H^0\left(Z, N_{L_i/S}|_Z\right).
@@ -1436,213 +1402,109 @@ inside $\F_{1}$.
   Since $\epsilon$ is an isomorphism and $d \beta$ is non-zero, the second coordinate of \eqref{eqn:emap} is non-zero.
   This non-vanishing equivalent to the proposition.
   (Incidentally, note that the first coordinate of \eqref{eqn:emap} is invertible.
-  This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the co-directrix where $\F_1$ meets the other component $S$.
+  This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the curve where $\F_1$ meets the other component $S$.
   In the proof of \autoref{prop:geometry}, we concluded this fact using intersection numbers.)
 \end{proof}
 
-Next, we define a line bundle on $\mathcal{Y}$ which will induce a
-(rational) map to our family of cubic surfaces.   Let
-\begin{align}
-  \label{eq:linebundle}
-  \mathcal{L} :=\eta^{*} \left( \td{\pi}_{2}^{*}\omega_{S}^{-1} \right)(-2\mathcal{F})\otimes \eta^{*}\td{\pi}_{1}^{*}\O_{\td{S^{[2]}}}(E).
-\end{align}
-Here again, $\td{\pi}_{1}, \td{\pi}_{2}$ are the projections of
-$\td{S^{[2]}} \times S$ to the respective factors. The specific reason for
-choosing this line bundle will be elucidated as we go, but first we
-identify the restriction of $\mathcal{L}$ to a fiber
-$\mathcal{Y}_{e}$ over $e \in E_{i}$.
+We are now in a position to describe the family of cubic surfaces.
+Consider the family
+\[ \widetilde \pi \colon \mathcal Y \to \widetilde{S^{[2]}},\]
+along with $\widetilde {\mathcal Z} \subset \mathcal Y$.
+Set $U = \widetilde{S^{[2]}} \setminus E$.
+Over $U$, the $\widetilde{\mathcal Z}$ is an admissible subscheme of $\mathcal Y$, and here our family will be the associated cubic surface as in \autoref{def:cubicZ}.
+We now describe, our cubic surface over a point $e \in E_i$.
+In the $S$ component of $\mathcal Y_e$, we have three exceptional curves that meet the double curve $L_i \subset S$.
+They intersect $L_i$ in three distinct points, and are pairwise disjoint.
+Let $T_i$ be their union.
+In our schematic \autoref{fig:familyY}, these are indicated by the dashed lines.
+On the $\F_1$ component, we have distinguished length 5 subscheme: the length two subscheme $\widetilde{\mathcal Z}_e$, and the 3 points $\tau_i := T_i \cap L_i$.
+This subscheme of length 5 is admissible, and our cubic surface over $e$ will be its associated cubic surface.
+
+We construct the family that we described fiber-wise above using the linear series associated to the line bundle
+\begin{equation}\label{eqn:l1}
+  \mathcal L = \omega_{\widetilde \pi}^{-1} \otimes \O_{\mathcal Y}(-\mathcal F).
+\end{equation}
+Since $\mathcal Y$ is the blow up of $\widetilde{S^{[2]}} \times S$ with exceptional divisor $\mathcal F$, we can also write this line bundle as
+\begin{equation}\label{eqn:l2}
+  \mathcal L = \omega_{S}^{-1} \otimes \O_{\mathcal Y}(-2\mathcal F).
+\end{equation}
+The following proposition describes $\mathcal L$ on the degenerate fibers of $\widetilde \pi$.
 \begin{proposition}
   \label{prop:LYe}
-  Let $e \in E_{i}$ be an arbitrary point, and $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as above.
-  Let $D \subset \F_1$ be the directrix and $T_i \subset S$ the (disjoint) union of the three exceptional curves meeting $L_i$.
+  Let $e \in E_{i}$ and $\mathcal{Y}_{e} = S \cup_{L_{i}} \F_{1}$ as in \autoref{prop:geometry}.
+  Let $T_i \subset S$ be the union of the three exceptional curves meeting $L_i$ and set $\tau_i = L_i \cap T_i$.
   Then
   \begin{enumerate}
-  \item $\mathcal{L}|_{S} \simeq \O_{S}(T_{i})$
-  \item $\mathcal{L}|_{\F_{1}} \simeq \O_{\F_{1}}(3L_{i}-D)$.
-  \end{enumerate}
-  Furthermore, the restriction map
+  \item $\mathcal{L}|_{S} \simeq \O_{S}(T_{i})$. 
+  \item $\mathcal{L}|_{\F_{1}} \simeq \omega_{\F_1}^{-1}$.
+  \item The restriction map
   \begin{align}
     \label{eq:restrL}
-    H^{0}(\mathcal{Y}_{e}, \mathcal{L}|_{\mathcal{Y}_{e}}) \to H^{0}(\F_{1}, \O_{\F_{1}}(3L_{i}-D))
+    H^{0}(\mathcal{Y}_{e}, \mathcal{L}|_{\mathcal{Y}_{e}}) \to H^{0}(\F_{1}, \omega_{\F_1}^{-1})
   \end{align}
   is an isomorphism onto the $6$ dimensional vector space
-  $H^{0}\left(\F_{1}, \O_{\F_{1}}(3L_{i}-D) \otimes \mathcal{I}_{\tau_{i}}\right).$
+  $H^{0}\left(\F_{1}, \omega_{\F_1}^{-1}\otimes \mathcal{I}_{\tau_{i}}\right).$
+\item The base locus of the complete linear system $|\mathcal L|$ on $\mathcal Y_e$ is $T_i$.
+  \end{enumerate}
 \end{proposition}
-
 \begin{proof}
-  The assertion about the restriction map follows from the
-  identifications (1) and (2), after noting that $\O_{S}(T_{i})$ has a
-  unique global section vanishing simply along the three disjoint
-  lines $T_{i} \subset S$.
+  We have $\omega_S^{-1} = \O(T_i + 2L_i)$.
+  Using this and \eqref{eqn:l2} gives $\mathcal L|_S = \O_S(T_i)$.
 
-  By the definition of $\mathcal{L}$ and \autoref{prop:geometry} (1),
-  we see that
-  $\mathcal{L}|_{S} = \omega_{S}^{-1} \otimes \O_{S}(-2L_{i})$. Now
-  since $c_{1}( \omega_{S}^{-1}) = T_{i} + 2L_{i}$, assertion (1) follows.
+  Let $\mathcal S \subset \mathcal Y$ be the proper transform of $E \times S \subset \widetilde{S^{[2]}} \times S$, so that the preimage in $\mathcal Y$ of $E \times S$ is the sum $\mathcal F + \mathcal S$  .
+  Then we have
+  \[\O(\mathcal F)|_{\F_1} = \O(-\mathcal S)|_{\F_1}.\]
+  Since $\omega_S^{-1} \cdot L_i = 1$, the pull-back of $\omega_S^{-1}$ to $\F_1$ is the class of a fiber.
+  Since $\omega^{-1}_{\F_1}$ is the sum of a fiber class and 2 times the class of a section of self-intersection 1, we get $\mathcal L|_{\F_1} = \omega_{\F_1}^{-1}$.
 
-  Assertion (2) requires us to identify how
-  $\O_{\mathcal{Y}}(\mathcal{F})$ restricts to $\mathcal{F}_{e}$. Let
-  $\mathcal{S} \subset \mathcal{Y}$ denote the proper transform of
-  $E \times S$ in $\mathcal{Y}$; note that
-  $\eta: \mathcal{S} \to E \times S$ is an isomorphism.  Then on
-  $\mathcal{Y}$ we get an equality of divisors:
-  \[\mathcal{F} = \eta^{*}\td{\pi}_{1}^{*}(E) - \mathcal{S}.\]
-  Restricting both sides to $\mathcal{F}_{e}$, while using
-  \autoref{prop:geometry} part (1), we get:
-  \[\O_{\F_{1}}(\mathcal{F}) = \O_{\F_{1}}(-L_{i}).\] Finally, letting
-  $R \subset \F_{1}$ denote a ruling line (so $R+D = L_{i}$), we get
-  that
-  $\eta^{*}\td{\pi}_{2}^{*}(\omega_{S}^{-1})|_{\F_{1}} =
-  \O_{\F_{1}}(R)$ because $\omega_{S}^{-1}$ has degree $1$ on $L_{i}$.
-  Now, we simply use the definition of $\mathcal{L}$ to deduce
-  assertion (2).
+  The statements about the dimension and the base locus of $|\mathcal L|$ on $\mathcal Y_e$ are straightforward.
+  The only key point is that $\O_S(T_i)$ is one-dimensional, and the vanishing locus of its non-zero sections is $T_i$.
 \end{proof}
 
-Finally, we set
-\begin{align}
-  \label{eq:V4}
-  \mathcal{W} := (\td{\pi}_{1} \circ \eta)_{*}\left(\mathcal{L} \otimes \mathcal{I}_{\td{\mathcal{Z}}}\right).
-\end{align}
+Let
+\[
+\mathcal W := \widetilde \pi_* \left( \mathcal L \otimes \mathcal I_{\widetilde{\mathcal Z}} \right).
+\]
+It follows from Grauert's theorem that $\mathcal W$ is a vector bundle of rank 4.
+Consider the rational map
+\[ \kappa \colon \mathcal Y \dashrightarrow \P \mathcal W^\vee\]
+induced by the evaluation
+\[ \widetilde \pi^* \mathcal W \to \mathcal L.\]
+It is easy to check that for every $e \in \widetilde{S^{[2]}}$, the image of $\kappa(\mathcal Y_e)$ is contained in a unique cubic surface in $\P \mathcal W^\vee|_e$.
+Let $\mathcal X \subset \P \mathcal W^\vee$ be the resulting family of cubic surfaces.
+More precisely, consider the map
+\[ \Sym^3 \mathcal W \to \pi_*(\mathcal L^3)\]
+and verify (by looking at the fibers) that both sides are vector bundles and the map is surjective with kernel of rank 1.
+The rank 1 kernel defines the cubic $\mathcal X \subset \P \mathcal W^\vee$.
+Let $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$ be the obvious map.
 
-By combining \autoref{prop:geometry}, \autoref{prop:nodirectrix}, and
-\autoref{prop:LYe}, we leave it to the reader to check that:
-
-\begin{enumerate}\label{propertieskappa}
-\item $\mathcal{W}$ is a rank $4$ vector bundle on $\td{S^{[2]}}$, and
-\item for each $e \in E_{i}$, the base scheme of
-  $\mathcal{W}|_{e} \subset
-  H^{0}\left(\mathcal{Y}_{e},\mathcal{L}_{\mathcal{Y}_{e}}\right)$ is
-  the scheme $T_{i} \cup \td{\mathcal{Z}}_{e}$.
-\end{enumerate}
-
-The natural evaluation map
-$(\td{\pi}_{1} \circ \eta)^{*}\mathcal{W} \to \mathcal{L}$ on
-$\mathcal{Y}$ induces a rational map
-\begin{align}
-  \label{eq:kappa4}
-  \kappa: \mathcal{Y} \dashrightarrow \P \mathcal{W}.
-\end{align}
-
-The image of $\kappa$, by which we mean the closure of the image of
-the locus on which $\kappa$ is defined, will be denoted
-\[\mathcal{X} \subset \P \mathcal{W}, \] and $\pi: \mathcal{X} \to \td{S^{[2]}}$ the natural map. By \autoref{prop:LYe}, if
-$e \in E_{i}$ is any point, the surface $\mathcal{X}_{e}$ is the
-anti-canonical image of the surface
-$\Bl_{\td{\mathcal{Z}}_{e} \cup \tau_{i}} \F_{1}$.  Note that
-$\mathcal{X}_{e}$ is singular, because the proper transform of $L_{i}$
-is a contracted $(-2)$-curve. We leave it to the reader to verify the
-following, using \autoref{prop:geometry} (3) and (4), and
-\autoref{prop:nodirectrix}:
+The next proposition identifies the anti-canonical bundle of $\pi$.
+\begin{proposition}
+  We have $\omega_\pi^{-1} = \O(1) \otimes \pi^*\O(E)$.
+\end{proposition}
+\begin{proof}
+  Let $\widehat {\mathcal Y}$ be the blow-up of $\mathcal Y$ along $\widetilde{\mathcal Z}$ and $\widehat \pi \colon \widehat{\mathcal Y} \to \widetilde{S^{[2]}}$ the resulting map.
+  Then it is easy to check that the rational map $\widehat\kappa \colon \widehat {\mathcal Y} \dashrightarrow \mathcal X$ (induced by $\kappa$) extends to a regular map away from the union of the curves $T_i$ over the points of $E_i$.
+  Recall that $\mathcal S \subset \mathcal Y$ is the proper transform of $E \times S$, so that $\widetilde \pi^* \O(E) = \mathcal F + \mathcal S$.
+  The restriction
+  \[
+    \widehat {\mathcal Y} \setminus \mathcal S \dashrightarrow \mathcal X
+  \]
+  is an isomorphism away from a locus of codimension at least 2 on both sides.
+  If $\widehat Z \subset \widehat {\mathcal Y}$ is the exceptional divisor of the blow-up, then we have
+  \[\widehat \kappa ^* \O(1) = \mathcal L(-\widehat Z) = \omega_{\widehat \pi}^{-1} \otimes \O(-\mathcal F).
+  \]
+  We see that the line bundles $\widehat \kappa^* \O(1) \otimes \widehat \pi^* \O(E)$ and $\omega_{\widetilde \pi}^{-1}$ are isomorphic on $\widehat {\mathcal Y} \setminus \mathcal S$, and hence the line bundles $\O(1) \otimes \pi^* \O(E)$ and $\omega_\pi^{-1}$ are isomorphic on $\mathcal X$.
+\end{proof}
 
 \begin{proposition}
   \label{prop:good4} The family $\pi: \mathcal{X} \to \td{S^{[2]}}$ is
   good.
 \end{proposition}
-
 \begin{proof}
-  Omitted.
+  Over $e \not \in E$, the cubic $\mathcal X_e$ is the one associated to $\mathcal Z_e \subset S$, and over $e \in E$, say $e \in E_i$, the cubic $\mathcal X_e$ is the one associated to $\widetilde {\mathcal Z}_e \cup \tau_i \subset \F_1$.
+  In both cases, it is easy to verify using \autoref{prop:good} that $\mathcal X_e$ has a finite automorphism group.
 \end{proof}
-
-The attentive reader will ask: what role does the twist by
-$\O_{\td{S^{[2]}}}(E)$ in the definition of $\mathcal{L}$
-\eqref{eq:linebundle} play? (It has played no role in the analysis up
-to this point.)  The next proposition explains this:
-
-\begin{proposition}
-  \label{prop:whyE} Maintain the setting above.  Then
-  $\mathcal{W} = \pi_{*}\left( \omega_{\pi}^{-1} \right)$,
-  i.e. $\mathcal{W} = \V$.
-\end{proposition}
-
-\begin{proof}
-  The indeterminacy locus of $\kappa$ is a codimension $2$ subscheme
-  of $\mathcal{Y}$, therefore, it makes sense to pull back line
-  bundles under $\kappa$.  The content of the proposition is to show that:
-  \[ \mathcal{L} = \kappa^{*}\left( \omega_{\pi}^{-1} \right).\]
-
-  To see this, first note that these two line bundles agree over the
-  open set $U \times S \subset \mathcal{Y}$.  The complement
-  $\mathcal{Y} \setminus U \times S$ is the union of two divisors,
-  $\mathcal{F}$ and $\mathcal{S}$; see the proof of
-  \autoref{prop:LYe}.  (The pullback of $E$ to $\mathcal{Y}$ is
-  $\mathcal{F} + \mathcal{S}$.)
-
-   We conclude there is a relationship of the form
-   \[c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left(
-         \omega_{\pi}^{-1} \right) \right) = a\mathcal{F} +
-     b\mathcal{S}.\] We must show that $a = b = 0$.  To do so, we will
-   restrict this relation to certain subschemes of $\mathcal{Y}$.
-
-  First, choose any point $e \in E_{i}$, and restrict the relation to
-  the surface $\mathcal{F}_{e} \simeq \F_{1}$.  The left hand side
-  restricts to $\O_{\F_{1}}$.  The right side restricts to
-  $\O\left( (b-a)L_{i} \right)$.  Thus, $a=b$.
-
-  Thus,
-  $c_{1} \mathcal{L} - c_{1} \left( \kappa^{*}\left( \omega_{\pi}^{-1}
-    \right) \right)$ is the pullback of $\O_{\td{S^{[2]}}}(aE_{i})$
-  for some integer $a$, and we must prove that $a = 0$.  In order to
-  do this, we will restrict to a different surface.  First, choose a
-  general fiber $P \subset E_{i}$ of the blow-down map
-  $\beta: E_{i} \to \Lambda_{i}$; $P \simeq \P^{1}$.  Let
-  $\mathcal{D} \subset \mathcal{Y}$ denote the surface which is traced
-  out by the directrices of $\mathcal{F}_{e}$ as $e$ varies in $P$.
-  Note that $\mathcal{D} \simeq P \times L_{i}$.  $\mathcal{D}$ is a
-  divisor in the threefold
-  $\mathcal{F}_{P} := \mathcal{F} \cap (\td{\pi_{1}} \circ
-  \eta)^{-1}(P)$; the map $\eta$ expresses $\mathcal{F}_{P}$ as a
-  $\P^{1}$-bundle over $P \times L$, namely the projectivization
-  $\P \left( \O_{P}(-1) \oplus \O_{L_{i}}(-1) \right).$ (Here and in
-  what follows, we will suppress pull-back notation when we pull line
-  bundles back along the two projection maps
-  $P \times L_{i} \to L_{i}$.)
-
-  With regard to the $\P^{1}$-bundle structure of
-  $\eta: \mathcal{F}_{P} \to P \times L_{i}$, the divisor
-  $\mathcal{D} \subset \mathcal{F}_{P}$ is a section, corresponding to
-  the inclusion of the first factor
-  \[\O_{P}(-1) \hookrightarrow \O_{P}(-1) \oplus \O_{L_{i}}(-1). \]
-
-  Therefore, letting $\O_{\mathcal{F}}(1)$ denote the natural line
-  bundle of the projective bundle $\mathcal{F}$, this translates into
-  $\O_{\mathcal{F}}(-1)|_{\mathcal{D}} = \O_{P}(-1)$. (Here we are
-  identifying $\mathcal{D}$ with $P \times L_{i}$ in the natural way.)
-  As is generally the case with blow-ups, we know that
-  $\O_{\mathcal{Y}}(\mathcal{F})\big|_{\mathcal{F}} =
-  \O_{\mathcal{F}}(-1)$, and therefore,
-  \begin{align}\label{eq:FtoD}
-    \O_{\mathcal{Y}}(\mathcal{F}) \big|_{\mathcal{D}} = \O_{P}(-1).
-  \end{align}
-
-  Now we can identify $\mathcal{L}|_{\mathcal{D}}$: The three factors
-  of $\mathcal{L}$ are (suppressing pullbacks):
-  $\omega_{S}^{-1}, \O_{\mathcal{Y}}(\mathcal{F}),$ and $\O(E)$. These
-  three restrict to $\mathcal{D}$ as: $\O_{L_{i}}(1), \O_{P}(-1),$ and
-  $ \O_{P}(-1)$ respectively, thanks to \eqref{eq:FtoD}, and the fact
-  that $\O_{E}(E) = \O_{E}(-1)$.  Thus,
-  \begin{align}
-    \label{eq:LtoD}
-    \mathcal{L}|_{\mathcal{D}} = \O_{P}(1) \otimes \O_{L_{i}}(1).
-  \end{align}
-
-  Next, we identify $\kappa^{*}(\omega_{\pi})|_{\mathcal{D}}$.
-  Restricting attention over $P$, the map
-  $\kappa: \mathcal{F}_{P} \dashrightarrow \mathcal{X}_{P}$ is still
-  defined outside a codimension $2$ subscheme of $\mathcal{F}_{P}$.
-  The pullback of forms map
-  $\kappa^{*}(\omega_{\mathcal{X}_{P}/P}) \to
-  \omega_{\mathcal{F}_{P}/P}$ is, fiber by fiber over $P$, an
-  isomorphism outside a set of codimension $2$, therefore,
-  $\kappa^* \left( \omega_{\pi} \right) = \omega_{\mathcal{F}_{P}/P}.$
-  The latter is
-  $\omega_{\mathcal{F}_{P}/P \times L_{i}} + \omega_{P \times
-    L_{i}/P}$, which, using the Euler exact sequence, is:
-  $\O_{P}(-1) \otimes \O_{L_{i}}(-1)$.  This is exactly the opposite
-  of $\mathcal{L}\big|_{\mathcal{D}}$ \eqref{eq:LtoD}, which is what we wanted to
-  show.
-
-  
-\end{proof} 
 
 
 \subsubsection{Chern classes of $\V$}

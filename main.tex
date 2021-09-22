@@ -1281,6 +1281,7 @@ We perform one more blow-up along $F$ to get
 \end{equation}
 and denote by $\eta: \mathcal{Y} \to \widetilde{S^{[2]}} \times S $
 the blowdown.
+
 The next lemma is critical to our construction.
 .
 \begin{lemma}
@@ -1320,6 +1321,8 @@ divisor of $\eta$. It has $10$ disjoint components, corresponding to
 each $F_{i}$, which in turn correspond to the ten lines $L_{i}$.
 
 To ease notation, we suppress the map $j \colon \widetilde{\mathcal Z} \to \mathcal Y$, and write $\widetilde{\mathcal Z} \subset \mathcal Y$.
+It is easy to check that the map $\mathcal Y \to \widetilde{S^{[2]}}$ is flat.
+Its fiber over a point in the complement of the $E_i$'s is just $S$.
 The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \mathcal Y)$ over a point $e \in E_i$.
 \begin{proposition}
   \label{prop:geometry}
@@ -1332,6 +1335,13 @@ The following proposition describes the pair $(\widetilde{\mathcal Z} \subset \m
     It maps isomorphically onto its image in $L_{i}$ under $\eta$.
   \end{enumerate}
 \end{proposition}
+\autoref{fig:familyY} shows a slice of the family $\mathcal Y \to \widetilde{S^{[2]}}$.
+\begin{figure}
+  \centering
+    \input{figures/familyY}
+    \caption{A slice of the family of surfaces $\mathcal Y \to \widetilde S^{[2]}$}
+    \label{fig:familyY}
+\end{figure}
 \begin{proof}
   We study the blowup $\mathcal{Y} = \Bl_{F} \left( \td{S^{[2]}} \times S
   \right)$, beginning with the normal bundle $N_{F/ \td{S^{[2]}} \times S }$.
@@ -1423,7 +1433,7 @@ inside $\F_{1}$.
   Since $\epsilon$ is an isomorphism and $d \beta$ is non-zero, the second coordinate of \eqref{eqn:emap} is non-zero.
   This non-vanishing equivalent to the proposition.
   (Incidentally, note that the first coordinate of \eqref{eqn:emap} is invertible.
-  This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the complementary section, which is where $\F_1$ meets the other component $S$.
+  This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the co-directrix where $\F_1$ meets the other component $S$.
   In the proof of \autoref{prop:geometry}, we concluded this fact using intersection numbers.)
 \end{proof}
 

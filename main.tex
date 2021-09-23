@@ -16,6 +16,7 @@
   pgfplots
 }
 \usepackage{graphicx}
+\usepackage{paralist}
 \usepackage[shortlabels]{enumitem}
 \usepackage{import}
 \usepackage{xifthen}
@@ -238,21 +239,29 @@ but not least, the stack $B\G_m$.
 The method of undetermined coefficients applies to hypersurfaces of
 any degree and dimension.  The obstacle, in general, is in
 constructing enough families.  Our constructions crucially use the
-beautiful geometry of the lines on a cubic, and therefore are very
-specific to the cubic surface case.
+beautiful but specific geometry cubic surfaces.
+
+\subsection{The orbit closure problem}
+To apply the method of undetermined coefficients, we have to ensure that no fibers of our family lie in the orbit closure of generic cubic surfaces (otherwise, we get excess intersection).
+Thus, we have to prove statements of the form ``a given cubic surface $S$ is not in the closure of a suitably generic cubic surface.''
+This is, in general, a difficult problem.
+We develop a range of tools to address problems of this kind.
+To preserve the flow of the paper, and because these techniques may be of independent interest, we assemble these tools in a separate section (\autoref{sec:orbclosure}).
 
 \subsection{Further remarks}
 The formula in \autoref{theorem:main} has some curious consequences.
 \begin{corollary}
   \label{cor:ineq} If $\pi \colon \cX \to B$ is a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$,
-  then $$\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0$$ with
+  then
+  \[\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0\]
+  with
   equality holding if and only if a general cubic surface does not
   arise as a fiber.
 \end{corollary}
 
 \begin{corollary}
-  \label{cor:ineq} Let $\pi \colon \cX \to B$ is a good family of cubic
+  \label{cor:div} Let $\pi \colon \cX \to B$ is a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$.
   Assume that a general fiber of $\pi$ is smooth and the induced map
   $\mu \colon B \dashrightarrow \mathcal M$ is dominant.
@@ -281,7 +290,17 @@ Del Pezzo surfaces of degrees $1,2$ and $4$.  We fully expect our
 methods to establish formulas in these settings, though we have not
 even begun the analysis.  
 
-
+\subsection{Organization}
+In \autoref{sec:good}, we recall standard facts about cubic surfaces and their moduli.
+We also review the basic notions of equivariant Chow theory.
+The main new ingredient in this section is the definition of a good family (\autoref{def:goodfamily}).
+In \autoref{sec:testfamilies}, we construct a number of test families of cubic surfaces, and evaluate the linear relation on the coefficients of the class of the orbit closure given by each family.
+For each family, we first give an informal description.
+The first four families, taken up in the first four subsections, use variations of the theme of blowing up 6 varying points in $\P^2$.
+The next four families, taken up in the fifth subsection, are isotrivial; their base space is the stack $B\G_m$.
+Altogether, we produce 8 families for 5 undetermined coefficients.
+In \autoref{sec:tietogether}, we tie together the enumerative results and obtain the main theorems stated in the introduction.
+The last section, \autoref{sec:orbclosure} is devoted to developing methods to solve cases of the orbit closure problem.
 
 \subsection{Acknowledgements}
 We thank Radu Laza, who asked Question~\ref{slice} to the first two
@@ -695,7 +714,7 @@ $Z_b \subset P_b$, as in \autoref{def:cubicZ}.
   It follows that $R_I(A)$ is flat over $B$, and hence its $\Proj$ is flat over $\spec B$.
   
   For the statement about base-change, we show that the formation of the Rees algebra commutes with base-change.
-  For any $B$-algebra $C$, let $J \subset A \otimes_B C$ be the image of $I \otimes_B C$.
+  For a $B$-algebra $C$, let $J \subset A \otimes_B C$ be the image of $I \otimes_B C$.
   Consider the map
   \[ i \colon R_I(A) \otimes_B C \to R_J(C).\]
   We use again that the associated graded rings are polynomial algebras, on which the map induced by $i$ is clearly an isomorphism.
@@ -1209,8 +1228,6 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 %----------------------------------------------------------------------------
 
-
-
 \subsection{The fourth test family}
 \label{sec:family-b_4}
 \begin{figure}
@@ -1229,11 +1246,11 @@ Let $S$ be the blow up of $\P^2$ at 4 general points.
 Then $S$ is a quintic del Pezzo. 
 Let $S^{[2]}$ denote the Hilbert scheme of 2 points on $S$.
 We have 10 exceptional curves $L_1, \dots, L_{10}$ on $S$.
-Set $\Lambda_i = \Hilb^2 L_i \subset S^{[2]}$; this $\Lambda_i$ is a copy of $\P^2$.
+Consider the planes $L^{[2]}_i \subset S^{[2]}$.
 Observe that a length 2 subscheme $Z \subset S$ is not admissible precisely when $Z$ is contained in $L_i$ for some $i$.
 For $i \neq j$, the lines $L_i$ and $L_j$ are either disjoint or intersect in a single (reduced) point.
-Therefore, $\Lambda_i$ and  $\Lambda_j$ are disjoint subsets of $S^{[2]}$.
-Let $\Lambda$ be the union of all $\Lambda_i$.
+Therefore, $L^{[2]}_i$ and  $L^{[2]}_j$ are disjoint subsets of $S^{[2]}$.
+Let $\Lambda$ be the union of all $L^{[2]}_i$.
 The crux of this
 section is to show that the blow up $\Bl_{\Lambda}S^{[2]}$ hosts a
 good family of cubic surfaces.
@@ -1244,7 +1261,7 @@ Set
   \widetilde {S^{[2]}} := \Bl_{\Lambda}S^{[2]},
 \end{equation}
 with $\beta \colon \widetilde {S^{[2]}} \to S^{[2]}$ being the blow-down map.
-For $i=1, \dots, 10$, let $E_{i} = \beta^{-1}(\Lambda_{i})$ denote the
+For $i=1, \dots, 10$, let $E_{i} = \beta^{-1}(L^{[2]}_{i})$ denote the
 components of the of the exceptional divisor of the blow-up.
 Consider
 \[ F_i: = E_i \times L_i \subset \widetilde {S^{[2]}} \times S,\]
@@ -1271,10 +1288,10 @@ The next lemma is critical to our construction.
   $j: \widetilde{\mathcal{Z}} \hookrightarrow  \mathcal{Y}$.
 \end{lemma}
 \begin{proof}
-  Since $\Lambda_i = \Hilb^2 L_i$, the subscheme $(\Lambda_i \times S) \cap \mathcal Z$ is contained in $(\Lambda_i \times L_i)$.
+  The subscheme $(L^{[2]}_i \times S) \cap \mathcal Z$ is contained in $(L^{[2]}_i \times L_i)$.
   Hence, we have an equality of schemes
   \[
-    (\Lambda_i \times L_i) \cap \mathcal Z = (\Lambda_i \times S) \cap \mathcal Z.
+    (L^{[2]}_i \times L_i) \cap \mathcal Z = (L^{[2]}_i \times S) \cap \mathcal Z.
   \]
   By pulling back both sides to $\widetilde{S^{[2]}} \times S$, we get
   \begin{equation}
@@ -1371,8 +1388,12 @@ The following proposition provides one more necessary detail about the position 
 \begin{proposition}
   \label{prop:nodirectrix}
   Maintain the notation of \autoref{prop:geometry}.
-  The length two
-  subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not contained in the directrix of $\F_{1}$.
+  \begin{enumerate}
+  \item The length two
+    subscheme $\td{\mathcal{Z}}_{e} \subset \F_{1}$ is not contained in the directrix of $\F_{1}$.
+  \item Set $\tau_i = T_i \cap \F_1$.
+    The subscheme $\td{\mathcal Z}_e \cup \tau_i$ is an admissible subscheme of $\F_1$.
+  \end{enumerate}
 \end{proposition}
 \begin{proof}
   The proof follows easily from unraveling the map
@@ -1386,12 +1407,12 @@ The following proposition provides one more necessary detail about the position 
   \]
   The point $e \in E$ gives a (non-zero) map
   \[
-    d \beta \colon N_e \to N_{\Lambda_i / S^{[2]}}|_{\beta(e)}.
+    d \beta \colon N_e \to N_{L^{[2]}_i / S^{[2]}}|_{\beta(e)}.
   \]
-  The point $\beta(e) \in \Lambda_i \subset S^{[2]}$ corresponds to the length 2 subscheme $Z \subset L_i \subset S$.
+  The point $\beta(e) \in L^{[2]}_i \subset S^{[2]}$ corresponds to the length 2 subscheme $Z \subset L_i \subset S$.
   It is easy to see that we have a canonical identification
   \[
-    N_{\Lambda_i / S^{[2]}}\big |_{\beta(e)} = H^0\left(Z, N_{L_i/S}|_Z\right).
+    N_{L^{[2]}_i / S^{[2]}}\big |_{\beta(e)} = H^0\left(Z, N_{L_i/S}|_Z\right).
   \]
   We thus get a map
   \[
@@ -1410,6 +1431,8 @@ The following proposition provides one more necessary detail about the position 
   (Incidentally, note that the first coordinate of \eqref{eqn:emap} is invertible.
   This is equivalent to the fact that $Z \subset \F_1$ is disjoint from the curve where $\F_1$ meets the other component $S$.
   In the proof of \autoref{prop:geometry}, we concluded this fact using intersection numbers.)
+
+  The assertion about admissibility is straightforward.
 \end{proof}
 
 We are now in a position to describe the family of cubic surfaces.
@@ -1476,7 +1499,7 @@ Consider the rational map
 \[ \kappa \colon \mathcal Y \dashrightarrow \P \mathcal W^\vee\]
 induced by the evaluation
 \[ \widetilde \pi^* \mathcal W \to \mathcal L.\]
-It is easy to check that for every $e \in \widetilde{S^{[2]}}$, the image of $\kappa(\mathcal Y_e)$ is contained in a unique cubic surface in $\P \mathcal W^\vee|_e$.
+It is easy to check that for every $e \in \widetilde{S^{[2]}}$, the image of $\kappa(\mathcal Y_e)$ is contained in a unique cubic surface in $\P \mathcal W^\vee_e$.
 Let $\mathcal X \subset \P \mathcal W^\vee$ be the resulting family of cubic surfaces.
 More precisely, consider the map
 \[ \Sym^3 \mathcal W \to \pi_*(\mathcal L^3)\]
@@ -1512,194 +1535,157 @@ The next proposition identifies the anti-canonical bundle of $\pi$.
   In both cases, it is easy to verify using \autoref{prop:good} that $\mathcal X_e$ has a finite automorphism group.
 \end{proof}
 
-
-\subsubsection{Chern classes of $\V$}
-\label{sec:chern-classes-v4}
-
-Now we move to the task of calculating the Chern classes of
-$\V = (\td{\pi}_{1} \circ \eta)_{*}\left(\mathcal{L} \otimes
-  \mathcal{I}_{\td{\mathcal{Z}}}\right)$. For this, we
-let \[\mathcal{A} := (\td{\pi}_{1} \circ \eta)_{*}\mathcal{L},\] and
-we let \[\mathcal{B} := (\td{\pi}_{1} \circ \eta)_{*} \left(
-    \mathcal{L}\big|_{\td{\mathcal{Z}}} \right).\]
-
-The reader can check that $\mathcal{A}, \mathcal{B}$ are rank $6$ and
-rank $2$ vector bundles on $\td{S^{[2]}}$, respectively.  Since
-$c(\V) = c(\mathcal{A})/c(\mathcal{B})$, it suffices to identify
-$c(\mathcal{A})$ and $c(\mathcal{B})$.
-
-Identifying $c(\mathcal{B})$ is easier, so we begin with that. Let
-$\mathcal{U} := \left( \omega_{S}^{-1} \right)^{[2]}$ be the rank $2$
-tautological bundle over $S^{[2]}$.  Then, by using the push-pull
-formula and the fact that
-$\O_{\td{\mathcal{Z}}}(\mathcal{F}) = \O_{\td{\mathcal{Z}}}(E)$,
-(pullbacks suppressed) we get:
-\begin{align}
-    \label{eq:B}
-    \mathcal{B} = \left(\beta^{*}\mathcal{U} \right) \otimes \O_{\td{S^{[2]}}}(-E).
-\end{align}
-Let $u_{1}, u_{2}$ denote the Chern classes of $\mathcal{U}$.
-
-\begin{lemma}
-  \label{lemma:uE}
-  $\beta^{*}(u_{1}) \cdot E = \beta^{*}(u_{2}) \cdot E = 0$.
-\end{lemma}
-
-\begin{proof}
-  It suffices to show that $u_{i}$ is represented by cycles which are
-  disjoint from $\Lambda \subset S^{[2]}$.
-
-  We begin with $u_{2}$.  Fix a smooth curve $C \subset S$ in the
-  anti-canonical series $|\omega_{S}^{-1}|$; $C$ meets every line
-  $L_{i}$ transversely at a single point.  By definition, $u_{2}$ is
-  represented by the surface $C^{[2]} \subset S^{[2]}$, which is
-  clearly disjoint from $\Lambda$.
-
-  Next, we address $u_{1}$. Fix, now, a general pencil of curves
-  $C_{t}, t\in \P^{1}$ in the anti-canonical series
-  $|\omega_{S}^{-1}|$.  By generality of the pencil, every curve
-  $C_{t}$ meets each line $L_{i}$ transversely at a single point.  The
-  class $u_{1}$ is representable by the subvariety
-  \[\{[Z] \in S^{[2]} \mid Z \subset C_{t}, \,\, \textrm{some 
-      $t\in \P^{1}$}\}.\] This variety is clearly disjoint from
-  $\Lambda$, and the lemma now follows.
-\end{proof}
-
-This gives simple expressions for the Chern classes of $\mathcal{B}$:
-\begin{corollary}
-  \label{cor:cB} We have: $c_{1}(\mathcal{B}) = \beta^{*}(u_{1}) -2E,$
-  and $c_{2}(\mathcal{B}) = \beta^{*}(u_{2}) + E^{2}$.
-\end{corollary}
-
-Before beginning the analysis of $c(\mathcal{A})$, we catalog those
-top degree intersection products which will factor into the final calculation:
-
-\begin{proposition}
-  \label{prop:monomialsU} We have:
-  \begin{align}
-    \label{eq:monU}
-     \int_{B_{4}} u_{1}^{4} &= 36,\\
-   \int_{B_{4}}  u_{1}^{2}u_{2} &= 15,\\
-   \int_{B_{4}}  u_{2}^{2} &= 10,\\
-   \int_{B_{4}}  E^{4} &= -30.
-  \end{align}
+Having constructed the family $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$, we take up the task of calculating the Chern classes of
+\[ \mathcal V = \pi_* \left(\omega_\pi^{-1}\right) = \mathcal W \otimes \O_{\widetilde{S^{[2]}}}(E).\]
+Let $\mathcal U = \left(\omega_S^{-1}\right)^{[2]}$ be the rank 2 tautological bundle on $S^{[2]}$, defined by
+\[ \mathcal U = {\pi_1}_*\pi_2^* \left(\omega_S^{-1}\right),\]
+where $\pi_i$ are the two projections on $S^{[2]} \times S$.
+\begin{proposition}\label{prop:v4groth}
+  In the Grothendieck group of $\widetilde {S^{[2]}}$, we have
+  \[
+    \mathcal V =  \O(E) + \O^3 + \O(-E)^2 - \mathcal U \otimes \O(-E),
+  \]
+  where $\O$ denotes $\O_{\widetilde{S^[2]}}$.
 \end{proposition}
-
-\begin{proof} In the interest of brevity, we will only indicate the
-  main technique in certain calculations, leaving the details to the reader.
-
-  $u_{1}^{4}$: We translate the computation into an enumerative
-  problem, whose solution is found using the {\sl double point
-    formula} (see \cite[~Theorem 2]{ful:78}).  Choose $4$ general pencils
-  of anti-canonical curves on $S$, and let $S'$ denote the blow up of
-  $S$ along the union of all $4$ base loci.  $S'$ is a smooth surface,
-  and $u_{1}^{4}$ is the number of pairs of points having the same
-  image under the map $f: S' \to \left( \P^{1} \right)^{4}$ induced by
-  the four pencils.  We leave the details of the calculation to the
-  reader, but the end result is $36$ pairs of such points.
-
-  $u_{1}^{2}u_{2}$: This monomial translates into the following
-  enumerative problem.  Fix one smooth anti-canonical curve
-  $C \subset S$, and also choose two general pencils of such curves.
-  Let $S'$ denote the blow up of $S$ along the union of the two base
-  loci.  Under the map $f: S' \to \P^{1} \times \P^{1}$, the curve $C$
-  maps birationally to a $(5,5)$ curve. Since the genus of $C$ is $1$,
-  and its image has arithmetic genus $16$, we conclude that the
-  double-point locus of $f: C \to \P^{1} \times \P^{1}$ consists of
-  $15$ pairs of points.
-
-  $u_{2}^{2}$: Choose two general anti-canonical curves $C_{1},C_{2}$
-  on $S$.  There are ${5 \choose 2} = 10$ pairs of points common to
-  both, yielding the result.
-
-  $E^{4}$: First, $E$ is the disjoint union of the ten exceptional
-  divisors $E_{i}$ $i=1, \dots, 10$, so $E^{4} = 10 \times E_{1}^{4}$
-  and it suffices to show $E_{1}^{4} = -3$.  $E_{i}$ is the
-  projectivization of the normal bundle $N_{\Lambda_{1}/S^{[2]}}$,
-  which is the rank two tautological bundle
-  $N_{L_{i}/S}^{[2]} = \O_{L_{i}}(-1)^{[2]}$.  By identifying
-  $\Lambda_{1}$ with $\P^{2}$, it is easy to see that
-  $N_{L_{i}/S}^{[2]} \simeq \O_{\P^{2}}(-1) \oplus
-  \O_{\P^{2}}(-1)$. It is a standard calculation now to see that
-  $E_{i}^{4} = -3$.
-\end{proof}
-
-Let us now explain how to calculate $c(\mathcal{A})$.  We only provide
-the pathway for the calculation, leaving the details to the
-reader. Recall the codimension $2$ smooth subscheme
-$F \subset \td{S^{[2]}} \times S$ which we blow up to get
-$\mathcal{Y}$, and let $\mathcal{I}_{F}$ denote its ideal sheaf.
-Denote by $2F$ the scheme defined by $\mathcal{I}_{F}^{2}$.  Then, \
-\[\eta_{*}\mathcal{L} = \omega_{S}^{-1} \otimes \mathcal{I}_{2F} \otimes \O_{\td{S^{[2]}}}(E)\]
-(pullbacks suppressed).  $\mathcal{A}$ is the pushforward of this
-sheaf down to $\td{S^{[2]}}$.
-
-By using (1) the pair of sequences
-\begin{align}
-  \label{eq:seqA}
-  0 \to \mathcal{I}_{2F} \to \O_{\td{S^{[2]}} \times S} \to \O_{2F} \to 0,\\
-  0 \to \mathcal{I}_{F}/\mathcal{I}_{F}^{2} \to \O_{2F} \to \O_{F} \to 0,
-\end{align}
-(2) the identification of
-$\mathcal{I}_{F_{i}}/\mathcal{I}_{F_{i}}^{2} = \O_{\td{S^{[2]}}}(-E)
-\oplus \O_{L_{i}}(1)$ (pullbacks suppressed) on each component
-$F_{i} := E_{i} \times L_{i}$ of $F$, (3) tensoring by
-$\omega_{S}^{-1} \otimes \O_{\td{S^{[2]}}}(E)$, and (4) pushing down
-to $\td{S^{[2]}}$ using the push-pull formula, we ultimately get:
-
-\begin{lemma}
-  \label{lemma:cA} $c(\mathcal{A}) = 1 - Et-E^{2}t^{2}+E^{3}t^{3} .$
-\end{lemma}
-
 \begin{proof}
-  The calculation steps are sketched immediately before the lemma.
+  We compute the class of $\mathcal W$ and obtain the class of $\mathcal V$ by tensoring by $\O(E)$.
+  Recall the family $\widetilde \pi \colon \mathcal Y \to \widetilde{S^{[2]}}$ and the line bundle $\mathcal L$ on it defined in \eqref{eqn:l1}.
+  Set
+  \[ \mathcal A := \widetilde{\pi}_* \mathcal L \text{ and } \mathcal B := \widetilde{\pi}_* \left( \mathcal L|_{\widetilde{\mathcal Z}} \right).\]
+  Then $\mathcal A$ and $\mathcal B$ are vector bundles of rank 6 and 2, respectively.
+  By the definition of $\mathcal W$, we have the exact sequence
+  \[ 0 \to \mathcal B \to \mathcal A \to \mathcal W \to 0,\]
+  and hence $\mathcal W = \mathcal A - \mathcal B$ in the Grothendieck group.
+  
+  We first compute $\mathcal B$.
+  By the push-pull formula and the description \eqref{eqn:l2} of $\mathcal L$, we get
+  \begin{equation}\label{eqn:B}
+    \mathcal B = \mathcal U \otimes \O_{\widetilde{S^{[2]}}}(-2E).
+  \end{equation}
+  
+  We now compute $\mathcal A$.
+  Recall that $\eta \colon \mathcal Y \to \widetilde{S^{[2]}} \times S$ is the blow-up at $F = \bigsqcup_i E_i \times L_i$.
+  Using \eqref{eqn:l2} again, we get
+  \[
+    \eta_* \mathcal L = \omega_S^{-1} \otimes \mathcal I^2_{F}.
+  \]
+  Using the pair of sequences
+  \begin{equation}
+    \label{eq:seqA}
+    \begin{split}
+      &0 \to \mathcal{I}^2_{F} \to \O_{\td{S^{[2]}} \times S} \to \O_{2F} \to 0, \text{ and}\\
+      &0 \to \mathcal{I}_{F}/\mathcal{I}_{F}^{2} \to \O_{2F} \to \O_{F} \to 0,
+    \end{split}
+  \end{equation}
+  and tensoring by $\omega_S^{-1}$ gives (in the Grothendieck group)
+  \begin{equation}\label{eqn:el}
+    \eta_* \mathcal L = \omega_S^{-1} \otimes \left(\O_{\widetilde{S^{[2]}} \times S} - \O_F - \mathcal{I}_F / \mathcal{I}^2_F\right).
+  \end{equation}
+  On the component $F_i$ of $F$, the conormal bundle $\mathcal{I}_F / \mathcal{I}^2_F$ splits as a direct sum
+  \[ \pi_1^*\O_{E_i}(-E_i) \oplus \pi_2^*\O_{L_i}(1),\]
+  where $\pi_i \colon F_i \to E_i \times L_i$ are the two projections.
+  After substituting in \eqref{eqn:el} and pushing forward to $\widetilde{S^{[2]}}$, we get
+  \begin{equation}\label{eqn:A}
+    \begin{split}
+      \mathcal A &= \O^6- \O_E^{5}- \O_E(-E)^{2}\\
+      &= \O + \O(-E)^3 + \O(-2E)^2.
+    \end{split}
+  \end{equation}
+  Subtracting $\eqref{eqn:B}$ from $\eqref{eqn:A}$ and tensoring by $\O(E)$ gives the result.
 \end{proof}
 
-\begin{corollary}
-  \label{cor:cV4} The Chern classes of $\V$ are:
-  \begin{align}
-    \label{eq:cV4}
-    v_{1} &= -\beta^{*}(u_{1}) + E,\\ \nonumber
-    v_{2} &= \beta^{*}\left(u_{1}^{2} - u_{2}\right),\\\nonumber
-    v_{3} &= \beta^{*}\left( 2u_{1}u_{2} - u_{1}^{3} \right),\\\nonumber
-    \int_{B_{4}} v_{4} &= 1,\nonumber
-  \end{align}
-  and the degree $4$ monomials in these classes satisfy:
-  \begin{align}
-    \label{eq:monomialsV4}
-    \int_{B_{4}} v_{1}^{4} &= 6,\\\nonumber
-    \int_{B_{4}} v_{1}^{2}v_{2} &= 21,\\\nonumber
-    \int_{B_{4}} v_{1}v_{3} &= 6, \\\nonumber
-    \int_{B_{4}} v_{2}^{2} &= 16, \\\nonumber
-    \int_{B_{4}} v_{4} &= 1.\nonumber
-  \end{align}
-\end{corollary}
-
+Having computed the class of $\mathcal V$, what remains is a computation in the Chow ring of $\widetilde{S^{[2]}}$.
+In the computation, we suppress pull-back symbols to ease notation.
+We have the following simplification.
+\begin{proposition}
+    \label{lemma:uE}
+  Let $u_i = c_i(\mathcal U)$ for $i = 1, 2$.
+  Then  $u_{1}\cdot E = u_{2} \cdot E = 0$.
+\end{proposition}
 \begin{proof}
-  Recall that $c(\V) = c(\mathcal{A})/c(\mathcal{B})$.  Now combine:
-  \autoref{cor:cB}, \autoref{prop:monomialsU}, and \autoref{lemma:cA}.
+  We show that $u_i \in A^i(S^{[2]})$ is supported on cycles disjoint from $\Lambda = \bigsqcup_i L^{[2]}_i$.
+
+  For $u_2$, fix a general $C \in |\omega_S^{-1}|$.
+  Then $C$ intersects each exceptional curve $L_i$ transversely in a single point.
+  Note that $u_2$ is the class of $C^{[2]} \subset S^{[2]}$, clearly disjoint from $\Lambda$.
+  
+  For $u_1$, fix a general pencil of curves $\{C_t \mid t \in \P^1\} \subset |\omega_S^{-1}|$.
+  Then for every $t \in \P^1$, the curve $C_t$ intersects each exceptional curve $L_i$ transversely in a single point.
+  Note that $u_{1}$ is the class of
+  \[\{[Z] \in S^{[2]} \mid Z \subset C_{t} \text{ for some $t\in \P^{1}$}\},\]
+  which is clearly disjoint from $\Lambda$.
 \end{proof}
 
+We now compute the non-trivial degree 4 intersection numbers.
+\begin{proposition}
+  \label{prop:monomialsU}
+  On $\widetilde{S^{[2]}}$, we have
+  \[
+    \begin{split}
+      \int u_{1}^{4} = 36, \qquad   \int u_{1}^{2}u_{2} = 15, \qquad 
+      \int  u_{2}^{2} = 10, \qquad    \int  E^{4} = -30.
+    \end{split}
+\]
+\end{proposition}
+\begin{proof}
+  We know explicit cycles on $S^{[2]}$ that represent $u_1$ and $u_2$ (see the proof of \autoref{lemma:uE}).
+  Using these, we convert the intersection numbers into enumerative problems, which we solve.
+  We indicate the main ideas and skip the details.
 
+  The $\int u_1^4$ is the answer to the following problem.
+  Choose $4$ general anti-canonical pencils on $S$, and let $f \colon S \dashrightarrow (\P^1)^4$ be the rational map induced by them.
+  Then $u_1^4$ is the number of double points of the map $f$ (pairs of points in $S$ that have the same image under $f$).
+  We find that the number is 36 by applying the double point formula \cite[Theorem~2]{ful:78} to a resolution of $f$.
 
-\subsubsection{Fourth relation}
-\label{sec:relation-b_4}
+  The number $\int u_{1}^{2}u_{2}$ is the answer to the following problem.
+  Fix a general anti-canonical $C \subset S$ and two general anti-canonical pencils.
+  Then $\int u_1^2u_2$ is the number of double points of the map $C \to \P^1 \times \P^1$ induced by the two pencils.
+  Using the genus of $C$, which is 1, and the arithmetic genus of $f(C)$, which is 16, we see that the number is 15.
 
-Given \autoref{cor:cV4}, the relation we get from the test family
-$\pi: \mathcal{X} \to B_{4}$ studied in this section is:
+  The number $\int u_2^2$ is the number of pairs of points common to two general anti-canonical curves $C_1$ and $C_2$.
+  Since there are $5$ points in $C_1 \cap C_2$, the number of pairs is ${5 \choose 2} = 10$.
+
+  Finally, to compute $\int E^4$, observe that $E$ is the disjoint union of $E_i$ for $i = 1, \dots, 10$, each $E_i$ is the $\P^1$-bundle
+  \[ E_i = \P N_{L_i^{[2]}/S^{[2]}},\]
+  and the restriction of $E_i$ to $E_i$ is $\O(-1)$.
+  We have $L_i^{[2]} \cong \P^2$ and
+  \[ N_{L_i^{[2]}/S^{[2]}} = N_{L_i/S}^{[2]} \cong \O_{\P^2}(-1) \oplus \O_{\P^2}(-1).\]
+  Now it is a straightforward calculation to check that $E_i^4 = -3$.
+\end{proof}
+\begin{proposition}\label{prop:4deg4}
+  Let $\mathcal V = \pi_*\left(  \omega_{\pi}^{-1} \right)$ be the anti-canonical section bundle of $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$,
+  and let $v_i = c_i(\mathcal V)$.
+  Then we have
+  \[
+    \int_{B_{4}} v_{1}^{4} = 6, \qquad
+    \int_{B_{4}} v_{1}^{2}v_{2} = 21, \qquad
+      \int_{B_{4}} v_{1}v_{3} = 6, \qquad
+      \int_{B_{4}} v_{2}^{2} = 16, \qquad
+      \int_{B_{4}} v_{4} = 1.
+  \]
+\end{proposition}
+\begin{proof}
+  Follows from the expression for $\mathcal V$ in the Grothendieck group we found in \autoref{prop:v4groth} and the Chern class computations we did in \autoref{prop:monomialsU} and \autoref{prop:4deg4}.
+\end{proof}
+
+Let $\mu \colon \widetilde{S^{[2]}} \dashrightarrow \M$ be the map to the moduli space of cubic surfaces induced by the family $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$.
+\begin{proposition}
+  The degree of the map $\mu$ is $36 \times 6!$.
+\end{proposition}
+\begin{proof}
+  Recall that the moduli space of marked cubic surfaces $\M^\dagger$ is the configuration space of 6 ordered points in $\P^2$.
+  The map $\mu$ clearly lifts to a birational map
+  \[ \widetilde S^{[2]} \to \M^\dagger / S_2,\]
+  where the $S_2$ permutes the last 2 points of the configuration.
+  Since the degree of $\M^\dagger \to \M$ is  $72 \times 6!$, the degree of $\mu$ is half of that.
+\end{proof}
+
+Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
+\eqref{eqn:chernexpansion} for a general cubic surface $X$:
 \begin{align}
-  \label{eq:relationB4}
-  6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} =  25920.
+  \label{eq:relation4}
+  6 a_{1^{4}} + 21 a_{1^{2}2} + 6a_{13} + 16a_{2^2}+  a_{4} = 36 \times 6!.
 \end{align}
-
-Only the right hand side needs explanation: the map to moduli
-\[\mu: B_{4} \dashrightarrow \M \] factors through
-$\mu' : \dashrightarrow \M^{\dagger}/S_{2}$ where the symmetric group
-permutes the last two lines of a marking.  The map $\mu'$ is clearly
-birational, and therefore $\deg \mu = 51840/2 = 25920$ as claimed in
-\eqref{eq:relationB4}.
-
-
 
 \subsection{Isotrivial families}
 In this section, we continue the theme of constructing good families, but with a twist.
@@ -1879,6 +1865,7 @@ $\mathcal X \to B$ is defined by the zero-locus of $\xi$ in
 $\P V \to B$.
 
 \section{The equivariant orbit class}
+\label{sec:tietogether}
 We use the information provided by the test families to prove the theorems advertised in the introduction.
 Let $V$ be a 4 dimensional vector space.
 Recall our notation $W$ for the $\GL V$ representation 
@@ -1906,7 +1893,7 @@ for the moduli stack of cubic surfaces.
     16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} &= 4320 \text{ from \eqref{eq:relation1}}\\
     625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} &= 103680 \text{ from \eqref{eq:relation2}}\\
     3436a_{1^4} + 1076 a_{1^{2}2} +116 a_{13} + 316 a_{2^2} &= 1036800 \text{ from \eqref{eq:relation3}}\\
-    6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} &= 25920 \text{ from \eqref{eq:relationB4}}\\
+    6a_{1^{4}} + 21a_{1^{2}2}+6a_{13}+16a_{2^{2}}+a_{4} &= 25920 \text{ from \eqref{eq:relation4}}\\
     a_{2^2} &= 0  \text{ from \eqref{eqn:iso1}}\\
     a_{1^4} - a_{1^2 2}- a_{13} +  a_{2^2}  &= 0  \text{ from \eqref{eqn:iso2}}\\
     16a_{1^4} -4a_{1^2 2}- 4a_{13} +  a_{2^2}  &= 0  \text{ from \eqref{eqn:iso3}}\\
@@ -1919,22 +1906,17 @@ for the moduli stack of cubic surfaces.
   The degree of the closure of the $\PGL_4$ orbit of a generic cubic surface in $\P^3$ is $96120$.
 \end{corollary}
 \begin{proof}
-  Let $F_i$ for $i = 0,\dots,4$ be generic cubic forms in four variables.
-  Consider the linear system of cubic surfaces
-  \[ u_0F_0 + \dots + u_4F_4\]
-  parametrized by $[u_0:\dots:u_4] \in \P^4$.
-  More formally, consider the hypersurface
-  \[ \mathcal X \subset \P^3 \times \P^4\]
-  defined by
-  \[ \mathcal X = V(u_0F_0 + \dots + u_4F_4).\]
-  The second projection gives a family of cubic surfaces $\pi \colon \mathcal X \to \P^4$ and hence a map $\P^4 \to \mathscr M$.
+  Let $\P^3 = \P V$.
+  Consider the universal cubic surface $X \subset \P V\times \P \Sym^3 V^\vee$.
+  Let $\pi \colon \mathcal X \to \P \Sym^3 V^\vee$ be the second projection and $\mu \colon \P \Sym^3 V^\vee \to \mathscr M$ the map induced by $\pi$.
+  Tautologically, for a generic cubic surface $X$, the pre-image under $\mu$ of $\Orb(X)$ is the closure of the $\PGL(V)$ orbit of $X$.
   By adjunction, we have
   \[ \omega_\pi = \O(1) \boxtimes \O(1),\]
   and hence
-  \[ \mathcal V = \pi_* \omega_\pi \cong \O(1)^{\oplus 4}.\]
-  Let $S \subset \P^3$ be a cubic surface.
-  By \autoref{thm:eqvclass}, if $S$ is generic, then the degree of the pull-back of $\Orb(S)$ to $\P^4$ is given by
-  \[ 1080 \cdot \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right) = 96120.\]
+  \[ \mathcal V = \pi_* \omega_\pi \cong \O(1)^4.\]
+  In $A^4(\P \Sym^3V^\vee)$, we evaluate 
+  \[ [\Orb(X)] = 1080(v_1^2v_2 - v_1v_3+9v_4)\]
+  and find that the answer is $96120$ (times the class of a codimension 4 linear subspace).
 \end{proof}
 
 \begin{corollary}
@@ -1970,6 +1952,7 @@ and hence
 Writing them in terms of $c_i = c_i(V)$ yields the result.
 
 \section{Addressing the orbit closure problem}
+\label{sec:orbclosure}
 We have repeatedly faced the problem of showing that a certain cubic surface is not in the orbit closure of a certain (generic) cubic surface.
 In this section, we develop two sets of techniques to address this question.
 

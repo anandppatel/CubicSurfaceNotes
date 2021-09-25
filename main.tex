@@ -807,8 +807,6 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
   \caption{In the first test family, we blow up the plane along $\{z_0, \dots, z_5\}$ as $z_0$ stays fixed and $z_1,\dots,z_5$ vary in a general 4-dimensional series on a fixed conic $C$.}
   \label{fig:FamilyB1}
 \end{figure}
-
-We begin with an informal description of the family.
 Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
 We vary 5 points $z_1, \dots, z_5$ in a general 4-dimensional linear series on $C$.
 Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
@@ -925,7 +923,6 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
       In the second test family, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a conic $C$.}
     \label{fig:FamilyB2}
   \end{figure}
-We begin with an informal description of the family.
 Forget the notation introduced in \autoref{sec:family-b_1}.
 We take a smooth conic $C \subset \P^2$ and 7 distinct marked points $s_0, s_1, \dots, s_5, s_\infty$ on $C$.
 Let $t \in \P^2$ be the pole, with respect to $C$, of the line joining $s_0$ and $s_\infty$.
@@ -956,7 +953,6 @@ They satisfy the following properties
 \item in each fiber of $\overline \phi$, the union of all seven sections
   is supported on at least three points.
 \end{itemize}
-
 We now invoke the relative 2-Veronese embedding
 \[
 \iota \colon \overline {\mathcal C} \to \mathcal P := \P \Sym^2 \mathcal A^\vee.
@@ -1013,7 +1009,7 @@ For the proof, we use the following.
 \begin{proof}[Proof of \autoref{lem:v2}]
   Recall that $\mathcal X \to \overline \M_{0,7}$ is the cubic surface associated to $\mathcal Z \subset \mathcal P$ in the $\P^2$-bundle $\rho \colon \mathcal P \to \overline \M_{0,7}$.
   By construction, we have
-  \[ \mathcal V = \rho_*(\mathcal I_{\mathcal Z} \otimes \omega^{-1}\rho).\]
+  \[ \mathcal V = \rho_*(\mathcal I_{\mathcal Z} \otimes \omega^{-1}_\rho).\]
   Hence, in the Grothendieck group of $\overline \M_{0,7}$, we have
   \begin{equation}\label{eqn:diff}
     [\mathcal V] = \rho_*(\omega_\rho^{-1}) - \rho_*(\omega_\rho^{-1}|_{\mathcal Z}).
@@ -1024,22 +1020,22 @@ For the proof, we use the following.
   \end{equation}
   Since $\mathcal Z$ is the disjoint union $\Sigma \cup \tau$, the second term is a sum
   \[ \rho_*(\omega_\rho^{-1}|_{\mathcal Z}) = \rho_*(\omega_\rho^{-1}|_{\tau}) + \rho_*(\omega_\rho^{-1}|_{\Sigma}). \]
-  Since $\tau$ is defined by the surjection $\Sym^2 \mathcal A \to \mathcal L$, the restriction $\omega_\rho^{-1}|_\tau$ is trivial.
-  To compute the restriction to $\Sigma$, we view $\Sigma$ as a divisor in $\overline{\mathcal C} = \P A^\vee$ and let $\lambda = \omega_\rho^{-1}|_{\overline C} = \O(6) \otimes \overline \phi^* \mathcal L^3$.
+  Since $\tau$ is defined by the surjection $\Sym^2 \mathcal A \to \mathcal L^{-1}$, the restriction $\omega_\rho^{-1}|_\tau$ is trivial.
+  To compute the restriction to $\Sigma$, we view $\Sigma$ as a divisor in $\overline{\mathcal C} = \P A^\vee$ and let $D = \omega_\rho^{-1}|_{\overline C} = \O(6) \otimes \overline \phi^* \mathcal L^3$.
   Thus, in the Grothendieck group, we have
   \begin{equation}\label{eqn:diff2}
-    \rho_*(\omega_\rho^{-1}|_{\Sigma}) = \overline\phi_*\left(\lambda\right) - \overline\phi_* \left( \lambda(-\Sigma)\right).
+    \rho_*(\omega_\rho^{-1}|_{\Sigma}) = \overline\phi_*\left(D\right) - \overline\phi_* \left( D(-\Sigma)\right).
   \end{equation}
   We now use \autoref{lem:push} with the section $\sigma_\infty$ to compute the terms on the right hand side of \eqref{eqn:diff2}.
   Putting this together with \eqref{eqn:diff} and \eqref{eqn:diff1}, we get
   \[ [\mathcal V] = \mathcal L^{-3}+ \mathcal L^{1}+ \mathcal L^{-1}+ \mathcal L^{-2}\]
   in the Grothendieck group.
-  The result now a simple computation using $c_1(\mathcal L) = \psi_\infty$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
+  The result is now a simple computation using $c_1(\mathcal L) = \psi_\infty$ and $\int_{\overline \M_{0,7}} \psi_\infty^4 = 1$.
 \end{proof}
 
-Having computed the Chern classes, we need to find the degree of the moduli map $\overline \M_{0,7} \dashrightarrow \M$.
+Having computed the Chern classes, we find the degree of the map $\overline \M_{0,7} \dashrightarrow \M$.
 \begin{proposition}\label{prop:deg2}
-  The degree of the map $\overline \M_{0,7} \dashrightarrow \M$ is $2 \times 72 \times 6!$.
+  The degree of the map $\overline \M_{0,7} \dashrightarrow \M$, induced by $\pi \colon \mathcal X \to \overline \M_{0,7}$ is $2 \times 72 \times 6!$.
 \end{proposition}
 \begin{proof}
   The map lifts to $\overline \M_{0,7} \dashrightarrow \M^\dagger$.
@@ -1047,7 +1043,7 @@ Having computed the Chern classes, we need to find the degree of the moduli map 
 
   Recall that $\M^\dagger$ is isomorphic to the configuration space of 6 points in $\P^2$.
   Given a general 6-tuple of points $(s_1,\dots, s_5, y)$ in $\P^2$, there is a unique conic $C$ passing through $s_1,\dots, s_5$.
-  Let $x$ and $y$ be the two points of $\Polar(t) \cap C$.
+  Let $x$ and $y$ be the two points of $\Polar_C(t) \cap C$.
   Then the two pre-images of $(s_1,\dots, s_5, t)$ in $\overline \M_{0,7}$ are $(C, x, s_1, \dots, s_5, y)$ and $(C,y, s_1, \dots, s_5, x)$.
   The proof is thus complete.
 \end{proof}
@@ -1064,17 +1060,15 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 \subsection{The third test family}
 \label{sec:family-b_3}
-We explain the basic construction of the third family, resetting the notation introduced before.
-We take a cuspidal plane cubic $C \subset \P^2$ and let $t_\infty$ be its unique flex point.
-We vary 5 points $\{t_1, \dots, t_5\}$ on $C$ and blow up the plane at $\{t_1, \dots, t_5, t_\infty\}$ to get a cubic surface (see \autoref{fig:FigureB3}).
-Since $\Aut(C)$ is one dimensional, this gives us a 4-parameter family of cubic surfaces.
-
 \begin{figure}
     \centering
     \input{figures/familyB3}
     \caption{In the family $B_3$, we blow up the points $t_i$ for $i = 1, \dots, 5$ and a fixed point $t_\infty$ at infinity (not shown) as the points $\{t_1, \dots, t_5\}$ move freely on a fixed cuspidal cubic $C$ with a flex at $t_\infty$.}
     \label{fig:FigureB3}
 \end{figure}
+We take a cuspidal plane cubic $C \subset \P^2$ and let $t_\infty$ be its unique flex point.
+We vary 5 points $\{t_1, \dots, t_5\}$ on $C$ and blow up the plane at $\{t_1, \dots, t_5, t_\infty\}$ to get a cubic surface (see \autoref{fig:FigureB3}).
+Since $\Aut(C)$ is one dimensional, this gives us a 4-parameter family of cubic surfaces.
 
 We now convert the above construction into a good family of cubic surfaces over a complete base.
 We take our base to be $\widehat \M_{0,7}$, one of the compactifications of $\M_{0,7}$ constructed by Hassett \cite{has:03}.
@@ -1091,7 +1085,7 @@ Such curves are easy to describe:
 \item at most three of the $s_1, \dots, s_5$ can coincide with $s_{\infty}$.
 \end{itemize}
 There are no constraints on how many of the the points $s_1, \dots, s_5$ coincide with each other.
-Let $\nu \colon C \to \P^2$ be the map which is birational onto its image, which is a cuspidal cubic, and such that $s_0$ maps to the unique cusp point and $s_\infty$ to the unique flex point.
+Let $\nu \colon C \to \P^2$ be the map which is birational onto its image, whose image is a cuspidal cubic, and under which $s_0$ maps to the unique cusp point and $s_\infty$ to the unique flex point.
 Let $Z \subset C$ be the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
 Since at most one of the points $s_1, \dots, s_5$ can coincide with $s_0$, it follows that $\nu \colon Z \to \P^2$ is a closed embedding and the image is a curvilinear subscheme.
 It is also easy to check that the image is cut out by cubics.
@@ -1105,7 +1099,6 @@ Consider the rank 2 bundle
 \begin{equation}\label{eqn:hatA}
   \mathcal A = \phi_* \O_{\mathcal C}(\sigma_\infty).
 \end{equation}
-
 As before, the evaluation maps yield an isomorphism
 \begin{align*}
   \mathcal A &\xrightarrow{\sim} \sigma_\infty^*\O_{\mathcal C}\left( \sigma_\infty \right) \oplus \sigma_0^*\O_{\mathcal C}\left( \sigma_\infty \right)\\
@@ -1113,7 +1106,7 @@ As before, the evaluation maps yield an isomorphism
 \end{align*}
 where $\mathcal L = \sigma_\infty^*(\omega_\phi)$.
 We have a map $\mathcal C \to \P \mathcal A^\vee$ induced by the surjection $\phi^* \mathcal A \to \O_{\mathcal C}(\sigma_\infty)$, and since $\mathcal C \to \widehat \M_{0,7}$ is a $\P^1$-bundle, this map is an isomorphism.
-Observe that the sections $\sigma_0$ and $\sigma_\infty$ corresponds to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
+Observe that the sections $\sigma_0$ and $\sigma_\infty$ correspond to the projections $\mathcal A \to \O$ and $\mathcal A \to \mathcal L^{-1}$, respectively.
 Now consider the summand
 \begin{equation}\label{eqn:hatS}
   \mathcal S := \O_{\widehat \M_{0,7}} \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \subset \Sym^3 \mathcal A,
@@ -1126,66 +1119,78 @@ Thanks to our choice of $\mathcal S$, fiberwise the map $\nu$ maps $\mathcal C$ 
 Let $\mathcal Z \subset \mathcal C$ be the subscheme corresponding to the divisor $\sigma_1 + \dots + \sigma_\infty$.
 Our family 
 \[ \pi \colon \mathcal X \to \widehat \M_{0,7}\]
-is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon Z \to \P \mathcal S^\vee$.
+is the family of cubic surfaces associated to the family of admissible subschemes $\nu \colon \mathcal Z \to \P \mathcal S^\vee$.
 
 \begin{proposition}\label{prop:goodness3}
   The family $\pi \colon \mathcal X \to \widehat \M_{0,7}$ is good.
 \end{proposition}
 \begin{proof}
   We show that no fiber $\mathcal X_b$ is in the closure of the orbit of any smooth cubic surface $S$ without Eckardt points.
-  Let $Z \subset \P^2$ be the image of $\nu \colon Z_b \to \P \mathcal S^\vee$.
-  By construction, $Z$ does not have a point of multiplicity 5 or 6, and since $Z$ lies on a cubic, no four distinct points of $Z$ can be collinear.
+  Let $Z \subset \P^2$ be the image of $\nu \colon Z_b \to \P \mathcal S^\vee_b$.
+  By construction, $Z$ does not have a point of multiplicity 6, and since $Z$ lies on a cubic, no four distinct points of $Z$ can be collinear.
   Suppose $Z$ does not have a point of multiplicity 4.
   Then we use \autoref{prop:cubictopoints} and \autoref{prop:limit4} to conclude that $\mathcal X_b$ is not in the orbit closure of $S$.
 
-  We now treat cases where $Z$ has a point of multiplicity 4.
+  We now treat the cases where $Z$ has a point of multiplicity 4 or 5.
+  We repeatedly use the following fact about the geometry of the cuspidal cubic $C$: no line through the flex point is tangent to $C$, except the tangent line at the flex and the line joining the flex and the cusp.
+
   Suppose $Z = p + q + 4r \subset C$, where $p, q, r$ are distinct.
   Since $r$ occurs with multiplicity greater than 1 in $Z$, it must be distinct from the cusp point (so $4r$ is unambiguous).
   If the tangent line $T_rZ = T_rC$ does not contain $p$ or $q$, we appeal to \autoref{prop:pq4r} and \autoref{prop:2p4r}.
   Suppose $T_rZ$ contains $p$.
   Then $T_rZ$ cannot contain $q$, and hence $p, q, r$  are not collinear.
-  By the construction of $Z$, one of $p,q,r$ must be the flex point $s_\infty$, and we see that the only possibility is $q = s_\infty$.
+  By the construction of $Z$, one of $p,q,r$ must be the flex point $s_\infty$.
+  Using the fact about tangent lines through the flex,  we see that the only possibility is $q = s_\infty$.
   Now $Z \subset C$ is uniquely determined up to an automorphism of $(\P^2, C)$.
   It is easy to write down such a $Z$ and check directly that $\Aut(\P^2, Z)$ is finite.
+  By \autoref{prop:good}, $\Aut(\mathcal X_b)$ is also finite, and $\mathcal X_b$ is not in the orbit closure of $S$.
   Alternatively, we see that the cubic surface associated to $Z$ has a unique singular point, which is of type $D_4$.
   It is known that, up to isomorphism, there are exactly two cubic surfaces with singularity $D_4$ (see \cite[Lemma~4]{bru.wal:79}).
   One has a finite automorphism group and the other one is treated by \autoref{prop:isogood}.
+
+  Suppose $Z = p + 5q$, where $p$ and $q$ are distinct.
+  Then we must have $p = s_\infty$ and $q \not \in \{s_0, s_\infty\}$.
+  Let $Q$ be the unique conic containing $5q$.
+  We claim that $C$ cannot contain $p$.
+  If it did, then we get $5(q-p) = 0 \in \Pic(C) \cong \G_a$, forcing $p = q$.
+  We also claim that the two points of $\Polar_Q(p) \cap Q$ are distinct from $q$.
+  This is because $Q$ and $C$ share the tangent line at $q$; this line does not pass through $p$, but the tangent lines to $Q$ at the points of $\Polar_Q(p)$ do pass through $p$.
+  Now, any $\sigma \in \Aut(\P^2, Z)$ must preserve $C$ the three points $\Polar_Q(p) \cap Q \cup \{q\}$.
+  Then $\Aut(\P^2, Z)$ and hence $\Aut(\mathcal X_b)$ is finite, and $\mathcal X_b$ is not in the orbit closure of $S$.
 \end{proof}
 
 It is time for enumerative computations.
 \begin{proposition}\label{prop:v3}
   Let $\mathcal V = \pi_* \omega_{\pi}^{-1}$ and let $v_i = c_i(\mathcal V)$.
-  Then we have
+  Then on $\widehat \M_{0,7}$, we have
   \[
     \begin{split}
-      \int_{\widehat \M_{0,7}}v_{1}^{4} = 3436&, \quad \int_{\widehat \M_{0,7}}v_{1}^{2}v_{2} = 1076,\quad \int_{\widehat \M_{0,7}}v_{1}v_{3} = 116,\\
-      &\int_{\widehat \M_{0,7}}v_2^{2} = 316,\quad \int_{\widehat \M_{0,7}}v_{4} = 0.
+      \int_{}v_{1}^{4} = 3436&, \quad \int_{}v_{1}^{2}v_{2} = 1076,\quad \int_{}v_{1}v_{3} = 116,\\
+      &\int_{}v_2^{2} = 316,\quad \int_{}v_{4} = 0.
     \end{split}
   \]
 \end{proposition}
 \begin{proof}
-  We first find the class of $\mathcal V$ in the Grothendieck group of $\widehat M_{0,7}$.
+  We begin by finding the class of $\mathcal V$ in the Grothendieck group of $\widehat \M_{0,7}$.
   The computation parallels the computation in the proof \autoref{lem:v2}, so we will be brief.
-  Recall that $\phi \colon \mathcal C \to \widehat M_{0,7}$ is the universal curve with sections $\sigma_0, \sigma_1, \dots, \sigma_\infty$.
+  Recall that $\phi \colon \mathcal C \to \widehat \M_{0,7}$ is the universal curve with sections $\sigma_0, \sigma_1, \dots, \sigma_\infty$.
   Setting $\mathcal L = \sigma_\infty^* \omega_\phi$, recall the bundles
   \begin{align}
     \mathcal A = \O \oplus \mathcal L^{-1} \text{ from \eqref{eqn:hatA}, and }
     \mathcal S = \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \text{ from \eqref{eqn:hatS}}.
   \end{align}
-
-  \[ \phi^* \mathcal S \to \O_{\mathcal C}(3\sigma_\infty).\]
-  Let $\rho \colon \P \mathcal S^\vee \to \widehat M_{0,7}$ be the structure map and let $Z \subset \mathcal C$ be the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
-  In the Grothendieck group of $\widehat M_{0,7}$, we have
+  Recall that $\rho \colon \P \mathcal S^\vee \to \widehat \M_{0,7}$ is the structure map and $\mathcal Z \subset \mathcal C$ the subscheme corresponding to the divisor $s_1 + \dots + s_5 + s_\infty$.
+  In the Grothendieck group of $\widehat \M_{0,7}$, we have
   \begin{equation}\label{eqn:v31}
     \begin{split}
-      \mathcal V &= \rho_* \omega^{-1}_\rho - \phi_* \left( \nu^* \omega^{-1}_\rho |_Z\right)\\
-      &= \left[(\Sym^3 \mathcal S) \otimes \det \mathcal S^\vee\right] - \left[\phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\det \mathcal S^\vee|_Z\right)\right]\\
+      \mathcal V &= \rho_* \omega^{-1}_\rho - \phi_* \left( \nu^* \omega^{-1}_\rho |_{\mathcal Z}\right)\\
+      &= (\Sym^3 \mathcal S) \otimes \det \mathcal S^\vee - \phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\det \mathcal S^\vee|_{\mathcal Z}\right)\\
       &= (\Sym^3 \left( \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \right)) \otimes \mathcal L^5 - \phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\mathcal L^5\right) \\
-      & \qquad +  \phi_*\left(\mathcal \O\left(9\sigma_\infty-Z\right) \otimes \phi^*\mathcal L^5\right)\\
+      & \qquad +  \phi_*\left(\mathcal \O\left(9\sigma_\infty-{\mathcal Z}\right) \otimes \phi^*\mathcal L^5\right)\\
       &= \mathcal L^{-1} - \mathcal L^4 + (\mathcal L^2 + \mathcal L^3 + \mathcal L^4 + \mathcal L^5) \otimes \O\left(-\Delta_0\right).       
     \end{split}
   \end{equation}
-  Here $\Delta_0 \subset \widehat M_{0,7}$ is the divisor $\sigma_0^* \O(\sigma_1 + \dots + \sigma_5)$.
+  Here $\Delta_0 \subset \widehat \M_{0,7}$ is the divisor $\sigma_0^* \O(\sigma_1 + \dots + \sigma_5)$.
   This is the locus of marked curves where the marked point $\sigma_0$ coincides with $\sigma_i$ for some $i = 1, \dots, 5$.
   In the last step of the computation, we have used \autoref{lem:push} with the section $\sigma_0$ and that 
   \[ \sigma_0^* \O(\sigma_0) = \sigma_\infty^*\O(-\sigma_\infty) = \mathcal L,\]

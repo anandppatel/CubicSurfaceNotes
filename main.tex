@@ -58,6 +58,7 @@
 
 \renewcommand{\sectionautorefname}{\S}
 \renewcommand{\subsectionautorefname}{\S}
+\renewcommand{\subsubsectionautorefname}{\S}
 \input{macros}
 \declaretheorem[sibling=theorem,style=remark]{remark}
 \numberwithin{equation}{section}
@@ -2064,6 +2065,7 @@ We immediately get an application to cubic surfaces.
 
   In the following table, we list the automorphism groups, the hyperplane $h$, and the value of $t$ for which $(s,h)$ is $t$-semistable.
   We denote the symmetric group on $n$ letters by $\Sigma_n$.
+  The automorphism groups are from \cite{sak:10} and the GIT semi-stability assertions are from \cite{gal.mar:19}.
   \begin{center}
   \begin{tabular}{l l l l l}
     \toprule
@@ -2099,7 +2101,7 @@ This method can show, for example, that the cubic with the $A_5$ singularity doe
   Let $X' \to \P^2$ be the composite $X' \to \Bl_Z \P^2 \to \P^2$, and let $L'$ be pullback of $\O(1)$ to $\mathcal X'_0$.
   It is easy to see that $h^i(X', L') = 0$ for $i > 0$ and $h^0(X', L') = 3$.
   Since $H^2(X', \O_{X'}) = 0$, there are no obstructions to deforming $L'$---it extends to compatible family of line bundles on $\mathcal X' \times_R \spec R/t^n$ for every $n$, where $t \in R$ is the uniformizer. 
-  By the approximation theorem \cite{art:69} applied to the relative Picard functor of $\pi'$, we deduce that $L'$ extends to a line bundle $\mathcal L$ on $\mathcal X'$, after possibly replacing $R$ by a finite \'etale cover.
+  By Artin's approximation theorem \cite{art:69} applied to the relative Picard functor of $\pi'$, we deduce that $L'$ extends to a line bundle $\mathcal L$ on $\mathcal X'$, after possibly replacing $R$ by a finite \'etale cover.
   By cohomology and base change, we see that $\pi'_* \mathcal L$ is a free $R$-module of rank 3.
   It is also easy to see that the evaluation map $\pi'^*\pi'_* \mathcal L \to \mathcal L$ is surjective.
   After choosing an isomorphism $\pi'_* \mathcal L \cong R^3$, we get a map $\alpha \colon \mathcal X' \to \P^2_R$, which restricts to the original map $X' \to \P^2$ on the central fiber.
@@ -2122,7 +2124,7 @@ This method can show, for example, that the cubic with the $A_5$ singularity doe
 \subsubsection{The anatomy of linear rational maps $\P_t^2 \dashrightarrow \P_t^2$}\label{sec:ratmap}
 To study orbit closures of collections of points in $\P^2$, we must understand one parameter families of automorphisms of $\P^2$.
 
-Let $R$ be a $\k$-algebra which is a discrete valuation ring with residue field $\k$, fraction field $K$, and uniformizer $t$.
+Let $R$ be a $\k$-algebra DVR with residue field $\k$, fraction field $K$, and uniformizer $t$.
 For an $R$-module $M$, we set $M_K = M \otimes_R K$ and $M_0 = M \otimes_R \k$.
 Let $\phi \colon \P^2_K \to \P^2_K$ be an isomorphism.
 We analyze the corresponding rational map $\P^2_R \dashrightarrow \P^2_R$.
@@ -2165,6 +2167,7 @@ Said in a coordinate free manner, the rational map $\phi$ is defined away from a
 is constant.
 
 Using the matrix of $\phi$, we can explicitly construct a resolution of the rational map $\phi \colon \P^2_R \dashrightarrow \P^2_R$ using a sequence of elementary transformations.
+We get the description of the maps \eqref{eqn:rk2} and \eqref{eqn:rk1} also from this resolution.
 Let $L \subset \P^2$ be the locus of indeterminacy of $\phi$ (with the reduced scheme structure).
 Let $\widetilde P \to \P^2_R$ be the blow up of $L$.
 Then the central fiber of $\widetilde P$ is the union of $\Bl_L\P^2$ and the exceptional divisor $E$.
@@ -2198,7 +2201,7 @@ Likewise, the last surface $P_n$ is $\F_1$ if $a = b$ or $\P^2$ if $b > a$.
 
 \subsubsection{Orbit closure of 6 general points in $\P^2$}\label{sec:orb6}
 We use the analysis in \autoref{sec:ratmap} to understand limits of a general set of six points in $\P^2$ under a one-parameter family of automorphisms.
-Let $Z \subset \P^2$ be a configuration of 6 distinct points, with no three collinear points.
+Let $Z \subset \P^2$ be a configuration of 6 distinct points, with no three collinear.
 A point $p \in \P^2 \setminus Z$ is a \emph{star point} if, for some ordering $\{z_1, \dots, z_6\}$ of $Z$, the lines $\langle z_1, z_2 \rangle$ and $\langle  z_3, z_4 \rangle$ and $\langle  z_5, z_6 \rangle$ are concurrent at $p$.
 A \emph{star-free} configuration is one without any star points.
 
@@ -2212,14 +2215,14 @@ A \emph{star-free} configuration is one without any star points.
   Consider the rational map
   \[ \phi \colon \P^2_R \dashrightarrow \P^2_R.\]
   We use $\phi$ to understand $W$ as a cycle.
-  For $z \in Z$, let $z_K$ denote the constant section $z$ of $\P^2_K$, and let $\phi(z)_0$ be the flat limit of $\phi(z_K)$.
+  For $z \in Z$, let $z_K$ denote the constant section $z \times_k K$ of $\P^2_K$, and let $\phi(z)_0$ be the flat limit of $\phi(z_K)$.
   Then the cycle $[W]$ of $W$ is simply
   \[ [W] = \sum_{z \in Z} \phi(z)_0.\]
 
   Suppose $\phi$ has rank 2.
   Then the indeterminacy locus of $\phi$ consists of a single point $p$ in the central fiber, and the map $\phi_0 \colon \P^2 \dashrightarrow \P^2$
   is the linear projection with center $p$ onto a line $L \subset \P^2$ (see \eqref{eqn:rk2}).
-  If $p \not \in Z$, then  $\phi_0$ is defined on $Z$, and $\phi(z)_0$ is simply $\phi_0(z)$.
+  If $p \not \in Z$, then  $\phi_0$ is defined for every $z \in Z$, and $\phi(z)_0$ is simply $\phi_0(z)$.
   Since $Z$ is star-free, the linear projection from $p$ can identify at most 2 pairs of points from $Z$.
   As a result, the set $\{\phi_0(z) \mid z \in Z\}$ consists of at least 4 distinct points on $L$.
   If $p \in Z$, consider $Z' = Z \setminus \{p\}$.
@@ -2250,15 +2253,15 @@ A \emph{star-free} configuration is one without any star points.
 
   If $\phi_0^\vee$ is defined for a line $\ell \in (\P^2)^\vee$, then the flat limit of the family of lines $\phi(\ell_K) \subset \P^2_K$ is the line corresponding to $\phi_0^\vee(\ell)$.
   The statements \eqref{eqn:rk2} and \eqref{eqn:rk1} for the dual projective space say the following.
-  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of a particular line $\Lambda$.
-  For lines $\ell \neq \Lambda$, the map $\phi_0^\vee$ is the composite of $\ell \mapsto \ell \cap \Lambda$ and a linear inclusion $\Lambda \to (\P^2)^\vee$.
+  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of a particular $\Lambda \in (\P^2)^\vee$.
+  For $\ell \neq \Lambda$, the map $\phi_0^\vee$ is the composite of $\ell \mapsto \ell \cap \Lambda$ and a linear inclusion $\Lambda \to (\P^2)^\vee$.
   In this case, a fiber of $\phi_0^\vee$ consists of a collection of concurrent lines, with the point of concurrency on $\Lambda$.
-  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of lines through a particular point $p$.
-  For lines $\ell$ not containing $p$, the map $\phi_0^\vee$ is constant.
+  If $\phi^\vee$ has rank 1, then the indeterminacy locus of $\phi^\vee_0$ consists of lines through a particular point $p \in \P^2$.
+  For $\ell \in (\P^2)^\vee$ not containing $p$, the map $\phi_0^\vee$ is constant.
 
   Consider a line $\ell$ joining pairs of points of $Z$.
   By semi-continuity, the flat limit of $\phi(\ell_K)$ must intersect $W$ in a scheme of length at least 2.
-  There are at most four lines in $\P^2$ that intersect $W$ in a scheme of multiplicity at least 2: the lines $\overline{pq}$, $\overline{pr}$, $\overline{qr}$, and $T_rW$.
+  There are at most four lines in $\P^2$ that intersect $W$ in a scheme of length at least 2: the lines $\overline{pq}$, $\overline{pr}$, $\overline{qr}$, and $T_rW$.
   In particular, if $\phi_0^\vee$ is defined at $\ell$, then $\phi_0^\vee(\ell)$ must be one of these 4.
   This immediately implies that $\phi^\vee$ cannot have rank 1.
   To see this, suppose it has rank 1.
@@ -2266,17 +2269,17 @@ A \emph{star-free} configuration is one without any star points.
   If $\phi_0^\vee$ takes only 4 values on these lines (or may be undefined on one of them), we would be able to partition them into 4 collections of concurrent lines, such that the points of concurrency are collinear.
   But it is easy to check that this is impossible for a star-free configuration $Z$.
 
-  We have now concluded that $\phi$ has rank 2, and hence $\phi_0^\vee$ is constant on its domain.
+  We have now concluded that $\phi^\vee$ has rank 2, and hence $\phi_0^\vee$ is constant on its domain.
   Suppose the constant value of $\phi_0^\vee$ corresponds to the line $L \subset \P^2$.
-  Suppose $z_1 \in Z$ (resp. $z_2 \in Z$) is such that the flat limit of $\phi(z_1)$ is $p$ (resp. $q$).
-  Consider the 8 lines $\overline {z_i z}$ for $z \in Z \setminus \{z_1,z_2\}$.
+  Suppose $z_1 \in Z$ (resp. $z_2 \in Z$) is such that the flat limit of $\phi({z_1}_K)$ is $p$ (resp. $q$).
+  Consider the 8 lines $\overline {z_i z}$ for $i= 1,2$ and $z \in Z \setminus \{z_1,z_2\}$.
   Since these lines are not all concurrent, $\phi_0^\vee$ is defined for at least one of them, say $\ell = \overline {z_1 z}$.
   Then $\phi^\vee_0(\ell)$ corresponds to the line $L$.
-  Since $\ell$ contains $z_1$, the flat limit $L$ of $\phi(\ell)$ contains the flat limit $p$ of $\phi(z_1)$.
+  Since $\ell$ contains $z_1$, the flat limit $L$ of $\phi(\ell_K)$ contains the flat limit $p$ of $\phi({z_1}_K)$.
 
   Now consider the ${4 \choose 2} = 6$ lines joining pairs of points of $Z \setminus \{z_1,z_2\}$.
   Since the 6 lines are not all concurrent, $\phi_0^\vee$ is defined on at least one of them, say $\ell$.
-  Then the flat limit of $\phi(\ell)$ is also $L$.
+  Then the flat limit of $\phi(\ell_K)$ is also $L$.
   Since the flat limit of a point of $Z \setminus \{z_1,z_2\}$ is $r$, by semicontinuity, we have
   \[ \mult_r(L \cap W) \geq 2.\]
   In other words, $L = T_rW$.

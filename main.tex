@@ -1847,7 +1847,7 @@ Substituting in \eqref{eqn:isorel} yields the relation
 
 \subsection{The family $D_4$}
 Consider
-\[ X = V(x_3x_0^2 - x_1^3+x_2^3).\]
+\[ X = V(x_3x_0^2 - x_1^3-x_2^3).\]
 A $\G_m$ stabilizing $X$ acts on the variables by weights $(5,1,1,-7)$.
 The weight $w$ of the cubic equation defining $X$ is $3$.
 By \eqref{eqn:rep}, we get
@@ -1989,7 +1989,7 @@ We prove an extension of this idea that turns out to be highly effective.
 \end{proposition}
 The proof needs the following lemma.
 It is well-known to experts---it appears as a remark in \cite{alp.hal.ryd:20} (see \S~1.3, Immediate consequences: 5)---but we include a proof for completeness.
-Recall that $\k$ is an algebraically closed field of characteristic 0 and a point means a $\k$-point.
+Recall that $\k$ is an algebraically closed field of characteristic 0, all schemes considered are of finite type over $\k$, and a point means a $\k$-point.
 \begin{lemma}\label{prop:oneparam}
   Let \(U\) be a smooth scheme over $\k$ with an action of a linear algebraic group $G$.
   Let $x \in U$ be a point whose stabilizer group $T \subset G$ is reductive.
@@ -2005,11 +2005,11 @@ Recall that $\k$ is an algebraically closed field of characteristic 0 and a poin
   \[
     \begin{tikzcd}
       Z \ar{r}\ar{d}& {[W/T]}\ar{d}{\pi}\\
-      \spec \k \ar{r}{[S]}& {[U/G]}.
+      \spec \k \ar{r}{s}& {[U/G]}.
     \end{tikzcd}
   \]
   Since $\pi$ is representable, \'etale, and of finite type, $Z$ is a finite disjoint of copies of $\spec \k$.
-  Let $z_1, \dots, z_n \in [W/T](\k)$ be the points so that $Z = \sqcup s_i$.
+  Let $z_1, \dots, z_n \in [W/T](\k)$ be the points of $Z$.
   Since the point $x \in [U/G](\k)$ lies in the closure of $s \in [U/G](\k)$ and the map $\pi$ is \'etale (and hence open), the point $x \in [W/T](\k)$ lies in the closure of the set $\{z_1,\dots, z_n\}$.
   But then $x$ lies in the closure of $z_i$ for some $i$.
   In other words, the point $x \in W(\k)$ lies in the closure of the $T$-orbit of a lift $s_i \in W(\k)$ of $z_i \in [W/T](\k)$.
@@ -2027,12 +2027,12 @@ Recall that $\k$ is an algebraically closed field of characteristic 0 and a poin
   Assuming that $x$ lies in the closure of the $G$-orbit of $s$, we show that for any $T_0$-fixed $h \in H$, the point $(x, h) \in W \times H$ is unstable.
 
   By \autoref{prop:oneparam}, there exists a one parameter subgroup $\lambda \colon \G_m \to T_0$ and a point $s' \in W$ in the same $G$-orbit as $s$ such that
-  \[ x = \lim_{t \to 0} \lambda_t \cdot s'.\]
+  \[ x = \lim_{t \to 0} \lambda(t) \cdot s'.\]
   For any $T_0$-fixed $h \in H$ we have
   \[
-    (x, v) = \lim_{t \to 0} \lambda_t \cdot (s', v).
+    (x, h) = \lim_{t \to 0} \lambda(t) \cdot (s', h).
   \]
-  Since $(s',v)$ is $G$-stable, $(x,v)$ must be $G$-unstable.
+  Since $(s',h)$ is $G$-stable, $(x,h)$ must be $G$-unstable.
 \end{proof}
 
 We immediately get an application to cubic surfaces.
@@ -2047,32 +2047,32 @@ We immediately get an application to cubic surfaces.
 \end{proposition}
 \begin{proof}
   Let $V$ be a 4-dimensional vector space.
-  Set $W = \P Sym^3 V^\vee$ and $H = \P V^\vee$; both have national actions of $\PGL(V)$.
+  Set $W = \P \Sym^3 V^\vee$ and $H = \P V^\vee$; both have natural linearized actions of $\PGL(V)$.
   The product $W \times H$ parametrizes cubic surfaces along with a hyperplane.
   We use the GIT analysis for this space carried out by Gallardo and Martinez-Garcia \cite{gal.mar:19}.
-  We have a $1$-parameter choice of linearizations on $W \times V$ indexed by a positive rational number $t$.
+  We have a $1$-parameter c hoice of linearizations on $W \times V$ indexed by a positive rational number $t$.
   The $G$-linearized line bundle corresponding to $t$ is $\O(a) \boxtimes \O(b)$, where $a$ and $b$ are (sufficiently divisible) positive integers satisfying $a/b = t$.
 
   From \cite[Theorem~3]{sak:10}, we see that the listed cubic surfaces have a reductive stabilizer group.
   In fact, in all cases the connected component of the identity is a torus.
 
-  Let $S$ be a smooth cubic surface without an Eckardt point corresponding to the point $s \in W$.
-  Suppose we have $0 < t \leq 3/7$.
-  From \cite[Theorem~2]{gal.mar:19}, we know that for any $h \in H$, the point $(s,h)$ is $t$-stable.
-  On the other hand, from \cite[Table 2]{gal.mar:19}, we see that for some $t$ in the range $0 < t \leq 3/7$, there exists a choice of $h \in H$, fixed by the connected component of the identity of the stabilizer of $s$, such that $(s,h)$ is $t$-semistable.
+  Let $S$ be a smooth cubic surface without an Eckardt point corresponding to a point $s \in W$.
+  Suppose we have $0 < t < 5/9$.
+  From \cite[Theorem~2]{gal.mar:19}, we see  that for any $h \in H$, the point $(s,h)$ is $t$-stable.
+  On the other hand, from \cite[Table 2]{gal.mar:19}, we see that for some $t$ in the range $0 < t < 5/9$, there exists a choice of $h \in H$, fixed by the connected component of the identity of the stabilizer of $s$, such that $(s,h)$ is $t$-semistable.
   We now apply \autoref{prop:gitproduct}.
 
   In the following table, we list the automorphism groups, the hyperplane $h$, and the value of $t$ for which $(s,h)$ is $t$-semistable.
   We denote the symmetric group on $n$ letters by $\Sigma_n$.
   \begin{center}
-  \begin{tabular}{l l l l}
+  \begin{tabular}{l l l l l}
     \toprule
-    $X$ & $\Aut(X)$ & $h$ & $t$\\
+    $X$ & Singularities of $X$& $\Aut(X)$ & $h$ & $t$\\
     \midrule
-    $x_0x_1x_3 = x_2^3$& $\G_m^2 \rtimes \Sigma_3$ & $x_2 = 0$ & All $t \in (0,1)$\\
-    $x_3(x_0x_2-x_1^2) = x_0x_1^2$& $\G_m \rtimes \Sigma_2$ & $x_2 = 0$ & $1/5$ \\
-    $x_3(x_0x_2-x_1^2) = x_0^2x_1$& $\G_m$ & $x_2 = 0$ & $1/3$\\
-    $x_3x_0^2 = x_1^3 + x_2^3$& $\G_m \rtimes \Sigma_3$ & $x_3 = 0$ & $3/7$\\
+    $x_0x_1x_3 = x_2^3$& $3A_2$&$\G_m^2 \rtimes \Sigma_3$ & $x_2 = 0$ & All $t \in (0,1)$\\
+    $x_3(x_0x_2-x_1^2) = x_0x_1^2$& $A_3+2A_1$&$\G_m \rtimes \Sigma_2$ & $x_2 = 0$ & $1/5$ \\
+    $x_3(x_0x_2-x_1^2) = x_0^2x_1$&$A_4+A_1$& $\G_m$ & $x_2 = 0$ & $1/3$\\
+    $x_3x_0^2 = x_1^3 + x_2^3$&$D_4$& $\G_m \rtimes \Sigma_3$ & $x_0 = 0$ & $3/7$\\
     \bottomrule
   \end{tabular}
 \end{center}

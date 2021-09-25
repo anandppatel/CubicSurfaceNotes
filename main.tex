@@ -1347,7 +1347,7 @@ The following proposition describes the fiber of $\mathcal Y$ over $e \in E_i$, 
   $\mathcal{Y}_{e} = \widetilde \pi^{-1}(e)$.
   \begin{enumerate}
   \item $\mathcal{Y}_{e}$ is the union of two surfaces $S$ and $\mathcal F_e$, where $\mathcal F_e$ is a copy of the Hirzebruch surface $\F_1$.
-    They meet transversely along $L_{i} \subset S$ and a curve of self-intersection $1$ in $\F_1$.
+    They meet transversely along $L_{i} \subset S$ and a smooth curve of self-intersection $1$ in $\F_1$.
   \item The subscheme $\widetilde{\mathcal Z}_e \subset \mathcal Y_e$ lies in $\mathcal F_e$ and is disjoint from $S$.
     It maps isomorphically onto its image in $L_{i}$ under $\eta$.
   \end{enumerate}
@@ -1374,10 +1374,10 @@ The following proposition describes the fiber of $\mathcal Y$ over $e \in E_i$, 
   $N_{L_{i}/S} = \O_{L_{i}}(-1)$.
   Altogether, we get the description of $\mathcal{Y}_{e}$ provided in (1).
 
-  Since the embedding $\widetilde {\mathcal Z} \to \widetilde{S^{[2]}} \times S$ is the composite
-  \[\widetilde {\mathcal Z} \to \mathcal Y \xrightarrow{\eta} \widetilde{S^{[2]}} \times S,\]
+  Since the embedding $i \colon \widetilde {\mathcal Z} \to \widetilde{S^{[2]}} \times S$ is the composite
+  \[\widetilde {\mathcal Z} \xrightarrow{j} \mathcal Y \xrightarrow{\eta} \widetilde{S^{[2]}} \times S,\]
   and $\mathcal F = \eta^{-1}(F)$, we have
-  \[ \widetilde {\mathcal Z} \cap \mathcal F = \widetilde {\mathcal Z} \cap F.\]
+  \[ \widetilde {\mathcal Z} \cap j^{-1}\left(\mathcal F\right) = \widetilde {\mathcal Z} \cap i^{-1}(F).\]
   We have already seen in \eqref{eq:Cartier} that
   \[F \cap \td{\mathcal{Z}} = (E \times S)\cap \td{\mathcal{Z}}.\]
   Restricting the first coordinate of $E \times S$ to $e$ implies
@@ -1418,7 +1418,7 @@ The following proposition provides one more necessary detail about the position 
   \[
     \F_1 = \P\left(N_e \otimes \O_{L_i} \oplus N_{L_i/S}\right).
   \]
-  The point $e \in E$ gives a (non-zero) map
+  The point $e \in E_i$ gives a (non-zero) map
   \[
     d \beta \colon N_e \to N_{L^{[2]}_i / S^{[2]}}|_{\beta(e)}.
   \]
@@ -1439,6 +1439,7 @@ The following proposition provides one more necessary detail about the position 
   \[
     \epsilon \colon H^0\left(Z, N_{L_i/S}|_Z\right) \otimes \O_Z \to N_{L_i/S}|_Z
   \]
+  is the evaluation map.
   Since $\epsilon$ is an isomorphism and $d \beta$ is non-zero, the second coordinate of \eqref{eqn:emap} is non-zero.
   This non-vanishing equivalent to the proposition.
   (Incidentally, note that the first coordinate of \eqref{eqn:emap} is invertible.
@@ -1454,12 +1455,11 @@ Consider the family
 along with $\widetilde {\mathcal Z} \subset \mathcal Y$.
 Set $U = \widetilde{S^{[2]}} \setminus E$.
 Over $U$, the $\widetilde{\mathcal Z}$ is an admissible subscheme of $\mathcal Y$, and here our family will be the associated cubic surface as in \autoref{def:cubicZ}.
-We now describe, our cubic surface over a point $e \in E_i$.
+We now describe our cubic surface over a point $e \in E_i$.
 In the $S$ component of $\mathcal Y_e$, we have three exceptional curves that meet the double curve $L_i \subset S$.
-They intersect $L_i$ in three distinct points, and are pairwise disjoint.
-Let $T_i$ be their union.
-In our schematic \autoref{fig:familyY}, these are indicated by the dashed lines.
-On the $\F_1$ component, we have distinguished length 5 subscheme: the length two subscheme $\widetilde{\mathcal Z}_e$, and the 3 points $\tau_i := T_i \cap L_i$.
+They intersect $L_i$ in three distinct points.
+Let $T_i$ be the union of these three exceptional curves (in \autoref{fig:familyY}, these are indicated by the dashed lines).
+On the $\F_1$ component, we have a distinguished length 5 subscheme: the union of the length two subscheme $\widetilde{\mathcal Z}_e$ and the 3 points $\tau_i := T_i \cap L_i$.
 This subscheme of length 5 is admissible, and our cubic surface over $e$ will be its associated cubic surface.
 
 We construct the family that we described fiber-wise above using the linear series associated to the line bundle
@@ -1491,7 +1491,7 @@ The following proposition describes $\mathcal L$ on the degenerate fibers of $\w
 \end{proposition}
 \begin{proof}
   We have $\omega_S^{-1} = \O(T_i + 2L_i)$.
-  Using this and \eqref{eqn:l2} gives $\mathcal L|_S = \O_S(T_i)$.
+  This and \eqref{eqn:l2} gives $\mathcal L|_S = \O_S(T_i)$.
 
   Let $\mathcal S \subset \mathcal Y$ be the proper transform of $E \times S \subset \widetilde{S^{[2]}} \times S$, so that the preimage in $\mathcal Y$ of $E \times S$ is the sum $\mathcal F + \mathcal S$  .
   Then we have
@@ -1528,15 +1528,18 @@ The next proposition identifies the anti-canonical bundle of $\pi$.
   Let $\widehat {\mathcal Y}$ be the blow-up of $\mathcal Y$ along $\widetilde{\mathcal Z}$ and $\widehat \pi \colon \widehat{\mathcal Y} \to \widetilde{S^{[2]}}$ the resulting map.
   Then it is easy to check that the rational map $\widehat\kappa \colon \widehat {\mathcal Y} \dashrightarrow \mathcal X$ (induced by $\kappa$) extends to a regular map away from the union of the curves $T_i$ over the points of $E_i$.
   Recall that $\mathcal S \subset \mathcal Y$ is the proper transform of $E \times S$, so that $\widetilde \pi^* \O(E) = \mathcal F + \mathcal S$.
-  The restriction
+  The map
   \[
-    \widehat {\mathcal Y} \setminus \mathcal S \dashrightarrow \mathcal X
+    \widehat \kappa \colon \widehat {\mathcal Y} \setminus \mathcal S \dashrightarrow \mathcal X
   \]
   is an isomorphism away from a locus of codimension at least 2 on both sides.
-  If $\widehat Z \subset \widehat {\mathcal Y}$ is the exceptional divisor of the blow-up, then we have
-  \[\widehat \kappa ^* \O(1) = \mathcal L(-\widehat Z) = \omega_{\widehat \pi}^{-1} \otimes \O(-\mathcal F).
+  If $\widehat D \subset \widehat {\mathcal Y}$ is the exceptional divisor of the blow-up, then we have
+  \[\widehat \kappa ^* \O(1) = \mathcal L(-\widehat D) = \omega_{\widehat \pi}^{-1} \otimes \O(-\mathcal F).
   \]
-  We see that the line bundles $\widehat \kappa^* \O(1) \otimes \widehat \pi^* \O(E)$ and $\omega_{\widetilde \pi}^{-1}$ are isomorphic on $\widehat {\mathcal Y} \setminus \mathcal S$, and hence the line bundles $\O(1) \otimes \pi^* \O(E)$ and $\omega_\pi^{-1}$ are isomorphic on $\mathcal X$.
+  We see that the line bundles $\widehat \kappa^* \O(1) \otimes \widehat \pi^* \O(E)$ and $\omega_{\widetilde \pi}^{-1}$ are isomorphic on $\widehat {\mathcal Y} \setminus \mathcal S$.
+  Hence, they are isomorphic away from a locus of codimension at least 2 on $\mathcal X$.
+  Since $\mathcal X$ is a hypersurface in a smooth variety, and it is smooth in codimension 1, it is normal.
+  It follows that $\O(1) \otimes \pi^* \O(E)$ and $\omega_\pi^{-1}$ are isomorphic on $\mathcal X$.
 \end{proof}
 
 \begin{proposition}
@@ -1620,11 +1623,11 @@ We have the following simplification.
 
   For $u_2$, fix a general $C \in |\omega_S^{-1}|$.
   Then $C$ intersects each exceptional curve $L_i$ transversely in a single point.
-  Note that $u_2$ is the class of $C^{[2]} \subset S^{[2]}$, clearly disjoint from $\Lambda$.
+  Then $u_2$ is the class of $C^{[2]} \subset S^{[2]}$, which is clearly disjoint from $\Lambda$.
   
   For $u_1$, fix a general pencil of curves $\{C_t \mid t \in \P^1\} \subset |\omega_S^{-1}|$.
   Then for every $t \in \P^1$, the curve $C_t$ intersects each exceptional curve $L_i$ transversely in a single point.
-  Note that $u_{1}$ is the class of
+  Then $u_{1}$ is the class of
   \[\{[Z] \in S^{[2]} \mid Z \subset C_{t} \text{ for some $t\in \P^{1}$}\},\]
   which is clearly disjoint from $\Lambda$.
 \end{proof}
@@ -1643,9 +1646,8 @@ We now compute the non-trivial degree 4 intersection numbers.
 \begin{proof}
   We know explicit cycles on $S^{[2]}$ that represent $u_1$ and $u_2$ (see the proof of \autoref{lemma:uE}).
   Using these, we convert the intersection numbers into enumerative problems, which we solve.
-  We indicate the main ideas and skip the details.
 
-  The $\int u_1^4$ is the answer to the following problem.
+  The number $\int u_1^4$ is the answer to the following problem.
   Choose $4$ general anti-canonical pencils on $S$, and let $f \colon S \dashrightarrow (\P^1)^4$ be the rational map induced by them.
   Then $u_1^4$ is the number of double points of the map $f$ (pairs of points in $S$ that have the same image under $f$).
   We find that the number is 36 by applying the double point formula \cite[Theorem~2]{ful:78} to a resolution of $f$.
@@ -1658,12 +1660,13 @@ We now compute the non-trivial degree 4 intersection numbers.
   The number $\int u_2^2$ is the number of pairs of points common to two general anti-canonical curves $C_1$ and $C_2$.
   Since there are $5$ points in $C_1 \cap C_2$, the number of pairs is ${5 \choose 2} = 10$.
 
-  Finally, to compute $\int E^4$, observe that $E$ is the disjoint union of $E_i$ for $i = 1, \dots, 10$, each $E_i$ is the $\P^1$-bundle
+  Finally, to compute $\int E^4$, observe that $E$ is the disjoint union of $E_i$ for $i = 1, \dots, 10$.
+  Each $E_i$ is the $\P^1$-bundle over $L_i$ defined by
   \[ E_i = \P N_{L_i^{[2]}/S^{[2]}},\]
   and the restriction of $E_i$ to $E_i$ is $\O(-1)$.
   We have $L_i^{[2]} \cong \P^2$ and
   \[ N_{L_i^{[2]}/S^{[2]}} = N_{L_i/S}^{[2]} \cong \O_{\P^2}(-1) \oplus \O_{\P^2}(-1).\]
-  Now it is a straightforward calculation to check that $E_i^4 = -3$.
+  Now it is a straightforward to check that $E_i^4 = -3$, and hence $E^2 = -30$.
 \end{proof}
 \begin{proposition}\label{prop:4deg4}
   Let $\mathcal V = \pi_*\left(  \omega_{\pi}^{-1} \right)$ be the anti-canonical section bundle of $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$,
@@ -1683,12 +1686,12 @@ We now compute the non-trivial degree 4 intersection numbers.
 
 Let $\mu \colon \widetilde{S^{[2]}} \dashrightarrow \M$ be the map to the moduli space of cubic surfaces induced by the family $\pi \colon \mathcal X \to \widetilde{S^{[2]}}$.
 \begin{proposition}
-  The degree of the map $\mu$ is $36 \times 6!$.
+  The degree of $\mu \colon \widetilde{S^{[2]}} \dashrightarrow \M$ is $36 \times 6!$.
 \end{proposition}
 \begin{proof}
   Recall that the moduli space of marked cubic surfaces $\M^\dagger$ is the configuration space of 6 ordered points in $\P^2$.
   The map $\mu$ clearly lifts to a birational map
-  \[ \widetilde S^{[2]} \to \M^\dagger / S_2,\]
+  \[ \widetilde S^{[2]} \dashrightarrow \M^\dagger / S_2,\]
   where the $S_2$ permutes the last 2 points of the configuration.
   Since the degree of $\M^\dagger \to \M$ is  $72 \times 6!$, the degree of $\mu$ is half of that.
 \end{proof}
@@ -1710,8 +1713,8 @@ and hence a map from $BG$ to the moduli stack of cubic surfaces
 Suppose we know that the family $\pi$ is good.
 In this case, this simply means that $X$ is not in the closure of a general cubic surface $S$.
 Then, we get
-\[ \mu^* \Orb(S) = 0,\]
-which in turn gives a linear relation among the coefficients of the universal expression for $[\Orb(S)]$.
+\[ \mu^* [\Orb(S)] = 0,\]
+which in turn gives a linear relation among the coefficients of the expression for $[\Orb(S)]$ pulled back to $A^4(BG)$.
 To get a useful relation, the group $A^4(BG)$ must be rich.
 In particular, we must take $G$ to be infinite; otherwise, $A^4(BG)$ is torsion, and we only get a congruence relation.
 
@@ -1723,8 +1726,8 @@ In particular, for $G = \G_m$, the only group we use, we can take $B$ to be an a
 See \autoref{sec:schematicexample} for an example.
 
 To implement the strategy outlined above, we need to prove that the cubic surface $X$ does not lie in the closure of the orbit of a general cubic surface.
-Following \autoref{def:goodfamily}, let us say that $X$ is \emph{good} if it has this property.
-\autoref{prop:isogood} proves that the following cubic surfaces are good:
+Following \autoref{def:goodfamily}, say that $X$ is \emph{good} if it has this property.
+\autoref{prop:isogood} proves that the following cubic surfaces are good (the parenthesis describes the singularities):
 \begin{enumerate}
 \item $x_0x_1x_3 = x_2^3$ \quad $(3A_2)$
 \item $x_3(x_0x_2-x_1^2) = x_0x_1^2$ \quad $(A_3 + 2A_1)$
@@ -1767,10 +1770,9 @@ The family
 \[ [X/\G_m] \to B\G_m\]
 yields a relation
 \begin{equation}\label{eqn:isorel}
-  0 = a_{1^4}v_1^4 + a_{1^2\cdot 2} v_1^2v_2 + a_{1\cdot 3} v_1v_3 + a_{2^2}v_2^2 + a_4 v_4,
+  a_{1^4}v_1^4 + a_{1^2\cdot 2} v_1^2v_2 + a_{1\cdot 3} v_1v_3 + a_{2^2}v_2^2 + a_4 v_4 = 0,
 \end{equation}
 where the $v_i$ are the Chern classes of the push-forward of the anticanonical bundle.
-
 Let us explain how to compute the push-forward of the anti-canonical bundle in this setting.
 For an integer $a$, let $\chi(a)$ denote the $1$-dimensional $\G_m$ representation where the $\G_m$ action is given by
 \[ t \colon v \mapsto t^a v.\]
@@ -1887,8 +1889,7 @@ and
 \[\mathscr M = \left[ W \setminus \{0\} / \GL V \right]\]
 for the moduli stack of cubic surfaces.
 \begin{theorem}\label{thm:eqvclass}
-  Let $X$ be a generic cubic surface.
-  Then the class of $\Orb(X)$ in $A^4_{\GL V}(W) = A^4(\mathscr M)$ is given by
+  There exists a non-empty open subset $U \subset W$ such that for every cubic surface $X$ represented by a point of $U$, the class of $\Orb(X)$ in $A^4_{\GL V}(W)$ is given by
   \[
     [\Orb(X)] = 1080 \cdot \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right),
   \]
@@ -1901,7 +1902,7 @@ for the moduli stack of cubic surfaces.
   Therefore, for every cubic surface $X$, we have an expression
   \[[\Orb(X)] = a_{1^4}v_1^4 + a_{1^2\cdot 2} v_1^2v_2 + a_{1\cdot 3} v_1v_3 + a_{2^2}v_2^2 + a_4 v_4,\]
   for some coefficients $a_i \in \Z$.
-  The families in \autoref{sec:testfamilies} give the following linear relations among the coefficients
+  For a generic $X$, the families in \autoref{sec:testfamilies} give the following linear relations among the coefficients
   \begin{align*}
     16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} &= 4320 \text{ from \eqref{eq:relation1}}\\
     625 a_{1^{4}} + 125 a_{1^{2}2} - 25a_{13} + 25a_{2^2} - 6 a_{4} &= 103680 \text{ from \eqref{eq:relation2}}\\
@@ -1922,14 +1923,14 @@ for the moduli stack of cubic surfaces.
   Let $\P^3 = \P V$.
   Consider the universal cubic surface $X \subset \P V\times \P \Sym^3 V^\vee$.
   Let $\pi \colon \mathcal X \to \P \Sym^3 V^\vee$ be the second projection and $\mu \colon \P \Sym^3 V^\vee \to \mathscr M$ the map induced by $\pi$.
-  Tautologically, for a generic cubic surface $X$, the pre-image under $\mu$ of $\Orb(X)$ is the closure of the $\PGL(V)$ orbit of $X$.
+  Tautologically, for any cubic surface $X$, the pre-image under $\mu$ of $\Orb(X)$ is the closure of the $\PGL(V)$ orbit of $X$.
   By adjunction, we have
   \[ \omega_\pi = \O(1) \boxtimes \O(1),\]
   and hence
   \[ \mathcal V = \pi_* \omega_\pi \cong \O(1)^4.\]
-  In $A^4(\P \Sym^3V^\vee)$, we evaluate 
+  For a generic $X$, we evaluate 
   \[ [\Orb(X)] = 1080(v_1^2v_2 - v_1v_3+9v_4)\]
-  and find that the answer is $96120$ (times the class of a codimension 4 linear subspace).
+  in $A^4(\P \Sym^3V^\vee)$ and find that the answer is $96120$ (times the class of a codimension 4 linear subspace).
 \end{proof}
 
 \begin{corollary}
@@ -1940,7 +1941,7 @@ for the moduli stack of cubic surfaces.
   Note that two cubic surfaces are isomorphic if and only if they are in the same $\PGL_4$ orbit.
   Consider the pull-back of $\Orb(S)$ to the base $\P^4$ of the family.
   By the genericity of $X$ and $S$, this pull-back consists of distinct reduced points corresponding to the points of $\Orb(S) \setminus \partial \Orb(S)$.
-  The statement now follows from \autoref{thm:eqvclass} and the computation of the right hand side, which we omit.
+  The statement now follows from \autoref{thm:eqvclass} and an easy Chern class computation, which we omit.
 \end{proof}
 
 \subsection{Proof of \texorpdfstring{\autoref{theorem:main}}{first theorem} from the introduction}
@@ -1955,7 +1956,7 @@ Let $\mathcal V$ denote the vector bundle on $\mathscr N$ corresponding to the s
 The tautological non-zero section of $\Sym^3V^\vee$ on $\mathscr N$ defines a family of cubic surfaces
 \[ \pi \colon \mathscr X \to \mathscr N,\]
 and hence a map $\mathscr N \to \mathscr M$.
-Under this map, the pull-back of a generic orbit closure is a generic orbit closure.
+Under this map, the pull-back of an orbit closure is an orbit closure.
 Note that $\mathscr X \subset \P \mathcal V$ is the zero locus of $\O(3)$.
 By adjunction, we have
 \[ \omega_\pi = \O(1) \otimes \det V |_{\mathscr X},\]

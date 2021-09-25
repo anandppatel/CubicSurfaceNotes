@@ -133,7 +133,8 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
 
 \begin{theorem}\label{theorem:main}
   Let $\pi \colon \cX \to B$ be a good family of cubic surfaces over a
-  proper base $B$, let $\V$ denote the rank 4 vector bundle
+  proper base $B$.
+  Let $\V$ denote the rank 4 vector bundle
   $ \pi_* \left(\omega_\pi^{-1}\right)$, and let
   \(v_i = c_i\left(\V\right)\) be its Chern classes.  Assume that a
   general fiber of $\pi$ is semistable, and let
@@ -144,8 +145,7 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
     1080 \int_{B} \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right).
   \end{align}
 \end{theorem}
-\autoref{def:goodfamily} gives the precise meaning of a ``good''
-family.  This notion includes any family whose fibers are
+\autoref{def:goodfamily} gives the precise meaning of a good family.  This notion includes any family whose fibers are
 GIT-semistable or have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
@@ -154,15 +154,16 @@ that has been an ongoing topic of study.  Consider a hypersurface
 \(X\) in a projective space $\P V$ cut out by a homogeneous polynomial
 $F \in \Sym^d V^\vee$.  In $\P\Sym^dV^\vee$, consider the orbit of
 $[F]$ under the action of $\GL(V)$, and let $\Orb([F])$ be its
-closure.  To our knowledge, this story begins in 1897 with Enriques
-and Fano, who computed the degree of the orbit closure of simple
+closure.
+What is the degree of $\Orb([F])$?
+To our knowledge, Enriques
+and Fano in 1897 were the first to address this question.
+They computed the degree for simple
 binary forms of all degrees \cite{enr.fan:97}.  In a series of
 seminal papers, Aluffi and Faber computed the degree of the orbit
-closure for \emph{all} binary and ternary forms.  That is, the case of
-points in $\P^1$ and curves in $\P^2$ has been done.  The next case is
-that of a general cubic surface in $\P^3$, which we do in this paper.
-\autoref{theorem:main} applied to Question~\ref{orbit} says that the
-degree of the orbit closure of a general cubic surface is $96120$.
+closure for \emph{all} binary and ternary forms, finishing off the cases of points in $\P^1$ and curves in $\P^2$.
+The next case is that of cubic surfaces in $\P^3$.
+\autoref{theorem:main} applied to Question~\ref{orbit} settles it for general cubic surfaces---the degree of the orbit closure of a general cubic surface is $96120$.
 
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
@@ -174,9 +175,10 @@ Our approach is different.
 
 \subsection{The equivariant class of the orbit closure}
 Our key idea is to consider not just the degree of the orbit closure,
-but the class of the orbit closure in the equivariant Chow ring
-$A^\bullet_{\GL V}(\Sym^dV^\vee)$. Although the equivariant class subsumes the
-degree, finding it turns out to be easier than finding the degree.
+but the class of the orbit cl osure in the equivariant Chow ring
+$A^\bullet_{\GL V}(\Sym^dV^\vee)$.
+The equivariant class subsumes the
+degree, but, counter-intuitively, it is easier to find.
 
 Let us explain how the equivariant class yields the degree.
 We have natural maps
@@ -225,12 +227,10 @@ variables; see \autoref{proof:eqvclass2}.
 
 Most of the paper is devoted to constructing {\sl provably} good
 families of cubic surfaces on which we can compute $\deg \mu$ and the
-Chern classes $c_i$.  Proofs of goodness are sometimes challenging --
-this is one instance of the general problem of determining which
-homogeneous forms lie in the $GL$-orbit closure of which other forms.
-For us, a particularly difficult case was to show that the $A5$ cubic
-$V(x_0 x_1 x_3 - (x_0^3 + x_1^3 - x_1x_{2}^2))$ is not in the closure
-of a general orbit, and this task occupies the entire appendix. To give a teaser for our test families, we list their
+Chern classes $c_i$.  Proofs of goodness are sometimes challenging---
+they require solving instances of the problem of determining which
+homogeneous forms lie in the orbit closure of which other forms.
+To give a teaser for our test families, we list their
 bases $B$ here: $\P^4$, $\overline M_{0,7}$, a
 Hassett-weighted variant of $\overline M_{0,7}$, a blow up of the
 Hilbert scheme of two points on a quintic del Pezzo surface, and last
@@ -288,15 +288,17 @@ in the future.
 In a different direction, there should be analogous formulas counting
 Del Pezzo surfaces of degrees $1,2$ and $4$.  We fully expect our
 methods to establish formulas in these settings, though we have not
-even begun the analysis.  
+even begun the analysis.
+
+Finally, we repeat a comment of Aluffi and Faber \cite{alu.fab:93}: this paper computes the equivariant orbit class of a general vector in \emph{one} representation of \emph{one} group.  A whole lot of work needs to be done if we want to solve the problem in general.
 
 \subsection{Organization}
 In \autoref{sec:good}, we recall standard facts about cubic surfaces and their moduli.
 We also review the basic notions of equivariant Chow theory.
 The main new ingredient in this section is the definition of a good family (\autoref{def:goodfamily}).
-In \autoref{sec:testfamilies}, we construct a number of test families of cubic surfaces, and evaluate the linear relation on the coefficients of the class of the orbit closure given by each family.
+In \autoref{sec:testfamilies}, we construct a number of test families of cubic surfaces and evaluate the linear relation on the coefficients of the class of the orbit closure given by each family.
 For each family, we first give an informal description.
-The first four families, taken up in the first four subsections, use variations of the theme of blowing up 6 varying points in $\P^2$.
+The first four families, taken up in the first four subsections, use variations on the theme of blowing up 6 points in $\P^2$.
 The next four families, taken up in the fifth subsection, are isotrivial; their base space is the stack $B\G_m$.
 Altogether, we produce 8 families for 5 undetermined coefficients.
 In \autoref{sec:tietogether}, we tie together the enumerative results and obtain the main theorems stated in the introduction.
@@ -339,6 +341,8 @@ dualizing line bundle.  If $X$ and $Y$ are themselves Gorenstein and
 $\pi$ is flat, then we have
 $\omega_{X/Y} = \omega_X \otimes \pi^*\omega_Y^{-1}$.
 
+For a closed subscheme $Y \subset X$, the notation $\mathcal I_Y \subset \O_X$ denotes the ideal sheaf of $Y \subset X$ and if $Y$ and $X$ are smooth, then $N_{Y/X}$ denotes the normal bundle of $Y \subset X$.
+
 Given a vector bundle $\mathcal W$, we let $\P \mathcal W$ be its
 projectivization.  Contrary to Grothendieck's convention,
 $\P \mathcal W$ parametrizes $1$-dimensional subspaces in the fibers
@@ -352,7 +356,7 @@ associated to $Q$ gives an isomorphism of $\P V$ with the dual
 projective space $\P V^\vee$.  Given a point $p \in \P V$, we denote
 by $\Polar_Q(p) \subset \P V$ the hyperplane dual to $p$ with respect to
 $Q$. Similarly, given a hyperplane $H \subset \P V$, we denote by
-$\Pole(H) \in \P V$ the point dual to $H$ with respect to $Q$.  In
+$\Pole_Q(H) \in \P V$ the point dual to $H$ with respect to $Q$.  In
 almost all cases, we use these constructions when $\P V$ is $\P^2$.
 
 \subsection{Moduli of cubic surfaces}
@@ -400,7 +404,7 @@ are pull-back diagrams.  Let $V$ be a $\k$-vector space of dimension
 4.  Note that $\mathscr{M}$ is simply the quotient stack
 \[\mathscr{M} = \left[\Sym^3 V^\vee \otimes \det V \setminus \{0\} / \GL V \right]. \]
 \begin{proposition}\label{prop:cubicstack}
-  The category $\mathscr{C}$ of families of cubic surfaces is equivalent to the category $\mathscr{M}$.
+  The categories $\mathscr{C}$ and $\mathscr{M}$ are equivalent as categories fibered over ${\rm Schemes}_k$.
 \end{proposition}
 \begin{proof}
   Let $\pi \colon \cX \to B$ be a family of cubic surfaces, and set
@@ -489,13 +493,15 @@ Given an algebraic space $X$ with an action of an algebraic group $G$,
 denote by $A^i_G(X)$ the $G$-equivariant Chow group of codimension $i$
 cycles.  Given a $G$-invariant subspace $Y \subset X$ of pure
 codimension $i$, denote by $[Y] \in A^i_G(X)$ the fundamental class of
-$Y$.  If $Y \subset X$ has codimension $> i$, then the restriction map
-\[ A^i_G(X) \to A^i_G(X \setminus Y)\] A $G$-linearized vector bundle
+$Y$.  If $Y \subset X$ has codimension $c$ and $c > i$, then the restriction map
+\[ A^i_G(X) \to A^i_G(X \setminus Y)\]
+is an isomorphism; in general, it is surjective with kernel is $A^{i-c}_G(Y)$.
+A $G$-linearized vector bundle
 $V$ on $X$ admits equivariant Chern classes $c_i(V) \in A^i_G(X)$.
 The equivariant Chow groups are homotopy invariant: if $Y \to X$ is a
 $G$-equivariant vector bundle, then the pull-back map
 $A^i_G(X) \to A^i_G(Y)$ is an isomorphism.  If $X$ is smooth, then
-$A^*_G(X)$ is a graded ring, where the multiplication is given by the
+$\bigoplus_i A^i_G(X) = A^*_G(X)$ is a graded ring, where the multiplication is given by the
 intersection product.
 
 The $G$-equivariant Chow groups of $X$ are the same as the Chow groups
@@ -508,31 +514,30 @@ the polynomial ring
 degree $i$ and can be identified with the $i$-th Chern class of the
 standard $n$-dimensional representation of $\GL_n$.  By homotopy
 invariance, for any $\GL_n$ representation $W$, we have
-\[ A_{\GL_n}(W) = \Z[c_1,\dots,c_n].\] If the general linear
-group under consideration is $\GL V$, where $V$ is a vector space,
+\[ A_{\GL_n}(W) = \Z[c_1,\dots,c_n].\]
+If the group under consideration is $\GL V$, where $V$ is an $n$-dimensional vector space,
 then we write $v_i$ for the $i$-th Chern class of the tautological
 representation $V$.  Then we have
 \[ A_{\GL V}(W) = \Z[v_1,\dots,v_n].\]
 
-Let $V$ be a $4$-dimensional $\k$-vector space.
+Let $V$ be a $4$-dimensional vector space.
 Consider the $\GL V$ representation $W = \Sym^3 V^\vee \otimes \det V$.
 By \autoref{prop:cubicstack}, (non-zero) $\GL V$ orbits in $W$ correspond canonically to cubic surfaces.
 Note that the action of $\GL V$ on $W$ is generically free, and hence the codimension of a generic orbit is $20-16 = 4$.
 Given a point $w \in W$, let $\Orb(w)$ denote the closure of its $\GL V$ orbit, and let
 \[ [\Orb(w)] \in A^4_{\GL V}(W) = A^4(\mathscr M)\]
 denote the fundamental class.
-By a slight abuse of notation, if $X \subset \P^3$ is a cubic surface or $F \in k[X_0, \dots, X_3]$ is a non-zero cubic form, we let $\Orb(X)$ or $\Orb(F)$ denote the closure of the orbit in $W$ of the corresponding point $w$, and $[\Orb(X)]$ or $\Orb(F)$ the fundamental class.
-Since $\A^4(\mathscr M)$ is generated by monomials in the Chern classes $c_i$ of total degree 4, we have an expression
+By a slight abuse of notation, if $X \subset \P^3$ is a cubic surface or $F \in k[X_0, \dots, X_3]$ is a non-zero cubic form, we let $\Orb(X)$ or $\Orb(F)$ denote the closure of the orbit in $W$ of the corresponding point $w$, and $[\Orb(X)]$ or $[\Orb(F)]$ the fundamental class.
+Since $\A^4(\mathscr M)$ is generated by monomials in $v_i$ of total degree 4, we have an expression
 \begin{equation}\label{eqn:chernexpansion}
-  [\Orb(X)] = a_{1^4}v_1^4 + a_{1^2\cdot 2} v_1^2v_2 + a_{1\cdot 3} v_1v_3 + a_{2^2}v_2^2 + a_4 v_4,
+  [\Orb(X)] = a_{1^4} \cdot v_1^4 + a_{1^2\cdot 2} \cdot v_1^2v_2 + a_{1\cdot 3} \cdot v_1v_3 + a_{2^2} \cdot v_2^2 + a_4 \cdot v_4,
 \end{equation}
 where the coefficients $a_i$ are integers.
-The coefficients \eqref{eqn:chernexpansion} depend on $X$, but it is easy to argue that they remain constant as $X$ varies in a non-empty Zariski open subset of the space of cubic surfaces.
-
+The coefficients \eqref{eqn:chernexpansion} depend on $X$.
 We let
 \[ \partial \Orb(X) = \Orb(X) \setminus \GL V \cdot X,\]
 denote the boundary of the orbit closure.
-Note that $\partial \Orb(X) \subset W$ has codimension greater than $5$.
+Note that $\partial \Orb(X) \subset W$ has codimension at least $5$.
 
 \subsection{Good families}
 \label{sec:good-families}
@@ -562,6 +567,11 @@ the fiber $\cX_b$ does not lie in $\partial \Orb(F)$.
   Then the family $\pi \colon \cX \to B$ is good.
   Indeed, let $U$ be the subset consisting of GIT-stable elements.
   For every $F \in U$, the orbit of $F$ is closed in the semistable locus, and hence $\partial \Orb(F)$ cannot contain $\cX_b$.
+\end{example}
+\begin{example}[A combination]
+  Suppose every fiber $\cX_b$ has a finite automorphism group or is GIT semistable.
+  Let $U$ be the subset corresponding to smooth cubic surfaces.
+  Since smooth cubic surfaces have a finite automorphism group and are GIT stable, we see that $\pi \colon \mathcal X \to B$ is good.
 \end{example}
 
 \begin{proposition}\label{prop:goodisgood}
@@ -610,7 +620,7 @@ The last condition means that $Z$ is scheme-theoretically cut out by the section
 
 \begin{proposition}
   \label{prop:admissibleblowup}
-Let $Z \subset S$ be an admissible length 6 subscheme.
+Let $Z \subset S$ be an admissible length $(d-3)$ subscheme.
 Set $X = \Bl_ZS$.
 Then the following hold.
 \begin{enumerate}
@@ -627,14 +637,14 @@ Then the following hold.
   Let $\pi \colon X \to S$ be the blow-up map.
   Since $Z$ is curvilinear, $X$ has at worst $A_n$ singularities.
   Indeed, if $Z$ is isomorphic to $\spec k[t]/t^{n+1}$ at a point $z$ in its support, then $X$ is singular at a unique point of $\pi^{-1}(z)$; this singularity is of type $A_n$.
-  Note, however, that $E_z := \pi^{-1}(z)$ (taken with the reduced structure) is isomorphic to $\P^1$.
+  Note that $E_z := \pi^{-1}(z)$ (taken with the reduced structure) is isomorphic to $\P^1$.
   
   Let $E \subset X$ be the exceptional divisor, namely, the Cartier divisor defined by the ideal $\pi^{-1}\mathcal I_Z$.
   Over the point $z$ as above, $E$ has multiplicity $n$ along the component $E_z$.
   Furthermore, we have $(nE_z)^2 = -n$, and hence $E^2 = -(d-3)$.
   Also, see that we have
   \begin{equation}\label{eqn:wx}
-    \omega_X = \pi^* \omega_{S} (E) \otimes \O_X(E),
+    \omega_X = \pi^* \omega_{S} \otimes \O_X(E),
   \end{equation}
   and therefore,
   \[ \omega_X^{-1} = \pi^* \omega^{-1}_{S} \otimes \O_X(-E).\]
@@ -678,13 +688,13 @@ Then the following hold.
 \begin{definition}[Associated cubic surface]
   \label{def:cubicZ}
   Let $S$ be a smooth del Pezzo surface of degree $d$ and let $Z \subset S$ be an admissible subscheme of length $d-3$.
-  The \emph{cubic surface associated to $Z$}, denoted by
+  The \emph{cubic surface associated to $Z \subset S$}, denoted by
   $X_Z \subset \P^3$, is the image of the map
   $\Bl_{Z}S \to \P^3$ induced by the anti-canonical linear system $H^0\left(\Bl_ZS, \omega_{\Bl_Z S}^{-1}\right)$.
 \end{definition}
 By \autoref{prop:admissibleblowup}, we may equivalently define $X_Z$ as
 \[ X_Z = \Proj \left( \bigoplus_{n \geq 0} H^0\left( \Bl_ZS, \omega_{\Bl_Z S}^{-n} \right) \right).\]
-More generally, we need to make the construction $Z \leadsto X_Z$ in families.
+Let us make the construction $Z \leadsto X_Z$ in families.
 Let $B$ be a scheme, $P \to B$ a smooth proper family of del-Pezzo surfaces and $Z \subset  P$ a closed subscheme, flat over $B$, whose fibers are admissible subschemes.
 Consider the blowup $\Bl_{ Z}  P$.
 Note that $Z \subset  P$ is a local complete intersection, and hence the blow-up is $B$-flat and commutes with arbitrary base change.
@@ -700,7 +710,7 @@ $Z_b \subset P_b$, as in \autoref{def:cubicZ}.
 \begin{proposition}\label{prop:blow-ups-and-base-change}
   Let $\pi \colon P \to B$ be a smooth morphism and $Z \subset P$ a closed subscheme flat and lci over $B$.
   Then $\Bl_ZP \to B$ is flat and for any $C \to B$, the canonical map
-  \[  \Bl_{Z_C} P_C \to \Bl_ZP \times_B C.\]
+  \[  \Bl_{Z_C} P_C \to \left(\Bl_ZP\right)_C.\]
   is an isomorphism.
 \end{proposition}
 \begin{proof}
@@ -735,18 +745,17 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \end{proposition}
 
 \begin{proof}
-  Since we have a birational isomorphism $\P^2 \dashrightarrow X_Z$, a non-trivial automorphism of $\P^2$ must induce a non-trivial automorphism of $X_Z$.
+  Since we have a birational isomorphism $\P^2 \dashrightarrow X_Z$, a non-trivial automorphism of $\P^2$ cannot induce a trivial automorphism of $X_Z$.
   Hence the map of automorphism groups is injective.
 
-  To show that the image has finite index, let $\widetilde Y \to \Bl_Z\P^2$ be the minimal desingularization and set $Y = X_Z$.
+  To show that the image has finite index, let $\tau \colon \widetilde Y \to \Bl_Z\P^2$ be the minimal desingularization and set $Y = X_Z$.
   Since $\Bl_Z\P^2$ has only $A_n$ singularities and such singularities are canonical, we conclude that
   \[\tau^* \omega_{\Bl_Z\P^2} = \omega_{\widetilde Y}.\]
-  Consider the composite
-  \[\mu = \kappa \circ \tau \colon \widetilde Y \to Y.\]
+  Consider the composite $\mu$ of 
+  \[ \widetilde Y \xrightarrow{\tau} \Bl_Z \P^2 \xrightarrow{\kappa} Y.\]
   Note that
   \[ \mu^* \omega_Y = \omega_{\widetilde Y}.\]
   We claim that $\mu \colon \widetilde Y \to Y$ is the minimal desingularization of $Y$.
-
   To see this, let $Y' \to Y$ be the minimal desingularization.
   Since $\widetilde Y$ is non-singular, the birational morphism $\mu \colon \widetilde Y \to Y$ factors as a composite
   \[ \widetilde Y \xrightarrow{\alpha} Y' \to Y.\]
@@ -766,9 +775,9 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
   Let $H \in \Pic(\widetilde Y)$ be the pullback of $\O(1)$ under the map $\widetilde Y \to \P^2$.
   We claim that the orbit of $H$ under $\Aut(\widetilde Y)$ is finite.
   To see this, note that we have
-  \[ H^2 = 1 \text{ and } \omega_{\widetilde Y} \cdot H = -3, \]
+  \[ \omega_{\widetilde Y}^2 = 3 \text{ and } \omega_{\widetilde Y} \cdot H = -3, \]
   and hence $(\omega_{\widetilde Y} + H)$ is orthogonal to $\omega_{\widetilde Y}$ under the intersection pairing.
-  Since $\omega_{\widetilde Y}$ has positive self-intersection, its orthogonal complement $\omega_{\widetilde Y}^\perp \subset \Pic(Y) = {\rm NS}(Y)$ is a negative definite lattice by the Hodge index theorem.
+  Since $\omega_{\widetilde Y}$ has positive self-intersection, its orthogonal complement $\omega_{\widetilde Y}^\perp \subset \Pic(\widetilde Y) = {\rm NS}(\widetilde Y)$ is a negative definite lattice by the Hodge index theorem.
   Thus, it has only finitely many elements of a given self-intersection.
   Any automorphism of $\widetilde Y$ preserves $\omega_{\widetilde Y}$ and the self-intersection number.
   Therefore, under $\Aut(\widetilde Y)$, the orbit of $\omega_{\widetilde Y} + H$ and hence the orbit of $H$, must be finite.
@@ -792,10 +801,6 @@ An automorphism of the pair $(\P^2, Z)$ induces an automorphism of $\Bl_Z\P^2$ a
 \section{Test families}\label{sec:testfamilies}
 \subsection{The first test family}
 \label{sec:family-b_1}
-We begin with an informal description of the family.
-Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
-We vary 5 points $z_1, \dots, z_5$ in a general 4-dimensional linear series on $C$.
-Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
 \begin{figure}
   \centering
   \input{figures/familyB1}
@@ -803,6 +808,10 @@ Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cu
   \label{fig:FamilyB1}
 \end{figure}
 
+We begin with an informal description of the family.
+Fix a point $z_0$ and a conic $C \subset \P^2$ not containing $z_0$.
+We vary 5 points $z_1, \dots, z_5$ in a general 4-dimensional linear series on $C$.
+Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cubic surfaces; see \autoref{fig:FamilyB1}.
 \begin{proposition}
   \label{prop:B1}
   Let $C$ be a plane conic, $Z \subset C$ a subscheme of length 5, and $z_0 \in \P^2$ a point not on $C$.
@@ -814,14 +823,13 @@ Blowing up the six points $\{z_0, \dots, z_5\}$ gives a 4-parameter family of cu
 \end{proof}
 
 We now formally define the family.
-Let $H = \Hilb^5(C) \cong \P^5$ and let $B \cong \P^4 \subset H \cong \P^5$ be a general hyperplane.
+Let $H = C^{[5]}$ be the Hilbert scheme of 5 points in $C$, so that $H \cong \P^5$, and let $B \cong \P^4 \subset H \cong \P^5$ be a general hyperplane.
 Let $Z \subset B \times C$ be the restriction of the universal closed subscheme.
 Set 
-\[Z' = Z \sqcup B \times \{z_0\} \subset B \times \P^2.\]
+\[Z' = Z \sqcup \left(B \times \{z_0\}\right) \subset B \times \P^2.\]
 Our family
 \[\pi \colon X \to B\]
 is the family of cubic surfaces associated to $Z' \subset B \times \P^2$ (see \autoref{def:cubicZ}).
-It is easy to see that the family is good.
 \begin{proposition}\label{prop:goodnessB1}
   The family $\pi \colon X \to B$ is good.
 \end{proposition}
@@ -837,12 +845,12 @@ It is easy to see that the family is good.
   It follows that $\sigma$ fixes all points of $C$ and hence all points of $\P^2$.
 \end{proof}
 
-Let us evaluate the degree 4 monomials in the Chern classes of the anti-canonical section bundle.
+We now compute with the Chern classes of the anti-canonical section bundle.
 \begin{proposition}\label{lem:v1}
   Let $\mathcal V = \pi_* \left( \omega_{X/B}^{-1} \right)$.
   Then we have
   \[
-    \int_{B_{1}}v_{1}^{4} = 16, \quad \int_{B_{1}}v_{1}^{2}v_{2} = 4,\quad \int_{B_{1}}v_{1}v_{3} =0,\quad \int_{B_{1}}v_2^{2} = 1,\quad \int_{B_{1}}v_{4} = 0.\]
+    \int_{B}v_{1}^{4} = 16, \quad \int_{B}v_{1}^{2}v_{2} = 4,\quad \int_{B}v_{1}v_{3} =0,\quad \int_{B}v_2^{2} = 1,\quad \int_{B}v_{4} = 0.\]
 \end{proposition}
 \begin{proof}
 By the construction of the cubic surface, we see that $\mathcal V$ is the rank 4 bundle
@@ -872,7 +880,7 @@ Let us find the degree of the map to moduli $B \dashrightarrow \M$.
   The degree of $B \dashrightarrow \M$ is $4320$.
 \end{proposition}
 \begin{proof}
-  Consider space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
+  Consider the space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
   We have the action of $S_5$ on $\M^\dagger$ via permutations of the last 5 points.
   The map $B \dashrightarrow \M$ lifts to
   \begin{equation}\label{eqn:b1lift}
@@ -886,11 +894,11 @@ Let us find the degree of the map to moduli $B \dashrightarrow \M$.
   We must find out how many points of $B$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
   Let $w_0 + w_\infty \subset C$ be the scheme $\Polar_C(z_0) \cap C$.
   Then we have
-   \[\Aut(\P^2, C, z_0) = \Aut(C, w_0 + w_{\infty}) \cong \G_m \times \Z/2\Z. \]
+   \[\Aut(\P^2, C, z_0) = \Aut(C, w_0 + w_{\infty}) \cong \G_m \rtimes \Z/2\Z. \]
    Choose an isomorphism $C \cong \P^1$ such that $w_0$ and $w_\infty$ are identified with $[0:1]$ and $[1:0]$.
    Then the $\G_m$ corresponds to the diagonal $\G_m \subset \PGL_2$ and the $\Z/2\Z$ corresponds to the swapping of the two homogeneous coordinates.
    Write $z_1' + \dots + z_5'$ as the vanishing locus of a binary quintic form $F$.
-   It is easy to see that under the action of the $\G_m$, the closure of the orbit of $V(F)$ in $\Hilb^5 C \cong \P^5$ is a rational normal curve.
+   It is easy to see that under the action of the $\G_m$, the closure of the orbit of $V(F)$ in $C^{[5]} \cong \P^5$ is a rational normal curve.
    Hence, a general hyperplane $B$ intersects the orbit in 5 points.
    Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
    Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
@@ -910,13 +918,6 @@ Using \autoref{prop:goodisgood} and the computation of the Chern classes and the
 
 \subsection{The second test family}
 \label{sec:family-b_2}
-We begin with an informal description of the family.
-Forget the notation introduced in \autoref{sec:family-b_1}.
-We take a smooth conic $C \subset \P^2$ and 7 distinct marked points $s_0, s_1, \dots, s_5, s_\infty$ on $C$.
-Let $t \in \P^2$ be the pole, with respect to $C$, of the line joining $s_0$ and $s_\infty$.
-We blow up the six points $s_1,\dots, s_5, t$ to get a cubic surface (see \autoref{fig:FamilyB2}).
-As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
-
 \begin{figure}
     \centering
     \input{figures/familyB2}
@@ -924,6 +925,13 @@ As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
       In the second test family, we blow up the plane at the points $\{s_{1}, \dots, s_{5}, t\}$ as the seven points $\{s_1, \dots, s_5, s_0, s_\infty\}$ vary freely on a conic $C$.}
     \label{fig:FamilyB2}
   \end{figure}
+We begin with an informal description of the family.
+Forget the notation introduced in \autoref{sec:family-b_1}.
+We take a smooth conic $C \subset \P^2$ and 7 distinct marked points $s_0, s_1, \dots, s_5, s_\infty$ on $C$.
+Let $t \in \P^2$ be the pole, with respect to $C$, of the line joining $s_0$ and $s_\infty$.
+We blow up the six points $s_1,\dots, s_5, t$ to get a cubic surface (see \autoref{fig:FamilyB2}).
+As the 7 points vary on $C$, we get a 4-parameter family of cubic surfaces.
+
 
 
 We now make the construction more precise, and show how to use it construct a family of cubic surfaces over $\overline {\M}_{0,7}$.

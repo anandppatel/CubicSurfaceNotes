@@ -95,8 +95,12 @@
 \maketitle
 
 \begin{abstract}
-  Using equivariant geometry, we find a universal formula that computes the number of times a general cubic surface arises in a family.
-  As applications, we show that the $\PGL_4$ orbit closure of a generic cubic surface has degree 96120, and that a general cubic surface arises 42120 times as a hyperplane section of a general cubic 3-fold.
+  Using equivariant geometry, we find a universal formula that
+  computes the number of times a general cubic surface arises in a
+  family.  As applications, we show that the $\PGL_4$ orbit closure of
+  a generic cubic surface has degree 96120, and that a general cubic
+  surface arises 42120 times as a hyperplane section of a general
+  cubic 3-fold.
 \end{abstract}
 
 
@@ -114,11 +118,12 @@ about families of cubic surfaces.
 
 The isomorphism classes of cubic surfaces form a 4-dimensional moduli
 space. So, we expect that in a 4-dimensional family, a general
-isomorphism class would appear finitely many times. How can we
+isomorphism class would appear finitely many times. Is it possible to
 determine this number? For example, how many times does a general
 cubic surface appear, up to isomorphism, as
 \begin{enumerate}[(A)]
-\item \label{orbit} a member of a 4-dimensional general linear system of cubic surfaces in $\P^3$?
+\item \label{orbit} a member of a 4-dimensional general linear system
+  of cubic surfaces in $\P^3$?
 \item \label{slice} a hyperplane section of a general cubic threefold in $\P^4$?
 \item a blow up of 6 points in $\P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
@@ -146,8 +151,9 @@ geometric fibers are isomorphic to cubic surfaces in $\P^3$.
     1080 \int_{B} \left(v_{1}^{2}v_{2} - v_{1}v_{3}+ 9v_{4}\right).
   \end{align}
 \end{theorem}
-\autoref{def:goodfamily} gives the precise meaning of a good family.  This notion includes any family whose fibers are
-GIT-semistable or have a finite automorphism group.
+\autoref{def:goodfamily} gives the precise meaning of a good family.
+This notion includes any family whose fibers are GIT-semistable or
+have a finite automorphism group.
 
 \subsection{Degree of the orbit closure}
 Question~\ref{orbit} in \autoref{sec:intro} fits in a broader story
@@ -169,16 +175,16 @@ degree of the orbit closure of a general cubic surface is $96120$.
 Question~\ref{orbit} appears as one of the ``twenty-seven questions
 about the cubic surface'' by Ranestad and Sturmfels \cite{ran.stu:20}.
 In 2019, Brustenga i Moncus\'i, Timme, and Weinstein gave a
-``numerical proof'' for the number 96120. In 2020, Cazzador and
-Skauli outlined an approach towards a proof by following the
-techniques of Aluffi and Faber \cite{bru-i-mon.tim.wei:20,caz.ska:20}.
-Our approach is different.
+``numerical proof'' for the number 96120. In 2020, Cazzador and Skauli
+outlined an approach towards a proof by following the techniques of
+Aluffi and Faber \cite{bru-i-mon.tim.wei:20,caz.ska:20}.  Our approach
+is novel, and the underlying change of perspective has the potential
+to solve other similar enumerative problems.
 
 \subsection{The equivariant class of the orbit closure}
-Our key idea is to consider not just the degree of the orbit closure,
+Th key idea is to consider not just the degree of the orbit closure,
 but the class of the orbit closure in the equivariant Chow ring
-$A^\bullet_{\GL V}(\Sym^dV^\vee)$.
-The equivariant class subsumes the
+$A^\bullet_{\GL V}(\Sym^dV^\vee)$.  The equivariant class subsumes the
 degree, but, counter-intuitively, it is easier to find.
 
 Let us explain how the equivariant class yields the degree.
@@ -195,22 +201,23 @@ Under the composite map, the class of $\Orb(F) \in A^\bullet_{\GL
   V}(\Sym^dV^\vee)$ is mapped to the class of $\Orb([F]) \in
 A^\bullet(\P \Sym^dV^\vee) \otimes \Q$, which is simply the degree of $\Orb([F])$.
 
-Let us explain what makes it possible to find the equivariant
-class.  The ring $A^\bullet_{\GL V}(\Sym^dV^\vee)$ is the polynomial ring
-in variables $c_1, \dots, c_r$, where $r = \dim V$, and the variable
+Let us explain what makes it possible to find the equivariant class.
+The ring $A^\bullet_{\GL V}(\Sym^dV^\vee)$ is the polynomial ring in
+variables $c_1, \dots, c_r$, where $r = \dim V$, and the variable
 $c_i$ has degree $i$.  The equivariant class of $\Orb(F)$ lies in the
 graded component $A^m(\Sym^dV^\vee)$, where
-$m = \dim \Sym^d V^\vee - \dim \GL V$.  As a result, it can be expressed as
-a $\Z$-linear combination of monomials in $c_i$ of total degree
-$m$. We can now use the method of undetermined coefficients.  We
-construct maps $B \to [\Sym^dV^\vee/\GL V]$ where the pull-back of
-$\Orb(F)$ as well as the classes $c_i$ can be explicitly
-computed. Every such family gives a linear relationship between the
-coefficients in the expression of $\Orb(F)$, which are to be determined.
-If we have enough families, we get enough information to find all the coefficients.
-For cubic surfaces, we construct more than enough families---there are 5
-coefficients to be determined and we construct 8 families. The redundancy
-serves as an extra check on the result.
+$m = \dim \Sym^d V^\vee - \dim \GL V$.  As a result, it can be
+expressed as a $\Z$-linear combination of monomials in $c_i$ of total
+degree $m$. We can now use the method of undetermined coefficients.
+With quite some effort, we construct maps $B \to [\Sym^dV^\vee/\GL V]$
+where the pull-back of $\Orb(F)$ as well as the classes $c_i$ can be
+explicitly computed. Every such family gives a linear relationship
+between the coefficients in the expression of $\Orb(F)$, which are to
+be determined.  With sufficiently many families, we get enough
+information to find all the coefficients.  For cubic surfaces, we
+construct more than enough $4$-dimensional test families---there are 5
+coefficients to be determined and we construct 8 families. The
+redundancy serves as extra confirmation of the end result.
 \begin{theorem}\label{thm:eqvclass2}
   Let $V$ be a 4-dimensional vector space and let $F$ be a general
   element of $\Sym^3 V^\vee$.
@@ -222,32 +229,36 @@ serves as an extra check on the result.
   where the \(c_i = c_i(V)\) are the Chern classes of the tautological vector
   bundle $V$.
 \end{theorem}
-The formula in \autoref{thm:eqvclass2} appears to be different from the one
-in \autoref{theorem:main}, but they are related by a simple change of
-variables; see \autoref{proof:eqvclass2}.
+The formula in \autoref{thm:eqvclass2} appears to be different from
+the one in \autoref{theorem:main}, but they are related by a simple
+change of variables; see \autoref{proof:eqvclass2}.
 
 Most of the paper is devoted to constructing {\sl provably} good
 families of cubic surfaces on which we can compute $\deg \mu$ and the
-Chern classes $c_i$.  Proofs of goodness are sometimes challenging---
-they require solving instances of the problem of determining which
-homogeneous forms lie in the orbit closure of which other forms.
-To give a teaser for our test families, we list their
-bases $B$ here: $\P^4$, $\overline M_{0,7}$, a
-Hassett-weighted variant of $\overline M_{0,7}$, a blow up of the
-Hilbert scheme of two points on a quintic del Pezzo surface, and last
-but not least, the stack $B\G_m$.
+Chern classes $c_i$. Because the test families are $4$-dimensional, we
+encounter technical challenges with some of the
+constructions. Furthermore, proofs of goodness can be challenging---
+they require resolving instances of the problem of determining which
+homogeneous forms lie in the orbit closure of which other forms.  To
+give a teaser for our test families, we list their bases $B$ here:
+$\P^4$, $\overline M_{0,7}$, a Hassett-weighted variant of
+$\overline M_{0,7}$, a blow up of the Hilbert scheme of two points on
+a quintic del Pezzo surface, and last but not least, the stack
+$B\G_m$.  The curious reader can skip to \autoref{sec:testfamilies}
+for detailed constructions.
 
-The method of undetermined coefficients applies to hypersurfaces of
-any degree and dimension.  The obstacle, in general, is in
-constructing enough families.  Our constructions crucially use the
-beautiful but specific geometry cubic surfaces.
+
 
 \subsection{The orbit closure problem}
-To apply the method of undetermined coefficients, we have to ensure that no fibers of our family lie in the orbit closure of generic cubic surfaces (otherwise, we get excess intersection).
-Thus, we have to prove statements of the form ``a given cubic surface $S$ is not in the closure of a suitably generic cubic surface.''
-This is, in general, a difficult problem.
-We develop a range of tools to address problems of this kind.
-To preserve the flow of the paper, and because these techniques may be of independent interest, we assemble these tools in a separate section (\autoref{sec:orbclosure}).
+To apply the method of undetermined coefficients, we have to ensure
+that no fibers of our family lie in the orbit closure of generic cubic
+surfaces (otherwise, we get excess intersection).  Thus, we have to
+prove statements of the form ``a given cubic surface $S$ is not in the
+closure of a suitably generic cubic surface.''  This is, in general, a
+difficult problem.  We develop a range of tools to address problems of
+this kind.  To preserve the flow of the paper, and because these
+techniques may be of independent interest, we assemble these tools in
+a separate section (\autoref{sec:orbclosure}).
 
 \subsection{Further remarks}
 The formula in \autoref{theorem:main} has some curious consequences.
@@ -278,32 +289,44 @@ across all good families of cubic surfaces.
 
 \subsection{Future directions}
 
-\autoref{thm:eqvclass2} is only the beginning.  Each {\sl particular}
-cubic surface $F=0$ registers its own equivariant orbit class
-$[\Orb(F)]$.  A refined study of the methods developed in this paper
-may afford us a complete understanding of how this class changes
-according to special changes in the geometry of $F=0$, e.g. acquiring
-singularities or Eckardt points.  This is something we hope to pursue
-in the future.
+\autoref{thm:eqvclass2}, and more importantly the method introduced in
+its proof, promises more enumerative vistas of exploration.  Each {\sl
+  particular} cubic surface $F=0$ registers its own equivariant orbit
+class $[\Orb(F)]$.  The methods developed in this paper have the
+potential to provide a {\sl complete} understanding of how this class
+changes according to special changes in the geometry of $F=0$,
+e.g. acquiring singularities or Eckardt points. We hope to conduct
+this detailed investigation in the future.
 
 In a different direction, there should be analogous formulas counting
 Del Pezzo surfaces of degrees $1,2$ and $4$.  We fully expect our
 methods to establish formulas in these settings, though we have not
 even begun the analysis.
 
-Finally, we repeat a comment of Aluffi and Faber \cite{alu.fab:93}: this paper computes the equivariant orbit class of a general vector in \emph{one} representation of \emph{one} group.  A whole lot of work needs to be done if we want to solve the problem in general.
+Finally, we make the equivariant version of a comment of Aluffi and
+Faber \cite{alu.fab:93}: this paper computes the equivariant orbit
+class of a general vector in \emph{one} representation of \emph{one}
+group.  A whole lot of work needs to be done if we want to solve the
+problem in general, though the new equivariant flexibility will allow
+for further progress.
 
 \subsection{Organization}
-In \autoref{sec:good}, we recall standard facts about cubic surfaces and their moduli.
-We also review the basic notions of equivariant Chow theory.
-The main new ingredient in this section is the definition of a good family (\autoref{def:goodfamily}).
-In \autoref{sec:testfamilies}, we construct a number of test families of cubic surfaces and evaluate the linear relation on the coefficients of the class of the orbit closure given by each family.
-For each family, we first give an informal description.
-The first four families, taken up in the first four subsections, use variations on the theme of blowing up 6 points in $\P^2$.
-The next four families, taken up in the fifth subsection, are isotrivial; their base space is the stack $B\G_m$.
-Altogether, we produce 8 families for 5 undetermined coefficients.
-In \autoref{sec:tietogether}, we tie together the enumerative results and obtain the main theorems stated in the introduction.
-The last section, \autoref{sec:orbclosure} is devoted to developing methods to solve cases of the orbit closure problem.
+In \autoref{sec:good}, we recall standard facts about cubic surfaces
+and their moduli.  We also review the basic notions of equivariant
+Chow theory.  The main new ingredient in this section is the
+definition of a good family (\autoref{def:goodfamily}).  In
+\autoref{sec:testfamilies}, we construct a number of test families of
+cubic surfaces and evaluate the linear relation on the coefficients of
+the class of the orbit closure given by each family.  For each family,
+we first give an informal description.  The first four families, taken
+up in the first four subsections, use variations on the theme of
+blowing up 6 points in $\P^2$.  The next four families, taken up in
+the fifth subsection, are isotrivial; their base space is the stack
+$B\G_m$.  Altogether, we produce 8 families for 5 undetermined
+coefficients.  In \autoref{sec:tietogether}, we tie together the
+enumerative results and obtain the main theorems stated in the
+introduction.  The last section, \autoref{sec:orbclosure} is devoted
+to developing methods to solve cases of the orbit closure problem.
 
 \subsection{Acknowledgements}
 We thank Radu Laza, who asked Question~\ref{slice} to the first two
@@ -852,16 +875,20 @@ We now compute with the Chern classes of the anti-canonical section bundle.
     \int_{B}v_{1}^{4} = 16, \quad \int_{B}v_{1}^{2}v_{2} = 4,\quad \int_{B}v_{1}v_{3} =0,\quad \int_{B}v_2^{2} = 1,\quad \int_{B}v_{4} = 0.\]
 \end{proposition}
 \begin{proof}
-By the construction of the cubic surface, we see that $\mathcal V$ is the rank 4 bundle
+  By the construction of the cubic surface, we see that $\mathcal V$
+  is the rank 4 bundle
 \[ \mathcal V = \pi_* (\mathcal I_{Z'} \otimes \omega_{\pi}^{-1}),\]
-where $\pi \colon B \times \P^2 \to B$ is the first projection.
-It contains the constant rank 2 bundle
+where $\pi \colon B \times \P^2 \to B$ is the first projection.  It
+contains the constant rank 2 bundle
 \begin{equation}\label{eqn:v11}
   \pi_*\left( \mathcal I_{B \times C} \otimes \mathcal I_{B \times z_0} \otimes \omega_\pi^{-1} \right) = H^0\left(\mathcal I_{C} \otimes \mathcal I_{z_0} \otimes \omega_{\P^2}^{-1}\right) \otimes \O_{B},
 \end{equation}
-and the quotient is the rank 2 bundle $\pi_*\left( I_{Z/B \times C} \otimes \omega_\pi^{-1} \right)$.
-To identify the quotient, note that $Z \subset B \times C$ is a divisor of class $(1,5)$ and $\omega^{-1}_{\pi}|_{B\times C}$ is isomorphic to $\O(0,6)$.
-Hence, $I_{Z/B \times C} \otimes \omega_\pi^{-1}$ is isomorphic to $\O(-1,1)$, and therefore
+and the quotient is the rank 2 bundle
+$\pi_*\left( I_{Z/B \times C} \otimes \omega_\pi^{-1} \right)$.  To
+identify the quotient, note that $Z \subset B \times C$ is a divisor
+of class $(1,5)$ and $\omega^{-1}_{\pi}|_{B\times C}$ is isomorphic to
+$\O(0,6)$.  Hence, $I_{Z/B \times C} \otimes \omega_\pi^{-1}$ is
+isomorphic to $\O(-1,1)$, and therefore
 \begin{equation}\label{eqn:v12}
   \begin{split}
     \pi_*\left( I_{Z/B \times C} \otimes \omega_\pi^{-1} \right) \cong \O_{B}(-1)^{2}.
@@ -879,35 +906,48 @@ Let us find the degree of the map to moduli $B \dashrightarrow \M$.
   The degree of $B \dashrightarrow \M$ is $4320$.
 \end{proposition}
 \begin{proof}
-  Consider the space of marked cubic surfaces $\M^\dagger$, which is isomorphic to the configuration space of 6 ordered points on $\P^2$.
-  We have the action of $S_5$ on $\M^\dagger$ via permutations of the last 5 points.
-  The map $B \dashrightarrow \M$ lifts to
+  Consider the space of marked cubic surfaces $\M^\dagger$, which is
+  isomorphic to the configuration space of 6 ordered points on $\P^2$.
+  We have the action of $S_5$ on $\M^\dagger$ via permutations of the
+  last 5 points.  The map $B \dashrightarrow \M$ lifts to
   \begin{equation}\label{eqn:b1lift}
     B \to \M^\dagger / S_5,
   \end{equation}
-  where $b \in B$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.
-  Let us compute the degree of this map.
-  Given a general $(y_0, y_1 + \dots + y_5)$ in $\M^\dagger / S_5$, there is a unique conic $Q$ through $y_1 + \dots + y_5$.
-  Note that there exists an automorphism of $\P^2$ that takes $(C, z_0)$ to $(Q, y_0)$, and such an automorphism is unique up to automorphisms preserving $(C, z_0)$.
-  Suppose, under one such automorphism, $y_1 + \dots + y_5 \subset Q$ is taken to $z_1' + \dots + z_5' \subset C$.
-  We must find out how many points of $B$ are equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
-  Let $w_0 + w_\infty \subset C$ be the scheme $\Polar_C(z_0) \cap C$.
+  where $b \in B$ is mapped to $(z_0, z_1 + \dots + z_5)|_b$.  Let us
+  compute the degree of this map.  Given a general
+  $(y_0, y_1 + \dots + y_5)$ in $\M^\dagger / S_5$, there is a unique
+  conic $Q$ through $y_1 + \dots + y_5$.  Note that there exists an
+  automorphism of $\P^2$ that takes $(C, z_0)$ to $(Q, y_0)$, and such
+  an automorphism is unique up to automorphisms preserving $(C, z_0)$.
+  Suppose, under one such automorphism, $y_1 + \dots + y_5 \subset Q$
+  is taken to $z_1' + \dots + z_5' \subset C$.  We must find out how
+  many points of $B$ are equivalent to $z_1' + \dots + z_5'$ up to an
+  automorphism of $\P^2$ preserving $(C, z_0)$.  Let
+  $w_0 + w_\infty \subset C$ be the scheme $\Polar_C(z_0) \cap C$.
   Then we have
    \[\Aut(\P^2, C, z_0) = \Aut(C, w_0 + w_{\infty}) \cong \G_m \rtimes \Z/2\Z. \]
-   Choose an isomorphism $C \cong \P^1$ such that $w_0$ and $w_\infty$ are identified with $[0:1]$ and $[1:0]$.
-   Then the $\G_m$ corresponds to the diagonal $\G_m \subset \PGL_2$ and the $\Z/2\Z$ corresponds to the swapping of the two homogeneous coordinates.
-   Write $z_1' + \dots + z_5'$ as the vanishing locus of a binary quintic form $F$.
-   It is easy to see that under the action of the $\G_m$, the closure of the orbit of $V(F)$ in $C^{[5]} \cong \P^5$ is a rational normal curve.
-   Hence, a general hyperplane $B$ intersects the orbit in 5 points.
-   Accounting for the additional $\Z/2\Z$, we conclude that there are precisely 10 points of $B$ equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$ preserving $(C, z_0)$.
-   Thus, the degree of the map in \eqref{eqn:b1lift} is 10.
+   Choose an isomorphism $C \cong \P^1$ such that $w_0$ and $w_\infty$
+   are identified with $[0:1]$ and $[1:0]$.  Then the $\G_m$
+   corresponds to the diagonal $\G_m \subset \PGL_2$ and the $\Z/2\Z$
+   corresponds to the swapping of the two homogeneous coordinates.
+   Write $z_1' + \dots + z_5'$ as the vanishing locus of a binary
+   quintic form $F$.  It is easy to see that under the action of the
+   $\G_m$, the closure of the orbit of $V(F)$ in $C^{[5]} \cong \P^5$
+   is a rational normal curve.  Hence, a general hyperplane $B$
+   intersects the orbit in 5 points.  Accounting for the additional
+   $\Z/2\Z$, we conclude that there are precisely 10 points of $B$
+   equivalent to $z_1' + \dots + z_5'$ up to an automorphism of $\P^2$
+   preserving $(C, z_0)$.  Thus, the degree of the map in
+   \eqref{eqn:b1lift} is 10.
 
    Since the degree of $\M^\dagger \to \M$ is $72 \times 6!$, the degree of $B \to \M$ is
    \[72 \times 6! / 5! \times 10 = 4320.\]
 \end{proof}
 
-Using \autoref{prop:goodisgood} and the computation of the Chern classes and the degree, we obtain the following relation on the undetermined coefficients of $[\Orb(X)]$ in
-\eqref{eqn:chernexpansion} for a general cubic surface $X$:
+Using \autoref{prop:goodisgood} and the computation of the Chern
+classes and the degree, we obtain the following relation on the
+undetermined coefficients of $[\Orb(X)]$ in \eqref{eqn:chernexpansion}
+for a general cubic surface $X$:
 \begin{align}
   \label{eq:relation1}
   16 \cdot a_{1^4} + 4 \cdot a_{1^2 2} + a_{2^2} = 4320.
@@ -1188,7 +1228,8 @@ It is time for enumerative computations.
       &= (\Sym^3 \mathcal S) \otimes \det \mathcal S^\vee - \phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\det \mathcal S^\vee|_{\mathcal Z}\right)\\
       &= (\Sym^3 \left( \O \oplus \mathcal L^{-2} \oplus \mathcal L^{-3} \right)) \otimes \mathcal L^5 - \phi_*\left(\mathcal \O\left(9\sigma_\infty\right) \otimes \phi^*\mathcal L^5\right) \\
       & \qquad +  \phi_*\left(\mathcal \O\left(9\sigma_\infty-{\mathcal Z}\right) \otimes \phi^*\mathcal L^5\right)\\
-      &= \mathcal L^{-1} - \mathcal L^4 + (\mathcal L^2 + \mathcal L^3 + \mathcal L^4 + \mathcal L^5) \otimes \O\left(-\Delta_0\right).       
+      &= \mathcal L^{-1} - \mathcal L^4 + (\mathcal L^2 + \mathcal L^3
+      + \mathcal L^4 + \mathcal L^5) \otimes \O\left(-\Delta_0\right).
     \end{split}
   \end{equation}
   Here $\Delta_0 \subset \widehat \M_{0,7}$ is the divisor $\sigma_0^* \O(\sigma_1 + \dots + \sigma_5)$.

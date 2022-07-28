@@ -109,27 +109,29 @@
 \section{Introduction}
 \label{sec:intro}
 
-Cubic surfaces have fascinated us for centuries. Ever since Cayley and
-Salmon discovered the 27 lines, it has become somewhat of a tradition
-to revisit their geometry, using increasingly sophisticated tools to
-uncover more and more. Our contribution to this story provides a
-universal answer to a collection of natural enumerative questions
-about families of cubic surfaces.
+Cubic surfaces have fascinated geometers for centuries. Ever since
+Cayley and Salmon discovered the 27 lines, it has become something of
+a tradition to revisit the geometry of cubic surfaces, using
+increasingly sophisticated tools to uncover more and more. Our
+contribution to this story is a universal answer to a varied
+collection of enumerative questions about families of cubic surfaces.
 
 The isomorphism classes of cubic surfaces form a 4-dimensional moduli
-space. So, we expect that in a 4-dimensional family, a general
-isomorphism class would appear finitely many times. Is it possible to
-determine this number? For example, how many times does a general
-cubic surface appear, up to isomorphism, as
+space. Therefore, we expect that in a 4-dimensional family, a general
+isomorphism class should appear finitely many times. This paper offers
+a method for determining this number of occurrences. For example, one
+can ask: How many times does a general cubic surface appear, up to
+isomorphism, as
 \begin{enumerate}[(A)]
-\item \label{orbit} a member of a 4-dimensional general linear system
+\item \label{orbit} a member of a general 4-dimensional linear system
   of cubic surfaces in $\P^3$?
 \item \label{slice} a hyperplane section of a general cubic threefold in $\P^4$?
 \item a blow up of 6 points in $\P^2$ varying in a general
   4-dimensional linear system on a cubic curve?
 \end{enumerate}
-Our formula answers all questions of this kind.  The answers to these
-specific questions are $96120$, $42120$, and $25920$, respectively.
+Our main formula answers all questions of this kind -- the answers to
+these specific questions are $96120$, $42120$, and $25920$,
+respectively.
 
 To state our formula, we must fix a precise moduli space of cubics.
 Let us denote by $\mathcal M$ the GIT quotient of the set of
@@ -178,14 +180,16 @@ In 2019, Brustenga i Moncus\'i, Timme, and Weinstein gave a
 ``numerical proof'' for the number 96120. In 2020, Cazzador and Skauli
 outlined an approach towards a proof by following the techniques of
 Aluffi and Faber \cite{bru-i-mon.tim.wei:20,caz.ska:20}.  Our approach
-is novel, and the underlying change of perspective has the potential
-to solve other similar enumerative problems.
+is completely different and novel, and the underlying change in
+perspective has the potential to solve other enumerative problems of a
+similar nature.
 
 \subsection{The equivariant class of the orbit closure}
-The key idea is to consider not just the degree of the orbit closure,
-but the class of the orbit closure in the equivariant Chow ring
-$A^\bullet_{\GL V}(\Sym^dV^\vee)$.  The equivariant class subsumes the
-degree, but, counter-intuitively, it is easier to find.
+The key idea is to consider not just the degree of an orbit closure,
+but rather the class of the orbit closure in the {\sl equivariant Chow
+  ring} $A^\bullet_{\GL V}(\Sym^dV^\vee)$.  This equivariant class
+contains much more information than the degree of the orbit, yet,
+counter-intuitively, it is sometimes easier to find.
 
 Let us explain how the equivariant class yields the degree.
 We have natural maps
@@ -197,15 +201,16 @@ We have natural maps
   A^\bullet(\P \Sym^dV^\vee) \otimes \Q.
 \end{tikzcd}
 \]
-Under the composite map, the class of $\Orb(F) \in A^\bullet_{\GL
-  V}(\Sym^dV^\vee)$ is mapped to the class of $\Orb([F]) \in
-A^\bullet(\P \Sym^dV^\vee) \otimes \Q$, which is simply the degree of $\Orb([F])$.
+Under the composite map, the class of
+$\Orb(F) \in A^\bullet_{\GL V}(\Sym^dV^\vee)$ is mapped to the class
+of $\Orb([F]) \in A^\bullet(\P \Sym^dV^\vee) \otimes \Q$, which is
+simply the degree of $\Orb([F])$.
 
-Let us explain what makes it possible to find the equivariant class.
-The ring $A^\bullet_{\GL V}(\Sym^dV^\vee)$ is the polynomial ring in
-variables $c_1, \dots, c_r$, where $r = \dim V$, and the variable
-$c_i$ has degree $i$.  The equivariant class of $\Orb(F)$ lies in the
-graded component $A^m(\Sym^dV^\vee)$, where
+So, what makes it possible to find the equivariant class?  The ring
+$A^\bullet_{\GL V}(\Sym^dV^\vee)$ is the polynomial ring in variables
+$c_1, \dots, c_r$, where $r = \dim V$, and the variable $c_i$ has
+degree $i$.  The equivariant class of $\Orb(F)$ lies in the graded
+component $A^m(\Sym^dV^\vee)$, where
 $m = \dim \Sym^d V^\vee - \dim \GL V$.  As a result, it can be
 expressed as a $\Z$-linear combination of monomials in $c_i$ of total
 degree $m$. We can now use the method of undetermined coefficients.
@@ -233,12 +238,13 @@ The formula in \autoref{thm:eqvclass2} appears to be different from
 the one in \autoref{theorem:main}, but they are related by a simple
 change of variables; see \autoref{proof:eqvclass2}.
 
-Most of the paper is devoted to constructing {\sl provably} good
-families of cubic surfaces on which we can compute $\deg \mu$ and the
-Chern classes $c_i$. Because the test families are $4$-dimensional, we
-encounter technical challenges with some of the constructions.  To
-give a teaser for our test families, we list their bases $B$ here:
-$\P^4$, $\overline M_{0,7}$, a Hassett-weighted variant of
+The technical heart of the paper is in the construction of {\sl
+  demonstrably} good families of cubic surfaces on which we can both
+calculate $\deg \mu$ and the Chern classes $c_i$. Because these test
+families are $4$-dimensional, we encounter significant geometric
+challenges with some of the constructions.  Just to give a teaser for
+our test families, we list their bases $B$ here: $\P^4$,
+$\overline M_{0,7}$, a Hassett-weighted variant of
 $\overline M_{0,7}$, a blow up of the Hilbert scheme of two points on
 a quintic del Pezzo surface, and last but not least, the stack
 $B\G_m$.  The curious reader can skip to \autoref{sec:testfamilies}
@@ -249,9 +255,9 @@ for detailed constructions.
 \subsection{The orbit closure problem}
 To apply the method of undetermined coefficients, we have to ensure
 that no fibers of our family lie in the orbit closure of generic cubic
-surfaces.  What is required is to prove statements of the form: ``The
-particular cubic surface $S$ is not in the closure of a suitably
-generic cubic surface.''  We develop a range of tools to address
+surfaces.  What is required is to prove statements of the form: ``This
+particular cubic surface is not the flat limit of an isotrivial family
+of generic cubic surfaces.''  We develop a range of tools to address
 problems of this kind.  To preserve the flow of the paper, and because
 these techniques may be of independent interest, we assemble these
 tools in a separate section (\autoref{sec:orbclosure}).
@@ -260,8 +266,7 @@ tools in a separate section (\autoref{sec:orbclosure}).
 The formula in \autoref{theorem:main} has some curious consequences.
 \begin{corollary}
   \label{cor:ineq} If $\pi \colon \cX \to B$ is a good family of cubic
-  surfaces parametrized by a $4$ dimensional proper variety $B$,
-  then
+  surfaces parametrized by a $4$ dimensional proper variety $B$, then
   \[\int_{B} v_{1}^{2}v_{2} - v_{1}v_3 + 9v_{4} \geq 0\]
   with
   equality holding if and only if a general cubic surface does not
@@ -269,19 +274,19 @@ The formula in \autoref{theorem:main} has some curious consequences.
 \end{corollary}
 
 \begin{corollary}
-  \label{cor:div} Let $\pi \colon \cX \to B$ is a good family of cubic
+  \label{cor:div} Let $\pi \colon \cX \to B$ be a good family of cubic
   surfaces parametrized by a $4$ dimensional proper variety $B$.
   Assume that a general fiber of $\pi$ is smooth and the induced map
-  $\mu \colon B \dashrightarrow \mathcal M$ is dominant.
-  Then the degree of $\mu$ is divisible by 1080.
+  $\mu \colon B \dashrightarrow \mathcal M$ is dominant.  Then the
+  degree of $\mu$ is divisible by 1080.
 \end{corollary}
-In particular, a parameter space for cubic surfaces that carries a
-good universal family must cover $\mathcal M$ by a map of degree
+In particular, a moduli scheme of cubic surfaces that carries a {\sl
+  good} universal family must cover $\mathcal M$ by a map of degree
 divisible by 1080.  Interestingly, the number 1080 is also the least
 common multiple of the orders of the finite groups that arise as
-automorphism groups of cubic surfaces.  We wonder if $1080$ is the
-minimal positive integer realizable as $\deg \mu$ as we vary across
-all good families of cubic surfaces.
+automorphism groups of cubic surfaces.  We do not know if $1080$ is
+the minimal positive integer realizable as $\deg \mu$ as we vary
+across all good families of cubic surfaces.
 
 \subsection{Future directions}
 
@@ -291,13 +296,13 @@ its proof, promises more enumerative vistas of exploration.  Each {\sl
 class $[\Orb(F)]$.  The methods developed in this paper have the
 potential to provide a {\sl complete} understanding of how this class
 changes according to special changes in the geometry of $F=0$,
-e.g. acquiring singularities or Eckardt points. We hope to conduct
+e.g. acquiring singularities or Eckardt points. We intend to conduct
 this detailed investigation in the future.
 
 In a different direction, there should be analogous formulas counting
 Del Pezzo surfaces of degrees $1,2$ and $4$.  We fully expect our
-methods to establish formulas in these settings, though we have not
-even begun the analysis.
+methods to establish analogous counting formulas in these settings,
+with the case of degree $1$ del Pezzo's being most intriguing.
 
 Finally, we make the equivariant version of a comment of Aluffi and
 Faber \cite{alu.fab:93}: this paper computes the equivariant orbit
